@@ -1,0 +1,128 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.parent {
+  height: 100%;
+  /* or 80%, 60vh, etc. */
+  max-height: 100%;
+  position: relative;
+  background: #f0f8ff;
+}
+
+
+.uklogosvg {
+  background: url('images/uklogo.svg') no-repeat;
+}
+
+.uklogo {
+  background-color: #1d70b8;
+  height: 65px;
+}
+
+.loginbg {
+  background-image: url('images/fieldbg2.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tile {
+  border-bottom: 8px solid #00a33b;
+  background-color: #f4f8fb;
+  width: 160px;
+
+  letter-spacing: 1px;
+  font-family: HelveticaNeue, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 27px;
+  padding: 20px;
+  display: flex;
+  color: #1d70b8;
+  text-shadow: -1px 0px 0px #666666;
+  font-weight: 600;
+  height: 110px;
+  /* border-radius: 20px; */
+  align-items: center;
+  justify-content: center;
+
+  border-left: 1px solid #1d70b8;
+  border-top: 1px solid #1d70b8;
+  border-right: 1px solid #1d70b8;
+  /* transition: background-color 0.4s ease;*/
+  transition: all 0.3s ease;
+}
+
+.tile a {
+  color: #1d70b8;
+  text-decoration: none;
+  display: flex;
+  width: 160px;
+  height: 110px;
+  padding: 20px;
+  font-size: 27px;
+  align-items: center;
+  justify-content: center;
+  /* border:1px dashed #ccc;
+    width: 200px;
+    font-size: 33px;
+    padding: 20px;
+    height: 200px; */
+}
+
+.tile:hover {
+  background: #1d70b8;
+  color: #fff;
+  text-decoration: underline;
+  text-shadow: -1px 0px 0px #666666;
+  border-bottom: 8px solid #003078;
+}
+
+.tile:hover a {
+  color: #fff;
+}
+
+.footerline {
+  background-color: #424242;
+  height: 8px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+
+.circle-wrapper {
+  position: relative;
+}
+
+.circle1 {
+  border-radius: 50%;
+  background-color: #1d70b8;
+  height: 24%;
+  width: 11%;
+  position: absolute;
+  right: 0;
+  top: 45%;
+}
+
+.circle2 {
+  border-radius: 50%;
+  background-color: #1d70b8;
+  position: absolute;
+  right: 138px;
+  top: 61%;
+
+  height: 24%;
+  width: 11%;
+}
+
+.circle3 {
+  border-radius: 50%;
+  background-color: #1d70b8;
+  position: absolute;
+  right: 224px;
+  top: 83%;
+  height: 24%;
+  width: 11%;
+}
