@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Year Details - Costbook</title>
+   <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="../css/bootstrap.min.css">	
+	
+   
+	   <link rel="stylesheet" href="../css/main_style.css">
+	 <link rel="stylesheet" href="../css/costbook_styles/styles.css"> 
+	 
+	
+<script>
+    // function onChangeProject(){
+    //     document.getElementById("program").value = "BACT";
+    //     document.getElementById("project").value = "FZ200";
+    // }
+
+    // function onClickPlanProject(){
+    //     document.getElementById("program").value = "";
+    //     document.getElementById("project").value = "";
+    // }
+
+    window.addEventListener('load', function () {
+        // Get modal element
+        const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        // Show modal
+        myModal.show();
+    });
+
+</script>
+
+
+</head>
+
+
+<body>
+
+    <!-- Navbar -->
+      
+<header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+
+                <div>
+                    <img src="../images/defra_logo.png" width="80px">
+                </div>
+                <!-- <div class="menu-icon" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> -->
+                <div class="pims-log">
+                    <span>Costbook</span>
+                </div>
+                <!-- <p>PACT</p> -->
+				
+				<!-- <div class="pims-log"> -->
+                 <!-- <select class="pims-log" style="border:0; margin-left: 0px;" aria-label="Year"> -->
+				 <!-- <option class="pims-log" style="border:0; margin-left: 0px;">2017-2018</option> -->
+					<!-- <option class="pims-log" style="border:0; margin-left: 0px;">2018-2019</option> -->
+				 	<!-- <option class="pims-log" style="border:0; margin-left: 0px;">2019-2020</option> -->
+				 	<!-- <option class="pims-log" style="border:0; margin-left: 0px;">2020-2021</option> -->
+				 	<!-- <option class="pims-log" style="border:0; margin-left: 0px;">2021-2022</option> -->
+				 	<!-- <option class="pims-log" style="border:0; margin-left: 0px;">2022-2023</option> -->
+					<!-- <option class="pims-log" style="border:0; margin-left: 0px;">2023-2024</option> -->
+					<!-- <option class="pims-log" style="border:0; margin-left: 0px;">2024-2025</option> -->
+					<!-- <option class="pims-log" style="border:0; margin-left: 0px;" selected="">2025-2026</option> -->
+					<!-- </select> -->
+					
+                <!-- </div> -->
+            </div>
+            <div class="btn-group" style=" display: flex; align-items: center;     font-size: 16px;">
+                Ken Rod <button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                   <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24"> <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px" height="30px">
+                </button> 
+                <ul class="dropdown-menu dropdown-menu-end" style="">
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button> -->
+                    <!-- </li> -->
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button> -->
+                    <!-- </li> -->
+                    <li><a href="../index.html" class="dropdown-item" type="button" aria-hidden="true">
+					<img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">  Home</a>
+                            </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+   <nav class="navbar navbar-expand-lg main-nav">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+
+                    <!-- <li class="nav-item dropdown"> -->
+                        <!-- <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">Project Selection</a> -->
+                        <!-- <ul class="dropdown-menu"> -->
+                            <!-- <li><a class="dropdown-item" href="program_management.html">Select Programme</a></li> -->
+                            <!-- <li><a class="dropdown-item" style="display: flex;    justify-content: space-between;">Plan Projects  <span style="font-size: 22px;"> ▸</span></a>  -->
+                                <!-- <ul class="dropdown-menu"> -->
+
+                                    <!-- <li><a class="dropdown-item" href="setup_newproject.html"> -->
+                                            <!-- Setup A new Projects</a> -->
+                                    <!-- </li> -->
+                                    <!-- <li><a class="dropdown-item" href="project_selection.html"> -->
+                                            <!-- Plan Project Individually</a> -->
+                                    <!-- </li> -->
+                                    <!-- <li><a class="dropdown-item" href="#"> -->
+                                            <!-- Plan STAFF for Entire Programme</a> -->
+                                    <!-- </li> -->
+                                    <!-- <li><a class="dropdown-item" href="#"> -->
+                                            <!-- Plan Animals for Entire Programme</a> -->
+                                    <!-- </li> -->
+                                    <!-- <li><a class="dropdown-item" href="#"> -->
+                                            <!-- Plan Test Purchases for Entire Programme for Entire Programme</a> -->
+                                    <!-- </li> -->
+                                    <!-- <li><a class="dropdown-item" href="#"> -->
+                                            <!-- Plan Additional cost for Entire Programme</a> -->
+                                    <!-- </li>  -->
+                                <!-- </ul> -->
+                            <!-- </li> -->
+                            <!-- <li><a class="dropdown-item" style="display: flex;    justify-content: space-between;" href="#">Review Plans <span style="font-size: 22px;"> ▸</span></a> -->
+                             <!-- <ul class="dropdown-menu"> -->
+
+                                    <!-- <li><a class="dropdown-item" href="#">Project Portability</a>                                 </li> -->
+                                    <!-- <li><a class="dropdown-item" href="#">Staff Plan Pivot</a></li> -->
+                                    
+                                <!-- </ul> -->
+                            <!-- </li> -->
+                            <!-- <li><a class="dropdown-item" style="display: flex;    justify-content: space-between;" href="#">Summary Printouts <span style="font-size: 22px;"> ▸</span></a> -->
+                             <!-- <ul class="dropdown-menu"> -->
+
+                                    <!-- <li><a class="dropdown-item" href="summaryprintout.html">Programme Profitability Report</a> -->
+                                    <!-- </li> -->
+                                    <!-- <li><a class="dropdown-item" href="summaryprintout.html">Summarized by disease</a> -->
+                                    <!-- </li> -->
+                                    <!-- <li><a class="dropdown-item" href="summaryprintout.html">Summarized by Customer</a> -->
+                                    <!-- </li> -->
+                                    <!-- <li><a class="dropdown-item" href="summaryprintout.html">Project Specifics</a> -->
+                                    <!-- </li> -->
+                               
+                                <!-- </ul> -->
+                            <!-- </li> -->
+                        <!-- </ul> -->
+                    <!-- </li> -->
+						<!-- <li class="nav-item"><a class="nav-link" href="home.html">Home </a></li> -->
+				  <li class="nav-item"><a class="nav-link" href="costbookhome.html">Choose Project </a></li>
+				  
+                    <!-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">Resource -->
+                            <!-- Management </a> -->
+                        <!-- <ul class="dropdown-menu"> -->
+                            <!-- <li><a class="dropdown-item" href="createresourcecenter.html">Create Resource Center</a> -->
+                            <!-- </li> -->
+                            <!-- <li><a class="dropdown-item" href="setupresource.html">Setup Resource</a></li> -->
+                            <!-- <li><a class="dropdown-item" href="reviewplans.html">Review Plans</a></li> -->
+                            <!-- <li><a class="dropdown-item" href="reports.html">Reports</a></li> -->
+                        <!-- </ul> -->
+                    <!-- </li> -->
+                   
+                    <!-- <li class="nav-item"> -->
+                        <!-- <a class="nav-link" href="#">Lab Testing Manager's </a> -->
+                    <!-- </li> -->
+                    <!-- <li class="nav-item"> -->
+                        <!-- <a class="nav-link" href="#">Luvely Pivots</a> -->
+                    <!-- </li> -->
+					
+					
+                    <!-- <li class="nav-item dropdown"> -->
+                        <!-- <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">Reports </a> -->
+                        <!-- <div class="dropdown-menu my-flex-dropdown" style="border: 1px solid #000; "> -->
+                            <!-- <ul  style=" width: 100%;"> -->
+
+                                <!-- <li><a class="dropdown-item" href="wgstaff.html"> -->
+                                        <!-- Summary Reports </a> -->
+
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- Details Report</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- EU Format Report</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                       <!-- SID3 Staff Effort</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- Generic Bids</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- Project Audit Trails</a> -->
+                                <!-- </li> -->
+                            <!-- </ul> -->
+
+
+                            <!-- <ul> -->
+
+
+
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- SMG Summary Report - All Work</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- SMG Summary Report - Assured Work Only</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- All Programs Profitability</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- Program Exceptional Bids</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- Income Contribution Rpt</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- Income Cont - Summary</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- Project Specific - Query</a> -->
+                                <!-- </li> -->
+                            <!-- </ul> -->
+
+
+
+                            <!-- <ul> -->
+
+                                <!-- <li><a class="dropdown-item" href="summaryprintout.html">Resource Grades by -->
+                                        <!-- Programme</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="summaryprintout.html">Resource Utilisation</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="summaryprintout.html">Open FPS</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="summaryprintout.html">Close FPS</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="summaryprintout.html">Run Snapshot Queries</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="summaryprintout.html">Run Comparison Queries</a> -->
+                                <!-- </li> -->
+                            <!-- </ul> -->
+                        <!-- </div> -->
+
+                    <!-- </li> -->
+					
+					 <!-- <li class="nav-item dropdown"> -->
+                        <!-- <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">Queries </a> -->
+                        <!-- <div class="dropdown-menu my-flex-dropdown" style="border: 1px solid #000; "> -->
+                            <!-- <ul  style=" width: 100%;"> -->
+
+                                <!-- <li><a class="dropdown-item" href="wgstaff.html"> -->
+                                        <!-- Project Cost Query </a> -->
+
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- CSG7 Staff Years</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- SID3 Staff Effort</a> -->
+                                <!-- </li> -->
+								 <!-- <li><a class="dropdown-item" href="Project-Summary.html"> -->
+                                        <!-- Project Summary </a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- Excel Report</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                       <!-- SID3 Staff Effort</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- Generic Bids</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- Project Audit Trails</a> -->
+                                <!-- </li> -->
+                            <!-- </ul> -->
+
+
+                            <!-- <ul> -->
+
+
+
+                               
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- All Programs Profitability</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- Program Exceptional Bids</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- Income Contribution Rpt</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- Income Cont - Summary</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="planprojects.html"> -->
+                                        <!-- Project Specific - Query</a> -->
+                                <!-- </li> -->
+                            <!-- </ul> -->
+
+
+
+                            <!-- <ul> -->
+
+                                <!-- <li><a class="dropdown-item" href="summaryprintout.html">Resource Grades by -->
+                                        <!-- Programme</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="summaryprintout.html">Resource Utilisation</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="summaryprintout.html">Open FPS</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="summaryprintout.html">Close FPS</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="summaryprintout.html">Run Snapshot Queries</a> -->
+                                <!-- </li> -->
+                                <!-- <li><a class="dropdown-item" href="summaryprintout.html">Run Comparison Queries</a> -->
+                                <!-- </li> -->
+                            <!-- </ul> -->
+                        <!-- </div> -->
+
+                    <!-- </li> -->
+					 <li class="nav-item">
+                        <a class="nav-link" href="#">Maintainance </a>
+                    </li>
+
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Project Plan Viewer</a></li> -->
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Project Group </a></li> -->
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Management Account </a></li> -->
+
+                    <!-- Dropdown -->
+                    <!-- <li class="nav-item dropdown">
+            <a 
+              class="nav-link dropdown-toggle" 
+              href="#" 
+              role="button" 
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Services
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Web Design</a></li>
+              <li><a class="dropdown-item" href="#">Development</a></li>
+              <li><a class="dropdown-item" href="#">SEO</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Consulting</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li> -->
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+    <div class="container-fluid">
+	
+	
+	<div class="col-lg-12">
+			<div class="row" style="display:flex;     align-items: center;">
+			
+			
+				<div class="col-sm-12" style="padding:0px;  ">
+			<div style="border-bottom: 2px solid #1d70b8; height:48px;">
+			 <div style="padding: 15px 0 5px 17px; font-size:16px; width: 50%;  font-weight: 700; float:left">
+                  Project Requirements
+					
+				
+					</div>
+					<div style=" float: right; text-align:right;     margin-top: 8px;    width:50%; float:left">
+			<a class="btn btn-outline-primary btn-sm btn-back" a="" aria-hidden="true" href="costbookhome.html" aria-label="back to select a program" style="margin-right: 16px;border: 1px solid #0d6efd;">Back</a>
+			</div>
+			</div>
+		
+            </div>
+			<!-- <div class="col-lg-6"> -->
+			  <!-- <div style=""> -->
+                    <!-- <h6 style="   -->
+					  <!-- padding-bottom: 10px; -->
+    <!-- border-left: 3px solid #9d7600; -->
+    <!-- padding-left: 16px; -->
+    <!-- font-size: 18px; -->
+    <!-- font-weight: 500; -->
+    <!-- padding: 5px 8px; -->
+    <!-- color: #333; font-size: 1rem !important; -->
+    <!-- margin: 2px 0 2px 0;">Project Requirements</h6> -->
+                <!-- </div> -->
+			<!-- </div> -->
+			
+			<!-- <div class="col-lg-6" style="text-align:right"> -->
+			
+                   <!-- <a class="btn btn-outline-primary btn-sm" style=" margin-top: 4px;   margin-bottom: 4px;" href="costbookproject_edit.html">Back</a>  -->
+               
+                
+			<!-- </div> -->
+			
+			
+			
+			</div>
+              
+            </div>
+	
+        <!-- <div style="padding: 5px 5px;  border-bottom: 1px solid #b4b4b4" class="row"> -->
+            <!-- <div style="display: flex;     align-items: center; justify-content: flex-end; "> -->
+                <!-- <div> <a class="" href="costbookproject_edit.html">Back</a>  -->
+                <!-- </div> -->
+                
+            <!-- </div> -->
+        <!-- </div> -->
+        <div class="row">
+         
+            <!-- <div class="col-lg-12"> -->
+                <!-- <div style="margin: 10px 0 0 0;"> -->
+                    <!-- <h6 style="    -->
+    <!-- padding-bottom: 10px; -->
+    <!-- border-left: 3px solid #9d7600; -->
+    <!-- padding-left: 16px; -->
+    <!-- font-size: 18px; -->
+    <!-- font-weight: 500; -->
+    <!-- padding: 5px 8px; -->
+    <!-- color: #333; font-size: 1rem !important; -->
+    <!-- margin: 10px 0 10px 0;"></h6> -->
+                <!-- </div> -->
+            <!-- </div> -->
+			
+			
+		
+			
+			<div class="col-lg-12">
+		
+			<main class="main-content" style="padding:0;">
+       
+	
+       <div class="container-fluid" style="padding: 0;">
+
+     
+ 
+        
+        <!-- Modal for Add/Edit -->
+        <div id="editModal" class="modal" tabindex="-1" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Staff</h5>
+                        <button type="button" class="close"
+						style=" padding: 0px 5px;    border: 1px solid #a8a8a8;    background: #ff4239; color:#fff;  border: none;   border-radius: 0px;" 	onclick="closeaddstaffModal()">×</button>
+                    </div>
+                    <div class="modal-body" id="editModalBody">
+                        <form id="editableGridForm">
+                            <div class="form-group mb-2">
+                                <label for="wggrade">WG grade</label>
+                                  	<select  id="WGgradevalue" value="" >
+									<option >A_APH SCA</option>
+									<option selected>A_BeesAd</option>														
+									<option >A_BeesW</option>	
+									<option >A_BEES</option>	
+									<option >A_CIT</option>	
+									<option >A_CITB</option>	
+									<option >A_CPD</option>
+									<option >A_CSCS</option>	
+									<option >A_CSU </option>	
+									
+									<option >A_DIGP</option>	
+									<option >A_DIU</option>
+									
+									
+								
+									
+								   </select>
+                            </div>
+							
+							  <div class="form-group mb-2">
+                                <label for="StaffName"> Price</label>
+                                <input type="text" class="form-control" value="$131.8" id="" name="">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="StaffName"> Name</label>
+                                <input type="text" class="form-control" id="staff_name" name="StaffName">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="WGGrade">Rate</label>
+								 <input type="text" class="form-control" id="rate_value" name="StaffName">
+                                
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="Status">Hour</label>
+                                 <input type="text" class="form-control" id="hour_value" name="StaffName">
+                                
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="HrsPaid">Days</label>
+                                <input type="number" class="form-control" id="days_value" name="HrsPaid">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="HrsPaid">Costs</label>
+                                <input type="text" class="form-control" id="hrspaid_value" name="HrsPaid" >
+                            </div>
+                         <footer>
+                            <button type="submit" class="btn btn-primary" onclick="addStaffRow()">Save</button>
+                            <button type="button" class="btn btn-secondary" onclick="closeaddstaffModal()">Cancel</button>
+							</footer>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+           
+
+<div id="yearModal" class="modal " tabindex="-1" style="display: none;">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Project Rates</h5>
+                        <button type="button" class="close"
+						style=" padding: 0px 5px;    border: 1px solid #a8a8a8; background: #ff4239;    color: #fff;
+    border: none;   border-radius: 0px;" 	onclick="closeaddyear()">×</button>
+                    </div>
+                    <div class="modal-body" id="editModalBody">
+                        <form id="editableGridForm">
+                          <div class="">
+       
+        
+        <div class="header-inputs" style="margin-bottom: 10px;s">
+            <div class="input-group" style="display:inline;">
+                <label for="project" style="  margin-right: 12px;">Project</label>
+                <input type="text" id="project" value="2024/122c">
+            </div>
+            <div class="input-group" style="display:inline;">
+                <label for="year" style=" margin-right: 12px; margin-left: 20px;">Year</label>
+                <input type="text" id="year" value="2039">
+            </div>
+        </div>
+        
+        <div class="rates-container">
+            <div class="rates-section">
+                <h3>Contingency Mark-up %</h3>
+                <div class="rate-row">
+                    <label>Time</label>
+                    <input type="number" value="15" >
+                </div>
+                <div class="rate-row">
+                    <label>Tests</label>
+                    <input type="number" value="15" >
+                </div>
+                <div class="rate-row">
+                    <label>Animals</label>
+                    <input type="number" value="15" >
+                </div>
+                <div class="rate-row">
+                    <label>Additional</label>
+                    <input type="number" value="15" >
+                </div>
+            </div>
+            
+            <div class="rates-section">
+                <h3>Profit Margin %</h3>
+                <div class="rate-row">
+                    <label>Time</label>
+                    <input type="number" value="3.5" >
+                </div>
+                <div class="rate-row">
+                    <label>Tests</label>
+                    <input type="number" value="3.5" >
+                </div>
+                <div class="rate-row">
+                    <label>Animals</label>
+                    <input type="number" value="3.5" >
+                </div>
+                <div class="rate-row">
+                    <label>Additional</label>
+                    <input type="number" value="3.5" >
+                </div>
+            </div>
+        </div>
+        
+     
+    </div>
+                         <div style="text-align:right">
+						  <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="button" class="btn btn-secondary" onclick="closeaddyear()">Cancel</button>
+						 </div>
+                         
+                           
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+
+ </div>
+
+        <!-- Financial Summary -->
+       
+ 
+         <div class="row">
+            <div class="container" style="padding-left:0px;">
+                 <div style="display: flex; flex-direction: row;">
+                  <nav class="sidenav flex-column flex-shrink-0" id="shortnav">
+                <button class="toggle-btn" onclick="toggleSidebar()" style="right: -8px; top: 30px;">
+                   
+ <img src="../images/chevron-left-solid-full.svg" alt="side nav menu arrow" width="24">				   
+				   
+				   
+                </button>
+                  <ul>
+				    <li><a class="dropdown-item sidenav-title">Reports</a></li>
+                    <li><a class="dropdown-item" href="#">
+                            Summary Report</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                            Detail Report</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                            EU Format Report</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                             SID3 Staff Effort</a>
+                    </li>
+					  <li><a class="dropdown-item sidenav-title">Queries</a></li>
+                    <li><a class="dropdown-item" href="#">
+                           Project Cost Queries</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                            CSG7 Staff Years</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                              SID3 Staff Effort</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                           Project Summary</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                            Excel Report</a>
+                    </li>
+
+                   
+                </ul>
+              
+                        </nav>
+                     <div style="display: flex;
+    flex-direction: column; 
+    margin: 0 0px;
+    width: 100%;">
+	
+	<footer class="financial-summary" style="margin-bottom: 5px; margin-left:2px;">
+ 
+ 
+   <div class="summary-row" style=" align-items: center;    margin: 12px 0px;">
+    
+                      
+   
+     <div class="summary-item" ><label class="text-AlignRight">Code:</label>
+                  <input type="text" value="2025/103" readonly="">
+                </div>
+                <div class="summary-item">
+                    <label class="text-AlignRight">Year Type:</label>
+                   <select style="    width: 155px;    height: 27px;"><option>Financial Year</option></select>
+                </div>
+				
+				 <div class="summary-item">
+                    <label class="text-AlignRight">Start Date:</label>
+                  <input type="text" value="01/04/2025" readonly="">
+                </div>
+                <div class="summary-item">
+                    <label class="text-AlignRight" style=" min-width: 58px;">Inflation? : </label>
+					<input type="checkbox" value="" readonly="" checked>
+                 
+                </div>
+				
+				  <div class="summary-item"  style="margin-left: 12px;">
+                    <label class="text-AlignRight" style=" min-width: 40px;">Defra? : </label>
+					<input type="checkbox" value="" readonly="" checked>
+                 
+                </div>
+				 
+				
+   </div>
+   
+   
+      <div class="summary-row" style=" align-items: center;   margin: 12px 0px;">
+ 
+   
+ 
+                <div class="summary-item" >
+                    <label class="text-AlignRight">Title:</label>
+                 <input type="text" value="Test TVG" readonly="" style="width: 406px;">
+                </div>				
+				
+				 <div class="summary-item">
+                    <label class="text-AlignRight">Year:</label>
+                <input type="text" value="2026" readonly="">
+                </div>
+                <div class="summary-item">
+                    <label class="text-AlignRight">€/£ Rate Used: </label>
+					<input type="text" value="" readonly="" style="width:150px;">
+                 
+                </div>
+				 <!-- <div class="summary-item" style="margin-left: 15px;"> -->
+                    <!-- <label style=" min-width: 42px; ">Delta%:</label> -->
+					<!-- <input type="checkbox" value="" readonly=""> -->
+                 
+                <!-- </div> -->
+			
+   </div>
+   
+   		 <!-- <div class="col-12" style="display: flex; justify-content: flex-end;"> -->
+    <!-- <button type="button" class="btn btn-primary" style=" font-size: 12px; -->
+    <!-- font-weight: 500;  padding: 4px 15px; background: #0d6efd; color: #fff;">Save</button> -->
+  <!-- </div> -->
+            
+        </footer>
+                <!-- <h5 style="border-bottom: 1px solid #684e00; -->
+                    <!-- padding-bottom: 10px; -->
+                    <!-- border-left: 3px solid #9d7600; -->
+                    <!-- padding-left: 18px; -->
+                    <!-- font-size: 18px; -->
+                    <!-- font-weight: 500; -->
+                    <!-- padding: 10px; -->
+                    <!-- color: #333; -->
+                    <!-- margin: 10px 0 10px 0;">Maintenance Menu</h5> -->
+					
+					
+					<div class="" style="padding:0px; border-top: 1px solid #cbcbcb;  border-right: 1px solid #cbcbcb; border-left: 1px solid #cbcbcb;">
+     
+            <div class="form-header" style="margin-bottom: 0px; border-bottom: 1px solid #D0D0D0; padding: 5px 4px 0px 5px;">
+               <h6>2026 Year Costs</h6>
+                <!-- <div class="user-search" style="padding-top: 4px; padding-right: 4px;color:#000"> -->
+                    <!-- <label for="userSelect" > User</label> -->
+                    <!-- <input type="text" id="userSelect" value="Chris Moore" readonly> -->
+                <!-- </div> -->
+            </div>
+            
+            <div class="content-area" style="gap:5px">
+                <div class="user-grid-section" style="flex:none;margin-left: 2px;">
+                    <div class="grid-container" style=" font-size: 13px;">
+					 <div style="display: flex; justify-content: space-between; align-items: center;"> 
+				   <button class="admin-btn" id="add_year" style=" width: 97%;
+				   padding: 1px 10px; background: #0d6efd; color: #fff;  
+				   margin-bottom: 2px; margin-left: 2px; margin-top: 2px;"
+				   >
+				   + Add New Year</button>
+				   </div>
+                        <table class="user-table" style="flex:none; width: 130px; font-size: 13px; ">
+                            <thead>
+                                <tr>
+                                    <th style="position:relative">Project Years</th>
+                                    <!-- <th>SQL UserName</th> -->
+                                    <!-- <th>User</th> -->
+                                </tr>
+                            </thead>
+                            <tbody id="userTableBody">
+                                <tr>
+                                    <td>2025</td>
+                                    
+                                </tr>
+                                <tr class="selected">
+                                    <td >2026</td>
+                                  
+                                </tr>
+                                <tr>
+                                    <td>2027</td>
+                                 
+                                </tr>
+                               
+                               
+                                
+                            </tbody>
+                        </table>
+                        <!-- <div class="grid-navigation"> -->
+                            <!-- <span>Record: </span> -->
+                            <!-- <button class="nav-btn">⏮</button> -->
+                            <!-- <button class="nav-btn">◀</button> -->
+                            <!-- <span>8 of 58</span> -->
+                            <!-- <button class="nav-btn">▶</button> -->
+                            <!-- <button class="nav-btn">⏭</button> -->
+                            <!-- <button class="search-btn">Search</button> -->
+                        <!-- </div> -->
+                    </div>
+                </div>
+                
+                <div class="permissions-section">
+                    <div class="tab-container">
+                        <div class="tab-buttons">
+                            <button class="tab-btn tabcolor active" data-tab="resource">Staff</button>
+                            <button class="tab-btn tabcolor" data-tab="programme">Tests</button>
+                            <button class="tab-btn tabcolor" data-tab="directorate">Animal</button>
+							  <button class="tab-btn tabcolor" data-tab="testowners">Additional Costs</button>
+							   <button class="tab-btn tabcolor" data-tab="MarkupAndProfit">Markup and Profit</button>
+                            <!-- <button class="tab-btn" data-tab="project">Project Group Permissions</button> -->
+                        </div>
+                        
+                       
+                            <div class="tab-pane active" id="resource-tab">
+                              
+							 
+                 
+				   
+				   
+				   
+				   <section class="data-section">
+				
+				
+			
+				  
+				
+				<div>
+                             <div>
+							 
+							 <div style="
+					display: flex;
+					justify-content: space-between;
+					align-items: center;				
+					
+					padding: 7px;
+					color: #333;
+					border-radius: 7px 7px 0 0;
+					font-size: 16px;
+					
+					"> 
+
+                                                <h1 class="accordion-header table-heading" id="headingOne">                                               
+                                                  
+                                                </h1>
+                                                <div style="display: flex;flex-direction: row;     justify-content: space-between; align-items: center; ">
+                                                    <div class="col-9" style="padding-top: 0; padding-left: 6px; padding-bottom: 0; display:none">
+                                                        <label for="txtSearchProjectCode" class="sr-only">Search</label>
+                                                        <input type="text" id="txtSearchProjectCode" class="form-control" style="padding: 5px; margin: 5px 0px;" placeholder="Search by jobcode or name or type or workgroup">
+                                                    </div>
+                                            
+                                                        <div class="" style="text-align: right;">
+                                                            <button class="btnBlue" id="addstaffbookedBtn" aria-label="Add staff booked"><img alt="plus icon for add staff booked" src="../images/circle-plus-solid-full-white.svg" width="16px">&nbsp;Add </button>
+                                                        </div>
+
+                                                </div>
+												
+												 </div>
+                                                  
+                                                    <div class="jobcodediv  borderbottom_0 border_1">
+                                                        <table class="table table-striped table-bordered custom-table" style="margin-bottom: 0px; ">
+                                                                <thead class="table-light">
+                                                                    <tr>
+																	 <th>WG Grade</th>
+                                                                        <th>Name</th>
+																		<th>Rate</th>
+																		<th>Hrs</th>
+																		<th>Days</th>
+																		<th>Cost</th>
+																	   <th>Actions</th>
+                                                                     
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="tableBody">
+																<tr class="selected-table-rowbg">
+            <td class="editable-cell" data-field="wggrade" data-id="1">A_AS2</td>
+			 <td class="editable-cell" data-field="staffname" data-id="1">App_admin</td>
+			
+            <td class="editable-cell text-AlignRight" data-field="rate" data-id="1">£126.45</td>
+            <td class="editable-cell text-AlignRight" data-field="hrs" data-id="1">2</td>
+             <td class="editable-cell text-AlignRight" data-field="days" data-id="1">0.28</td>
+			  <td class="editable-cell text-AlignRight" data-field="staffcost" data-id="1">£252.90</td>
+            <td>
+                <button class="btn btn-sm btn-outline-primary" onclick="handleEdit(1)"><img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected record" class="editjobcode" width="20"></button>
+                <button class="btn btn-sm btn-outline-danger" onclick="handleDelete(1)"> <img src="../images/trash-can-regular-full.svg" alt="Delete icon for selected record" width="20"></button>
+            </td>
+        </tr>
+		
+		<tr>
+              <td class="editable-cell" data-field="WGgrade" data-id="2">F_AS2</td>
+			 <td class="editable-cell" data-field="staffname" data-id="2">App_admin</td>
+			
+            <td class="editable-cell text-AlignRight" data-field="rate" data-id="2">£64.62</td>
+            <td class="editable-cell text-AlignRight" data-field="hrs" data-id="2">14</td>
+             <td class="editable-cell text-AlignRight" data-field="days" data-id="2">1.94</td>
+			  <td class="editable-cell text-AlignRight" data-field="staffcost" data-id="2">£904.68</td>
+            <td>
+                <button class="btn btn-sm btn-outline-primary" onclick="handleEdit(2)"><img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected record" class="editjobcode" width="20"></button>
+                <button class="btn btn-sm btn-outline-danger" onclick="handleDelete(2)"> <img src="../images/trash-can-regular-full.svg" alt="Delete icon for selected record" width="20"></button>
+            </td>
+        </tr><tr>
+             <td class="editable-cell" data-field="WGgrade" data-id="3">E_SSP1</td>
+			 <td class="editable-cell" data-field="staffname" data-id="3">CAPS</td>
+			
+            <td class="editable-cell text-AlignRight" data-field="rate" data-id="3">£71.12</td>
+            <td class="editable-cell text-AlignRight" data-field="hrs" data-id="3">20</td>
+             <td class="editable-cell text-AlignRight" data-field="days" data-id="3">2.78</td>
+			  <td class="editable-cell text-AlignRight" data-field="staffcost" data-id="3">£1442.40</td>
+            <td>
+                <button class="btn btn-sm btn-outline-primary" onclick="handleEdit(3)"><img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected record" class="editjobcode" width="20"></button>
+                <button class="btn btn-sm btn-outline-danger" onclick="handleDelete(3)"> <img src="../images/trash-can-regular-full.svg" alt="Delete icon for selected record" width="20"></button>
+            </td>
+        </tr>
+		<!-- <tr> -->
+            <!-- <td class="editable-cell " data-field="staffname" data-id="4">A_BAC4,General</td> -->
+            <!-- <td class="editable-cell text-AlignRight" data-field="rate" data-id="4">£85</td> -->
+            <!-- <td class="editable-cell text-AlignRight" data-field="hrs" data-id="4">1210</td> -->
+                        <!-- <td class="editable-cell text-AlignRight" data-field="days" data-id="4">168.06</td> -->
+						 <!-- <td class="editable-cell text-AlignRight" data-field="staffcost" data-id="4">£86,002</td> -->
+            <!-- <td> -->
+                <!-- <button class="btn btn-sm btn-outline-primary" onclick="handleEdit(4)"><img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected record" class="editjobcode" width="20"></button> -->
+                <!-- <button class="btn btn-sm btn-outline-danger" onclick="handleDelete(4)"> <img src="../images/trash-can-regular-full.svg" alt="Delete icon for selected record" width="20"></button> -->
+            <!-- </td> -->
+        <!-- </tr> -->
+		<!-- <tr> -->
+            <!-- <td class="editable-cell" data-field="staffname" data-id="5">A_BAC5,General</td> -->
+            <!-- <td class="editable-cell text-AlignRight" data-field="rate" data-id="5">£70</td> -->
+            <!-- <td class="editable-cell text-AlignRight" data-field="hrs" data-id="5">1230</td> -->
+            <!-- <td class="editable-cell text-AlignRight" data-field="days" data-id="5">170.83</td> -->
+			<!-- <td class="editable-cell text-AlignRight" data-field="staffcost" data-id="5">£102,523</td> -->
+            <!-- <td> -->
+                <!-- <button class="btn btn-sm btn-outline-primary" onclick="handleEdit(5)"><img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected record" class="editjobcode" width="20"></button> -->
+                <!-- <button class="btn btn-sm btn-outline-danger" onclick="handleDelete(5)"> <img src="../images/trash-can-regular-full.svg" alt="Delete icon for selected record" width="20"></button> -->
+            <!-- </td> -->
+        <!-- </tr> -->
+		
+	
+		
+		
+		</tbody>
+		
+		<tfoot style="">
+    <tr>
+      <td colspan="5" style=" border-right: 0px;  border-bottom: 0px; font-size: 13px;   text-align: right;"> <span>Total Staff Cost:</span></td>
+      <td style=" border-right: 0px;  border-left: 0px; border-bottom: 0px; padding-right: 0px !important;  text-align: right;font-size: 13px;"> <span class="total-amount">  <input type="text" value="£2,599.98" aria-label="Total Staff Cost" style="padding-right:5px;" class="form-control form-control-sm "></span></td>
+    </tr>
+  </tfoot>
+		
+                                                        </table>
+                                         
+                                                </div>
+                                                <div style="display: flex;
+                                                    margin-top: 0;
+                                                    margin-bottom: 0;
+                                                   
+                                                    padding: 5px 10px 5px 10px;
+                                                    border-top: 0;
+                                                    justify-content: space-between;
+                                                    align-items: center;
+                                                    border-radius: 0 0 10px 10px;">
+                                                  
+                                                 
+                                                   
+                                                </div> 
+                                            </div>
+                                            
+                        </div>
+				
+						
+										
+				   
+                </section>
+							  
+                                </div>
+                            
+                            
+                            <div class="tab-pane" id="programme-tab">
+                                <!-- <h3>Programme Permissions</h3> -->
+                                <section class="data-section">
+                  
+                  
+					<div>
+							 
+							 <div style="
+					display: flex;
+					justify-content: space-between;
+					align-items: center;				
+					
+					padding: 7px;
+					color: #333;
+					border-radius: 7px 7px 0 0;
+					font-size: 16px;
+					
+					"> 
+
+                                                <h1 class="accordion-header table-heading" id="headingOne">                                               
+                                                  
+                                                </h1>
+                                                <div style="display: flex;flex-direction: row;     justify-content: space-between; align-items: center; ">
+                                                    
+                                            
+                                                        <div class="" style="text-align: right;">
+                                                            <button class="btnBlue" id="addstaffbookedBtn" aria-label="Add staff booked"><img alt="plus icon for add staff booked" src="../images/circle-plus-solid-full-white.svg" width="16px">&nbsp;Add </button>
+                                                        </div>
+
+                                                </div>
+												
+												 </div>
+                                                  
+                                                    <div class="jobcodediv  borderbottom_0 border_1">
+                                                        <table class="table table-striped table-bordered custom-table" style="margin-bottom: 0px; ">
+                                                                <thead class="table-light">
+                                                                    <tr>
+      <th>Code</th>									
+									 <th>Unit Price</th>
+                                    <th>No</th>
+                                     <th>Cost</th>
+                                   	
+  <th>Actions</th>								   
+      </tr>
+                                                                </thead>
+                                                                <tbody id="tableBody">
+																 <tr>
+                                    <td> PT0000								
+									</td>
+                                    <!-- <td>Camelid TB Combined Antibody Test</td> -->
+									   <td style="text-align:right;">£19.53</td>
+                                  
+                                    <td style="text-align:right;">1</td>
+								 <td style="text-align:right;">£19.53</td>
+									  <td>
+                                        <button type="button" class="icon-bg edit-row-btn">
+										<img src="../images/edit_gridicon.svg" alt="edit icon" width="20px" height="20px" title="Edit">
+										</button>
+                                        <button type="button" class=" icon-bg delete-row-btn">
+									<img src="../images/delete_gridicon.svg" alt="delete icon" width="20px" height="20px" title="Delete">
+										</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> TC0025								
+									</td>
+                                    <!-- <td>Salmonella Culture</td> -->
+									   <td style="text-align:right;">£23.66</td>
+                                  
+                                    <td style="text-align:right;">1</td>
+								  <td style="text-align:right;">£23.66</td>
+									 <td>
+                                        <button type="button" class="icon-bg edit-row-btn">
+										<img src="../images/edit_gridicon.svg" alt="edit icon" width="20px" height="20px" title="Edit">
+										</button>
+                                        <button type="button" class=" icon-bg delete-row-btn">
+									<img src="../images/delete_gridicon.svg" alt="delete icon" width="20px" height="20px" title="Delete">
+										</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                      <td> TC0036								
+									</td>
+                                    <!-- <td>Salmonella-PCR conf monophasic</td> -->
+									   <td style="text-align:right;">£115.67</td>
+                                  
+                                    <td style="text-align:right;">1</td>
+								  <td style="text-align:right;">£115.67</td>
+									 <td>
+                                        <button type="button" class="icon-bg edit-row-btn">
+										<img src="../images/edit_gridicon.svg" alt="edit icon" width="20px" height="20px" title="Edit">
+										</button>
+                                        <button type="button" class=" icon-bg delete-row-btn">
+									<img src="../images/delete_gridicon.svg" alt="delete icon" width="20px" height="20px" title="Delete">
+										</button>
+                                    </td>
+                                </tr>
+                             
+    </tbody>
+	<tfoot style="">
+    <tr >
+      <td colspan="3" style=" border-right: 0px;  border-bottom: 0px; font-size: 13px;   text-align: right;"> <span>Year Test Cost Total:</span></td>
+      <td style=" border-right: 0px;  border-left: 0px; border-bottom: 0px; padding-right: 0px !important;  text-align: right;font-size: 13px;"> <span class="total-amount">  <input type="text" value="£158.86" aria-label="Total Staff Costs" style="padding-right:5px;" class="form-control form-control-sm "></span></td>
+    </tr>
+  </tfoot>
+		
+                                                        </table>
+                                         
+                                                </div>
+                                                <div style="display: flex;
+                                                    margin-top: 0;
+                                                    margin-bottom: 0;
+                                                   
+                                                    padding: 5px 10px 5px 10px;
+                                                    border-top: 0;
+                                                    justify-content: space-between;
+                                                    align-items: center;
+                                                    border-radius: 0 0 10px 10px;">
+                                                  
+                                                 
+                                                   
+                                                </div> 
+                                            </div>
+					
+					
+					
+					
+										
+										
+										
+					
+                </section>
+                            </div>
+                            
+                            <div class="tab-pane" id="directorate-tab">
+                                <!-- <h3>Directorate Permissions</h3> -->
+								
+								<section class="data-section">
+                
+				   
+				   
+				   <div>
+							 
+							 <div style="
+					display: flex;
+					justify-content: space-between;
+					align-items: center;				
+					
+					padding: 7px;
+					color: #333;
+					border-radius: 7px 7px 0 0;
+					font-size: 16px;
+					
+					"> 
+
+                                                <h1 class="accordion-header table-heading" id="headingOne">                                               
+                                                  
+                                                </h1>
+                                                <div style="display: flex;flex-direction: row;     justify-content: space-between; align-items: center; ">
+                                                    <div class="col-9" style="padding-top: 0; padding-left: 6px; padding-bottom: 0; display:none">
+                                                        <label for="txtSearchProjectCode" class="sr-only">Search</label>
+                                                        <input type="text" id="txtSearchProjectCode" class="form-control" style="padding: 5px; margin: 5px 0px;" placeholder="Search by jobcode or name or type or workgroup">
+                                                    </div>
+                                            
+                                                        <div class="" style="text-align: right;">
+                                                            <button class="btnBlue" id="addstaffbookedBtn" aria-label="Add staff booked"><img alt="plus icon for add staff booked" src="../images/circle-plus-solid-full-white.svg" width="16px">&nbsp;Add </button>
+                                                        </div>
+
+                                                </div>
+												
+												 </div>
+                                                  
+                                                    <div class="jobcodediv  borderbottom_0 border_1">
+                                                        <table class="table table-striped table-bordered custom-table" style="margin-bottom: 0px; ">
+                                                                <thead class="table-light">
+                                                                    <tr>
+       <th>Animal Type</th>
+									 <th>Rate</th>
+                                    <th>No</th>
+                                     <th>Days</th>
+                                    <th>Cost</th>                                  
+                                 
+  <th>Actions</th>								   								   
+      </tr>
+                                                                </thead>
+                                                                <tbody id="tableBody">
+																 <tr>
+                                    <td> B&B Fixed Price Avian								
+									</td>
+                                    <td style="text-align:right;">£1.04</td>
+									   <td style="text-align:right;">5</td>
+                                    <td style="text-align:right;">5</td>
+                                    <td style="text-align:right;">£26.00</td>
+                                 
+									  <td>
+                                        <button type="button" class="icon-bg edit-row-btn">
+										<img src="../images/edit_gridicon.svg" alt="edit icon" width="20px" height="20px" title="Edit">
+										</button>
+                                        <button type="button" class=" icon-bg delete-row-btn">
+									<img src="../images/delete_gridicon.svg" alt="delete icon" width="20px" height="20px" title="Delete">
+										</button>
+                                    </td>
+                                </tr>
+                                
+                              
+    </tbody>
+	<tfoot style="">
+    <tr>
+      <td colspan="4" style=" border-right: 0px;  border-bottom: 0px; font-size: 13px;   text-align: right;"> <span>Year Animal Costs Total:</span></td>
+      <td style=" border-right: 0px;  border-left: 0px; border-bottom: 0px; padding-right: 0px !important;  text-align: right;font-size: 13px;"> <span class="total-amount">  <input type="text" value="£26.00" aria-label="Total Staff Costs" style="padding-right:5px;" class="form-control form-control-sm "></span></td>
+    </tr>
+  </tfoot>
+		
+                                                        </table>
+                                         
+                                                </div>
+                                              
+                                            </div>
+				   
+				  
+										
+										
+										
+				   
+				   
+                  
+                </section>
+								
+								
+                              
+                            </div>
+                            
+							   <div class="tab-pane" id="testowners-tab">
+							   					   
+<section class="data-section">
+                   <!-- <div style="display: flex; justify-content: space-between; align-items: center;">  -->
+				   <!-- <button class="admin-btn" id="" style="padding: 1px 10px; background: #0d6efd; color: #fff;  font-size: 13px; margin-bottom: 2px;"> -->
+				   <!-- + Add</button> -->
+				   <!-- </div> -->
+				   
+				   <div>
+							 
+							 <div style="
+					display: flex;
+					justify-content: space-between;
+					align-items: center;				
+					
+					padding: 7px;
+					color: #333;
+					border-radius: 7px 7px 0 0;
+					font-size: 16px;
+					
+					"> 
+
+                                                <h1 class="accordion-header table-heading" id="headingOne">                                               
+                                                  
+                                                </h1>
+                                                <div style="display: flex;flex-direction: row;     justify-content: space-between; align-items: center; ">
+                                                    <div class="col-9" style="padding-top: 0; padding-left: 6px; padding-bottom: 0; display:none">
+                                                        <label for="txtSearchProjectCode" class="sr-only">Search</label>
+                                                        <input type="text" id="txtSearchProjectCode" class="form-control" style="padding: 5px; margin: 5px 0px;" placeholder="Search by jobcode or name or type or workgroup">
+                                                    </div>
+                                            
+                                                        <div class="" style="text-align: right;">
+                                                            <button class="btnBlue" id="addstaffbookedBtn" aria-label="Add staff booked"><img alt="plus icon for add staff booked" src="../images/circle-plus-solid-full-white.svg" width="16px">&nbsp;Add </button>
+                                                        </div>
+
+                                                </div>
+												
+												 </div>
+                                                  
+                                                    <div class="jobcodediv  borderbottom_0 border_1">
+                                                        <table class="table table-striped table-bordered custom-table" style="margin-bottom: 0px; ">
+                                                                <thead class="table-light">
+                                                                   <tr>
+									 <th>Description</th>
+									 <th>Cost No</th>
+                                    <th>Cost(inf)</th>
+                                     <th>Account Cat</th>
+                                
+  <th>Actions</th>							   
+      </tr>
+                                                                </thead>
+                                                                <tbody id="tableBody">
+																<tr>
+                                    <td> Consumables									
+									</td>
+                                    <td style="text-align:right;">£25,000.00</td>
+								   <td style="text-align:right;">£25,000.00</td>
+                                    <td>Consumables</td>
+                                  
+									  <td>
+                                        <button type="button" class="icon-bg edit-row-btn">
+										<img src="../images/edit_gridicon.svg" alt="edit icon" width="20px" height="20px" title="Edit">
+										</button>
+                                        <button type="button" class=" icon-bg delete-row-btn">
+									<img src="../images/delete_gridicon.svg" alt="delete icon" width="20px" height="20px" title="Delete">
+										</button>
+                                    </td>
+                                </tr>
+                                
+                              
+    </tbody>
+	<tfoot style="">
+    <tr>
+      <td colspan="2" style=" border-right: 0px;  border-bottom: 0px; font-size: 13px;   text-align: right;"> <span>Year Total Additional Costs:</span></td>
+      <td style=" border-right: 0px;  border-left: 0px; border-bottom: 0px; padding-right: 0px !important;  text-align: right;font-size: 13px;"> <span class="total-amount">  <input type="text" value="£25,000.00" aria-label="Total Staff Costs" style="padding-right:5px;" class="form-control form-control-sm "></span></td>
+    </tr>
+  </tfoot>
+		
+                                                        </table>
+                                         
+                                                </div>
+                                              
+                                            </div>
+				    
+										
+										
+										
+				   
+				   
+                    
+                </section>
+                               
+                            </div>
+							
+							<div class="tab-pane" id="MarkupAndProfit-tab">
+<div class="table-container">
+        <table id="dataTable" class="table table-striped table-bordered custom-table"> 
+            <thead>
+                <tr>
+                    <th rowspan="2" class="year-col">Year</th>
+                    <th colspan="4" class="header-contingency" style="background-color: #f4e89d;">Contingency Markup %</th>
+                    <th colspan="5" class="header-profit" style="background-color: #a8dcd9;">Profit Margin %</th>
+                </tr>
+                <tr>
+                    <th class="sub-header">Time</th>
+                    <th class="sub-header">Tests</th>
+                    <th class="sub-header">Animal</th>
+                    <th class="sub-header">Additional</th>
+                    <th class="sub-header">Time</th>
+                    <th class="sub-header">Tests</th>
+                    <th class="sub-header">Animal</th>
+                    <th class="sub-header">Additional</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background-color: rgba(0, 0, 0, 0.03);">
+                    <td class="year-cell">                        
+                        <span>2025</span>
+                    </td>
+                    <td class="contingency-cell">10.00</td>
+                    <td class="contingency-cell">10.00</td>
+                    <td class="contingency-cell">10.00</td>
+                    <td class="contingency-cell">10.00</td>
+                    <td class="profit-cell">3.50</td>
+                    <td class="profit-cell">3.50</td>
+                    <td class="profit-cell">3.50</td>
+                    <td class="profit-cell">3.50</td>
+                </tr>
+                <tr style="background-color: rgba(0, 0, 0, 0.03);">
+                    <td class="year-cell">
+                      
+                        <span>2026</span>
+                    </td>
+                    <td class="contingency-cell">10.00</td>
+                    <td class="contingency-cell">10.00</td>
+                    <td class="contingency-cell">10.00</td>
+                    <td class="contingency-cell">10.00</td>
+                    <td class="profit-cell">3.50</td>
+                    <td class="profit-cell">3.50</td>
+                    <td class="profit-cell">3.50</td>
+                    <td class="profit-cell">3.50</td>
+                </tr>
+                <tr>
+                    <td class="year-cell">                     
+                        <span>2027</span>
+                    </td>
+                    <td class="contingency-cell">10.00</td>
+                    <td class="contingency-cell">10.00</td>
+                    <td class="contingency-cell">10.00</td>
+                    <td class="contingency-cell">10.00</td>
+                    <td class="profit-cell">3.50</td>
+                    <td class="profit-cell">3.50</td>
+                    <td class="profit-cell">3.50</td>
+                    <td class="profit-cell">3.50</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+							</div>
+							
+                            
+                        </div>
+                    </div>
+					
+					
+					<div class="total-grid-section" style="flex:none;margin-left: 2px; width:245px">
+                    <div class="grid-container">
+				
+                     <div class="right-panel">
+                    <div class="year-totals">
+                        <div style=" font-weight: bold; background: #1d70b8;  color: #ffffff;   padding: 2px 4px;">2026 Year Totals:</div>
+                       <div style="padding:5px;">
+					   <div class="totals-list">
+                            <div class="total-item">
+                                <label>Staff Costs:</label>
+                               
+								<input type="text" value="£30,364.33" readonly="" style="width:130px; text-align: right;">
+                            </div>
+                            <div class="total-item">
+                                <label>Test Costs:</label>
+                               
+								<input type="text" value="£0.00" readonly="" style="width:130px; text-align: right;">
+                            </div>
+                            <div class="total-item">
+                                <label>Animal Costs:</label>
+                             <input type="text" value="£0.00" readonly="" style="width:130px;text-align: right;">
+                            </div>
+                            <div class="total-item">
+                                <label>Additional Costs:</label>
+                             <input type="text" value="£1,000.00" readonly="" style="width:130px;text-align: right;">
+                            </div>
+                            <div class="total-item grand-total">
+                                <label>Grand Totals:</label>
+                             <input type="text" value="£31364.33" readonly="" style="width:130px;text-align: right;">
+                            </div>
+                        </div>
+						</div>
+                    </div>
+                </div>
+                     
+                    </div>
+                </div>
+
+                </div>
+            </div>
+			<div class="action-buttons">
+           
+            <!-- <button class="btn-color" style="background:#0d6efd">update</button> -->
+        </div>
+            
+            <!-- <div class="" style="  position: relative;  top: -10px;    left: 10px;"> -->
+                <!-- <span class="note">Note: This form is only for updating existing user permissions. If new users need to be added, contact the IT dept.</span> -->
+            <!-- </div> -->
+        	
+        <div id="" class="modal" tabindex="-1" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Permission</h5>
+                        <button type="button" class="close"
+						style=" padding: 0px 5px;    border: 1px solid #a8a8a8;    background: #ff4239; color:#fff;  border: none;   border-radius: 0px;" 	onclick="closeEditModal()">×</button>
+                    </div>
+                    <div class="modal-body" id="editModalBody">
+                        <form id="editableGridForm">
+                          
+                            <div class="form-group mb-2">
+                                <label for="WGGrade">WG Grade</label>
+                               	<select  id="selectpermissions">
+									<option  >ADMIN</option>
+									<option selected >ASU</option>
+									<option >B&M</option>						
+									<option >Bact</option>	
+									<option >BDU</option>	
+									<option >Bees</option>	
+									<option >Bees Advice</option>	
+									<option >Bees Wales</option>
+									<option >BTB</option>	
+									<option >Bus Supp </option>	
+									
+									<option >CIT</option>	
+									<option >CITB</option>
+									
+									<option >Comm</option>
+									<option >Corp Finance</option>
+									<option >Corp Office</option>
+								
+									
+								   </select>
+                            </div>
+                         
+                            
+                          
+                            <button type="submit" class="btn btn-primary" onclick="add_row()">Save</button>
+                            <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		
+		 <div id="AddPermissionModal" class="modal" tabindex="-1" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Permission</h5>
+                        <button type="button" class="close"
+						style=" padding: 0px 5px;    border: 1px solid #a8a8a8;  background: #ff4239; color:#fff;  border: none;   border-radius: 0px;" 	onclick="closeEditModal()">×</button>
+                    </div>
+                    <div class="modal-body" id="editModalBody">
+                        <form id="editableGridForm">
+                          
+                            <div class="form-group mb-2">
+                                <!-- <label for="WGGrade">Resource Center Permission</label> -->
+                               	<select  id="selectpermission_value" value="" >
+									<option >ADMIN</option>
+									<option >ASU</option>									<option >B&M</option>						
+									<option >Bact</option>	
+									<option >BDU</option>	
+									<option >Bees</option>	
+									<option >Bees Advice</option>	
+									<option >Bees Wales</option>
+									<option >BTB</option>	
+									<option >Bus Supp </option>	
+									
+									<option >CIT</option>	
+									<option >CITB</option>
+									
+									<option >Comm</option>
+									<option >Corp Finance</option>
+									<option >Corp Office</option>
+								
+									
+								   </select>
+                            </div>
+                         
+                            
+                          
+                            <span type="submit" class="btn btn-primary" onclick="addRow()">Save</span>
+                            <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+ 
+ 
+  <div id="ResourcePermissionModal" class="modal" tabindex="-1" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Permission</h5>
+                        <button type="button" class="close"
+						style=" padding: 0px 5px;    border: 1px solid #a8a8a8;  background: #ff4239; color:#fff;  border: none;   border-radius: 0px;" 	onclick="closeEditModal()">×</button>
+                    </div>
+                    <div class="modal-body" id="editModalBody">
+                        <form id="editableGridForm">
+                          
+                            <div class="form-group mb-2">
+                                <label for="WGGrade">WG Grade</label>
+                               	<select  id="wggrade_value" value="" >
+									<option >ADMIN</option>
+									<option >ASU</option>									<option >B&M</option>						
+									<option >Bact</option>	
+									<option >BDU</option>	
+									<option >Bees</option>	
+									<option >Bees Advice</option>	
+									<option >Bees Wales</option>
+									<option >BTB</option>	
+									<option >Bus Supp </option>	
+									
+									<option >CIT</option>	
+									<option >CITB</option>
+									
+									<option >Comm</option>
+									<option >Corp Finance</option>
+									<option >Corp Office</option>
+								
+									
+								   </select>
+                            </div>
+                         
+                            
+                          
+                            <span type="submit" class="btn btn-primary" onclick="">Save</span>
+                            <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+	   
+    </div>
+					
+                    </div>
+            </div>
+            </div>
+ 
+
+        </div>
+ 
+	   
+    </main>
+			
+			</div>
+			
+			
+           
+        </div>
+    </div>
+	
+	<div class="footer">
+	© Copyright Defra 2025
+		</div>
+		
+		
+      <div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title" style="margin: 0;" id="exampleModalLabel">Add Staff Booked</h3>
+                    <button type="button" class="btn-close btn-red" onclick="closeModal()">X</button>
+                </div>
+                <div class="modal-body" style="padding-top: 5px;">
+                    <form class="row" id="formAddJobcode">
+					
+					<div class="col-12">
+                            <label for="modal-WGgrade" class="form-label p-0">WG Grade:</label>
+                            <!-- <input type="text" class="form-control" id="modal-staffname"> -->
+							
+							<select id="modal-WGgrade" name="" class="form-select" aria-label="WGgrade">
+							<option value=""></option>
+  <option value="A_AS2">A_AS2</option>
+ <!-- <option value="A_BAC1,General">A_BAC1,General | A_BAC1 | 3714</option> -->
+<option value="F_AS2">F_AS2</option>
+<option value="E_SSP1">E_SSP1</option>
+
+</select>
+							
+							
+                        </div>
+					
+                        <div class="col-12">
+                            <label for="modal-staffname" class="form-label p-0"> Name:</label>
+                            <!-- <input type="text" class="form-control" id="modal-staffname"> -->
+							
+							<select id="modal-staffname" name="" class="form-select" aria-label="StaffName">
+							<option value=""></option>
+  <option value="App_admin">App_admin</option>
+ <!-- <option value="A_BAC1,General">A_BAC1,General | A_BAC1 | 3714</option> -->
+<option value="CAPS">CAPS</option>
+
+</select>
+							
+							
+                        </div>
+                        <div class="col-12">
+                            <label for="modal-rate" class="form-label">Rate:</label>
+                            <!-- <input type="text" class="form-control" id="modal-name"> -->
+                         
+							 <input type="text" class="form-control" id="modal-rate">
+                        </div>
+                        <div class="col-12">
+                            <label for="modal-hrs" class="form-label">Hrs</label>
+                            <input type="text" class="form-control" id="modal-hrs">
+                        </div>
+                        <div class="col-12">
+                            <label for="modal-days" class="form-label">Days</label>
+                            <input type="text" class="form-control" id="modal-days">
+                        </div>
+						
+						<div class="col-12">
+                            <label for="modal-staffcost" class="form-label">Staff Cost</label>
+                            <input type="text" class="form-control" id="modal-staffcost">
+                        </div>
+                      
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btnCancel" onclick="closeModal()">Cancel</button>
+                    <button class="btnBlue" id="modalsaveBtn">Save</button>
+                    <button class="btnBlue" id="updateBtn" style="display: none;">Update</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+		
+		
+		
+		<div class="modal fade" id="AddYearModal" tabindex="-1" aria-labelledby="AddYearModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title" style="margin: 0;" id="exampleModalLabel">Project Rates</h3>
+                    <button type="button" class="btn-close btn-red" onclick="closeModalYear()">X</button>
+                </div>
+                <div class="modal-body" style="padding-top: 5px;">
+                   
+				   
+				   <form id="editableGridForm">
+                          <div class="">
+       
+        
+        <div class="header-inputs" style="margin-bottom: 10px;s">
+            <div class="input-group" style="display:inline;">
+                <label for="project" style="  margin-right: 12px;">Project</label>
+                <input type="text" id="project" value="2024/122c">
+            </div>
+            <div class="input-group" style="display:inline;">
+                <label for="year" style=" margin-right: 12px; margin-left: 20px;">Year</label>
+                <input type="text" id="year" value="2039">
+            </div>
+        </div>
+        
+        <div class="rates-container">
+            <div class="rates-section">
+                <h3>Contingency Mark-up %</h3>
+                <div class="rate-row">
+                    <label>Time</label>
+                    <input type="number" value="15">
+                </div>
+                <div class="rate-row">
+                    <label>Tests</label>
+                    <input type="number" value="15">
+                </div>
+                <div class="rate-row">
+                    <label>Animals</label>
+                    <input type="number" value="15">
+                </div>
+                <div class="rate-row">
+                    <label>Additional</label>
+                    <input type="number" value="15">
+                </div>
+            </div>
+            
+            <div class="rates-section">
+                <h3>Profit Margin %</h3>
+                <div class="rate-row">
+                    <label>Time</label>
+                    <input type="number" value="3.5">
+                </div>
+                <div class="rate-row">
+                    <label>Tests</label>
+                    <input type="number" value="3.5">
+                </div>
+                <div class="rate-row">
+                    <label>Animals</label>
+                    <input type="number" value="3.5">
+                </div>
+                <div class="rate-row">
+                    <label>Additional</label>
+                    <input type="number" value="3.5">
+                </div>
+            </div>
+        </div>
+        
+     
+    </div>
+                       
+                         
+                           
+                        </form>
+				   
+				   
+				   
+                </div>
+                <div class="modal-footer">
+                    <button class="btnCancel" onclick="closeModalYear()">Cancel</button>
+                    <button class="btnBlue" id="modalsaveBtn">Save</button>
+                    <button class="btnBlue" id="updateBtn" style="display: none;">Update</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+		
+
+    <!-- Bootstrap JS (required for dropdowns) -->
+	
+   
+	  <script>
+          function toggleSidebar() {
+            const sidebar = document.querySelector('.sidenav');
+            sidebar.classList.toggle('collapsed');
+        }
+    </script>
+	
+     <script>
+	
+	<!-- function store_value(){ -->
+	<!-- const mySelect = document.getElementById("select_permissions"); -->
+	<!-- const myInput = document.getElementById("myInput"); -->
+
+	<!-- mySelect.addEventListener("change", function () { -->
+  <!-- const selectedValue = this.value; // 'this' refers to the mySelect element -->
+  <!-- myInput.value = selectedValue; -->
+<!-- }); -->
+	
+	<!-- } -->
+
+ <!-- function addRow() { -->
+ 
+ <!-- const mySelect = document.getElementById("selectpermission_value").value; -->
+ <!-- console.log(mySelect); -->
+ 
+ 
+ 
+            <!-- const table = document.getElementById("wgStaffGrid").getElementsByTagName('tbody')[0]; -->
+            <!-- const newRow = table.insertRow(); -->
+            
+            <!-- const cell1 = newRow.insertCell(0); -->
+            <!-- const cell2 = newRow.insertCell(1); -->
+			<!-- cell2.style.textAlign = "center"; -->
+            <!-- <!-- const cell3 = newRow.insertCell(2); --> -->
+
+            <!-- cell1.innerHTML = "<span id='myInput'>"+mySelect+"</span>"; -->
+            <!-- <!-- cell2.innerHTML = ""; --> -->
+            <!-- cell2.innerHTML = ' <button type="button"  class="btn btn-sm btn-danger delete-row-btn"><i class="fa fa-trash"></i> Delete</button>'; -->
+     
+	 <!-- closeEditModal(); -->
+	  <!-- <!-- document.getElementById("select_permissions").value= ""; --> -->
+		
+		<!-- } -->
+
+
+        function showValue() {
+            const selectBox = document.getElementById("project");
+            const selectedValue = selectBox.value;
+            const selectedText = selectBox.options[selectBox.selectedIndex].text;
+
+
+            const selectBoxProgram = document.getElementById("program");
+            const selectedValueProgram = selectBoxProgram.value;
+            const selectedTextProgram = selectBoxProgram.options[selectBoxProgram.selectedIndex].text;
+
+
+            document.getElementById("resultproject").innerHTML = `<b>${selectedText}</b>`;
+            document.getElementById("resultprogram").innerHTML = `<b>${selectedTextProgram}</b>`;
+        }
+    </script>
+	
+	
+	
+
+	  
+	   
+   
+	
+	
+	<script>
+	 function addStaffRow() {
+ 
+ const mySelect = document.getElementById("WGgradevalue").value;
+ const staffTable_name = document.getElementById("staff_name").value;
+ const staffTable_rate = document.getElementById("rate_value").value;
+ const staffTable_hour = document.getElementById("hour_value").value;
+ const staffTable_days = document.getElementById("days_value").value;
+ const staffTable_cost = document.getElementById("hrspaid_value").value;
+ 
+ console.log(mySelect);
+ 
+ 
+ 
+            const table = document.getElementById("staffTableBody_data").getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+			const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+			   const cell5 = newRow.insertCell(4);
+			      const cell6 = newRow.insertCell(5);
+				     const cell7 = newRow.insertCell(6);
+			cell1.style.textAlign = "left";
+			cell2.style.textAlign = "left";
+			cell3.style.textAlign = "right";
+			cell4.style.textAlign = "right";
+			cell5.style.textAlign = "right";
+			cell6.style.textAlign = "right";
+            <!-- const cell3 = newRow.insertCell(2); -->
+
+            cell1.innerHTML = "<span id='myInput' >"+mySelect+"</span>";
+			cell2.innerHTML = "<span id='myInput' >"+staffTable_name+"</span>";
+			cell3.innerHTML = "<span id='myInput' >£"+staffTable_rate+"</span>";
+			cell4.innerHTML = "<span id='myInput'>"+staffTable_hour+"</span>";
+			cell5.innerHTML = "<span id='myInput'>"+staffTable_days+"</span>";
+			cell6.innerHTML = "<span id='myInput'>£"+staffTable_cost+"</span>";
+			
+            <!-- cell2.innerHTML = ""; -->
+            cell7.innerHTML = '<button type="button" class="btn btn-sm btn-info edit-row-btn"><i class="fa fa-edit"></i></button> <button type="button" class="btn btn-sm btn-danger delete-row-btn"><i class="fa fa-trash"></i></button>';
+     
+	closeaddstaffModal();
+	  <!-- document.getElementById("select_permissions").value= ""; -->
+		
+		}
+	</script>
+ <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/costbookpopup.js"></script>
+	  <script src="../js/script_userpermission.js"></script>
+</body>
+
+</html>

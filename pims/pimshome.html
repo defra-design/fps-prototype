@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css/bootstrap.min.css">	
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet" />
+  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+	
+    <link rel="stylesheet" href="../css/pims_style/style.css" />
+	
+    <link href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
+
+    <style>
+        .custom-table thead th,
+        .timecode-table thead th {
+            position: sticky;
+            top: 0;
+            background-color: #f1f1f1;
+            z-index: 10;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .custom-table th,
+        .custom-table td,
+        .timecode-table th,
+        .timecode-table td {
+            padding: 11px 10px !important;
+            border: 1px solid #ddd;
+            white-space: nowrap;
+        }
+
+        .custom-table thead th,
+        .timecode-table thead th {
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+            background: #edf4ff !important;
+            border: 1px solid #dee2e6 !important;
+        }
+
+        #tblmaintenance thead > tr > th {
+            font-size: 16px;
+            padding: 10px !important;
+        }
+
+        tbody#tableBody > tr >td {
+            padding: 5px 10px !important;
+        }
+
+        .main-nav {
+    display: flex;
+    background-color: #1d70b8;
+    padding: 0;
+    margin: 0;
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+}
+
+ 
+        
+.nav-item {
+    position: relative;
+    display: flex;
+}
+
+.nav-button {
+    background-color: #1d70b8;
+    color: white;
+    border: none;
+    padding: 12px 20px 12px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav-button:hover {
+    background-color: #003078;
+}
+
+.nav-button.active {
+    background-color: #357abd;
+}
+
+.nav-button:focus {
+    background: #003078;
+}
+    </style>
+ <link rel="stylesheet" href="../css/main_style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" />
+                </div>
+                <!-- <div class="menu-icon" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> -->
+                <div class="pims-log">
+                    <span>PIMS</span>
+                </div>
+                <p>Project Information Management System</p>
+            </div>
+             <div class="btn-group" style=" display: flex; align-items: center; font-size:16px;">
+                Meg Ved 
+				
+				<button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                   <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24"> <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px" height="30px">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button>
+                    </li>
+                    <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button>
+                    </li> -->
+                    <li><a href="../index.html" class="dropdown-item" type="button">
+                      <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
+                            Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg main-nav">
+        <div class="nav-item dropdown">
+            <a class="nav-link" href="pimshome.html" style="text-decoration: none;">
+               Choose Project
+            </a>
+        </div>
+         <div class="nav-item dropdown">
+            <a class="nav-link" href="#" style="text-decoration: none;">
+               Print Reports 
+            </a>
+        </div>
+		 <div class="nav-item dropdown">
+            <a class="nav-link" href="#" style="text-decoration: none;">
+               Publications 
+            </a>
+        </div>
+		 <div class="nav-item dropdown">
+            <a class="nav-link" href="#" style="text-decoration: none;">
+               Maintenance 
+            </a>
+        </div>
+		 <div class="nav-item dropdown">
+            <a class="nav-link" href="#" style="text-decoration: none;">
+               Pop-up Data Check 
+            </a>
+        </div>
+    </nav>
+
+    <div class="d-flex">
+
+
+        <!-- <main class="main-content">
+        <div class="container-fluid">
+            <h2>Welcome to NexusFlow</h2>
+            <p class="text-muted">Streamline your workflow with our intuitive dashboard.</p>
+        </div>
+        
+       </main> -->
+
+        <main class="main-content" style="padding-left: 10px;">
+            <div>
+                <h5 style="padding: 0px 0 15px 0px;
+    border-bottom: 2px solid #1d70b8;
+    margin-bottom: 10px;
+    margin-left: 3px;">Select Project</h5>
+            </div>
+            <div class="container-fluid" style="padding-left: 0;">
+
+                <div style="width: 100%;  margin-left: 3px;">
+
+
+                    <div class="search-panel">
+                        <div class="container-fluid display-flex"
+                            style="justify-content: space-between; padding-right: 0;padding-bottom: 1px;">
+                            <div class="col-3 margin-left-10">
+
+                                <div class="input-group">
+
+                                    <input type="text" id="txtsearchBox" class="form-control"
+                                        placeholder="Search by Project"
+                                        aria-label="Amount (to the nearest dollar)">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"> <i class="fas fa-search"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+                            <div class="col-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdactive"
+                                        value="not_specified">
+                                    <label class="form-check-label" for="inlineRadio1">Active</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdall"
+                                        value="all" checked>
+                                    <label class="form-check-label" for="inlineRadio2">All</label>
+                                </div>
+
+                            </div>
+                            <div>
+                                <button class="btnBlue" id="addBtn">
+								<img alt="plus icon for add staff booked" src="../images/circle-plus-solid-full-white.svg" width="16px">&nbsp;New project</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div style="max-height: 370px;
+    height: 370px;
+    overflow-y: auto; 
+    border-top:0 !important;
+        border-left: 1px solid #ccc !important;
+        border-right: 1px solid #ccc !important;
+    border-bottom: 1px solid #ccc !important;">
+                    <table class="table tbl-border mb-0 custom-table" id="tblmaintenance">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Project</th>
+                                <th>Program</th>
+                                <th>Customer</th>
+                                <th>On FPS</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+
+                    </table>
+                    </div>
+                    <div style="    display: flex;
+                                        margin-top: 0;
+                                        margin-bottom: 14px;
+                                        border: 1px solid #ccc;
+                                        padding: 10px;
+                                        border-top: 0;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        border-radius: 0 0 10px 10px;">
+                        <div class="col-2">
+
+                            <select id="recordsPerPage" class="form-select w-auto d-inline-block">
+                                <option>10</option>
+                                <option selected>20</option>
+                                <option>30</option>
+                            </select>
+                        </div>
+                        <nav>
+                            <div id="pagination" class="pagination gap-2"></div>
+                        </nav>
+
+
+                    </div>
+                </div>
+
+
+             
+            </div>
+        </main>
+        <!--Slideout form-->
+        
+       
+        <div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header flex-space-center">
+                        <h5 class="modal-title" style="margin: 0;" id="exampleModalLabel">New Project</h5>
+                        <button type="button" class="btn-close" onclick="closeModal()"> </button>
+                    </div>
+                    <div class="modal-body" style="padding-top: 5px;">
+                        <form class="row" id="formAddJobcode">
+                            <div class="col-12 mb-2">
+                                <label for="txtProject" class="form-label mb-0">Project:</label>
+                                <input type="text" class="form-control" id="txtProject">
+                            </div>
+                            <div class="col-12 mb-2">
+                                <label for="txtTitle" class="form-label mb-0">Title:</label>
+                                <!-- <input type="text" class="form-control" id="modal-name"> -->
+                                <textarea class="form-control" id="txtTitle" rows="3"></textarea>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <label for="txtStatus" class="form-label mb-0">Status</label>
+                                <select required="" class="form-select" id="dpStatus">
+                                    <option value="">--select project--</option>
+                                    <option value="Rejected">Rejected</option>
+                                    <option value="Proposed">Proposed</option>
+                                </select>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <label for="txtCostbookNo" class="form-label mb-0">Cost book No</label>
+                                <input type="text" class="form-control" id="txtCostbookNo">
+                            </div>
+                            <div class="col-6 mb-2">
+                                <label for="txtDisease" class="form-label mb-0">Disease</label>
+                                <input type="text" class="form-control" id="txtDisease">
+                            </div>
+                            <div class="col-6 mb-2 mb-2">
+                                <label for="txtProgram" class="form-label mb-0">Program</label>
+                                <select required="" class="form-select" id="dpProgram">
+                                    <option value="">--select project--</option>
+                                    <option value="ADMIN">ADMIN</option>
+                                    <option value="AHVLA_Prog">AHVLA_Prog</option>
+                                    <option value="ASU">ASU</option>
+                                    <option value="B&M">B&M</option>
+                                    <option value="Bact">Bact</option>
+                                    <option value="Bee Insp">Bee Insp</option>
+                                    <option value="BTB">BTB</option>
+                                    <option value="ClubFive">ClubFive</option>
+                                    <option value="Comm">Comm</option>
+                                    <option value="Commercial">Commercial</option>
+                                    <option value="DoES">DoES</option>
+                                    <option value="END_RES">END_RES</option>
+                                    <option value="END_SURV">END_SURV</option>
+                                    <option value="EU Exit">EU Exit</option>
+                                    <option value="EU_PROG">EU_PROG</option>
+                                    <option value="FES_RES">FES_RES</option>
+                                </select>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <label for="dpCustomer" class="form-label mb-0">Customer</label>
+                                <select required="" class="form-select" id="dpCustomer">
+                                    <option value="">--select project--</option>
+                                    <option value="ABBOTT Diagnostics">ABBOTT Diagnostics</option>
+                                    <option value="ADAS">ADAS</option>
+                                    <option value="AFBI">AFBI</option>
+                                    <option value="AFCD Hong Kong">AFCD Hong Kong</option>
+                                    <option value="AG Research">AG Research</option>
+                                    <option value="Agricultural Unversity of Iceland">Agricultural Unversity of Iceland
+                                    </option>
+                                    <option value="AHVG">AHVG</option>
+                                    <option value="AHVLA">AHVLA</option>
+                                    <option value="AHWP">AHWP</option>
+                                </select>
+                            </div>
+
+
+                            <div class="col-6 mb-2">
+                                <label for="textManager" class="form-label mb-0">Manager</label>
+                                <input type="text" class="form-control" id="textManager">
+                            </div>
+                            <div class="col-12 mb-2">
+                                <label for="proposal" class="form-label mb-0">Reason for new proposal</label>
+                                <textarea type="text" class="form-control"></textarea>
+                            </div>
+                            <!-- <div class="mt-2">
+                        <button class="btn btn-primary" type="submit" >Save</button> 
+                        </div> -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                        <button class="btn btn-primary" id="modalsaveBtn">Save</button>
+                        <button class="btn btn-primary" id="updateBtn" style="display: none;">Update</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="footer">
+        &copy; Copyright Defra 2025
+    </div>
+
+   <script src="../js/bootstrap.bundle.min.js">  </script>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('collapsed');
+        }
+
+        function toggleSubmenu(submenuId) {
+            const submenu = document.getElementById(submenuId);
+            const menuItem = submenu.previousElementSibling;
+
+            // Close all other submenus
+            const allSubmenus = document.querySelectorAll('.submenu');
+            const allMenuItems = document.querySelectorAll('.menu-item');
+
+            allSubmenus.forEach(menu => {
+                if (menu.id !== submenuId) {
+                    menu.classList.remove('open');
+                }
+            });
+
+            allMenuItems.forEach(item => {
+                if (item !== menuItem) {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Toggle current submenu
+            submenu.classList.toggle('open');
+            menuItem.classList.toggle('active');
+        }
+
+        //      new TomSelect("#projectSelect",{
+        //         // onItemAdd() {
+        //         //         this.setTextboxValue("");  // clear search box
+        //         // },
+        //         onItemAdd: function () {
+        //                 this.blur();
+        //             }
+        // });
+    </script>
+    <script src="../js/script.js"></script>
+    <script src="../js/projectlist.js"></script>
+</body>
+
+</html>

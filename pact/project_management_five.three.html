@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
+    <link rel="stylesheet" href="../pact/nav_menu/navstyle.css" />
+    <script src="../pact/nav_menu/menutemplate.js"></script>
+    <link rel="stylesheet" href="../css/pact_styles/style.css" />
+    <title>2025-2026 : Project Management - PACT</title>
+    <style>
+        .dropdown-toggle::after {
+            border: 0;
+        }
+    </style>
+    <script>
+
+
+        function toggleSideform() {
+            const sideform = document.querySelector('.sideform');
+            sideform.classList.toggle('open');
+            const sidebar = document.querySelector('.backdrop');
+            sidebar.classList.toggle('open');
+        }
+
+        // function tablerowClick(str) {
+        //     document.getElementById("project-code").value = str;
+        //     document.getElementById("txt-description").value = "Sample comments for " + str + " goes here";
+        //     document.getElementById("budget-cm").value = "£122";
+
+        //     const rows = document.getElementsByTagName("tr"); // HTMLCollection
+        //     for (let i = 0; i < rows.length; i++) {
+        //         rows[i].addEventListener("click", function () {
+        //             const tds = this.getElementsByTagName("td");
+        //             for (let j = 0; j < tds.length; j++) {
+        //                 tds[j].classList.toggle("tdbg");
+        //             }
+        //         });
+        //     }
+
+
+        // }
+
+
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidenav');
+            sidebar.classList.toggle('collapsed');
+        }
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+
+    <header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
+                </div>
+                <!-- <div class="menu-icon" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> -->
+                <div class="pims-log">
+                    <span>PACT</span>
+                </div>
+                <!-- <p style="color: #000;">Project Accounting for Cost and Time</p> -->
+                <!-- <p>PACT</p> -->
+                 <div class="pims-log" style="width: 160px;font-size: 16px;">
+                 <select aria-label="Select year" class="pims-log" style="border: 0;border-radius: 0;margin-left: 0px;width: 150px;outline: 0;">
+				    <option>2017-2018</option>
+					<option>2018-2019</option>
+				 	<option>2019-2020</option>
+				 	<option>2020-2021</option>
+				 	<option>2021-2022</option>
+				 	<option>2022-2023</option>
+					<option>2023-2024</option>
+					<option>2024-2025</option>
+					<option selected>2025-2026</option>
+					</select>
+					
+                </div>
+            </div>
+
+        </div>
+    </header>
+  
+    <div id="header"></div>
+
+    <script src="../pact/nav_menu/script.js"></script>
+
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+
+    <div style="min-height: 533px;">
+        <div class="container-fluid m-0 p-0" id="section1">
+            <h1 class="page-heading">
+                 Project Maintenance (not portfolios) 
+            </h1>
+        </div>
+
+        <div class="align-items-start m-10" id="search-grid">
+            <div class="search-panel">
+                <div class="display-flex" style="gap: 18px;    width: 100%;">
+                    <div class="m-0 p-0" style="display: flex;  align-items: center;justify-content: flex-start;">
+                        <label class="col-form-label p-0" for="dpSearchtype" style="font-weight: 500; width:80px;">Search by</label>
+                        <select class="form-select" id="dpSearchtype" style="width: 180px;border-radius: 5px;border:1px solid #919191;">
+                            <option value="projectcode">Project code</option>
+                            <option value="jobcode">Job code</option>
+                        </select>
+                    </div>
+                    <div class="col-3 m-0 p-0 margin-left-10 display-flex" style="margin: 0px;">
+                        <!-- <input type="text" class="form-control" id="formGroupExampleInput"
+                                    placeholder="Search by project name/title/disease/status/contract"> -->
+
+                        <div class="input-group" style="width:100%; display: flex;align-items: center;">
+                            <!-- <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div> -->
+                            <input type="text" id="searchBox" class="form-control"
+                                placeholder="Search by Code or Name" aria-label="Amount (to the nearest dollar)"
+                                style="border: 1px solid #919191;">
+                            <!--<div class="input-group-append">
+                                <span class="input-group-text"> <i class="fas fa-search"></i>
+                                </span>
+                            </div>-->
+                        </div>
+
+
+                    </div>
+                    <div class="col-6 m-0 p-0 margin-left-10 display-flex" style="margin: 0px;">
+                        <!-- data-bs-toggle="modal" data-bs-target="#newexampleModal" -->
+                        <button class="btn btn-primary" onclick="showHideNewForm('open')">
+						<img alt="plus icon for add staff booked" src="../images/circle-plus-solid-full-white.svg" width="16px">
+                            &nbsp;New Project</button>
+                    </div>
+                    <!-- <div class="col-3 display-flex">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>--select project status--</option>
+                                    <option value="Active">Active</option>
+                                    <option value="All">All</option>
+                                </select>
+                            </div>
+                            <div class="document-foler">
+                                <button class="btn btn-link document-foler-link"><i
+                                        class="fa-regular fa-folder-open"></i><span style="margin-left:4px;">Document
+                                        Folder</span></button>
+                            </div> -->
+                </div>
+            </div>
+            <div id="divprojectcode">
+                <div style="border: 1px solid #1d70b8 !important;   max-height: 300px; overflow-y: auto; border-bottom: 0 !important;
+    border-top: 0 !important;   height: 300px;">
+                <table class="table tbl-border mb-0 custom-table" id="tblmaintenance" style="border-top: 0;">
+                    <thead class="thead-light" >
+                        <tr>
+                          <!-- <th >Id</th> -->
+                            <th style="text-align:left; width:296px;">Project code</th>
+                            <th style="text-align:left">Title</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+                <!-- Pagination -->
+                <div style="    display: flex;
+                    margin-top: 0; 
+                    border-top: 0;
+                    border: 1px solid #1d70b8 !important;
+                    padding: 0 10px;
+                    
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 0 0 10px 10px;">
+               
+
+                    <div class="col-12 col-md-4 m-0 p-0" style="display:flex">
+                    <div class="display-flex align-items-center">
+                        <label for="recordsPerPage" class="me-2 mb-0 col-8 col-form-label display-flex">Records per page:</label>
+                        <div class="col-5 pl-0">
+                        <select id="recordsPerPage"  aria-label="Select number of records per page" class="form-control flex-grow-1" style="width:auto;">
+                            <option>5</option>
+                                                <option selected>10</option>
+                                                <option>15</option>
+                        </select>
+                        </div>
+                        </div>
+                       </div>
+ 
+                    <nav>
+                        <div id="pagination" class="pagination gap-2"></div>
+                    </nav>
+   
+
+                </div>
+            </div>
+
+
+            <div id="divjobcode">
+                 <div style="border: 1px solid #1d70b8 !important;   max-height: 300px; overflow-y: auto; border-bottom: 0 !important;
+                        border-top: 0 !important;   height: 300px;">
+                <table class="table tbl-border mb-0 custom-table" id="tbljobcode">
+                    <thead class="thead-light">
+                        <tr>
+                            <!-- <th >Id</th> -->
+                            <th style="text-align:left;width:296px;">Job code</th>
+                            <th style="text-align:left;" >Parent Project</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBodyjobcode"></tbody>
+                </table>
+                </div>
+                <!-- Pagination -->
+                <div style="    display: flex;
+                    margin-top: 0;
+                    margin-bottom: 14px;
+                    border: 1px solid #ccc;
+                    padding: 10px;
+                    border-top: 0;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 0 0 10px 10px;">
+                    <!-- <div>
+                        <label for="recordsPerPagetwo">Records per page:</label>
+                        <select id="recordsPerPagetwo" class="form-select w-auto d-inline-block" aria-label="Select number of records per page">
+                            <option>5</option>
+                            <option selected>10</option>
+                            <option>15</option>
+                        </select>
+                    </div> -->
+
+                   <div class="m-0 p-0 col-3" style="/* display:flex; */">
+                        <div class="display-flex align-items-center">
+                            <label for="recordsPerPagetwo" style="width: 38%;" class="me-2 mb-0 col-4 col-form-label dispxlay-flex">Records per page:</label>
+                            <div class="col-2 p-0">
+                                <select id="recordsPerPagetwo" aria-label="Select number of records per page" class="form-control flex-grow-1" style="width:auto;">
+                                    <option>5</option>
+                                    <option selected="">10</option>
+                                    <option>15</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav>
+                        <div id="paginationtwo" class="pagination gap-2"></div>
+                    </nav>
+
+  
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright Defra 2025
+    </div>
+    <script>
+        document.getElementById("divprojectcode").style.display = "block";
+        document.getElementById("divjobcode").style.display = "none";
+        //   document.getElementById("dpselectproject").addEventListener("change", function () {
+        //     const selectedValue = this.value;
+        let selectedValue = null;
+
+        // Table records
+        // JSON Records
+        let jsonData = [{ "id": 1, "jobcode": "AB0G0508", "name": "Welsh Government for assistance with Bacterial Pathogens and Animal By-products" },
+        { "id": 2, "jobcode": "ABSE4406", "name": "Assessment of Management Measure to Reduce Exotic Disease" },
+        { "id": 3, "jobcode": "AH0002", "name": "Ear Tagging Project to be journalled to cc 36216" },
+        { "id": 4, "jobcode": "AH0006", "name": "RADAR support activities for V&SPA" },
+        { "id": 5, "jobcode": "AH0009", "name": "Cost of animal colllection and disposal for EIA(SV3300)" },
+        { "id": 6, "jobcode": "AH0011", "name": "Support for ESRG London" },
+        { "id": 7, "jobcode": "AH0032", "name": "BCP-Wildlife" },
+        { "id": 8, "jobcode": "AH0033", "name": "BCP-Operations" },
+
+        { "id": 9, "jobcode": "APHAASHOR", "name": "Asian Hornet Spring Monitoring/ Surveilance" },
+        { "id": 10, "jobcode": "APHAASHOR", "name": "Asian Hornet Spring Monitoring/ Surveilance 2025-6" },
+        { "id": 11, "jobcode": "APHAB00000", "name": "Animal by products" },
+        { "id": 12, "jobcode": "APHABC0000", "name": "Border Controls Service Level Agreement" },
+        { "id": 13, "jobcode": "APHAEM0000", "name": "Egg Marketing" },
+
+        { "id": 14, "jobcode": "APHAEUTAH", "name": "GB-NI MOVEMENT ASSISTANCE SCHEME - DEFRA GB-NI" },
+        { "id": 15, "jobcode": "APHAH0038", "name": "Brucellosis Survey Review 2016" },
+        { "id": 16, "jobcode": "APHAH0040", "name": "NCP Control Database Devt & Implementation" }
+        ];
+        //   for (let i = 1; i <= 52; i++) {
+        //     jsonData.push({ id: i, name: "Student " + i, city: "City " + i });
+        //   }
+        let filteredData = [...jsonData]; // for search
+        let currentPage = 1;
+        let recordsPerPage = 10;
+
+        function displayTable() {
+            const start = (currentPage - 1) * recordsPerPage;
+            const end = start + recordsPerPage;
+            const pageRecords = filteredData.slice(start, end);
+
+            document.getElementById("tableBody").innerHTML =
+                pageRecords.map(x => `
+
+                    <tr>
+                        <!-- <td style="width:50px;">${x.id}</td> -->
+                        <td><a class="viewLink" href="#" data-obj='${JSON.stringify(x)}'>${x.jobcode}</a></td>
+                        <td>${x.name}</td>
+                    </tr>
+                    `).join("");
+
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredData.length / recordsPerPage);
+            const container = document.getElementById("pagination");
+            container.innerHTML = "";
+
+            // First
+            container.innerHTML += `<button class="btn btn-outline-primary" onclick="goToPage(1)">First</button>`;
+
+            // Previous
+            container.innerHTML += `<button class="btn btn-outline-primary" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? "disabled" : ""}>Previous</button>`;
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                container.innerHTML += `<button class="btn btn-outline-primary ${i === currentPage ? "active" : ""}" onclick="goToPage(${i})">${i}</button>`;
+            }
+
+            // Next
+            container.innerHTML += `<button class="btn btn-outline-primary" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? "disabled" : ""}>Next</button>`;
+
+            // Last
+            container.innerHTML += `<button class="btn btn-outline-primary" onclick="goToPage(${totalPages})">Last</button>`;
+        }
+
+        function goToPage(page) {
+            const totalPages = Math.ceil(filteredData.length / recordsPerPage);
+            if (page < 1) page = 1;
+            if (page > totalPages) page = totalPages;
+
+            currentPage = page;
+            displayTable();
+        }
+
+        // Search function
+
+        // Records per page event
+        document.getElementById("recordsPerPage").addEventListener("change", function () {
+            recordsPerPage = parseInt(this.value);
+            currentPage = 1;
+            displayTable();
+        });
+
+        displayTable();  // first load
+
+        document.addEventListener("click", e => {
+            if (e.target.classList.contains("viewLink")) {
+                e.preventDefault();
+
+                const json = e.target.getAttribute("data-obj");
+                const encoded = btoa(json); // convert to Base64
+
+                //window.location.href = "project_maintenance_five.three.one.html?data=" + encoded;
+               // window.location.href = "project_maintenance_five.two.html?data=" + encoded;
+                window.location.href = "project_management_five.opttwo.html?data=" + encoded;
+            }
+        });
+
+
+        // fetch("navigation_menus/index.html")
+        //             .then(res => res.text())
+        //             .then(data => {
+        //             document.getElementById("header").innerHTML = data;
+
+        //                 // Execute <script> tags inside fetched HTML
+        //             document.querySelectorAll("#header script").forEach(oldScript => {
+        //             const newScript = document.createElement("script");
+        //             newScript.text = oldScript.text;
+        //             document.body.appendChild(newScript);
+        //             });
+
+        //         });
+
+
+        // Table records
+        // JSON Records
+        let jobcodejsonData = [{ "id": 1, "jobcode": "ABP001", "parentcode": "APHAB0000" },
+        { "id": 2, "jobcode": "ABP002", "parentcode": "APHAB0000" },
+        { "id": 3, "jobcode": "ABP003", "parentcode": "APHAB0000" },
+        { "id": 4, "jobcode": "ABP004", "parentcode": "APHAB0000" },
+        { "id": 5, "jobcode": "ABP005", "parentcode": "APHAB0000" },
+        { "id": 6, "jobcode": "ABP006", "parentcode": "APHAB0000" },
+        { "id": 7, "jobcode": "ABP007", "parentcode": "APHAB0000" },
+        { "id": 8, "jobcode": "ABP008", "parentcode": "APHAB0000" },
+        { "id": 9, "jobcode": "ABSE4406", "parentcode": "ABSE4406" },
+        { "id": 10, "jobcode": "AD0001", "parentcode": "QA3000" }
+
+        ];
+        //   for (let i = 1; i <= 52; i++) {
+        //     jsonData.push({ id: i, name: "Student " + i, city: "City " + i });
+        //   }
+        let filteredjobcodeData = [...jobcodejsonData]; // for search
+        let currPage = 1;
+        let recordsPage = 10;
+
+        function displayTabletwo() {
+            const start = (currPage - 1) * recordsPage;
+            const end = start + recordsPage;
+            const pageRecords = filteredjobcodeData.slice(start, end);
+
+            document.getElementById("tableBodyjobcode").innerHTML =
+                pageRecords.map(x => `
+
+        <tr>
+          <!-- <td style="width:50px;">${x.id}</td> -->
+          <td><a class="viewLink" href="#" data-obj='${JSON.stringify(x)}'>${x.jobcode}</a></td>
+          <td>${x.parentcode}</td>
+        </tr>
+      `).join("");
+
+            renderPaginationTwo();
+        }
+
+        function renderPaginationTwo() {
+            const totalPages = Math.ceil(filteredjobcodeData.length / recordsPage);
+            const container = document.getElementById("paginationtwo");
+            container.innerHTML = "";
+
+            // First
+            container.innerHTML += `<button class="btn btn-outline-primary" onclick="goToPagetwo(1)">First</button>`;
+
+            // Previous
+            container.innerHTML += `<button class="btn btn-outline-primary" onclick="goToPagetwo(${currPage - 1})" ${currPage === 1 ? "disabled" : ""}>Previous</button>`;
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                container.innerHTML += `<button class="btn btn-outline-primary ${i === currPage ? "active" : ""}" onclick="goToPagetwo(${i})">${i}</button>`;
+            }
+
+            // Next
+            container.innerHTML += `<button class="btn btn-outline-primary" onclick="goToPagetwo(${currPage + 1})" ${currPage === totalPages ? "disabled" : ""}>Next</button>`;
+
+            // Last
+            container.innerHTML += `<button class="btn btn-outline-primary" onclick="goToPagetwo(${totalPages})">Last</button>`;
+        }
+
+        function goToPagetwo(page) {
+            const totalPages = Math.ceil(filteredjobcodeData.length / recordsPage);
+            if (page < 1) page = 1;
+            if (page > totalPages) page = totalPages;
+
+            currPage = page;
+            displayTabletwo();
+        }
+
+        // Search function
+        //   document.getElementById("searchBox").addEventListener("keyup", function () {
+        //     const text = this.value.toLowerCase();
+        //     filteredData = jsonData.filter(x =>
+        //       x.id.toString().includes(text) ||
+        //       x.jobcode.toLowerCase().includes(text) ||
+        //       x.name.toLowerCase().includes(text)
+        //     );
+
+        //     currPage = 1;  // reset page on new search
+        //     displayTabletwo();
+        //   });
+
+
+
+        // Records per page event
+        document.getElementById("recordsPerPagetwo").addEventListener("change", function () {
+            recordsPage = parseInt(this.value);
+            currPage = 1;
+            displayTabletwo();
+        });
+
+        displayTabletwo();  // first load
+
+        document.addEventListener("click", e => {
+            if (e.target.classList.contains("viewLink")) {
+                e.preventDefault();
+
+                const json = e.target.getAttribute("data-obj");
+                const encoded = btoa(json); // convert to Base64
+
+                //window.location.href = "project_maintenance_five.three.one.html?data=" + encoded;
+               // window.location.href = "project_maintenance_five.two.html?data=" + encoded;
+                window.location.href = "project_management_five.opttwo.html?data=" + encoded;
+               
+            }
+        });
+
+
+        document.getElementById("searchBox").addEventListener("keyup", function () {
+            if(selectedValue == null){
+                selectedValue = "projectcode"; // default selected
+            }
+            if (selectedValue == "projectcode") {
+
+                const text = this.value.toLowerCase();
+                filteredData = jsonData.filter(x =>
+                    x.id.toString().includes(text) ||
+                    x.jobcode.toLowerCase().includes(text) ||
+                    x.name.toLowerCase().includes(text)
+                );
+
+                currentPage = 1;  // reset page on new search
+                displayTable();
+            } else if (selectedValue == "jobcode") {
+                const text = this.value.toLowerCase();
+                filteredjobcodeData = jobcodejsonData.filter(x =>
+                    x.jobcode.toLowerCase().includes(text) ||
+                    x.parentcode.toLowerCase().includes(text)
+                );
+
+                currPage = 1;  // reset page on new search
+                displayTabletwo();
+            }
+
+        });
+
+
+        document.getElementById("dpSearchtype").addEventListener("change", function (e) {
+            selectedValue = this.value;
+            document.getElementById("searchBox").value = "";
+            filteredjobcodeData = jobcodejsonData;
+            filteredData = jsonData;
+            if (selectedValue == "projectcode") {
+                document.getElementById("divprojectcode").style.display = "block";
+                document.getElementById("divjobcode").style.display = "none";
+                displayTable();
+            }
+            if (selectedValue == "jobcode") {
+                document.getElementById("divjobcode").style.display = "block";
+                document.getElementById("divprojectcode").style.display = "none";
+                displayTabletwo();
+            }
+        });
+
+
+    </script>
+
+    <script src="../js/menuscript.js"></script>
+
+</body>
+
+</html>

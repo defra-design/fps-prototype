@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="../css/pact_styles/custom_style.css" /> 
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"> -->
+    <title>2025-2026 : Program Maintenance</title>
+    <link rel="stylesheet" href="../css/pact_styles/style.css" />
+    <link rel="stylesheet" href="../pact/nav_menu/navstyle.css" />
+    <script src="../pact/nav_menu/menutemplate.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency"/>
+                </div>
+           
+                <div class="pims-log">
+                    <span>PACT</span>
+                </div> 
+                 <p style="color: #000;">Project Accounting for Cost and Time</p>
+                 <div class="pims-log"  style=" width: 150px;">
+                 <select class="pims-log" style="border:0;margin-left: 0px;width: 140px;">
+				 <option  class="pims-log" style="border:0; margin-left: 0px;">2017-2018</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2018-2019</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2019-2020</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2020-2021</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2021-2022</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2022-2023</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2023-2024</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2024-2025</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;" selected>2025-2026</option>
+					</select>
+					
+                </div>
+            </div>
+            
+
+
+
+        </div>
+    </header>
+       <div id="header"></div>
+   
+      <script src="../pact/nav_menu/script.js"></script>
+
+       <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+         initMenu();
+         btn();
+    </script>
+    
+    <div class="row">
+        <div class="container-fluid" id="section1" style="padding: 0;">
+           
+                <h5 style="padding: 10px 0 10px 30px;
+                                border-bottom: 2px solid #1d70b8;
+                                margin-bottom: 10px;">
+                    Program Maintenance</h5>
+        </div>
+        <div class="container-fluid" style="padding:0 4px 0 8px;">
+                <div style="background: #e3f2ff;
+                                    margin-top: -10px;
+                                    /* border-top: 1px solid; */
+                                    border-left: 0;
+                                    border-bottom: 1px solid #595959;
+                                    /* box-shadow: 3px 4px 2px #ccc; */
+                                    width: 100%;
+                                        padding: 10px 20px;
+                                    /* margin-right: -31px; */
+                                    border-right: 0;">
+                    <div class="d-flex" style="    flex-direction: column; width: 100%; 
+                                        width: 100%;
+                                        flex: 1;
+                                        margin-left: 10px;
+                                        min-width: 0;
+                                        flex-shrink: 1;
+                                        transition: width 0.3s ease;">
+             
+                                <form style="    display: flex;    align-items: flex-end;">
+                                    <div class="col-4 display-flex" style="
+                                                                border-radius: 8px;
+                                            display: flex;
+                                            justify-content: center;
+                                            border: 1px solid #1d70b8;
+                                            border-radius: 8px;
+                                            margin: 0px 10px 0 7px;
+                                            align-items: flex-end;
+                                            background: #bce0ff;
+                                            padding: 0 10px;
+                                            gap: 1px;
+                                            padding-bottom: 10px;">
+                                        <div class="col-12">
+                                            <label for="project" class="form-label">Select a Program</label>
+                                            <select id="programSelect" class="form-select" required="" name="program">
+                                                <option value="EU Ext">EU Ext</option>
+                                                <option value="ADMIN - Admin">ADMIN - Admin</option>
+                                                <option value="ASU - Animal Sciences Unit">ASU - Animal Sciences Unit</option>
+                                                <option value="B&M - Biotechnology & Microbiology">B&M - Biotechnology &
+                                                    Microbiology</option>
+                                                <option value="Bact - Bacteriology">Bact - Bacteriology</option>
+                                                <option value="Bee Advice - NBU Advisory">Bee Advice - NBU Advisory</option>
+                                                <option value="Bee Insp - Bee Inspectorate">Bee Insp - Bee Inspectorate</option>
+                                                <option value="BTB - Bovine TB">BTB - Bovine TB</option>
+                                                <option value="Comm - Commercial Programme DIDIB">Comm - Commercial Programme DIDIB
+                                                </option>
+                                                <option value="CSU - Central Sequencing Unit">CSU - Central Sequencing Unit</option>
+                                                <option value="DoES - Department of Epidemiological Sciences">DoES - Department of
+                                                    Epidemiological Sciences</option>
+                                                <option value="DSG - Data Systems Group">DSG - Data Systems Group</option>
+                                                <option value="EU Ext - EU Exit Programme">EU Ext - EU Exit Programme</option>
+                                                <option value="GM - GM Inspectorate" selected>GM - GM Inspectorate</option>
+                                                <option value="HNC - Head & Notional Charges">HNC - Head & Notional Charges</option>
+                                                <option value="IMT - Information Management & Technology">IMT - Information
+                                                    Management & Technology</option>
+                                                <option value="LabT - Laboratory Services">LabT - Laboratory Services</option>
+                                                <option value="NATBORD - National Borders Operations Team">NATBORD - National
+                                                    Borders Operations Team</option>
+                                                <option value="Path - Pathology">Path - Pathology</option>
+                                                <option value="PHINSLT - Plant Health Insp Senior Leadership Team">PHINSLT - Plant
+                                                    Health Insp Senior Leadership Team</option>
+                                                <option value="PHSIN - Plant Health Inspectorate">PHSIN - Plant Health Inspectorate
+                                                </option>
+                                                <option value="PVS - Plant Variety and Seeds">PVS - Plant Variety and Seeds</option>
+                                                <option value="ROMD - Midlands Surveillance and Ops">ROMD - Midlands Surveillance
+                                                    and Ops</option>
+                                                <option value="RONT - North Surveillance and Ops">RONT - North Surveillance and Ops
+                                                </option>
+                                                <option value="ROSC - Scotland Field Operations">ROSC - Scotland Field Operations
+                                                </option>
+                                                <option value="ROSE - South East Surveillance and Ops">ROSE - South East
+                                                    Surveillance and Ops</option>
+                                                <option value="ROSW - South West Surveillance and Ops">ROSW - South West
+                                                    Surveillance and Ops</option>
+                                                <option value="ROWA - Wales Surveillance and Ops">ROWA - Wales Surveillance and Ops
+                                                </option>
+                                                <option value="SEVBC - Sevington Border Operations Team">SEVBC - Sevington Border
+                                                    Operations Team</option>
+                                                <option value="SIU - Surveillance Intelligence Unit">SIU - Surveillance Intelligence
+                                                    Unit</option>
+                                                <option value="SSP - Science Strategy & Planning">SSP - Science Strategy & Planning
+                                                </option>
+                                                <option value="SSU - Scientific Services Unit">SSU - Scientific Services Unit
+                                                </option>
+                                                <option value="TSE - Transmissible Spongiform Encephalopathy">TSE - Transmissible
+                                                    Spongiform Encephalopathy</option>
+                                                <option value="Viro - Virology">Viro - Virology</option>
+                                                <option value="VSD GB - Veterinary Surveillance">VSD GB - Veterinary Surveillance
+                                                </option>
+                                                <option value="Wildlife - Wildlife Portfolio">Wildlife - Wildlife Portfolio</option>
+                                                <option value="ZT Levo - ZT Levo">ZT Levo - ZT Levo</option>
+                                                <option value="ZT Prog - ZT Programme">ZT Prog - ZT Programme</option>
+                                            </select>
+                                       
+                                    </div>
+                                    </div>
+                                </form>
+                    </div>
+                </div>
+        </div>
+                          
+                     
+            
+                                    <div class="container-fluid" style="border-radius: 8px;"> 
+            
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Program No:</label>
+                                                    <input type="text" class="form-control" id="txtprogramno" readonly>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Program Name:</label>
+                                                    <textarea class="form-control" rows="4" id="txtprogramname">ADMIN</textarea>
+                                                </div>
+            
+            
+            
+                                            </div>
+                                            <div class="col-4">
+            
+                                                <div class="mb-3">
+                                                    <label class="form-label">Leader:</label>
+                                                    <input type="text" class="form-control" value="Simmons, Ray">
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label class="form-label">Minim:</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="mb-3" style="    margin-bottom: 11px !important;">
+                                                    <label class="form-label">Directorate:</label>
+                                                    <input type="text" class="form-control" value="BSD">
+                                                </div>
+            
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="text-center" style="display: flex;
+                                                                        flex-direction: row;
+                                                                        gap: 10px;
+                                                                        justify-content: space-between;
+                                                                        align-items: center;
+                                                                    ">
+                                                    <div class="mb-3 col" style="text-align: left; width: 60%;">
+                                                        <label class="form-label" style="text-align: left;">Selected
+                                                            Project:</label>
+                                                        <input type="text" class="form-control" value="AH0002" readonly="">
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <button class="btn btn-primary"
+                                                            onclick="window.location.href='project_maintenance_five.opttwo.html'">Project
+                                                            Maintenance</button>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <label class="form-label">Sector Name:</label>
+                                                    <input type="text" class="form-control" value="Charge">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Customer:</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <!-- <div class="card">
+                                                                        <div class="card-body text-center">
+                                                                            <div class="mb-3">
+                                                                                <label class="form-label">Selected Project:</label>
+                                                                                <input type="text" class="form-control" value="AH0002" readonly>
+                                                                            </div>
+                                                                            <button class="btn btn-primary">Project Maintenance</button>
+                                                                        </div>
+                                                                    </div> -->
+                                            </div>
+                                        </div>
+            
+            
+                                    </div>
+                                    <div class="container-fluid" style="padding:0 4px 0 8px;">
+                                        <div class="col-12">
+                                            <div class="card" style="margin: 0px 0px 0 10px;">
+                                                <div class="card-body" style="padding: 0;">
+                                                    <!-- Search and Controls -->
+                                                    <div
+                                                        style="margin: 10px 0 0px 0px;    border-bottom: 1px solid #ccc;    padding-bottom: 10px;    padding: 0 0 10px 10px;">
+                                                        <div class="col-3">
+                                                            <input type="text" class="form-control" id="searchInput"
+                                                                placeholder="Search...">
+                                                        </div>
+            
+                                                        <!-- <div class="col-md-3">
+                                                                            <button class="btn btn-outline-secondary"
+                                                                                id="searchBtn">Search</button>
+                                                                        </div> -->
+                                                    </div>
+            
+                                                    <!-- Table -->
+                                                    <div class="table-responsive">
+                                                        <table id="projectTable" class="table custom-table table-striped table-hover"
+                                                            id="dataTable" style="margin-bottom: 0;">
+                                                            <thead class="table-light">
+                                                                <tr>
+                                                                    <th>Code</th>
+                                                                    <th>Title</th>
+                                                                    <th>Manager</th>
+                                                                    <th>BudgCv</th>
+                                                                    <th>Budget</th>
+                                                                    <th>Project</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="tableBody" style="height:305px">
+                                                                <!-- Data will be populated by JavaScript -->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+            
+                                                    <!-- Pagination -->
+                                                    <div style="padding: 10px;    display: flex;    justify-content: space-between;    align-items: center;"
+                                                        class="d-flex justify-content-between align-items-center">
+                                                        <div style="    display: flex;  /* align-content: center; */  align-items: center;  justify-content: space-between;">
+            
+                                                            <div class="col">
+                                                                <span class="text-muted" style="margin-right: 10px;">Record: <span id="currentRecord">1</span>
+                                                                    of <span id="totalRecords">61</span></span>
+                                                            </div>
+                                                            <div class="col">
+                                                                <select class="form-select" id="recordsPerPage">
+                                                                    <option value="10">10</option>
+                                                                    <option value="25">25</option>
+                                                                    <option value="50">50</option>
+                                                                    <option value="100">100</option>
+                                                                </select>
+            
+                                                            </div>
+                                                        </div>
+                                                        <!-- <nav>
+                                                                            <ul class="pagination pagination-sm mb-0"
+                                                                                id="pagination"> 
+                                                                            </ul> -->
+            
+                                                        <nav aria-label="Table pagination">
+                                                            <ul class="pagination justify-content-end pagination-sm mb-0"
+                                                                id="pagination">
+                                                                <li class="page-item">
+                                                                    <a class="page-link" href="#" id="firstPage">First</a>
+                                                                </li>
+                                                                <li class="page-item">
+                                                                    <a class="page-link" href="#" id="prevPage">Previous</a>
+                                                                </li>
+                                                                <li class="page-item active">
+                                                                    <a class="page-link" href="#">1</a>
+                                                                </li>
+                                                                <li class="page-item">
+                                                                    <a class="page-link" href="#">2</a>
+                                                                </li>
+                                                                <li class="page-item">
+                                                                    <a class="page-link" href="#">3</a>
+                                                                </li>
+                                                                <li class="page-item">
+                                                                    <a class="page-link" href="#" id="nextPage">Next</a>
+                                                                </li>
+                                                                <li class="page-item">
+                                                                    <a class="page-link" href="#" id="lastPage">Last</a>
+                                                                </li>
+                                                            </ul>
+                                                        </nav>
+                                                    </div>
+            
+                                                    <!-- Pagination -->
+                                                    <!-- <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <span class="text-muted">Record: <span id="currentRecord">1</span> of <span id="totalRecords">61</span></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <nav aria-label="Table pagination">
+                                        <ul class="pagination justify-content-end">
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" id="firstPage">First</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" id="prevPage">Previous</a>
+                                            </li>
+                                            <li class="page-item active">
+                                                <a class="page-link" href="#">1</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">2</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">3</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" id="nextPage">Next</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" id="lastPage">Last</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div> -->
+            
+            
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+             
+            
+            
+            
+            
+            
+            
+            
+    </div> 
+       
+
+    <div class="footer">
+        <p>&copy; copyright Defra 2025</p>
+    </div>
+    <script src="../js/menuscript.js"></script>
+    <script src="../js/program_maintenance_table.js"></script>
+    <!-- <script src="js/pm.js"></script> -->
+
+      <!-- <script src="../pact_ver2.0/nav_menu/script.js"></script>
+    <script>
+
+        fetch("../pact_ver2.0/nav_menu/index.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+                initMenu();
+                btn();
+                // Execute <script> tags inside fetched HTML
+                // document.querySelectorAll("#header script").forEach(oldScript => {
+                // const newScript = document.createElement("script");
+                // newScript.text = oldScript.text;
+                // document.body.appendChild(newScript);
+                // });
+
+            });
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2025-2026 : Home </title>
+			<!-- <link rel="stylesheet" href="style_sidenav.css"> -->
+    <!-- Bootstrap CSS -->
+  
+	 <link rel="stylesheet" href="../css/bootstrap.min.css">
+	 <link rel="stylesheet" href="../css/fps_styles/styles.css">
+	  <link rel="stylesheet" href="../css/main_style.css">
+	 
+	 <script>
+    // function onChangeProject(){
+    //     document.getElementById("program").value = "BACT";
+    //     document.getElementById("project").value = "FZ200";
+    // }
+
+    // function onClickPlanProject(){
+    //     document.getElementById("program").value = "";
+    //     document.getElementById("project").value = "";
+    // }
+
+    window.addEventListener('load', function () {
+        // Get modal element
+        const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        // Show modal
+        myModal.show();
+    });
+
+</script>
+	 
+	 
+	 
+	 
+</head>
+
+
+
+
+<body>
+
+    <!-- Navbar -->
+    
+<header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+
+                <div>
+                    <img src="../images/defra_logo.png" alt="Logo of Animal & Plant Health Agency" width="80px">
+                </div>
+                <!-- <div class="menu-icon" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> -->
+                <div class="pims-log">
+                    <span style="display:inline-block; padding: 2px;">FPS</span>
+					
+                </div>
+				    <div class="pims-log">
+                 <select class="pims-log" style="border:0; margin-left: 0px;" aria-label="Year">
+				 <option  class="pims-log" style="border:0; margin-left: 0px;">2017-2018</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2018-2019</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2019-2020</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2020-2021</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2021-2022</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2022-2023</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2023-2024</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2024-2025</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;" selected>2025-2026</option>
+					</select>
+					
+                </div>
+				
+                <!-- <p>PACT</p> -->
+            </div>
+            <div class="btn-group" style=" display: flex; align-items: center;     font-size: 16px;">
+                Ken Rod <button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                   <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24">
+				   <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px" height="30px"></span>
+                </button> 
+                <ul class="dropdown-menu dropdown-menu-end" style="">
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button> -->
+                    <!-- </li> -->
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button> -->
+                    <!-- </li> -->
+                    <li><a href="../index.html" class="dropdown-item" type="button" aria-hidden="true">
+				<img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
+                            Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+   <nav class="navbar navbar-expand-lg main-nav ">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" aria-label="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-hidden="true"
+                            aria-expanded="false" aria-current="page" href="#">Programme Management<span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Programme Management Menu" width="12px"></span></a>
+
+							
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" aria-hidden="true" href="program_management.html">Select Programme</a></li>
+                            <li><a class="dropdown-item" aria-hidden="true"  style="display: flex;    justify-content: space-between;">Plan Projects  <img src="../images/right-arrow.png" alt="Arrow for Plan Projects Sub menu" width="30px" height="30px"></a> 
+                                <ul class="dropdown-menu">
+
+                                    <li>
+                                        <a class="dropdown-item" href="#" aria-hidden="true">
+                                            Setup A new Projects</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan Project Individually</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan STAFF for Entire Programme</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan Animals for Entire Programme</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan Test Purchases for Entire Programme for Entire Programme</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan Additional cost for Entire Programme</a>
+                                    </li> 
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" aria-hidden="true"  style="display: flex;    justify-content: space-between;" href="#">Review Plans <img src="../images/right-arrow.png" alt="Arrow for Review Plans Sub menu" width="30px" height="30px"></a>
+                             <ul class="dropdown-menu">
+
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Project Portability</a>                                 </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Staff Plan Pivot</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item"  aria-hidden="true" style="display: flex;    justify-content: space-between;" href="#">Summary Printouts <img src="../images/right-arrow.png" alt="Arrow for Summary Printouts Sub menu" width="30px" height="30px"></a>
+                             <ul class="dropdown-menu">
+
+                                    <li><a class="dropdown-item" aria-hidden="true" aria-label="Programme Profitability Report" href="#">Programme Profitability Report</a>
+                                    </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" aria-label="Summarized by disease" href="#">Summarized by disease</a>
+                                    </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Summarized by Customer</a>
+                                    </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Project Specifics</a>
+                                    </li>
+                               
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link  dropdown-toggle" role="button" aria-hidden="true"
+                            data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">Resource
+                            Management<span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Resource Management Menu" width="12px"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="createresourcecenter.html" aria-hidden="true">Create Resource Center</a>
+                            </li>
+                            <li><a class="dropdown-item" href="setupresource.html" aria-hidden="true">Setup Resource</a></li>
+                            <li><a class="dropdown-item" href="reviewplans.html" aria-hidden="true">Review Plans</a></li>
+                            <li><a class="dropdown-item" href="reports.html" aria-hidden="true">Reports</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" aria-hidden="true">Contract </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" aria-hidden="true">Lab Testing Manager's </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"aria-hidden="true" >Luvely Pivots</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " role="button" aria-hidden="true" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">MAB <span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Programme Management Menu" width="12px"></span></a>
+                        <div class="dropdown-menu my-flex-dropdown" style="border: 1px solid #000; left: -70px; ">
+                            <ul>
+
+                                <li><a class="dropdown-item" href="wgstaff.html" aria-hidden="true">
+                                        Maintenance Menu</a>
+
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Stage 1 Plans</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        ASU Data View</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        VLA Project Totals</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Generic Bids</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Project Audit Trails</a>
+                                </li>
+                            </ul>
+
+
+                            <ul>
+
+
+
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        SMG Summary Report - All Work</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        SMG Summary Report - Assured Work Only</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        All Programs Profitability</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Program Exceptional Bids</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Income Contribution Rpt</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Income Cont - Summary</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Project Specific - Query</a>
+                                </li>
+                            </ul>
+
+
+
+                            <ul>
+
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Resource Grades by
+                                        Programme</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Resource Utilisation</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Open FPS</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Close FPS</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Run Snapshot Queries</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Run Comparison Queries</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Project Plan Viewer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Project Group </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Management Account </a></li>
+
+                    <!-- Dropdown -->
+                    <!-- <li class="nav-item dropdown">
+            <a 
+              class="nav-link dropdown-toggle" 
+              href="#" 
+              role="button" 
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Services
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Web Design</a></li>
+              <li><a class="dropdown-item" href="#">Development</a></li>
+              <li><a class="dropdown-item" href="#">SEO</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Consulting</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li> -->
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid">
+        <!-- <div style="padding: 5px 5px;  border-bottom: 1px solid #b4b4b4" class="row"> -->
+            <!-- <div style="display: flex;     align-items: center; justify-content: space-between; "> -->
+                <!-- <!-- <div> Home   --> 
+                <!-- <!-- </div> --> 
+                            <!-- </div> -->
+        <!-- </div> -->
+        <div class="row">
+            <!-- <div class="col-sm-3">
+                <div class="leftmenu">
+                    <ul>
+                        <li style="background-color: #ffd65b;">
+                            Plan Projects &nbsp; &#9660;
+                        </li>
+                        <li style="    background: #fffdd2;">
+                            Setup A new Projects
+                        </li>
+                        <li>
+                            Plan Project Individually
+                        </li>
+                        <li>
+                            Plan STAFF for Entire Programme
+                        </li>
+                        <li>
+                            Plan Animals for Entire Programme
+                        </li>
+                        <li>
+                            Plan Test Purchases for Entire Programme for Entire Programme
+                        </li>
+                        <li>
+                            Plan Additional cost for Entire Programme
+                        </li>
+
+                    </ul>
+                </div>
+            </div> -->
+            <div class="col-sm-12">
+                <!-- <div style="margin: 10px 0 0 0;"> -->
+                    <!-- <h6 style="   -->
+    <!-- padding-bottom: 10px; -->
+    <!-- border-left: 3px solid #9d7600; -->
+    <!-- padding-left: 16px; -->
+    
+    <!-- font-weight: 500; -->
+    <!-- padding: 5px 8px; -->
+    <!-- color: #333; -->
+    <!-- margin: 10px 0 10px 0;">Financial Planning System </h6> -->
+
+                <!-- </div> -->
+            </div>
+			
+			<div class="col-lg-12 p-0">
+			
+			<main class="main-content" style="padding:0;">
+       
+	   
+	   
+	      <section class="">
+               
+          <div class="section-content" style="padding:0;position:relative;display: flex;
+		  align-content: center;justify-content: center;align-items: center;">
+				
+				 <div class="banner_text">
+				<div class="banner_titletext"> <span class="text-with-overlay"> Welcome</span></div>
+				<p> <span class="text-with-overlay"> To Our Animal & Plant Health Agency's </span>
+				 <br>
+				<span  class="text-with-overlay" style="font-size: 40px;">Financial Planning System</span>
+				 <p>
+				 </div>
+           <img src="../images/home_image.jpg" width="100%" alt="Home Page Banner" style="height: 100vh;"/>
+		   
+		   
+		  <div class="grad1"></div>
+		   
+             </div>
+            </section>
+    </main>
+			
+			</div>
+			
+			
+           
+        </div>
+    </div>
+<div class="footer">
+	© Copyright Defra 2025
+		</div>
+
+    <!-- Bootstrap JS (required for dropdowns) -->
+    <script src="../js/bootstrap.bundle.min.js">  </script>
+    <script>
+
+        function showValue() {
+            const selectBox = document.getElementById("project");
+            const selectedValue = selectBox.value;
+            const selectedText = selectBox.options[selectBox.selectedIndex].text;
+
+
+            const selectBoxProgram = document.getElementById("program");
+            const selectedValueProgram = selectBoxProgram.value;
+            const selectedTextProgram = selectBoxProgram.options[selectBoxProgram.selectedIndex].text;
+
+
+            document.getElementById("resultproject").innerHTML = `<b>${selectedText}</b>`;
+            document.getElementById("resultprogram").innerHTML = `<b>${selectedTextProgram}</b>`;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Navigation</title>
+    <!-- <link rel="stylesheet" href="navstyle.css">  -->
+    <link href="navstyle.css" rel="stylesheet">
+</head>
+
+
+<body>
+    <!-- <div class="nav-item dropdown"> -->
+        <div style="display: flex; flex-direction: row;"> 
+        <button class="userdropdownbtn" style="border: 0; margin-right: 20px; font-size:16px;" id="userdropdownbtn">Meg Ved &nbsp; <img src="../../images/circle-user-regular-full.svg" alt="user icon"  width="24"/></button>
+       
+        </div>
+        <div class="userdropdown" id="userdropdowndp">
+
+             <ul>
+                   
+                    <li><a href="../../index.html" style="display: flex; align-items: center;" type="button">
+                       <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">   Home</a></li>
+                </ul>
+          
+        </div>
+
+             <!-- <div class="userdropdown" id="userdropdowndp">
+                Meg Ved <button type="button" style="border: 0;"
+                    class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-regular fa-circle-user"></i>
+                </button>
+                <ul> 
+                    <li><a href="../commonlogin/index.html" class="dropdown-item" type="button">
+                        <i class="fa-solid fa-house-user me-3"></i>
+                            Home</a></li>
+                </ul>
+            </div> -->
+        
+    <!-- </div> -->
+    <nav class="main-nav">
+        <div class="nav-item dropdown">
+            <button class="nav-button dropdown-toggle" data-dropdown="project-maintenance">
+                Project & Programme Maintenance
+                <span class="arrow"><img src="../../images/arrow-down.svg" alt="down arrow for dropdown menu" width="12px"></span>
+            </button>
+            <div class="dropdown-menu" id="project-maintenance">
+                <a class="dropdown-item" href="program_maintenance.html">Program Maintenance</a>
+                <!-- <a class="dropdown-item" href="project_maintenance_five.two.html">Project Maintenance</a> -->
+                <!-- <a class="dropdown-item" href="project_maintenance_five.opttwo.html">Project Maintenance (grid with modal popup)</a> -->
+                <a class="dropdown-item" href="project_maintenance_five.three.html">Project Maintenance (grid with inline editing)</a>
+                <a class="dropdown-item" style="display: flex;    justify-content: space-between;"
+                    href="portfolio_maintenance.html">Portfolio Maintenance (no js framework)</a> 
+            </div>
+        </div>
+
+        <div class="nav-item dropdown">
+            <button class="nav-button dropdown-toggle" data-dropdown="monthly-data">
+                Monthly Project Data (Costs & Income)
+                <span class="arrow"><img src="../../images/arrow-down.svg" alt="down arrow for dropdown menu" width="12px"></span>
+            </button>
+            <div class="dropdown-menu" id="monthly-data">
+                <a class="dropdown-item" href="#">Project Invoices (Manual)</a>
+                <a class="dropdown-item" href="#">OM, OG, FT & UT Invoices (Batch Mode from RMS)</a>
+
+                <a class="dropdown-item" href="invoicebymonth.html">Invoices by Month</a>
+                <a class="dropdown-item" href="#">FT & UT Project Work In Progress (WIP Over-ride)</a>
+
+                <a class="dropdown-item" href="#">SubContracts (Exceptional Costs) (Manual)</a>
+                <a class="dropdown-item" href="#">SubContracts (Exceptional Costs) (Batch mode from RMS)</a>
+                <a class="dropdown-item" href="#">SubContracts By Month</a>
+            </div>
+        </div>
+
+        <div class="nav-item dropdown">
+            <button class="nav-button dropdown-toggle" data-dropdown="work-group">
+                Work Group "Static" Data (Resources & Test Capabilities)
+                <span class="arrow"><img src="../../images/arrow-down.svg" alt="down arrow for dropdown menu" width="12px"></span>
+            </button>
+            <div class="dropdown-menu" id="work-group">
+                <a href="#" class="dropdown-item">Cost Analysis</a>
+                <a href="#" class="dropdown-item">Income Reports</a>
+                <a href="#" class="dropdown-item">Budget Overview</a>
+            </div>
+        </div>
+
+
+
+        <div class="nav-item dropdown">
+            <button class="nav-button dropdown-toggle" data-dropdown="further-menus">
+                Further Menus
+                <span class="arrow"><img src="../../images/arrow-down.svg" alt="down arrow for dropdown menu" width="12px"></span>
+            </button>
+            <div class="dropdown-menu" id="further-menus">
+                <a class="dropdown-item" href="#">PACT Reports Menu</a>
+                <a class="dropdown-item" href="timeoutputdatamgmt_tabulator.html"
+                    style="display: flex;    justify-content: space-between;">Time
+                    & Output Data Management</a>
+        
+            </div>
+        </div>
+
+         <!-- <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" aria-current="page" href="#">Further Menus</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">PACT Reports Menu</a></li>
+                            <li><a class="dropdown-item" href="timeoutputdatamgmt_two.html" style="display: flex;    justify-content: space-between;">Time
+                                    & Output Data Management</a></li>
+                        </ul>
+                    </div> -->
+
+
+        <div class="nav-item">
+            <button class="nav-button">
+                Bosworth Interface
+            </button>
+        </div>
+    </nav> 
+    <script src="script.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+    <title>2025-2026 : Portfolio Maintenance</title>
+    <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
+	   <link rel="stylesheet" href="../css/pact_styles/style.css" />
+    <link rel="stylesheet" href="../pact/nav_menu/navstyle.css" /> 
+    <script src="../pact/nav_menu/menutemplate.js"></script>
+      
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency"/>
+                </div>
+                <!-- <div class="menu-icon" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> -->
+                <div class="pims-log">
+                    <span>PACT</span>
+                </div>
+                 <!-- <p style="color: #000;">Project Accounting for Cost and Time</p> -->
+                <!-- <p>PACT</p> -->
+            </div>
+            
+
+
+
+        </div>
+    </header>
+<div id="header"></div>
+   
+      <script src="../pact/nav_menu/script.js"></script>
+
+       <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+         initMenu();
+         btn();
+    </script>
+
+
+    <div class="row" id="section1">
+        <div class="container-fluid" style="padding: 0;">
+            <h5 style="padding: 10px 0 10px 30px;
+                        border-bottom: 2px solid #1d70b8;
+                        margin-bottom: 10px;">
+                Portfolio Maintenance </h5>
+        </div>
+
+        <div class="container-fluid" style="padding: 0;">
+            <div style="background: #e3f2ff;
+                                    margin-top: -10px;
+                                    /* border-top: 1px solid; */
+                                    border-left: 0;
+                                    border-bottom: 1px solid #595959;
+                                    /* box-shadow: 3px 4px 2px #ccc; */
+                                    width: 100%;
+                                        padding: 10px 20px;
+                                    /* margin-right: -31px; */
+                                    border-right: 0;">
+                <form style="    display: flex;    align-items: flex-end;">
+                    <div class="col-4 display-flex" style="
+                                                                border-radius: 8px;
+                                            display: flex;
+                                            justify-content: center;
+                                            border: 1px solid #1d70b8;
+                                            border-radius: 8px;
+                                            margin: 0px 10px 0 7px;
+                                            align-items: flex-end;
+                                            background: #bce0ff;
+                                            padding: 0 10px;
+                                            gap: 1px;
+                                            padding-bottom: 10px;">
+                        <div class="col-12">
+                            <label for="project" class="form-label">Select a Portfolio</label>
+                            <select class="form-select" id="dpselectportfolio">
+                                <option value="APHAEM00000 | Egg Marketing">APHAEM00000 | Egg Marketing</option>
+                                <option value="APHAH0037 | BRILLIANT INVESTMENT ASSISTANCE SCHEME">APHAH0037 | BRILLIANT
+                                    INVESTMENT ASSISTANCE SCHEME</option>
+                                <option value="APHAH0038 | Brucellosis Survey Review 2016">APHAH0038 | Brucellosis
+                                    Survey Review 2016</option>
+                                <option value="APHAH0040 | NCP Control Database Dev't & Implementation">APHAH0040 | NCP
+                                    Control Database Dev't & Implementation</option>
+                                <option value="APHAH0047 | Programme Management and Strategic">APHAH0047 | Programme
+                                    Management and Strategic</option>
+                                <option value="APHAH0048 | Policy Demand">APHAH0048 | Policy Demand</option>
+                                <option value="APHAH0049 | Risk Assessment & Alternative Approaches">APHAH0049 | Risk
+                                    Assessment & Alternative Approaches</option>
+                                <option value="APHAH0050 | Innovation & Operational Tasks">APHAH0050 | Innovation &
+                                    Operational Tasks</option>
+                                <option value="APHAH0051 | Field Inspection Service">APHAH0051 | Field Inspection
+                                    Service</option>
+                                <option value="APHAH0052 | Lab Service Management(LIMS) Capability">APHAH0052 | Lab
+                                    Service Management(LIMS) Capability</option>
+                                <option value="APHAH0053 | Integrated Services Pilot">APHAH0053 | Integrated Services
+                                    Pilot</option>
+                                <option value="APHAH0058 | SHEP (Sampson House Exit Project)">APHAH0058 | SHEP (Sampson
+                                    House Exit Project)</option>
+                                <option value="APHAH0061 | Science Competency Enhancement">APHAH0061 | Science
+                                    Competency Enhancement</option>
+                                <option value="APHAH0074 | Change implementation as a result of">APHAH0074 | Change
+                                    implementation as a result of</option>
+                                <option value="APHAH0100 | Reimbursement of certification costs">APHAH0100 |
+                                    Reimbursement of certification costs</option>
+                                <option value="APHAID0000 | DDR Animal ID">APHAID0000 | DDR Animal ID</option>
+                                <option value="APHAINA0000 | Customer Contact">APHAINA0000 | Customer Contact</option>
+                                <option value="APHAINA0001 | Livestock Info Prog">APHAINA0001 | Livestock Info Prog
+                                </option>
+                                <option value="APHAINA0002 | Scanning Surveillance">APHAINA0002 | Scanning Surveillance
+                                </option>
+                                <option value="APHAINA0003 | HMI Transfer">APHAINA0003 | HMI Transfer</option>
+                                <option value="APHAINA0004 | Swine and Bee Health Review">APHAINA0004 | Swine and Bee
+                                    Health Review</option>
+                                <option value="APHAINA0005 | Xylella Outbreak Preparedness">APHAINA0005 | Xylella
+                                    Outbreak Preparedness</option>
+                                <option value="APHAINA0006 | Defra Capital Projects">APHAINA0006 | Defra Capital
+                                    Projects</option>
+                                <option value="APHAINA0007 | Service Delivery Investigation">APHAINA0007 | Service
+                                    Delivery Investigation</option>
+                                <option value="APHAINA0008 | APHA Estate Development Project">APHAINA0008 | APHA Estate
+                                    Development Project</option>
+                                <option value="PHAINA0009 | Approved Importer Scheme Technical">APHAINA0009 | Approved
+                                    Importer Scheme Technical</option>
+                                <option value="APHAINA0010 | NIRMAS PH Labelling Scheme">APHAINA0010 | NIRMAS PH
+                                    Labelling Scheme</option>
+                                <option value="APHAINA0011 | NI Retail Movement Sch ReMoS">APHAINA0011 | NI Retail
+                                    Movement Sch ReMoS</option>
+                                <option value="APHAINA0012 | Windsor Framework Project Management">APHAINA0012 | Windsor
+                                    Framework Project Management</option>
+                                <option value="APHAINA0013 | Scotland Field Office Relocation for">APHAINA0013 |
+                                    Scotland Field Office Relocation for</option>
+                                <option value="APHAINA0014 | Disease Preparedness 2025-26">APHAINA0014 | Disease
+                                    Preparedness 2025-26</option>
+                                <option value="APHAINA0015 | EU RESET">APHAINA0015 | EU RESET</option>
+                                <option value="APHAINA0016 | Exercise Aspen">APHAINA0016 | Exercise Aspen</option>
+                                <option value="APHAINA0017 | Plant and Bee Health Transformation">APHAINA0017 | Plant
+                                    and Bee Health Transformation</option>
+                                <option value="APHAIBSEN">APHAIBSEN | BSE INCIDENT IN ENGLAND</option>
+                                <option value="APHAINEUEX | APHA EU EXIT PROGRAMME - inc">APHAINEUEX | APHA EU EXIT
+                                    PROGRAMME - inc</option>
+                                <option value="APHAINSA00 | work - 51 A1 Core Data">APHAINSA00 | work - 51 A1 Core Data
+                                </option>
+                                <option value="APHAINMF00 | Magnet Funding - Up">APHAINMF00 | Magnet Funding - Up
+                                </option>
+                                <option value="APHAINSHM0 | HMI - Olive Oil Sampling">APHAINSHM0 | HMI - Olive Oil
+                                    Sampling</option>
+                                <option value="APHAINSD00 | National Ferret Registration Wales">APHAINSD00 | National
+                                    Ferret Registration Wales</option>
+                                <option value="APHAINSG00 | National Ferret Registration Scotland">APHAINSG00 | National
+                                    Ferret Registration Scotland</option>
+                                <option value="APHAINSDM0 | Response and resilience - Operation">APHAINSDM0 | Response
+                                    and resilience - Operation</option>
+                                <option value="APHAINSD01 | Covid-19 - Response and Surveillance">APHAINSD01 | Covid-19
+                                    - Response and Surveillance</option>
+                                <option value="APHAINSDM1 | National Ferret Registration England">APHAINSDM1 | National
+                                    Ferret Registration England</option>
+                                <option value="APHADBAMF | AIV HIGH PATH ENGLAND OUTBREAK">APHADBAMF | AIV HIGH PATH
+                                    ENGLAND OUTBREAK</option>
+                                <option value="APHADBAVE | AIV HIGH PATH ENGLAND OUTBREAK">APHADBAVE | AIV HIGH PATH
+                                    ENGLAND OUTBREAK</option>
+                                <option value="APHADBAVS | AIV HIGH PATHOGEN SCOTLAND">APHADBAVS | AIV HIGH PATHOGEN
+                                    SCOTLAND</option>
+                                <option value="APHADBAVW | AIV HIGH PATH WALES OUTBREAK">APHADBAVW | AIV HIGH PATH WALES
+                                    OUTBREAK</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <!-- <div class="ms-3 mb-2">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            type="button" data-bs-dismiss="modal"> <i class="fa-solid fa-circle-chevron-right"></i>
+                            Portfolio Time codes</button>
+                    </div> -->
+                </form>
+
+            </div>
+        </div>
+
+        <!-- Modal -->
+
+
+        <div class="container-fluid" style="padding:0 4px 0 8px;">
+             
+                <div style="padding: 0; display: flex;">
+                    <!-- Left Panel -->
+                    <div class="col-4">
+                        <div class="card blue-panel" style="border:1px solid #ccc;border-radius: 5px;">
+                            <div class="card-body" style="padding: 0 16px;">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="mb-2">
+                                            <label class="form-label">Parent Project:</label>
+                                            <input type="text" id="txt-parentproject" class="form-control"
+                                                value="APHAEM000000">
+                                        </div>
+                                        <div>
+                                            <label class="form-label">Project Title:</label>
+                                            <input type="text" id="txt-projecttitle" class="form-control"
+                                                value="Egg Marketing">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-4"><label class="form-label">Finished:</label></div>
+                                    <div class="col-8"><input type="checkbox" class="form-check-input"></div>
+                                </div>
+                                <div class="row mb-2">
+
+                                    <div class="col-6">
+                                        <label class="form-label">Programme:</label>
+                                        <select class="form-select">
+                                            <option>ADMIN</option>
+                                            <option>RESEARCH</option>
+                                            <option>DEVELOPMENT</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="col-6">
+                                        <label class="form-label">Manager:</label>
+                                        <select class="form-select">
+                                            <option>Manager1</option>
+                                            <option>Manager2</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label class="form-label">Budget-cvt:</label>
+                                        <div><input type="text" class="form-control" value="£0.00"></div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Transfer Income:</label>
+                                        <div><input type="text" class="form-control" value="£0.00"></div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="form-label">Selected PortfolioTest is:</label>
+                                        <input type="text" id="txtportfoliotest" class="form-control">
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <label class="form-label">Comments: (Double-click to Zoom)</label>
+                                        <textarea class="form-control"
+                                            rows="3">Egg Marketing SLA - Inspections UK</textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- <div class="card blue-panel mt-2 p-2">
+                        <div class="col">
+                            <div class="mb-2">
+                                <label>Selected PortfolioTest is:</label>
+                                <input type="text" class="form-control form-control-sm mb-3">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-2">
+                                <label>Comments: (Double-click to Zoom)</label>
+                                <textarea class="form-control" rows="3">Egg Marketing SLA - Inspections UK</textarea>
+                            </div>
+                        </div>
+                    </div> -->
+                    </div>
+
+                    <!-- Right Panel -->
+                    <div class="col-8">
+                       
+                                <div style="flex-direction: column;">
+
+
+                                    <!-- Search and Controls -->
+                                    <div class="search-panel"
+                                        style=" border-bottom: 0;   border: 1px solid #ccc;  padding: 0px 10px 0 0; flex-direction: row; width: 100%;
+    align-items: center;    justify-content: space-between;">
+                                        <div
+                                            style="display: flex;    flex-direction: row;    width: 81%;    gap: 10px;">
+                                            <div class="col-6">
+                                                <input type="text" id="searchInput" class="form-control"
+                                                    placeholder="Search tests...">
+                                            </div>
+
+                                            <div class="col-4">
+                                                <button id="addBtn" class="btnBlue">
+												<img alt="plus icon for add" src="../images/circle-plus-solid-full-white.svg" width="16px">
+												Add New Test</button>
+                                            </div>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <button class="btnBlue mb-1">Portfolio Time Codes</button>
+                                        </div>
+                                    </div>
+                                    <!-- <input type="text" id="searchConstituent"/> -->
+                                    <!-- Table -->
+                                    <div class="table-responsive" style="border-radius: 0px 0px 8px 8px !important; border: 1px solid #ccc; border-top: 0;">
+                                        <table class="table table-striped table-bordered custom-table reducepadding" style="margin-bottom: 0px;">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Test Code</th>
+                                                    <th>Item Description</th>
+                                                    <th>Work Group</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tableBody">
+                                                <!-- Data will be populated by JavaScript -->
+                                            </tbody>
+                                        </table>
+                                        <div style="display: flex;
+    margin-top: 0;
+    margin-bottom: 0; 
+    padding: 0px 10px 0px 10px;
+    border-top: 1px solid #ccc;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 8px 8px;">
+                                            <!-- Pagination -->
+                                            <nav aria-label="Page navigation">
+                                                <ul class="pagination justify-content-center" id="pagination"
+                                                    style="margin: 0;">
+                                                    <!-- Pagination will be populated by JavaScript -->
+                                                </ul>
+                                            </nav>
+                                            <div class="col-1" style="width: 11%;">
+                                                <select id="recordsPerPage" class="form-select">
+                                                    <option value="5">5</option>
+                                                    <option value="10" selected>10</option>
+                                                    <option value="15">15</option>
+                                                    <option value="20">20</option>
+                                                    <option value="25">25</option>
+                                                    <option value="30">30</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                         
+
+                        <!-- Portfolio Time Codes Button -->
+
+                    </div>
+                </div>
+                <!-- <div class="mt-3" style="display: flex;    flex-direction: row;    padding: 0px 10px;    align-items: flex-start;    gap: 15px;">
+                    <div class="col">
+                        <div class="mb-2">
+                            <label>Selected PortfolioTest is:</label>
+                            <input type="text" id="txtportfoliotest" class="form-control mb-3">
+                        </div>
+                    </div>
+                       <div class="col">
+                                    <div class="mb-2">
+                                        <label>Comments: (Double-click to Zoom)</label>
+                                        <textarea class="form-control" rows="3">Egg Marketing SLA - Inspections UK</textarea>
+                                    </div>
+                            </div>
+                </div> -->
+                <div class="container-fluid" style="border-radius: 10px;    margin: 10px 0;    padding: 0 10px;">
+                    <div style="border: 1px solid #ccc; background: #fff; border-radius: 8px 8px 0 0;border-bottom: 0;" >
+                        <div class="col-3">
+                            <input type="text" class="form-control form-control-sm" id="searchWorkGroups"
+                                placeholder="Search...">
+                        </div> 
+                    </div>
+
+                    <!-- WorkGroups Table -->
+                    <div class="table-responsive" style="padding: 0;">
+                        <table class="table table-sm table-bordered" id="workGroupsTable">
+                            <thead>
+                                <tr>
+                                  
+                                    <th>WorkGrp</th>
+                                    <th>Active</th>
+                                    <th>TimeCode</th>
+                                    <th>Project</th>
+                                    <th>TestCode</th>
+                                    <th>Portfolio</th>
+                                </tr>
+                            </thead>
+                            <tbody id="workGroupsTableBody" style="min-height: 130px;  height: 100%;">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="display: flex;    padding: 0 0 0 10px;    justify-content: space-between;">
+                        <div style="    display: flex;    justify-content: flex-start;    align-items: center;    flex-direction: row;    gap: 10px;">
+                         <span>records per page</span>
+                        <div>
+                            <select class="form-select"
+                                id="recordsPerPageWorkGroups">
+                                <option value="5">5</option>
+                                <option value="10" selected>10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                                <option value="30">30</option>
+                            </select> 
+                        </div>
+                        </div>
+                        <nav>
+                            <ul class="pagination pagination-sm justify-content-center" style="margin-top: 10px;" id="workGroupsPagination">
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+             
+        </div>
+    </div>
+    <!-- Add/Edit Modal -->
+    <!-- <div id="testModal" class="fade-box"><h3>custom modal</h3> <button onclick="closeModal()">close</button></div> -->
+
+    <div class="modal" id="testModalN">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button class="btn-close" onclick="closeModal()">×</button>
+                </div>
+
+                <div class="modal-body">
+                    Modal content goes here…
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="testModal" tabindex="-1">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h5 class="modal-title m-0" id="modalTitle">Add Test</h5>
+                    <button type="button" class="btn-close btn-red" onclick="closeModal()">X</button>
+                </div>
+                <div class="modal-body">
+                    <form id="testForm">
+                        <div class="mb-3">
+                            <label for="testCodeSelect" class="form-label">Test Code</label>
+                            <select class="form-select" id="testCodeSelect" required>
+                                <option value="">Select Test Code</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descriptionInput" class="form-label">Description</label>
+                            <input type="text" class="form-control" id="descriptionInput" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="workGroupSelect" class="form-label">Work Group</label>
+                            <select class="form-select" id="workGroupSelect" required>
+                                <option value="">Select Work Group</option>
+                                <option value="CSCS">CSCS</option>
+                                <option value="CIT">CIT</option>
+                                <option value="Bees">Bees</option>
+                                <option value="MRSA">MRSA</option>
+                                <option value="BSE">BSE</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btnCancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btnBlue" id="saveBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; Copyright Defra 2025
+    </div>
+
+    <script src="../js/menuscript.js" defer></script>
+
+    <script src="../js/testcode.js" defer></script>
+
+    <!-- <script src="js/portfoliotimecode.js" defer></script> -->
+    <script src="../js/portfoliomaintenance.js" defer></script>
+    <script>
+        //  new TomSelect("#dpselectportfolio",{
+        //         // onItemAdd() {
+        //         //         this.setTextboxValue("");  // clear search box
+        //         // },
+        //         onItemAdd: function () {
+        //                 this.blur();
+        //             }
+        // });
+        document.getElementById("dpselectportfolio").addEventListener("change", function () {
+            const selectedValue = this.value;
+            //  document.getElementById("accordionExample").style.display = 'block';
+            document.getElementById('txt-parentproject').value = selectedValue?.split("|")[0].trim();
+            document.getElementById('txt-projecttitle').value = selectedValue?.split("|")[1].trim();
+            // document.getElementById("tbl").style.display = 'flex';
+            // //  document.getElementById("shortnav").style.display = 'flex';
+            // // document.getElementById("invoicebtns").style.display = 'flex';
+            // document.getElementById("businessfinancial-div").style.display = 'flex';
+            // console.log("Selected:", selectedValue);
+        });
+    </script>
+
+    <!-- <script src="../pact_ver2.0/nav_menu/script.js"></script>
+    <script>
+
+        fetch("../pact_ver2.0/nav_menu/index.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+                initMenu();
+                btn();
+                // Execute <script> tags inside fetched HTML
+                // document.querySelectorAll("#header script").forEach(oldScript => {
+                // const newScript = document.createElement("script");
+                // newScript.text = oldScript.text;
+                // document.body.appendChild(newScript);
+                // });
+
+            });
+    </script> -->
+</body>
+
+</html>

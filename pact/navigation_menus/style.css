@@ -1,0 +1,81 @@
+/* Parent menu items styling */
+.parent-menu {
+    background-color: #198754 !important;
+    color: white !important;
+    font-weight: 600;
+    border-radius: 4px;
+    margin: 0 2px;
+    transition: all 0.3s ease;
+}
+
+.parent-menu:hover {
+    background-color: #157347 !important;
+    color: white !important;
+}
+
+.parent-menu.active {
+    background-color: #0d6efd !important;
+    color: white !important;
+}
+
+/* Submenu items styling */
+.submenu-item {
+    background-color: #f8f9fa !important;
+    color: #495057 !important;
+    font-weight: 400;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+.submenu-item:hover {
+    background-color: #e9ecef !important;
+    color: #212529 !important;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    border: 2px solid #198754;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar brand styling */
+.navbar-brand {
+    font-size: 1.5rem;
+    color: white !important;
+}
+
+/* Navbar background */
+.bg-success {
+    background-color: #28a745 !important;
+}
+
+/* Active menu highlighting */
+.nav-item .nav-link.active {
+    background-color: #0d6efd !important;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .navbar-nav .nav-item {
+        margin: 2px 0;
+    }
+    
+    .parent-menu {
+        margin: 2px 0;
+        border-radius: 4px;
+    }
+}
+
+/* Dropdown divider styling */
+.dropdown-divider {
+    border-color: #198754;
+    opacity: 0.3;
+}
+
+/* Special styling for exceptional costs items */
+.text-danger {
+    color: #dc3545 !important;
+    font-weight: 500;
+}

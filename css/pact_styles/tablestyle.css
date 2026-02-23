@@ -1,0 +1,305 @@
+
+html {
+  font-size: 100%;
+}
+
+
+table,
+th,
+td,
+button,
+label,
+input {
+  font-size: 1rem !important;
+}
+/* .container-fluid {
+    padding: 20px;
+} */
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.header-section {
+    background-color: #8e44ad;
+    color: white;
+    padding: 15px 20px;
+    margin: -20px -20px 20px -20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    background: #8B4B8C;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.import-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.import-btn:hover {
+    background: #45a049;
+}
+
+.validate-btn {
+    background: #2196F3;
+    color: white;
+}
+
+.validate-btn:hover {
+    background: #1976D2;
+}
+
+.copy-btn, .paste-btn {
+    background: #FF9800;
+    color: white;
+}
+
+.copy-btn:hover, .paste-btn:hover {
+    background: #F57C00;
+}
+
+
+.filter-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-row label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #555;
+}
+
+.filters-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filters-section label {
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.table-section {
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.filter-row select {
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 12px;
+    min-width: 80px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+    color: #495057;
+    padding: 12px 8px;
+}
+
+.table tbody td {
+    padding: 10px 8px;
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.pagination-section {
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+    white-space: nowrap;
+}
+
+th {
+    background: #f8f9fa;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+tr:hover {
+    background: #f8f9fa;
+}
+
+tr.selected {
+    background: #e3f2fd;
+}
+
+.row-checkbox {
+    margin: 0;
+}
+
+.footer {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.total-hours {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+}
+
+.total-hours input {
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 60px;
+    font-size: 12px;
+}
+
+.status-panel {
+    padding: 15px 20px;
+    background: #fff;
+    border-top: 1px solid #dee2e6;
+}
+
+.status-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.status-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.status-btn.passed {
+    background: #4CAF50;
+    color: white;
+}
+
+.status-btn.failed {
+    background: #f44336;
+    color: white;
+}
+
+.status-btn.all {
+    background: #2196F3;
+    color: white;
+}
+
+.status-btn.make-live {
+    background: #FF9800;
+    color: white;
+}
+
+.status-btn:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .filter-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .status-buttons {
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yearly Finance</title>
+	  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/pims_style/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
+    <style>
+        .nav-link {
+    border: 1px solid #919191 !important;
+}
+
+.text-AlignRight {
+    text-align: right;
+}
+
+
+div#pagination > button {
+    padding: 1px 6px;
+    font-size: 12px;
+}
+ tbody#tableBody > tr > td:nth-child(2) {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.main-nav {
+    display: flex;
+    background-color: #1d70b8;
+    padding: 0;
+    margin: 0;
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+}  
+.nav-item {
+    position: relative;
+    display: flex;
+}
+
+.nav-button {
+    background-color: #1d70b8;
+    color: white;
+    border: none;
+    padding: 12px 20px 12px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav-button:hover {
+    background-color: #003078;
+}
+
+.nav-button.active {
+    background-color: #357abd;
+}
+
+.nav-button:focus {
+    background: #003078;
+}
+
+.dropdown-toggle::after {
+    display: none;
+	}
+	
+	.jobcodediv{
+     max-height: 400px;
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #1d70b8 !important;
+    border-top: 0 !important;
+}
+
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+table.custom-table th {
+    position: sticky;
+    top: 0;
+    background: #f8f9fa !important;
+    z-index: 2;
+	text-align: center;
+	    font-weight: 600;
+}
+
+
+.custom-table thead th {
+  box-shadow: 0 2px 2px rgba(0,0,0,0.05);
+  background: #edf4ff !important;
+  border: 1px solid #dee2e6 !important;
+  font-weight: 600;
+    font-size: 14px;
+}
+
+
+
+
+/* Cells */
+ 
+.custom-table td {
+  padding: 6px 10px !important;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+.custom-table th {
+  padding: 9px 10px !important;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+/* Prevent data bleed-through */
+.custom-table tbody td {
+  background-color: #ffffff;
+}
+
+/* Optional row hover */
+.custom-table tbody tr:hover td {
+  background-color: #f5f5f5;
+}
+
+.custom-table thead th{
+  box-shadow: 0 2px 2px rgba(0,0,0,0.05);
+  background: #edf4ff !important;
+  border: 1px solid #dee2e6 !important;
+}
+
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-color-type: none;
+    --bs-table-bg-type: none;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" />
+                </div>
+                <!-- <div class="menu-icon" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> -->
+                <div class="pims-log">
+                    <span>PIMS</span>
+                </div>
+                <p>Project Information Management System</p>
+            </div>
+            <div class="btn-group" style=" display: flex; align-items: center; font-size:16px;">
+                Meg Ved 
+				
+				<button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                   <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24"> <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px" height="30px">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button>
+                    </li>
+                    <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button>
+                    </li> -->
+                    <li><a href="../index.html" class="dropdown-item" type="button">
+                       <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
+                            Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+<nav class="main-nav">
+        <div class="nav-item dropdown">
+            <a class="nav-button" href="pimshome.html" style="text-decoration: none;">
+               Choose Project
+            </a>
+        </div>
+         <div class="nav-item dropdown">
+            <a class="nav-button" href="#" style="text-decoration: none;">
+               Print Reports 
+            </a>
+        </div>
+		 <div class="nav-item dropdown">
+            <a class="nav-button" href="#" style="text-decoration: none;">
+               Publications 
+            </a>
+        </div>
+		 <div class="nav-item dropdown">
+            <a class="nav-button" href="#" style="text-decoration: none;">
+               Maintenance 
+            </a>
+        </div>
+		 <div class="nav-item dropdown">
+            <a class="nav-button" href="#" style="text-decoration: none;">
+               Pop-up Data Check 
+            </a>
+        </div>
+    </nav>
+     <div class="container-fluid" style="padding: 0;">
+                <h5 style="padding: 10px 0 5px 20px; border-bottom: 2px solid #1d70b8; margin-bottom: 10px; display: flex; justify-content: space-between;">Yearly Finance <div style="margin-right: 16px;"><a href="pimshome.html" class="btn btn-outline-primary btn-sm">Back</a></div></h5>
+            </div>
+    <div class="d-flex">
+
+         <nav class="sidebar d-flex flex-column flex-shrink-0 position-fixedX">
+            <button class="toggle-btn" onclick="toggleSidebar()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="nav flex-column">
+                 <!-- <a href="index.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-house-user me-3" style="color: #ffffff;"></i>
+                    <span class="hide-on-collapse">Home</span>
+                </a> -->
+				
+				 <a href="selectedprojectdetails.html" class="sidebar-link text-decoration-none p-3">
+				  <i class="fa-solid fa-list-check me-3"></i>
+                   
+                    <span class="hide-on-collapse">Project Details</span>
+                </a>
+				
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-chart-bar me-3"></i>
+                    <span class="hide-on-collapse">Yearly Financial Details</span>
+                </a>
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-users me-3"></i>
+                    <span class="hide-on-collapse">A&F Report Data</span>
+                </a>
+
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-box me-3"></i>
+                    <span class="hide-on-collapse">Milestones</span>
+                </a>
+                <a href="yearlyfinance.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-sack-dollar me-3" style="color: #ffffff;"></i>
+                    <span class="hide-on-collapse">Yearly Finances</span>
+                </a>
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-file-invoice-dollar me-3" style="color: #ffffff;"></i>
+                    <span class="hide-on-collapse">Invoices</span>
+                </a>
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-regular fa-message me-3"></i>
+                    <span class="hide-on-collapse">Comments</span>
+                </a>
+
+                <!-- <div class="menu-section">
+                    <div class="menu-item sidebar-link active text-decoration-none p-3"
+                        onclick="toggleSubmenu('project-maintenance')"
+                        style="display: flex;flex-wrap: nowrap;flex-direction: row; align-items: center;">
+                        <i class="fa-regular fa-user me-3"></i>
+                        <span class="hide-on-collapse">PMD User</span>
+                        <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
+                    </div>
+                    <div class="submenu" id="project-maintenance">
+                        <div class="submenu-item"><a href="pmduser.html" alt="project maintenance"> Milestone List</a></div>
+                        <div class="submenu-item"><a href="pmduser.html" alt="project maintenance"> Milestone update</a></div> 
+                    </div>
+                </div> -->
+
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-list-check me-3"></i>
+                    <span class="hide-on-collapse"> Project Review </span>
+                </a>
+
+                
+
+               
+
+                <a href="pmduser.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-user-tie me-3" style="color: #ffffff;"></i>
+                    <span class="hide-on-collapse">PMD Milestone</span>
+                </a>
+
+
+            </div>
+        </nav>
+        <!-- <main class="main-content">
+        <div class="container-fluid">
+            <h2>Welcome to NexusFlow</h2>
+            <p class="text-muted">Streamline your workflow with our intuitive dashboard.</p>
+        </div>
+        
+       </main> -->
+
+        <main class="main-content" style="padding-top: 0;">
+            <div>
+                <!-- <div>
+                    <h5 style="padding: 0px 0 15px 0px;
+    border-bottom: 2px solid #1d70b8;
+    margin-bottom: 10px;
+    margin-left: 3px;">Yearly Finance</h5>
+                </div> -->
+                <div class="align-items-start mb-3" id="search-grid">
+                    <div class="search-panel" style="overflow: visible;border:0;padding:0;">
+                        <div class="container-fluid display-flex" style="align-items: flex-end; margin: 0 -10px;">
+                            <div style="display: flex;    gap: 10px;    flex-direction: row;" class="col-6">
+                                <div class="col-5">
+                                    <label for="project" class="col-form-label">Select a Project</label>
+                                    <select id="dpprojectSelect" class="form-select project-dropdown">
+                                        <option value="">WMWL1300</option>
+                                        <option value="">WMEU1702</option>
+                                        <option value="">WMWL1300</option>
+                                        <option value="">WMWL1310</option>
+                                        <option value="">WMWL1800</option>
+                                        <option value="">WMWL1900</option>
+                                        <option value="">WMWL1901</option>
+                                        <option value="">WMWL1902</option>
+                                        <option value="">WMWL1903</option>
+                                        <option value="">WMWL1999</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-4">
+                                    <label for="project" class="col-form-label">Year</label>
+                                    <select id="dpyear" class="form-select project-dropdown">
+                                        <option value="">year</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2005">2005</option>
+                                        <option value="2004">2004</option>
+                                        <option value="2003">2003</option>
+                                        <option value="2002">2002</option>
+                                        <option value="2001">2001</option>
+                                        <option value="2000">2000</option>
+                                        <option value="1999">1999</option>
+                                        <option value="1998">1998</option>
+                                        <option value="1997">1997</option>
+                                        <option value="1996">1996</option>
+                                        <option value="1995">1995</option>
+                                        <option value="1994">1994</option>
+                                        <option value="1993">1993</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- <div class="col-3 margin-left-10">
+                             
+                                <div class="input-group">
+                                   
+                                    <input type="text" class="form-control"
+                                        placeholder="Search by project name/title/disease/status/contract"
+                                        aria-label="Amount (to the nearest dollar)">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"> <i class="fas fa-search"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                            </div> -->
+
+                        </div>
+                    </div>
+
+                    <!-- <table class="table tbl-border">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Project code</th>
+                                <th>title</th>
+                                <th>Disease</th>
+                                <th>Contract</th>
+                                <th>Status</th>
+                                <th style="text-align: right;">More</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>FZ2000</td>
+                                <td>Salmonella surveillance and national control programme</td>
+                                <td>Salmonella</td>
+                                <td>SurvB</td>
+                                <td><span class="badge bg-success">Approved</span></td>
+                                <td style="text-align: right; padding-right: 30px; cursor: pointer;">
+                                    <i class="fa-solid fa-ellipsis-vertical" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" data-bs-whatever="@mdo"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>FZ2001</td>
+                                <td>Option one</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td><span class="badge bg-primary">In Progress</span></td>
+                                <td style="text-align: right; padding-right: 30px; cursor: pointer;"> 
+                                    <i class="fa-solid fa-ellipsis-vertical" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModalOptiontwo" data-bs-whatever="@mdo"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>FZ2002</td>
+                                <td>Option two</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td><span class="badge bg-danger">Rejected</span></td>
+                                <td style="text-align: right; padding-right: 30px;">
+                                    <i class="fa-solid fa-ellipsis-vertical" onclick="toggleSideform()"></i>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>FZ2003</td>
+                                <td>Option three</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td><span class="badge bg-secondary">On Hold</span></td>
+                                <td style="text-align: right; padding-right: 18px;">
+                                    <button type="button" style="border: 0;" class="btn btn-secondary  user-menu"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><button class="dropdown-item" type="button"><i
+                                                    class="fa-regular fa-pen-to-square"></i> Edit project</button></li>
+                                        <li><button class="dropdown-item" type="button"> <i
+                                                    class="fa-regular fa-trash-can"></i> Delete project</button></li>
+                                        <li><button class="dropdown-item" type="button"><i
+                                                    class="fa-regular fa-comment-dots"></i>Add comments</button></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+
+                </div>
+
+
+                <!-- NAV TABS -->
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+    <button class="nav-link active"
+      id="nav-pa-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-pa"
+      type="button"
+      role="tab"
+      aria-controls="nav-pa"
+      aria-selected="true">
+      Monthly Pact Data
+    </button>
+
+    <button class="nav-link"
+      id="nav-summary-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-summary"
+      type="button"
+      role="tab"
+      aria-controls="nav-summary"
+      aria-selected="false">
+      Pact Pay
+    </button>
+
+     <button class="nav-link"
+      id="nav-plan-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-plan"
+      type="button"
+      role="tab"
+      aria-controls="nav-plan"
+      aria-selected="false">
+     Plan
+    </button>
+
+    <button class="nav-link"
+      id="nav-reports-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-reports"
+      type="button"
+      role="tab"
+      aria-controls="nav-reports"
+      aria-selected="false">
+      Project Details
+    </button>
+
+        <button class="nav-link"
+      id="nav-spa-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-spa"
+      type="button"
+      role="tab"
+      aria-controls="nav-spa"
+      aria-selected="false">
+      Staff Plan vs Actuals
+    </button>
+
+     <button class="nav-link"
+      id="nav-tpa-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-TestplanActual"
+      type="button"
+      role="tab"
+      aria-controls="nav-TestplanActual"
+      aria-selected="false">
+      Test Plan vs Actuals
+    </button>
+       <button class="nav-link"
+      id="nav-tpa-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-tpa"
+      type="button"
+      role="tab"
+      aria-controls="nav-tpa"
+      aria-selected="false">
+      Animal Plan vs Actuals
+    </button>
+	
+	
+	  <button class="nav-link"
+      id="nav-tpa-tab"
+      data-bs-toggle="tab"
+      data-bs-target="#nav-additionalcost"
+      type="button"
+      role="tab"
+      aria-controls="nav-additionalcost"
+      aria-selected="false">
+      Additional Cost Plan vs Actuals
+    </button>
+
+  </div>
+</nav>
+
+<!-- TAB CONTENT -->
+<div class="tab-content" id="nav-tabContent" style="border: 1px solid #919191; padding: 10px;">
+
+ 
+
+   <div class="tab-pane fade show active"
+    id="nav-pa"
+    role="tabpanel"
+    aria-labelledby="nav-pa-tab"> 
+	
+	
+	<div class="jobcodediv" style="max-height: 293px; height: 293px;">
+                                                        <table class="table table-striped table-bordered custom-table" id="monthly-data" style="margin-bottom: 0px;">
+                                                                <thead class="table-light">
+                                                                    <tr>
+                                                                       <th>Month</th>
+                            <th>Month Name</th>
+                            <th>Proj Specific</th>
+                            <th>Animals</th>
+                            <th>TimeCosts</th>
+                            <th>Test Costs</th>
+                            <th>Total Cost</th>
+                            <th>Total Hours</th>
+                            <th>Invoices</th>
+                            <th>COW</th>
+                                                                    </tr>
+                                                                </thead>
+                                                             <tbody>
+                        <tr>
+                            
+                            <td>1</td>
+                            <td>Jan</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">0</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                        </tr>
+                        <tr>
+                            
+                            <td>2</td>
+                            <td>Jan</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£1,468.32</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£1,468.32</td>
+                            <td class="text-AlignRight">21</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                        </tr>
+                        <tr>
+                            
+                            <td>3</td>
+                            <td>Jan</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£58.93</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£58.93</td>
+                            <td class="text-AlignRight">1</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                        </tr>
+                        <tr>
+                            
+                            <td>4</td>
+                            <td>Jan</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">0</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                        </tr>
+                        <tr>
+                            
+                            <td>5</td>
+                            <td>Jan</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">0</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                        </tr>
+                        <tr>
+                            
+                            <td>6</td>
+                            <td>Jan</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">0</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                        </tr>
+                        <tr>
+                            
+                            <td>7</td>
+                            <td>Jan</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">0</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                        </tr>
+                        <tr>
+                            
+                            <td>8</td>
+                            <td>Jan</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">0</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                        </tr>
+                        <tr>
+                            
+                            <td>9</td>
+                            <td>Jan</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">0</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                        </tr>
+                        <tr>
+                            
+                            <td>10</td>
+                            <td>Jan</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">0</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                        </tr>
+                        <tr>
+                            
+                            <td>11</td>
+                            <td>Jan</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">0</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                        </tr>
+                        <tr>
+                            
+                            <td>12</td>
+                            <td>Jan</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">0</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£1,527.25</td>
+                            <td class="text-AlignRight">£0.00</td>
+                            <td class="text-AlignRight">£1,527.25</td>
+                            <td class="text-AlignRight">22</td>
+                            <td class="text-AlignRight">£0.00</td> 
+                        </tr>
+                    </tbody>
+                                                        </table>
+                                         
+                                                </div>
+												
+												<div style=" font-size: 14px;    font-weight: 600;
+    margin: 10px 0px 2px 0px;">FPS Planned Cost</div>
+												<div class="jobcodediv" style="max-height: 170px; height: 170px;">
+                                                        <table class="table table-striped table-bordered custom-table" id="monthly-data" style="margin-bottom: 0px;">
+                                                                <thead class="table-light">
+                                                                    <tr>
+                                                                      <th>Staff Cost</th>
+																	<th>Test Cost</th>
+																	<th>Exceptional Cost</th>
+																	<th>Animal Cost</th>
+																	<th>Total Cost</th>
+																	<th>Cust Income</th>
+																	<th>Total Income</th>
+																	<th>Budget VLA</th>																	
+                                                                    </tr>
+                                                                </thead>
+                                                             <tbody>
+                        <tr>
+                            
+                           <td>£0.00</td>
+                           <td>£0.00</td>
+                            <td>£0.00</td>
+                            <td>£0.00</td>
+                            <td>£0.00</td>
+                            <td>£0.00</td>
+                            <td>£0.00</td>
+                            <td>0</td>
+                        
+                        </tr>
+                      
+					  
+					      <tr class="total-row">
+                          
+                            <td  colspan="7" class="text-AlignRight" style=" vertical-align: middle;">Total Cost as Percentage od VLA Budget</td>
+                           <td  style=" border-right: 0px;  border-left: 0px; border-bottom: 0px; padding-right: 0px !important;  text-align: right;font-size: 14px;"> 
+						   <span class="total-amount"> 
+						   <input type="text" value=" " aria-label="Total Cost" style="padding-right:5px;" class="form-control form-control-sm ">
+						   </span></td>
+                            
+                        </tr>
+                       
+                        <!-- <tr class="total-row"> -->
+                            <!-- <td></td> -->
+                            <!-- <td></td> -->
+                            <!-- <td></td> -->
+                            <!-- <td>£0.00</td> -->
+                            <!-- <td>£0.00</td> -->
+                            <!-- <td>£1,527.25</td> -->
+                            <!-- <td>£0.00</td> -->
+                            <!-- <td>£1,527.25</td> -->
+                            <!-- <td>22</td> -->
+                            <!-- <td>£0.00</td>  -->
+                        <!-- </tr> -->
+                    </tbody>
+                                                        </table>
+                                         
+                                                </div>
+	
+	
+	
+	
+    
+  </div>
+
+    <div class="tab-pane fade"
+    id="nav-plan"
+    role="tabpanel"
+    aria-labelledby="nav-plan-tab">
+     <p>Plan record goes here...</p>
+  </div>
+
+  <div class="tab-pane fade"
+    id="nav-summary"
+    role="tabpanel"
+    aria-labelledby="nav-summary-tab"> 
+    <p>Pact Pay record goes here...</p>
+  </div>
+
+  <div class="tab-pane fade"
+    id="nav-spa"
+    role="tabpanel"
+    aria-labelledby="nav-spa-tab"> 
+      <div class="align-items-start mb-3" style="display: flex;     justify-content: space-between;
+    flex-direction: row;" id="search-grid">
+            <div style="width: 100%;">
+			
+			Staff Plan vs Actuals goes here...
+                      <!-- <div class="search-panel"> -->
+                                        <!-- <div class="container-fluid display-flex"> -->
+                                            <!-- <div class="col-6 margin-left-10"> -->
+                                                <!-- <!-- <input type="text" class="form-control" id="formGroupExampleInput" -->
+                                                            <!-- placeholder="Search by project name/title/disease/status/contract"> --> 
+
+                                                <!-- <div class="input-group" style="display:none;"> -->
+                                                    <!-- <!-- <div class="input-group-prepend"> -->
+                                                                <!-- <span class="input-group-text">£</span> -->
+                                                            <!-- </div> --> 
+                                                    <!-- <input type="text" id="txtsearchBox" class="form-control" -->
+                                                        <!-- placeholder="Search by Job code or Name" -->
+                                                        <!-- aria-label="Amount (to the nearest dollar)"> -->
+                                                    <!-- <div class="input-group-append"> -->
+                                                        <!-- <span class="input-group-text"> <i class="fas fa-search"></i> -->
+                                                        <!-- </span> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+
+
+                                            <!-- </div> -->
+
+
+                                        <!-- </div> -->
+                                    <!-- </div> -->
+
+                                    <!-- <table class="table tbl-border mb-0" id="tblmaintenance"> -->
+                                        <!-- <thead class="thead-light"> -->
+                                            <!-- <tr> -->
+                                                <!-- <th>WG Grade</th> -->
+                                                <!-- <th>Name</th> -->
+                                                 <!-- <th>Hour</th> -->
+                                                <!-- <th>Rate</th> -->
+                                                <!-- <th>Cost</th>                                          </tr> -->
+                                        <!-- </thead> -->
+                                        <!-- <tbody id="tableBodytwo">  -->
+                                        <!-- </tbody> -->
+
+                                    <!-- </table> -->
+                                    <!-- Pagination -->
+                                    <!-- <div style="    display: flex; -->
+                                        <!-- margin-top: 0; -->
+                                        <!-- margin-bottom: 14px; -->
+                                        <!-- border: 1px solid #ccc; -->
+                                        <!-- padding: 10px; -->
+                                        <!-- border-top: 0; -->
+                                        <!-- justify-content: space-between; -->
+                                        <!-- align-items: center; -->
+                                        <!-- border-radius: 0 0 10px 10px;"> -->
+                                        <!-- <div> -->
+                                            <!-- <label>Records per page:</label> -->
+                                            <!-- <select id="recordPerPage" class="form-select w-auto d-inline-block" style="font-size: 11px;"> -->
+                                                <!-- <option>5</option> -->
+                                                <!-- <option>10</option> -->
+                                                <!-- <option>15</option> -->
+                                            <!-- </select> -->
+                                        <!-- </div> -->
+                                        <!-- <nav> -->
+                                            <!-- <div id="pg" class="pagination gap-2"></div> -->
+                                        <!-- </nav> -->
+                                        <!-- <div class="col-2" style="text-align: right; display: none;" > -->
+                                         <!-- Total:   &pound;1,22,218.95 -->
+                                        <!-- </div> -->
+
+                                    <!-- </div> -->
+            </div>
+            <!-- <div style="width: 100%;font-size: 13px;     margin-left: 3px;"> -->
+
+           
+                                    <!-- <div class="search-panel"> -->
+                                        <!-- <div class="container-fluid display-flex" style="justify-content: space-between; padding-right: 0;"> -->
+                                            <!-- <div class="col-6 margin-left-10"> -->
+                                                <!-- <!-- <input type="text" class="form-control" id="formGroupExampleInput" -->
+                                                            <!-- placeholder="Search by project name/title/disease/status/contract"> -->
+
+                                                <!-- <div class="input-group" style="display:none"> -->
+                                                    <!-- <!-- <div class="input-group-prepend"> -->
+                                                                <!-- <span class="input-group-text">£</span> -->
+                                                            <!-- </div> --> 
+                                                    <!-- <input type="text" id="searchBox" class="form-control" -->
+                                                        <!-- placeholder="Search by Job code or Name" -->
+                                                        <!-- aria-label="Amount (to the nearest dollar)"> -->
+                                                    <!-- <div class="input-group-append"> -->
+                                                        <!-- <span class="input-group-text"> <i class="fas fa-search"></i> -->
+                                                        <!-- </span> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
+
+
+                                            <!-- </div> -->
+                                            <!-- <div> -->
+                                            <!-- <button class="btn btn-sm btn-primary"><img src="../images/file-excel-regular-full.svg" width="20"/>Export to Excel</button> -->
+                                        <!-- </div> -->
+
+                                        <!-- </div> -->
+                                    <!-- </div> -->
+
+                                    <!-- <table class="table tbl-border mb-0" id="tblmaintenance"> -->
+                                        <!-- <thead class="thead-light"> -->
+                                            <!-- <tr> -->
+                                                <!-- <th>Job Code</th> -->
+                                                <!-- <th>Name</th> -->
+                                                 <!-- <th>Work Group</th> -->
+                                                <!-- <th>Group</th> -->
+                                                <!-- <th>Mont</th> -->
+                                                <!-- <th>Time</th> -->
+                                                <!-- <th>Rate</th> -->
+                                                <!-- <th style="text-align: left;    width: 90px;">Cost</th>                                            </tr> -->
+                                        <!-- </thead> -->
+                                        <!-- <tbody id="tableBody"> -->
+										
+										<!-- </tbody> -->
+
+                                    <!-- </table> -->
+                                    <!-- <!-- Pagination --> 
+                                    <!-- <div style="    display: flex; -->
+                                        <!-- margin-top: 0; -->
+                                        <!-- margin-bottom: 14px; -->
+                                        <!-- border: 1px solid #ccc; -->
+                                        <!-- padding: 10px; -->
+                                        <!-- border-top: 0; -->
+                                        <!-- justify-content: space-between; -->
+                                        <!-- align-items: center; -->
+                                        <!-- border-radius: 0 0 10px 10px;"> -->
+                                        <!-- <div class="col-2"> -->
+                                           
+                                            <!-- <select id="recordsPerPage" class="form-select w-auto d-inline-block" style="font-size: 11px;"> -->
+                                                <!-- <option>5</option> -->
+                                                <!-- <option selected>10</option> -->
+                                                <!-- <option>15</option> -->
+                                            <!-- </select> -->
+                                        <!-- </div> -->
+                                        <!-- <nav class="col-7"> -->
+                                            <!-- <div id="pagination" class="pagination gap-2"></div> -->
+                                        <!-- </nav> -->
+                                        <!-- <div class="col-3" style="text-align: right;"> -->
+                                       <!-- Total: &pound;1,22,218.95 -->
+                                        <!-- </div> -->
+
+                                    <!-- </div> -->
+                                     <!-- </div> -->
+           </div>
+  </div>
+
+  <div class="tab-pane fade"
+    id="nav-TestplanActual"
+    role="tabpanel"
+    aria-labelledby="nav-TestplanActual-tab">
+    <p>Test Plan vs Actuals Records goes here...</p>
+  </div>
+  
+    <div class="tab-pane fade"
+    id="nav-tpa"
+    role="tabpanel"
+    aria-labelledby="nav-tpa-tab">
+    <p>Animal Plan vs Actuals Records goes here...</p>
+  </div>
+  
+  <div class="tab-pane fade"
+    id="nav-additionalcost"
+    role="tabpanel"
+    aria-labelledby="nav-additionalcost-tab">
+    <p>Additional Cost Plan vs Actuals</p>
+  </div>
+  
+  
+
+  <div class="tab-pane fade"
+    id="nav-reports"
+    role="tabpanel"
+    aria-labelledby="nav-reports-tab">
+    <p>Project details record goes here...</p>
+  </div> 
+  
+  
+  
+
+</div>
+
+
+
+
+            
+            </div>
+        </main>
+        <!--Slideout form-->
+        <div class="backdrop" id="backdrop"> </div>
+        <div id="sideform" class="sideform d-flex flex-column flex-shrink-0">
+
+            <button class="btn btn-light"
+                style="    border-radius: 4px; color:red;   padding: 3px 6px;    display: flex; font-size: 22px;   align-items: center; position: absolute; top:6px; right: 0;"
+                onclick="toggleSideform()"><i class="fa-solid fa-circle-xmark"></i>
+            </button>
+           
+            
+           
+
+        </div>
+        <div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header flex-space-center">
+                        <h5 class="modal-title" style="margin: 0;" id="exampleModalLabel">New Project</h5>
+                        <button type="button" class="btn-close" onclick="closeModal()"> </button>
+                    </div>
+                    <div class="modal-body" style="padding-top: 5px;">
+                        <form class="row" id="formAddJobcode">
+                            <div class="col-12 mb-2">
+                                <label for="txtProject" class="form-label mb-0">Project:</label>
+                                <input type="text" class="form-control" id="txtProject">
+                            </div>
+                            <div class="col-12 mb-2">
+                                <label for="txtTitle" class="form-label mb-0">Title:</label>
+                                <!-- <input type="text" class="form-control" id="modal-name"> -->
+                                <textarea class="form-control" id="txtTitle" rows="3"></textarea>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <label for="txtStatus" class="form-label mb-0">Status</label>
+                                <select required="" class="form-select" id="dpStatus">
+                                    <option value="">--select project--</option>
+                                    <option value="Rejected">Rejected</option>
+                                    <option value="Proposed">Proposed</option>
+                                </select>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <label for="txtCostbookNo" class="form-label mb-0">Cost book No</label>
+                                <input type="text" class="form-control" id="txtCostbookNo">
+                            </div>
+                            <div class="col-6 mb-2">
+                                <label for="txtDisease" class="form-label mb-0">Disease</label>
+                                <input type="text" class="form-control" id="txtDisease">
+                            </div>
+                            <div class="col-6 mb-2 mb-2">
+                                <label for="txtProgram" class="form-label mb-0">Program</label>
+                                <select required="" class="form-select" id="dpProgram">
+                                    <option value="">--select project--</option>
+                                    <option value="ADMIN">ADMIN</option>
+                                    <option value="AHVLA_Prog">AHVLA_Prog</option>
+                                    <option value="ASU">ASU</option>
+                                    <option value="B&M">B&M</option>
+                                    <option value="Bact">Bact</option>
+                                    <option value="Bee Insp">Bee Insp</option>
+                                    <option value="BTB">BTB</option>
+                                    <option value="ClubFive">ClubFive</option>
+                                    <option value="Comm">Comm</option>
+                                    <option value="Commercial">Commercial</option>
+                                    <option value="DoES">DoES</option>
+                                    <option value="END_RES">END_RES</option>
+                                    <option value="END_SURV">END_SURV</option>
+                                    <option value="EU Exit">EU Exit</option>
+                                    <option value="EU_PROG">EU_PROG</option>
+                                    <option value="FES_RES">FES_RES</option>
+                                </select>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <label for="dpCustomer" class="form-label mb-0">Customer</label>
+                                <select required="" class="form-select" id="dpCustomer">
+                                    <option value="">--select project--</option>
+                                    <option value="ABBOTT Diagnostics">ABBOTT Diagnostics</option>
+                                    <option value="ADAS">ADAS</option>
+                                    <option value="AFBI">AFBI</option>
+                                    <option value="AFCD Hong Kong">AFCD Hong Kong</option>
+                                    <option value="AG Research">AG Research</option>
+                                    <option value="Agricultural Unversity of Iceland">Agricultural Unversity of Iceland
+                                    </option>
+                                    <option value="AHVG">AHVG</option>
+                                    <option value="AHVLA">AHVLA</option>
+                                    <option value="AHWP">AHWP</option>
+                                </select>
+                            </div>
+
+
+                            <div class="col-6 mb-2">
+                                <label for="textManager" class="form-label mb-0">Manager</label>
+                                <input type="text" class="form-control" id="textManager">
+                            </div>
+                            <div class="col-12 mb-2">
+                                <label for="proposal" class="form-label mb-0">Reason for new proposal</label>
+                                <textarea type="text" class="form-control"></textarea>
+                            </div>
+                            <!-- <div class="mt-2">
+                        <button class="btn btn-primary" type="submit" >Save</button> 
+                        </div> -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                        <button class="btn btn-primary" id="modalsaveBtn">Save</button>
+                        <button class="btn btn-primary" id="updateBtn" style="display: none;">Update</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="footer">
+        &copy; Copyright Defra 2025
+    </div>
+
+
+    <!-- <div class="col-sm-6">
+         <label for="project" class="col-form-label">Select a Project</label>
+        <select id="projectSelect" class="project-dropdown">
+            <option value="">Select Project</option>
+        </select>
+    </div> -->
+
+
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('collapsed');
+        }
+
+        function toggleSubmenu(e,submenuId) {
+              e.preventDefault();
+
+            const submenu = document.getElementById(submenuId);
+            const menuItem = submenu.previousElementSibling;
+
+            // Close all other submenus
+            const allSubmenus = document.querySelectorAll('.submenu');
+            const allMenuItems = document.querySelectorAll('.menu-item');
+
+            allSubmenus.forEach(menu => {
+                if (menu.id !== submenuId) {
+                    menu.classList.remove('open');
+                }
+            });
+
+            allMenuItems.forEach(item => {
+                if (item !== menuItem) {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Toggle current submenu
+            submenu.classList.toggle('open');
+            menuItem.classList.toggle('active');
+            localStorage.setItem("openMenu", "open");
+
+        }
+
+        //      new TomSelect("#projectSelect",{
+        //         // onItemAdd() {
+        //         //         this.setTextboxValue("");  // clear search box
+        //         // },
+        //         onItemAdd: function () {
+        //                 this.blur();
+        //             }
+        // });
+    </script>
+    <script src="../js/yearlyfinance.js"></script>
+</body>
+
+</html>

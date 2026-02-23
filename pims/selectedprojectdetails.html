@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+      <link rel="stylesheet" href="../css/bootstrap.min.css">	
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet" />
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/pims_style/style.css" />
+	 <link rel="stylesheet" href="../css/main_style.css">	
+    <link href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
+	
+	
+<style>
+    .col-form-label{
+        font-weight: normal !important; 
+    }
+
+ 
+.nav-item {
+    position: relative;
+    display: flex;
+}
+
+.nav-tabs .nav-link.active{
+color:#000;
+}
+
+.nav-tabs .nav-link{
+color:#000;
+}
+
+.nav-button {
+    background-color: #1d70b8;
+    color: white;
+    border: none;
+    padding: 12px 20px 12px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav-button:hover {
+    background-color: #003078;
+}
+
+.nav-button.active {
+    background-color: #357abd;
+}
+
+.nav-button:focus {
+    background: #003078;
+}
+</style>
+
+ <link rel="stylesheet" href="../css/main_style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" />
+                </div>
+                <!-- <div class="menu-icon" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> -->
+                <div class="pims-log">
+                    <span>PIMS</span>
+                </div>
+                <p>Project Information Management System</p>
+            </div>
+            <div class="btn-group" style=" display: flex; align-items: center; font-size:16px;">
+                Meg Ved 
+				
+				<button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                   <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24"> <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px" height="30px">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button>
+                    </li>
+                    <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button>
+                    </li> -->
+                    <li><a href="../index.html" class="dropdown-item" type="button">
+                     <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
+                            Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <div class="nav-item dropdown">
+             <a class="nav-link" href="pimshome.html" style="text-decoration: none;">
+               Choose Project
+            </a>
+        </div>
+         <div class="nav-item dropdown">
+            <a class="nav-button" href="#" style="text-decoration: none;">
+               Print Reports 
+            </a>
+        </div>
+		 <div class="nav-item dropdown">
+            <a class="nav-button" href="#" style="text-decoration: none;">
+               Publications 
+            </a>
+        </div>
+		 <div class="nav-item dropdown">
+            <a class="nav-button" href="#" style="text-decoration: none;">
+               Maintenance 
+            </a>
+        </div>
+		 <div class="nav-item dropdown">
+            <a class="nav-button" href="#" style="text-decoration: none;">
+               Pop-up Data Check 
+            </a>
+        </div>
+    </nav>
+     <div class="container-fluid" style="padding: 0;">
+                <h5 style="padding: 10px 0 5px 20px; border-bottom: 2px solid #1d70b8; margin-bottom: 10px; display: flex; justify-content: space-between;">Project <div style="margin-right: 16px;"><a href="pimshome.html" class="btn btn-outline-primary btn-sm">Back</a></div></h5>
+            </div>
+    <div class="d-flex">
+
+        <nav class="sidebar d-flex flex-column flex-shrink-0 position-fixedX">
+            <button class="toggle-btn" onclick="toggleSidebar()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="nav flex-column">
+                <!-- <a href="index.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-house-user me-3" style="color: #ffffff;"></i>
+                    <span class="hide-on-collapse">Home</span>
+                </a> -->
+				
+				  <a href="selectedprojectdetails.html" class="sidebar-link text-decoration-none p-3">
+				  <i class="fa-solid fa-list-check me-3"></i>
+                   
+                    <span class="hide-on-collapse">Project Details</span>
+                </a>
+				
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-chart-bar me-3"></i>
+                    <span class="hide-on-collapse">Yearly Financial Details</span>
+                </a>
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-users me-3"></i>
+                    <span class="hide-on-collapse">A&F Report Data</span>
+                </a>
+
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-box me-3"></i>
+                    <span class="hide-on-collapse">Milestones</span>
+                </a>
+                <a href="yearlyfinance.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-sack-dollar me-3" style="color: #ffffff;"></i>
+                    <span class="hide-on-collapse">Yearly Finances</span>
+                </a>
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-file-invoice-dollar me-3" style="color: #ffffff;"></i>
+                    <span class="hide-on-collapse">Invoices</span>
+                </a>
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-regular fa-message me-3"></i>
+                    <span class="hide-on-collapse">Comments</span>
+                </a>
+
+                <!-- <div class="menu-section">
+                    <div class="menu-item sidebar-link active text-decoration-none p-3"
+                        onclick="toggleSubmenu('project-maintenance')"
+                        style="display: flex;flex-wrap: nowrap;flex-direction: row; align-items: center;">
+                        <i class="fa-regular fa-user me-3"></i>
+                        <span class="hide-on-collapse">PMD User</span>
+                        <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
+                    </div>
+                    <div class="submenu" id="project-maintenance">
+                        <div class="submenu-item"><a href="pmduser.html" alt="project maintenance"> Milestone List</a></div>
+                        <div class="submenu-item"><a href="pmduser.html" alt="project maintenance"> Milestone update</a></div> 
+                    </div>
+                </div> -->
+
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-list-check me-3"></i>
+                    <span class="hide-on-collapse"> Project Review </span>
+                </a>
+
+               
+
+               
+
+                
+
+                <a href="pmduser.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-user-tie me-3" style="color: #ffffff;"></i>
+                    <span class="hide-on-collapse">PMD Milestone</span>
+                </a>
+
+
+            </div>
+        </nav>
+
+        <!-- <main class="main-content">
+        <div class="container-fluid">
+            <h2>Welcome to NexusFlow</h2>
+            <p class="text-muted">Streamline your workflow with our intuitive dashboard.</p>
+        </div>
+        
+       </main> -->
+
+        <main class="main-content" style="padding-top: 0px;">
+           
+            <div class="container-fluid"> 
+                <div class="row">
+                    <div class="col-6 p-0">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                    aria-selected="true" style="font-weight: 600;">FPS Project
+                                    Details</button>
+                                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                                    aria-selected="false" style="font-weight: 600;">Proposed Project
+                                    Details</button>
+                                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                    aria-selected="false" style="font-weight: 600;">FPS Yearly
+                                    Details</button>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent" style="margin: 0;">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" style=" border: 1px solid #9e9e9e;
+    padding: 10px;
+    min-height: 387px;
+    border-radius: 0 8px 8px;" aria-labelledby="nav-home-tab">
+                                <div class="display-flex mb-3" style="align-items: flex-start;">
+                                    <div class="col-sm-2">
+                                        <label style="font-weight: bold;">Project</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <p id="selected_project"> </p>
+                                    </div>
+                                </div>
+                                <div class="display-flex mb-3">
+                                    <div class="col-sm-2">
+                                        <label style="font-weight: bold;">Title</label>
+
+                                    </div>
+
+                                    <div class="col">
+                                        <p>Welsh Government for assistance with Bacterial Pathogens and Animal
+                                            By-products</p>
+                                    </div>
+
+                                </div>
+                                <div class="display-flex mb-3">
+                                    <div class="col-sm-2">
+                                        <label style="font-weight: bold;">Disease</label>
+
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <p>Not Specified</p>
+                                    </div>
+                                </div>
+                                <div class="display-flex mb-3">
+                                    <div class="col-sm-2">
+                                        <label style="font-weight: bold;">Contract</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <p>R&DGen</p>
+                                    </div>
+
+                                </div>
+                                <div class="display-flex mb-3">
+                                    <div class="col-sm-2">
+                                        <label style="font-weight: bold;">Status</label>
+
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <p class="green"><i class="fa-regular fa-circle-check"></i> Completed</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                aria-labelledby="nav-profile-tab" style=" border: 1px solid #9e9e9e;
+    padding: 10px;
+    border-top:0;
+    min-height: 387px;
+    border-radius: 0 8px 8px;">
+                                <p>no data found</p>
+                            </div>
+                            <div class="tab-pane fade" id="nav-contact" role="tabpanel"
+                                aria-labelledby="nav-contact-tab" style=" border: 1px solid #9e9e9e;
+    padding: 10px;
+    min-height: 387px;
+    border-radius: 0 8px 8px;">
+                                <table class="table tbl-border">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Year</th>
+                                            <th>Program</th>
+                                            <th>Customer</th>
+                                            <th>Manager</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2025</td>
+                                            <td>DoES</td>
+                                            <td>Welsh Government</td>
+                                            <td>Prendergast, Jeff</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024</td>
+                                            <td>DoES</td>
+                                            <td>Welsh Government</td>
+                                            <td>Prendergast, Jeff</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2023</td>
+                                            <td>DoES</td>
+                                            <td>Welsh Government</td>
+                                            <td>Prendergast, Jeff</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>2022</td>
+                                            <td>DoES</td>
+                                            <td>Welsh Government</td>
+                                            <td>Prendergast, Jeff</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 ">
+
+                        <form style="    display: flex;
+    flex-direction: row;
+    border: 1px solid #9e9e9e;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;">
+                            <div style="display: flex;
+    flex-direction: column;
+    width: 100%;">
+                                <div>
+                                    <h6 style="    background: aliceblue;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 1px solid #9e9e9e;font-weight: 600;">PIMS Details</h6>
+                                </div>
+                                <div style="display: flex;flex-direction: row;gap: 10px;">
+                                    <div style="width:50%;">
+                                        <div class="col p-0">
+                                            <label for="recipient-name" class="col-form-label">Version:</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" value="v.3.0" class="form-control" id="recipient-name">
+                                        </div>
+                                        <div class="col p-0">
+                                            <label for="recipient-name" class="col-form-label">File Ref:</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" value="CAC 2096 (1314A,44)" class="form-control"
+                                                id="recipient-name">
+                                        </div>
+                                        <div class="col p-0">
+                                            <label for="recipient-name" class="col-form-label">Customer
+                                                Ref:</label>
+                                        </div>
+
+                                        <div class="col p-0">
+                                            <input type="text" value="SurvB" class="form-control" id="recipient-name">
+                                        </div>
+                                        <div class="col p-0">
+                                            <label for="startdate" class="col-form-label">Start Date</label>
+                                        </div>
+                                        <div class="col">
+                                            <input type="date" value="04-11-2025" class="form-control" id="startdate">
+                                        </div>
+                                        <div class="col p-0">
+                                            <label for="enddate" class="col-form-label">End Date</label>
+                                        </div>
+                                        <div class="col p-0">
+                                            <input type="date" value="08-11-2025" class="form-control" id="enddate">
+                                        </div>
+                                    </div>
+                                    <div style="width:50%;">
+                                        <div class="mb-0 col">
+                                            <label for="recipient-name" class="col-form-label">Costbook Number</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                        </div>
+                                        <div class="mb-3 col p-0">
+                                            <label for="message-text" class="col-form-label">Risk Rating</label>
+                                            <select class="form-select" aria-label="Default select example">
+											<option selected >Select</option>
+                                                <option >High</option>
+                                                <option value="Active" >Medium</option>
+                                                <option value="All">Low</option>
+												  <option value="All">Normal</option>
+                                            </select>
+                                        </div>
+                                        <div class="display-flex col p-0  mb-3" style="height:39px;align-items: flex-end;">
+                                            <input class="form-check-input" id="recipient-name" type="checkbox" value=""
+                                                aria-label="...">
+                                            <label for="recipient-name" class="col-form-label"
+                                                style="    line-height: 0;">
+                                                &nbsp; Use Project Years? </label>
+                                        </div>
+
+                                        <div class="col p-0">
+                                            <label for="revisedenddate" class="col-form-label">Revised End Date</label>
+                                        </div>
+                                        <div class="col" style="padding-top:5px">
+                                            <input type="date" value="09-11-2025" class="form-control"
+                                                id="revisedenddate">
+                                        </div>
+                                        <div class="col p-0">
+                                            <label for="closeddate" class="col-form-label">Closed Date</label>
+                                        </div>
+                                        <div class="col p-0">
+                                            <input type="date" value="21-11-2025" class="form-control" id="closeddate">
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+                                  <div style="display: flex;flex-direction: row;gap: 10px;margin-top:5px;justify-content: flex-end;">
+
+<button class="btnBlue" >
+					<a href="#" style="color:#fff; text-decoration: none;">Save</a>
+					</button>
+                                  </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div style="margin-left:-10px">
+                    <div class="col-sm-12">
+
+                        <div class="search-panel" style="margin-top: 20px;padding-top: 0;">
+                            <div style="padding-left: 0;
+    justify-content: space-between;
+    margin-left: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;">
+                                <div style="display: flex;gap: 20px;">
+                                <div class="col-5">
+                                    <label for="dpselectyear" class="col-form-label">Select year</label>
+                                    <select id="dpselectyear" class="form-select" aria-label="Default select example">
+                                        <option selected>select year</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2021">2022</option>
+                                        <option value="2021">2023</option>
+                                        <option value="2021">2024</option>
+                                        <option value="2021">2025</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-8">
+                                    <label for="dpselecttopic" class="col-form-label">Select topic</label>
+                                    <select id="dpselecttopic" class="form-select" aria-label="Default select example">
+                                        <option selected>select topic</option>
+                                        <option value="A&F Report">A&F Report</option>
+                                        <option value="Contracts">Contracts</option>
+                                        <option value="General Comments">General Comments</option>
+                                        <option value="Invoicing">Invoicing</option>
+                                        <option value="Outturn Report">Outturn Report</option>
+                                        <option value="P&C Monitoring Report">P&C Monitoring Report</option>
+                                    </select>
+                                </div>
+                                </div>
+                                <div>
+                                    <button class="btnBlue"><i class="fa-solid fa-comment" style="color: #ffffff;"></i> Add comment</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <table class="table tbl-border">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Topic</th>
+                                    <th>Comments</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2023</td>
+                                    <td>Sample topic information goes here</td>
+                                    <td>This is about comments goes here, sample content, dynamic content</td>
+                                </tr>
+                                <tr>
+                                    <td>2023</td>
+                                    <td>Doctors comment topic information goes here</td>
+                                    <td>This is about comments goes here, sample content, dynamic content</td>
+                                </tr>
+                                <tr>
+                                    <td>2023</td>
+                                    <td>Doctors obesevation information goes here</td>
+                                    <td>This is about comments goes here, sample content, dynamic content</td>
+                                </tr>
+                                <tr>
+                                    <td>2023</td>
+                                    <td>Patient information goes here</td>
+                                    <td>This is about comments goes here, sample content, dynamic content</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--Slideout form-->
+        <div class="backdrop" id="backdrop"> </div>
+        <div id="sideform" class="sideform d-flex flex-column flex-shrink-0">
+
+            <button class="btn btn-light"
+                style="    border-radius: 4px; color:red;   padding: 3px 6px;    display: flex; font-size: 22px;   align-items: center; position: absolute; top:6px; right: 0;"
+                onclick="toggleSideform()"><i class="fa-solid fa-circle-xmark"></i>
+            </button>
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-pims-tab" data-bs-toggle="tab" data-bs-target="#nav-pims"
+                        type="button" role="tab" aria-controls="nav-pims" aria-selected="true">PIMS Details</button>
+                    <button class="nav-link" id="nav-fps-tab" data-bs-toggle="tab" data-bs-target="#nav-fps"
+                        type="button" role="tab" aria-controls="nav-fps" aria-selected="false">FPS Project
+                        Details</button>
+                    <button class="nav-link" id="nav-proposed-tab" data-bs-toggle="tab" data-bs-target="#nav-proposed"
+                        type="button" role="tab" aria-controls="nav-proposed" aria-selected="false">Proposed Project
+                        Details</button>
+                    <button class="nav-link" id="nav-fpsyearly-tab" data-bs-toggle="tab" data-bs-target="#nav-fpsyearly"
+                        type="button" role="tab" aria-controls="nav-fpsyearly" aria-selected="false">FPS Yearly
+                        Details</button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent" style="margin: 0;">
+                <div class="tab-pane fade show active" id="nav-pims" role="tabpanel" style="    border: 1px solid #c0c0c0;
+    padding: 10px;
+    min-height: 387px;
+    border-radius: 0 8px 8px;" aria-labelledby="nav-pims-tab">
+                    <form class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="recipient-name" class="col-form-label">Version</label>
+                            <input type="text" value="v.3.0" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="recipient-name" class="col-form-label">File Ref</label>
+                            <input type="text" value="CAC 2096 (1314A,44)" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="recipient-name" class="col-form-label">Customer
+                                Ref:</label>
+                            <input type="text" value="SurvB" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3 col-md-3">
+                            <label for="startdate" class="col-form-label">Start Date</label>
+                            <input type="date" value="04-11-2025" class="form-control" id="startdatetwo">
+                        </div>
+                        <div class="mb-3 col-md-3">
+                            <label for="enddate" class="col-form-label">End Date</label>
+                            <input type="date" value="08-11-2025" class="form-control" id="enddatetwo">
+                        </div>
+                        <div class="mb-3 col-md-3">
+                            <label for="revisedenddate" class="col-form-label">Revised End Date</label>
+                            <input type="date" value="09-11-2025" class="form-control" id="revisedenddatetwo">
+                        </div>
+                        <div class="mb-3 col-md-3">
+                            <label for="closeddate" class="col-form-label">Closed Date</label>
+                            <input type="date" value="21-11-2025" class="form-control" id="closeddatetwo">
+                        </div>
+                        <div class="mb-3 display-flex col-md-3">
+                            <input class="form-check-input me-1" id="recipient-name" type="checkbox" value="true"
+                                aria-label="...">
+                            <label for="recipient-name" class="col-form-label">
+                                Use Project Years? </label>
+                        </div>
+                        <div class="mb-3 col-md-4">
+                            <label for="recipient-name" class="col-form-label">Costbook Number</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3 col-md-3">
+                            <label for="message-text" class="col-form-label">Risk Rating</label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Select project status</option>
+                                <option value="Active">Active</option>
+                                <option value="All">All</option>
+                            </select>
+                        </div>
+						
+						
+						
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="nav-fps" role="tabpanel" style="border: 1px solid #ccc;
+    padding: 10px;" aria-labelledby="nav-fps-tab">
+                    <div class="display-flex">
+                        <div class="col-sm-2">
+                            <label style="font-weight: bold;">Project</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <p>FZ2000</p>
+                        </div>
+                    </div>
+                    <div class="display-flex">
+                        <div class="col-sm-2">
+                            <label style="font-weight: bold;">Title</label>
+
+                        </div>
+
+                        <div class="col-sm-2">
+                            <p>Salmonella title</p>
+                        </div>
+
+                    </div>
+                    <div class="display-flex">
+                        <div class="col-sm-2">
+                            <label style="font-weight: bold;">Disease</label>
+
+                        </div>
+                        <div class="col-sm-3">
+                            <p>Salmonella</p>
+                        </div>
+                    </div>
+                    <div class="display-flex">
+                        <div class="col-sm-2">
+                            <label style="font-weight: bold;">Contract</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <p>SurvB</p>
+                        </div>
+
+                    </div>
+                    <div class="display-flex">
+                        <div class="col-sm-2">
+                            <label style="font-weight: bold;">Status</label>
+
+                        </div>
+                        <div class="col-sm-3">
+                            <p class="green">Approved</p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="tab-pane fade" id="nav-proposed" style="border: 1px solid #ccc;
+    padding: 10px;" role="tabpanel" aria-labelledby="nav-proposed-tab">
+                    FPS Proposed content</div>
+                <div class="tab-pane fade" id="nav-fpsyearly" style="border: 1px solid #ccc;
+    padding: 10px;" role="tabpanel" aria-labelledby="nav-fpsyearly-tab">
+                    FPS Yearly content</div>
+            </div>
+            <div class="col-sm-12">
+
+                <div class="search-panel" style="margin-top: 20px;">
+                    <div class="container display-flex">
+                        <div class="col-md-1 margin-right-10">
+                            <strong>Comments</strong>
+                        </div>
+                        <div class="col-md-2 margin-left10">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Select year</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2021">2022</option>
+                                <option value="2021">2023</option>
+                                <option value="2021">2024</option>
+                                <option value="2021">2025</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <table class="table tbl-border">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Year</th>
+                            <th>Topic</th>
+                            <th>Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2023</td>
+                            <td>Sample topic information goes here</td>
+                            <td>This is about comments goes here, sample content, dynamic content</td>
+                        </tr>
+                        <tr>
+                            <td>2023</td>
+                            <td>Doctors comment topic information goes here</td>
+                            <td>This is about comments goes here, sample content, dynamic content</td>
+                        </tr>
+                        <tr>
+                            <td>2023</td>
+                            <td>Doctors obesevation information goes here</td>
+                            <td>This is about comments goes here, sample content, dynamic content</td>
+                        </tr>
+                        <tr>
+                            <td>2023</td>
+                            <td>Patient information goes here</td>
+                            <td>This is about comments goes here, sample content, dynamic content</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+        <div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header flex-space-center">
+                        <h5 class="modal-title" style="margin: 0;" id="exampleModalLabel">New Project</h5>
+                        <button type="button" class="btn-close" onclick="closeModal()"> </button>
+                    </div>
+                    <div class="modal-body" style="padding-top: 5px;">
+                        <form class="row" id="formAddJobcode">
+                            <div class="col-12 mb-2">
+                                <label for="txtProject" class="form-label mb-0">Project:</label>
+                                <input type="text" class="form-control" id="txtProject">
+                            </div>
+                            <div class="col-12 mb-2">
+                                <label for="txtTitle" class="form-label mb-0">Title:</label>
+                                <!-- <input type="text" class="form-control" id="modal-name"> -->
+                                <textarea class="form-control" id="txtTitle" rows="3"></textarea>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <label for="txtStatus" class="form-label mb-0">Status</label>
+                                <select required="" class="form-select" id="dpStatus">
+                                    <option value="">--select project--</option>
+                                    <option value="Rejected">Rejected</option>
+                                    <option value="Proposed">Proposed</option>
+                                </select>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <label for="txtCostbookNo" class="form-label mb-0">Cost book No</label>
+                                <input type="text" class="form-control" id="txtCostbookNo">
+                            </div>
+                            <div class="col-6 mb-2">
+                                <label for="txtDisease" class="form-label mb-0">Disease</label>
+                                <input type="text" class="form-control" id="txtDisease">
+                            </div>
+                            <div class="col-6 mb-2 mb-2">
+                                <label for="txtProgram" class="form-label mb-0">Program</label>
+                                <select required="" class="form-select" id="dpProgram">
+                                    <option value="">--select project--</option>
+                                    <option value="ADMIN">ADMIN</option>
+                                    <option value="AHVLA_Prog">AHVLA_Prog</option>
+                                    <option value="ASU">ASU</option>
+                                    <option value="B&M">B&M</option>
+                                    <option value="Bact">Bact</option>
+                                    <option value="Bee Insp">Bee Insp</option>
+                                    <option value="BTB">BTB</option>
+                                    <option value="ClubFive">ClubFive</option>
+                                    <option value="Comm">Comm</option>
+                                    <option value="Commercial">Commercial</option>
+                                    <option value="DoES">DoES</option>
+                                    <option value="END_RES">END_RES</option>
+                                    <option value="END_SURV">END_SURV</option>
+                                    <option value="EU Exit">EU Exit</option>
+                                    <option value="EU_PROG">EU_PROG</option>
+                                    <option value="FES_RES">FES_RES</option>
+                                </select>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <label for="dpCustomer" class="form-label mb-0">Customer</label>
+                                <select required="" class="form-select" id="dpCustomer">
+                                    <option value="">--select project--</option>
+                                    <option value="ABBOTT Diagnostics">ABBOTT Diagnostics</option>
+                                    <option value="ADAS">ADAS</option>
+                                    <option value="AFBI">AFBI</option>
+                                    <option value="AFCD Hong Kong">AFCD Hong Kong</option>
+                                    <option value="AG Research">AG Research</option>
+                                    <option value="Agricultural Unversity of Iceland">Agricultural Unversity of Iceland
+                                    </option>
+                                    <option value="AHVG">AHVG</option>
+                                    <option value="AHVLA">AHVLA</option>
+                                    <option value="AHWP">AHWP</option>
+                                </select>
+                            </div>
+
+
+                            <div class="col-6 mb-2">
+                                <label for="textManager" class="form-label mb-0">Manager</label>
+                                <input type="text" class="form-control" id="textManager">
+                            </div>
+                            <div class="col-12 mb-2">
+                                <label for="proposal" class="form-label mb-0">Reason for new proposal</label>
+                                <textarea type="text" class="form-control"></textarea>
+                            </div>
+                            <!-- <div class="mt-2">
+                        <button class="btn btn-primary" type="submit" >Save</button> 
+                        </div> -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                        <button class="btn btn-primary" id="modalsaveBtn">Save</button>
+                        <button class="btn btn-primary" id="updateBtn" style="display: none;">Update</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="footer">
+        &copy; Copyright Defra 2025
+    </div>
+
+
+    <!-- <div class="col-sm-6">
+         <label for="project" class="col-form-label">Select a Project</label>
+        <select id="projectSelect" class="project-dropdown">
+            <option value="">Select Project</option>
+        </select>
+    </div> -->
+
+ <script src="../js/bootstrap.bundle.min.js">  </script>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        //   document.getElementById("tbl").style.display = 'none';
+        //     document.getElementById("invoicebtns").style.display = 'none';
+        //      document.getElementById("accordionExample").style.display = 'none';
+        // Get values
+        //document.getElementById("id").innerText = params.get("jobcode"); 
+        const urlParams = new URLSearchParams(window.location.search);
+        const encoded = urlParams.get("data");
+
+        if (encoded) {
+            const obj = JSON.parse(atob(encoded));
+            console.log(obj);   // full object received
+            // document.getElementById("result").innerText =
+            //   `ID: ${obj.id}, Name: ${obj.name}, City: ${obj.jobcode}`;
+
+            document.getElementById('selected_project').innerText = obj.project;
+            // document.getElementById('project-title').value = obj.name;
+            // document.getElementById("tbl").style.display = 'flex';
+            // //   document.getElementById("shortnav").style.display = 'flex';
+            // document.getElementById("invoicebtns").style.display = 'flex';
+        }
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('collapsed');
+        }
+
+        function toggleSubmenu(submenuId) {
+            const submenu = document.getElementById(submenuId);
+            const menuItem = submenu.previousElementSibling;
+
+            // Close all other submenus
+            const allSubmenus = document.querySelectorAll('.submenu');
+            const allMenuItems = document.querySelectorAll('.menu-item');
+
+            allSubmenus.forEach(menu => {
+                if (menu.id !== submenuId) {
+                    menu.classList.remove('open');
+                }
+            });
+
+            allMenuItems.forEach(item => {
+                if (item !== menuItem) {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Toggle current submenu
+            submenu.classList.toggle('open');
+            menuItem.classList.toggle('active');
+        }
+
+        //      new TomSelect("#projectSelect",{
+        //         // onItemAdd() {
+        //         //         this.setTextboxValue("");  // clear search box
+        //         // },
+        //         onItemAdd: function () {
+        //                 this.blur();
+        //             }
+        // });
+    </script>
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

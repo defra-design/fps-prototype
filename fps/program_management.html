@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2025-2026 : Programme Management</title> 
+	<!-- <link rel="stylesheet" href="style_sidenav.css"> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+	 <link rel="stylesheet" href="../css/fps_styles/styles.css">
+	  <link rel="stylesheet" href="../css/main_style.css">
+	 
+	 
+	 
+<script>
+    // function onChangeProject(){
+    //     document.getElementById("program").value = "BACT";
+    //     document.getElementById("project").value = "FZ200";
+    // }
+
+    // function onClickPlanProject(){
+    //     document.getElementById("program").value = "";
+    //     document.getElementById("project").value = "";
+    // }
+
+    window.addEventListener('load', function () {
+        // Get modal element
+        const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        // Show modal
+        myModal.show();
+    });
+
+</script>
+	 
+	 
+</head>
+
+<body>
+<div>
+    <!-- Navbar -->
+      
+<header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Logo of Animal & Plant Health Agency">
+                </div>
+                <!-- <div class="menu-icon" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> -->
+                <div class="pims-log">
+                    <span style="display:inline-block;">FPS</span>
+					
+                </div>
+				    <div class="pims-log">
+                 <select class="pims-log" style="border:0; margin-left: 0px;" aria-label="Year">
+				 <option  class="pims-log" style="border:0; margin-left: 0px;">2017-2018</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2018-2019</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2019-2020</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2020-2021</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2021-2022</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2022-2023</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2023-2024</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2024-2025</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;" selected>2025-2026</option>
+					</select>
+					
+                </div>
+				
+                <!-- <p>PACT</p> -->
+            </div>
+            <div class="btn-group" style=" display: flex; align-items: center;     font-size: 16px;">
+                Ken Rod <button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                   <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24">
+				   <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px" height="30px">
+                </button> 
+                <ul class="dropdown-menu dropdown-menu-end" style="">
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button> -->
+                    <!-- </li> -->
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button> -->
+                    <!-- </li> -->
+                    <li><a href="../index.html" class="dropdown-item" type="button" aria-hidden="true">
+					<img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
+                            Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar navbar-expand-lg main-nav">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" aria-label="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-hidden="true"
+                            aria-expanded="false" aria-current="page" href="#">Programme Management<span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Programme Management Menu" width="12px"></span></a>
+
+							
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" aria-hidden="true" href="program_management.html">Select Programme</a></li>
+                            <li><a class="dropdown-item" aria-hidden="true"  style="display: flex;    justify-content: space-between;">Plan Projects  <img src="../images/right-arrow.png" alt="Arrow for Plan Projects Sub menu" width="30px" height="30px"></a> 
+                                <ul class="dropdown-menu">
+
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Setup A new Projects</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan Project Individually</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan STAFF for Entire Programme</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan Animals for Entire Programme</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan Test Purchases for Entire Programme for Entire Programme</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan Additional cost for Entire Programme</a>
+                                    </li> 
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" aria-hidden="true"  style="display: flex;    justify-content: space-between;" href="#">Review Plans <img src="../images/right-arrow.png" alt="Arrow for Review Plans Sub menu" width="30px" height="30px"></a>
+                             <ul class="dropdown-menu">
+
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Project Portability</a>                                 </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Staff Plan Pivot</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item"  aria-hidden="true" style="display: flex;    justify-content: space-between;" href="#">Summary Printouts <img src="../images/right-arrow.png" alt="Arrow for Summary Printouts Sub menu" width="30px" height="30px"></a>
+                             <ul class="dropdown-menu">
+
+                                    <li><a class="dropdown-item" aria-hidden="true" aria-label="Programme Profitability Report" href="#">Programme Profitability Report</a>
+                                    </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" aria-label="Summarized by disease" href="#">Summarized by disease</a>
+                                    </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Summarized by Customer</a>
+                                    </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Project Specifics</a>
+                                    </li>
+                               
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link  dropdown-toggle" role="button" aria-hidden="true"
+                            data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">Resource
+                            Management<span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Resource Management Menu" width="12px"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="createresourcecenter.html" aria-hidden="true">Create Resource Center</a>
+                            </li>
+                            <li><a class="dropdown-item" href="setupresource.html" aria-hidden="true">Setup Resource</a></li>
+                            <li><a class="dropdown-item" href="reviewplans.html" aria-hidden="true">Review Plans</a></li>
+                            <li><a class="dropdown-item" href="reports.html" aria-hidden="true">Reports</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" aria-hidden="true">Contract </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" aria-hidden="true">Lab Testing Manager's </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"aria-hidden="true" >Luvely Pivots</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " role="button" aria-hidden="true" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">MAB <span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Programme Management Menu" width="12px"></span></a>
+                        <div class="dropdown-menu my-flex-dropdown" style="border: 1px solid #000; left: -70px; ">
+                            <ul>
+
+                                <li><a class="dropdown-item" href="wgstaff.html" aria-hidden="true">
+                                        Maintenance Menu</a>
+
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Stage 1 Plans</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        ASU Data View</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        VLA Project Totals</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Generic Bids</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Project Audit Trails</a>
+                                </li>
+                            </ul>
+
+
+                            <ul>
+
+
+
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        SMG Summary Report - All Work</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        SMG Summary Report - Assured Work Only</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        All Programs Profitability</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Program Exceptional Bids</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Income Contribution Rpt</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Income Cont - Summary</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Project Specific - Query</a>
+                                </li>
+                            </ul>
+
+
+
+                            <ul>
+
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Resource Grades by
+                                        Programme</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Resource Utilisation</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Open FPS</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Close FPS</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Run Snapshot Queries</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Run Comparison Queries</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Project Plan Viewer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Project Group </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Management Account </a></li>
+
+                    <!-- Dropdown -->
+                    <!-- <li class="nav-item dropdown">
+            <a 
+              class="nav-link dropdown-toggle" 
+              href="#" 
+              role="button" 
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Services
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Web Design</a></li>
+              <li><a class="dropdown-item" href="#">Development</a></li>
+              <li><a class="dropdown-item" href="#">SEO</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Consulting</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li> -->
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+	
+    <!-- <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" -->
+        <!-- aria-labelledby="staticBackdropLabel" aria-hidden="true"> -->
+        <!-- <div class="modal-dialog modal-lg"> -->
+            <!-- <div class="modal-content"> -->
+
+                <!-- <div class="modal-body"> -->
+
+                    <!-- <form> -->
+                        <!-- <div class="display-flex"> -->
+                            <!-- <div class="col-5"> -->
+                                <!-- <label for="program" class="col-form-label">Select a Program</label> -->
+                                <!-- <select class="form-select" required="" id="program"> -->
+                                    <!-- <option value="">--select program--</option> -->
+                                    <!-- <option value="BACT">BACT</option> -->
+                                    <!-- <option value="BACT2">BACT2</option> -->
+                                <!-- </select> -->
+                            <!-- </div> -->
+                            <!-- <div class="col-1" -->
+                                <!-- style="font-size: 18px; font-weight: 600; text-align: center; margin-bottom: 5px;">OR -->
+                            <!-- </div> -->
+                            <!-- <div class="col-5"> -->
+                                <!-- <label for="project" class="col-form-label">Find Project</label> -->
+                                <!-- <select class="form-select" required="" id="project"> -->
+                                    <!-- <option value="">--select project--</option> -->
+                                    <!-- <option value="FZ200">FZ200</option> -->
+                                    <!-- <option value="FZ201">FZ201</option> -->
+                                <!-- </select> -->
+                            <!-- </div> -->
+                            <!-- <div class="ms-3"> -->
+                                <!-- <button class="btn btn-primary" type="button" onclick="showValue()" -->
+                                    <!-- data-bs-dismiss="modal"> <i class="fa-solid fa-circle-chevron-right"></i> -->
+                                    <!-- GO</button> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    <!-- </form> -->
+
+                <!-- </div> -->
+
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+    <div class="container-fluid">
+        <div style="padding: 5px 5px;  border-bottom: 1px solid #b4b4b4" class="row">
+            <div style="display: flex;  font-size: 14px;   align-items: center; justify-content: space-between; ">
+                <div>  <a class="" href="fpshome.html">Home</a> &gt;  Programme Management &gt; Select Program 
+                </div>
+                <!-- <div style="display: flex;  -->
+                    <!-- justify-content: flex-end;" class="col-md-6"> -->
+                    <!-- <div class="col-sm-6" style="border: 1px solid #684e00; -->
+                        <!-- border-radius: 5px;  -->
+                        <!-- font-size: 13px; -->
+                        <!-- font-weight: normal; -->
+                        <!-- background-color: #ffcf40; -->
+                        <!-- text-align: center; -->
+                        <!-- display: flex; -->
+                        <!-- margin-right: 10px; -->
+                        <!-- align-items: center; -->
+                        <!-- justify-content: space-between;"> -->
+                        <!-- <div class="col" style="border-right: 1px solid #684e00;">Selected program:<strong -->
+                                <!-- id="resultprogram"> </strong> -->
+                        <!-- </div> -->
+                        <!-- <div class="col">Selected Project: <strong id="resultproject"> </strong></div> -->
+                    <!-- </div> -->
+                    <!-- <div> -->
+                        <!-- <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" -->
+                            <!-- class="btn btn-primary btn-sm">Change</button> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+        <div class="row">
+            <!-- <div class="col-sm-3">
+                <div class="leftmenu">
+                    <ul>
+                        <li style="background-color: #ffd65b;">
+                            Plan Projects &nbsp; &#9660;
+                        </li>
+                        <li style="    background: #fffdd2;">
+                            Setup A new Projects
+                        </li>
+                        <li>
+                            Plan Project Individually
+                        </li>
+                        <li>
+                            Plan STAFF for Entire Programme
+                        </li>
+                        <li>
+                            Plan Animals for Entire Programme
+                        </li>
+                        <li>
+                            Plan Test Purchases for Entire Programme for Entire Programme
+                        </li>
+                        <li>
+                            Plan Additional cost for Entire Programme
+                        </li>
+
+                    </ul>
+                </div>
+            </div> -->
+            <div class="col-sm-12" style="padding:0px;">
+			
+			 <h1 style="padding: 10px 0 10px 17px; font-size: 16px;
+                                border-bottom: 2px solid #1d70b8; font-weight: 700;
+                                margin-bottom: 10px;">
+                    Programme Details</h1>
+					
+                <!-- <div style="margin: 10px 0 0 0;"> -->
+                    <!-- <h6 style="   -->
+					  <!-- padding-bottom: 10px; -->
+    <!-- border-left: 3px solid #9d7600; -->
+    <!-- padding-left: 16px; -->
+    <!-- font-size: 18px; -->
+    <!-- font-weight: 500; -->
+    <!-- padding: 5px 8px; -->
+    <!-- color: #333; font-size: 1rem !important; -->
+    <!-- margin: 10px 0 10px 0;"></h6> -->
+                <!-- </div> -->
+            </div>
+			
+			<div class="col-lg-12">
+			
+			<main class="main-content" style="padding:0;">
+			
+			
+			<div class="align-items-start m-10" id="search-grid">
+            <div class="search-panel">
+               <div class="grid-header" style="">
+				 <div class="grid-toolbar">
+                        <div style="display: flex; align-items: center; gap: 8px; ">
+						Select a Programme
+						
+						 <select id="programmeDropdown" onchange="filterProgramme()"class="form-select" aria-label="Select a Programme" style="border-radius: 5px;border:1px solid #919191;width: 180px; margin-right: 15px; padding: 7px 36px 8px 12px;">
+                                              <option value="" Selected ></option>
+                                            <option value="ADMIN">ADMIN</option>
+                                          
+                                            <option value="Bact">Bact</option>
+                                            										
+											
+											<!-- <option value="">LabT</option> -->
+                                            <!-- <option value="">Path</option> -->
+                                            <!-- <option value="">PHINSLT</option> -->
+											
+											<!-- <option value="">PHSIN</option> -->
+                                            <!-- <option value="">PVS</option> -->
+                                            <!-- <option value="">ROMD</option> -->
+											 <!-- <option value="">RONT</option> -->
+                                        </select>
+                            <!-- <input type="text" id="gridSearchInput" class="form-control form-control-sm" placeholder="Search..." style="width: 180px;"> -->
+                            <!-- <button type="button" class="btn btn-sm btn-primary" id="searchBtn"> -->
+                                <!-- <i class="fa fa-search"></i> -->
+                            <!-- </button> -->
+                            <!-- <button type="button" class="btn btn-sm btn-secondary" id="unfilterBtn"> -->
+                                <!-- <i class="fa fa-times"></i> Unfilter -->
+                            <!-- </button> -->
+                            <!-- <button type="button" class="btn btn-success" id="addRowBtn"> -->
+                                <!-- <i class="fa fa-plus"></i> Add Staff -->
+                            <!-- </button> -->
+                        </div>
+                    </div>
+				
+				<div style="float:right;">
+				
+				<div class="input-group">
+                            <!-- <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div> -->
+                            <input type="text" id="searchInput" onkeyup='searchTable()' class="form-control" placeholder="Search Project" aria-label="Amount (to the nearest dollar)" style="border: 1px solid #919191; padding: .375rem .75rem;">
+                            <div class="input-group-append">
+                                <span class="input-group-text"> 
+								<img src="../images/magnifying-glass-solid-full.svg" width="20px" alt="search project code" />
+                                </span>
+                            </div>
+                        </div>
+				
+				
+										<!-- <input type="text" id="searchInput" onkeyup='searchTable()' class="form-control form-control-sm" placeholder="Search..." style="width: 180px; border: 1px solid #919191;    padding: 5px 5px;float:left;"> -->
+                            <!-- <button type="button" class="btn btn-sm btn-primary" id="searchBtn" style="float:left;"> -->
+                                <!-- <i class="fa fa-search"></i> -->
+                            <!-- </button> -->
+										
+										</div>
+										
+			
+				
+                    <!-- <h2>WG Staff</h2> -->
+                   
+					
+						
+                </div>
+            </div>
+            <div id="divprojectcode" style="display: block;">
+                <div style="border: 1px solid #1d70b8 !important;   max-height: 300px; overflow-y: auto; height: 190px; border-bottom: 0 !important;
+    border-top: 0 !important;   ">
+                <table class="table tbl-border mb-0 custom-table" id="tblmaintenance" style="">
+                    <thead class="thead-light bordertop">
+                        <tr>
+                           <th >Programme </th>
+                                    <th >Project Code </th>
+                                 
+                                    <th >Action</th>
+                               
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+<tr >
+                                  
+                                    <td >Bact</td>
+                                    <td >FZ2000</td>
+                                    <td style=" text-align: center;">
+                                      
+                                          <button type="button" class="btn btn-outline-primary  "> <a href="projectplanning.html"><img src="../images/plan_icon.png" width="20px" height="20px" alt="View Project Planning" title="Plan"/></a></button>
+										 <button type="button" class="btn  btn-outline-primary  "> <a href="project_edit.html"><img src="../images/edit_gridicon.svg" width="20px" height="20px" alt="Edit Existing Project" title="Edit"/></a></button>
+                                    </td>
+                                </tr>
+                                <tr >
+                                  
+                                    <td >Bact</td>
+                                    <td>FZ2100</td>
+                                <td style=" text-align: center;">
+                                      
+                                          <button type="button" class="btn  btn-outline-primary  "> <a href="projectplanning.html"><img src="../images/plan_icon.png" width="20px" height="20px" alt="View Project Planning" title="Plan"/></a></button>
+										 <button type="button" class="btn  btn-outline-primary  "> <a href="project_edit.html"><img src="../images/edit_gridicon.svg" width="20px" height="20px" alt="Edit Existing Project" title="Edit"/></a></button>
+                                    </td>
+                                </tr>
+								  <tr >
+                                 
+                                    <td >Bact</td>
+                                    <td >IT6201</td>
+                                   <td style=" text-align: center;">
+                                      
+                                          <button type="button" class="btn  "> <a href="projectplanning.html"><img src="../images/plan_icon.png" width="20px" height="20px" alt="View Project Planning" title="Plan"/></a></button>
+										 <button type="button" class="btn  "> <a href="project_edit.html"><img src="../images/edit_gridicon.svg" width="20px" height="20px" alt="Edit Existing Project" title="Edit"/></a></button>
+                                    </td>
+                                </tr>
+                              <tr >
+                                   
+                                    <td >Bact</td>
+                                    <td >KL0027</td>
+                                <td style=" text-align: center;">
+                                      
+                                          <button type="button" class="btn  "> <a href="projectplanning.html"><img src="../images/plan_icon.png" width="20px" height="20px" alt="View Project Planning" title="Plan"/></a></button>
+										 <button type="button" class="btn  "> <a href="project_edit.html"><img src="../images/edit_gridicon.svg" width="20px" height="20px" alt="Edit Existing Project" title="Edit"/></a></button>
+                                    </td>
+                                </tr>
+                               <tr data-row-index="0">
+                                   
+                                    <td >Bact</td>
+                                    <td >OG0502</td>
+                               <td style=" text-align: center;">
+                                      
+                                          <button type="button" class="btn  "> <a href="projectplanning.html"><img src="../images/plan_icon.png" width="20px" height="20px" alt="View Project Planning" title="Plan"/></a></button>
+										 <button type="button" class="btn  "> <a href="project_edit.html"><img src="../images/edit_gridicon.svg" width="20px" height="20px" alt="Edit Existing Project" title="Edit"/></a></button>
+                                    </td>
+                                </tr>
+								
+							<tr>
+    <td>ADMIN</td>
+    <td>APHAB000000</td>
+    <td style="text-align: center;">
+        <button type="button" class="btn btn-outline-primary">
+            <a href="#"><img src="../images/plan_icon.png" width="20"></a>
+        </button>
+        <button type="button" class="btn btn-outline-primary">
+            <a href="#"><img src="../images/edit_gridicon.svg" width="20"></a>
+        </button>
+    </td>
+</tr>
+
+<tr>
+    <td>ADMIN</td>
+    <td>APHABC000000</td>
+    <td style="text-align: center;">
+        <button type="button" class="btn btn-outline-primary">
+            <a href="#"><img src="../images/plan_icon.png" width="20"></a>
+        </button>
+        <button type="button" class="btn btn-outline-primary">
+            <a href="#"><img src="../images/edit_gridicon.svg" width="20"></a>
+        </button>
+    </td>
+</tr>
+
+<tr>
+    <td>ADMIN</td>
+    <td>APHAH0038</td>
+    <td style="text-align: center;">
+        <button type="button" class="btn btn-outline-primary">
+            <a href="#"><img src="../images/plan_icon.png" width="20"></a>
+        </button>
+        <button type="button" class="btn btn-outline-primary">
+            <a href="#"><img src="../images/edit_gridicon.svg" width="20"></a>
+        </button>
+    </td>
+</tr>
+
+<tr>
+    <td>ADMIN</td>
+    <td>APHAH0047</td>
+    <td style="text-align: center;">
+        <button type="button" class="btn btn-outline-primary">
+            <a href="#"><img src="../images/plan_icon.png" width="20"></a>
+        </button>
+        <button type="button" class="btn btn-outline-primary">
+            <a href="#"><img src="../images/edit_gridicon.svg" width="20"></a>
+        </button>
+    </td>
+</tr>
+
+<tr>
+    <td>ADMIN</td>
+    <td>APHAH0048</td>
+    <td style="text-align: center;">
+        <button type="button" class="btn btn-outline-primary">
+            <a href="#"><img src="../images/plan_icon.png" width="20"></a>
+        </button>
+        <button type="button" class="btn btn-outline-primary">
+            <a href="#"><img src="../images/edit_gridicon.svg" width="20"></a>
+        </button>
+    </td>
+</tr>                  
+                    </tbody>
+                </table>
+            </div>
+                <!-- Pagination -->
+                <div style="display: flex;
+                                                    margin-top: 0;
+                                                    margin-bottom: 0;
+                                                    border: 1px solid #1d70b8;
+                                                    padding: 5px 10px 5px 10px;
+                                                    border-top: 0;
+                                                    justify-content: space-between;
+                                                    align-items: center;
+                                                    border-radius: 0 0 10px 10px;">
+                                                    <div class="col-1">
+                                                <select id="recordsPerPage" class="form-select">
+                                                    <option value="5" selected="">5</option>
+                                                    <option value="10" >10</option>
+                                                    <option value="15">15</option>
+                                                    <option value="20">20</option>
+                                                    <option value="25">25</option>
+                                                    <option value="30">30</option>
+                                                </select>
+                                            </div>
+                                                    <!-- Pagination -->
+                                                    <nav aria-label="Page navigation">
+                                                        <ul class="pagination justify-content-center" id="pagination" style="margin: 0;"><li class="page-item disabled aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(1)">First</a></li><li class="page-item disabled aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(0)">Previous</a></li><li class="page-item active aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(1)">1</a></li><li class="page-item  aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(2)">2</a></li><li class="page-item  aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(2)">Next</a></li><li class="page-item  aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(2)">Last</a></li></ul>
+                                                    </nav>
+                                                 
+                                                   
+                                                </div>
+            </div>
+
+
+            
+        </div>
+			
+			
+    
+	
+	
+	
+
+    </main>
+			
+			</div>
+			
+			
+           
+        </div>
+	
+    </div>
+	
+		<div class="footer">
+	© Copyright Defra 2025
+		</div>
+
+    <!-- Bootstrap JS (required for dropdowns) -->
+     <script src="../js/bootstrap.bundle.min.js">    </script>
+    <script>
+
+        function showValue() {
+            const selectBox = document.getElementById("project");
+            const selectedValue = selectBox.value;
+            const selectedText = selectBox.options[selectBox.selectedIndex].text;
+
+
+            const selectBoxProgram = document.getElementById("program");
+            const selectedValueProgram = selectBoxProgram.value;
+            const selectedTextProgram = selectBoxProgram.options[selectBoxProgram.selectedIndex].text;
+
+
+            document.getElementById("resultproject").innerHTML = `<b>${selectedText}</b>`;
+            document.getElementById("resultprogram").innerHTML = `<b>${selectedTextProgram}</b>`;
+        }
+    </script>
+	
+	
+<script>
+function searchTable() {
+    var input, filter, found, table, tr, td, i, j;
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("tableBody");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                found = true;
+            }
+        }
+        if (found) {
+            tr[i].style.display = "";
+			 
+            found = false;
+        } else {
+            tr[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+<script>
+
+function filterProgramme() {
+
+    const selectedProgramme = document.getElementById("programmeDropdown").value;
+    const gridDiv = document.getElementById("divprojectcode");
+    const rows = document.querySelectorAll("#tableBody tr");
+    if (selectedProgramme === "") {
+        gridDiv.style.display = "none";
+        return;
+    }
+
+    gridDiv.style.display = "";
+	
+    rows.forEach(row => row.style.display = "");
+
+    rows.forEach(row => {
+
+        const programmeCell = row.cells[0].innerText.trim();
+
+        if (programmeCell !== selectedProgramme) {
+            row.style.display = "none";
+        }
+
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("divprojectcode").style.display = "none";
+});
+
+</script>
+
+</body>
+
+</html>

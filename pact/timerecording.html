@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="../css/pact_styles/tablestyle.css" />
+    <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
+    <link rel="stylesheet" href="../css/pact_styles/style.css" />
+    <link rel="stylesheet" href="../pact/nav_menu/navstyle.css" />
+    <script src="../pact/nav_menu/menutemplate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+    <style>
+        .action-btn {
+            padding: 4px 8px;
+            margin-right: 4px;
+            cursor: pointer;
+            background: none;
+        }
+
+        .action-btn:hover {
+            color: blue;
+            background: none;
+        }
+
+        .tabulator {
+            background: #ffffff !important;
+        }
+
+        .tabulator .tabulator-header .tabulator-col {
+            background: #edf4ff !important;
+            font-family: inherit !important;
+            height: 40px !important;
+            line-height: 29px;
+            /* padding: 10px; */
+            border-top: 0;
+        }
+
+        .tabulator-row .tabulator-cell {
+            border-bottom: 1px solid #ccc;
+        }
+
+        input#searchBox {
+            box-shadow: none;
+        }
+
+        .tabulator-row .tabulator-cell.tabulator-editing input,
+        .tabulator-row .tabulator-cell.tabulator-editing select {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 4px 6px;
+        }
+
+        .tabulator-row .tabulator-cell {
+            line-height: 30px;
+        }
+
+        .tabulator-row .tabulator-cell.tabulator-editing {
+            border: 1px solid #1d68cd;
+            outline: none;
+            padding: 4px;
+        }
+
+
+        .searchfiels {
+
+            margin: 0;
+            padding: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            /*  overflow: hidden;*/
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        td.selected {
+            background-color: #cce5ff;
+        }
+
+        /*  td:first-child {
+            background: #f3f3f3; 
+        }*/
+
+        .custom-table tbody td:nth-child(7) {
+            text-align: right;
+        }
+
+        .col-form-label {
+            color: #000;
+        }
+
+        .error-cell {
+            color: red;
+            font-size: 12px;
+        }
+
+        /*select option with search and type*/
+        .empdropdown {
+            position: relative;
+        }
+
+        .dropdown-input {
+            padding: 8px 10px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .dropdown-panel {
+            position: absolute;
+            top: 90%;
+            left: 9px;
+            right: 0;
+            border: 1px solid #aaa;
+            background: #fff;
+            z-index: 1000;
+            max-height: 220px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 6px 8px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        thead {
+            background: #f2f2f2;
+            position: sticky;
+            top: 0;
+        }
+
+        th,
+        td {
+            padding: 6px 8px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        tr:hover {
+            background: #e8f0fe;
+            cursor: pointer;
+        }
+    </style>
+    <title>2025-2026 : Project Management - PACT</title>
+
+    <script>
+
+
+        function toggleSideform() {
+            const sideform = document.querySelector('.sideform');
+            sideform.classList.toggle('open');
+            const sidebar = document.querySelector('.backdrop');
+            sidebar.classList.toggle('open');
+        }
+
+
+
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidenav');
+            sidebar.classList.toggle('collapsed');
+        }
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+
+    <header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
+                </div>
+                <!-- <div class="menu-icon" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> -->
+                <div class="pims-log">
+                    <span>PACT</span>
+                </div>
+                <!-- <p style="color: #000;">Project Accounting for Cost and Time</p> -->
+                <!-- <p>PACT</p> -->
+                <div class="pims-log" style="width: 160px;font-size: 16px;">
+                    <select class="pims-log"
+                        style="border: 0;border-radius: 0;margin-left: 0px;width: 150px;outline: 0;">
+                        <option>2017-2018</option>
+                        <option>2018-2019</option>
+                        <option>2019-2020</option>
+                        <option>2020-2021</option>
+                        <option>2021-2022</option>
+                        <option>2022-2023</option>
+                        <option>2023-2024</option>
+                        <option>2024-2025</option>
+                        <option selected>2025-2026</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </header>
+    <div id="header"></div>
+
+    <script src="../pact/nav_menu/script.js"></script>
+
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" aria-current="page" href="#">Project & Programme Maintenance</a>
+                        <ul class="dropdown-menu">
+                             <li><a class="dropdown-item" href="program_maintenance.html">Program
+                                    Maintenance</a></li>
+                            <li><a class="dropdown-item" href="project_maintenance_five.three.html"
+                                    style="display: flex;    justify-content: space-between;">Project Management</a>
+                            </li>
+                            <li><a class="dropdown-item" style="display: flex;    justify-content: space-between;"
+                                    href="portfolio_maintenance.html">Portfolio Maintenance</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link  dropdown-toggle" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">Monthly Project
+                            Data (Costs & Income)</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Project Invoices (Manual)</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">OM, OG, FT & UT Invoices (Batch Mode from RMS)</a>
+                            </li>
+                            <li><a class="dropdown-item" href="invoicebymonth.html">Invoices by Month</a></li>
+                            <li><a class="dropdown-item" href="#">FT & UT Project Work In Progress (WIP Over-ride)</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#">SubContracts (Exceptional Costs) (Manual)</a></li>
+                            <li><a class="dropdown-item" href="#">SubContracts (Exceptional Costs) (Batch mode from
+                                    RMS)</a></li>
+                            <li><a class="dropdown-item" href="#">SubContracts By Month</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Work Group "Static" Data (Resources & Test Capabilities)</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Work Group People</a></li>
+                            <li><a class="dropdown-item" style="display: flex;    justify-content: space-between;">Test
+                                    Capabilities</a></li>
+                            <li><a class="dropdown-item" style="display: flex;    justify-content: space-between;"
+                                    href="#">Test Maintenance List</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" aria-current="page" href="#">Further Menus</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">PACT Reports Menu</a></li>
+                            <li><a class="dropdown-item" href="timeoutputdatamgmt.html"
+                                    style="display: flex;    justify-content: space-between;">Time
+                                    & Output Data Management</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bosworth Interface</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+
+
+
+    <div class="row" id="section1">
+        <div class="container-fluid" style="margin: 0; padding: 0;">
+            <h5 style="padding: 10px 0 10px 30px; font-weight: 500;
+                        border-bottom: 2px solid #1d70b8;
+                        margin-bottom: 10px;">
+                Time Record Data Entry
+            </h5>
+        </div>
+        <div class="container-fluid" style="display: flex; padding: 0 10px;flex-direction: row;">
+
+            <div class="d-flex" style="flex-direction: column;width:100%;  flex: 1;     margin-left: 20px;   margin-right: 10px;  
+                            min-width: 0;     
+                            flex-shrink: 1;   
+                            transition: width 0.3s ease;">
+                <!-- <input type="text" id="searchBox" class="form-control"/> -->
+                <div style="    border: 1px solid #1d70b8 !important; border-radius: 10px;">
+                    <div
+                        style="display: flex;flex-direction: row; border-bottom: 1px solid #1d70b8 !important; gap: 5px;  align-items: flex-end; background: #fff; border-radius: 10px 10px 0 0;">
+                        <!-- <div class="input-group searchfiels col-2">
+                          <label>Search</label>
+                          <input type="textbox" id="txtsearchBoxliverecords" placeholder="search by work group,staff,timecode, parent project" class="form-control"/>
+                     </div> -->
+                        <div class="input-group searchfiels">
+                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text">$</span>
+                                            </div> -->
+                            <!-- <input type="text" id="searchBox" class="form-control"
+                                        placeholder="Search by Job code or Name"
+                                        aria-label="Amount (to the nearest dollar)"> -->
+                            <label class="col-form-label p-0">Work Group</label>
+                            <select class="form-select" id="wgsearchBox" style="border-radius: 5px;">
+                                <option value="">--select--</option>
+                                <option value="BAC4">BAC2</option>
+                                <option value="">BAC4</option>
+                                <option value="">BAC5</option>
+                                <option value="">BDU</option>
+                                <option value="">B&M</option>
+                                <option value="">Bact</option>
+                                <option value="">Bee Insp</option>
+                                <option value="BM1">BM1</option>
+                                <option value="">CIT</option>
+                                <option value="">CITB</option>
+                                <option value="">CPD</option>
+                                <option value="CSCC">CSCC</option>
+                            </select>
+
+                        </div>
+
+                        <!-- <div class="input-group searchfiels">
+                            <label class="col-form-label p-0">Staff</label>
+                            <select class="form-select" id="staffsearchBox" style="border-radius: 5px;">
+                                <option value="">--select--</option> 
+                            </select>
+                        </div> -->
+
+                        <div class="empdropdown input-group searchfiels" data-empdropdown data-source="employees">
+                            <label for="txtstaffsearchBox" class="col-form-label p-0">Staff</label>
+                            <input type="text" id="txtstaffsearchBox" value="--select--"
+                                class="dropdown-input down-arrow-img" readonly />
+                            <!-- <button type="button" class="clear-selection" aria-label="Clear selection"> <span style="font-size: 20px;"> </span>
+                              </button> -->
+
+                            <div class="dropdown-panel">
+                                <input type="text" class="search-box" placeholder="Type to search and select staff" />
+
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Pact ID</th>
+                                            <th>WG Grade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="input-group searchfiels">
+                            <label class="col-form-label p-0">Timecode</label>
+                            <select class="form-select" id="tcsearchBox" style="border-radius: 5px;">
+                                <option value="">--select--</option>
+                                <option value="AH088039">AH088039</option>
+                                <option value="AH088040">AH088040</option>
+                                <option value="AH088041">AH088041</option>
+                                <option value="AH088042">AH088042</option>
+                                <option value="AH088043">AH088043</option>
+                                <option value="AH088044">AH088044</option>
+                                <option value="AH088045">AH088045</option>
+                                <option value="AH088046">AH088046</option>
+                                <option value="AH088047">AH088047</option>
+                                <option value="AH088048">AH088048</option>
+                                <option value="AH088049">AH088049</option>
+                                <option value="AH088050">AH088050</option>
+                                <option value="AH088051">AH088051</option>
+                                <option value="AH088052">AH088052</option>
+                                <option value="AH088053">AH088053</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group searchfiels">
+                            <label class="col-form-label p-0">Parent Project</label>
+                            <select class="form-select" id="ppsearchBox" style="border-radius: 5px;">
+                                <option value="">--select--</option>
+                                <option value="APHAINAH0088">APHAINAH0088</option>
+                                <option value="APHAINAH0107">APHAINAH0107</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group searchfiels">
+                            <label class="col-form-label p-0">Period</label>
+                            <select class="form-select" id="prsearchBoxtwo" style="border-radius: 5px;">
+                                <option value="">--select--</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group searchfiels">
+                            <button type="button" class="btn btn-primary"> <img src="../images/filter-solid.svg"
+                                    width="20" />Search</button>
+                        </div>
+
+                        <div class="input-group searchfiels">
+                            <button type="button" class="btn btn-primary" id="btnClearsearch"><img
+                                    src="../images/filter-circle-xmark-solid.svg" width="22" />Clear search</button>
+                        </div>
+
+
+                        <!-- <button id="addRowBtn" class="btn btn-primary mt-4">Add Row</button> -->
+                        <!-- <div class="mb-2">
+                        <button class="btn btn-warning" id="makeLiveBtn">Make Live</button>
+                    </div> -->
+                    </div>
+
+                    <div class="live-records-section">
+
+                        <div style="max-height: 210px; height: 210px; background: #fff;overflow-y: auto;">
+                            <table id="selectedTable" class="table table-striped table-bordered custom-table">
+                                <thead>
+                                    <tr>
+
+                                        <!-- <th>ID</th> -->
+                                        <th>Work Group</th>
+                                        <th>PACT Staff Id</th>
+                                        <th>Time Code</th>
+                                        <th>Parent Project</th>
+                                        <th>Period</th>
+                                        <th>Hours</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                        <div class="wrapper-makelivehours">
+                            <div class="col-2" id="divMakeliveTotalhours">
+                                <span class="col-form-label p-0"
+                                    style="width: 600px;margin-right:4px;text-align: right;">Total Hours:</span>
+                                <input type="text" id="txtMakeliveTotalhours" class="form-control"
+                                    style="text-align: right;margin-right: 9px;" />
+                            </div>
+                        </div>
+                        <div style="
+                          display: flex;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            border-top: 1px solid #1d70b8 !important;
+                            padding: 0 10px;
+                            background: #fff;  
+                            align-items: center;
+                            border-radius: 0 0 10px 10px;
+                            justify-content: space-between;
+                            ">
+                            <div class="col-3" style="
+                                gap:5px;
+                                display: flex;padding-left: 0;
+                                align-items: center; 
+                            ">
+                                Records per page:
+
+                                <div style="display: flex; flex-direction: row;"><select id="pageSizeliverecords"
+                                        class="form-select">
+                                        <option value="10" selected="">10</option>
+                                        <option value="20">20</option>
+                                        <option value="30">30</option>
+                                        <option value="40">40</option>
+                                        <option value="50">50</option>
+                                        <option value="all">All</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination justify-content-center" id="paginationliverecords"
+                                    style="margin: 0;"></ul>
+                            </nav>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="mt-3" style="border: 1px solid #1d70b8 !important;  border-radius: 10px;">
+                    <div style="display: flex;">
+                        <div class="col-2 input-group searchfiels">
+                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text">$</span>
+                                            </div> -->
+                            <!-- <input type="text" id="searchBox" class="form-control"
+                                        placeholder="Search by Job code or Name"
+                                        aria-label="Amount (to the nearest dollar)"> -->
+                            <label class="col-form-label p-0">Work Group</label>
+                            <select class="form-select" id="wgsearchBoxtwo" name="wgsearchBoxtwo"
+                                style="border-radius: 5px;">
+                                <option value="">-select-</option>
+                                <option value="BAC2">BAC2</option>
+                                <option value="BAC4">BAC4</option>
+                                <option value="BAC5">BAC5</option>
+                                <option value="BDU">BDU</option>
+                                <option value="B&M">B&M</option>
+                                <option value="Bact">Bact</option>
+                                <option value="Bee Insp">Bee Insp</option>
+                                <option value="BM1">BM1</option>
+                                <option value="CIT">CIT</option>
+                                <option value="CITB">CITB</option>
+                                <option value="CPD">CPD</option>
+                                <option value="CSCC">CSCC</option>
+                            </select>
+
+                        </div>
+
+                        <div class="col-2 input-group searchfiels">
+                            <label class="col-form-label p-0">Staff</label>
+                            <select class="form-select" id="staffsearchBox" style="border-radius: 5px;">
+                                <option value="">--select--</option>
+                                <!-- <option value="">BAC4</option>
+                                <option value="">BAC5</option>
+                                <option value="">BDU</option>
+                                <option value="">B&M</option>
+                                <option value="">Bact</option>
+                                <option value="">Bee Insp</option>
+                                <option value="">BM1</option>
+                                <option value="">CIT</option>
+                                <option value="">CITB</option>
+                                <option value="">CPD</option>
+                                <option value="">CSCC</option> -->
+                            </select>
+                        </div>
+
+
+
+                        <div class="col-2 input-group searchfiels">
+                            <label class="col-form-label p-0">Timecode</label>
+                            <select class="form-select" id="tcsearchBox" style="border-radius: 5px;">
+                                <option value="">--select--</option>
+                                <!-- <option value="">BAC4</option>
+                                <option value="">BAC5</option>
+                                <option value="">BDU</option>
+                                <option value="">B&M</option>
+                                <option value="">Bact</option>
+                                <option value="">Bee Insp</option>
+                                <option value="">BM1</option>
+                                <option value="">CIT</option>
+                                <option value="">CITB</option>
+                                <option value="">CPD</option>
+                                <option value="">CSCC</option> -->
+                            </select>
+                        </div>
+
+                        <div class="col-2 input-group searchfiels">
+                            <label class="col-form-label p-0">Parent Project</label>
+                            <select class="form-select" id="ppsearchBox" style="border-radius: 5px;">
+                                <option value="">--select--</option>
+                                <!-- <option value="">BAC4</option>
+                                <option value="">BAC5</option>
+                                <option value="">BDU</option>
+                                <option value="">B&M</option>
+                                <option value="">Bact</option>
+                                <option value="">Bee Insp</option>
+                                <option value="">BM1</option>
+                                <option value="">CIT</option>
+                                <option value="">CITB</option>
+                                <option value="">CPD</option>
+                                <option value="">CSCC</option> -->
+                            </select>
+                        </div>
+
+                        <div class="col-2 input-group searchfiels">
+                            <label class="col-form-label p-0">Period</label>
+                            <select class="form-select" id="prsearchBox" style="border-radius: 5px;">
+                                <option value="">--select--</option>
+                                <!-- <option value="">BAC4</option>
+                                <option value="">BAC5</option>
+                                <option value="">BDU</option>
+                                <option value="">B&M</option>
+                                <option value="">Bact</option>
+                                <option value="">Bee Insp</option>
+                                <option value="">BM1</option>
+                                <option value="">CIT</option>
+                                <option value="">CITB</option>
+                                <option value="">CPD</option>
+                                <option value="">CSCC</option> -->
+                            </select>
+                        </div>
+                    </div>
+                    <div style=" border-bottom: 1px solid #335572;
+                                            /* line-height: 40px; */
+                                            font-size: 16px; 
+                                            background: #fff;
+                                            margin: 0;    display: flex; justify-content: space-between;
+                                            padding: 0px 0px 4px 10px;
+                                            border-radius: 10px 10px 0 0;">
+
+                        <!-- <div style="display: flex;    justify-content: flex-start; padding-left: 0;  align-items: center;padding-bottom: 6px;"
+                                class="col-3"><input type="textbox" class="form-control" id="txtsearchBox"
+                                    placeholder="search by work group,staff,timecode, parent project" /></div> -->
+                        <div
+                            style="flex-direction: row;   display: flex;   color: #333;    width: 100%;    align-items: center;    gap: 40px;   padding: 11px 10px 8px 0px;    justify-content: flex-start;">
+                            <div class="upload-container">
+                                <!-- The actual file input, hidden visually -->
+                                <!-- <input type="file" id="file-upload" class="file-input" hidden/> -->
+                                <input type="file" id="csvInput" class="file-input" accept=".xls,.xlsx,.csv" hidden>
+                                <!-- The custom "button" that triggers the input -->
+                                <label for="csvInput" class="upload-button">
+                                    Import
+                                </label>
+                            </div>
+
+                            <button class="btn btn-primary" id="exportExcel">Export Excel</button>
+                            <button class="btn btn-warning" id="validateBtn">Validate</button>
+                            <button class="btn btn-success" id="passedBtn">Passed</button>
+                            <button class="btn btn-danger" id="failedBtn">Failed</button>
+                            <button class="btn btn-primary" id="allBtn">All</button>
+                            <button class="btn btn-primary" id="moveBtn" style="padding: 8px 9px;">Make Live</button>
+                            <button class="btn btn-secondary">Delete All</button>
+                            <button class="btn btn-primary" id="addBtn" onclick="handleAdd()">Add</button>
+                            <div class="form-check mb-0"><input type="checkbox" name="chkNameupdating"
+                                    id="chkNameupdating" class="form-check-input" /><label for="chkNameupdating">Name
+                                    updating</label></div>
+                        </div>
+                    </div>
+                    <div style="max-height: 300px;  background: #fff;  height: 300px;    overflow-y: auto;">
+                        <table id="dataTable" class="table table-striped table-bordered custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Select</th>
+                                    <!-- <th>ID</th> -->
+                                    <th>WG</th>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Time Code</th>
+                                    <th>Parent Project</th>
+                                    <th>Period</th>
+                                    <th data-col="Hours">Hours</th>
+                                    <th>Pass</th>
+                                    <th>Pact ID</th>
+                                    <th>Comments</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div style="width:100%; display:flex; flex-direction: row; justify-content: flex-end;  border-top: 1px solid #005ae0;
+                        background: #edf4ff;">
+                        <div class="col-3" id="divTotalhours"
+                            style="display: flex;margin-right: 445px; padding: 3px 14px; align-items: center;justify-content: flex-end;">
+                            <span class="col-form-label p-0"
+                                style="width: 600px;margin-right:4px;text-align: right;">Total Hours:</span>
+                            <input type="text" id="txtTotalhours" class="form-control" style="text-align: right;" />
+                        </div>
+                    </div>
+                    <div style="
+                            margin-bottom:10px;
+                            display: flex;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            border-top: 1px solid #1d70b8 !important; 
+                            padding: 0 10px;
+                            background: #fff;
+                            justify-content: space-between;
+                            align-items: center;
+                            border-radius: 0 0 10px 10px;
+                            ">
+                        <div class="col-3" style="
+                                display: flex;padding-left: 0;
+                                align-items: center; gap:5px;
+                            ">
+                            Records per page:
+
+                            <div style="display: flex; flex-direction: row;"><select id="pageSize" class="form-select">
+                                    <option value="10" selected="">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center" id="pagination" style="margin: 0;"></ul>
+                        </nav>
+
+                    </div>
+
+
+
+                    <!-- <div id="pagination" style="margin:10px 0;"></div> -->
+
+
+                </div>
+                <div class="col-8" style="padding: 8px;
+    border: 1px solid rgb(29 112 184);
+    background: rgb(255, 255, 255);
+    display: block;
+    margin-top: 10px;
+    border-radius: 10px;" id="failedmsg">
+                    <textarea class="form-control" id="txt-description" rows="2"
+                        style="min-height: 40px; color:red;"></textarea>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer">
+        <p>&copy; copyright Defra 2025</p>
+    </div>
+
+   
+
+     
+
+
+    <div class="modal" id="testModal" tabindex="-1">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center py-2">
+                    <h5 class="modal-title m-0" id="modalTitle">Add Data</h5>
+                    <button type="button" class="btn-close btn-red" onclick="closeModal()">X</button>
+                </div>
+                <div class="modal-body pt-0 pb-0">
+                    
+
+                    <form class="row" id="formWorkGroup">
+                        <input type="hidden" id="rowId">
+
+                        <div class="col-12">
+                            <label for="WorkGroup" style="padding:0;margin:0">Work Group:</label>
+                            <input type="text" class="form-control" id="WorkGroup">
+                        </div>
+                        <!-- <div class="col-12">
+                            <label for="PACTStaff" style="padding:0;margin:0">PACT Staff:</label>
+                            <input type="text" class="form-control" id="PACTStaff">
+                        </div> -->
+
+                        <div class="col-12">
+                            <label for="dpName" style="padding:0;margin:0">Name:</label>
+                            <select class="form-select" id="dpName" style="border-radius: 5px;">
+                                <option value="">--select--</option>
+                                <option value="1017932|Davers, Verge">Davers, Verge</option>
+                                <option value="1018004|Franklen, Elijah">Franklen, Elijah</option>
+                                <option value="G131|D_LTBU, General">D_LTBU, General</option>
+                                <option value="G153|E_LTBU, General">E_LTBU, General</option>
+                            </select>
+                        </div>
+
+
+                        <div class="col-12">
+                            <label for="TimeCode" style="padding:0;margin:0">Time Code:</label>
+                            <input type="text" class="form-control" id="TimeCode">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="ParentProject" style="padding:0;margin:0">Parent Project</label>
+                            <input type="text" class="form-control" id="ParentProject">
+                        </div>
+                        <div class="col-12">
+                            <label for="Period" style="padding:0;margin:0">Period</label>
+                            <input type="number" class="form-control" id="Period">
+                        </div>
+                        <div class="col-12">
+                            <label for="Hours" style="padding:0;margin:0">Hours</label>
+                            <input type="number" class="form-control" id="Hours">
+                        </div>
+                        <!-- <div class="mt-2">
+                        <button class="btn btn-primary" type="submit" >Save</button> 
+                        </div> -->
+                    </form>
+                </div>
+                <div class="modal-footer py-2" style="display: flex; gap: 10px; justify-content: flex-end;">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeModal()">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="addData()" id="saveDataBtn">Save</button>
+                    <button class="btn btn-primary" type="button" style="display:none;" id="wgupdateBtn">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     
+
+    <!-- <input type="file" id="csvInput" accept=".csv"> -->
+
+    <!-- <script src="js/tablescripttwo.js"></script> -->
+    <script src="../js/menuscript.js"></script>
+
+
+
+    <!-- <script src="../pact_ver2.0/nav_menu/script.js"></script>
+    <script>
+
+        fetch("../pact_ver2.0/nav_menu/index.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+                initMenu();
+                btn();
+                // renderTable();
+                // Execute <script> tags inside fetched HTML
+                // document.querySelectorAll("#header script").forEach(oldScript => {
+                // const newScript = document.createElement("script");
+                // newScript.text = oldScript.text;
+                // document.body.appendChild(newScript);
+                // });
+
+            });
+
+            console.log("XLSX version:", XLSX.version);
+
+    </script> -->
+    <!-- <script src="js/tablescripttwo.js"></script> -->
+    <script>
+
+        document.getElementById("failedmsg").style.display = "none";
+        // document.getElementById('failedBtn').addEventListener("click", function () {
+        //     document.getElementById("failedmsg").style.display = "block";
+        //     document.getElementById("txt-description").style.display = "flex";
+        //     document.getElementById("txt-description").value = "failed error message come here.";
+        // })
+    </script>
+    <script src="../js/copypaste2.js" defer></script>
+    <script>
+        
+        const modal = document.getElementById("testModal");
+        // function openAddModal(){
+        //      new bootstrap.Modal(document.getElementById("exampleModal")).show(); 
+        // }
+
+        // function openAddModal() {
+        //     new bootstrap.Modal(document.getElementById("exampleModal")).show();
+        // }
+
+        
+
+        const employeesData = [
+            { name: 'Arnatt,Kitty', pactid: "3558", wggrade: "D_BAC3" },
+            { name: 'B_BAC2, General', pactid: "8144", wggrade: "B_BAC3" },
+            { name: 'Belford, Selena', pactid: "3465", wggrade: "D_BAC3" },
+            { name: 'Burstow, Bekki', pactid: "3727", wggrade: "E_BAC3" },
+            { name: 'C_BAC3, General', pactid: "8146", wggrade: "C_BAC3" },
+            { name: 'Carcass, Nesta', pactid: "5394", wggrade: "C_BAC3" },
+            { name: 'Carcass, Nesta', pactid: "3558", wggrade: "D_BAC3" },
+            { name: 'Cust,Penny', pactid: "1292", wggrade: "C_BAC3" },
+        ];
+
+        document.querySelectorAll('[data-empdropdown]').forEach(dd => {
+            //const source = dd.dataset.source;
+            //initDropdown(dd, dataMap[source]);
+            initDropdown(dd, employeesData);
+        });
+
+        function initDropdown(dropdown, dataset) {
+            const input = dropdown.querySelector('.dropdown-input');
+            const panel = dropdown.querySelector('.dropdown-panel');
+            const search = dropdown.querySelector('.search-box');
+            const tbody = dropdown.querySelector('tbody');
+
+            function renderRows(filter = '') {
+                tbody.innerHTML = '';
+                dataset
+                    .filter(d =>
+                        d.name.toLowerCase().includes(filter) ||
+                        d.pactid.toLowerCase().includes(filter) ||
+                        String(d.wggrade).includes(filter)
+                    )
+                    .forEach(d => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `<td>${d.name}</td><td>${d.pactid}</td><td>${d.wggrade}</td>`;
+                        tr.onclick = () => {
+                            input.value = `${d.name} (${d.pactid})`;
+                            panel.style.display = 'none';
+
+                        };
+                        tbody.appendChild(tr);
+                    });
+            }
+
+            input.addEventListener('click', e => {
+                e.stopPropagation();
+                panel.style.display = 'block';
+                panel.style.width = '420px';
+                search.value = '';
+                search.focus();
+                renderRows();
+            });
+
+            search.addEventListener('input', e => {
+                renderRows(e.target.value.toLowerCase());
+            });
+        }
+
+        //     document.addEventListener('click', () => {
+        //     document.querySelectorAll('.dropdown-panel').forEach(panel => {
+        //       panel.style.display = 'none';
+        //     });
+        //   });
+
+
+        document.addEventListener('click', (e) => {
+            document.querySelectorAll('.dropdown-panel').forEach(panel => {
+
+                const dropdown = panel.closest('.empdropdown');
+
+                // If click is INSIDE the dropdown → do nothing
+                if (dropdown.contains(e.target)) return;
+
+                // Otherwise close
+                panel.style.display = 'none';
+            });
+        });
+
+        //   document.querySelectorAll('.clear-selection').forEach(btn => {
+        //   btn.addEventListener('click', (e) => {
+        //     e.stopPropagation(); // prevent dropdown toggle
+        //    // btn.textContent = "v";
+        //     const dropdown = btn.closest('.empdropdown');
+        //     const input = dropdown.querySelector('.dropdown-input');
+
+        //     input.value = '';              // 🔹 Clear text
+        //     input.dataset.id = '';         // 🔹 (optional) clear stored id
+        //   });
+        // });
+
+    </script>
+</body>
+
+</html>

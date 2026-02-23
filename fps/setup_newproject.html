@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2025-2026 : Setup New Project</title>
+<!-- <link rel="stylesheet" href="style_sidenav.css"> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+	 <link rel="stylesheet" href="../css/fps_styles/styles.css">
+	  <link rel="stylesheet" href="../css/main_style.css">
+	 
+	 
+<script>
+    // function onChangeProject(){
+    //     document.getElementById("program").value = "BACT";
+    //     document.getElementById("project").value = "FZ200";
+    // }
+
+    // function onClickPlanProject(){
+    //     document.getElementById("program").value = "";
+    //     document.getElementById("project").value = "";
+    // }
+
+    window.addEventListener('load', function () {
+        // Get modal element
+        const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        // Show modal
+        myModal.show();
+    });
+
+</script>
+	 
+	 
+	 
+
+
+<style>
+
+ /* Alternative for labels wrapping the input */
+  label.required::after {
+      content: " *";
+      color: red;
+  }
+
+
+/* Form Container */
+.form-container {
+    display: flex;
+    gap: 20px;
+	    margin-bottom: 50px;
+   
+}
+
+.form-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 24px;
+}
+
+
+
+.form-group input,
+.form-group select {
+     min-height: calc(1.5em + (.5rem + 2px));
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    border-radius: .2rem;
+}
+
+.form-group input[readonly] {
+    background-color: #fff;
+    color: #000;
+}
+
+.form-group select {
+    background-color: white;
+    cursor: pointer;
+}
+
+.currency-input {
+    text-align: right;
+}
+
+.underlined {
+    text-decoration: underline;
+    text-decoration-color: #212121;
+    text-decoration-thickness: 1px;
+}
+
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+	    font-size: 13px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .form-container {
+        flex-direction: column;
+    }
+    
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+
+}
+
+
+</style>
+</head>
+<body>
+
+    <!-- Navbar -->
+  
+<header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+
+                <div>
+                    <img src="../images/defra_logo.png" alt="Logo of Animal & Plant Health Agency" width="80px">
+                </div>
+                <!-- <div class="menu-icon" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> -->
+                <div class="pims-log">
+                    <span style="display:inline-block; padding: 2px;">FPS</span>
+					
+                </div>
+				    <div class="pims-log">
+                 <select class="pims-log" style="border:0; margin-left: 0px;" aria-label="Year">
+				 <option  class="pims-log" style="border:0; margin-left: 0px;">2017-2018</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2018-2019</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2019-2020</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2020-2021</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2021-2022</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2022-2023</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2023-2024</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2024-2025</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;" selected>2025-2026</option>
+					</select>
+					
+                </div>
+				
+                <!-- <p>PACT</p> -->
+            </div>
+           <div class="btn-group" style=" display: flex; align-items: center;     font-size: 16px;">
+                Ken Rod <button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                   <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24"> <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px" height="30px">
+                </button> 
+                <ul class="dropdown-menu dropdown-menu-end" style="">
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button> -->
+                    <!-- </li> -->
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button> -->
+                    <!-- </li> -->
+                    <li><a href="../index.html" class="dropdown-item" type="button" aria-hidden="true">
+					<img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
+                            Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+   <nav class="navbar navbar-expand-lg main-nav">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" aria-label="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-hidden="true"
+                            aria-expanded="false" aria-current="page" href="#">Programme Management<span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Programme Management Menu" width="12px"></span></a>
+
+							
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" aria-hidden="true" href="program_management.html">Select Programme</a></li>
+                            <li><a class="dropdown-item" aria-hidden="true"  style="display: flex;    justify-content: space-between;">Plan Projects  <img src="../images/right-arrow.png" alt="Arrow for Plan Projects Sub menu" width="30px" height="30px"></a> 
+                                <ul class="dropdown-menu">
+
+                                    <li><a class="dropdown-item" href="setup_newproject.html" aria-hidden="true">
+                                            Setup A new Projects</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="project_selection.html" aria-hidden="true">
+                                            Plan Project Individually</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan STAFF for Entire Programme</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan Animals for Entire Programme</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan Test Purchases for Entire Programme for Entire Programme</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan Additional cost for Entire Programme</a>
+                                    </li> 
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" aria-hidden="true"  style="display: flex;    justify-content: space-between;" href="#">Review Plans <img src="../images/right-arrow.png" alt="Arrow for Review Plans Sub menu" width="30px" height="30px"></a>
+                             <ul class="dropdown-menu">
+
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Project Portability</a>                                 </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Staff Plan Pivot</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item"  aria-hidden="true" style="display: flex;    justify-content: space-between;" href="#">Summary Printouts <img src="../images/right-arrow.png" alt="Arrow for Summary Printouts Sub menu" width="30px" height="30px"></a>
+                             <ul class="dropdown-menu">
+
+                                    <li><a class="dropdown-item" aria-hidden="true" aria-label="Programme Profitability Report" href="#">Programme Profitability Report</a>
+                                    </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" aria-label="Summarized by disease" href="#">Summarized by disease</a>
+                                    </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Summarized by Customer</a>
+                                    </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Project Specifics</a>
+                                    </li>
+                               
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link  dropdown-toggle" role="button" aria-hidden="true"
+                            data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">Resource
+                            Management<span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Resource Management Menu" width="12px"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="createresourcecenter.html" aria-hidden="true">Create Resource Center</a>
+                            </li>
+                            <li><a class="dropdown-item" href="setupresource.html" aria-hidden="true">Setup Resource</a></li>
+                            <li><a class="dropdown-item" href="reviewplans.html" aria-hidden="true">Review Plans</a></li>
+                            <li><a class="dropdown-item" href="reports.html" aria-hidden="true">Reports</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" aria-hidden="true">Contract </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" aria-hidden="true">Lab Testing Manager's </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"aria-hidden="true" >Luvely Pivots</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " role="button" aria-hidden="true" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">MAB <span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Programme Management Menu" width="12px"></span></a>
+                        <div class="dropdown-menu my-flex-dropdown" style="border: 1px solid #000; left: -70px; ">
+                            <ul>
+
+                                <li><a class="dropdown-item" href="wgstaff.html" aria-hidden="true">
+                                        Maintenance Menu</a>
+
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Stage 1 Plans</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        ASU Data View</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        VLA Project Totals</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Generic Bids</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Project Audit Trails</a>
+                                </li>
+                            </ul>
+
+
+                            <ul>
+
+
+
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        SMG Summary Report - All Work</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        SMG Summary Report - Assured Work Only</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        All Programs Profitability</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Program Exceptional Bids</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Income Contribution Rpt</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Income Cont - Summary</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Project Specific - Query</a>
+                                </li>
+                            </ul>
+
+
+
+                            <ul>
+
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Resource Grades by
+                                        Programme</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Resource Utilisation</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Open FPS</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Close FPS</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Run Snapshot Queries</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Run Comparison Queries</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Project Plan Viewer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Project Group </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Management Account </a></li>
+
+                    <!-- Dropdown -->
+                    <!-- <li class="nav-item dropdown">
+            <a 
+              class="nav-link dropdown-toggle" 
+              href="#" 
+              role="button" 
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Services
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Web Design</a></li>
+              <li><a class="dropdown-item" href="#">Development</a></li>
+              <li><a class="dropdown-item" href="#">SEO</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Consulting</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li> -->
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-label="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <form>
+                        <div class="display-flex">
+                            <div class="col">
+                                <label for="select_program" class="col-form-label">Select a Programme</label>
+                                <select class="form-select-sm" required="" id="select_program" value="">
+                                    <option >--select programme--</option>
+                                    <option >ADMIN</option>
+                                    <option>ASU</option>
+									  <option>B&M</option>
+									   <option >Bact</option>
+									    <option >Bee Insp</option>
+										 <option >BTB</option>
+										  <option >Comm</option>
+										   <option>DoES</option>
+										    <option>GM</option>
+											  <option >LapT</option>
+											   <option >Path</option>
+											      <option >PHINSLT</option>
+												  <option >PHSIN</option>
+												   <option >PVS</option>
+                                </select>
+                            </div>
+                            <!-- <div class="col-1" -->
+                                <!-- style="font-size: 18px; font-weight: 600; text-align: center; margin-bottom: 5px;">OR -->
+                            <!-- </div> -->
+                            <!-- <div class="col-5"> -->
+                                <!-- <label for="project" class="col-form-label">Find Project</label> -->
+                                <!-- <select class="form-select" required="" id="project"> -->
+                                    <!-- <option value="">--select project--</option> -->
+                                    <!-- <option value="FZ200">FZ200</option> -->
+                                    <!-- <option value="FZ201">FZ201</option> -->
+                                <!-- </select> -->
+                            <!-- </div> -->
+                            <div class="ms-3">
+                                <button class="btnBlue" type="button" onclick="SelectProgram()"
+                                    data-bs-dismiss="modal"> 
+									<img src="../images/circle-chevron-right.png" alt="dropdown arrow for logout of application" width="20px" height="20px">
+                                    GO</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div style="padding: 5px 5px;  border-bottom: 1px solid #b4b4b4" class="row">
+            <div style="display: flex;  font-size: 14px;   align-items: center; justify-content: space-between; ">
+                <div class="col-md-6"> <a class="" href="fpshome.html">Home</a>  &gt; Programme Management &gt; Plan Projects &gt;  Setup A new Project
+                 </div>
+				<div style="display: flex; 
+                    justify-content: flex-end;" class="col-md-6">
+                   <div class="col-sm-4" style="border: 2px solid #1d70b8;
+                        border-radius: 5px; 
+                        font-size: 13px;
+                        font-weight: normal;
+                        background-color: #fff;
+                        text-align: left;
+                        display: flex;					
+					
+                        margin-right: 10px;
+                        align-items: center;
+                        justify-content: space-between;">
+                        <div class="col" style="border-right: 1px solid #684e00; text-align: left; padding: 1px 5px;">Programme:<strong id="resultprogram"> ADMIN </strong>
+                        </div>
+                        <!-- <div class="col" style="text-align: left; padding: 1px 5px;">Project: <strong id="resultproject"> APHAB000000</strong></div> -->
+                    </div>
+                    <div>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            class="btnBlue" style="padding: 4px 14px;">Change</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- <div class="col-sm-3">
+                <div class="leftmenu">
+                    <ul>
+                        <li style="background-color: #ffd65b;">
+                            Plan Projects &nbsp; &#9660;
+                        </li>
+                        <li style="    background: #fffdd2;">
+                            Setup A new Projects
+                        </li>
+                        <li>
+                            Plan Project Individually
+                        </li>
+                        <li>
+                            Plan STAFF for Entire Programme
+                        </li>
+                        <li>
+                            Plan Animals for Entire Programme
+                        </li>
+                        <li>
+                            Plan Test Purchases for Entire Programme for Entire Programme
+                        </li>
+                        <li>
+                            Plan Additional cost for Entire Programme
+                        </li>
+
+                    </ul>
+                </div>
+            </div> -->
+           <div class="col-sm-12" style="padding:0px;">
+			
+			 <h1 style="padding: 10px 0 10px 17px; font-weight: 700; font-size:16px;
+                                border-bottom: 2px solid #1d70b8;
+                                margin-bottom: 10px;">
+                    Register a New Project in Programme</h1>
+			
+                <!-- <div style="margin: 10px 0 0 0;"> -->
+                    <!-- <h6 style="   -->
+					  <!-- padding-bottom: 10px; -->
+    <!-- border-left: 3px solid #9d7600; -->
+    <!-- padding-left: 16px; -->
+    <!-- font-size: 18px; -->
+    <!-- font-weight: 500; -->
+    <!-- padding: 5px 8px; -->
+    <!-- color: #333; font-size: 1rem !important; -->
+    <!-- margin: 10px 0 10px 0;">Register a New Project in Programme</h6> -->
+                <!-- </div> -->
+            </div>
+			
+			<div class="col-lg-12">
+			
+			<main class="main-content" style="padding:0px 10px 10px 10px">
+			<div class="row d-flex align-items-center">	
+			<div class="col-lg-6">
+			
+		<span style=" font-size: 14px;    position: relative;       
+    font-weight: 700;">Please insert data for mandatory fields marked with *</span>
+			</div>
+			<div class="col-lg-6">
+			  <div class="action-buttons">
+            <button class="btn  btn-primary">Add Another Project</button>
+            <button class="btn  btn-primary">Plan this Project</button>
+            <button class="btn  btn-danger">Delete this Project</button>
+            <button class="btn   btn-primary">Save</button>
+        </div>
+			</div>
+			</div>
+			
+			
+			
+			
+				
+        <!-- <div class="page-header"> -->
+            <!-- <h1></h1> -->
+            <!-- <button class="admin-btn">Admin</button> -->
+        <!-- </div> -->
+
+        <!-- <div class="project-code-section"> -->
+            <!-- <label>To change project .<br>Enter new code here</label> -->
+            <!-- <input type="text" value="APHAEUTAH090" class="project-code-input"> -->
+        <!-- </div> -->
+
+        
+
+        <!-- <div class="note"> -->
+            <!-- <strong>Note:</strong> <span class="underlined">Please Insert All data in underlined Fields</span> -->
+        <!-- </div> -->
+
+        <div class="form-container mt-3">
+            <div class="form-left">
+                <div class="form-group">
+                   <label class="required" for="Projectcode">Project Code:</label>
+                    <input type="text" value="" class="form-control-sm" id="Projectcode" readonly="">
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="Description">Description:</label>
+                    <input type="text" value="" id="Description">
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="ShortTitle">ShortTitle:</label>
+                    <input type="text" value="" id="ShortTitle">
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="Customer">Customer:</label>
+                   <select id="Customer">
+				   <option></option>
+                        <option>DEFRA Commission</option>
+						 <option>Delacon</option>
+						 <option>Department of Health</option>
+						  <option>Diasys</option>
+						  <option>Dr Bommeli</option>
+											  
+					 <option>IBEA </option>
+					 <option>iceni Diagnostics </option>
+					 <option>ICPbio </option>
+					 <option>IDDEX LABS </option>
+					 <option>ID-DLO </option>
+					 <option>identibac </option>
+					 <option>IDEXX LABS </option>
+					 <option>ID_Lelystad </option>
+					 <option>IDT Biologika </option>
+					 <option>immutran </option>
+					 <option>imperial college </option>
+					 <option>In Pro </option>
+					 <option>Innovad </option>
+					 <option>Institut Pourquier </option>
+					 <option>Invitrogen </option>
+					 <option>IOM </option>
+					 <option>Ipsen Biopharm </option>
+					 <option>ISPAH </option>
+					 <option>IZS (italy) </option>
+					 <option>IZS italy </option>
+					 <option>Janssen </option>
+					 <option>JSR Genetics Ltd </option>
+						  
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="Programme">Programme:</label>
+                    <select id="Programme">
+					 <option > </option>
+                        <option >GM | GM Inspectorate </option>
+						  <option>IMT | Information Manageemnt & Technology</option>
+						  <option>LabT | Laboratory Services</option>
+						  <option>Path | Pathology</option>
+						  <option>PHSIN | Plant Health Inspectorate</option>
+						   <option>PVS | Plant Variety and Seeds</option>
+						    <option>ROMD | Midlands Surveillance and Ops</option>
+							 <option>RONT | North Surveillance and Ops</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="Manager">Manager:</label>
+                    					<select id="Manager">
+					 <option value=""></option>
+                        <option>Aron Basia | CIT  </option>
+						  <option>Abad Jasen |  Wildlife </option>
+						  <option>Abatelli Jacintha | PHSI-AD</option>
+						   <option>Abbison Waldon |  ROSC</option>
+						    <option>Aberdein Leoline |  Bus Supp</option>
+							 <option>Ace Esra |  ROSC</option>
+							  <option>Ace Esra |  LTNC</option>
+							   <option>Adamo Elissa |  PHSINW</option>
+							   <option>Adamou Addy |  PHSI-IS</option>
+							    <option>Adamsson Adrianna |  BAC4</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="disease">Disease:</label>
+                  <select id="disease">
+				  <option Selected >Not Specified</option>
+                        <option >PCMV</option>
+						 <option>Pestivirus</option>
+						  <option>PGE</option>
+						  <option>Rabies</option>
+						  <option>Retrovirus</option>
+						  <option>Rinderpest</option>
+						   <option>Risk</option>
+						    <option>Salmonella</option>
+							<option>Scrapie</option>
+							<option>Seneca Valley Virus</option>
+							<option>Swine Influenza</option>
+							<option>TB</option>
+							<option>TSE</option>
+							<option>Tuberculosis</option>							
+							<option>West Nile Virus</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="CustomerIncome">Customer Income:</label>
+                    <input type="text" value="" id="CustomerIncome" class="currency-input">
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="TransferIncome">Transfer Income:</label>
+                    <input type="text" value="" id="TransferIncome" class="currency-input">
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="TargetProfit">Target Profit:</label>
+                    <input type="text" value="" id="TargetProfit" class="currency-input">
+                </div>
+                
+                <div class="form-group">
+                   <label class="required" for="Status">Status:</label>
+                   <select id="Status">
+				                           <option ></option>
+                        <option >Approved</option>
+						  <option>Completed</option>
+						   <option>Not Approved</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="CostBookNo">CostBookNo:</label>
+                    <input type="text" id="CostBookNo">
+                </div>
+                
+                <div class="form-group">
+                   <label class="required" for="ContractNo">Contract No:</label>
+                   <select id="ContractNo">
+				   <option></option>
+                        <option>SCN_INT | Seedcom Funded R&D</option>
+					 <option>SCN_PhD | Seedcom Funded PhDs</option>
+						  <option>Section 4 | Wildlife Protect and Management</option>
+						<option>Section 5 | Wildlife Protect and Management</option>
+<option>SurvI | Library Services | OM0111</option>
+<option>SurvJ | Purchasing and  Storage | OM0112</option>
+<option>SurvL | TM:180 | ContractL</option>
+<option>TDP_INT | INTERNALLY Funded TDPs only</option>
+<option>ZTGen | Admin internal overhead</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="DefraProject">Is Defra Project?</label>
+                   <select id="DefraProject">
+				   <option></option>
+                        <option>Yes</option>
+						  <option>No</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required" for="CostCentre">Cost Centre:</label>
+                    <select id="CostCentre">
+					 <option></option>
+                        <option>1006620 | DoES | DoES1,DoES3,DSG</option>
+						 <option>1007110 | EU Exit | EU Exit</option>
+						  <option>1006130 | Field Activity | Field Activity</option>
+						   <option>1006121 | HNC | HNC</option>
+						    <option>1006125 | IMT | IMT</option>
+							 <option>1007020 | NATBORD | NATBORD</option>
+							  <option>1006100 | PDPM | PDPM</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ResourceCentre">Resource Centre:</label>
+                    <input type="text" id="ResourceCentre">
+                </div>
+				
+				<div class="form-group">
+                    <label for="ProjectGroup">Project Group:</label>
+                    <select id="ProjectGroup">
+					 <option></option>
+                        <option>AHVLA_PROG</option>
+						<option>Commercial</option>
+						<option>END_RES</option>
+							<option>END_SURV</option>
+							<option>FES_RES</option>
+							<option>INSP_RES</option>
+							<option>INSP_SURV</option>
+							<option>MOD_SURV</option>
+                    </select>
+                </div>
+				
+				 <div class="form-group">
+                   <label class="required" for="IncomeAccount">Income Account <br>Code:</label>
+                    <select id="IncomeAccount">
+                        <option></option>
+                    </select>
+                </div>
+				
+				 <div class="form-group">
+                   <label class="required" for="ObjectiveCode">Objective Code:</label>
+                    <select id="ObjectiveCode">
+                        <option></option>
+                    </select>
+                </div>
+				
+            </div>
+            
+            <div class="form-center">
+             
+                
+                <div class="form-group">
+                   <label class="required" for="Budget">Budget:</label>
+                    <input type="text" value="" class="currency-input underlined" id="Budget">
+                </div>
+                
+                <div class="form-group" style="align-items: flex-start;">
+                    <label style="width:120px" for="PVSIncome">PVS Income: <br> (Surv Only)</label>
+                    <input type="text" class="underlined" id="PVSIncome">
+                </div>
+                
+                <div class="form-group" style="align-items: flex-start;">
+                   <label style="width:120px" for="PlanCWDebit">Plan CW Debit: <br>(Surv Only)</label>
+                    <input type="text" class="underlined" id="PlanCWDebit">
+                </div>
+                
+                <div class="form-group">
+                    <label for="CarryOver">CarryOver:</label>
+                    <input type="text" value="" class="currency-input" id="CarryOver">
+                </div>
+                
+                <div class="form-group">
+                    <label for="CarryOverSeed">CarryOverSeed:</label>
+                    <input type="text" id="CarryOverSeed">
+                </div>
+				  <div class="form-group" style="align-items: flex-start;">
+                    <label for="Comments">Comments::</label>
+                   <textarea id="Comments"></textarea>
+                </div>
+                
+                <!-- <div class="comments-section"> -->
+                    <!-- <label>Comments: (Double-click to Zoom)</label> -->
+                    <!-- <textarea>SLA WORK SET UP AS SLSD/SD DIR RECORDING TO THIS CODE. PROJECT SET UP TO ACCOMMODATE REIMBURSEMENT OF CHARGED TIME THROUGH TRANSFER PRICING - WORK SITS IN CONTRACT / VET DIR</textarea> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </main>
+			
+			</div>
+			
+			
+           
+        </div>
+    </div>
+	<div class="footer">
+	© Copyright Defra 2025
+		</div>
+
+    <!-- Bootstrap JS (required for dropdowns) -->
+   <script src="../js/bootstrap.bundle.min.js">    </script>
+    <script>
+	
+	
+	 function SelectProgram()
+	 {
+	 
+	  
+ const mySelect = document.getElementById("select_program").value;
+ console.log(mySelect);
+	 
+	  document.getElementById("resultprogram").innerHTML = mySelect;
+	 }
+
+        function showValue() {
+            const selectBox = document.getElementById("project");
+            const selectedValue = selectBox.value;
+            const selectedText = selectBox.options[selectBox.selectedIndex].text;
+
+
+            const selectBoxProgram = document.getElementById("program");
+            const selectedValueProgram = selectBoxProgram.value;
+            const selectedTextProgram = selectBoxProgram.options[selectBoxProgram.selectedIndex].text;
+
+
+            document.getElementById("resultproject").innerHTML = `<b>${selectedText}</b>`;
+            document.getElementById("resultprogram").innerHTML = `<b>${selectedTextProgram}</b>`;
+        }
+    </script>
+
+</body>
+
+</html>

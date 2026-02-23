@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Navigation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-item dropdown">
+            <button class="nav-button dropdown-toggle" data-dropdown="project-maintenance">
+                Project & Programme Maintenance
+                <span class="arrow">▼</span>
+            </button>
+            <div class="dropdown-menu" id="project-maintenance">
+                <a href="#" class="dropdown-item">Project Invoices (Manual)</a>
+                <a href="#" class="dropdown-item">OM, OG, FT & UT Invoices (Batch Mode from RMS)</a>
+                <a href="#" class="dropdown-item">Invoices by Month</a>
+                <a href="#" class="dropdown-item">FT & UT Project Work In Progress (WIP Over-ride)</a>
+                <a href="#" class="dropdown-item">SubContracts (Exceptional Costs) (Manual)</a>
+                <a href="#" class="dropdown-item">SubContracts (Exceptional Costs) (Batch mode from RMS)</a>
+                <a href="#" class="dropdown-item">SubContracts By Month</a>
+            </div>
+        </div>
+        
+        <div class="nav-item dropdown">
+            <button class="nav-button dropdown-toggle" data-dropdown="monthly-data">
+                Monthly Project Data (Costs & Income)
+                <span class="arrow">▼</span>
+            </button>
+            <div class="dropdown-menu" id="monthly-data">
+                <a href="#" class="dropdown-item">Cost Analysis</a>
+                <a href="#" class="dropdown-item">Income Reports</a>
+                <a href="#" class="dropdown-item">Budget Overview</a>
+            </div>
+        </div>
+        
+        <div class="nav-item">
+            <button class="nav-button">
+                Work Group "Static" Data (Resources & Test Capabilities)
+            </button>
+        </div>
+        
+        <div class="nav-item dropdown">
+            <button class="nav-button dropdown-toggle" data-dropdown="further-menus">
+                Further Menus
+                <span class="arrow">▼</span>
+            </button>
+            <div class="dropdown-menu" id="further-menus">
+                <a href="#" class="dropdown-item">Additional Options</a>
+                <a href="#" class="dropdown-item">Settings</a>
+                <a href="#" class="dropdown-item">Help</a>
+            </div>
+        </div>
+        
+        <div class="nav-item">
+            <button class="nav-button">
+                Bosworth Interface
+            </button>
+        </div>
+    </nav>
+    
+    <script src="script.js"></script>
+</body>
+</html>

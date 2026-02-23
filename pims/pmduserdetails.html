@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMD User Details</title>
+      <link rel="stylesheet" href="../css/bootstrap.min.css">	
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet" />
+   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="../css/pims_style/style.css" />
+    <link rel="stylesheet" href="../css/main_style.css">	
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script> -->
+    <style>
+        .table.equal td,
+        .table.equal th {
+            width: 1%;
+        }
+
+        .equal-table {
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        .thead-light>tr>th:nth-child(7) {
+            width: 20%;
+        }
+           
+.main-nav {
+    display: flex;
+    background-color: #1d70b8;
+    padding: 0;
+    margin: 0;
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+}  
+.nav-item {
+    position: relative;
+    display: flex;
+}
+
+.nav-button {
+    background-color: #1d70b8;
+    color: white;
+    border: none;
+    padding: 12px 20px 12px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav-button:hover {
+    background-color: #003078;
+}
+
+.nav-button.active {
+    background-color: #357abd;
+}
+
+.nav-button:focus {
+    background: #003078;
+}
+    </style>
+     <link rel="stylesheet" href="../css/main_style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" />
+                </div>
+                <!-- <div class="menu-icon" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> -->
+                <div class="pims-log">
+                    <span>PIMS</span>
+                </div>
+                <p>Project Information Management System</p>
+            </div>
+            <div class="btn-group" style=" display: flex; align-items: center; font-size:16px;">
+                Meg Ved 
+				
+				<button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                   <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24"> <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px" height="30px">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button>
+                    </li>
+                    <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button>
+                    </li> -->
+                    <li><a href="../index.html" class="dropdown-item" type="button">
+                      <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
+                            Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <div class="nav-item dropdown">
+              <a class="nav-link" href="pimshome.html" style="text-decoration: none;">
+               Choose Project
+            </a>
+        </div>
+         <div class="nav-item dropdown">
+            <a class="nav-button" href="#" style="text-decoration: none;">
+               Maintenance 
+            </a>
+        </div>
+    </nav>
+     <div class="container-fluid" style="padding: 0;">
+                <h5 style="padding: 10px 0 5px 20px; border-bottom: 2px solid #1d70b8; margin-bottom: 10px; display: flex; justify-content: space-between;">Milestone List Details <div style="margin-right: 16px;"><a href="pimshome.html" class="btn btn-outline-primary btn-sm">Back</a></div></h5>
+     </div>
+    <div class="d-flex">
+       <nav class="sidebar d-flex flex-column flex-shrink-0 position-fixedX">
+            <button class="toggle-btn" onclick="toggleSidebar()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="nav flex-column">
+                 <!-- <a href="index.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-house-user me-3" style="color: #ffffff;"></i>
+                    <span class="hide-on-collapse">Home</span>
+                </a> -->
+				
+				 <a href="selectedprojectdetails.html" class="sidebar-link text-decoration-none p-3">
+				  <i class="fa-solid fa-list-check me-3"></i>
+                   
+                    <span class="hide-on-collapse">Project Details</span>
+                </a>
+				
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-chart-bar me-3"></i>
+                    <span class="hide-on-collapse">Yearly Financial Details</span>
+                </a>
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-users me-3"></i>
+                    <span class="hide-on-collapse">A&F Report Data</span>
+                </a>
+
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fas fa-box me-3"></i>
+                    <span class="hide-on-collapse">Milestones</span>
+                </a>
+                <a href="yearlyfinance.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-sack-dollar me-3" style="color: #ffffff;"></i>
+                    <span class="hide-on-collapse">Yearly Finances</span>
+                </a>
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-file-invoice-dollar me-3" style="color: #ffffff;"></i>
+                    <span class="hide-on-collapse">Invoices</span>
+                </a>
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-regular fa-message me-3"></i>
+                    <span class="hide-on-collapse">Comments</span>
+                </a>
+
+                <!-- <div class="menu-section">
+                    <div class="menu-item sidebar-link active text-decoration-none p-3"
+                        onclick="toggleSubmenu('project-maintenance')"
+                        style="display: flex;flex-wrap: nowrap;flex-direction: row; align-items: center;">
+                        <i class="fa-regular fa-user me-3"></i>
+                        <span class="hide-on-collapse">PMD User</span>
+                        <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
+                    </div>
+                    <div class="submenu" id="project-maintenance">
+                        <div class="submenu-item"><a href="pmduser.html" alt="project maintenance"> Milestone List</a></div>
+                        <div class="submenu-item"><a href="pmduser.html" alt="project maintenance"> Milestone update</a></div> 
+                    </div>
+                </div> -->
+
+                <a href="#" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-list-check me-3"></i>
+                    <span class="hide-on-collapse"> Project Review </span>
+                </a>
+
+               
+                
+
+                
+
+                <a href="pmduser.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-user-tie me-3" style="color: #ffffff;"></i>
+                    <span class="hide-on-collapse">PMD Milestone</span>
+                </a>
+
+
+            </div>
+        </nav>
+        <main class="main-content" style="padding-top: 0;">
+            <!-- <div>
+                <h5 style="padding: 0px 0 10px 0px;
+    border-bottom: 2px solid #1d70b8;
+    margin-bottom: 10px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;">Milestone List Details <div style="margin-right: 16px;"><a class="btn btn-sm btn-primary" href="pmduser.html">back</a></div></h5>
+            </div> -->
+            <div class="container-fluid" style="padding-left: 0;">
+                <!-- <div style="border: 1px solid #ccc;border-radius: 10px 10px 0 0; padding: 10px">
+                    <div class="col-2">
+                        <select class="form-select">
+                            <option value="">select</option>
+                            <option value="ABOG0508">ABOG0508</option>
+                            <option value="ABOG0509">ABOG0509</option>
+                            <option value="ABOG0510">ABOG0510</option>
+                        </select>
+                    </div>
+                </div> -->
+                <div class="col-3">
+                    <div class="mb-2">
+                        <label for="projectcode">Project</label>
+                        <input type="text" class="form-control" id="projectcode">
+                    </div>
+                    <div class="mb-2">
+                        <label for="projectcode">Milestone</label>
+                        <input type="text" class="form-control" id="milestone">
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="description">Description</label>
+                        <input type="text" class="form-control" id="description">
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="datedue">Date due</label>
+                        <input type="date" class="form-control" id="datedue">
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" value="" id="underreview">
+                        <label class="form-check-label" for="underreview">
+                            Under review
+                        </label>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" value="" id="ontarget">
+                        <label class="form-check-label" for="ontarget">
+                            On Target
+                        </label>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="datecompleted">Date Completed</label>
+                        <input type="date" class="form-control" id="datecompleted">
+                    </div>
+                    <div class="mb-2">
+                        <label for="comments">Project leaders comment</label>
+                        <textarea class="form-control" id="comment" rows="4"></textarea>
+                    </div>
+                </div>
+                <div><button class="btnBlue">Update</button> <button class="btnCancel">Cancel</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="footer">
+        &copy; Copyright Defra 2025
+    </div>
+    <!-- <script src="js/script.js"></script> -->
+	
+	
+	 <script src="../js/bootstrap.bundle.min.js">  </script>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const menu = document.querySelector('.menu-section .menu-item');
+            const arrow = document.querySelector('.menu-section .menu-item > span.arrow')
+           // let nextspan = document.querySelector('.menu-section .menu-item > span').nextElementSibling;
+
+            sidebar.classList.toggle('collapsed');
+            // if (arrow !== null) {
+            //     //  nextspan.classList.remove('arrow'); 
+            //     arrow.classList.remove('arrow');
+            // } else {
+            //     nextspan.classList.add('arrow');
+            // }
+            // ar.classList.toggle('arrow'); 
+        }
+
+        function formatDateForInput(dateStr) {
+            const [dd, mm, yyyy] = dateStr.split("/");
+            return `${yyyy}-${mm}-${dd}`;
+        }
+
+        function toggleSubmenu(submenuId) {
+            const submenu = document.getElementById(submenuId);
+            const menuItem = submenu.previousElementSibling;
+
+            // Close all other submenus
+            const allSubmenus = document.querySelectorAll('.submenu');
+            const allMenuItems = document.querySelectorAll('.menu-item');
+
+            allSubmenus.forEach(menu => {
+                if (menu.id !== submenuId) {
+                    menu.classList.remove('open');
+                }
+            });
+
+            allMenuItems.forEach(item => {
+                if (item !== menuItem) {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Toggle current submenu
+            submenu.classList.toggle('open');
+            menuItem.classList.toggle('active');
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const encoded = urlParams.get("data");
+        //{"projectcode":ABOG0508,"milestone":"00/01","description":"UI test"}'
+        if (encoded) {
+            const obj = JSON.parse(atob(encoded));
+            console.log(obj);   // full object received
+            console.log("type:", typeof obj.datedue);
+
+
+//             const duedatepicker = document.getElementById("datedue");
+
+// console.log("Before set:", obj.datedue); // must be 2025-12-05
+
+// input.value = obj.datedue;               // ONLY this line
+
+// console.log("After set:", input.value);
+
+            // document.getElementById("result").innerText =
+            //   `ID: ${obj.id}, Name: ${obj.name}, City: ${obj.jobcode}`;
+
+            document.getElementById('projectcode').value = obj.projectcode;
+            document.getElementById('milestone').value = obj.milestone;
+            document.getElementById('description').value = obj.description;
+            document.getElementById('datecompleted').value = formatDateForInput(obj.datecompleted);
+            document.getElementById('datedue').value = formatDateForInput(obj.datedue);// formatDateForInput(obj.datedue?.trim());
+            document.getElementById('comment').value = obj.comment;// formatDateForInput(obj.datedue?.trim());
+
+        }
+
+         const openMenu = localStorage.getItem("openMenu");
+        if (openMenu) {
+            const submenu = document.getElementById("project-maintenance");
+            if (submenu) {
+                submenu.classList.add("open");
+                submenu.previousElementSibling.classList.remove('active')
+
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
