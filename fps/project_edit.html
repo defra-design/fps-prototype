@@ -7,10 +7,11 @@
     <title>2025-2026 : Project Edit</title>
 <!-- <link rel="stylesheet" href="style_sidenav.css"> -->
     <!-- Bootstrap CSS -->
+	 <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 	 <link rel="stylesheet" href="../css/fps_styles/styles.css">
 	  <link rel="stylesheet" href="../css/main_style.css">
-	  
+	    <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
 	  
 <script>
     // function onChangeProject(){
@@ -112,8 +113,8 @@
                             <li><a class="dropdown-item" aria-hidden="true"  style="display: flex;    justify-content: space-between;">Plan Projects  <img src="../images/right-arrow.png" alt="Arrow for Plan Projects Sub menu" width="30px" height="30px"></a> 
                                 <ul class="dropdown-menu">
 
-                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                            Setup A new Projects</a>
+                                    <li><a class="dropdown-item" href="setup_newproject.html" aria-hidden="true">
+                                            Set Up A New Projects</a>
                                     </li>
                                     <li><a class="dropdown-item" href="#" aria-hidden="true">
                                             Plan Project Individually</a>
@@ -256,29 +257,7 @@
                     <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Project Group </a></li>
                     <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Management Account </a></li>
 
-                    <!-- Dropdown -->
-                    <!-- <li class="nav-item dropdown">
-            <a 
-              class="nav-link dropdown-toggle" 
-              href="#" 
-              role="button" 
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Services
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Web Design</a></li>
-              <li><a class="dropdown-item" href="#">Development</a></li>
-              <li><a class="dropdown-item" href="#">SEO</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Consulting</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li> -->
+                  
 
                 </ul>
             </div>
@@ -286,47 +265,7 @@
     </nav>
 	
 	
-    <!-- <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" -->
-        <!-- aria-labelledby="staticBackdropLabel" aria-hidden="true"> -->
-        <!-- <div class="modal-dialog modal-lg"> -->
-            <!-- <div class="modal-content"> -->
-
-                <!-- <div class="modal-body"> -->
-
-                    <!-- <form> -->
-                        <!-- <div class="display-flex"> -->
-                            <!-- <div class="col-5"> -->
-                                <!-- <label for="program" class="col-form-label">Select a Program</label> -->
-                                <!-- <select class="form-select" required="" id="program"> -->
-                                    <!-- <option value="">--select program--</option> -->
-                                    <!-- <option value="BACT">BACT</option> -->
-                                    <!-- <option value="BACT2">BACT2</option> -->
-                                <!-- </select> -->
-                            <!-- </div> -->
-                            <!-- <div class="col-1" -->
-                                <!-- style="font-size: 18px; font-weight: 600; text-align: center; margin-bottom: 5px;">OR -->
-                            <!-- </div> -->
-                            <!-- <div class="col-5"> -->
-                                <!-- <label for="project" class="col-form-label">Find Project</label> -->
-                                <!-- <select class="form-select" required="" id="project"> -->
-                                    <!-- <option value="">--select project--</option> -->
-                                    <!-- <option value="FZ200">FZ200</option> -->
-                                    <!-- <option value="FZ201">FZ201</option> -->
-                                <!-- </select> -->
-                            <!-- </div> -->
-                            <!-- <div class="ms-3"> -->
-                                <!-- <button class="btn btn-primary" type="button" onclick="showValue()" -->
-                                    <!-- data-bs-dismiss="modal"> <i class="fa-solid fa-circle-chevron-right"></i> -->
-                                    <!-- GO</button> -->
-                            <!-- </div> -->
-                        <!-- </div> -->
-                    <!-- </form> -->
-
-                <!-- </div> -->
-
-            <!-- </div> -->
-        <!-- </div> -->
-    <!-- </div> -->
+    
     <div class="container-fluid">
 	
 	
@@ -334,86 +273,31 @@
             <div style="display: flex;  font-size: 14px;   align-items: center; justify-content: space-between; ">
                <div> <a class="" href="fpshome.html">Home</a> &gt; Programme Management &gt; <a class="" href="program_management.html">Select Programme</a>  &gt; Edit Project
                  </div>
-				<div style="display: flex; 
-                    justify-content: flex-end;" class="col-md-6">
-                   <div class="col-sm-4" style="border: 2px solid #1d70b8;
-                        border-radius: 5px; 
-                        font-size: 13px;
-                        font-weight: normal;
-                        background-color: #fff;
-                        text-align: left;
-                        display: flex;					
-					
-                        margin-right: 10px;
-                        align-items: center;
-                        justify-content: space-between;">
-                        <div class="col" style="border-right: 1px solid #684e00; text-align: left; padding: 1px 5px;">Programme:<strong id="resultprogram"> Bact </strong>
-                        </div>
-                        <!-- <div class="col" style="text-align: left; padding: 1px 5px;">Project: <strong id="resultproject"> APHAB000000</strong></div> -->
-                    </div>
-                    <!-- <div> -->
-                        <!-- <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" -->
-                            <!-- class="btn btn-primary btn-sm" style="padding: 4px 14px;">Change</button> -->
-                    <!-- </div> -->
-                </div>
+				
             </div>
         </div>
-	
-        
 		
-		
-		
+		<div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <h1 class="govuk-heading-s sup_border-bottom" style="padding:10px 0 10px 10px">   Edit Project details in Programme  <a href="program_management.html" class="govuk-back-link sup_align_right">Back</a></h1>
+        </div>
+    </div>
         <div class="row">
-            <!-- <div class="col-sm-3">
-                <div class="leftmenu">
-                    <ul>
-                        <li style="background-color: #ffd65b;">
-                            Plan Projects &nbsp; &#9660;
-                        </li>
-                        <li style="    background: #fffdd2;">
-                            Setup A new Projects
-                        </li>
-                        <li>
-                            Plan Project Individually
-                        </li>
-                        <li>
-                            Plan STAFF for Entire Programme
-                        </li>
-                        <li>
-                            Plan Animals for Entire Programme
-                        </li>
-                        <li>
-                            Plan Test Purchases for Entire Programme for Entire Programme
-                        </li>
-                        <li>
-                            Plan Additional cost for Entire Programme
-                        </li>
-
-                    </ul>
-                </div>
-            </div> -->
-            <div class="col-lg-6" style="padding:0px;  border-bottom: 2px solid #1d70b8;">
+		
+		
+           
+            <!-- <div class="col-lg-6" style="padding:0px;  border-bottom: 2px solid #1d70b8;"> -->
 			
-			 <h1 style="padding: 10px 0 0px 17px; font-weight: 700; font-size:16px; 
+			 <!-- <h1 style="padding: 10px 0 0px 17px; font-weight: 700; font-size:16px;  -->
                                
-                                margin-bottom: 10px;">
-                    Edit Project details in Programme</h1>
-                <!-- <div style="margin: 10px 0 0 0;"> -->
-                    <!-- <h6 style="   -->
-					  <!-- padding-bottom: 10px; -->
-    <!-- border-left: 3px solid #9d7600; -->
-    <!-- padding-left: 16px; -->
-    <!-- font-size: 18px; -->
-    <!-- font-weight: 500; -->
-    <!-- padding: 5px 8px; -->
-    <!-- color: #333; font-size: 1rem !important; -->
-    <!-- margin: 10px 0 10px 0;">Edit Project details in Programme</h6> -->
-                <!-- </div> -->
-            </div>
+                                <!-- margin-bottom: 10px;"> -->
+                   <!-- </h1> -->
+                
+            <!-- </div> -->
 			
-			<div class="col-lg-6" style=" text-align: right; border-bottom: 2px solid #1d70b8;">
-			<a class="btn btn-outline-primary btn-sm" href="program_management.html" style="  margin-top: 5px; margin-right: 10px;     border: 1px solid #0d6efd;">Back</a>
-			</div>
+			<!-- <div class="col-lg-6" style=" text-align: right; border-bottom: 2px solid #1d70b8;"> -->
+			<!-- <a class="btn btn-outline-primary btn-sm" href="program_management.html" style="  margin-top: 5px; margin-right: 10px;     border: 1px solid #0d6efd;">Back</a> -->
+			<!-- </div> -->
 			
 			
 			
@@ -426,191 +310,208 @@
 		
 			<div class="col-lg-6">
 			
-		<div class="form-group" style=" margin-left: 30px;    background: #bce0ff;    padding: 5px;    border-radius: 4px;
+		<div class="govuk-form-group sup_margin_0" style=" margin-left: 30px;    background: #bce0ff;    padding: 5px;    border-radius: 4px;
     border: 1px solid #1d70b8; ">
 		
-                   <label class="" for="Change Project Code">Change Project Code:</label>
-                    <input type="text" style="width:358px;" class="form-control" value="" id="Change Project Code"> <button class="btnBlue">Submit</button>
-            
-
-
-			   </div>
+         <label class="govuk-label" style="display:inline-block" for="Change Project Code">Change Project Code:</label>
+         <input type="text" style="width:350px;" class="govuk-input" value="" id="Change Project Code"> 
+		 <button class="govuk-button sup_margin_0">Submit</button>
+         
+	  </div>
 			</div>
 			<div class="col-lg-6">
 			  <div class="action-buttons">
-            <button class="btnBlue">Add Another Project</button>
-            <button class="btnBlue">Plan this Project</button>
-            <button class="btnRed">Delete this Project</button>
-            <button class="btnBlue">Save</button>
+            <button class="govuk-button sup_margin_0">Add Another Project</button>
+            <button class="govuk-button sup_margin_0">Plan this Project</button>
+            <button class="govuk-button sup_margin_0 govuk-button--warning">Delete this Project</button>
+            <button class="govuk-button sup_margin_0">Save</button>
         </div>
 			</div>
 			</div>
 			
 			<div class="row">			
-			<div class="col-lg-12">
-			<span style=" font-size: 14px;   position: relative;    top: -10px;    left: 28px;       font-weight: 700;">Please insert data for mandatory fields marked with *</span>
+			<div class="col-lg-12 py-2">
+			
+			<h2 style=" left: 28px;" class="sup_border-bottom sup_text_color govuk-heading-s sup_align_flexheading ">
+
+                                   Please insert data for mandatory fields marked with *
+                                </h2>
+		
 	
 			</div>
 			
 			</div>
 			
 		
-        <!-- <div class="page-header"> -->
-            <!-- <h1></h1> -->
-            <!-- <button class="admin-btn">Admin</button> -->
-        <!-- </div> -->
-
-        <!-- <div class="project-code-section"> -->
-            <!-- <label>To change project .<br>Enter new code here</label> -->
-            <!-- <input type="text" value="APHAEUTAH090" class="project-code-input"> -->
-        <!-- </div> -->
-
-      
-
-
-
-        <!-- <div class="note"> -->
-            <!-- <strong>Note:</strong> <span class="underlined">Please Insert All data in underlined Fields</span> -->
-        <!-- </div> -->
+       
 
         <div class="form-container">
             <div class="form-left">
 			
+			<div class="govuk-form-group sup_margin_0">
+                                            <label class="govuk-label required" for="project-code">Project Code</label>
+											
+                                            <input class="govuk-input"  value="FZ2000" id="project-code" name="projectcode" type="text" autocomplete="project-code">
+                            </div>
 			
 			
+                <!-- <div class="form-group"> -->
+                  
+                    <!-- <input type="text" class="govuk-input form-control" id="Project_code"> -->
+                <!-- </div> -->
+                
+				<!-- <div class="govuk-form-group sup_margin_0"> -->
+                                            <!-- <label class="govuk-label required" for="project-code">Project Code</label> -->
+											
+                                            <!-- <input class="govuk-input"  value="FZ2000" id="project-code" name="projectcode" type="text" autocomplete="project-code"> -->
+                            <!-- </div> -->
+				
+                <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="description">Description:</label>
+                    <input type="text" class="govuk-input" value="Salmonella surveillance and national control programme" id="description">
+                </div>
+				
+				
+				
+                
+                <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="shortTitle">ShortTitle:</label>
+                    <input type="text"  class="govuk-input" value="Salmonella in animals" id="shortTitle" >
+                </div>
+                
+                 <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="Customer">Customer:</label>
+                    <select id="Customer" class="govuk-select sup_select_option_width_100">
+                        <option>DEFRA Commission</option>
+						 <option>Delacon</option>
+						 <option>Department of Health</option>
+						  <option>Diasys</option>
+						  <option>Dr Bommeli</option>
+                    </select>
+                </div>
+				
+				
 			
-                <div class="form-group">
-                    <label class="required" for="Project_code">Project Code:</label>
-                    <input type="text" class="form-control" value="PROJ001" id="Project_code">
-                </div>
+                                                     
+
+                                                     
+                                                   
                 
-                <div class="form-group">
-                   <label class="required" for="description">Description:</label>
-                    <input type="text" class="form-control" value="Sample project description" id="description">
-                </div>
-                
-                <div class="form-group">
-                   <label class="required" for="shortTitle">ShortTitle:</label>
-                    <input type="text"  class="form-control" value="Sample short title" id="shortTitle" >
-                </div>
-                
-                <div class="form-group">
-                   <label class="required" for="Customer">Customer:</label>
-                    <select id="Customer" class="form-select">
-                        <option>Customer A</option>
-						 <option>Customer B</option>
-						 <option>Customer C</option>
-						  <option>Customer D</option>
-						  <option>Customer E</option>
+                   <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="Programme">Programme:</label>
+                    <select id="Programme" class="govuk-select sup_select_option_width_100">
+                        <option selected>Bact </option>
+						  <option>Beep Insp | Beep Inspectorate</option>
+						  <option>BTB | Bovine TB</option>
+						  <option>GM | GM Inspectorate</option>
                     </select>
                 </div>
                 
-                <div class="form-group">
-                   <label class="required" for="Programme">Programme:</label>
-                    <select id="Programme" class="form-select">
-                        <option selected>Programme A</option>
-						  <option>Programme B</option>
-						  <option>Programme C</option>
-						  <option>Programme D</option>
+                   <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="Manager">Manager:</label>
+                    <select id="Manager" class="govuk-select sup_select_option_width_100">
+                        <option selected>Vannoort, Vale  </option>
+						  <option>Vannoort, Vale | DoES3 </option>
+						  <option>Vannoort, Virgina | PHSI-AD</option>
+						   <option>Vannoort, Virgina | DSG</option>
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label class="required" for="Manager">Manager:</label>
-                    <select id="Manager" class="form-select">
-                        <option selected>Manager A</option>
-						  <option>Manager B</option>
-						  <option>Manager C</option>
-						   <option>Manager D</option>
+                  <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="disease">Disease:</label>
+                    <select id="disease" class="govuk-select sup_select_option_width_100">
+                        <option selected>Salmonella</option>
+						 <option>Salmonella Typhimurium</option>
+						  <option>Salmonella/Campylobacter</option>
+                    </select>
+                </div>
+				
+						
+				
+                
+            	 <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="CustomerIncome">Customer Income:</label>
+                    <input type="text" class="govuk-input text-AlignRight" value="£0.00" class="currency-input" id="CustomerIncome">
+                </div>
+                
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="TransferIncome">Transfer Income:</label>
+                    <input type="text" class="govuk-input text-AlignRight" value="£0.00" class="currency-input" id="TransferIncome">
+                </div>
+                
+               <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="TargetProfit">Target Profit:</label>
+                    <input type="text" class="govuk-input text-AlignRight" value="£0.00" class="currency-input" id="TargetProfit">
+                </div>
+                
+				
+               
+				
+				
+				
+				
+                 <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="Status">Status:</label>
+                    <select id="Status" class="govuk-select sup_select_option_width_100">
+                        <option selected>Approved</option>
+						  <option>Completed</option>
+						   <option>Not Approved</option>
                     </select>
                 </div>
                 
-                <div class="form-group">
-                   <label class="required" for="disease">Disease:</label>
-                    <select id="disease" class="form-select">
-                        <option selected>Disease Type A</option>
-						 <option>Disease Type B</option>
-						  <option>Disease Type C</option>
-                    </select>
+               <div class="govuk-form-group sup_margin_0">
+                    <label for="CostBookNo" class="govuk-label" >CostBookNo:</label>
+                    <input type="text" class="govuk-input" id="CostBookNo">
                 </div>
                 
-                <div class="form-group">
-                   <label class="required" for="CustomerIncome">Customer Income:</label>
-                    <input type="text" class="form-control text-AlignRight" value="£0.00" class="currency-input" id="CustomerIncome">
-                </div>
-                
-                <div class="form-group">
-                    <label class="required" for="TransferIncome">Transfer Income:</label>
-                    <input type="text" class="form-control text-AlignRight" value="£0.00" class="currency-input" id="TransferIncome">
-                </div>
-                
-                <div class="form-group">
-                   <label class="required" for="TargetProfit">Target Profit:</label>
-                    <input type="text" class="form-control text-AlignRight" value="£0.00" class="currency-input" id="TargetProfit">
-                </div>
-                
-                <div class="form-group">
-                    <label class="required" for="Status">Status:</label>
-                    <select id="Status" class="form-select">
-                        <option selected>Status A</option>
-						  <option>Status B</option>
-						   <option>Status C</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="CostBookNo">CostBookNo:</label>
-                    <input type="text" class="form-control" id="CostBookNo">
-                </div>
-                
-                <div class="form-group">
-                   <label class="required" for="ContractNo">Contract No:</label>
-                    <select id="ContractNo" class="form-select">
-                        <option selected>Contract 001</option>
-						 <option>Contract 002</option>
-						  <option>Contract 003</option>
+                 <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="ContractNo">Contract No:</label>
+                    <select id="ContractNo" class="govuk-select sup_select_option_width_100">
+                        <option selected>SurvB</option>
+						 <option>SurvC</option>
+						  <option>SurvD</option>
 
 
                     </select>
                 </div>
                 
-                <div class="form-group">
-                   <label class="required" for="DefraProject">Is Defra Project?</label>
-                    <select id="DefraProject" class="form-select">
+                  <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="DefraProject">Is Defra Project?</label>
+                    <select id="DefraProject" class="govuk-select sup_select_option_width_100">
                         <option>Yes</option>
 						  <option>No</option>
                     </select>
                 </div>
                 
-                <div class="form-group">
-                   <label class="required" for="CostCentre">Cost Centre:</label>
-                    <select id="CostCentre" class="form-select">
-                        <option>CC12345</option>
+                  <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="CostCentre">Cost Centre:</label>
+                    <select id="CostCentre" class="govuk-select sup_select_option_width_100">
+                        <option>1006621</option>
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label for="ResourceCentre">Resource Centre:</label>
-                    <input type="text" class="form-control" value="Resource Centre A" id="ResourceCentre">
+                 <div class="govuk-form-group sup_margin_0">
+                    <label for="ResourceCentre" class="govuk-label">Resource Centre:</label>
+                    <input type="text" class="govuk-input" value="Bact" id="ResourceCentre">
                 </div>
 				
-				  <div class="form-group">
-                    <label for="ProjectGroup">Project Group:</label>
-                  <select id="ProjectGroup" class="form-select">
-                        <option>Group 01</option>
+				    <div class="govuk-form-group sup_margin_0">
+                    <label for="ProjectGroup" class="govuk-label">Project Group:</label>
+                  <select id="ProjectGroup" class="govuk-select sup_select_option_width_100">
+                        <option>FES_SURV</option>
                     </select>
                 </div>
 				
-				 <div class="form-group">
-                    <label class="required" for="IncomeAccount">Income Account <br>Code:</label>
-                  <select id="IncomeAccount" class="form-select">
-                        <option>Account Code 123</option>
+				   <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="IncomeAccount">Income Account Code:</label>
+                  <select id="IncomeAccount" class="govuk-select sup_select_option_width_100">
+                        <option>4482501309 - Laboratory Surveillance</option>
                     </select>
                 </div> 
-				<div class="form-group">
-                  <label class="required" for="ObjectiveCode">Objective Code:</label>
-                  <select id="ObjectiveCode" class="form-select">
-                        <option>Objective 001</option>
+				   <div class="govuk-form-group sup_margin_0">
+                  <label class="govuk-label required" for="ObjectiveCode">Objective Code:</label>
+                  <select id="ObjectiveCode" class="govuk-select sup_select_option_width_100">
+                        <option>1020403 - Defra (GB)</option>
                     </select>
                 </div>
             </div>
@@ -618,33 +519,34 @@
             <div class="form-center">
              
                 
-                <div class="form-group">
-                    <label class="required" for="Budget">Budget:</label>
-                    <input type="text" class="form-control text-AlignRight" value="£100,000.00" id="Budget" class="currency-input">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="Budget">Budget:</label>
+                    <input type="text" class="govuk-input text-AlignRight" value="£2,576,363.77" id="Budget" class="currency-input">
                 </div>
                 
-                <div class="form-group" style="align-items: flex-start;">
-                    <label style="width:120px" for="PVSIncome">PVS Income: <br> (Surv Only)</label>
-                    <input type="text" class="form-control text-AlignRight"  id="PVSIncome">
+                <div class="govuk-form-group sup_margin_0" style="align-items: flex-start;">
+                    <label class="govuk-label"  for="PVSIncome">PVS Income:(Surv Only)</label>
+                    <input type="text" class="govuk-input text-AlignRight"  id="PVSIncome">
                 </div>
                 
-                <div class="form-group" style="align-items: flex-start;">
-                   <label style="width:120px" for="PlanCWDebit">Plan CW Debit: <br>(Surv Only)</label>
-                    <input type="text" class="form-control text-AlignRight" id="PlanCWDebit">
+                <div class="govuk-form-group sup_margin_0" style="align-items: flex-start;">
+                   <label class="govuk-label"  for="PlanCWDebit">Plan CW Debit:(Surv Only)</label>
+                    <input type="text" class="govuk-input text-AlignRight" id="PlanCWDebit">
                 </div>
                 
-                <div class="form-group">
-                    <label for="CarryOver">CarryOver:</label> 
-                    <input type="text" value="£0.00" id="CarryOver" class="form-control currency-input ">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label" for="CarryOver">CarryOver:</label> 
+                    <input type="text" value="£0.00" id="CarryOver" class="govuk-input currency-input ">
                 </div>
                 
-                <div class="form-group">
-                    <label for="CarryOverSeed">CarryOverSeed:</label>
-                    <input type="text" class="form-control" id="CarryOverSeed">
+           <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label" for="CarryOverSeed">CarryOverSeed:</label>
+                    <input type="text" class="govuk-input" id="CarryOverSeed">
                 </div>
-				  <div class="form-group" style="align-items: flex-start;">
-                    <label for="Comments">Comments::</label>
-                   <textarea  id="Comments">Sample project comments and notes.
+				  <div class="govuk-form-group sup_margin_0" style="align-items: flex-start;">
+                    <label class="govuk-label"  for="Comments">Comments::</label>
+                   <textarea  class="govuk-textarea sup_margin_0" rows="5" id="Comments">PVS income is also included in this plan, but is taken out of the CBR reportFZ2026 is incorporated into this project wef 01/04/2016.
+Lucy Snow is PM while Jo is on M/L wef June 24
 				   
 				   </textarea>
                 </div>

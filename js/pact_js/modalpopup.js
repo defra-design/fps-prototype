@@ -4,7 +4,7 @@ document.getElementById('divCopywithworkgroup').style.display = "none";
 document.getElementById('displayProjectcode').style.visibility = "visible";
 let storeJobcode = [];
 let testData = [
-    { id: 1, jobcode: 'AH003300', name: 'Avian influenza serology', type:"Work", workGroup: 'Wilelife',timecode:[
+    { id: 1, jobcode: 'AH003300', name: 'Avian influenza serology', type:"Work", wg: 'Wilelife',timecode:[
     {
         "id": 1,
         "jobcode": "AH003300",
@@ -30,7 +30,7 @@ let testData = [
         "workGroup": "QAU"
     }
 ] },
-    { id: 2, jobcode: 'AH003301', name: 'Big liver syndrome disease', type:"Work", workGroup: 'Wilelife',timecode:[
+    { id: 2, jobcode: 'AH003301', name: 'Big liver syndrome disease', type:"Work", wg: 'Wilelife',timecode:[
     {
         "id": 1,
         "jobcode": "AH003301",
@@ -56,19 +56,19 @@ let testData = [
         "workGroup": "SVBU"
     }
 ] },
-    { id: 3, jobcode: 'AH003302', name: 'BVD milk ELISA', type:"Work", workGroup: 'Wilelife' },
-    { id: 4, jobcode: 'AH003303', name: 'Brucella abortus ELISA',type:"Work", workGroup: 'Wilelife' },
-    { id: 5, jobcode: 'AH003304', name: 'B abortus milk ELISA - Defra', type:"Work",workGroup: 'CIT' },
-    { id: 6, jobcode: 'AH003305', name: 'Brucella abortus milk ELISA', type:"Work",workGroup: 'Bees' },
-    { id: 7, jobcode: 'AH003306', name: 'Brucella abortus MRT', type:"Work",workGroup: 'MRSA' },
-    { id: 8, jobcode: 'AH003307', name: 'Brucella abortus RBT', type:"Work",workGroup: 'BSE' },
-    { id: 9, jobcode: 'AH003308', name: 'Brucella abortus (Eire)', type:"Work",workGroup: 'CSCS' },
-    { id: 10, jobcode: 'AH003309', name: 'Brucella canis RSA/SAT',type:"Work", workGroup: 'CIT' },
-    { id: 11, jobcode: 'AH003310', name: 'Brucella culture ID', type:"Work",workGroup: 'Bees' },
-    { id: 12, jobcode: 'AH003311', name: 'Brucella ovis CFT', type:"Work",workGroup: 'MRSA' },
-    { id: 13, jobcode: 'AH003315', name: 'Brucella abortus slides', type:"Work",workGroup: 'BSE' },
-    { id: 14, jobcode: 'AH003317', name: 'Staphylococci incl MRSA', type:"Work",workGroup: 'CSCS' },
-    { id: 15, jobcode: 'AH003318', name: 'BSE (HRL) Immunoblot test', type:"Work",workGroup: 'CIT' }
+    { id: 3, jobcode: 'AH003302', name: 'BVD milk ELISA', type:"Work", wg: 'Wilelife' },
+    { id: 4, jobcode: 'AH003303', name: 'Brucella abortus ELISA',type:"Work", wg: 'Wilelife' },
+    { id: 5, jobcode: 'AH003304', name: 'B abortus milk ELISA - Defra', type:"Work",wg: 'CIT' },
+    { id: 6, jobcode: 'AH003305', name: 'Brucella abortus milk ELISA', type:"Work",wg: 'Bees' },
+    { id: 7, jobcode: 'AH003306', name: 'Brucella abortus MRT', type:"Work",wg: 'MRSA' },
+    { id: 8, jobcode: 'AH003307', name: 'Brucella abortus RBT', type:"Work",wg: 'BSE' },
+    { id: 9, jobcode: 'AH003308', name: 'Brucella abortus (Eire)', type:"Work",wg: 'CSCS' },
+    { id: 10, jobcode: 'AH003309', name: 'Brucella canis RSA/SAT',type:"Work", wg: 'CIT' },
+    { id: 11, jobcode: 'AH003310', name: 'Brucella culture ID', type:"Work",wg: 'Bees' },
+    { id: 12, jobcode: 'AH003311', name: 'Brucella ovis CFT', type:"Work",wg: 'MRSA' },
+    { id: 13, jobcode: 'AH003315', name: 'Brucella abortus slides', type:"Work",wg: 'BSE' },
+    { id: 14, jobcode: 'AH003317', name: 'Staphylococci incl MRSA', type:"Work",wg: 'CSCS' },
+    { id: 15, jobcode: 'AH003318', name: 'BSE (HRL) Immunoblot test', type:"Work",wg: 'CIT' }
 ];
  
  
@@ -83,30 +83,34 @@ let selectedRowjobcode = null;
 let selectedParentRow = null;
 document.getElementById("notimejobfound").style.display = 'none';
 // Render table
-function renderTable() {
+function renderTable(data=null) {
+    if (!data) {
+    data = filteredData;
+    }
     const tbody = document.getElementById('tableBody');
     const startIndex = (currentPage - 1) * recordsPerPage;
     const endIndex = startIndex + recordsPerPage;
-    const pageData = filteredData.slice(startIndex, endIndex);
+    const pageData = data.slice(startIndex, endIndex);
     
     tbody.innerHTML = '';
     
-    pageData.forEach(item => {
+    pageData.forEach((item,index) => {
         const row = document.createElement('tr');
        
         row.innerHTML = `
             <td class="editable-cell govuk-table__cell" data-field="jobcode" data-id="${item.id}">${item.jobcode}</td>
-            <td class="editable-cell govuk-table__cell" data-field="name" data-id="${item.id}">${item.name}</td>
-            <td class="editable-cell govuk-table__cell" data-field="type" data-id="${item.id}">${item.type}</td>
-                        <td class="editable-cell govuk-table__cell" data-field="workGroup" data-id="${item.id}">${item.workGroup}</td>
+            <td class="editable-cell govuk-table__cell" data-field="name" data-id="${item.name}">${item.name}</td>
+            <td class="editable-cell govuk-table__cell" data-field="type" data-id="${item.type}">${item.type}</td>
+                        <td class="editable-cell govuk-table__cell" data-field="workGroup" data-id="${item.wg}">${item?.wg}</td>
             <td>
                 <button onclick="handleEdit(${item.id})"><img src="../images/pen-to-square-regular-full.svg"
                                                                                  alt="Edit icon for selected record" class="editjobcode"
                                                                                  width="20"></button>
-                <button onclick="handleDelete(${item.id})"> <img src="../images/trash-can-regular-full.svg" alt="Delete icon for selected record"
-                                                                                 width="20"></button>
+               
                 <button onclick="handleCopy(${item.id})"> <img src="../images/copy-regular-full.svg" alt="Copy icon for selected record"
                                                                                  width="20"></button>
+                <button onclick="handleDelete(event,${item.id})"> <img src="../images/trash-can-regular-full.svg" alt="Delete icon for selected record"
+                width="20"></button>
                                                                                  
             </td>
         `;
@@ -115,7 +119,6 @@ function renderTable() {
         row.addEventListener('click',function(){ 
             selectedParentRow = this; 
             onclickRowNewModal(this,jobcode = null);
-            row.classList.add('selected-active-row')
         })
 
     
@@ -147,7 +150,7 @@ function handleSearch(e) {
         item.jobcode.toLowerCase().includes(searchTerm) ||
         item.name.toLowerCase().includes(searchTerm) ||
         item.type.toLowerCase().includes(searchTerm) ||
-        item.workGroup.toLowerCase().includes(searchTerm)
+        item.wg.toLowerCase().includes(searchTerm)
     );
     currentPage = 1;
     renderTable();
@@ -167,7 +170,7 @@ function populateSelect(selectElement, data, valueKey, textKey) {
 }
 
 
-function onclickRowNewModal(obj) {
+function onclickRowNewModal(obj,currentjobcode = null) {
          
             selectedRow = obj;
             //  if (event.target.parentElement.closest('.edit-btn') || event.target.closest('.rowbtns')) {
@@ -192,7 +195,7 @@ function onclickRowNewModal(obj) {
             document.getElementById("modal-workgroup").value = obj.cells[3].innerText;
 
             //document.getElementById("notimejobfound").style.display = 'none';
-            let showupdatedjobcode = selectedJobcode !== null ? selectedJobcode : obj.cells[0].innerText;
+            let showupdatedjobcode = currentjobcode !== null ? currentjobcode : obj.cells[0].innerText;
             document.getElementById("displayJobcode").innerText = showupdatedjobcode + " in Project ... ";
             document.getElementById('displayProjectcode').style.visibility = "visible";
 
@@ -228,7 +231,7 @@ function onclickRowNewModal(obj) {
          
          selectedRowjobcode = obj.cells[0].innerText.trim();
           renderTimeCodeTable(obj.cells[0].innerText);
-        
+             sortTableWorkgroup("workGroup", "asc");
             
             // const cells = document.getElementsByClassName('tdjobcode');
             // for (let i = 0; i < cells.length; i++) {
@@ -248,7 +251,7 @@ function handleAddJobCode() {
     document.getElementById('modalcopySaveBtn').style.display = "none";
     document.getElementById('modalsaveBtn').style.display = "inline-block";
      document.getElementById('divCopywithworkgroup').style.display = "none";
-    // document.getElementById('modal-jobcode').disabled = false;
+     document.getElementById('modal-jobcode').disabled = false;
     // document.getElementById('descriptionInput').value = '';
     openModal();
    // document.getElementById('testModal').style.display = 'block';
@@ -273,6 +276,7 @@ function closeModal(){
 function handleEdit(id) { 
     document.getElementById('divCopywithworkgroup').style.display = "none";
     document.getElementById('modalcopySaveBtn').style.display = "none";
+    document.getElementById("modalsaveBtn").style.display = "inline-block";
     const item = testData.find(item => item.id === id);
     if (!item) return;
     
@@ -284,7 +288,7 @@ function handleEdit(id) {
     document.getElementById('modal-jobcode').disabled = true;//While editing job code should not be editable as it is unique identifier for timecode
     document.getElementById('modal-name').value = item.name;
     document.getElementById('modal-type').value = item.type;
-    document.getElementById('modal-workgroup').value = item.workGroup; 
+    document.getElementById('modal-workgroup').value = item.wg; 
 
 
      openModal();
@@ -314,7 +318,7 @@ function handleCopy(id){
     document.getElementById('modal-jobcode').disabled = false;
     document.getElementById('modal-name').value = item.name;
     document.getElementById('modal-type').value = item.type;
-    document.getElementById('modal-workgroup').value = item.workGroup; 
+    document.getElementById('modal-workgroup').value = item.wg; 
     document.getElementById('divCopywithworkgroup').style.display = "block";
     document.getElementById("modalsaveBtn").style.display = "none"; // Hide regular save button
     document.getElementById("modalcopySaveBtn").style.display = "inline-block"; // Show copy save button
@@ -322,15 +326,16 @@ function handleCopy(id){
     openModal();
 }
 
-function handleDelete(id) {
+function handleDelete(e,id) {
+    e.stopPropagation(); // Prevent row click event
     if (confirm('Are you sure you want to delete this Job code?')) {
 
         let idx = testData.findIndex((el)=>el.id === id);
         if(testData[idx].timecode.length > 0){
-            alert("This job code has related time code, please delete time code first before deleting job code");
+            alert("This job code has related work group, please delete work group first before deleting job code");
             return;
         }else{
-           
+            
              testData = testData.filter(item => {
             if (item.id === id) {
                 // Also remove from storeJobcode if exists
@@ -346,28 +351,30 @@ function handleDelete(id) {
                     populateSelect(dpTargetJobcode, jobcodelist, "tcjobcode", "tcjobcode");
                 }
 
-                 
+     
 
                 return false; // Remove this item
             }
             return true; // Keep this item
-        } );
-        // testData.splice(idx, 1);
+        } ); 
+            testData.splice(idx, 1);
+            filteredData = [...testData];
+            renderTable();
+            renderPagination();
         }
-
-
+ 
+        
        
         // Update filtered data
-        const searchTerm = document.getElementById('txtSearchProjectCode').value.toLowerCase();
-        filteredData = testData.filter(item => 
-            item.jobcode.toLowerCase().includes(searchTerm) ||
-            item.name.toLowerCase().includes(searchTerm) ||
-            item.type.toLowerCase().includes(searchTerm) ||
-            item.workGroup.toLowerCase().includes(searchTerm)
-        );
+            const searchTerm = document.getElementById('txtSearchProjectCode').value.toLowerCase();
+            filteredData = testData.filter(item => 
+                item.jobcode.toLowerCase().includes(searchTerm) ||
+                item.name.toLowerCase().includes(searchTerm) ||
+                item.type.toLowerCase().includes(searchTerm) ||
+                item.wg.toLowerCase().includes(searchTerm)
+            );
         
-        renderTable();
-        renderPagination();
+        
     }
 }
 
@@ -405,16 +412,17 @@ function handleSave() {
     let newId = null;
     if (isAddMode) {
         newId = Math.max(...testData.map(item => item.id)) + 1;
-        testData.push({
+        testData.unshift({
             id: newId,
             jobcode: jobcode,
             name: name,
             type:type,
-            workGroup: workGroup
+            wg: workGroup
         });
 
         storeJobcode.push({jobcode: jobcode});
         populateSelect(dpjobcode,storeJobcode,"jobcode","jobcode")
+        sortTable("jobcode", "asc");
     } else {
         const index = testData.findIndex(item => item.id === editingRow);
         if(isAddMode && index !== -1){
@@ -430,9 +438,10 @@ function handleSave() {
                 jobcode: jobcode,
                  name: name,
                 type:type,
-                workGroup: workGroup
+                wg: workGroup
             };
         }
+        
     }
     
     // Update filtered data
@@ -441,7 +450,7 @@ function handleSave() {
         item.jobcode.toLowerCase().includes(searchTerm) ||
         item.name.toLowerCase().includes(searchTerm) ||
         item.type.toLowerCase().includes(searchTerm) ||
-        item.workGroup.toLowerCase().includes(searchTerm)
+        item.wg.toLowerCase().includes(searchTerm)
     );
     
     // Navigate to the page where the new record will appear
@@ -450,10 +459,11 @@ function handleSave() {
         if (newItemIndex !== -1) {
             currentPage = Math.ceil((newItemIndex + 1) / recordsPerPage);
         }
+        sortTable("jobcode", "asc");
     }
     
     renderTable();
-    
+    sortTable("jobcode", "asc");
     // Auto-click the newly added row
     if (isAddMode && newId) {
         setTimeout(() => {
@@ -462,6 +472,7 @@ function handleSave() {
                 newRow.click();
             }
         }, 0);
+        sortTable("jobcode", "asc");
     }
   
     closeModal(); 
@@ -514,17 +525,17 @@ function handleCopyWithWgSave(){
     if (isAddMode) {
         newId = Math.max(...testData.map(item => item.id)) + 1;
 
-        testData.push({
+        testData.unshift({
             id: newId,
             jobcode: jobcode,
             name: name,
             type:type,
-            workGroup: workGroup,
+            wg: workGroup,
             timecode: updateTimecode //.map(item => ({ ...item, id: Math.max(...copiedTimecode.map(tc => tc.id)) + 1 })) : []
         });
       //  addWorkGroupForCopiedJobCode(jobcode,workGroup);
       renderTimeCodeTable();
-       
+      sortTable("jobcode", "asc"); 
     } else {
         const index = testData.findIndex(item => item.id === editingRow);
         if (index !== -1) {
@@ -533,9 +544,10 @@ function handleCopyWithWgSave(){
                 jobcode: jobcode,
                  name: name,
                 type:type,
-                workGroup: workGroup
+                wg: workGroup
             };
         }
+        sortTable("jobcode", "asc");
     }
     
     // Update filtered data
@@ -544,7 +556,7 @@ function handleCopyWithWgSave(){
         item.jobcode.toLowerCase().includes(searchTerm) ||
         item.name.toLowerCase().includes(searchTerm) ||
         item.type.toLowerCase().includes(searchTerm) ||
-        item.workGroup.toLowerCase().includes(searchTerm)
+        item.wg.toLowerCase().includes(searchTerm)
     );
 
     // Navigate to the page where the new record will appear
@@ -553,6 +565,7 @@ function handleCopyWithWgSave(){
         if (newItemIndex !== -1) {
             currentPage = Math.ceil((newItemIndex + 1) / recordsPerPage);
         }
+        sortTable("jobcode", "asc");
     }
     
     renderTable();
@@ -565,6 +578,7 @@ function handleCopyWithWgSave(){
                 newRow.click();
             }
         }, 0);
+        sortTable("jobcode", "asc");
     }
    // renderPagination();
     //document.getElementById('testModal').style.display = 'none';
@@ -637,7 +651,104 @@ function goToPage(page) {
     }
 }
  
+const headers = document.querySelectorAll("th");
 
+headers.forEach((header, index) => {
+  header.addEventListener("click", function () {
+
+    const column = this.dataset.column;
+    const currentOrder = this.dataset.order || "asc";
+    const newOrder = currentOrder === "asc" ? "desc" : "asc";
+
+    // Remove sorting icons from all headers
+    headers.forEach(h => {
+      h.classList.remove("sorted-asc", "sorted-desc");
+      // Remove any existing sort icon
+      const existingIcon = h.querySelector(".sort-icon");
+      if (existingIcon) {
+        existingIcon.remove();
+      }
+    });
+
+    // Update the order for the clicked header
+    this.dataset.order = newOrder;
+
+    // Add sorting icon only to the first header (index 0)
+    if (index === 0 || index === 1) {
+      const sortIcon = document.createElement("span");
+      sortIcon.className = "sort-icon";
+      
+      if (newOrder === "asc") {
+        sortIcon.innerHTML = " ▲"; // or use "↑"
+        this.classList.add("sorted-asc");
+      } else {
+        sortIcon.innerHTML = " ▼"; // or use "↓"
+        this.classList.add("sorted-desc");
+      }
+      
+      this.appendChild(sortIcon);
+    }
+
+    sortTable(column, newOrder);
+  });
+});
+
+
+ 
+
+function sortTable(column, order) {
+
+  testData.sort((a, b) => {
+
+    let valA = a[column];
+    let valB = b[column];
+
+    if (typeof valA === "string" && typeof valB === "string") {
+
+      return order === "asc"
+        ? valA.localeCompare(valB)
+        : valB.localeCompare(valA);
+    }
+
+    // fallback for numbers
+    return order === "asc"
+      ? valA - valB
+      : valB - valA;
+
+  });
+
+  renderTable(testData);
+}
+
+
+const resizers = document.querySelectorAll(".resizer");
+
+resizers.forEach(resizer => {
+
+  resizer.addEventListener("mousedown", function (e) {
+
+    e.stopPropagation();  // prevent sort click
+
+    const th = this.parentElement;
+    const startX = e.pageX;
+    const startWidth = th.offsetWidth;
+
+    function onMouseMove(e) {
+      const newWidth = startWidth + (e.pageX - startX);
+      th.style.width = newWidth + "px";
+    }
+
+    function onMouseUp() {
+      document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mouseup", onMouseUp);
+    }
+
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseup", onMouseUp);
+
+  });
+
+});
 
 // document.addEventListener("click", function (e) {
 

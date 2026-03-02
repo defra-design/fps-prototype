@@ -1,4 +1,7 @@
 const modal = document.getElementById("testModal");
+const modal_tests  = document.getElementById("testsModal");
+const animalModal = document.getElementById("animalModal");
+const additionalModal = document.getElementById("additionalModal");
 const modal_year = document.getElementById("AddYearModal");
 // document.getElementById("timejobdiv").style.display = 'none';
 
@@ -9,7 +12,30 @@ let testData = [
    
 
 ];
- 
+
+let testTabData = [
+    { id: 1, testcode: 'PT0000', unitprice: '£19.53', quantity: '1', testcost: '£19.53' },
+    { id: 2, testcode: 'TC0025', unitprice: '£23.66', quantity: '1', testcost: '£23.66' },
+    { id: 3, testcode: 'TC0036', unitprice: '£115.67', quantity: '1', testcost: '£115.67' }
+];
+
+let animalData = [
+    { id: 1, animaltype: "B&B Fixed Price Avian", rate: "£1.04", quantity: "5", days: "5", animalcost: "£26.00" }
+];
+
+let additionalData = [
+    { id: 1, description: "Consumables", costno: "£25000.00", costinf: "£25000.00", accountcat: "Consumables" }
+];
+
+let additionalEditingId = null;
+let additionalIsAddMode = false;
+
+let animalEditingId = null;
+let animalIsAddMode = false;
+
+
+let testEditingId = null;
+let testIsAddMode = false; 
 
 let currentPage = 1;
 let recordsPerPage = 10;
@@ -17,6 +43,12 @@ let filteredData = [...testData];
 let editingRow = null;
 let isAddMode = false;
 let selectedIndex = null;
+
+function formatStaffCurrency(value) {
+    let number = parseFloat(value);
+    if (isNaN(number)) return "£0.00";
+    return "£" + number.toFixed(2);
+}
 // Render table
 function renderTable() {
     const tbody = document.getElementById('tableBody');
@@ -51,6 +83,7 @@ function renderTable() {
 
     
     });
+	updateStaffTotal();
     
     // Add inline editing functionality
    // addInlineEditingListeners(); 
@@ -62,6 +95,611 @@ function renderTable() {
 
 // document.getElementById('recordsPerPage').addEventListener('change', handleRecordsPerPageChange);
 document.getElementById('txtSearchProjectCode').addEventListener('input', handleSearch);
+document.getElementById("modal-rate").addEventListener("input", autoCalculateStaffCost);
+document.getElementById("modal-hrs").addEventListener("input", autoCalculateStaffCost);
+document.getElementById("modal-days").addEventListener("input", autoCalculateStaffCost);
+
+function autoCalculateStaffCost() {
+
+    let rate = document.getElementById("modal-rate").value.replace("£", "");
+    let hrs = document.getElementById("modal-hrs").value;
+    let days = document.getElementById("modal-days").value;
+
+    rate = parseFloat(rate);
+    hrs = parseFloat(hrs);
+    days = parseFloat(days);
+
+    if (!isNaN(rate) && !isNaN(hrs) && !isNaN(days)) {
+        //const cost = rate * hrs * days;
+        const cost = rate * hrs;
+        document.getElementById("modal-staffcost").value =
+            formatStaffCurrency(cost);
+    }
+}
+
+/* ---------- RENDER TABLE ---------- */
+function renderTestTable() {
+    const tbody = document.getElementById("tabletestBody");
+    tbody.innerHTML = "";
+
+    testTabData.forEach(item => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${item.testcode}</td>
+            <td class="text-AlignRight">${item.unitprice}</td>
+            <td class="text-AlignRight">${item.quantity}</td>
+            <td class="text-AlignRight">${item.testcost}</td>
+            <td>
+                <button class="btn btn-sm btn-outline-primary" onclick="handleTestEdit(${item.id})">
+                    <img src="../images/pen-to-square-regular-full.svg" width="20">
+                </button>
+                <button class="btn btn-sm btn-outline-danger" onclick="handleTestDelete(${item.id})">
+                    <img src="../images/trash-can-regular-full.svg" width="20">
+                </button>
+            </td>
+        `;
+
+        tbody.appendChild(row);
+    }); 
+
+    updateTestTotal();
+}
+
+/* ---------- FORMAT CURRENCY ---------- */
+function formatAnimalCurrency(value) {
+    let number = parseFloat(value.toString().replace("£", ""));
+    if (isNaN(number)) return "£0.00";
+    return "£" + number.toFixed(2);
+}
+
+/* ---------- RENDER TABLE ---------- */
+function renderAnimalTable() {
+
+    const tbody = document.getElementById("tableAnimalBody");
+    tbody.innerHTML = "";
+
+    animalData.forEach(item => {
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${item.animaltype}</td>
+            <td class="text-AlignRight">${item.rate}</td>
+            <td class="text-AlignRight">${item.quantity}</td>
+            <td class="text-AlignRight">${item.days}</td>
+            <td class="text-AlignRight">${item.animalcost}</td>
+            <td>
+                <button class="btn btn-sm btn-outline-primary" onclick="handleAnimalEdit(${item.id})">
+                    <img src="../images/pen-to-square-regular-full.svg" width="20">
+                </button>
+                <button class="btn btn-sm btn-outline-danger" onclick="handleAnimalDelete(${item.id})">
+                    <img src="../images/trash-can-regular-full.svg" width="20">
+                </button>
+            </td>
+        `;
+
+        tbody.appendChild(row);
+    });
+
+    updateAnimalTotal();
+}
+
+/* ---------- OPEN ADD MODAL ---------- */
+document.getElementById("addanimalbookedBtn").addEventListener("click", function () {
+
+    animalIsAddMode = true;
+    animalEditingId = null;
+
+    document.getElementById("animalModalLabel").innerText = "Add Animal Booked";
+    document.getElementById("formAddAnimal").reset();
+
+    document.getElementById("animalmodalsaveBtn").style.display = "inline-block";
+    document.getElementById("animalupdateBtn").style.display = "none";
+
+    openAnimalModal();
+});
+
+
+/* ---------- EDIT ---------- */
+function handleAnimalEdit(id) {
+
+    const item = animalData.find(x => x.id === id);
+    if (!item) return;
+
+    animalIsAddMode = false;
+    animalEditingId = id;
+
+    document.getElementById("animalModalLabel").innerText = "Edit Animal Booked";
+
+    document.getElementById("modal-animaltype").value = item.animaltype;
+    document.getElementById("modal-animalrate").value = item.rate;
+    document.getElementById("modal-animalquantity").value = item.quantity;
+    document.getElementById("modal-animaldays").value = item.days;
+    document.getElementById("modal-animalcost").value = item.animalcost;
+
+    document.getElementById("animalmodalsaveBtn").style.display = "none";
+    document.getElementById("animalupdateBtn").style.display = "inline-block";
+
+    openAnimalModal();
+}
+
+
+/* ---------- DELETE ---------- */
+function handleAnimalDelete(id) {
+
+    if (confirm("Are you sure you want to delete this animal record?")) {
+        animalData = animalData.filter(item => item.id !== id);
+        renderAnimalTable();
+    }
+}
+
+
+/* ---------- SAVE ---------- */
+document.getElementById("animalmodalsaveBtn").addEventListener("click", function () {
+
+    const animaltype = document.getElementById("modal-animaltype").value;
+    const rateRaw = document.getElementById("modal-animalrate").value;
+    const quantityRaw = document.getElementById("modal-animalquantity").value;
+    const daysRaw = document.getElementById("modal-animaldays").value;
+
+    if (!animaltype || !rateRaw || !quantityRaw || !daysRaw) {
+        alert("Please fill all required fields");
+        return;
+    }
+
+    const rate = parseFloat(rateRaw.replace("£", ""));
+    const qty = parseFloat(quantityRaw);
+    const days = parseFloat(daysRaw);
+
+    if (isNaN(rate) || isNaN(qty) || isNaN(days)) {
+        alert("Invalid numeric values");
+        return;
+    }
+
+    const calculatedCost = rate * qty * days;
+
+    const newId = animalData.length > 0
+        ? Math.max(...animalData.map(item => item.id)) + 1
+        : 1;
+
+    animalData.push({
+        id: newId,
+        animaltype,
+        rate: formatAnimalCurrency(rate),
+        quantity: qty,
+        days: days,
+        animalcost: formatAnimalCurrency(calculatedCost)
+    });
+
+    renderAnimalTable();
+    closeAnimalModal();
+});
+
+
+/* ---------- UPDATE ---------- */
+document.getElementById("animalupdateBtn").addEventListener("click", function () {
+
+    const index = animalData.findIndex(x => x.id === animalEditingId);
+    if (index === -1) return;
+
+    const rate = parseFloat(document.getElementById("modal-animalrate").value.replace("£", ""));
+    const qty = parseFloat(document.getElementById("modal-animalquantity").value);
+    const days = parseFloat(document.getElementById("modal-animaldays").value);
+
+    const calculatedCost = rate * qty * days;
+
+    animalData[index] = {
+        ...animalData[index],
+        animaltype: document.getElementById("modal-animaltype").value,
+        rate: formatAnimalCurrency(rate),
+        quantity: qty,
+        days: days,
+        animalcost: formatAnimalCurrency(calculatedCost)
+    };
+
+    renderAnimalTable();
+    closeAnimalModal();
+});
+
+
+/* ---------- AUTO CALCULATE COST ---------- */
+document.getElementById("modal-animalrate").addEventListener("input", autoCalculateAnimalCost);
+document.getElementById("modal-animalquantity").addEventListener("input", autoCalculateAnimalCost);
+document.getElementById("modal-animaldays").addEventListener("input", autoCalculateAnimalCost);
+
+function autoCalculateAnimalCost() {
+
+    let rate = document.getElementById("modal-animalrate").value.replace("£", "");
+    let qty = document.getElementById("modal-animalquantity").value;
+    let days = document.getElementById("modal-animaldays").value;
+
+    rate = parseFloat(rate);
+    qty = parseFloat(qty);
+    days = parseFloat(days);
+
+    if (!isNaN(rate) && !isNaN(qty) && !isNaN(days)) {
+        const cost = rate * qty * days;
+        document.getElementById("modal-animalcost").value = formatAnimalCurrency(cost);
+    }
+}
+
+
+/* ---------- TOTAL CALCULATION ---------- */
+function updateAnimalTotal() {
+
+    let total = 0;
+
+    animalData.forEach(item => {
+        const value = parseFloat(item.animalcost.replace("£", ""));
+        total += isNaN(value) ? 0 : value;
+    });
+
+    // document.querySelector("tfoot .total-amount input").value =
+        // "£" + total.toFixed(2);
+		document.getElementById("animalTotalAmount").value =
+        "£" + total.toFixed(2);
+}
+
+
+/* ---------- MODAL CONTROL ---------- */
+function openAnimalModal() {
+    animalModal.classList.add("show");
+}
+
+function closeAnimalModal() {
+    animalModal.classList.remove("show");
+}
+
+
+/* ---------- INITIAL LOAD ---------- */
+document.addEventListener("DOMContentLoaded", function () {
+    renderAnimalTable();
+});
+
+
+function formatCurrency(value) {
+    let number = parseFloat(value.toString().replace("£", ""));
+    if (isNaN(number)) return "£0.00";
+    return "£" + number.toFixed(2);
+}
+
+/* ---------- OPEN ADD MODAL ---------- */
+document.getElementById("addtestbookedBtn").addEventListener("click", function () {
+
+    testIsAddMode = true;
+    testEditingId = null;
+
+    document.getElementById("testModalLabel").innerText = "Add Test Booked";
+    document.getElementById("formAddTest").reset();
+
+    document.getElementById("testmodalsaveBtn").style.display = "inline-block";
+    document.getElementById("testupdateBtn").style.display = "none";
+
+    openTestModal();
+});
+
+
+/* ---------- EDIT ---------- */
+function handleTestEdit(id) {
+
+    const item = testTabData.find(x => x.id === id);
+    if (!item) return;
+
+    testIsAddMode = false;
+    testEditingId = id;
+
+    document.getElementById("testModalLabel").innerText = "Edit Test Booked";
+
+    document.getElementById("modal-testcode").value = item.testcode;
+    document.getElementById("modal-unitprice").value = item.unitprice;
+    document.getElementById("modal-quantity").value = item.quantity;
+    document.getElementById("modal-testcost").value = item.testcost;
+
+    document.getElementById("testmodalsaveBtn").style.display = "none";
+    document.getElementById("testupdateBtn").style.display = "inline-block";
+
+    openTestModal();
+}
+
+
+/* ---------- DELETE ---------- */
+function handleTestDelete(id) {
+
+    if (confirm("Are you sure you want to delete this test?")) {
+        testTabData = testTabData.filter(item => item.id !== id);
+        renderTestTable();
+    }
+}
+
+
+/* ---------- SAVE ---------- */
+document.getElementById("testmodalsaveBtn").addEventListener("click", function () {
+
+    const testcode = document.getElementById("modal-testcode").value;
+    const unitRaw = document.getElementById("modal-unitprice").value;
+    const quantityRaw = document.getElementById("modal-quantity").value;
+
+    if (!testcode || !unitRaw || !quantityRaw) {
+        alert("Please fill all required fields");
+        return;
+    }
+
+    const unit = parseFloat(unitRaw.replace("£", ""));
+    const qty = parseFloat(quantityRaw);
+
+    if (isNaN(unit) || isNaN(qty)) {
+        alert("Invalid number values");
+        return;
+    }
+
+    const calculatedCost = unit * qty;
+
+    const newId = testTabData.length > 0
+        ? Math.max(...testTabData.map(item => item.id)) + 1
+        : 1;
+
+    testTabData.push({
+        id: newId,
+        testcode,
+        unitprice: formatCurrency(unit),
+        quantity: qty,
+        testcost: formatCurrency(calculatedCost)
+    });
+
+    renderTestTable();
+    closeTestModal();
+});
+
+
+/* ---------- UPDATE ---------- */
+document.getElementById("testupdateBtn").addEventListener("click", function () {
+
+    const index = testTabData.findIndex(x => x.id === testEditingId);
+    if (index === -1) return;
+
+    const unit = parseFloat(document.getElementById("modal-unitprice").value.replace("£", ""));
+    const qty = parseFloat(document.getElementById("modal-quantity").value);
+
+    const calculatedCost = unit * qty;
+
+    testTabData[index] = {
+        ...testTabData[index],
+        testcode: document.getElementById("modal-testcode").value,
+        unitprice: formatCurrency(unit),
+        quantity: qty,
+        testcost: formatCurrency(calculatedCost)
+    };
+
+    renderTestTable();
+    closeTestModal();
+});
+
+
+/* ---------- TOTAL CALCULATION ---------- */
+function updateTestTotal() {
+
+    let total = 0;
+
+    testTabData.forEach(item => {
+        const value = parseFloat(item.testcost.replace("£", ""));
+        total += isNaN(value) ? 0 : value;
+    });
+
+    //document.querySelector(".total-amount input").value = "£" + total.toFixed(2);
+	document.getElementById("testTotalAmount").value = "£" + total.toFixed(2);
+}
+
+
+/* ---------- MODAL CONTROL ---------- */
+function openTestModal() {
+    document.getElementById("testsModal").classList.add("show");
+}
+
+function closeTestModal() {
+    document.getElementById("testsModal").classList.remove("show");
+}
+
+
+/* ---------- AUTO CALCULATE COST ---------- */
+document.getElementById("modal-unitprice").addEventListener("input", autoCalculateCost);
+document.getElementById("modal-quantity").addEventListener("input", autoCalculateCost);
+
+function autoCalculateCost() {
+
+    let unit = document.getElementById("modal-unitprice").value.replace("£", "");
+    let qty = document.getElementById("modal-quantity").value;
+
+    unit = parseFloat(unit);
+    qty = parseFloat(qty);
+
+    if (!isNaN(unit) && !isNaN(qty)) {
+        const cost = unit * qty;
+        document.getElementById("modal-testcost").value = formatCurrency(cost);
+    }
+}
+
+
+/* ---------- INITIAL LOAD ---------- */
+document.addEventListener("DOMContentLoaded", function () {
+    renderTestTable();
+});
+
+
+
+function formatAdditionalCurrency(value) {
+    let number = parseFloat(value.toString().replace("£", "").replace(/,/g, ""));
+    if (isNaN(number)) return "£0.00";
+    return "£" + number.toFixed(2);
+}
+
+
+function renderAdditionalTable() {
+
+    const tbody = document.getElementById("tableAdditionalBody");
+    tbody.innerHTML = "";
+
+    additionalData.forEach(item => {
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${item.description}</td>
+            <td class="text-AlignRight">${item.costno}</td>
+            <td class="text-AlignRight">${item.costinf}</td>
+            <td>${item.accountcat}</td>
+            <td>
+                <button class="btn btn-sm btn-outline-primary" onclick="handleAdditionalEdit(${item.id})">
+                    <img src="../images/pen-to-square-regular-full.svg" width="20">
+                </button>
+                <button class="btn btn-sm btn-outline-danger" onclick="handleAdditionalDelete(${item.id})">
+                    <img src="../images/trash-can-regular-full.svg" width="20">
+                </button>
+            </td>
+        `;
+
+        tbody.appendChild(row);
+    });
+
+    updateAdditionalTotal();
+}
+
+document.getElementById("addadditionalBtn").addEventListener("click", function () {
+
+    additionalIsAddMode = true;
+    additionalEditingId = null;
+
+    document.getElementById("additionalModalLabel").innerText = "Add Additional Cost";
+    document.getElementById("formAddAdditional").reset();
+
+    document.getElementById("modal-costinf").readOnly = true;
+
+    document.getElementById("additionalsaveBtn").style.display = "inline-block";
+    document.getElementById("additionalupdateBtn").style.display = "none";
+
+    openAdditionalModal();
+});
+
+function handleAdditionalEdit(id) {
+
+    const item = additionalData.find(x => x.id === id);
+    if (!item) return;
+
+    additionalIsAddMode = false;
+    additionalEditingId = id;
+
+    document.getElementById("additionalModalLabel").innerText = "Edit Additional Cost";
+
+    document.getElementById("modal-description").value = item.description;
+    document.getElementById("modal-costno").value = item.costno;
+    document.getElementById("modal-costinf").value = item.costinf;
+    document.getElementById("modal-accountcat").value = item.accountcat;
+
+    document.getElementById("modal-costinf").readOnly = true;
+
+    document.getElementById("additionalsaveBtn").style.display = "none";
+    document.getElementById("additionalupdateBtn").style.display = "inline-block";
+
+    openAdditionalModal();
+}
+
+function handleAdditionalDelete(id) {
+
+    if (confirm("Are you sure you want to delete this additional cost?")) {
+        additionalData = additionalData.filter(item => item.id !== id);
+        renderAdditionalTable();
+    }
+}
+
+document.getElementById("additionalsaveBtn").addEventListener("click", function () {
+
+    const description = document.getElementById("modal-description").value;
+    const costnoRaw = document.getElementById("modal-costno").value;
+    const accountcat = document.getElementById("modal-accountcat").value;
+
+    if (!description || !costnoRaw || !accountcat) {
+        alert("Please fill all required fields");
+        return;
+    }
+
+    const costno = parseFloat(costnoRaw.replace("£", "").replace(/,/g, ""));
+
+    if (isNaN(costno)) {
+        alert("Invalid cost value");
+        return;
+    }
+
+    const formattedCost = formatAdditionalCurrency(costno);
+
+    const newId = additionalData.length > 0
+        ? Math.max(...additionalData.map(item => item.id)) + 1
+        : 1;
+
+    additionalData.push({
+        id: newId,
+        description,
+        costno: formattedCost,
+        costinf: formattedCost, // ✅ SAME VALUE AUTO ASSIGNED
+        accountcat
+    });
+
+    renderAdditionalTable();
+    closeAdditionalModal();
+});
+
+document.getElementById("additionalupdateBtn").addEventListener("click", function () {
+
+    const index = additionalData.findIndex(x => x.id === additionalEditingId);
+    if (index === -1) return;
+
+    const costno = parseFloat(document.getElementById("modal-costno").value.replace("£", "").replace(/,/g, ""));
+
+    const formattedCost = formatAdditionalCurrency(costno);
+
+    additionalData[index] = {
+        ...additionalData[index],
+        description: document.getElementById("modal-description").value,
+        costno: formattedCost,
+        costinf: formattedCost, // ✅ ALWAYS SAME
+        accountcat: document.getElementById("modal-accountcat").value
+    };
+
+    renderAdditionalTable();
+    closeAdditionalModal();
+});
+
+document.getElementById("modal-costno").addEventListener("input", function () {
+
+    const value = this.value.replace("£", "").replace(/,/g, "");
+    const formatted = formatAdditionalCurrency(value);
+
+    document.getElementById("modal-costinf").value = formatted;
+});
+
+function updateAdditionalTotal() {
+
+    let total = 0;
+
+    additionalData.forEach(item => {
+        const value = parseFloat(item.costinf.replace("£", ""));
+        total += isNaN(value) ? 0 : value;
+    });
+
+   document.getElementById("additionalTotalAmount").value =
+        "£" + total.toFixed(2);
+}
+
+function openAdditionalModal() {
+    additionalModal.classList.add("show");
+}
+
+function closeAdditionalModal() {
+    additionalModal.classList.remove("show");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    renderAdditionalTable();
+});
 
 // Handle records per page change
 function handleRecordsPerPageChange(e) {
@@ -193,11 +831,11 @@ document.getElementById('addstaffbookedBtn').addEventListener('click', handleAdd
 document.getElementById('add_year').addEventListener('click', handleAddYear);
  document.getElementById('modalsaveBtn').addEventListener('click', handleSave);
 
-function closeModal(){
-   //  document.getElementById('testModal').style.display = 'none';
-       document.getElementById("testModal").classList.toggle("show");
-	    // document.getElementById("AddYearModal").classList.toggle("show");
-}
+// function closeModal(){
+   // //  document.getElementById('testModal').style.display = 'none';
+       // document.getElementById("testModal").classList.toggle("show");
+	    // // document.getElementById("AddYearModal").classList.toggle("show");
+// }
 
 
 // Handle edit
@@ -215,7 +853,8 @@ function handleEdit(id) {
     document.getElementById('modal-hrs').value = item.hrs;
     document.getElementById('modal-days').value = item.days; 
 	document.getElementById('modal-staffcost').value = item.staffcost; 
-
+document.getElementById("modalsaveBtn").style.display = "none";
+document.getElementById("staffUpdateBtn").style.display = "inline-block";
 
      openModal();
   //  document.getElementById('testModal').style.display = 'block';
@@ -254,6 +893,13 @@ function handleDelete(id) {
 
 function openModal() {
   modal.classList.add("show");
+  if (isAddMode) {
+      document.getElementById("modalsaveBtn").style.display = "inline-block";
+      document.getElementById("staffUpdateBtn").style.display = "none";
+  } else {
+      document.getElementById("modalsaveBtn").style.display = "none";
+      document.getElementById("staffUpdateBtn").style.display = "inline-block";
+  }
   //modal_year.classList.add("show");
 }
 
@@ -264,8 +910,15 @@ function openModalyear() {
 
 function closeModal() {
   modal.classList.remove("show");
+    isAddMode = true;
+
+  document.getElementById("modalsaveBtn").style.display = "inline-block";
+  document.getElementById("staffUpdateBtn").style.display = "none";
   // modal_year.classList.remove("show");
 }
+
+// function closeTestModal(){
+	// modal_tests.classList.remove("show");}
 
 function closeModalYear() {
   //modal.classList.remove("show");
@@ -274,69 +927,114 @@ function closeModalYear() {
 
 // Handle save
 function handleSave() {
-	 const WGgrade = document.getElementById('modal-WGgrade').value;
+
+    const WGgrade = document.getElementById('modal-WGgrade').value;
     const staffname = document.getElementById('modal-staffname').value;
-    const rate = document.getElementById('modal-rate').value;
-    const hrs = document.getElementById('modal-hrs').value;
-    const days = document.getElementById('modal-days').value;
-	const staffcost = document.getElementById('modal-staffcost').value;
 
+    let rateRaw = document.getElementById('modal-rate').value.replace("£", "");
+    let hrsRaw = document.getElementById('modal-hrs').value;
+    let daysRaw = document.getElementById('modal-days').value;
 
- 
-
-    
-    if (!staffname || !days) {
+    if (!staffname || !rateRaw || !hrsRaw || !daysRaw) {
         alert('Please fill in all required fields');
         return;
     }
-    
+
+    const rate = parseFloat(rateRaw);
+    const hrs = parseFloat(hrsRaw);
+    const days = parseFloat(daysRaw);
+
+    if (isNaN(rate) || isNaN(hrs) || isNaN(days)) {
+        alert("Invalid numeric values");
+        return;
+    }
+
+    //const calculatedCost = rate * hrs * days;
+    const calculatedCost = rate * hrs;
+
     if (isAddMode) {
-        const newId = Math.max(...testData.map(item => item.id)) + 1;
+
+        const newId = testData.length > 0
+            ? Math.max(...testData.map(item => item.id)) + 1
+            : 1;
+
         testData.push({
             id: newId,
-			 WGgrade: WGgrade,
-            staffname: staffname,
-            rate: rate,
-            hrs:hrs,
-            days: days,
-			staffcost: staffcost
-			});
+            WGgrade,
+            staffname,
+            rate: formatStaffCurrency(rate),
+            hrs,
+            days,
+            staffcost: formatStaffCurrency(calculatedCost)
+        });
+
     } else {
+
         const index = testData.findIndex(item => item.id === editingRow);
+
         if (index !== -1) {
+
             testData[index] = {
                 ...testData[index],
-                 WGgrade: WGgrade,
-            staffname: staffname,
-                 rate: rate,
-                hrs:hrs,
-                days: days,
-				staffcost: staffcost
+                WGgrade,
+                staffname,
+                rate: formatStaffCurrency(rate),
+                hrs,
+                days,
+                staffcost: formatStaffCurrency(calculatedCost)
             };
         }
     }
-    
-    // Update filtered data
-    const searchTerm = document.getElementById('txtSearchProjectCode').value.toLowerCase();
-    filteredData = testData.filter(item => 
-        item.staffname.toLowerCase().includes(searchTerm) ||
-        // item.name.toLowerCase().includes(searchTerm) ||
-        item.type.toLowerCase().includes(searchTerm) ||
-        item.workGroup.toLowerCase().includes(searchTerm)
-    );
-    
+
+    filteredData = [...testData];
+
     renderTable();
-   // renderPagination();
-    //document.getElementById('testModal').style.display = 'none';
-    //  document.getElementById("testModal").classList.toggle("show");
+	updateStaffTotal();
     closeModal();
-    // const modal = bootstrap.Modal.getInstance(document.getElementById('testModal'));
-    // modal.hide();
-    
+
     isAddMode = false;
     editingRow = null;
 }
 
+document.getElementById("staffUpdateBtn").addEventListener("click", function () {
+
+    if (editingRow === null) return;
+
+    const index = testData.findIndex(item => item.id === editingRow);
+    if (index === -1) return;
+
+    // Update values
+    testData[index].WGgrade = document.getElementById('modal-WGgrade').value;
+    testData[index].staffname = document.getElementById('modal-staffname').value;
+    testData[index].rate = document.getElementById('modal-rate').value;
+    testData[index].hrs = document.getElementById('modal-hrs').value;
+    testData[index].days = document.getElementById('modal-days').value;
+    testData[index].staffcost = document.getElementById('modal-staffcost').value;
+
+    // Re-render table
+    renderTable();   // ⚠️ use your actual render function name here
+
+    // Reset state
+    editingRow = null;
+    isAddMode = true;
+
+    closeModal();
+});
+
+function updateStaffTotal() {
+
+    let total = 0;
+
+    testData.forEach(item => {
+        const value = parseFloat(
+            item.staffcost.replace("£", "").replace(/,/g, "")
+        );
+        total += isNaN(value) ? 0 : value;
+    });
+
+    document.getElementById("staffTotalAmount").value =
+        "£" + total.toFixed(2);
+}
 
 // Render pagination
 function renderPagination() {

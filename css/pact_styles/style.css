@@ -1041,6 +1041,23 @@ button.accordion-button:not(.collapsed){
 }
 
 
+.slidepopup {
+      width: 600px;
+    /*height: 300px;*/
+    background: #d4ebff;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid #1d70b8;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+.slidepopup.collapsed {
+    /*width: var(--sidebar-width-collapsed);*/
+    width: 0px;
+}
+
 .accordion-button::after{
     background-image: none !important;
 }

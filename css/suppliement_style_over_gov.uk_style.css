@@ -1,0 +1,159 @@
+/*pupose: This file is to supply additional css classes over the default style of gov.uk NOT TO OVERRIDE, to reduce alignment issues, text overflow issues which imapact basic alignment for eg checkbox label.*/
+
+
+/* for reference only, */
+/* :root {
+    --govuk-breakpoint-mobile: 20rem;
+    --govuk-breakpoint-tablet: 40.0625rem;
+    --govuk-breakpoint-desktop: 48.0625rem;
+    --govuk-frontend-version: "6.0.0";
+    --govuk-brand-colour: #1d70b8;
+    --govuk-text-colour: #0b0c0c;
+    --govuk-template-background-colour: #f4f8fb;
+    --govuk-body-background-colour: #fff;
+    --govuk-print-text-colour: #000;
+    --govuk-secondary-text-colour: #484949;
+    --govuk-focus-colour: #fd0;
+    --govuk-focus-text-colour: #0b0c0c;
+    --govuk-error-colour: #ca3535;
+    --govuk-success-colour: #0f7a52;
+    --govuk-border-colour: #cecece;
+    --govuk-input-border-colour: #0b0c0c;
+    --govuk-hover-colour: #cecece;
+    --govuk-link-colour: #1a65a6;
+    --govuk-link-visited-colour: #54319f;
+    --govuk-link-hover-colour: #0f385c;
+    --govuk-link-active-colour: #0b0c0c;
+    --govuk-surface-background-colour: #f4f8fb;
+    --govuk-surface-text-colour: #0b0c0c;
+    --govuk-surface-border-colour: #8eb8dc;
+} */
+
+:root {
+    --tint-25: #5694ca;
+    --tint-50: #8eb8dc;
+    --tint-80: #d2e2f1;
+
+}
+
+
+.sup_label_auto_width {
+    max-width:100%;
+}
+
+.sup_select_option_width_100 {
+    width:100% !important;
+}
+
+.sup_margin_0{
+    margin:0 !important;
+}
+
+.sup_align_right{
+    margin-right: 12px;
+    margin-top: 0;
+    float: right;
+}
+
+.sup_justify_content{
+    justify-content: space-between;
+}
+
+.sup_border{
+  border:1px solid var(--govuk-border-colour); 
+}
+
+.sup_border-bottom{
+    border-bottom:1px solid var(--govuk-border-colour); 
+}
+
+.sup_text_color{
+    color: var(--govuk-text-colour);
+}
+
+.sup_heading_bg_color{
+    background-color: rgba(212, 235, 255, 0.8);
+}
+
+.sup_select_pagination_width{
+    min-width: 3.5em !important;
+}
+
+.sup_margin_left_right_10{
+    margin: 0 10px;
+}
+
+
+.sup_pagination_wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid var(--govuk-border-colour);
+}
+
+
+.sup_business_area_wrapper{ 
+    display: flex;
+    margin: 0;
+    padding: 10px 0 0 0px;
+}
+
+.sup_financial_area_wrapper{
+    display: flex;
+    width: 100%;
+    gap: 0;
+    padding: 0;
+    margin:0;
+    padding-top: 10px;
+}
+
+.sup_align_heading{
+    margin: 0;
+    padding: 0px 0px 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.sup_align_flexheading{
+    margin: 0;
+    padding: 0px 0px 5px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.sup_margin_bottom_20{
+    margin-bottom:20px;
+}
+
+.sup_decrease_font_size_s{
+    font-size:1rem;
+}
+
+.sup_p_0{
+    padding:0;
+}
+
+.sup_margin_bottom_left_10{
+    margin:0px 0px 10px 10px;
+}
+
+.sup_p_8{
+    padding:8px;
+}
+
+
+/*----------User 2 Styles Starts here---------*/
+
+.label_width {
+	
+	min-width: 152px;
+    text-align: right;
+}
+
+/*----------user 2 Styles End----------*/

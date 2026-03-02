@@ -403,12 +403,12 @@ td.action-cell:nth-child(5) {
   overflow-x: auto;
 }
 
-tbody#tableBody >tr >td > button {
-    background: none;
-    border: 0;
-    outline: none;
+tbody >tr >td > button {
+    background: none !important;
+    border: 0 !important;
+    outline: none !important;
     cursor: pointer;
-    padding:0;
+    padding:0 !important;
 }
 
 tbody#tableBody >tr >td >  .btnBlue {	
@@ -1227,5 +1227,7 @@ background-color: #edf4ff;
     background-color: #FAFAFA;
 	    text-align: right;
 }
+
+
 
 

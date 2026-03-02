@@ -656,6 +656,19 @@ border-bottom: 1px solid #edf4ff;
     display: flex;
     flex-direction: column;
     gap: 8px;
+	  min-width: 0;
+}
+
+
+
+.maxheight320{
+	
+	 max-height: 320px;
+}
+
+.jobcodediv .custom-table {
+    width: max-content;
+    min-width: 100%;
 }
 
 .data-section h3 {
@@ -1051,8 +1064,7 @@ background-color: #f1f1f1;
 
 .pims-log {
     border: 1px solid #0374e9;
-    border-radius: 10px;
-    <!-- width: 90px; -->
+    border-radius: 10px;  
     color: #00005c;
     text-shadow: 1px 1px #b0d7ff;
     letter-spacing: 1px;
@@ -1308,8 +1320,7 @@ background-color: #f1f1f1;
 
 .pims-log {
     border: 1px solid #0374e9;
-    border-radius: 10px;
-    <!-- width: 90px; -->
+    border-radius: 10px;   
     color: #00005c;
     text-shadow: 1px 1px #b0d7ff;
     letter-spacing: 1px;
@@ -1829,6 +1840,7 @@ font-size: 14px;
 .jobcodediv {
     max-height: 230px;
     height: 200px;
+	overflow-x: auto;   
     overflow-y: auto;
     border: 1px solid #1d70b8 !important;
     border-top: 0 !important;

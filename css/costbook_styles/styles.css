@@ -48,7 +48,7 @@
 .pims-log {
     border: 1px solid #0374e9;
     border-radius: 10px;
-    <!-- width: 90px; -->
+   
     color: #00005c;
     text-shadow: 1px 1px #b0d7ff;
     letter-spacing: 1px;
@@ -87,7 +87,7 @@
 
 .form-control {
     width: 100%;
-    padding: 10px 12px;
+    padding: .375rem .75rem;
     font-size: 14px;
     border-radius: 6px;
     border: 1px solid #ced4da;
@@ -420,18 +420,18 @@
     border-bottom: 1px solid #C0C0C0;
 }
 
-.tab-btn {
-    padding: 8px 8px;
-    border: none;
-    background: #E8E8E8;
-    border-right: 1px solid #C0C0C0;
-    font-size: 14px;
-    cursor: pointer;
-    color: #424242;
-    font-weight: 500;
-    white-space: nowrap;
-    flex: 1;
-}
+/* .tab-btn { */
+    /* padding: 8px 8px; */
+    /* border: none; */
+    /* background: #E8E8E8; */
+    /* border-right: 1px solid #C0C0C0; */
+    /* font-size: 14px; */
+    /* cursor: pointer; */
+    /* color: #424242; */
+    /* font-weight: 500; */
+    /* white-space: nowrap; */
+    /* flex: 1; */
+/* } */
 
 .tab-btn:hover {
     background: #D8D8D8;
@@ -935,10 +935,10 @@ border: 1px solid #1d70b8;
     border: none;
        background: #bce0ff;
     border-right: 1px solid #1d70b8;
-    font-size: 13px;
+    font-size: 14px;
     cursor: pointer;
     color: #2f2f2f;
-    font-weight: 500;
+    font-weight: 600;
     white-space: nowrap;
     flex: 1;
     border-left: 1px solid #C0C0C0;
@@ -948,3 +948,60 @@ border: 1px solid #1d70b8;
 .tab-btn:hover {background: #bce0ff;}
 
 
+
+.content-area,
+.permissions-section,
+.permissions-section .tab-container,
+.permissions-section .tab-pane {
+    min-width: 0;
+}
+
+.permissions-section {
+    flex: 1 1 auto;
+    width: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.permissions-section .tab-buttons {
+    min-width: 0;
+    overflow-x: auto;
+}
+
+
+
+/* .permissions-section .jobcodediv { */
+    /* overflow-x: auto; */
+    /* overflow-y: auto; */
+    /* max-height: 250px; */
+    /* max-width: 100%; */
+    /* -webkit-overflow-scrolling: touch; */
+/* } */
+
+/* .permissions-section .jobcodediv .custom-table { */
+    /* width: max-content; */
+    /* min-width: 100%; */
+/* } */
+
+
+
+.jobcodediv {
+    max-height: 230px;
+	
+    height: 200px;
+	 max-width: 100%;
+	overflow-x: auto;   
+    overflow-y: auto;
+    border: 1px solid #1d70b8 !important;
+    border-top: 0 !important;
+}
+
+.jobcodediv .custom-table {
+    width: max-content;
+    min-width: 100%;
+}
+
+.maxheight250{
+	
+	 max-height: 250px;
+}

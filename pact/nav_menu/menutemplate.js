@@ -32,7 +32,6 @@ const htmlmenu = `<div style="display: flex; flex-direction: row;">
             <button class="nav-button dropdown-toggle" data-dropdown="project-management">
             <div class="align-menu-text">
                  <span>Project & Programme</span>
-                  <span>Management</span>
             </div>
                 <span class="arrow"><img src=".././images/arrow-down.svg" alt="down arrow for dropdown menu" width="12px"></span>
             </button>
@@ -50,8 +49,7 @@ const htmlmenu = `<div style="display: flex; flex-direction: row;">
         <div class="nav-item dropdown">
             <button class="nav-button dropdown-toggle" data-dropdown="monthly-data">
                 <div class="align-menu-text">
-                <span>Monthly Project Data </span>
-                <span>Management</span>
+                <span>Monthly Project Data </span> 
                 </div>
                 <span class="arrow"><img src=".././images/arrow-down.svg" alt="down arrow for dropdown menu" width="12px"></span>
             </button>
@@ -72,8 +70,7 @@ const htmlmenu = `<div style="display: flex; flex-direction: row;">
         <div class="nav-item dropdown">
             <button class="nav-button dropdown-toggle" data-dropdown="work-group">
              <div class="align-menu-text">
-               <span> Work Group Static Data </span>
-                <span>Management</span>
+               <span> Work Group Static Data </span> 
              </div>
                 <span class="arrow"><img src=".././images/arrow-down.svg" alt="down arrow for dropdown menu" width="12px"></span>
             </button>
@@ -104,8 +101,7 @@ const htmlmenu = `<div style="display: flex; flex-direction: row;">
         <div class="nav-item dropdown">
             <button class="nav-button dropdown-toggle" data-dropdown="time-data">
              <div class="align-menu-text">
-               <span> Time & Output Data </span>
-                <span> Management </span>
+               <span> Time & Output Data </span> 
              </div>
                 <span class="arrow"><img src=".././images/arrow-down.svg" alt="down arrow for dropdown menu" width="12px"></span>
             </button>
@@ -128,7 +124,7 @@ const htmlmenu = `<div style="display: flex; flex-direction: row;">
                 <a class="dropdown-item" href="#">PACT Reports Menu</a>
                 <a class="dropdown-item" href="timeoutputdatamgmt_four.html"
                     style="display: flex;    justify-content: space-between;">Time
-                    & Output Data Management</a>
+                    & Output Data</a>
         
             </div>
         </div>-->

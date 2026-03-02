@@ -47,12 +47,12 @@ selectedjobcodeIdx = testData.findIndex((x) => x.jobcode === isrowclicked); //?.
 let timecodelist = getTimecodeData(refjobcodebeforecopy);
 let filteredTcData = [...timecodelist];
 // Render table
-function renderTimeCodeTable(isrowclicked = null) {
+function renderTimeCodeTable(isrowclicked = null,wgdata = null) {
   refjobcodebeforecopy = isrowclicked;
   const tcbody = document.getElementById("timejobtabletableBody");
   const startIndex = (currentPg - 1) * recordsPerPg;
   const endIndex = startIndex + recordsPerPg;
-  let timecodeTable = getTimecodeData(isrowclicked).slice(startIndex, endIndex);
+   timecodeTable = wgdata !== null ? wgdata : getTimecodeData(isrowclicked).slice(startIndex, endIndex);
 //   selectedjobcodeIdx = timecodeTable.findIndex((x) => x.jobcode === isrowclicked); //?.timecode || [];
 //   if (selectedjobcodeIdx != -1) {
 //     timecodeTable = testData[selectedjobcodeIdx].timecode || [];
@@ -73,7 +73,7 @@ function renderTimeCodeTable(isrowclicked = null) {
     row.innerHTML = `
             <td class="editable-cell" data-field="workgroup">
              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
+              <div class="govuk-checkboxes__item" style="text-align:'center'">
             <input type='checkbox' onclick="event.stopPropagation()" class="govuk-checkboxes__input timecodeCheckbox" data-id='${JSON.stringify(item)}' id="checkbox${item.id}" name="checkbox${item.id}" />
              <label class="govuk-label govuk-checkboxes__label sup_label_auto_width" for="checkbox${item.id}" style="padding: 0;">  </label>   
             </div></div>
@@ -157,7 +157,7 @@ function onclickRowNewTC(obj) {
 function handleAdd() {
   isAddTCModal = true;
 
-  document.getElementById("timecodeModalLabel").textContent = "Add Time Code";
+  document.getElementById("timecodeModalLabel").textContent = "Add Work Group";
   document.getElementById("dpjobcode").value = selectedRowjobcode;
   document.getElementById("dpworkgroup").value = "";
   // document.getElementById('descriptionInput').value = '';
@@ -202,7 +202,7 @@ function updateCode(selectedId, productlist) {
 
 function handleSaveCopyTCForJobcode() {
   if (selectedWG.length == 0) {
-    alert("Please select at least one workgroup to copy time code");
+    alert("Please select at least one Job code to copy Work Group");
     return;
   }
 
@@ -232,10 +232,11 @@ function handleSaveCopyTCForJobcode() {
   getTimecodeData(selectedJobcode);
   document.getElementById("selectAllTC").checked = false;
   closeCopyTCModal();
-  onclickRowNewModal(selectedParentRow,selectedJobcode);
   const index = testData.findIndex(el => el.jobcode === selectedJobcode);
   currentPage = Math.floor(index / recordsPerPage) + 1;
   renderTable();
+  renderPagination();
+  selectParentByCode(selectedJobcode);
   renderTimeCodeTable(selectedJobcode);
   selectedJobcode = null;
   
@@ -256,7 +257,7 @@ function handleDeleteAllTC() {
     // renderTimeCodeTable();
     // renderTimecodePagination();
 
-  if (confirm("Are you sure you want to delete selected time code?")) {
+  if (confirm("Are you sure you want to delete selected Work Group?")) {
     const selectedIds = selectedWG.map(item => item.id);
     
     selectedWG.forEach((el) => {
@@ -320,7 +321,7 @@ function handleTimeCodeEdit(selecteditem) {
   isAddTCModal = false;
   editingTcRow = selecteditem.id;
   // let tcstatus = selecteditem.isactive == "true" ? true : false;
-  document.getElementById("timecodeModalLabel").textContent = "Edit Time code";
+  document.getElementById("timecodeModalLabel").textContent = "Edit Work Group";
   document.getElementById("dpjobcode").value = selecteditem.jobcode;
   document.getElementById("chktimecodestatus").checked = selecteditem.isactive;
   //  document.getElementById('modal-type').value = item.type;
@@ -341,7 +342,7 @@ function handleTimeCodeEdit(selecteditem) {
 }
 
 function handleDeleteTimecode(id) {
-  if (confirm("Are you sure you want to delete this Time code?")) {
+  if (confirm("Are you sure you want to delete this Work Group?")) {
     testData.findIndex((item) => {
       if (item.jobcode === selectedTCRowjobcode) {
         let tcIndex = item.timecode.findIndex((tc) => tc.id === id);
@@ -363,6 +364,7 @@ function handleDeleteTimecode(id) {
 
     renderTimeCodeTable();
     renderTimecodePagination();
+    sortTableWorkgroup("workGroup", "asc");
   }
 }
 
@@ -437,7 +439,7 @@ function addWorkGroupForCopiedJobCode(jobcode, wg) {
     //     workGroup: wg
     // });
 
-    testData[idx]["timecode"].push(...newArray);
+    testData[idx]["timecode"].unshift(...newArray);
   }
 }
 
@@ -474,14 +476,22 @@ function handleSaveTimecode() {
           ? testData[idx]["timecode"].length + 1
           : 1;
       //testData[idx]["timecode"] = [];
-      testData[idx]["timecode"].push({
+
+      let iswgExist = testData[idx]["timecode"].some(
+        (item) => item.workGroup.toLowerCase() === workGroup.toLowerCase(),
+      );
+      if(iswgExist){
+        alert("This Work Group already exists for the selected Job code, please enter different Work Group");
+        return;
+      }
+      testData[idx]["timecode"].unshift({
         id: newId,
         jobcode: jobcode,
         isactive: chktimecode,
         workGroup: workGroup,
       });
     }
-
+    sortTableWorkgroup("workGroup", "asc");
     // testData.push({
     //     id: newId,
     //     jobcode: jobcode,
@@ -507,7 +517,19 @@ function handleSaveTimecode() {
           testData[idx]["timecode"].length > 0
             ? testData[idx]["timecode"].length + 1
             : 1;
-        testData[idx]["timecode"].push({
+
+        let iswgExist = testData[idx]["timecode"].some(
+          (item) =>
+            item.workGroup.toLowerCase() === workGroup.toLowerCase(),
+        );
+        if (iswgExist) {
+          alert(
+            "This Work Group already exists for the selected Job code, please enter different Work Group",
+          );
+          return;
+        }
+
+        testData[idx]["timecode"].unshift({
           id: newId,
           jobcode: jobcode,
           isactive: chktimecode,
@@ -519,6 +541,16 @@ function handleSaveTimecode() {
 
         replaceJobcodeWhileEditTimecode(selectedTCRowdatasetID);
       } else {
+          let iswgExist = testData[idx]["timecode"].some(
+            (item) =>
+              item.workGroup.toLowerCase() === workGroup.toLowerCase(),
+          );
+          if (iswgExist) {
+            alert(
+              "This Work Group already exists for the selected Job code, please enter different Work Group",
+            );
+            return;
+          }
         //regular edit of time code for selected row
         testData[idx].timecode[tcIndex] = {
           id: testData[idx].timecode[tcIndex].id,
@@ -529,7 +561,7 @@ function handleSaveTimecode() {
         // replaceJobcodeWhileEditTimecode(selectedTCRowdatasetID);
       }
     }
-
+    sortTableWorkgroup("workGroup", "asc");
     //const index = newtimecode.findIndex(item => item.id === editingTcRow);
     // if (index !== -1) {
     //     //  { id: 1, jobcode: 'AH003308', isactive: 'true', workGroup: 'CIT' },
@@ -698,7 +730,7 @@ tbody.addEventListener("change", function (e) {
 
     } else {
 
-      selectedWG = selectedWG.filter(el => el.jobcode !== item.jobcode);
+      selectedWG = selectedWG.filter(el => el.id !== item.id);
 
       // uncheck selectAll if any one unchecked
       selectAll.checked = false;
@@ -716,6 +748,83 @@ tbody.addEventListener("change", function (e) {
 
 });
 
+
+function selectParentByCode(currentjobcode) {
+  const rows = document.querySelectorAll("#tableBody tr");
+
+  rows.forEach(row => {
+    if (row.cells[0].innerText.trim() === currentjobcode) {
+      onclickRowNewModal(row, currentjobcode);
+    }
+  });
+}
+
+
+function sortTableWorkgroup(column, order) {
+ // alert(selectedRowjobcode,"selectedRowjobcode")
+  timecodelist = getTimecodeData(selectedRowjobcode);
+  timecodelist.sort((a, b) => {
+
+    let valA = a[column];
+    let valB = b[column];
+
+    if (typeof valA === "string" && typeof valB === "string") {
+
+      return order === "asc"
+        ? valA.localeCompare(valB)
+        : valB.localeCompare(valA);
+    }
+
+    // fallback for numbers
+    return order === "asc"
+      ? valA - valB
+      : valB - valA;
+
+  });
+
+   renderTimeCodeTable(selectedRowjobcode,timecodelist);
+}
+
+
+let sortState = {
+  column: null,
+  order: "asc"
+};
+
+const headerswg = document.querySelectorAll('th[data-column="workGroup"]');
+
+headerswg.forEach((header, index) => {
+  header.addEventListener("click", function () {
+
+    const column = this.dataset.column;
+
+    if (sortState.column === column) {
+      sortState.order = sortState.order === "asc" ? "desc" : "asc";
+    } else {
+      sortState.column = column;
+      sortState.order = "asc";
+    }
+
+    // Remove icons from all
+    headerswg.forEach(h => {
+      h.classList.remove("sorted-asc", "sorted-desc");
+      const icon = h.querySelector(".sort-icon");
+      if (icon) icon.remove();
+    });
+
+    // Add icon
+    const sortIcon = document.createElement("span");
+    sortIcon.className = "sort-icon";
+    sortIcon.innerHTML = sortState.order === "asc" ? " ▲" : " ▼";
+
+    this.appendChild(sortIcon);
+    this.classList.add(
+      sortState.order === "asc" ? "sorted-asc" : "sorted-desc"
+    );
+
+    sortTableWorkgroup(column, sortState.order);
+  });
+});
  
 //dpTargetJobcode
 
@@ -731,7 +840,7 @@ document.addEventListener("DOMContentLoaded", function () {
    renderTimecodePagination();
 
    renderTimeCodeTable(selectedTCRowjobcode);
-//  getTimecodeData();
+  //  getTimecodeData();
   renderPagination();
  
 });
