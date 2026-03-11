@@ -290,13 +290,13 @@
     min-height: 80px;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #4a90e2;
-    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
-}
-
+/* .form-group input:focus, */
+/* .form-group textarea:focus { */
+    /* outline: none; */
+    /* border-color: #4a90e2; */
+    /* box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2); */
+/* } */
+ 
 
 
 .total-amount input {
@@ -670,10 +670,10 @@ button a{
 .existing_project .submitted-select {
     width: 100px;
 }
-.existing_project select:focus,input:focus,textarea:focus {
-    outline: 1px solid #0078d4;
-    outline-offset: -1px;
-}
+/* .existing_project select:focus,input:focus,textarea:focus { */
+    /* outline: 1px solid #0078d4; */
+    /* outline-offset: -1px; */
+/* } */
 .existing_project .form-row:nth-child(4) .tooltip,.form-row:nth-child(8) .tooltip {
     display: block;
 }
@@ -716,7 +716,7 @@ button a{
 
 .read-only {
   background-color: #eeeeee !important;
-  border: 0;
+  /* border: 0; */
 }
 
 
@@ -788,11 +788,7 @@ button a{
     border-bottom: 1px solid #edf4ff;
 }
 
-.sidenav-title{
-padding: 5px 3px;
-    background: #155790;
-	border-radius: 0 8px 8px 0;
-}
+
 
 .toggle-btn {
     position: absolute;
@@ -1004,4 +1000,10 @@ border: 1px solid #1d70b8;
 .maxheight250{
 	
 	 max-height: 250px;
+}
+
+.label_width {
+	
+	min-width: 190px;
+    text-align: right;
 }

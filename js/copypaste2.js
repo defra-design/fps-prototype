@@ -4,26 +4,31 @@ const sourceBody = table.querySelector("tbody");
 const thours = document.getElementById("txtTotalhours");
 thours.value = 0;
 const totalHours = Number(thours.value) || 0;
-
+let searchText;
 const mkliveHours = document.getElementById("txtMakeliveTotalhours");
 mkliveHours.value = 0;
 const mktotalHours = Number(mkliveHours.value) || 0;
+
+let selectedWG = [];
 
 let pactStaffName = "";
 let pactStaffID = "";
 let pactID = "";
 
 let editingRow = null;
-const targetBody = document.getElementById("selectedTable").querySelector("tbody");
+const targetBody = document
+  .getElementById("selectedTable")
+  .querySelector("tbody");
 let temprow = targetBody.insertRow();
-temprow.innerHTML = `<td colspan="7" class="norecords">No record found</td>`
+temprow.innerHTML = `<td colspan="7" class="norecords">No record found</td>`;
 let tmprow;
 let currentPage = 1;
 let pageSize = 10;
 
 let previousHours = null;
 let updatedHours = null;
-
+let filtered;
+let failedRecords = [];
 let currentPagetwo = 1;
 let pageSizeliverecords = 10;
 let isPassedBtnClicked = false;
@@ -38,45 +43,81 @@ let isFailedBtnClicked = false;
 // input.style.marginRight = rect.left - tableRect.left + "px";
 
 document.getElementById("wgupdateBtn").addEventListener("click", () => {
-   //WorkGroup, ID, PACTStaff, TimeCode, ParentProject, Period, Hours, Pass, PactID, Comments
-        addOrUpdateRow({
-        WorkGroup:document.getElementById("WorkGroup").value,
-        ID:pactStaffID,
-        Name:pactStaffName,
-        TimeCode:document.getElementById("TimeCode").value,
-        ParentProject:document.getElementById("ParentProject").value,
-        Period:document.getElementById("Period").value,
-        Hours:document.getElementById("Hours").value
-        
-        },editingRow);
-          editingRow = null;
-          closeModal();
+  //WorkGroup, ID, PACTStaff, TimeCode, ParentProject, Period, Hours, Pass, PactID, Comments
+  addOrUpdateRow(
+    {
+      WorkGroup: document.getElementById("WorkGroup").value,
+      ID: pactStaffID,
+      Name: pactStaffName,
+      TimeCode: document.getElementById("TimeCode").value,
+      ParentProject: document.getElementById("ParentProject").value,
+      Period: document.getElementById("Period").value,
+      Hours: document.getElementById("Hours").value,
+    },
+    editingRow,
+  );
+  editingRow = null;
+  closeModal();
 });
 
 document.getElementById("moveBtn").addEventListener("click", () => {
+  const rows = [...tbody.rows];
 
+  // onClickValidate();
+  //onClickFailed();
+  failedRecords = rows.filter((row) => {
+    const checkbox = row.cells[8]?.querySelector("input[type='checkbox']");
+    return (
+      row.innerText.toLowerCase().includes(searchText) &&
+      (checkbox === null || checkbox.checked !== true)
+    );
+  });
+
+    if(failedRecords.length > 0){
+     alert("Please correct all failed records before moving passed records.");
+     return;
+
+  }
+
+
+      mkliveHours.value = 0;
+      filtered = rows.filter((row) => {
+      const checkbox = row.cells[8]?.querySelector("input[type='checkbox']");
+      return (
+        row.innerText.toLowerCase().includes(searchText) && 
+        checkbox.checked === true
+      );
+    });
+
+
+  // if (filtered.length > 0) {
+  //   alert("Please correct all failed records before moving passed records.");
+  //   return;
+  // }
   //const checked = sourceBody.querySelectorAll(".row-check:checked");
   // selected checked will be moved
   // const checked = sourceBody.querySelectorAll("#dataTable input[type='checkbox'][data-id]:checked");
   // if (!checked.length) return alert("No rows selected");
 
-  const checked = sourceBody.querySelectorAll("#dataTable input[type='checkbox'][data-id]");
-  if (!checked.length) return alert("No rows selected");
+  // const checked = sourceBody.querySelectorAll(
+  //   "#dataTable input[type='checkbox'][data-id]",
+  // );
+  // if (!checked.length) return alert("No rows selected");
 
-  checked.forEach(cb => {
+  filtered.forEach((cb) => {
     const tr = cb.closest("tr");
 
     const cells = tr.cells;
 
     //  WorkGroup:      cols[start]     || "",
     //   ID:             cols[start + 1] || "",
-    //   Name:           cols[start + 2] || "", 
+    //   Name:           cols[start + 2] || "",
     //   TimeCode:       cols[start + 3] || "",
     //   ParentProject:  cols[start + 4] || "",
     //   Period:         cols[start + 5] || "",
     //   Hours:          cols[start + 6] || "",
     //   Pass:           cols[start + 7] || false,
-    //   PactID:         cols[start + 8] || "", 
+    //   PactID:         cols[start + 8] || "",
     //   Comments: "",
 
     // extract values (skip checkbox column)
@@ -98,6 +139,11 @@ document.getElementById("moveBtn").addEventListener("click", () => {
 
   applyPagination();
   applyPaginationLiveRecords();
+  // to align hours textbox with hours column after moving rows
+  alignHoursBox();
+  window.addEventListener("resize", alignHoursBox);
+  document.getElementById("dataTable").addEventListener("scroll", alignHoursBox); 
+  // end here
 });
 
 function addRowToTarget(data) {
@@ -114,10 +160,9 @@ function addRowToTarget(data) {
     <td>${data.Hours}</td>
   `;
 
-  thours.value = Number(thours.value) - Number(data.Hours);
+ // thours.value = Number(thours.value) - Number(data.Hours);
   mkliveHours.value = Number(mkliveHours.value) + Number(data.Hours);
 }
-
 
 ////WorkGroup	ID	Name	TimeCode	ParentProject	Period	Hours	Pass	PactID
 
@@ -133,13 +178,13 @@ const columns = [
   { key: "Hours", type: "number" },
   { key: "Pass", type: "boolean" },
   { key: "PactID", type: "number" },
-  { key: "Comments", type: "text" }
+  { key: "Comments", type: "text" },
 ];
 
 /* utility */
 function getMaxId() {
   let max = 0;
-  [...tbody.rows].forEach(r => {
+  [...tbody.rows].forEach((r) => {
     const idCell = r.cells[1];
     if (!idCell) {
       max = Math.max(max, 0);
@@ -151,7 +196,15 @@ function getMaxId() {
 }
 
 /* add row (read mode) */
-function ExaddRow({ id, WorkGroup, PACTStaff, TimeCode, ParentProject, Period, Hours }) {
+function ExaddRow({
+  id,
+  WorkGroup,
+  PACTStaff,
+  TimeCode,
+  ParentProject,
+  Period,
+  Hours,
+}) {
   const tr = tbody.insertRow();
   tr.innerHTML = `
     <td><input type="checkbox" data-id="${id}"/></td>
@@ -181,13 +234,34 @@ function ExaddRow({ id, WorkGroup, PACTStaff, TimeCode, ParentProject, Period, H
 //                 PactID:pactID
 
 ////WorkGroup	ID	Name	TimeCode	ParentProject	Period	Hours	Pass	PactID
-function addRow({ WorkGroup, ID, PACTStaff, TimeCode, ParentProject, Period, Hours, Pass, PactID, Comments }) {
-  console.log( ID, PACTStaff,  PactID);
+function addRow({
+  WorkGroup,
+  ID,
+  PACTStaff,
+  TimeCode,
+  ParentProject,
+  Period,
+  Hours,
+  Pass,
+  PactID,
+  Comments,
+}) {
+  console.log(ID, PACTStaff, PactID);
   clearEmptyRows();
   const tr = tbody.insertRow();
   let nextId = getMaxId() + 1;
   tr.innerHTML = `
-    <td><input type="checkbox" data-id="${WorkGroup}"/></td> 
+    <td> 
+    
+    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes"  style="margin-left: 5px;">
+              <div class="govuk-checkboxes__item">
+                                                
+                <input class="govuk-checkboxes__input timerecordCheckbox" type="checkbox" onclick="event.stopPropagation()" data-id="${nextId}" id="selectRow${nextId}" name="selectRow${nextId}"/>
+                  <label class="govuk-label govuk-checkboxes__label sup_label_auto_width" for="selectRow${nextId}" style="padding: 0;">  </label>   
+              </div>
+              
+          </div>
+    </td> 
     <td>${WorkGroup}</td>
     <td>${ID ? ID : nextId}</td>
     <td>${PACTStaff}</td>
@@ -195,9 +269,17 @@ function addRow({ WorkGroup, ID, PACTStaff, TimeCode, ParentProject, Period, Hou
     <td>${ParentProject}</td>
     <td>${Period}</td>
     <td style="text-align:right;">${Hours}</td>
-    <td><input class="form-check-input" type="checkbox" ${Pass ? 'checked' : ''} checkbox.checked ? "true" : "false"/></td>  
-    <td>${PactID?PactID:''}</td>
-    <td>${Comments ? Comments : ''}</td>
+    <td> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                                                
+                <input class="govuk-checkboxes__input" id="selectRow${ID ? ID : nextId}" type="checkbox" ${Pass ? "checked" : ""} checkbox.checked ? "true" : "false" disabled/>
+                  <label class="govuk-label govuk-checkboxes__label sup_label_auto_width" for="selectRow${ID ? ID : nextId}" style="padding: 0;">  </label>   
+              </div>
+              
+          </div>
+    </td>  
+    <td>${PactID ? PactID : ""}</td>
+    <td>${Comments ? Comments : ""}</td>
     <td>
       <button class="edit-btn"><img src="../images/pen-to-square-regular-full.svg" alt="edit" class="editjobcode" width="20"></button>
       <button class="delete-btn"><img src="../images/trash-can-regular-full.svg" width="20"></button>
@@ -208,15 +290,24 @@ function addRow({ WorkGroup, ID, PACTStaff, TimeCode, ParentProject, Period, Hou
   thours.value = Number(thours.value) + Number(Hours);
 }
 
-function addOrUpdateRow(data,existingRow) {
-    let tr;
-   let Pass = true;
-    if (existingRow) {
-        // EDIT MODE
-        tr = existingRow;
-    } 
-    tr.innerHTML = `
-        <td><input type="checkbox" data-id="${data.WorkGroup}"/></td> 
+function addOrUpdateRow(data, existingRow) {
+  let tr;
+  let Pass = true;
+  if (existingRow) {
+    // EDIT MODE
+    tr = existingRow;
+  }
+  tr.innerHTML = `
+        <td> 
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes"  style="margin-left: 5px;">
+              <div class="govuk-checkboxes__item">
+                                                
+                <input class="govuk-checkboxes__input timerecordCheckbox" type="checkbox" onclick="event.stopPropagation()" data-id="${data.WorkGroup}" id="selectRow${data.WorkGroup}" name="selectRow${data.WorkGroup}"/>
+                  <label class="govuk-label govuk-checkboxes__label sup_label_auto_width" for="selectRow${data.WorkGroup}" style="padding: 0;">  </label>   
+              </div>
+              
+          </div>
+        </td> 
     <td>${data.WorkGroup}</td>
     <td>${data.ID}</td>
     <td>${data.Name}</td>
@@ -224,7 +315,16 @@ function addOrUpdateRow(data,existingRow) {
     <td>${data.ParentProject}</td>
     <td>${data.Period}</td>
     <td style="text-align:right;">${data.Hours}</td>
-    <td><input class="form-check-input" type="checkbox" ${tr.cells[10].innerText ? 'checked' : ''} checkbox.checked ? "true" : "false"/></td>  
+    <td>
+    <!--<input class="form-check-input" type="checkbox" ${tr.cells[10].innerText ? "checked" : ""} checkbox.checked ? "true" : "false"/>-->
+    
+    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes"  style="margin-left: 5px;">
+              <div class="govuk-checkboxes__item"> 
+                <input class="govuk-checkboxes__input timerecordCheckbox" type="checkbox" onclick="event.stopPropagation()" ${tr.cells[10].innerText ? "checked" : ""} checkbox.checked ? "true" : "false" disabled/>
+                  <label class="govuk-label govuk-checkboxes__label sup_label_auto_width" for="selectRow${tr.cells[10].innerText}" style="padding: 0;">  </label>    
+              </div> 
+          </div>
+    </td>  
     <td>${tr.cells[9].innerText}</td>
     <td>${tr.cells[10].innerText}</td>
     <td>
@@ -234,8 +334,8 @@ function addOrUpdateRow(data,existingRow) {
       <button class="cancel-btn" style="display:none">Cancel</button>
     </td>
   `;
-    
-  let diff =  Number(data.Hours) - Number(previousHours);
+
+  let diff = Number(data.Hours) - Number(previousHours);
   thours.value = Number(thours.value) + Number(diff);
 }
 
@@ -250,8 +350,7 @@ function addOrUpdateRow(data,existingRow) {
 //   if (e.target.classList.contains("cancel-btn")) cancelEdit(tr);
 // });
 
-
-table.addEventListener("click", e => {
+table.addEventListener("click", (e) => {
   const btn = e.target.closest("button");
   if (!btn) return;
 
@@ -264,7 +363,6 @@ table.addEventListener("click", e => {
   else if (btn.classList.contains("cancel-btn")) cancelEdit(tr);
 });
 
-
 function EXenterEdit(tr) {
   columns.forEach((col, i) => {
     if (col.type === "id") return;
@@ -273,17 +371,15 @@ function EXenterEdit(tr) {
     td.innerHTML =
       col.type === "number"
         ? `<input type="number" value="${td.innerText}">`
-        : `<input type="text" value="${td.innerText}">`; 
+        : `<input type="text" value="${td.innerText}">`;
   });
   toggleButtons(tr, true);
 }
 
-
 function enterEdit(tr) {
   window.editingRow = tr;
-  document.getElementById('saveDataBtn').style.display = 'none';
-  document.getElementById('wgupdateBtn').style.display = 'block';
-
+  document.getElementById("saveDataBtn").style.display = "none";
+  document.getElementById("wgupdateBtn").style.display = "block";
 
   // columns.forEach((col, i) => {
   //   if (col.type === "checkbox" || col.type === "id") return;
@@ -298,57 +394,55 @@ function enterEdit(tr) {
 
   //   if(col.key == "Hours" && i == 7){
   //     previousHours = td.querySelector("input").value;
-  //   } 
+  //   }
   // }); // for inline editing
-
 
   openEditModal(tr);
   // toggleButtons(tr, true);
 }
 
- function getRowData(tr) {
-  return Array.from(tr.cells).map(td => td.textContent.trim());
- }
-
-
- function openEditModal(row) {
-      const data = getRowData(row);
-      editingRow = row;
-      //document.getElementById("rowId").value = data[2];
-      document.getElementById("WorkGroup").value = data[1];
-      document.getElementById("dpName").value =  data[2]+"|"+data[3]; 
-      document.getElementById("TimeCode").value = data[4];
-      document.getElementById("ParentProject").value = data[5];
-      document.getElementById("Period").value = data[6];
-      document.getElementById("Hours").value = data[7];
-      document.getElementById('modalTitle').textContent = 'Edit Data';
-      previousHours = data[7];
-      openModal(); 
+function getRowData(tr) {
+  return Array.from(tr.cells).map((td) => td.textContent.trim());
 }
 
+function openEditModal(row) {
+  const data = getRowData(row);
+  editingRow = row;
+  //document.getElementById("rowId").value = data[2];
+  document.getElementById("WorkGroup").value = data[1];
+  document.getElementById("dpName").value = data[2] + "|" + data[3];
+  document.getElementById("TimeCode").value = data[4];
+  document.getElementById("ParentProject").value = data[5];
+  document.getElementById("Period").value = data[6];
+  document.getElementById("Hours").value = data[7];
+  document.getElementById("modalTitle").textContent = "Edit Data";
+  previousHours = data[7];
+  openModal();
+}
 
 function handleDelete(tr) {
   if (!tr) return;
 
   if (confirm("Are you sure you want to delete this row?")) {
+    const tdhours = !tr.cells[7].innerText ? 0 : Number(tr.cells[7].innerText);
+    thours.value = Number(thours.value) - tdhours;
     tr.remove();
+   
     applyPagination(); // refresh pagination
   }
 }
 
 function saveEdit(tr) {
-
-
   columns.forEach((col, i) => {
     //if (col.type === "id") return;
     if (col.type === "checkbox" || col.type === "id") return;
     const td = tr.cells[i];
     td.innerText = td.querySelector("input").value;
-    if(col.key === "Hours" && i == 7){
-     // console.log(td.querySelector("input").value,"LN239")
-       updatedHours = tr.cells[i].innerText;
-       let diff = Number(updatedHours) - Number(previousHours);
-       thours.value = Number(thours.value) + Number(diff);
+    if (col.key === "Hours" && i == 7) {
+      // console.log(td.querySelector("input").value,"LN239")
+      updatedHours = tr.cells[i].innerText;
+      let diff = Number(updatedHours) - Number(previousHours);
+      thours.value = Number(thours.value) + Number(diff);
     }
   });
   toggleButtons(tr, false);
@@ -371,7 +465,7 @@ function toggleButtons(tr, editing) {
 }
 
 /* Excel paste handling */
-table.addEventListener("paste", e => {
+table.addEventListener("paste", (e) => {
   e.preventDefault();
   e.stopPropagation();
 
@@ -387,7 +481,7 @@ table.addEventListener("paste", e => {
   let nextId = getMaxId() + 1;
   const rows = text.split("\n");
 
-  rows.forEach(line => {
+  rows.forEach((line) => {
     const cols = line.replace(/\r/g, "").split("\t");
     const hasExcelId = !isNaN(parseInt(cols[0]));
     const start = hasExcelId ? 1 : 0;
@@ -415,7 +509,6 @@ table.addEventListener("paste", e => {
       PactID: cols[start + 8] || "",
       Comments: "",
     });
-
   });
 
   applyPagination();
@@ -427,40 +520,66 @@ table.addEventListener("paste", e => {
 function getCheckedRows() {
   const rows = Array.from(tbody.rows);
 
-  return rows.filter(row => {
+  return rows.filter((row) => {
     const checkbox = row.cells[8]?.querySelector("input[type='checkbox']");
     return checkbox && checkbox.checked;
   });
 }
 
-
 function applyPagination() {
   //const targetBody = table.querySelector("tbody");
-  let filtered;
+ let totalFailedHours = 0;
   const rows = [...tbody.rows];
-  const searchText = document.getElementById("wgsearchBoxtwo").value.toLowerCase();
+  searchText = document.getElementById("wgsearchBoxtwo").value.toLowerCase() || document.getElementById("staffsearchBox").value.toLowerCase();
 
   // filter rows
-   
-  filtered = rows.filter(row =>
-    row.innerText.toLowerCase().includes(searchText)
+
+  filtered = rows.filter((row) =>
+    row.innerText.toLowerCase().includes(searchText),
   );
 
   if (isPassedBtnClicked) {
-    filtered = rows.filter(row =>
-      row.innerText.toLowerCase().includes(searchText) &&
-      row.cells[8]?.querySelector("input")?.checked
-    );
+    filtered = rows.filter((row) => {
+      const checkbox = row.cells[8]?.querySelector("input[type='checkbox']");
+      return (
+        row.innerText.toLowerCase().includes(searchText) &&
+        checkbox !== null &&
+        checkbox.checked === true
+      );
+    });
+     filtered.forEach((r) => {
+      totalFailedHours = totalFailedHours + Number(r.cells[7].innerText);
+    });
+   thours.value = totalFailedHours; // total passed hours
+   
+   // Hide all rows first
+   rows.forEach((r) => (r.style.display = "none"));
   }
 
   if (isFailedBtnClicked) {
-    filtered = rows.filter(row =>
-      row.innerText.toLowerCase().includes(searchText) &&
-      !row.cells[8]?.querySelector("input")?.checked
-    );
+   
+    filtered = rows.filter((row) => {
+      const checkbox = row.cells[8]?.querySelector("input[type='checkbox']");
+      return (
+        row.innerText.toLowerCase().includes(searchText) &&
+        (checkbox === null || checkbox.checked !== true)
+      );
+    });
+
+    filtered.forEach((r) => {
+      totalFailedHours = totalFailedHours + Number(r.cells[7].innerText);
+    });
+     
+    rows.forEach((r) =>  (r.style.display = "none") ); 
+
+     thours.value = totalFailedHours; // total failed hours //Number(thours.value) - totalFailedHours;
+  
   }
-
-
+  
+  // If neither passed nor failed button is clicked, hide all rows first
+  if (!isPassedBtnClicked && !isFailedBtnClicked) {
+    rows.forEach((r) => (r.style.display = "none"));
+  }
 
   const totalRows = filtered.length;
   const size = pageSize === "all" ? totalRows : pageSize;
@@ -469,18 +588,14 @@ function applyPagination() {
   // bounds check
   if (currentPage > totalPages) currentPage = totalPages || 1;
 
-  rows.forEach(r => (r.style.display = "none"));
-
   filtered.forEach((row, index) => {
     if (
       pageSize === "all" ||
-      (index >= (currentPage - 1) * size &&
-        index < currentPage * size)
+      (index >= (currentPage - 1) * size && index < currentPage * size)
     ) {
       row.style.display = "";
     }
   });
-
 
   // let tmp = table.querySelector('tbody')
   if (rows.length == 0 && currentPage == 1) {
@@ -503,14 +618,10 @@ function applyPagination() {
         <td></td>
     `;
     }
-
   }
-
-
 
   renderPagination(totalPages);
 }
-
 
 function renderPagination(totalPages) {
   const container = document.getElementById("pagination");
@@ -518,55 +629,50 @@ function renderPagination(totalPages) {
 
   if (totalPages <= 1) return;
 
-  // « First
-  container.appendChild(
-    createPageItem("First", currentPage === 1, () => {
-      currentPage = 1;
-      applyPagination();
-    })
-  );
+  let currentPg = 1;
 
-  // ‹ Previous
-  container.appendChild(
-    createPageItem("Previous", currentPage === 1, () => {
-      currentPage--;
-      applyPagination();
-    })
-  );
+  // Previous button
+  const prevLi = document.createElement("li");
+  prevLi.className = `govuk-pagination__item ${currentPage === 1 ? "disabled" : ""} ${currentPg === 1 ? 'aria-disabled="true"' : ""}`;
+  prevLi.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); goToPageStaging(${currentPage - 1})"> <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+      <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+    </svg> <span class="govuk-pagination__link-title">
+      Previous<span class="govuk-visually-hidden"> page</span>
+    </span></a>`;
+  container.appendChild(prevLi);
 
   // Page numbers
-  for (let i = 1; i <= totalPages; i++) {
-    container.appendChild(
-      createPageItem(
-        i,
-        false,
-        () => {
-          currentPage = i;
-          applyPagination();
-        },
-        i === currentPage
-      )
-    );
+  const startPage = Math.max(1, currentPage - 2);
+  const endPage = Math.min(totalPages, currentPage + 2);
+
+  for (let i = startPage; i <= endPage; i++) {
+    const li = document.createElement("li");
+    li.className = `govuk-pagination__item ${i === currentPage ? "govuk-pagination__item--current" : ""}`;
+    li.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); goToPageStaging(${i})">${i}</a>`;
+    container.appendChild(li);
   }
 
-  // Next ›
-  container.appendChild(
-    createPageItem("Next", currentPage === totalPages, () => {
-      currentPage++;
-      applyPagination();
-    })
-  );
-
-  // Last »
-  container.appendChild(
-    createPageItem("Last", currentPage === totalPages, () => {
-      currentPage = totalPages;
-      applyPagination();
-    })
-  );
+  // Next button
+  const nextLi = document.createElement("li");
+  nextLi.className = `govuk-pagination__next ${currentPage === totalPages ? "disabled" : ""}`;
+  nextLi.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); goToPageStaging(${currentPage + 1})" rel="next"><span class="govuk-pagination__link-title">Next</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+      <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+    </svg></a>`;
+  container.appendChild(nextLi);
 }
 
+function goToPageStaging(page) {
+  const rows = [...tbody.rows];
+  const totalRows = rows.length;
+  const size = pageSize === "all" ? totalRows : pageSize;
+  const totalPages = Math.ceil(totalRows / size);
 
+  if (page < 1) page = 1;
+  if (page > totalPages) page = totalPages;
+
+  currentPage = page;
+  applyPagination();
+}
 
 function createPageItem(label, disabled, onClick, active = false) {
   const li = document.createElement("li");
@@ -585,8 +691,6 @@ function createPageItem(label, disabled, onClick, active = false) {
   li.appendChild(span);
   return li;
 }
-
-
 
 function EXrenderPagination(totalPages) {
   const container = document.getElementById("pagination");
@@ -627,11 +731,10 @@ function EXrenderPagination(totalPages) {
   container.appendChild(next);
 }
 
-
-document.getElementById("wgsearchBox").addEventListener("change", () => {
-  currentPage = 1;
-  applyPagination();
-});
+// document.getElementById("wgsearchBox").addEventListener("change", () => {
+//   currentPage = 1;
+//   applyPagination();
+// });
 
 // document.getElementById("wgsearchBoxtwo").addEventListener("change", (e) => {
 //    const selectedValue = e.target.value;
@@ -645,21 +748,26 @@ document.getElementById("wgsearchBox").addEventListener("change", () => {
 
 // });
 
-document.addEventListener("change", e => {
+document.addEventListener("change", (e) => {
+  if (e.target.id === "staffsearchBox") {
+    currentPage = 1;
+    applyPagination();
+  }
+});
+
+document.addEventListener("change", (e) => {
   if (e.target.id === "wgsearchBoxtwo") {
     currentPage = 1;
     applyPagination();
   }
 });
 
-
-document.addEventListener("input", e => {
+document.addEventListener("input", (e) => {
   if (e.target.id === "txtsearchBox") {
     currentPage = 1;
     applyPagination();
   }
 });
-
 
 // document.addEventListener("input", e => {
 //   if (e.target.id === "txtsearchBoxliverecords") {
@@ -668,45 +776,54 @@ document.addEventListener("input", e => {
 //   }
 // });
 
-
-document.getElementById("pageSize").addEventListener("change", e => {
-  pageSize = e.target.value === "all"
-    ? "all"
-    : parseInt(e.target.value, 10);
+document.getElementById("pageSize").addEventListener("change", (e) => {
+  pageSize = e.target.value === "all" ? "all" : parseInt(e.target.value, 10);
 
   currentPage = 1;
   applyPagination();
 });
 
+document
+  .getElementById("pageSizeliverecords")
+  .addEventListener("change", (e) => {
+    pageSizeliverecords =
+      e.target.value === "all" ? "all" : parseInt(e.target.value, 10);
 
-document.getElementById("pageSizeliverecords").addEventListener("change", e => {
-  pageSizeliverecords = e.target.value === "all"
-    ? "all"
-    : parseInt(e.target.value, 10);
-
-  currentPagetwo = 1;
-  applyPaginationLiveRecords();
-});
-
-
-
-
+    currentPagetwo = 1;
+    applyPaginationLiveRecords();
+  });
 
 //Pagination for Live record
-
 
 function applyPaginationLiveRecords() {
   //const targetBody = table.querySelector("tbody");
   let tmprow;
   const rows = [...targetBody.rows];
-  //const searchText = document.getElementById("txtsearchBoxliverecords").value.toLowerCase();
+  
+  // Get search criteria
+  const wgSearch = document.getElementById("wgsearchBox")?.value || "";
+  const staffSearch = document.getElementById("txtstaffsearchBox")?.value || "";
+  const tcSearch = document.getElementById("tcsearchBoxone")?.value || "";
+  const ppSearch = document.getElementById("ppsearchBoxone")?.value || "";
+  const prSearch = document.getElementById("prsearchBoxtwo")?.value || "";
 
-  // filter rows
-  // const filtered = rows.filter(row =>
-  //   row.innerText.toLowerCase().includes(searchText)
-  // );
-
-  const filtered = rows;
+  // Filter rows based on search criteria
+  const filtered = rows.filter(row => {
+    const workGroup = row.cells[0]?.innerText || "";
+    const staffId = row.cells[1]?.innerText || "";
+    const timeCode = row.cells[2]?.innerText || "";
+    const parentProject = row.cells[3]?.innerText || "";
+    const period = row.cells[4]?.innerText || "";
+    
+    // Apply filters (only if search value is not empty or default)
+    const matchesWG = !wgSearch || wgSearch === "" || wgSearch === "--select--" || workGroup.toLowerCase().includes(wgSearch.toLowerCase());
+    // const matchesStaff = !staffSearch || staffSearch === "" || staffSearch === "--select--" || staffId.toLowerCase().includes(staffSearch.toLowerCase());
+    // const matchesTC = !tcSearch || tcSearch === "" || tcSearch === "--select--" || timeCode.toLowerCase().includes(tcSearch.toLowerCase());
+    // const matchesPP = !ppSearch || ppSearch === "" || ppSearch === "--select--" || parentProject.toLowerCase().includes(ppSearch.toLowerCase());
+    // const matchesPR = !prSearch || prSearch === "" || prSearch === "--select--" || period.toLowerCase().includes(prSearch.toLowerCase());
+    
+    return matchesWG;// || matchesStaff || matchesTC || matchesPP || matchesPR;
+  });
 
   const totalRows = filtered.length;
   const size = pageSizeliverecords === "all" ? totalRows : pageSizeliverecords;
@@ -715,30 +832,25 @@ function applyPaginationLiveRecords() {
   // bounds check
   if (currentPagetwo > totalPages) currentPagetwo = totalPages || 1;
 
-  rows.forEach(r => (r.style.display = "none"));
+  rows.forEach((r) => (r.style.display = "none"));
 
   filtered.forEach((row, index) => {
     if (
       pageSizeliverecords === "all" ||
-      (index >= (currentPagetwo - 1) * size &&
-        index < currentPagetwo * size)
+      (index >= (currentPagetwo - 1) * size && index < currentPagetwo * size)
     ) {
       row.style.display = "";
     }
   });
 
-
   // let tmp = table.querySelector('tbody')
-  if (rows.length == 0 && currentPagetwo == 1) {
+  if (filtered.length == 0 && currentPagetwo == 1) {
     tmprow = sourceBody.insertRow();
-    tmprow.innerHTML = `<td colspan="9" class="norecords">No record found</td>`
+    tmprow.innerHTML = `<td colspan="12" class="norecords">No record found</td>`;
   }
-
-
 
   renderPaginationLiveRecords(totalPages);
 }
-
 
 function renderPaginationLiveRecords(totalPages) {
   const container = document.getElementById("paginationliverecords");
@@ -746,54 +858,51 @@ function renderPaginationLiveRecords(totalPages) {
 
   if (totalPages <= 1) return;
 
-  // « First
-  container.appendChild(
-    createPageItem("First", currentPagetwo === 1, () => {
-      currentPagetwo = 1;
-      applyPaginationLiveRecords();
-    })
-  );
+  let currentPg = 1;
 
-  // ‹ Previous
-  container.appendChild(
-    createPageItem("Previous", currentPagetwo === 1, () => {
-      currentPagetwo--;
-      applyPaginationLiveRecords();
-    })
-  );
+  // Previous button
+  const prevLi = document.createElement("li");
+  prevLi.className = `govuk-pagination__item ${currentPagetwo === 1 ? "disabled" : ""} ${currentPg === 1 ? 'aria-disabled="true"' : ""}`;
+  prevLi.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); goToPageLive(${currentPagetwo - 1})"> <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+      <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+    </svg> <span class="govuk-pagination__link-title">
+      Previous<span class="govuk-visually-hidden"> page</span>
+    </span></a>`;
+  container.appendChild(prevLi);
 
   // Page numbers
-  for (let i = 1; i <= totalPages; i++) {
-    container.appendChild(
-      createPageItem(
-        i,
-        false,
-        () => {
-          currentPagetwo = i;
-          applyPaginationLiveRecords();
-        },
-        i === currentPagetwo
-      )
-    );
+  const startPage = Math.max(1, currentPagetwo - 2);
+  const endPage = Math.min(totalPages, currentPagetwo + 2);
+
+  for (let i = startPage; i <= endPage; i++) {
+    const li = document.createElement("li");
+    li.className = `govuk-pagination__item ${i === currentPagetwo ? "govuk-pagination__item--current" : ""}`;
+    li.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); goToPageLive(${i})">${i}</a>`;
+    container.appendChild(li);
   }
 
-  // Next ›
-  container.appendChild(
-    createPageItem("Next", currentPagetwo === totalPages, () => {
-      currentPagetwo++;
-      applyPaginationLiveRecords();
-    })
-  );
-
-  // Last »
-  container.appendChild(
-    createPageItem("Last", currentPagetwo === totalPages, () => {
-      currentPagetwo = totalPages;
-      applyPaginationLiveRecords();
-    })
-  );
+  // Next button
+  const nextLi = document.createElement("li");
+  nextLi.className = `govuk-pagination__next ${currentPagetwo === totalPages ? "disabled" : ""}`;
+  nextLi.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); goToPageLive(${currentPagetwo + 1})" rel="next"><span class="govuk-pagination__link-title">Next</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+      <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+    </svg></a>`;
+  container.appendChild(nextLi);
 }
 
+function goToPageLive(page) {
+  const rows2 = [...targetBody.rows];
+  const totalRows2 = rows2.length;
+  const size2 =
+    pageSizeliverecords === "all" ? totalRows2 : pageSizeliverecords;
+  const totalPages2 = Math.ceil(totalRows2 / size2);
+
+  if (page < 1) page = 1;
+  if (page > totalPages2) page = totalPages2;
+
+  currentPagetwo = page;
+  applyPaginationLiveRecords();
+}
 
 // document.getElementById("csvInput").addEventListener("change", e => {
 //   const file = e.target.files[0];
@@ -819,7 +928,6 @@ function renderPaginationLiveRecords(totalPages) {
 //         Hours: cols[2]?.trim()
 //       });
 
-
 //     });
 
 //     applyPagination();
@@ -828,8 +936,9 @@ function renderPaginationLiveRecords(totalPages) {
 //   reader.readAsText(file);
 // });
 
-
-document.getElementById("csvInput").addEventListener("change", e => {
+document.getElementById("csvInput").addEventListener("change", (e) => {
+  isFailedBtnClicked = false;
+  isPassedBtnClicked = false;
   const file = e.target.files[0];
   if (!file) return;
 
@@ -842,8 +951,9 @@ document.getElementById("csvInput").addEventListener("change", e => {
   } else {
     alert("Unsupported file format");
   }
+  //document.getElementById("csvInput").value = "";
+  e.target.value = "";
 });
-
 
 function readExcelWithXLSX(file) {
   const reader = new FileReader();
@@ -855,7 +965,7 @@ function readExcelWithXLSX(file) {
     const sheet = workbook.Sheets[workbook.SheetNames[0]];
     const rows = XLSX.utils.sheet_to_json(sheet, {
       header: 1,
-      defval: ""
+      defval: "",
     });
 
     importRows(rows); // YOUR EXISTING FUNCTION
@@ -864,30 +974,27 @@ function readExcelWithXLSX(file) {
   reader.readAsArrayBuffer(file);
 }
 
-
 function clearTableBody() {
-  tbody.querySelectorAll("tr").forEach(tr => tr.remove());
+  tbody.querySelectorAll("tr").forEach((tr) => tr.remove());
   thours.value = 0;
 }
 
-
-function clearEmptyRows(){
-  tbody.querySelectorAll("tr").forEach(tr => {
+function clearEmptyRows() {
+  tbody.querySelectorAll("tr").forEach((tr) => {
     const cells = Array.from(tr.cells);
 
-    const isEmpty = cells.every(td => td.textContent.trim() === "");
+    const isEmpty = cells.every((td) => td.textContent.trim() === "");
 
     if (isEmpty) {
-        tr.remove();
+      tr.remove();
     }
   });
-
 }
 
-
 function importRows(rows) {
+  clearTableBody();
   if (!rows || rows.length <= 1) return;
-
+  sourceBody.innerHTML = "";
   // remove "No record" row if exists
   const noRecord = targetBody.querySelector("td.norecord");
   if (noRecord) noRecord.closest("tr").remove();
@@ -896,21 +1003,36 @@ function importRows(rows) {
   let startId = getMaxId() + 1;
   // tmprow.remove();
   // tmprow.remove();
-  [...sourceBody.rows].forEach(row => {
+  [...sourceBody.rows].forEach((row) => {
     const hasContent = [...row.cells].some(
-      cell => cell.textContent.trim() !== ''
+      (cell) => cell.textContent.trim() !== "",
     );
 
-    if (!hasContent) {
+    if (hasContent) {
       row.remove();
     }
   });
 
-  clearTableBody();
+  // clearTableBody();
   // skip header row (index 0)
   for (let i = 1; i < rows.length; i++) {
     const cols = rows[i];
-    if (!cols || cols.every(v => v === "")) continue;
+    let start = 0;
+    let obj = {
+      //  id: nextId++,
+      WorkGroup: cols[start] || "",
+      ID: cols[start + 1] || "",
+      Name: cols[start + 2] || "",
+      TimeCode: cols[start + 3] || "",
+      ParentProject: cols[start + 4] || "",
+      Period: cols[start + 5] || "",
+      Hours: cols[start + 6] || "",
+      Pass: cols[start + 7] || false,
+      PactID: cols[start + 8] || "",
+      Comments: "",
+    };
+    let nextId = getMaxId() + i;
+    if (!cols || cols.every((v) => v === "")) continue;
     //WorkGroup	ID	Name	TimeCode	ParentProject	Period	Hours	Pass	PactID
     const excelId = hasExcelId ? Number(cols[0]) : null;
     const existingRow = excelId ? findRowById(excelId) : null;
@@ -926,13 +1048,26 @@ function importRows(rows) {
       updateCell(existingRow, "Pass", cols[hasExcelId ? 8 : 7]);
       updateCell(existingRow, "PactID", cols[hasExcelId ? 9 : 8]);
       updateCell(existingRow, "Comments", cols[hasExcelId ? 10 : 9]);
-
     } else {
-      const isAllFilled = cols.slice(0, 7).every(v => v !== undefined && v !== null && v.toString().trim() !== "");
+      const isAllFilled = cols
+        .slice(0, 7)
+        .every(
+          (v) => v !== undefined && v !== null && v.toString().trim() !== "",
+        );
       const checkedAttr = isAllFilled ? "checked" : "";
       const tr = tbody.insertRow();
       tr.innerHTML = `
-        <td><input type="checkbox" data-id="${cols[0]}"/></td>   
+        <td> 
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes"  style="margin-left: 5px;">
+              <div class="govuk-checkboxes__item">
+                                                
+                <input class="govuk-checkboxes__input timerecordCheckbox" type="checkbox" onclick="event.stopPropagation()" data-id="${nextId}" id="selectRow${nextId}" name="selectRow${nextId}"/>
+                  <label class="govuk-label govuk-checkboxes__label sup_label_auto_width" for="selectRow${nextId}" style="padding: 0;">  </label>   
+              </div>
+              
+          </div>
+        
+        </td>   
       <td>${cols[0] || ""}</td>
       <td>${cols[1] || ""}</td>
       <td>${cols[2] || ""}</td>
@@ -940,8 +1075,19 @@ function importRows(rows) {
       <td>${cols[4] || ""}</td>
       <td>${cols[5] || ""}</td>
       <td>${cols[6] || ""}</td>
-      <td><input class="form-check-input" type="checkbox" ${(cols[7] == 'false' || cols[7] == '') ? '' : 'checked'} checkbox.checked ? "true" : "false"/></td>
-    <!--  <td><input class="form-check-input" type="checkbox" ${checkedAttr} data-value="${isAllFilled ? 'true' : 'false'}"/></td>-->
+    <!--  <td><input class="form-check-input" type="checkbox" ${cols[7] == "false" || cols[7] == "" ? "" : "checked"} checkbox.checked ? "true" : "false"/>-->
+      <td>
+      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                                                
+                <input class="govuk-checkboxes__input" id="selectRow${nextId}" type="checkbox" ${cols[7] == "false" || cols[7] == "" ? "" : "checked"} checkbox.checked ? "true" : "false" disabled/>
+                 <label class="govuk-label govuk-checkboxes__label sup_label_auto_width" for="selectRow${nextId}" style="padding: 0;">  </label>   
+              </div>
+              
+      </div>
+
+      </td>
+    <!--  <td><input class="form-check-input" type="checkbox" ${checkedAttr} data-value="${isAllFilled ? "true" : "false"}"/></td>-->
      
       <td>${cols[8] || ""}</td>
       <td>${cols[9] || ""}</td> 
@@ -957,14 +1103,14 @@ function importRows(rows) {
     // //    id: startId++,
     //     WorkGroup: cols[0] || "",
     //     ID: cols[1] || "",
-    //     Name: cols[2] || "", 
+    //     Name: cols[2] || "",
     //     TimeCode: cols[3] || "",
     //     ParentProject: cols[4] || "",
     //     Period: cols[5] || "",
     //     Hours: cols[6] || "",
     //     Pass: cols[7] || false,
     //     PactID: cols[8] || "",
-    //     Comments: "", 
+    //     Comments: "",
     //   });
     // thours.value += cols[5];
     thours.value = Number(thours.value) + Number(cols[6]);
@@ -972,8 +1118,6 @@ function importRows(rows) {
 
   applyPagination();
 }
-
-
 
 // function importRows(rows) {
 //   if (!rows || rows.length <= 1) return;
@@ -999,34 +1143,48 @@ function importRows(rows) {
 //   applyPagination(); // now works
 // }
 
-
 function onClickPassed() {
   isFailedBtnClicked = false;
   isPassedBtnClicked = true;
   currentPage = 1;
   applyPagination();
+    // to align hours textbox with hours column after moving rows
+  alignHoursBox();
+  window.addEventListener("resize", alignHoursBox);
+  document.getElementById("dataTable").addEventListener("scroll", alignHoursBox);
+   
+  // end here
 }
-
 
 function onClickFailed() {
   isPassedBtnClicked = false;
   isFailedBtnClicked = true;
   currentPage = 1;
   applyPagination();
+    // to align hours textbox with hours column after moving rows
+  alignHoursBox();
+  window.addEventListener("resize", alignHoursBox);
+  document.getElementById("dataTable").addEventListener("scroll", alignHoursBox);
+ 
+  // end here
 }
-
 
 function onClickAllBtn() {
   isPassedBtnClicked = false;
   isFailedBtnClicked = false;
   currentPage = 1;
   applyPagination();
+    // to align hours textbox with hours column after moving rows
+  alignHoursBox();
+  window.addEventListener("resize", alignHoursBox);
+  document.getElementById("dataTable").addEventListener("scroll", alignHoursBox);
+ 
+  // end here
 }
 
-
-document.getElementById('allBtn').addEventListener('click',onClickAllBtn);
-document.getElementById('failedBtn').addEventListener('click',onClickFailed);
-document.getElementById('passedBtn').addEventListener('click',onClickPassed);
+document.getElementById("allBtn").addEventListener("click", onClickAllBtn);
+document.getElementById("failedBtn").addEventListener("click", onClickFailed);
+document.getElementById("passedBtn").addEventListener("click", onClickPassed);
 
 function onClickValidate() {
   //   [...sourceBody.rows].forEach(row => {
@@ -1038,7 +1196,7 @@ function onClickValidate() {
   //     });
   // });
 
-  [...sourceBody.rows].forEach(row => {
+  [...sourceBody.rows].forEach((row) => {
     const cells = row.cells;
     let errors = [];
 
@@ -1049,25 +1207,29 @@ function onClickValidate() {
     // }
 
     //1st TD
-    if (cells[1].textContent.trim() === '') {
-      errors.push('The work group name is blank');
+    if (cells[1].textContent.trim() === "") {
+      errors.push("The work group name is blank");
     }
 
     //2nd TD
     if (cells[2].textContent.trim() == "9999") {
-      errors.push(`This staff ID not in this WG: ${cells[2].textContent.trim()}`);
+      errors.push(
+        `This staff ID not in this WG: ${cells[2].textContent.trim()}`,
+      );
     }
 
     if (cells[2].textContent.trim() == "") {
-      errors.push('This staff ID is blank');
+      errors.push("This staff ID is blank");
     }
 
-    if (cells[5].textContent.trim() === 'TG999') {
-      errors.push(`Not valid timecode/Project/WG combination:${cells[5].textContent.trim()},${cells[4].textContent.trim()},${cells[1].textContent.trim()}`);
+    if (cells[5].textContent.trim() === "TG999") {
+      errors.push(
+        `Not valid timecode/Project/WG combination:${cells[5].textContent.trim()},${cells[4].textContent.trim()},${cells[1].textContent.trim()}`,
+      );
     }
-    //Not valid timecode/Project/WG combination:  
-    if (cells[7].textContent.trim() === '') {
-      errors.push('The hours field is not a number');
+    //Not valid timecode/Project/WG combination:
+    if (cells[7].textContent.trim() === "") {
+      errors.push("The hours field is not a number");
     }
 
     // 5th TD: empty
@@ -1077,20 +1239,21 @@ function onClickValidate() {
 
     // 6th TD: show combined message
     if (errors.length > 0) {
-      cells[10].textContent = errors.join(' and ');
-      cells[10].classList.add('error-cell');
+      cells[10].textContent = errors.join(" and ");
+      cells[10].classList.add("error-cell");
     } else {
       cells[8].querySelector("input").checked = true;
-      cells[10].textContent = '';
-      cells[10].classList.remove('error-cell');
+      cells[10].textContent = "";
+      cells[10].classList.remove("error-cell");
     }
   });
 
+   requestAnimationFrame(alignHoursBox); 
 }
 
-
-document.getElementById('validateBtn').addEventListener('click', onClickValidate);
-
+document
+  .getElementById("validateBtn")
+  .addEventListener("click", onClickValidate);
 
 function removeNoRecordRow() {
   const td = targetBody.querySelector(".norecord");
@@ -1099,7 +1262,6 @@ function removeNoRecordRow() {
   const tr = td.closest("tr");
   if (tr) tr.remove();
 }
-
 
 //EXPORT TO EXCEL
 document.getElementById("exportExcel").addEventListener("click", exportToExcel);
@@ -1122,9 +1284,11 @@ function exportToExcel() {
   ]);
 
   // Table body
-  table.querySelectorAll("tbody tr").forEach(el => {
+  table.querySelectorAll("tbody tr").forEach((el) => {
     // skip "No record" row
     if (el.querySelector(".norecord")) return;
+
+    if (el.style.display === "none") return;
 
     const tds = el.querySelectorAll("td");
 
@@ -1138,7 +1302,7 @@ function exportToExcel() {
       tds[7].innerText.trim(),
       tds[8].querySelector("input[type='checkbox']").checked.toString(),
       tds[9].innerText?.trim(),
-      tds[10].innerText.trim()
+      tds[10].innerText.trim(),
     ]);
   });
 
@@ -1156,18 +1320,16 @@ function exportToExcel() {
 }
 
 function findRowById(id) {
-  return [...tbody.querySelectorAll("tr")].find(tr => {
+  return [...tbody.querySelectorAll("tr")].find((tr) => {
     const idCell = tr.children[1]; // checkbox = 0, id = 1
     return idCell && idCell.textContent.trim() == id;
   });
 }
 
-
 function updateCell(tr, colName, value) {
   const cell = tr.querySelector(`td[data-col="${colName}"]`);
   if (cell) cell.textContent = value ?? "";
 }
-
 
 // function updatePassCell(tr, colName, value) {
 //   const cell = tr.querySelector(`td[data-col="${colName}"]`);
@@ -1177,19 +1339,76 @@ function updateCell(tr, colName, value) {
 //       const checkedAttr = isAllFilled ? "checked" : "";
 // }
 
-
 //updatePassCell(existingRow, "Pass", cols[hasExcelId ? 8 : 7]);
 
 document.getElementById("btnClearsearch").addEventListener("click", () => {
-      document.getElementById("wgsearchBox").value = "";
-      document.getElementById("wgsearchBoxtwo").value = "";
-      document.getElementById("staffsearchBox").value = "";
-      document.getElementById("tcsearchBox").value = "";
-      document.getElementById("ppsearchBox").value = "";
-      document.getElementById("txtstaffsearchBox").value = "--select--";
-      document.getElementById("prsearchBoxtwo").value = "";
+  document.getElementById("wgsearchBox").value = "";
+  document.getElementById("wgsearchBoxtwo").value = "";
+  document.getElementById("staffsearchBox").value = "";
+  document.getElementById("tcsearchBox").value = "";
+  document.getElementById("ppsearchBox").value = "";
+  document.getElementById("txtstaffsearchBox").value = "--select--";
+  document.getElementById("prsearchBoxtwo").value = "";
+  currentPagetwo = 1;
+  applyPaginationLiveRecords(); 
 });
 
+document
+  .getElementById("deleteAllWGBtn")
+  .addEventListener("click", handleDeleteAllWG);
+
+function handleDeleteAllWG() {
+  
+  // const checkboxes = document.querySelectorAll(
+  //   "#dataTable tbody input[type='checkbox']:checked",
+  // );
+
+  //   const checkboxes = document.querySelectorAll(
+  //   "#dataTable tbody > tr > td:nth-child(1) > input[type='checkbox']:checked"
+  // );
+
+  const checkboxes = document.querySelectorAll(
+    "#dataTable tbody tr td:first-child input[type='checkbox']:checked",
+  );
+
+  if (checkboxes.length === 0) {
+    alert("Please select at least one record to delete.");
+    return;
+  }
+
+  if(checkboxes.length > 0){
+    confirmDelete = confirm(`Are you sure you want to delete ${checkboxes.length} record(s)?`);
+    if(!confirmDelete){
+      return;
+    } 
+
+  checkboxes.forEach((cb) => {
+    const row = cb.closest("tr");
+    // filtered.forEach((tr) => {
+    //   tr.remove();
+    //   thours.value = Number(thours.value) - Number(tr.cells[7].innerText);
+    // });
+    [...row.cells].forEach((td) => {
+      if (td.cellIndex === 7) {
+        thours.value = Number(thours.value) - Number(td.innerText);
+      }
+    });
+    row.remove();
+    // filtered = rows.filter(
+    //   (row) =>
+    //     row.innerText.toLowerCase().includes(searchText) &&
+    //     !row.cells[8]?.querySelector("input")?.checked,
+    // );
+    //filtered.remove();
+    // if (row.innerText.toLowerCase().includes(searchText)) {
+    //   row.remove();
+    // }
+  });
+
+}
+
+  document.getElementById("selectAllWG").checked = false;
+}
 
 function handleAdd() {
   // isAddMode = true;
@@ -1251,7 +1470,274 @@ function closeModal() {
   modal.classList.remove("show");
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+const selectAllWG = document.getElementById("selectAllWG");
+
+selectAllWG.addEventListener("change", function () {
+  //const checkboxes = document.querySelectorAll(".timerecordCheckbox");
+  const checkboxes = [
+    ...document.querySelectorAll(".timerecordCheckbox"),
+  ].filter((cb) => cb.closest("tr").offsetParent !== null);
+
+  selectedWG = [];
+  checkboxes.forEach((cb) => {
+    cb.checked = this.checked;
+    const item = JSON.parse(cb.dataset.id);
+
+    if (this.checked) {
+      if (!selectedWG.includes(item.jobcode)) {
+        selectedWG.push(JSON.parse(cb.dataset.id));
+      }
+    } else {
+      selectedWG = selectedWG.filter((p) => p.id !== item.jobcode);
+    }
+
+    // let tcId = JSON.parse(cb.dataset.id).id;
+    // let idx = selectedWG.findIndex(item => item.id === tcId);
+    // if(idx == -1){
+    //     selectedWG.push(JSON.parse(cb.dataset.id));
+    // }
+
+    // if()
+
+    // else {
+    //     selectedWG.splice(idx, 1);
+    // }
+  });
+  console.log(selectedWG);
+});
+
+const wgtbody = document.getElementById("wgTable");
+
+wgtbody.addEventListener("change", function (e) {
+  if (e.target.classList.contains("timerecordCheckbox")) {
+    let tr = e.target.closest("tr");
+    //handleDeleteAllWG(tr);
+    // const id = Number(e.target.dataset.id);
+    const item = JSON.parse(e.target.dataset.id);
+    if (e.target.checked) {
+      if (!selectedWG.includes(item.jobcode)) {
+        selectedWG.push(item);
+      }
+    } else {
+      selectedWG = selectedWG.filter((el) => el.id !== item.id);
+
+      // uncheck selectAll if any one unchecked
+      selectAllWG.checked = false;
+    }
+
+    // Optional: auto check selectAll if all selected
+    const allCheckboxes = document.querySelectorAll(".timerecordCheckbox");
+    const checkedCount = document.querySelectorAll(
+      ".timerecordCheckbox:checked",
+    );
+
+    if (allCheckboxes.length === checkedCount.length) {
+      selectAllWG.checked = true;
+    }
+  }
+});
+
+//sorting and resize for time recording screen
+
+// Sorting for dataTable
+const headers = document.querySelectorAll("#dataTable th[data-column]");
+
+headers.forEach((header, index) => {
+  header.addEventListener("click", function () {
+
+    const columnIndex = parseInt(this.dataset.column);
+    const currentOrder = this.dataset.order || "asc";
+    const newOrder = currentOrder === "asc" ? "desc" : "asc";
+
+    // Remove sorting icons from all headers
+    headers.forEach(h => {
+      h.classList.remove("sorted-asc", "sorted-desc");
+      // Remove any existing sort icon
+      const existingIcon = h.querySelector(".sort-icon");
+      if (existingIcon) {
+        existingIcon.remove();
+      }
+    });
+
+    // Update the order for the clicked header
+    this.dataset.order = newOrder;
+
+    // Add sorting icon to the clicked header
+    const sortIcon = document.createElement("span");
+    sortIcon.className = "sort-icon";
+    
+    if (newOrder === "asc") {
+      sortIcon.innerHTML = " ▲"; // or use "↑"
+      this.classList.add("sorted-asc");
+    } else {
+      sortIcon.innerHTML = " ▼"; // or use "↓"
+      this.classList.add("sorted-desc");
+    }
+    
+    this.appendChild(sortIcon);
+
+    sortTable(columnIndex, newOrder);
+  });
+});
+
+
+function sortTable(columnIndex, order) {
+  // Get all rows from tbody (sourceBody)
+  const rows = Array.from(sourceBody.querySelectorAll("tr"));
+  
+  // Filter out any "no record" rows
+  const dataRows = rows.filter(row => !row.querySelector(".norecord"));
+  
+  if (dataRows.length === 0) return;
+
+  // Sort the rows based on the column
+  dataRows.sort((rowA, rowB) => {
+    let cellA = rowA.cells[columnIndex];
+    let cellB = rowB.cells[columnIndex];
+    
+    if (!cellA || !cellB) return 0;
+    
+    let valA = cellA.textContent.trim();
+    let valB = cellB.textContent.trim();
+
+    // Try to parse as numbers
+    const numA = parseFloat(valA);
+    const numB = parseFloat(valB);
+    
+    // If both are valid numbers, compare numerically
+    if (!isNaN(numA) && !isNaN(numB)) {
+      return order === "asc" ? numA - numB : numB - numA;
+    }
+    
+    // Otherwise compare as strings
+    return order === "asc"
+      ? valA.localeCompare(valB, undefined, { numeric: true, sensitivity: 'base' })
+      : valB.localeCompare(valA, undefined, { numeric: true, sensitivity: 'base' });
+  });
+
+  // Re-append sorted rows to tbody
+  dataRows.forEach(row => sourceBody.appendChild(row));
+  
+  // Re-apply pagination to show correct page
+  applyPagination();
+}
+
+
+// Sorting for selectedTable
+const headersSelected = document.querySelectorAll("#selectedTable th[data-column]");
+
+headersSelected.forEach((header, index) => {
+  header.addEventListener("click", function () {
+
+    const columnIndex = parseInt(this.dataset.column);
+    const currentOrder = this.dataset.order || "asc";
+    const newOrder = currentOrder === "asc" ? "desc" : "asc";
+
+    // Remove sorting icons from all headers
+    headersSelected.forEach(h => {
+      h.classList.remove("sorted-asc", "sorted-desc");
+      // Remove any existing sort icon
+      const existingIcon = h.querySelector(".sort-icon");
+      if (existingIcon) {
+        existingIcon.remove();
+      }
+    });
+
+    // Update the order for the clicked header
+    this.dataset.order = newOrder;
+
+    // Add sorting icon to the clicked header
+    const sortIcon = document.createElement("span");
+    sortIcon.className = "sort-icon";
+    
+    if (newOrder === "asc") {
+      sortIcon.innerHTML = " ▲"; // or use "↑"
+      this.classList.add("sorted-asc");
+    } else {
+      sortIcon.innerHTML = " ▼"; // or use "↓"
+      this.classList.add("sorted-desc");
+    }
+    
+    this.appendChild(sortIcon);
+
+    sortSelectedTable(columnIndex, newOrder);
+  });
+});
+
+
+function sortSelectedTable(columnIndex, order) {
+  // Get all rows from tbody (targetBody)
+  const rows = Array.from(targetBody.querySelectorAll("tr"));
+  
+  // Filter out any "no record" rows
+  const dataRows = rows.filter(row => !row.querySelector(".norecords"));
+  
+  if (dataRows.length === 0) return;
+
+  // Sort the rows based on the column
+  dataRows.sort((rowA, rowB) => {
+    let cellA = rowA.cells[columnIndex];
+    let cellB = rowB.cells[columnIndex];
+    
+    if (!cellA || !cellB) return 0;
+    
+    let valA = cellA.textContent.trim();
+    let valB = cellB.textContent.trim();
+
+    // Try to parse as numbers
+    const numA = parseFloat(valA);
+    const numB = parseFloat(valB);
+    
+    // If both are valid numbers, compare numerically
+    if (!isNaN(numA) && !isNaN(numB)) {
+      return order === "asc" ? numA - numB : numB - numA;
+    }
+    
+    // Otherwise compare as strings
+    return order === "asc"
+      ? valA.localeCompare(valB, undefined, { numeric: true, sensitivity: 'base' })
+      : valB.localeCompare(valA, undefined, { numeric: true, sensitivity: 'base' });
+  });
+
+  // Re-append sorted rows to tbody
+  dataRows.forEach(row => targetBody.appendChild(row));
+  
+  // Re-apply pagination to show correct page
+  applyPaginationLiveRecords();
+}
+
+
+const resizers = document.querySelectorAll(".resizer");
+
+resizers.forEach(resizer => {
+
+  resizer.addEventListener("mousedown", function (e) {
+
+    e.stopPropagation();  // prevent sort click
+
+    const th = this.parentElement;
+    const startX = e.pageX;
+    const startWidth = th.offsetWidth;
+
+    function onMouseMove(e) {
+      const newWidth = startWidth + (e.pageX - startX);
+      th.style.width = newWidth + "px";
+    }
+
+    function onMouseUp() {
+      document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mouseup", onMouseUp);
+    }
+
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseup", onMouseUp);
+
+  });
+
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
   applyPagination();
   applyPaginationLiveRecords();
 });

@@ -137,7 +137,8 @@ h1 {
 table.custom-table th {
     position: sticky;
     top: 0;
-    background: #f8f9fa;
+    padding: 8px 6px !important;
+    /* background: #f8f9fa; */
     z-index: 2;
 	text-align: center;
 }
@@ -1041,27 +1042,6 @@ button.accordion-button:not(.collapsed){
 }
 
 
-.slidepopup {
-      width: 600px;
-    /*height: 300px;*/
-    background: #d4ebff;
-    transition: all 0.3s ease;
-    position: relative;
-    border: 1px solid #1d70b8;
-    border-radius: 0 8px 8px 0;
-    margin-bottom: 10px;
-    margin-right: 5px;
-}
-
-.slidepopup.collapsed {
-    /*width: var(--sidebar-width-collapsed);*/
-    width: 0px;
-}
-
-.accordion-button::after{
-    background-image: none !important;
-}
-
 .sidenav > ul
 {
     margin: 0;
@@ -1086,6 +1066,28 @@ button.accordion-button:not(.collapsed){
 
 .sidenav > ul > li a:hover{
     background-color: #00005c;
+}
+
+
+.slidepopup {
+      width: 600px;
+    /*height: 300px;*/
+    background: #d4ebff;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid #1d70b8;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+.slidepopup.collapsed {
+    /*width: var(--sidebar-width-collapsed);*/
+    width: 0px;
+}
+
+.accordion-button::after{
+    background-image: none !important;
 }
 
 /* table#pacttable > tbody > tr > td {

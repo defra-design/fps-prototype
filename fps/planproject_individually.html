@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>2025-2026 : Plan Projects Individually</title> 
+   <!-- Bootstrap CSS -->
+           <link rel="stylesheet" href="../css/bootstrap.min.css">
+    	 <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css">
+	 <link rel="stylesheet" href="../css/fps_styles/styles.css">
+	  <link rel="stylesheet" href="../css/main_style.css">
+	 <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
+	
+<script>
+ 
+
+    window.addEventListener('load', function () {
+        // Get modal element
+        const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        // Show modal
+        myModal.show();
+    });
+
+</script>
+
+
+</head>
+
+
+<body>
+
+    <!-- Navbar -->
+     
+<header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+
+                <div>
+                    <img src="../images/defra_logo.png" alt="Logo of Animal & Plant Health Agency" width="80px">
+                </div>
+              
+                <div class="pims-log">
+                    <span style="display:inline-block; padding: 2px;">FPS</span>
+					
+                </div>
+				    <div class="pims-log">
+                 <select class="pims-log" style="border:0; margin-left: 0px;" aria-label="Year">
+				 <option  class="pims-log" style="border:0; margin-left: 0px;">2017-2018</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2018-2019</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2019-2020</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2020-2021</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2021-2022</option>
+				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2022-2023</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2023-2024</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;">2024-2025</option>
+					<option  class="pims-log" style="border:0; margin-left: 0px;" selected>2025-2026</option>
+					</select>
+					
+                </div>
+				
+                <!-- <p>PACT</p> -->
+            </div>
+            <div class="btn-group" style=" display: flex; align-items: center;     font-size: 16px;">
+                Ken Rod <button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                   <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24">
+				   <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px" height="30px"></span>
+                </button> 
+                <ul class="dropdown-menu dropdown-menu-end" style="">
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button> -->
+                    <!-- </li> -->
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button> -->
+                    <!-- </li> -->
+                    <li><a href="../index.html" class="dropdown-item" type="button" aria-hidden="true">
+				<img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
+                            Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+   <nav class="navbar navbar-expand-lg main-nav ">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" aria-label="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-hidden="true"
+                            aria-expanded="false" aria-current="page" href="#">Programme Management<span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Programme Management Menu" width="12px"></span></a>
+
+							
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" aria-hidden="true" href="program_management.html">Select Programme</a></li>
+                            <li><a class="dropdown-item" aria-hidden="true"  style="display: flex;    justify-content: space-between;">Plan Projects  <img src="../images/right-arrow.png" alt="Arrow for Plan Projects Sub menu" width="30px" height="30px"></a> 
+                                <ul class="dropdown-menu">
+
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Set Up A New Projects</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="planproject_individually.html" aria-hidden="true">
+                                            Plan Project Individually</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="planstaff_entireprogram.html" aria-hidden="true">
+                                            Plan STAFF for Entire Programme</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan Animals for Entire Programme</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan Test Purchases for Entire Programme for Entire Programme</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                            Plan Additional cost for Entire Programme</a>
+                                    </li> 
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" aria-hidden="true"  style="display: flex;    justify-content: space-between;" href="#">Review Plans <img src="../images/right-arrow.png" alt="Arrow for Review Plans Sub menu" width="30px" height="30px"></a>
+                             <ul class="dropdown-menu">
+
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Project Portability</a>                                 </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Staff Plan Pivot</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item"  aria-hidden="true" style="display: flex;    justify-content: space-between;" href="#">Summary Printouts <img src="../images/right-arrow.png" alt="Arrow for Summary Printouts Sub menu" width="30px" height="30px"></a>
+                             <ul class="dropdown-menu">
+
+                                    <li><a class="dropdown-item" aria-hidden="true" aria-label="Programme Profitability Report" href="#">Programme Profitability Report</a>
+                                    </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" aria-label="Summarized by disease" href="#">Summarized by disease</a>
+                                    </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Summarized by Customer</a>
+                                    </li>
+                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Project Specifics</a>
+                                    </li>
+                               
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link  dropdown-toggle" role="button" aria-hidden="true"
+                            data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">Resource
+                            Management<span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Resource Management Menu" width="12px"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="createresourcecenter.html" aria-hidden="true">Create Resource Center</a>
+                            </li>
+                            <li><a class="dropdown-item" href="setupresource.html" aria-hidden="true">Setup Resource</a></li>
+                            <li><a class="dropdown-item" href="reviewplans.html" aria-hidden="true">Review Plans</a></li>
+                            <li><a class="dropdown-item" href="reports.html" aria-hidden="true">Reports</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" aria-hidden="true">Contract </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" aria-hidden="true">Lab Testing Manager's </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"aria-hidden="true" >Luvley Pivots</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " role="button" aria-hidden="true" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">MAB <span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Programme Management Menu" width="12px"></span></a>
+                        <div class="dropdown-menu my-flex-dropdown" style="border: 1px solid #000; left: -70px; ">
+                            <ul>
+
+                                <li><a class="dropdown-item" href="wgstaff.html" aria-hidden="true">
+                                        Maintenance Menu</a>
+
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Stage 1 Plans</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        ASU Data View</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        VLA Project Totals</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Generic Bids</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Project Audit Trails</a>
+                                </li>
+                            </ul>
+
+
+                            <ul>
+
+
+
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        SMG Summary Report - All Work</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        SMG Summary Report - Assured Work Only</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        All Programs Profitability</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Program Exceptional Bids</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Income Contribution Rpt</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Income Cont - Summary</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">
+                                        Project Specific - Query</a>
+                                </li>
+                            </ul>
+
+
+
+                            <ul>
+
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Resource Grades by
+                                        Programme</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Resource Utilisation</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Open FPS</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Close FPS</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Run Snapshot Queries</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" aria-hidden="true">Run Comparison Queries</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Project Plan Viewer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Project Group </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Management Account </a></li>
+
+                   
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+    <div class="container-fluid">
+	
+	
+	<div style="padding: 5px 5px;  border-bottom: 1px solid #b4b4b4" class="row">
+            <div style="display: flex;  font-size: 14px;   align-items: center; justify-content: space-between; ">
+                <div class="col-md-6"> <a class="" href="fpshome.html">Home</a>  &gt; Programme Management &gt; Plan Projects &gt;  Plan Projects Individually 
+                 </div>
+				<div style="display: flex; 
+                    justify-content: flex-end;" class="col-md-6">
+                   <div class="col-sm-4" style="border: 2px solid #1d70b8;
+                        border-radius: 5px; 
+                        font-size: 13px;
+                        font-weight: normal;
+                        background-color: #fff;
+                        text-align: left;
+                        display: flex;					
+					
+                        margin-right: 10px;
+                        align-items: center;
+                        justify-content: space-between;">
+                        <div class="col" style="border-right: 1px solid #684e00; text-align: left; padding: 1px 5px;">Programme:<strong id="resultprogram"> Bact </strong>
+                        </div>
+                        <!-- <div class="col" style="text-align: left; padding: 1px 5px;">Project: <strong id="resultproject"> APHAB000000</strong></div> -->
+                    </div>
+                    <div>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            class="govuk-button sup_margin_0" style="padding: 4px 14px;">Change</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+	
+	
+	<div class="col-lg-12">
+			<div class="row" style="display:flex;     align-items: center;">
+			
+			
+				<div class="col-sm-12" style="padding:0px;  ">
+			<div style="border-bottom: 2px solid #1d70b8; height:48px;">
+			 <div style="padding: 15px 0 5px 17px; font-size:16px; width: 50%;  font-weight: 700; float:left">
+                 Project within Programme
+					
+				
+					</div>
+					<div style=" float: right; text-align:right;     margin-top: 8px;    width:50%; float:left">
+			<!-- <a class="btn btn-outline-primary btn-sm btn-back" a="" aria-hidden="true" href="program_management.html" aria-label="back to select a program" style="margin-right: 16px;border: 1px solid #0d6efd;">Back</a> -->
+			</div>
+			</div>
+		
+            </div>
+			
+			
+			
+			</div>
+              
+            </div>
+	
+       
+        <div class="row">
+         
+          
+		
+			
+			<div class="col-lg-12">
+		
+			<main class="main-content" style="padding:0;">
+       
+	
+       <div class="container-fluid " style="padding: 0;">
+
+     
+ 
+        
+        <!-- Modal for Add/Edit -->
+        
+
+           
+
+
+            
+
+
+
+        <!-- Financial Summary -->
+       
+ 
+         <div class="row">
+            <div class="container" style="padding-left:0px;">
+                 <div style="display: flex; flex-direction: row;">
+                  <nav class="sidenav flex-column flex-shrink-0" id="shortnav">
+                <button class="toggle-btn" onclick="toggleSidebar()" style="right: -8px; top: 30px;">
+                   
+ <img src="../images/chevron-left-solid-full.svg" alt="side nav menu arrow" width="24">				   
+				   
+				   
+                </button>
+                  <ul>
+				    <li><a class="dropdown-item sidenav-title">Plan vs Actuals</a></li>
+                    <li><a class="dropdown-item" href="#">
+                            Staff</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                            Tests</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                            Animals</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                             Additional</a>
+                    </li>
+					
+
+                   
+                </ul>
+              
+                        </nav>
+                     <div style="display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 0px 5px 8px;">
+	
+	<div class="project-code-section" style="      justify-content: flex-end;   margin-bottom: 10px;  background-color: #edf4ff;    border: 1px solid #1d70b8;   padding: 4px;">
+            <label class="govuk-label--s" style="color:#3e3e3e">Selected project </label> 
+            <input type="text" value="APHA0B0M04" class="projectplan-code govuk-input govuk-!-font-size-16" style=" width: 200px;   padding: 4px;">
+			
+             <a class="govuk-button sup_margin_0" data-module="govuk-button" href="projectplanning.html"><i class="fa fa-cogs" style="color:#fff" aria-hidden="true"></i> Plan</a>
+             <a class="govuk-button sup_margin_0" data-module="govuk-button" href="project_edit.html"><i class="fa fa-pencil" style="color:#fff" aria-hidden="true"></i> Edit</a>
+			
+        </div>
+	
+	<div class="container-fluid">
+	<div class="row">
+	<div class="col-lg-12 p-0">
+    <div class="jobcodediv height-300 max-height300" style="overflow-x: auto; ">
+                                                  <table id="empTable" class="govuk-table custom-table" style="margin-bottom: 0px;">
+                                            <thead class="table-light govuk-table__head">
+                                                <tr class="govuk-table__row">
+							 <th scope="col" class="govuk-table__header">Project</th>
+                    <th scope="col" class="govuk-table__header">Description</th>
+                    <th scope="col" class="govuk-table__header"> Manager</th>                    
+                    <th scope="col" class="govuk-table__header">Program </th>
+                    <th scope="col" class="govuk-table__header">Project Group </th>
+                    <th scope="col" class="govuk-table__header">Customer </th>
+                    <th scope="col" class="govuk-table__header">Contract </th>
+                    <th scope="col" class="govuk-table__header">Disease </th>
+                    <th scope="col" class="govuk-table__header">Status </th>
+                    <th scope="col" class="govuk-table__header">Budget </th>
+                    <th scope="col" class="govuk-table__header">Cost Inc </th>
+                    <th scope="col" class="govuk-table__header">Trans Inc </th>
+                    <th scope="col" class="govuk-table__header">CW Debit </th>
+					<th scope="col" class="govuk-table__header">Actions</th>
+						
+      </tr>
+                                            </thead>
+                                            <tbody class="govuk-table__body" id="tableBody">
+
+            
+    </tbody>
+
+                                        </table>
+                                         
+                                        </div>
+										
+										<div class="sup_pagination_wrapper">
+                                    <div class="sup_margin_left_right_10">
+                                        <label for="recordsPerPage"></label>
+                                        <select id="recordsPerPage" class="govuk-select sup_select_pagination_width govuk-!-font-size-16" aria-label="Select number of records per page">
+                                            <option value="5" selected="">5</option>
+                                            <option value="10" >10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="25">25</option>
+                                            <option value="30">30</option>
+                                        </select>
+                                    </div>
+                                    <nav class="govuk-pagination sup_margin_left_right_10" aria-label="Pagination">
+                                            
+                                            <ul class="govuk-pagination__list" id="pagination"><li class="govuk-pagination__item disabled aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(0)"> <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+       
+      </svg> <span class="govuk-pagination__link-title">
+        Previous<span class="govuk-visually-hidden"> page</span>
+      </span></a></li><li class="govuk-pagination__item govuk-pagination__item--current aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(1)">1</a></li><li class="govuk-pagination__item  aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(2)">2</a></li><li class="govuk-pagination__next  aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(2)" rel="next"><span class="govuk-pagination__link-title">Next</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+       
+      </svg></a></li></ul>
+                                    </nav>
+                                 
+
+                                </div>
+	
+	</div>
+	<div class="col-lg-12 p-0 mt-2">
+	
+	<footer class="financial-summary">
+ 
+ 
+ 
+ 
+   <div class="summary-row" style="gap: 80px;">
+     <div class="summary-item"> 
+                    <label class="govuk-label">Total Budget:</label>
+                    <input type="text" class="govuk-input govuk-!-font-size-16" value="£10,196,821">
+                </div>
+                <div class="summary-item">
+                    <label class="govuk-label">Total Cost Inc</label>
+                    <input type="text" class="govuk-input govuk-!-font-size-16" value="£2,127,895">
+                </div>
+				
+				 <div class="summary-item">
+                    <label class="govuk-label">Total Trans Inc:</label>
+                    <input type="text" class="govuk-input govuk-!-font-size-16" value="£0">
+                </div>
+                <div class="summary-item">
+                    <label class="govuk-label">Total CW Debit:</label>
+					 <input type="text" class="govuk-input govuk-!-font-size-16" value="£0">
+                 
+                </div>
+   </div>
+   
+   		
+            
+        </footer>
+	</div>
+	</div>
+	</div>
+	
+	
+	
+					
+				</div>	
+					
+			
+            
+           
+        	
+       
+		
+		
+		 
+ 
+ 
+ 
+  
+	   
+    
+					
+                    </div>
+            </div>
+            </div>
+ </div>
+
+        </div>
+ 
+	   
+    </main>
+			
+			</div>
+			
+			
+           
+        </div>
+    </div>
+	
+	<div class="footer">
+	© Copyright Defra 2025
+		</div>
+		
+		
+      <div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title" style="margin: 0;" id="exampleModalLabel">Add Staff Booked</h3>
+                    <button type="button" class="btn-close btn-red" onclick="closeModal()">X</button>
+                </div>
+                <div class="modal-body" style="padding-top: 5px;">
+                    <form class="row" id="formAddJobcode">
+					
+					<div class="col-12">
+                            <label for="modal-WGgrade" class="form-label p-0 govuk-label">WG Grade:</label>
+                            <!-- <input type="text" class="form-control" id="modal-staffname"> -->
+							
+                            <select id="modal-WGgrade" name="" class="govuk-select" aria-label="WGgrade">
+							<option value=""></option>
+  <option value="A_AS2">A_AS2</option>
+ <!-- <option value="A_BAC1,General">A_BAC1,General | A_BAC1 | 3714</option> -->
+<option value="F_AS2">F_AS2</option>
+<option value="E_SSP1">E_SSP1</option>
+
+</select>
+							
+							
+                        </div>
+					
+                        <div class="col-12">
+                            <label for="modal-staffname" class="form-label p-0 govuk-label"> Name:</label>
+                            <!-- <input type="text" class="form-control" id="modal-staffname"> -->
+							
+                            <select id="modal-staffname" name="" class="govuk-select" aria-label="StaffName">
+							<option value=""></option>
+  <option value="App_admin">App_admin</option>
+ <!-- <option value="A_BAC1,General">A_BAC1,General | A_BAC1 | 3714</option> -->
+<option value="CAPS">CAPS</option>
+
+</select>
+							
+							
+                        </div>
+                        <div class="col-12">
+                            <label for="modal-rate" class="form-label govuk-label">Rate:</label>
+                            <!-- <input type="text" class="form-control" id="modal-name"> -->
+                         
+                             <input type="text" class="govuk-input govuk-\!-font-size-16" id="modal-rate">
+                        </div>
+                        <div class="col-12">
+                            <label for="modal-hrs" class="form-label govuk-label">Hrs</label>
+                            <input type="text" class="govuk-input govuk-\!-font-size-16" id="modal-hrs">
+                        </div>
+                        <div class="col-12">
+                            <label for="modal-days" class="form-label govuk-label">Days</label>
+                            <input type="text" class="govuk-input govuk-\!-font-size-16" id="modal-days">
+                        </div>
+						
+						<div class="col-12">
+                            <label for="modal-staffcost" class="form-label govuk-label">Staff Cost</label>
+                            <input type="text" class="govuk-input govuk-\!-font-size-16" id="modal-staffcost">
+                        </div>
+                      
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" data-module="govuk-button" onclick="closeModal()">Cancel</button>
+                    <button class="govuk-button sup_margin_0" data-module="govuk-button" id="modalsaveBtn">Save</button>
+                    <button class="govuk-button sup_margin_0" data-module="govuk-button" id="updateBtn" style="display: none;">Update</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+		
+		
+		
+		<div class="modal fade" id="AddYearModal" tabindex="-1" aria-labelledby="AddYearModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title" style="margin: 0;" id="exampleModalLabel">Project Rates</h3>
+                    <button type="button" class="btn-close btn-red" onclick="closeModalYear()">X</button>
+                </div>
+                <div class="modal-body" style="padding-top: 5px;">
+                   
+				   
+				   <form id="editableGridForm">
+                          <div class="">
+       
+        
+        <div class="header-inputs" style="margin-bottom: 10px;s">
+            <div class="input-group" style="display:inline;">
+                <label for="project" class="govuk-label" style="  margin-right: 12px;">Project</label>
+                <input type="text" class="govuk-input govuk-\!-font-size-16" id="project" value="2024/122c">
+            </div>
+            <div class="input-group" style="display:inline;">
+                <label for="year" class="govuk-label" style=" margin-right: 12px; margin-left: 20px;">Year</label>
+                <input type="text" class="govuk-input govuk-\!-font-size-16" id="year" value="2039">
+            </div>
+        </div>
+        
+        <div class="rates-container">
+            <div class="rates-section">
+                <h3>Contingency Mark-up %</h3>
+                <div class="rate-row">
+                    <label class="govuk-label">Time</label>
+                    <input type="number" class="govuk-input govuk-\!-font-size-16" value="15">
+                </div>
+                <div class="rate-row">
+                    <label class="govuk-label">Tests</label>
+                    <input type="number" class="govuk-input govuk-\!-font-size-16" value="15">
+                </div>
+                <div class="rate-row">
+                    <label class="govuk-label">Animals</label>
+                    <input type="number" class="govuk-input govuk-\!-font-size-16" value="15">
+                </div>
+                <div class="rate-row">
+                    <label class="govuk-label">Additional</label>
+                    <input type="number" class="govuk-input govuk-\!-font-size-16" value="15">
+                </div>
+            </div>
+            
+            <div class="rates-section">
+                <h3>Profit Margin %</h3>
+                <div class="rate-row">
+                    <label class="govuk-label">Time</label>
+                    <input type="number" class="govuk-input govuk-\!-font-size-16" value="3.5">
+                </div>
+                <div class="rate-row">
+                    <label class="govuk-label">Tests</label>
+                    <input type="number" class="govuk-input govuk-\!-font-size-16" value="3.5">
+                </div>
+                <div class="rate-row">
+                    <label class="govuk-label">Animals</label>
+                    <input type="number" class="govuk-input govuk-\!-font-size-16" value="3.5">
+                </div>
+                <div class="rate-row">
+                    <label class="govuk-label">Additional</label>
+                    <input type="number" class="govuk-input govuk-\!-font-size-16" value="3.5">
+                </div>
+            </div>
+        </div>
+        
+     
+    </div>
+                       
+                         
+                           
+                        </form>
+				   
+				   
+				   
+                </div>
+                <div class="modal-footer">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" data-module="govuk-button" onclick="closeModalYear()">Cancel</button>
+                    <button class="govuk-button sup_margin_0" data-module="govuk-button" id="modalsaveBtn">Save</button>
+                    <button class="govuk-button sup_margin_0" data-module="govuk-button" id="updateBtn" style="display: none;">Update</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+	
+	
+	
+	<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-label="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <form>
+                        <div class="display-flex">
+                            <div class="govuk-form-group sup_margin_0">
+                                <label for="select_program" class="govuk-label ">Select a Programme</label>
+                                <select class="govuk-select govuk-\!-font-size-16" required="" id="select_program" value="">
+                                    <option >--select programme--</option>
+                                    <option >ADMIN</option>
+                                    <option>ASU</option>
+									  <option>B&M</option>
+									   <option >Bact</option>
+									    <option >Bee Insp</option>
+										 <option >BTB</option>
+										  <option >Comm</option>
+										   <option>DoES</option>
+										    <option>GM</option>
+											  <option >LapT</option>
+											   <option >Path</option>
+											      <option >PHINSLT</option>
+												  <option >PHSIN</option>
+												   <option >PVS</option>
+                                </select>
+                            </div>
+                            <!-- <div class="col-1" -->
+                                <!-- style="font-size: 18px; font-weight: 600; text-align: center; margin-bottom: 5px;">OR -->
+                            <!-- </div> -->
+                            <!-- <div class="col-5"> -->
+                                <!-- <label for="project" class="col-form-label">Find Project</label> -->
+                                <!-- <select class="form-select" required="" id="project"> -->
+                                    <!-- <option value="">--select project--</option> -->
+                                    <!-- <option value="FZ200">FZ200</option> -->
+                                    <!-- <option value="FZ201">FZ201</option> -->
+                                <!-- </select> -->
+                            <!-- </div> -->
+                            <div class="ms-3">
+                                <button class="govuk-button sup_margin_0" type="button" onclick="SelectProgram()"
+                                    data-bs-dismiss="modal"> 
+									<img src="../images/circle-chevron-right.png" alt="dropdown arrow for logout of application" width="20px" height="20px">
+                                    GO</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+	
+	
+	
+
+<div class="modal fade" id="projectModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalTitle">Add Project</h5>
+               
+				 <button type="button" class="btn-close btn-red" data-bs-dismiss="modal">X</button>
+            </div>
+
+            <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
+			
+			
+			
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="govuk-label">Project</label>
+                        <input type="text" id="modal-project" class="govuk-input govuk-\!-font-size-16">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="govuk-label">Description</label>
+                        <input type="text" id="modal-description" class="govuk-input govuk-\!-font-size-16">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="govuk-label">Manager</label>
+                        <input type="text" id="modal-manager" class="govuk-input govuk-\!-font-size-16">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="govuk-label">Program</label>
+                        <input type="text" id="modal-program" class="govuk-input govuk-\!-font-size-16">
+                    </div>
+
+
+				
+
+                    <div class="col-md-6">
+                        <label class="govuk-label">Customer</label>
+                        <input type="text" id="modal-customer" class="govuk-input govuk-\!-font-size-16">
+                    </div>
+					
+						<div class="col-md-6">
+                        <label class="govuk-label">Project Group</label>
+                        <input type="text" id="modal-projectGroup" class="govuk-input govuk-\!-font-size-16">
+                    </div>
+					
+					 <div class="col-md-6">
+                        <label class="govuk-label">Contract</label>
+                        <input type="text" id="modal-contract" class="govuk-input govuk-\!-font-size-16">
+                    </div>
+
+
+					<div class="col-md-6">
+                        <label class="govuk-label">Disease</label>
+                        <input type="text" id="modal-disease" class="govuk-input govuk-\!-font-size-16">
+                    </div>
+
+<div class="col-md-6">
+                        <label class="govuk-label">Status</label>
+                       
+						
+						 <select id="modal-status" class="govuk-select govuk-\!-font-size-16 " aria-label="status">
+                                            <option value="" selected=""></option>
+                                            <option value="Approved" >Approved</option>
+                                          <option value="Completed" >Completed</option>
+                                            <option value="Not Approved" >Not Approved</option>
+                                            
+                                        </select>
+						
+                    </div>
+
+				
+                    <div class="col-md-6">
+                        <label class="govuk-label">Budget</label>
+                        <input type="text" id="modal-budget" class="govuk-input govuk-\!-font-size-16">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="govuk-label">Cost Inc</label>
+                        <input type="text" id="modal-costInc" class="govuk-input govuk-\!-font-size-16">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="govuk-label">Trans Inc</label>
+                        <input type="text" id="modal-transInc" class="govuk-input govuk-\!-font-size-16">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="govuk-label">CW Debit</label>
+                        <input type="text" id="modal-cwDebit" class="govuk-input govuk-\!-font-size-16">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="govuk-button govuk-button--secondary sup_margin_0" data-module="govuk-button" data-bs-dismiss="modal">Cancel</button>
+                <button class="govuk-button sup_margin_0" data-module="govuk-button" onclick="saveProject()">Save</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+		
+
+    <!-- Bootstrap JS (required for dropdowns) -->
+	
+   
+	  <script>
+          function toggleSidebar() {
+            const sidebar = document.querySelector('.sidenav');
+            sidebar.classList.toggle('collapsed');
+        }
+    </script>
+	
+     <script>
+     function updateTableBodyVisibility(programmeName) {
+        const tableBody = document.getElementById("tableBody");
+        if (!tableBody) return;
+
+        const selectedProgramme = (programmeName || "").trim().toLowerCase();
+        tableBody.style.display = selectedProgramme === "bact" ? "table-row-group" : "none";
+     }
+
+	
+	 function SelectProgram()
+	 {
+	 
+	  
+ const mySelect = document.getElementById("select_program").value;
+ console.log(mySelect);
+	 
+	  document.getElementById("resultprogram").innerHTML = mySelect;
+      updateTableBodyVisibility(mySelect);
+	 }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        updateTableBodyVisibility("");
+    });
+
+
+        function showValue() {
+            const selectBox = document.getElementById("project");
+            const selectedValue = selectBox.value;
+            const selectedText = selectBox.options[selectBox.selectedIndex].text;
+
+
+            const selectBoxProgram = document.getElementById("program");
+            const selectedValueProgram = selectBoxProgram.value;
+            const selectedTextProgram = selectBoxProgram.options[selectBoxProgram.selectedIndex].text;
+
+
+            document.getElementById("resultproject").innerHTML = `<b>${selectedText}</b>`;
+            document.getElementById("resultprogram").innerHTML = `<b>${selectedTextProgram}</b>`;
+        }
+    </script>
+	
+	
+	
+
+	  
+	   
+   
+	
+	
+	<script>
+	 function addStaffRow() {
+ 
+ const mySelect = document.getElementById("WGgradevalue").value;
+ const staffTable_name = document.getElementById("staff_name").value;
+ const staffTable_rate = document.getElementById("rate_value").value;
+ const staffTable_hour = document.getElementById("hour_value").value;
+ const staffTable_days = document.getElementById("days_value").value;
+ const staffTable_cost = document.getElementById("hrspaid_value").value;
+ 
+ console.log(mySelect);
+ 
+ 
+ 
+            const table = document.getElementById("staffTableBody_data").getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+			const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+			   const cell5 = newRow.insertCell(4);
+			      const cell6 = newRow.insertCell(5);
+				     const cell7 = newRow.insertCell(6);
+			cell1.style.textAlign = "left";
+			cell2.style.textAlign = "left";
+			cell3.style.textAlign = "right";
+			cell4.style.textAlign = "right";
+			cell5.style.textAlign = "right";
+			cell6.style.textAlign = "right";
+            <!-- const cell3 = newRow.insertCell(2); -->
+
+            cell1.innerHTML = "<span id='myInput' >"+mySelect+"</span>";
+			cell2.innerHTML = "<span id='myInput' >"+staffTable_name+"</span>";
+			cell3.innerHTML = "<span id='myInput' >£"+staffTable_rate+"</span>";
+			cell4.innerHTML = "<span id='myInput'>"+staffTable_hour+"</span>";
+			cell5.innerHTML = "<span id='myInput'>"+staffTable_days+"</span>";
+			cell6.innerHTML = "<span id='myInput'>£"+staffTable_cost+"</span>";
+			
+            <!-- cell2.innerHTML = ""; -->
+            cell7.innerHTML = '<button type="button" class="govuk-button govuk-button--secondary sup_margin_0 edit-row-btn" data-module="govuk-button"><i class="fa fa-edit"></i></button> <button type="button" class="govuk-button govuk-button--warning sup_margin_0 delete-row-btn" data-module="govuk-button"><i class="fa fa-trash"></i></button>';
+     
+	closeaddstaffModal();
+	  <!-- document.getElementById("select_permissions").value= ""; -->
+		
+		}
+	</script>
+ <script src="../js/bootstrap.bundle.min.js"></script>
+   <script src="../js/modalpopup.js"></script>
+   <script src="../js/fpsmodalpopup.js"></script>
+	 
+</body>
+
+</html>

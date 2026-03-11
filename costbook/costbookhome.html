@@ -5,25 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Select project</title>
- 
+  <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
  <link rel="stylesheet" href="../css/bootstrap.min.css">	
  <link rel="stylesheet" href="../css/costbook_styles/styles.css">   	
   <link rel="stylesheet" href="../css/main_style.css">
-	
+<link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" /> 
 	 
-	
+	 
 	
 </head>
 <script>
-    // function onChangeProject(){
-    //     document.getElementById("program").value = "BACT";
-    //     document.getElementById("project").value = "FZ200";
-    // }
-
-    // function onClickPlanProject(){
-    //     document.getElementById("program").value = "";
-    //     document.getElementById("project").value = "";
-    // }
+ 
 
     window.addEventListener('load', function () {
         // Get modal element
@@ -33,6 +25,15 @@
     });
 
 </script>
+
+
+<style>
+.input-group-text {
+    border-radius: 0 5px 5px 0;
+    padding: 7px 6px 6px 6px;
+    border: 1px solid #919191;
+}
+</style>
 
 <body>
 
@@ -45,7 +46,7 @@
                 <div>
                     <img src="../images/defra_logo.png" width="80px">
                 </div>
-             
+              
                 <div class="pims-log">
                     <span>Costbook</span>
                 </div>
@@ -75,22 +76,20 @@
     <nav class="navbar navbar-expand-lg main-nav">
         <div class="container-fluid">
 
-            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"> -->
-                <!-- <span class="navbar-toggler-icon"></span> -->
-            <!-- </button> -->
+          
 
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
 
-                   
+                 
 				  <li class="nav-item"><a class="nav-link" href="costbookhome.html">Choose Project </a></li>
 				  
-                 
+                    
 					 <li class="nav-item">
                         <a class="nav-link" href="#">Maintainance </a>
                     </li>
 
-                    
+                   
 
                 </ul>
             </div>
@@ -98,29 +97,27 @@
     </nav>
   
     <div class="container-fluid" style=" min-height: 415px;">
+	
+		<div class="govuk-grid-row sup_border-bottom">
+		
+		<div class="govuk-grid-column-one-half">
+		 <h1 class="govuk-heading-s sup_margin_0" style="padding:10px 0 10px 10px">   Choose Existing Project  </h1>
+		</div>
+		<div class="govuk-grid-column-one-half">
+		<div style=" float: right; text-align:right;     margin-top: 2px;    width:50%;">
+		
+                               <a href="costbookproject_newproject.html" class="govuk-button sup_margin_0 " >+ Add New Project</a>
+                          
+							</div>
+		</div>
+   
+    </div>
       
         <div class="row">
 		
 		
 		
-		<div class="col-sm-12" style="padding:0px;  ">
-			<div style="border-bottom: 2px solid #1d70b8; height:48px;">
-			 <div style="padding: 15px 0 5px 17px; font-size:16px; width: 50%;  font-weight: 700; float:left">
-                  Choose Existing Project
-					
-				
-					</div>
-					<div style=" float: right; text-align:right;     margin-top: 4px;    width:50%; float:left">
-			<!-- <a class="btn btn-outline-primary btn-sm btn-back" a="" aria-hidden="true" href="program_management.html" aria-label="back to select a program" style="margin-right: 16px;border: 1px solid #0d6efd;">Back</a> -->
 		
-<button type="button" class="btnBlue">
-                               <a href="costbookproject_newproject.html" class="text_link" >+ Add New Project</a>
-                            </button>
-
-		</div>
-			</div>
-		
-            </div>
            
             <div class="col-lg-6">
                 <div style="margin: 2px 0 0 0;">
@@ -138,24 +135,7 @@
 			
 			<main class="main-content" style="padding:0;">
        
-	 <!-- <div class="page-header"> -->
-            <!-- <h1> <span class="projectcode_color"></span></h1> -->
-            <!-- <!-- <button class="admin-btn">Preview Report</button> --> 
-        <!-- </div> -->
-		
-
-
-        <!-- <div class="project-code-section"> -->
-            <!-- <!-- <label>To change project .<br>Enter new code here</label> -->
-            <!-- <input type="text" value="Salmonell Surveillance and control programme" class="projectplan-code "> -->
-        <!-- </div> -->
-
-      <!-- <div class="action-buttons"> -->
-            <!-- <!-- <button class="btn btn-primary">Add Another Project</button>  --> 
-             <!-- <!-- <button class="btn btn-primary">Plan this Project</button> -->
-             <!-- <!-- <button class="btn btn-danger">Delete this Project</button>  --> 
-            <!-- <button class="btn   btn-primary">Edit</button> -->
-      <!-- </div>  -->
+	
        <div class="container-fluid" style="padding: 0;">
 <div class="col-12">
                                        
@@ -165,10 +145,10 @@
             <div class="search-panel">
                <div class="grid-header" style="">
 				 <div class="grid-toolbar">
-                        <div style="display: flex; align-items: center; gap: 8px; ">
-						Select Year
+                        <div style="display: flex; align-items: center; gap: 8px; " >
+						<label class="govuk-label">Select Year</label>
 						
-						 <select class="form-select" aria-label="Select a Programme" style="border-radius: 5px;border:1px solid #919191;width: 180px; margin-right: 15px; padding: 7px 36px 8px 12px;">
+						 <select class="govuk-select me-3" aria-label="Select a Programme" >
                                              <option value="">2024</option>
                                             <option value="" selected >2025</option>
                                             <option value="" >2026</option>
@@ -188,13 +168,13 @@
                         </div>
                     </div>
 				
-				<div style="float:right; width: 230px;">
+				<div style="float:right; width: 245px;">
 				
-				<div class="input-group">
+				<div class="input-group" style="flex-wrap: nowrap;">
                             <!-- <div class="input-group-prepend">
                                         <span class="input-group-text">$</span>
                                     </div> -->
-                            <input type="text" id="searchInput" onkeyup='searchTable()' class="form-control" placeholder="Search by Costbook Code" aria-label="Amount (to the nearest dollar)" style="border: 1px solid #919191; padding: .375rem .75rem;">
+                            <input type="text" id="searchInput" onkeyup='searchTable()' class="govuk-input" placeholder="Search by Costbook Code" aria-label="Amount (to the nearest dollar)" >
                             <div class="input-group-append">
                                 <span class="input-group-text"> 
 								<img src="../images/magnifying-glass-solid-full.svg" width="20px" alt="search project code" />
@@ -221,33 +201,33 @@
             <div id="divprojectcode" style="display: block;">
                 <div style="border: 1px solid #1d70b8 !important;   max-height: 300px; overflow-y: auto; height: 230px; border-bottom: 0 !important;
     border-top: 0 !important;   ">
-                <table class="table tbl-border mb-0 custom-table" id="tblmaintenance" style="">
-                    <thead class="thead-light bordertop">
-                        <tr>
-                           <th style="width: 80px;">Project  </th>
-                                    <th style="width: 150px;">Project Title </th>
-                                    <th style="width: 120px;">Contract </th>
-                                    <th style="width: 80px;">Start Date </th>
+                <table class="govuk-table custom-table" id="tblmaintenance" style="">
+                    <thead class="govuk-table__head thead-light bordertop">
+                        <tr class="govuk-table__row">
+                           <th style="width: 80px;" class="govuk-table__header">Project  </th>
+                                    <th style="width: 150px;" class="govuk-table__header">Project Title </th>
+                                    <th style="width: 120px;" class="govuk-table__header">Contract </th>
+                                    <th style="width: 80px;" class="govuk-table__header">Start Date </th>
                                   
-                                    <th class="" style="width: 80px;">Action</th>
+                                    <th class="govuk-table__header" style="width: 80px;">Action</th>
                                
                         </tr>
                     </thead>
-                  <tbody id="tableBody">
+                  <tbody class="govuk-table__body" id="tableBody">
                                 <tr data-row-index="0">
                                     <!-- <td class="row-number">0</td> -->
                                     <!-- <td class="checkbox-cell"><input type="checkbox" class="row-checkbox"></td> -->
-                                    <td data-property="">2025/109</td>
-                                    <td data-property="StaffName">Test TVG
+                                    <td data-property="" class="govuk-table__cell">2025/109</td>
+                                    <td data-property="StaffName" class="govuk-table__cell">Test TVG
 									</td>
-                                    <td data-property="WGGrade">
+                                    <td data-property="WGGrade" class="govuk-table__cell">
                                       
                                     </td>
-                                    <td data-property="Status">
+                                    <td data-property="Status" class="govuk-table__cell">
                                        01/04/2026
                                     </td>
                                    
-                                    <td class="text-AlignCenter">
+                                    <td class="text-AlignCenter govuk-table__cell" >
 									<button class="btn btn-sm btn-outline-primary">
 									<a href="costbookproject_edit.html" class="text_link">
 									<img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected Project" class="editjobcode" width="20" title="Edit Project">
@@ -267,18 +247,18 @@
                                 <tr data-row-index="1" style="background-color: rgb(255, 255, 204);">
                                     <!-- <td class="row-number">1</td> -->
                                     <!-- <td class="checkbox-cell"><input type="checkbox" class="row-checkbox"></td> -->
-                                    <td data-property="">2025/108</td>
-                                    <td data-property="StaffName">
+                                    <td data-property="" class="govuk-table__cell">2025/108</td>
+                                    <td data-property="StaffName" class="govuk-table__cell">
 									Assessing efficacy of new BRSV vaccine in cal
 									</td>
-                                    <td data-property="WGGrade">
+                                    <td data-property="WGGrade" class="govuk-table__cell">
                                       
                                     </td>
-                                    <td data-property="Status">
+                                    <td data-property="Status" class="govuk-table__cell">
                                          01/04/2026
                                     </td>
                                    
-                                    <td class="text-AlignCenter">
+                                    <td class="text-AlignCenter govuk-table__cell" >
 									<button class="btn btn-sm btn-outline-primary">
 									<a href="costbookproject_edit.html" class="text_link">
 									<img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected Project" class="editjobcode" width="20" title="Edit Project">
@@ -298,18 +278,18 @@
                                 <tr data-row-index="2">
                                     <!-- <td class="row-number">2</td> -->
                                     <!-- <td class="checkbox-cell"><input type="checkbox" class="row-checkbox"></td> -->
-                                    <td data-property="">2025/107</td>
-                                    <td data-property="StaffName">
+                                    <td data-property="" class="govuk-table__cell">2025/107</td>
+                                    <td data-property="StaffName" class="govuk-table__cell">
 									MDT Bridging Project
 									</td>
-                                    <td data-property="WGGrade">
+                                    <td data-property="WGGrade" class="govuk-table__cell">
                                        
                                     </td>
-                                    <td data-property="Status">
+                                    <td data-property="Status" class="govuk-table__cell">
                                        01/01/2026
                                     </td>
                                    
-                                   <td class="text-AlignCenter">
+                                   <td class="text-AlignCenter govuk-table__cell">
 									<button class="btn btn-sm btn-outline-primary">
 									<a href="costbookproject_edit.html" class="text_link">
 									<img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected Project" class="editjobcode" width="20" title="Edit Project">
@@ -329,18 +309,18 @@
                                 <tr data-row-index="3">
                                     <!-- <td class="row-number">3</td> -->
                                     <!-- <td class="checkbox-cell"><input type="checkbox" class="row-checkbox"></td> -->
-                                    <td data-property="">2026/106</td>
-                                    <td data-property="StaffName">
+                                    <td data-property="" class="govuk-table__cell">2026/106</td>
+                                    <td data-property="StaffName" class="govuk-table__cell">
 									Salmonella training day for Elanco
 									</td>
-                                    <td data-property="WGGrade">
+                                    <td data-property="WGGrade" class="govuk-table__cell">
                                        
                                     </td>
-                                    <td data-property="Status">
+                                    <td data-property="Status" class="govuk-table__cell">
                                          01/01/2026
                                     </td>
                                   
-                                    <td class="text-AlignCenter">
+                                    <td class="text-AlignCenter govuk-table__cell">
 									<button class="btn btn-sm btn-outline-primary">
 									<a href="costbookproject_edit.html" class="text_link">
 									<img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected Project" class="editjobcode" width="20" title="Edit Project">
@@ -360,18 +340,18 @@
                                 <tr data-row-index="4">
                                     <!-- <td class="row-number">4</td> -->
                                     <!-- <td class="checkbox-cell"><input type="checkbox" class="row-checkbox"></td> -->
-                                    <td data-property="">2026/105</td>
-                                    <td data-property="StaffName">
+                                    <td data-property="" class="govuk-table__cell">2026/105</td>
+                                    <td data-property="StaffName" class="govuk-table__cell">
 									Biogene folloew on funding - Validation and deploy
 									</td>
-                                    <td data-property="WGGrade">
+                                    <td data-property="WGGrade" class="govuk-table__cell">
                                        
                                     </td>
-                                    <td data-property="Status">
+                                    <td data-property="Status" class="govuk-table__cell">
                                         01/04/2026
                                     </td>
                                    
-                                    <td class="text-AlignCenter">
+                                    <td class="text-AlignCenter govuk-table__cell">
 									<button class="btn btn-sm btn-outline-primary">
 									<a href="costbookproject_edit.html" class="text_link">
 									<img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected Project" class="editjobcode" width="20" title="Edit Project">
@@ -392,16 +372,16 @@
 								   <tr data-row-index="4">
                                     <!-- <td class="row-number">4</td> -->
                                     <!-- <td class="checkbox-cell"><input type="checkbox" class="row-checkbox"></td> -->
-                                    <td data-property="">2026/104</td>
-                                    <td data-property="StaffName">Pheasant dispersal from Release Pens</td>
-                                    <td data-property="WGGrade">
+                                    <td data-property="" class="govuk-table__cell">2026/104</td>
+                                    <td data-property="StaffName" class="govuk-table__cell">Pheasant dispersal from Release Pens</td>
+                                    <td data-property="WGGrade" class="govuk-table__cell">
                                        WMWL1900
                                     </td>
-                                    <td data-property="Status">
+                                    <td data-property="Status" class="govuk-table__cell">
                                         03/11/2025
                                     </td>
                                    
-                                    <td class="text-AlignCenter">
+                                    <td class="text-AlignCenter govuk-table__cell">
 									<button class="btn btn-sm btn-outline-primary">
 									<a href="costbookproject_edit.html" class="text_link">
 									<img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected Project" class="editjobcode" width="20" title="Edit Project">
@@ -432,7 +412,7 @@
                                                     align-items: center;
                                                     border-radius: 0 0 10px 10px;">
                                                     <div class="">
-                                                <select id="recordsPerPage" class="form-select">
+                                                <select id="recordsPerPage" class="govuk-select sup_select_pagination_width">
                                                     <option value="5" selected="">5</option>
                                                     <option value="10" >10</option>
                                                     <option value="15">15</option>
@@ -442,10 +422,25 @@
                                                 </select>
                                             </div>
                                                     <!-- Pagination -->
-                                                    <nav aria-label="Page navigation">
-                                                        <ul class="pagination justify-content-center" id="pagination" style="margin: 0;"><li class="page-item disabled aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(1)">First</a></li><li class="page-item disabled aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(0)">Previous</a></li><li class="page-item active aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(1)">1</a></li><li class="page-item  aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(2)">2</a></li><li class="page-item  aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(2)">Next</a></li><li class="page-item  aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(2)">Last</a></li></ul>
-                                                    </nav>
-                                                 
+                                                    <!-- <nav aria-label="Page navigation" class="govuk-pagination"> -->
+                                                        <!-- <ul class="govuk-pagination__list justify-content-center" id="pagination" style="margin: 0;"> -->
+														<!-- <li class="govuk-pagination__item disabled aria-disabled=&quot;true&quot;"> -->
+														<!-- <a class="govuk-link govuk-pagination__link" onclick="goToPage(1)">First</a> -->
+														<!-- </li> -->
+														<!-- <li class="page-item disabled aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(0)">Previous</a></li> -->
+														<!-- <li class="page-item active aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(1)">1</a></li> -->
+														<!-- <li class="page-item  aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(2)">2</a></li><li class="page-item  aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(2)">Next</a></li><li class="page-item  aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(2)">Last</a></li></ul> -->
+                                                    <!-- </nav> -->
+                                                 <nav class="govuk-pagination sup_margin_left_right_10" aria-label="Pagination">
+                                            
+                                            <ul class="govuk-pagination__list" id="pagination"><li class="govuk-pagination__item disabled aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(0)"> <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        
+      </svg> <span class="govuk-pagination__link-title">
+        Previous<span class="govuk-visually-hidden"> page</span>
+      </span></a></li><li class="govuk-pagination__item govuk-pagination__item--current aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(1)">1</a></li><li class="govuk-pagination__item  aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(2)">2</a></li><li class="govuk-pagination__next  aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(2)" rel="next"><span class="govuk-pagination__link-title">Next</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+       
+      </svg></a></li></ul>
+                                    </nav>
                                                    
                                                 </div>
             </div>
@@ -525,39 +520,7 @@
     <!-- Bootstrap JS (required for dropdowns) -->
 	
      <script src="../js/bootstrap.bundle.min.js">    </script>
-    <script>
-        <!-- function closeEditModal() { $('#editModal').hide(); } -->
-        <!-- $('#addRowBtn').on('click', function () { -->
-            <!-- $('#editModalBody form')[0].reset(); -->
-            <!-- $('.modal-title').text('Add Staff'); -->
-            <!-- $('#editModal').show(); -->
-        <!-- }); -->
-        <!-- $('#staffTableBody').on('click', '.edit-row-btn', function () { -->
-            <!-- $('.modal-title').text('Edit Staff'); -->
-            <!-- $('#editModal').show(); -->
-        <!-- }); -->
-        <!-- $('#staffTableBody').on('click', '.delete-row-btn', function () { -->
-            <!-- if (confirm('Are you sure you want to delete this record?')) { -->
-                <!-- $(this).closest('tr').remove(); -->
-            <!-- } -->
-        <!-- }); -->
-        <!-- $('#editableGridForm').on('submit', function (e) { -->
-            <!-- e.preventDefault(); -->
-            <!-- alert('Saved (no backend, static demo)'); -->
-            <!-- closeEditModal(); -->
-        <!-- }); -->
-        <!-- $('#searchBtn').on('click', function () { -->
-            <!-- var term = $('#gridSearchInput').val().toLowerCase(); -->
-            <!-- $('#staffTableBody tr').each(function () { -->
-                <!-- var rowText = $(this).text().toLowerCase(); -->
-                <!-- $(this).toggle(rowText.indexOf(term) > -1); -->
-            <!-- }); -->
-        <!-- }); -->
-        <!-- $('#unfilterBtn').on('click', function () { -->
-            <!-- $('#gridSearchInput').val(''); -->
-            <!-- $('#staffTableBody tr').show(); -->
-        <!-- }); -->
-    </script>
+ 
    
     
     <script>
@@ -602,7 +565,7 @@ function searchTable() {
     }
 }
 </script>
- <!-- <script src="js/program_maintenance_table.js"></script> -->
+ 
 </body>
 
 </html>

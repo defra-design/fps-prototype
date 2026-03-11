@@ -1724,6 +1724,8 @@ blockquote {
 
 table.custom-table th {
   text-align: left !important;
+  border-bottom: 1px solid var(--govuk-border-colour, #4a0404);
+  background: var(--govuk-hover-colour, #821414);
 }
 
 
@@ -1846,12 +1848,13 @@ table#timejobtable > tbody > tr >td:nth-child(3) {
   border: 1px solid #ccc;
 }
 
-#jobcodediv table > thead > tr > th{
-      padding: 9px 6px !important;
+#jobcodediv table>thead>tr>th {
+  padding: 9px 6px !important;
+  border-bottom: 1px solid var(--govuk-border-colour);
 }
 
-#jobcodediv table > thead > tr > th:last-child {
-    width: 80px;
+#jobcodediv table>thead>tr>th:last-child {
+  width: 80px;
 }
 
 .timejobdiv {
@@ -1888,7 +1891,7 @@ table#timejobtable > tbody > tr >td:nth-child(3) {
   top: 0;
   background-color: #f1f1f1;
   z-index: 10;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--govuk-border-colour);
 }
 
 /* Cells */
@@ -1919,7 +1922,8 @@ table#timejobtable > tbody > tr >td:nth-child(3) {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
   /*background: #edf4ff !important;*/
   background-color: var(--govuk-surface-background-colour, #f4f8fb);
-  border: 1px solid #dee2e6 !important;
+  /* border: 1px solid #dee2e6 !important; */
+  /* border-bottom: 1px solid var(--govuk-surface-border-colour, #8eb8dc); */
 }
 
 .custom-table tbody td:nth-child(5) {
@@ -2111,6 +2115,11 @@ table#selectedTable>tbody>tr>td:nth-child(6) {
   text-align: right;
 }
 
+table#selectedTable>tbody>tr>td:last-child {
+  padding: 0 5px 0 0 !important;
+}
+
+
 
 .wrapper-makelivehours {
   width: 100%;
@@ -2135,6 +2144,170 @@ table#selectedTable>tbody>tr>td:nth-child(6) {
   text-align: right;
 }
 
+
+.sidenav {
+  width: 20px;
+  /*height: 300px;*/
+  background: #d4ebff;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 1px solid #1d70b8;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+
+.sidenav.collapsed {
+  /*width: var(--sidebar-width-collapsed);*/
+  width: 300px;
+}
+
+
+.sidenav>ul {
+  margin: 0;
+  padding: 0;
+}
+
+.sidenav>ul>li {
+  font-size: 16px;
+  border-radius: 0 8px 8px 0;
+  background-color: #2196F3;
+
+}
+
+.sidenav>ul>li a {
+  text-decoration: none;
+  padding: 12px;
+  display: inline-flex;
+  width: 100%;
+  visibility: hidden;
+
+}
+
+.sidenav>ul>li a:hover {
+  background-color: #00005c;
+}
+
+
+.sidebar-link-two {
+  transition: all 0.2s ease;
+  border-radius: 0;
+  margin-bottom: 1px;
+  white-space: nowrap;
+  /* border-bottom: 1px solid #25257e;*/
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.sidebar-link-two:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  /* transform: translateX(5px);*/
+}
+
+.sidebar-link-two.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  /* width: var(--sidebar-width-collapsed);*/
+}
+
+
+.collapsed .sidebar-link-two {
+  text-align: center;
+  /*margin: 4px 8px;*/
+  text-align: left;
+  /* width: 10px;*/
+}
+
+.collapsed .sidebar-link-two>a {
+  width: 290px;
+  visibility: visible;
+}
+
+#dataTable>tbody>tr>td:nth-child(5) {
+  text-align: right;
+  padding: 0 10px !important;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#dataTable>thead>tr>th {
+  text-align: center;
+  padding: 2px 10px !important;
+  vertical-align: middle;
+}
+
+#dataTable>thead>tr>th:nth-child(1) {
+  width: 45px;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: -15px;
+  top: 20px;
+  background: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #00005c;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.collapsed .toggle-btn {
+  transform: rotate(180deg);
+}
+
+
+.pims-log-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 4px 0;
+}
+
+:focus {
+  outline: 2px solid blue;
+}
+
+.pims-log {
+  border: 1px solid #0374e9;
+  border-radius: 10px;
+  width: 90px;
+  color: #00005c;
+  text-shadow: 1px 1px #b0d7ff;
+  letter-spacing: 1px;
+  background: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  padding: 3px;
+  margin-left: 10px;
+}
+
+.pims-log-wrapper p {
+  margin: 0;
+  padding: 0 0 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.user-menu {
+  background: transparent !important;
+  color: #000 !important;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+  padding: 0 10px;
+  background: #ecf5ff;
+}
+
 .cust-position-relative {
   position: relative;
 }
@@ -2147,12 +2320,12 @@ table#selectedTable>tbody>tr>td:nth-child(6) {
 
 #timejobtable>thead>tr>th:nth-child(1) {
   padding: 0 9px !important;
-  width:65px;
+  width: 65px;
 }
 
 #timejobtable>thead>tr>th:last-child {
-    width: 20px; 
-    padding: 0;
+  width: 20px;
+  padding: 0;
 }
 
 tbody#timejobtabletableBody>tr>td {
@@ -2160,16 +2333,18 @@ tbody#timejobtabletableBody>tr>td {
 }
 
 tbody#timejobtabletableBody>tr>td.norecords {
-    padding: 9px !important;
+  padding: 9px !important;
 }
 
-tbody#timejobtabletableBody>tr>td > button {
+tbody#timejobtabletableBody>tr>td>button {
   padding: 0px !important;
 }
 
-table.custom-table th:nth-child(4) { 
-    width: 50px !important;
-}
+/* table.custom-table th:nth-child(4) {
+  width: 50px !important;
+} */
+
+
 
 .dropdown-toggle::after {
   border: 0;
@@ -2200,51 +2375,51 @@ tbody#timejobtabletableBody>tr>td:nth-child(4)>button {
   text-decoration: none;
 }
 
-.custom-table td,  .timecode-table td {
+.custom-table td, .timecode-table td {
   padding: 6px 5px !important;
   white-space: nowrap;
 }
 
 
 .custom-table td:first-child, .custom-table thead:first-child {
-    border-left: 0;
+  border-left: 0;
 }
 
-#jobcodediv table > thead > tr > th:first-child {
-    border-left: 0 !important;
+#jobcodediv table>thead>tr>th:first-child {
+  border-left: 0 !important;
 }
 
 .custom-table td:first-child, .custom-table thead:last-child {
-    border-right: 0;
+  border-right: 0;
 }
 
-#jobcodediv table > thead > tr > th:last-child {
-    border-right: 0 !important;
+#jobcodediv table>thead>tr>th:last-child {
+  border-right: 0 !important;
 }
 
-div#jobcodediv > table > tbody> tr > td:last-child {
-    border-right: 0 !important;
+div#jobcodediv>table>tbody>tr>td:last-child {
+  border-right: 0 !important;
 }
 
-div#jobcodediv > table > tbody> tr > td:first-child {
-    width: 100px !important; 
-    max-width: 100px; 
-    overflow: hidden;
-    text-overflow: ellipsis;
+div#jobcodediv>table>tbody>tr>td:first-child {
+  width: 100px !important;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-div#jobcodediv > table > tbody> tr > td:nth-child(5) {
-    /* padding: 8px !important; */
-    padding: 8px 0 0px 0 !important;
-    text-align: center;
-    vertical-align: middle;
+div#jobcodediv>table>tbody>tr>td:nth-child(5) {
+  /* padding: 8px !important; */
+  padding: 8px 0 0px 0 !important;
+  text-align: center;
+  vertical-align: middle;
 }
 
-div#jobcodediv > table > thead > tr > th{
+/* div#jobcodediv > table > thead > tr > th{
   position: relative;
-}
+} */
 
-.resizer {
+/* .resizer {
   width: 5px;
   height: 100%;
   position: absolute;
@@ -2252,4 +2427,161 @@ div#jobcodediv > table > thead > tr > th{
   top: 10px;
   cursor: col-resize;
   user-select: none;
+} */
+
+.resizer {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  cursor: col-resize;
+  user-select: none;
+  background: transparent;
 }
+
+ 
+
+.div_import_table {
+  max-height: 300px;
+  background: #fff;
+  height: 300px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.time_record_div_wrapper {
+  font-size: 16px;
+  background: #fff;
+  margin: 0;
+  width: 17%;
+  display: flex;
+  padding: 0px 0px 4px 4px;
+  border-radius: 10px 10px 0 0;
+}
+
+.time_record_btn_wrapper {
+flex-direction: column;
+    display: flex;
+    color: #333;
+    width: 100%;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 0;
+    justify-content: flex-start;
+}
+
+.flex_space_between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.sort-icon {
+  margin-left: 4px;
+  font-size: 10px;
+  color: #1d70b8;
+}
+
+/* table#selectedTable>thead>tr>th {
+  width: 10%;
+}
+
+table#selectedTable>thead>tr>th:nth-child(2) {
+  width: 50%;
+}
+
+table#selectedTable>thead>tr>th:nth-child(3) {
+  width: 20%;
+} */
+
+tbody#invoiceTableBody>tr>td:nth-child(5),tbody#milestoneTableBody>tr>td:nth-child(5){
+  padding-right: 5px !important;
+ }
+
+ tbody#invoiceTableBody>tr>td:nth-child(2){
+  text-align: right;
+ }
+
+tbody#invoiceTableBody>tr>td:nth-child(3), tbody#invoiceTableBody>tr>td:nth-child(4), tbody#invoiceTableBody>tr>td:nth-child(5), tbody#invoiceTableBody>tr>td:nth-child(6),tbody#invoiceTableBody>tr>td:nth-child(8) {
+  text-align: right;
+}
+
+
+tbody#milestoneTableBody>tr>td:nth-child(2), tbody#milestoneTableBody>tr>td:nth-child(4), tbody#milestoneTableBody>tr>td:nth-child(5), tbody#milestoneTableBody>tr>td:nth-child(6),tbody#milestoneTableBody>tr>td:nth-child(7) {
+  text-align: right;
+}
+
+tbody#testPurchaseReqTable>tr>td:nth-child(2) {
+  text-align:right;
+}
+
+tbody#testpurchasereqTableBody > tr > td:nth-child(2),tbody#testpurchasereqTableBody > tr > td:nth-child(3){
+  text-align:right;
+}
+
+table > tbody >tr >td:last-child {
+    outline: none;
+    cursor: pointer;
+    /* padding: 0 !important; */
+}
+
+
+table>thead>tr>th {
+    padding: 3px 6px !important;
+    border-bottom: 1px solid var(--govuk-border-colour);
+}
+
+.table_scroll_wrapper {
+  max-height: 423px;
+  height: 403px;
+  border: 0 !important;
+  overflow-y: auto;
+}
+
+
+#hoursBoxContainer {
+  position: relative;
+  min-height: 45px;
+  border-top: 1px solid var(--govuk-border-colour);
+  width: 100%;
+}
+
+table#selectedTable {
+  table-layout: fixed;
+  width: 100%;
+}
+
+table#selectedTable>thead>tr>th {
+  width: calc(100% / 6);
+  padding: 8px 6px !important;
+}
+
+table#milestoneTable > thead > tr > th {
+    padding: 8px !important;
+}
+
+#testDataTableBody > tr > td:nth-child(5){
+  text-align:left !important;
+  padding: 6px 5px !important;
+}
+
+#testDataTable > tbody > tr > td:nth-child(2), #testDataTable > tbody > tr > td:nth-child(3), #testDataTable > tbody > tr > td:nth-child(6){
+    text-align: right !important;
+}
+
+.heading_with_txtbox{
+      padding: 0px 10px 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: -15px;
+    align-items: center;
+    margin-right: -15px; 
+    flex-direction: row;
+}
+

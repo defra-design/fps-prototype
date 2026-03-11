@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://design-system.service.gov.uk/stylesheets/govuk-frontend-110050e5900f36079383aecb46ca62bc.min.css" rel="stylesheet"/> -->
+    <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
+    <link rel="stylesheet" href="nav_menu/navstyle.css" />
+    <script src="nav_menu/menutemplate.js"></script>
+    <link rel="stylesheet" href="../css/pact_styles/style.css" />
+    <link rel="stylesheet" href="../css/pact_styles/suppliement_style_over_gov.uk_style.css" />
+
+    <style>
+        /* Resizer styles */
+        /* .resizer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 100%;
+            cursor: col-resize;
+            user-select: none;
+            background: transparent;
+        }
+        
+        .resizer:hover {
+            background: #1d70b8;
+        }
+         */
+        /* Sortable header styles */
+        th[data-column] {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+
+        th[data-column]:hover {
+            background-color: #d8e5f4 !important;
+        }
+
+        .sort-icon {
+            margin-left: 4px;
+            font-size: 10px;
+            color: #1d70b8;
+        }
+
+        th.sorted-asc,
+        th.sorted-desc {
+            background-color: #d8e5f4 !important;
+        }
+    </style>
+
+    <title>2025-2026 : Project Management - PACT</title>
+
+    <script>
+        function toggleSideform() {
+            const sideform = document.querySelector('.sideform');
+            sideform.classList.toggle('open');
+            const sidebar = document.querySelector('.backdrop');
+            sidebar.classList.toggle('open');
+        } 
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
+                </div>
+
+                <div class="pims-log">
+                    <span>PACT</span>
+                </div>
+
+                <div class="pims-log" style="width: 160px;font-size: 16px;">
+                    <label for="dpSelectyear" class="sr-only">select year</label>
+                    <select id="dpSelectyear" aria-label="Select year dropdown" class="pims-log"
+                        style="border: 0;border-radius: 0;margin-left: 0px;width: 150px;outline: 0;">
+                        <option>2017-2018</option>
+                        <option>2018-2019</option>
+                        <option>2019-2020</option>
+                        <option>2020-2021</option>
+                        <option>2021-2022</option>
+                        <option>2022-2023</option>
+                        <option>2023-2024</option>
+                        <option>2024-2025</option>
+                        <option selected>2025-2026</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </header>
+    <div id="header"></div>
+
+    <script src="../pact/nav_menu/script.js"></script>
+
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+
+
+
+
+        <div class="govuk-grid-row sup_margin_left_right_0">
+        <div class="govuk-grid-column-full">
+            <h1 class="heading_with_txtbox govuk-heading-s sup_border-bottom">
+                <div class="sup_flex_left_center">
+                   Project Invoices & Sub-Contact Cost for:
+                    <input type="text" id="sp-projectcode" class="govuk-input govuk-!-font-size-16 govuk-input--width-10">
+                </div>
+                <div> <a id="backlink" class="govuk-back-link">Back</a></div>
+            </h1>
+        </div>
+    </div>
+    <div style="    display: flex;    margin-left: 0;    margin-right: 0;    flex-direction: row;    flex-wrap: nowrap;    justify-content: space-between;"
+        class="govuk-grid-row">
+        <nav class="sidenav flex-column flex-shrink-0" id="shortnav">
+            <button class="toggle-btn" onclick="toggleSidebar()" style="right: -8px; top: 30px;">
+                <img src="../images/chevron-left-solid-full.svg" width="20" alt="side menu left arrow"
+                    style="margin: -4px 8px 0 -4px;" />
+            </button>
+            <ul>
+                <!-- <li class="sidebar-link-two" style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                                        <a id="btnSection2" style="color: #fff;">Project code</a>
+                                    </li>
+                                    <li class="sidebar-link-two" style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                                        <a id="btnSection1" style="color: #fff;">Project Details</a>
+                                    </li> -->
+                   <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a id="invoiecsubcontract"   style="color: #fff;">Invoices & Subcontracted Costs</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0;cursor: pointer; background-color: #1d70b8;">
+                    <a id="milestones"  style="color: #fff;"> Milestones</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a id="testpurchasereq" style="color: #fff;">Test Purchase Requirements</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="govuk-grid-column-full">
+            <div class="govuk-grid-row sup_margin_left_right_0">
+
+                <div class="sup_border">
+                    <h2 class="sup_border-bottom sup_text_color sup_heading_bg_color govuk-heading-s sup_align_heading"
+                        id="headingOne">
+
+                        Invoices
+
+
+                    </h2>
+                    <div
+                        style="display: flex;flex-direction: row;  justify-content: space-between; align-items: center;">
+                        <div class="govuk-grid-column-one-third"
+                            style="padding-top: 0; padding-left: 6px; padding-bottom: 0;">
+                            <label for="invoiceSearch" class="sr-only">Search</label>
+                            <input type="text" id="invoiceSearch" class="govuk-input govuk-!-font-size-16"
+                                style="padding: 5px; margin: 5px 0px;" placeholder="Search by project, month or detail">
+                        </div>
+
+                        <div class="govuk-grid-column-one-third" style="padding: 0 8px 0 0; text-align: right;">
+
+                            <div class="govuk-button-group sup_margin_0" style="float:right">
+                                <!-- <button type="button" class="govuk-button govuk-button--warning sup_margin_0 sup_p_8"
+                                    id="deleteSelectedBtn" aria-label="Delete selected invoices"
+                                    data-module="govuk-button">
+                                    Delete Selected
+                                </button> -->
+                                <!-- <button type="button" class="govuk-button sup_margin_0 sup_p_8 sup_flex" id="addInvoiceBtn"
+                                    aria-label="Add invoice" data-module="govuk-button">
+                                    <img alt="plus icon for add invoice" src="../images/circle-plus-solid-full-white.svg" width="16px" />
+                                      &nbsp;Add Invoice
+                                </button> -->
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="table_scroll_wrapper" style="position: relative;">
+                        <table class="govuk-table custom-table" id="invoiceTable" style="margin-bottom: 0px;">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <!-- <th class="govuk-table__header text-align-left">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small"
+                                            data-module="govuk-checkboxes"
+                                            style="display: flex; align-items: center; justify-content: flex-start;">
+                                            <div class="govuk-checkboxes__item">
+                                                <input type='checkbox' class="govuk-checkboxes__input"
+                                                    id="selectAllInvoices" name="selectAllInvoices" />
+                                                <label class="govuk-label govuk-checkboxes__label" style="padding:0"
+                                                    for="selectAllInvoices"> </label>
+                                            </div>
+                                        </div>
+                                    </th> -->
+                                    <th data-column="0" scope="col" class="govuk-table__header">Project
+                                        <div class="resizer">&vellip;</div>
+                                    </th>
+                                    <th data-column="1" class="govuk-table__header">Month<div
+                                            class="resizer">
+                                            &vellip;</div>
+                                    </th>
+                                    <th data-column="2" class="govuk-table__header amount" data-col="Amount"
+                                         >Amount<div class="resizer">&vellip;</div>
+                                    </th>
+                                    <th data-column="3" class="govuk-table__header">
+                                        CostOfWork<div class="resizer">&vellip;</div>
+                                    </th>
+                                    <th data-column="4" class="govuk-table__header">WIP<div class="resizer">&vellip;
+                                        </div>
+                                    </th>
+                                    <th data-column="5" class="govuk-table__header">ProfitLoss<div class="resizer">
+                                            &vellip;</div>
+                                    </th>
+                                    <th data-column="6" class="govuk-table__header">Detail<div class="resizer">&vellip;
+                                        </div>
+                                    </th>
+                                    <th data-column="7" class="govuk-table__header">Counter<div class="resizer">&vellip;
+                                        </div>
+                                    </th>
+                                    <!-- <th class="govuk-table__header">Actions</th> -->
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" id="invoiceTableBody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div id="amountBoxContainer" class="sup_surface_bg" style="position:relative;">
+                        <label id="lbltotalamount" for="txtTotalAmount" class="govuk-label govuk-!-font-weight-bold"> YTD Total Amount: </label>
+                        <input type="text" id="txtTotalAmount"
+                            class="govuk-input govuk-!-font-size-16 sup_margin_tb_5 sup_text_align_right" readonly>
+                    </div>
+                    <div class="sup_pagination_wrapper">
+                        <div class="sup_margin_top_bottom_5_10">
+                            <label for="recordsPerPage">Records per page</label>
+                            <select id="recordsPerPage" class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
+                                aria-label="Select number of records per page">
+                                <option value="5">5</option>
+                                <option value="10" selected>10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                                <option value="30">30</option>
+                            </select>
+                        </div>
+                        <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+
+                            <ul class="govuk-pagination__list" id="invoicePagination">
+
+                            </ul>
+                        </nav>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- New Test Data Table Section -->
+            <div class="govuk-grid-row sup_margin_left_right_0" style="margin-top: 20px;">
+                <div class="sup_border">
+                    <h2 class="sup_border-bottom sup_text_color sup_heading_bg_color govuk-heading-s sup_align_heading"
+                        id="headingTwo">
+                        Sub-Contracts
+                    </h2>
+                    <div
+                        style="display: flex;flex-direction: row;  justify-content: space-between; align-items: center;">
+                        <div class="govuk-grid-column-one-third"
+                            style="padding-top: 0; padding-left: 6px; padding-bottom: 0;">
+                            <label for="testDataSearch" class="sr-only">Search</label>
+                            <input type="text" id="testDataSearch" class="govuk-input govuk-!-font-size-16"
+                                style="padding: 5px; margin: 5px 0px;" placeholder="Search by project, test or account">
+                        </div>
+
+                        <!-- <div class="govuk-grid-column-one-third" style="padding: 0 8px 0 0; text-align: right;">
+                            <div class="govuk-button-group sup_margin_0" style="float:right">
+                                <button type="button" class="govuk-button sup_margin_0 sup_p_8" id="addTestDataBtn"
+                                    aria-label="Add test data" data-module="govuk-button">
+                                    + &nbsp;Add Test Data
+                                </button>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <div class="table_scroll_wrapper" style="position: relative;">
+                        <table class="govuk-table custom-table" id="testDataTable" style="margin-bottom: 0px;">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th data-column="0" scope="col" class="govuk-table__header">Project
+                                        <div class="resizer">&vellip;</div>
+                                    </th>
+                                    <th data-column="1" class="govuk-table__header">Month<div
+                                            class="resizer">
+                                            &vellip;</div>
+                                    </th>
+                                    <th data-column="2" class="govuk-table__header amount" data-col="Amount"
+                                         >Amount<div class="resizer">&vellip;</div>
+                                    </th>
+                                    <th data-column="3" class="govuk-table__header">
+                                        AcctCode<div class="resizer">&vellip;</div>
+                                    </th>
+                                    <th data-column="4" class="govuk-table__header">Test<div class="resizer">&vellip;
+                                        </div>
+                                    </th>
+                                    <th data-column="5" class="govuk-table__header">Counter<div class="resizer">
+                                            &vellip;</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" id="testDataTableBody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="testDataAmountBoxContainer" class="sup_surface_bg" style="position:relative;">
+                        <label id="lblTestDataTotalAmount" class="govuk-label govuk-!-font-weight-bold" for="txtTestDataTotalAmount"> YTD Total Amount: </label>
+                        <input type="text" id="txtTestDataTotalAmount"
+                            class="govuk-input govuk-!-font-size-16 sup_margin_tb_5 sup_text_align_right" readonly>
+                    </div>
+                    <div class="sup_pagination_wrapper">
+                        <div class="sup_margin_top_bottom_5_10">
+                            <label for="testDataRecordsPerPage">Records per page</label>
+                            <select id="testDataRecordsPerPage" class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
+                                aria-label="Select number of records per page">
+                                <option value="5">5</option>
+                                <option value="10" selected>10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                                <option value="30">30</option>
+                            </select>
+                        </div>
+                        <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+                            <ul class="govuk-pagination__list" id="testDataPagination">
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+        <div class="govuk-width-container sup_p_8 sup_text_center">
+            <span>
+                &copy; copyright Defra 2025
+            </span>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addInvoiceModal" tabindex="-1" aria-labelledby="invoiceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="govuk-heading-s" style="margin: 0;" id="invoiceModalLabel">Add/Edit Invoice</h3>
+                    <button type="button" class="btn-close" id="closeInvoiceModalBtn">x</button>
+                </div>
+                <div class="modal-body" style="padding-top: 5px !important;    overflow: hidden;    padding: 0;">
+                    <form class="govuk-grid-column-full" id="formAddInvoice">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="modal-project" class="govuk-label">Project:<span
+                                            style="color: red;">*</span></label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="modal-project"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="modal-month" class="govuk-label">Month:<span
+                                            style="color: red;">*</span></label>
+                                    <!-- <input type="text" class="govuk-input govuk-!-font-size-16" id="modal-month"
+                                placeholder="e.g., 1, 2, 3..." required> -->
+                                    <select id="modal-month"
+                                        class="govuk-select sup_select_option_width_100 govuk-!-font-size-16"
+                                        aria-label="Select number of records per page" required>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="modal-amount" class="govuk-label">Amount:<span
+                                            style="color: red;">*</span></label>
+                                    <div class="govuk-input__wrapper">
+                                        <div class="govuk-input__prefix" aria-hidden="true">$</div>
+                                        <input type="text" class="govuk-input govuk-!-font-size-16" id="modal-amount"
+                                            placeholder="e.g., $1000" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="modal-costofwork" class="govuk-label">Cost of Work:</label>
+                                    <div class="govuk-input__wrapper">
+                                        <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                                        <input type="text" class="govuk-input govuk-!-font-size-16"
+                                            id="modal-costofwork" placeholder="e.g., £5000">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="modal-wip" class="govuk-label">WIP:</label>
+                                    <div class="govuk-input__wrapper">
+                                        <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                                        <input type="text" class="govuk-input govuk-!-font-size-16" id="modal-wip"
+                                            placeholder="e.g., £2000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="modal-profitloss" class="govuk-label">Profit/Loss:</label>
+                                    <div class="govuk-input__wrapper">
+                                        <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                                        <input type="text" class="govuk-input govuk-!-font-size-16"
+                                            id="modal-profitloss" placeholder="e.g., £500">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label for="modal-detail" class="govuk-label">Detail:</label>
+                            <textarea class="govuk-textarea govuk-!-font-size-16 sup_margin_0" id="modal-detail"
+                                rows="3" placeholder="Enter invoice details..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" style="    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;">
+                    <button type="button" class="govuk-button govuk-button--secondary sup_margin_0"
+                        data-module="govuk-button" id="cancelInvoiceModalBtn">Cancel</button>
+                    <button type="button" class="govuk-button sup_margin_0" data-module="govuk-button"
+                        id="saveInvoiceBtn"> Save</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+
+        const params = new URLSearchParams(window.location.search);
+        const encoded = params.get("data");
+
+
+        if (encoded) {
+
+            const data = JSON.parse(atob(encoded));
+            document.getElementById("sp-projectcode").value  = data.jobcode;
+            console.log(data.name);
+ 
+
+              document.getElementById("invoiecsubcontract").href =
+                "project_invoices_subcontracts.html?data=" + encodeURIComponent(encoded);
+
+              document.getElementById("milestones").href =
+                "project_mgmt_milestone.html?data=" + encodeURIComponent(encoded);
+
+              document.getElementById("testpurchasereq").href =
+                "project_mgmt_test_purchase_req.html?data=" + encodeURIComponent(encoded);
+
+             document.getElementById("backlink").href =
+                "project_management_five.opttwo.html?data=" + encodeURIComponent(encoded); 
+            // full object received
+            // document.getElementById("result").innerText =
+            //   `ID: ${obj.id}, Name: ${obj.name}, City: ${obj.jobcode}`;
+
+            // document.getElementById('project-code').value = obj.jobcode;
+            // document.getElementById('project-title').value = obj.name;
+            // document.getElementById('displayProjectcode').style.visibility = "hidden";
+            // document.getElementById('displayProjectcode').innerText = obj.jobcode;
+            //    document.getElementById("tbl").style.display = 'flex';
+            //   document.getElementById("shortnav").style.display = 'flex';
+            //  document.getElementById("invoicebtns").style.display = 'flex';
+        }
+
+        let selectedRow = null;
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidenav');
+            sidebar.classList.toggle('collapsed');
+        }
+
+
+    </script>
+
+    <script src="../js/menuscript.js"></script>
+    <script src="../js/pact_js/invoicesubcontract.js"></script>
+</body>
+
+</html>

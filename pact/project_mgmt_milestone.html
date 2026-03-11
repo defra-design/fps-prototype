@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
+    <link rel="stylesheet" href="nav_menu/navstyle.css" />
+    <script src="nav_menu/menutemplate.js"></script>
+    <link rel="stylesheet" href="../css/pact_styles/style.css" />
+    <link rel="stylesheet" href="../css/pact_styles/suppliement_style_over_gov.uk_style.css" />
+
+    <style>
+        /* Sortable header styles */
+        th[data-column] {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+        
+        th[data-column]:hover {
+            background-color: #d8e5f4 !important;
+        }
+        
+        .sort-icon {
+            margin-left: 4px;
+            font-size: 10px;
+            color: #1d70b8;
+        }
+        
+        th.sorted-asc,
+        th.sorted-desc {
+            background-color: #d8e5f4 !important;
+        }
+    </style>
+
+    <title>2025-2026 : Project Milestones - PACT</title>
+
+    <script>
+        function toggleSideform() {
+            const sideform = document.querySelector('.sideform');
+            sideform.classList.toggle('open');
+            const sidebar = document.querySelector('.backdrop');
+            sidebar.classList.toggle('open');
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
+                </div>
+                <div class="pims-log">
+                    <span>PACT</span>
+                </div>
+                <div class="pims-log" style="width: 160px;font-size: 16px;">
+                    <label for="dpSelectyear" class="sr-only">select year</label>
+                    <select id="dpSelectyear" aria-label="Select year dropdown" class="pims-log"
+                        style="border: 0;border-radius: 0;margin-left: 0px;width: 150px;outline: 0;">
+                        <option>2017-2018</option>
+                        <option>2018-2019</option>
+                        <option>2019-2020</option>
+                        <option>2020-2021</option>
+                        <option>2021-2022</option>
+                        <option>2022-2023</option>
+                        <option>2023-2024</option>
+                        <option>2024-2025</option>
+                        <option selected>2025-2026</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div id="header"></div>
+
+    <script src="../pact/nav_menu/script.js"></script>
+
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+ 
+       <div class="govuk-grid-row sup_margin_left_right_0">
+        <div class="govuk-grid-column-full">
+            <h1 class="heading_with_txtbox govuk-heading-s sup_border-bottom">
+                <div class="sup_flex_left_center">
+                    Project Milestones for:
+                    <input type="text" id="sp-projectcode" class="govuk-input govuk-!-font-size-16 govuk-input--width-10">
+                </div>
+                <div> <a id="backlink" class="govuk-back-link">Back</a></div>
+            </h1>
+        </div>
+    </div>
+
+    <div style="display: flex; margin-left: 0; margin-right: 0; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;"
+        class="govuk-grid-row">
+        <nav class="sidenav flex-column flex-shrink-0" id="shortnav">
+            <button class="toggle-btn" onclick="toggleSidebar()" style="right: -8px; top: 30px;">
+                <img src="../images/chevron-left-solid-full.svg" width="20" alt="side menu left arrow"
+                    style="margin: -4px 8px 0 -4px;" />
+            </button>
+            <ul>
+                   <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a id="invoiecsubcontract"   style="color: #fff;">Invoices & Subcontracted Costs</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0;cursor: pointer; background-color: #1d70b8;">
+                    <a id="milestones" style="color: #fff;"> Milestones</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a id="testpurchasereq" style="color: #fff;">Test Purchase Requirements</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="govuk-grid-column-full">
+            <div class="govuk-grid-row sup_margin_left_right_0">
+                <div class="sup_border">
+                    <h2 class="sup_border-bottom sup_text_color sup_heading_bg_color govuk-heading-s sup_align_heading" id="headingOne">
+                        Project Milestones
+                    </h2>
+                    
+                    <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                        <div class="govuk-grid-column-one-third" style="padding-top: 0; padding-left: 6px; padding-bottom: 0;">
+                            <label for="milestoneSearch" class="sr-only">Search</label>
+                            <input type="text" id="milestoneSearch" class="govuk-input govuk-!-font-size-16"
+                                style="padding: 5px; margin: 5px 0px;" placeholder="Search by title, date or comment">
+                        </div>
+
+                        <!-- <div class="govuk-grid-column-one-third" style="padding: 0 8px 0 0; text-align: right;">
+                            <div class="govuk-button-group sup_margin_0" style="float:right">
+                                <button type="button" class="govuk-button sup_margin_0 sup_p_8" id="addMilestoneBtn"
+                                    aria-label="Add milestone" data-module="govuk-button">
+                                    + &nbsp; Add Milestone
+                                </button>
+                            </div>
+                        </div> -->
+                    </div>
+
+                    <div class="table_scroll_wrapper" style="position: relative;">
+                        <table class="govuk-table custom-table" id="milestoneTable" style="margin-bottom: 0px;">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th data-column="0" scope="col" class="govuk-table__header">ObjRf
+                                        <div class="resizer">&vellip;</div>
+                                    </th>
+                                    <th data-column="1" class="govuk-table__header">MSRf
+                                        <div class="resizer">&vellip;</div>
+                                    </th>
+                                    <th data-column="2" class="govuk-table__header">Title
+                                        <div class="resizer">&vellip;</div>
+                                    </th>
+                                    <th data-column="3" class="govuk-table__header">Plan Date
+                                        <div class="resizer">&vellip;</div>
+                                    </th>
+                                    <th data-column="4" class="govuk-table__header">Month
+                                        <div class="resizer">&vellip;</div>
+                                    </th>
+                                    <th data-column="5" class="govuk-table__header">Year
+                                        <div class="resizer">&vellip;</div>
+                                    </th>
+                                    <th data-column="6" class="govuk-table__header">Actual Date
+                                        <div class="resizer">&vellip;</div>
+                                    </th>
+                                    <th data-column="7" class="govuk-table__header">Comment
+                                        <div class="resizer">&vellip;</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" id="milestoneTableBody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sup_pagination_wrapper">
+                        <div class="sup_margin_top_bottom_5_10">
+                            <label for="recordsPerPage">Records per page</label>
+                            <select id="recordsPerPage" class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
+                                aria-label="Select number of records per page">
+                                <option value="5">5</option>
+                                <option value="10" selected>10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                                <option value="30">30</option>
+                            </select>
+                        </div>
+                        <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+                            <ul class="govuk-pagination__list" id="milestonePagination"></ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Milestone data array
+        const milestoneData = [
+            {
+                ObjRf: 1,
+                MSRf: 2,
+                Title: "test",
+                PlanDate: "10-03-2026",
+                Month: 3,
+                Year: "2003/2004",
+                ActualDate: "06-03-2026",
+                Comment: "test"
+            },
+            {
+                ObjRf: 1,
+                MSRf: 8,
+                Title: "test",
+                PlanDate: "10-03-2026",
+                Month: 3,
+                Year: "2003/2004",
+                ActualDate: "06-03-2026",
+                Comment: "test"
+            },
+            {
+                ObjRf: 1,
+                MSRf: 32,
+                Title: "test",
+                PlanDate: "10-04-2026",
+                Month: 5,
+                Year: "2000/2001",
+                ActualDate: "06-04-2026",
+                Comment: "test"
+            },
+            {
+                ObjRf: 1,
+                MSRf: 54,
+                Title: "test",
+                PlanDate: "10-05-2026",
+                Month: 6,
+                Year: "2003/2004",
+                ActualDate: "06-05-2026",
+                Comment: "test"
+            },
+            {
+                ObjRf: 1,
+                MSRf: 22,
+                Title: "test",
+                PlanDate: "10-06-2026",
+                Month: 7,
+                Year: "2000/2001",
+                ActualDate: "06-06-2026",
+                Comment: "test"
+            },
+            {
+                ObjRf: 1,
+                MSRf: 67,
+                Title: "test",
+                PlanDate: "10-07-2026",
+                Month: 7,
+                Year: "2003/2004",
+                ActualDate: "06-07-2026",
+                Comment: "test"
+            }
+
+        ];
+
+        // Pagination variables
+        let currentPage = 1;
+        let recordsPerPage = 10;
+        let filteredData = [...milestoneData];
+
+        // Render table function
+        function renderTable() {
+            const tbody = document.getElementById('milestoneTableBody');
+            tbody.innerHTML = '';
+
+            const startIndex = (currentPage - 1) * recordsPerPage;
+            const endIndex = startIndex + recordsPerPage;
+            const pageData = filteredData.slice(startIndex, endIndex);
+
+            if (pageData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" class="norecords" style="text-align: center;">No records found</td></tr>';
+                return;
+            }
+
+            pageData.forEach(item => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td class="govuk-table__cell">${item.ObjRf}</td>
+                    <td class="govuk-table__cell">${item.MSRf}</td>
+                    <td class="govuk-table__cell">${item.Title}</td>
+                    <td class="govuk-table__cell">${item.PlanDate}</td>
+                    <td class="govuk-table__cell">${item.Month}</td>
+                    <td class="govuk-table__cell">${item.Year}</td>
+                    <td class="govuk-table__cell">${item.ActualDate}</td>
+                    <td class="govuk-table__cell">${item.Comment}</td>
+                `;
+            });
+
+            renderPagination();
+        }
+
+        // Render pagination
+        function renderPagination() {
+            const pagination = document.getElementById('milestonePagination');
+            pagination.innerHTML = '';
+
+            const totalPages = Math.ceil(filteredData.length / recordsPerPage);
+
+            if (totalPages <= 1) return;
+
+            // Previous button
+            const prevLi = document.createElement('li');
+            prevLi.className = `govuk-pagination__item ${currentPage === 1 ? 'disabled' : ''}`;
+            prevLi.innerHTML = `
+                <a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); ${currentPage > 1 ? 'goToPage(' + (currentPage - 1) + ')' : ''}">
+                    <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                    </svg>
+                    <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>
+                </a>
+            `;
+            pagination.appendChild(prevLi);
+
+            // Page numbers
+            const startPage = Math.max(1, currentPage - 2);
+            const endPage = Math.min(totalPages, currentPage + 2);
+
+            for (let i = startPage; i <= endPage; i++) {
+                const li = document.createElement('li');
+                li.className = `govuk-pagination__item ${i === currentPage ? 'govuk-pagination__item--current' : ''}`;
+                li.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); goToPage(${i})">${i}</a>`;
+                pagination.appendChild(li);
+            }
+
+            // Next button
+            const nextLi = document.createElement('li');
+            nextLi.className = `govuk-pagination__next ${currentPage === totalPages ? 'disabled' : ''}`;
+            nextLi.innerHTML = `
+                <a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); ${currentPage < totalPages ? 'goToPage(' + (currentPage + 1) + ')' : ''}" rel="next">
+                    <span class="govuk-pagination__link-title">Next</span>
+                    <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                    </svg>
+                </a>
+            `;
+            pagination.appendChild(nextLi);
+        }
+
+        // Go to page function
+        function goToPage(page) {
+            const totalPages = Math.ceil(filteredData.length / recordsPerPage);
+            if (page < 1 || page > totalPages) return;
+            currentPage = page;
+            renderTable();
+        }
+
+        // Search functionality
+        function handleSearch(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            filteredData = milestoneData.filter(item => {
+                return item.Title.toLowerCase().includes(searchTerm) ||
+                       item.PlanDate.toLowerCase().includes(searchTerm) ||
+                       item.ActualDate.toLowerCase().includes(searchTerm) ||
+                       item.Comment.toLowerCase().includes(searchTerm) ||
+                       item.Year.toString().includes(searchTerm) ||
+                       item.ObjRf.toString().includes(searchTerm) ||
+                       item.MSRf.toString().includes(searchTerm) ||
+                       item.Month.toString().includes(searchTerm);
+            });
+            currentPage = 1;
+            renderTable();
+        }
+        
+        document.getElementById('milestoneSearch').addEventListener('input', handleSearch);
+
+        // Records per page change
+        document.getElementById('recordsPerPage').addEventListener('change', function(e) {
+            recordsPerPage = parseInt(e.target.value);
+            currentPage = 1;
+            renderTable();
+        });
+
+        // Sorting functionality
+        const headers = document.querySelectorAll("#milestoneTable th[data-column]");
+        const columnNames = ['ObjRf', 'MSRf', 'Title', 'PlanDate', 'Month', 'Year', 'ActualDate', 'Comment'];
+
+        headers.forEach((header, index) => {
+            header.addEventListener("click", function () {
+                const columnIndex = parseInt(this.dataset.column);
+                const columnName = columnNames[columnIndex];
+                const currentOrder = this.dataset.order || "asc";
+                const newOrder = currentOrder === "asc" ? "desc" : "asc";
+
+                // Remove sorting icons from all headers
+                headers.forEach(h => {
+                    h.classList.remove("sorted-asc", "sorted-desc");
+                    const existingIcon = h.querySelector(".sort-icon");
+                    if (existingIcon) {
+                        existingIcon.remove();
+                    }
+                });
+
+                // Update the order for the clicked header
+                this.dataset.order = newOrder;
+
+                // Add sorting icon to the clicked header
+                const sortIcon = document.createElement("span");
+                sortIcon.className = "sort-icon";
+                
+                if (newOrder === "asc") {
+                    sortIcon.innerHTML = " ▲";
+                    this.classList.add("sorted-asc");
+                } else {
+                    sortIcon.innerHTML = " ▼";
+                    this.classList.add("sorted-desc");
+                }
+                
+                this.appendChild(sortIcon);
+
+                // Sort data
+                filteredData.sort((a, b) => {
+                    let aVal = a[columnName];
+                    let bVal = b[columnName];
+                    
+                    // Handle numeric columns
+                    if (columnName === 'ObjRf' || columnName === 'MSRf' || columnName === 'Month') {
+                        aVal = Number(aVal);
+                        bVal = Number(bVal);
+                    }
+                    
+                    if (newOrder === "asc") {
+                        if (aVal < bVal) return -1;
+                        if (aVal > bVal) return 1;
+                        return 0;
+                    } else {
+                        if (aVal < bVal) return 1;
+                        if (aVal > bVal) return -1;
+                        return 0;
+                    }
+                });
+                
+                renderTable();
+            });
+        });
+
+        // Initialize
+        renderTable();
+
+        // Add Milestone button (placeholder)
+        // document.getElementById('addMilestoneBtn').addEventListener('click', function() {
+        //     alert('Add Milestone functionality - to be implemented');
+        // });
+
+           function toggleSidebar() {
+            const sidebar = document.querySelector('.sidenav');
+            sidebar.classList.toggle('collapsed');
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const encoded = params.get("data");
+
+
+        if (encoded) {
+
+            const data = JSON.parse(atob(encoded));
+            document.getElementById("sp-projectcode").value  = data.jobcode
+            console.log(data.name);
+
+           document.getElementById("invoiecsubcontract").href =
+                "project_invoices_subcontracts.html?data=" + encodeURIComponent(encoded);
+
+              document.getElementById("milestones").href =
+                "project_mgmt_milestone.html?data=" + encodeURIComponent(encoded);
+
+              document.getElementById("testpurchasereq").href =
+                "project_mgmt_test_purchase_req.html?data=" + encodeURIComponent(encoded);
+
+             document.getElementById("backlink").href =
+                "project_management_five.opttwo.html?data=" + encodeURIComponent(encoded); 
+            // full object received
+            // document.getElementById("result").innerText =
+            //   `ID: ${obj.id}, Name: ${obj.name}, City: ${obj.jobcode}`;
+
+            // document.getElementById('project-code').value = obj.jobcode;
+            // document.getElementById('project-title').value = obj.name;
+            // document.getElementById('displayProjectcode').style.visibility = "hidden";
+            // document.getElementById('displayProjectcode').innerText = obj.jobcode;
+            //    document.getElementById("tbl").style.display = 'flex';
+            //   document.getElementById("shortnav").style.display = 'flex';
+            //  document.getElementById("invoicebtns").style.display = 'flex';
+        }
+    </script>
+</body>
+
+</html>

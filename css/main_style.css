@@ -781,16 +781,16 @@ tbody#tableBody >tr >td >  .btnBlue {
 	
 	
 /* Inputs */
-.form-control {
-  width: 100%;
-  /* padding: 10px 12px; */
-  font-size: 14px;
-  border-radius: 6px;
-  border: 1px solid #ced4da;
-  outline: none;
-  transition: border 0.2s, box-shadow 0.2s;
-  font-family: Arial, sans-serif;
-}
+/* .form-control { */
+  /* width: 100%; */
+  /* /* padding: 10px 12px; */ */
+  /* font-size: 14px; */
+  /* border-radius: 6px; */
+  /* border: 1px solid #ced4da; */
+  /* outline: none; */
+  /* transition: border 0.2s, box-shadow 0.2s; */
+  /* font-family: Arial, sans-serif; */
+/* } */
 
 /* Focus effect */
 .form-control:focus {
@@ -1217,16 +1217,24 @@ background-color: #edf4ff;
     min-width: 90px;
 }
 
+.sidenav-title{
+padding: 5px 3px;
+    background: #155790;
+	border-radius: 0 8px 8px 0;
+}
+
+
+/* 
 .summary-item input {
     padding: 4px;
     border: 1px solid #E0E0E0;
     border-radius: 4px;
      font-family: "GDS Transport";
     font-size: 14px;
-    /* font-weight: 600; */
+    font-weight: 600; 
     background-color: #FAFAFA;
 	    text-align: right;
-}
+} */
 
 
 
