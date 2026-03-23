@@ -15,14 +15,7 @@
 
     <title>2025-2026 : Project Management - PACT</title>
 
-    <script>
-        function toggleSideform() {
-            const sideform = document.querySelector('.sideform');
-            sideform.classList.toggle('open');
-            const sidebar = document.querySelector('.backdrop');
-            sidebar.classList.toggle('open');
-        } 
-    </script>
+ 
 </head>
 
 <body>
@@ -113,7 +106,7 @@
         <div class="govuk-grid-column-full">
             <div class="govuk-grid-row">
 
-                <div class="govuk-grid-column-one-half" style="display: flex;       flex-direction: column;">
+                <div class="govuk-grid-column-one-half sup_flex_column">
                     <div class="sup_border govuk-grid-column-full sup_p_0"
                         style="display: flex;flex-direction: row;padding-top: 10px;border-bottom: 0;">
                         <div class="govuk-grid-column-one-half">
@@ -444,13 +437,13 @@
                                     <thead class="govuk-table__head">
                                         <tr class="govuk-table__row">
                                             <th data-column="jobcode" scope="col" class="govuk-table__header">Job Code
-                                                <div class="resizer">&vellip;</div>
+                                                <div class="resizer">&nbsp;</div>
                                             </th>
-                                            <th data-column="name" class="govuk-table__header">Name / Description<div
-                                                    class="resizer">&vellip;</div>
+                                            <th data-column="name" class="govuk-table__header">Name / Description
+                                                <div class="resizer">&nbsp;</div>
                                             </th>
-                                            <th class="govuk-table__header">Type</th>
-                                            <th class="govuk-table__header">Work Group</th>
+                                            <th data-column="type" class="govuk-table__header">Type <div class="resizer">&nbsp;</div></th>
+                                            <th data-column="workGroup" class="govuk-table__header">Work Group <div class="resizer">&nbsp;</div></th>
                                             <th class="govuk-table__header">Actions</th>
                                         </tr>
                                     </thead>
@@ -561,12 +554,12 @@
                                                                 for="selectAllTC"> &nbsp; </label>
                                                         </div>
 
-                                                    </div>
+                                                    </div>  <div class="resizer">&nbsp;</div>
                                                 </th>
                                                 <th data-column="workGroup" scope="col" class="govuk-table__header"
-                                                    style="border-left: 0;">Work Group</th>
-                                                <th class="govuk-table__header" style="width:120px">Active</th>
-                                                <th class="govuk-table__header">JobCode</th>
+                                                    style="border-left: 0;">Work Group  <div class="resizer">&nbsp;</div></th>
+                                                <th class="govuk-table__header" style="width:120px">Active  <div class="resizer">&nbsp;</div></th>
+                                                <th class="govuk-table__header">JobCode  <div class="resizer">&nbsp;</div></th>
                                                 <th class="govuk-table__header">Actions</th>
                                             </tr>
                                         </thead>
@@ -913,9 +906,9 @@
         })
     </script>
 
-    <script src="../js/menuscript.js"></script>
+ 
     <script src="../js/pact_js/modalpopup.js"></script>
-    <script src="../js/timecode.js"></script>
+    <script src="../js/pact_js/timecode.js"></script>
     <!-- <script src="../js/pact_js/govuk-frontend.min.js"></script> -->
 </body>
 

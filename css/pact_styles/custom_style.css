@@ -317,6 +317,15 @@ button {
   }
 }
 
+/* Buttons in "For the current profit centre" panel */
+#btn-select-pc,
+#btn-clear-pc {
+  font-size: 1.25em !important;
+  padding: 0.5em;
+  line-height: 31px;
+  max-width: 9em;
+}
+
 @media (min-width: 1200px) {
   .col-xl-1 {
     flex: 0 0 8.333%;
@@ -717,7 +726,8 @@ textarea.form-control {
   justify-content: flex-end;
 }
 
-.page-link:disabled, .page-item.disabled .page-link {
+.page-link:disabled,
+.page-item.disabled .page-link {
   color: #6c757d;
   background-color: #e9ecef;
   border-color: #dee2e6;
@@ -1202,7 +1212,11 @@ textarea.form-control {
   right: 50%;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -1343,7 +1357,8 @@ a:hover {
   text-decoration: underline;
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 1.2rem;
   margin-bottom: 1rem;
 }
@@ -1522,8 +1537,9 @@ blockquote {
   transition: transform 0.3s ease;
 }
 
-.modal.show .modal-dialog {
-  transform: translateY(0);
+.modal.show .modal-dialog { 
+  transform: translateY(120px);
+  margin: 0 auto;
 }
 
 /* Content */
@@ -1554,6 +1570,10 @@ blockquote {
   max-width: 1140px;
 }
 
+.modal-custom {
+  max-width: 900px; /* any value you prefer */
+}
+
 /* Fullscreen */
 .modal-fullscreen {
   max-width: 100%;
@@ -1575,7 +1595,10 @@ blockquote {
 .modal-footer {
   border-top: 1px solid #dee2e6;
   border-bottom: none;
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }
 
 .modal-body {
@@ -1886,7 +1909,8 @@ table#timejobtable > tbody > tr >td:nth-child(3) {
 }
 
 /* Header */
-.custom-table thead th, .timecode-table thead th {
+.custom-table thead th,
+.timecode-table thead th {
   position: sticky;
   top: 0;
   background-color: #f1f1f1;
@@ -1896,7 +1920,9 @@ table#timejobtable > tbody > tr >td:nth-child(3) {
 
 /* Cells */
 
-.custom-table td, .timecode-table th, .timecode-table td {
+.custom-table td,
+.timecode-table th,
+.timecode-table td {
   padding: 6px 10px !important;
   border: 1px solid #ddd;
   white-space: nowrap;
@@ -1909,16 +1935,19 @@ table#timejobtable > tbody > tr >td:nth-child(3) {
 }
 
 /* Prevent data bleed-through */
-.custom-table tbody td, .timecode-table tbody td {
+.custom-table tbody td,
+.timecode-table tbody td {
   background-color: #ffffff;
 }
 
 /* Optional row hover */
-.custom-table tbody tr:hover td, .timecode-table tbody tr:hover td {
+.custom-table tbody tr:hover td,
+.timecode-table tbody tr:hover td {
   background-color: #f5f5f5;
 }
 
-.custom-table thead th, .timecode-table thead th {
+.custom-table thead th,
+.timecode-table thead th {
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
   /*background: #edf4ff !important;*/
   background-color: var(--govuk-surface-background-colour, #f4f8fb);
@@ -1934,7 +1963,8 @@ table#timejobtable > tbody > tr >td:nth-child(3) {
 }
 
 
-.edit-btn, .delete-btn {
+.edit-btn,
+.delete-btn {
   padding: 0;
 }
 
@@ -2119,7 +2149,14 @@ table#selectedTable>tbody>tr>td:last-child {
   padding: 0 5px 0 0 !important;
 }
 
+table#selectedTable > tbody > tr >td.norecords {
+    padding: 10px !important;
+}
 
+
+table#outputRecordataTable > tbody > tr > td:nth-child(5), table#outputRecordataTable > tbody > tr > td:nth-child(6) {
+    text-align: right;
+}
 
 .wrapper-makelivehours {
   width: 100%;
@@ -2225,11 +2262,44 @@ table#selectedTable>tbody>tr>td:last-child {
   visibility: visible;
 }
 
-#dataTable>tbody>tr>td:nth-child(5) {
-  text-align: right;
-  padding: 0 10px !important;
-  text-align: left;
-  vertical-align: middle;
+/* Scrollable table wrapper – fixed height for 5 rows; scrollbar appears when more rows are rendered */
+.pact-table-scroll {
+  overflow-x: auto;
+  overflow-y: auto;
+  /* height: 232px;  /* thead ≈42px + 5 rows × 38px = 232px */
+  height: 38vh;
+  border-bottom: 1px solid #b1b4b6;
+}
+
+/* Disabled Previous/Next pagination links – visible but greyed out */
+.govuk-pagination__link--disabled {
+  color: #1d70b8;
+  cursor: pointer;
+  text-decoration: underline;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.pact-table-scroll #dataTable {
+  margin-bottom: 0;
+}
+
+/* Remove top border from pagination strip on this page */
+.data-table-container .sup_pagination_wrapper {
+  border-top: 0 !important;
+}
+
+/* Compact table cells to fit 5 rows without excess whitespace */
+#dataTable.govuk-table .govuk-table__header,
+#dataTable.govuk-table .govuk-table__cell {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  font-size: 0.875rem;
+}
+
+/* Workgroups and email recipients grid */
+table#dataTable {
+  width: 100%;
 }
 
 #dataTable>thead>tr>th {
@@ -2238,8 +2308,160 @@ table#selectedTable>tbody>tr>td:last-child {
   vertical-align: middle;
 }
 
-#dataTable>thead>tr>th:nth-child(1) {
-  width: 45px;
+/* Make Action column more prominent */
+#dataTable>thead>tr>th:nth-child(4) {
+  width: 90px;
+}
+
+#dataTable>tbody>tr>td:nth-child(4) {
+  text-align: center;
+}
+
+#dataTable>tbody>tr>td:nth-child(4) .email-edit-btn {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  outline: none;
+  padding: 0;
+}
+
+#dataTable>tbody>tr>td:nth-child(4) .email-edit-btn:focus,
+#dataTable>tbody>tr>td:nth-child(4) .email-edit-btn:active,
+#dataTable>tbody>tr>td:nth-child(4) .email-edit-btn:focus-visible {
+  border: 0;
+  box-shadow: none;
+  outline: none;
+}
+
+#dataTable>tbody>tr>td:nth-child(4) .email-edit-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Make Email Recipient input span the full cell width (column width follows content) */
+#dataTable>tbody>tr>td:nth-child(3) .govuk-input {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Add a little left spacing before the Workgroups table */
+.data-table-container #dataTable {
+  margin-left: 8px;
+}
+
+/* SendEmail? column layout */
+td.send-email-cell {
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+td.send-email-cell .send-email-yes {
+  margin-right: 2em;
+}
+
+/* Compact inline GOV.UK checkboxes for SendEmail column */
+#dataTable td.send-email-cell .govuk-checkboxes {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5em;
+  margin: 0;
+}
+
+#dataTable td.send-email-cell .govuk-checkboxes__item {
+  margin: 0;
+}
+
+#dataTable td.send-email-cell .govuk-checkboxes__input {
+  margin-right: 4px;
+}
+
+#dataTable td.send-email-cell .govuk-checkboxes__label {
+  font-size: 14px;
+  padding: 0;
+}
+
+/* Render read-only Email Recipient like plain text */
+#dataTable>tbody>tr>td:nth-child(3) .govuk-input[readonly] {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#dataTable>tbody>tr>td:nth-child(3) .govuk-input[readonly]:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Clear buttons: gray background with red text across all states */
+#btn-clear-all-workgroups,
+#btn-clear-pc {
+  background-color: #b1b4b6 !important;
+  color: #d4351c !important;
+  border: 1px solid #595959 !important;
+}
+
+#btn-clear-all-workgroups:hover,
+#btn-clear-pc:hover,
+#btn-clear-all-workgroups:focus,
+#btn-clear-pc:focus,
+#btn-clear-all-workgroups:visited,
+#btn-clear-pc:visited,
+#btn-clear-all-workgroups:active,
+#btn-clear-pc:active {
+  background-color: #b1b4b6 !important;
+  color: #d4351c !important;
+  border: 1px solid #595959 !important;
+}
+
+/* Button row under Workgroups grid */
+.isBtnSection .govuk-grid-column-full {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+/* For the current profit centre panel */
+.pc-actions-panel {
+  margin-top: 8px;
+  padding: 16px 12px 20px;
+  border: 1px solid #b1b4b6;
+  background-color: #f3f2f1;
+}
+
+.pc-actions-panel .govuk-button {
+  display: block;
+  width: 100%;
+  font-size: 1.25rem;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+}
+
+.pc-actions-panel .govuk-button + .govuk-button {
+  margin-top: 1rem;
+}
+
+/* For the current profit centre panel */
+.pc-actions-panel {
+  margin-top: 8px;
+  padding: 26px 12px 0;
+  border: 1px solid #b1b4b6;
+  background-color: #f3f2f1;
+}
+
+.pc-actions-panel .govuk-button {
+  display: block;
+  width: 100%;
+  font-size: 1.25rem;
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+}
+
+.pc-actions-panel .govuk-button + .govuk-button {
+  margin-top: 1rem;
 }
 
 .toggle-btn {
@@ -2375,13 +2597,15 @@ tbody#timejobtabletableBody>tr>td:nth-child(4)>button {
   text-decoration: none;
 }
 
-.custom-table td, .timecode-table td {
+.custom-table td,
+.timecode-table td {
   padding: 6px 5px !important;
   white-space: nowrap;
 }
 
 
-.custom-table td:first-child, .custom-table thead:first-child {
+.custom-table td:first-child,
+.custom-table thead:first-child {
   border-left: 0;
 }
 
@@ -2389,7 +2613,8 @@ tbody#timejobtabletableBody>tr>td:nth-child(4)>button {
   border-left: 0 !important;
 }
 
-.custom-table td:first-child, .custom-table thead:last-child {
+.custom-table td:first-child,
+.custom-table thead:last-child {
   border-right: 0;
 }
 
@@ -2440,7 +2665,7 @@ div#jobcodediv>table>tbody>tr>td:nth-child(5) {
   background: transparent;
 }
 
- 
+
 
 .div_import_table {
   max-height: 300px;
@@ -2461,14 +2686,14 @@ div#jobcodediv>table>tbody>tr>td:nth-child(5) {
 }
 
 .time_record_btn_wrapper {
-flex-direction: column;
-    display: flex;
-    color: #333;
-    width: 100%;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 0;
-    justify-content: flex-start;
+  flex-direction: column;
+  display: flex;
+  color: #333;
+  width: 100%;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 0;
+  justify-content: flex-start;
 }
 
 .flex_space_between {
@@ -2500,41 +2725,51 @@ table#selectedTable>thead>tr>th:nth-child(3) {
   width: 20%;
 } */
 
-tbody#invoiceTableBody>tr>td:nth-child(5),tbody#milestoneTableBody>tr>td:nth-child(5){
+tbody#invoiceTableBody>tr>td:nth-child(5),
+tbody#milestoneTableBody>tr>td:nth-child(5) {
   padding-right: 5px !important;
- }
+}
 
- tbody#invoiceTableBody>tr>td:nth-child(2){
+tbody#invoiceTableBody>tr>td:nth-child(2) {
   text-align: right;
- }
+}
 
-tbody#invoiceTableBody>tr>td:nth-child(3), tbody#invoiceTableBody>tr>td:nth-child(4), tbody#invoiceTableBody>tr>td:nth-child(5), tbody#invoiceTableBody>tr>td:nth-child(6),tbody#invoiceTableBody>tr>td:nth-child(8) {
+tbody#invoiceTableBody>tr>td:nth-child(3),
+tbody#invoiceTableBody>tr>td:nth-child(4),
+tbody#invoiceTableBody>tr>td:nth-child(5),
+tbody#invoiceTableBody>tr>td:nth-child(6),
+tbody#invoiceTableBody>tr>td:nth-child(8) {
   text-align: right;
 }
 
 
-tbody#milestoneTableBody>tr>td:nth-child(2), tbody#milestoneTableBody>tr>td:nth-child(4), tbody#milestoneTableBody>tr>td:nth-child(5), tbody#milestoneTableBody>tr>td:nth-child(6),tbody#milestoneTableBody>tr>td:nth-child(7) {
+tbody#milestoneTableBody>tr>td:nth-child(2),
+tbody#milestoneTableBody>tr>td:nth-child(4),
+tbody#milestoneTableBody>tr>td:nth-child(5),
+tbody#milestoneTableBody>tr>td:nth-child(6),
+tbody#milestoneTableBody>tr>td:nth-child(7) {
   text-align: right;
 }
 
 tbody#testPurchaseReqTable>tr>td:nth-child(2) {
-  text-align:right;
+  text-align: right;
 }
 
-tbody#testpurchasereqTableBody > tr > td:nth-child(2),tbody#testpurchasereqTableBody > tr > td:nth-child(3){
-  text-align:right;
+tbody#testpurchasereqTableBody>tr>td:nth-child(2),
+tbody#testpurchasereqTableBody>tr>td:nth-child(3) {
+  text-align: right;
 }
 
-table > tbody >tr >td:last-child {
-    outline: none;
-    cursor: pointer;
-    /* padding: 0 !important; */
+table>tbody>tr>td:last-child {
+  outline: none;
+  cursor: pointer;
+  /* padding: 0 !important; */
 }
 
 
 table>thead>tr>th {
-    padding: 3px 6px !important;
-    border-bottom: 1px solid var(--govuk-border-colour);
+  padding: 3px 6px !important;
+  border-bottom: 1px solid var(--govuk-border-colour);
 }
 
 .table_scroll_wrapper {
@@ -2562,26 +2797,125 @@ table#selectedTable>thead>tr>th {
   padding: 8px 6px !important;
 }
 
-table#milestoneTable > thead > tr > th {
-    padding: 8px !important;
+table#milestoneTable>thead>tr>th {
+  padding: 8px !important;
 }
 
-#testDataTableBody > tr > td:nth-child(5){
-  text-align:left !important;
+#testDataTableBody>tr>td:nth-child(5) {
+  text-align: left !important;
   padding: 6px 5px !important;
 }
 
-#testDataTable > tbody > tr > td:nth-child(2), #testDataTable > tbody > tr > td:nth-child(3), #testDataTable > tbody > tr > td:nth-child(6){
-    text-align: right !important;
+#testDataTable>tbody>tr>td:nth-child(2),
+#testDataTable>tbody>tr>td:nth-child(3),
+#testDataTable>tbody>tr>td:nth-child(6) {
+  text-align: right !important;
 }
 
-.heading_with_txtbox{
-      padding: 0px 10px 0px 10px;
-    display: flex;
-    justify-content: space-between;
-    margin-left: -15px;
-    align-items: center;
-    margin-right: -15px; 
-    flex-direction: row;
+.heading_with_txtbox {
+  padding: 0px 10px 0px 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: -15px;
+  align-items: center;
+  margin-right: -15px;
+  flex-direction: row;
+}
+ 
+.period-dropdown {
+  position: relative;
+  z-index: 50;
+  /* ensure dropdown sits above following grid rows */
 }
 
+.period-dropdown .dropdown-input.down-arrow-img {
+  /* Reuse the generic down-arrow-img icon, just tweak alignment */
+  background-position: right 8px center;
+  background-size: 12px 12px;
+  cursor: pointer;
+}
+
+.period-dropdown .dropdown-panel {
+  position: absolute;
+  top: 19.5vh;
+  left: 1vw;
+  z-index: 2000;
+  /* higher than table/grid so panel is not hidden */
+  display: none;
+  max-width: 31.1vw;
+  max-height: 220px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #b1b4b6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.period-dropdown .search-box {
+  width: 100%;
+  padding: 6px 8px;
+  border: 0;
+  border-bottom: 1px solid #b1b4b6;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.period-dropdown__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+
+   tbody td{
+    padding: 0px 5px !important;
+   }
+
+}
+
+.period-dropdown__table thead {
+  background: #f3f2f1;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.period-dropdown__table th,
+.period-dropdown__table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #f3f2f1;
+  text-align: left;
+}
+
+.period-dropdown__table tr:hover {
+  background: #e8f0fe;
+  cursor: pointer;
+}
+
+/* Align and equalise the three top criteria boxes */
+.email-criteria-row {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.email-criteria-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 1 0;
+}
+.email-edit-btn{
+  cursor: pointer;
+}
+#dataTable{
+  margin-left: 0 !important;
+
+  .govuk-checkboxes--small .govuk-checkboxes__input{
+    margin-left: -8px;
+  }
+  .govuk-input{
+    height: 1rem !important;
+  }
+}
+.dropdown-panel > table > tbody > tr > td {
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--govuk-border-colour);
+}

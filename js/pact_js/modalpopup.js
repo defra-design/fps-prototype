@@ -1,3 +1,4 @@
+
 const modal = document.getElementById("testModal");
 document.getElementById("timejobdiv").style.display = 'block';
 document.getElementById('divCopywithworkgroup').style.display = "none";
@@ -30,7 +31,7 @@ let testData = [
         "workGroup": "QAU"
     }
 ] },
-    { id: 2, jobcode: 'AH003301', name: 'Big liver syndrome disease', type:"Work", wg: 'Wilelife',timecode:[
+    { id: 2, jobcode: 'AH003301', name: 'Big liver syndrome disease', type:"AWork", wg: 'Wilelife',timecode:[
     {
         "id": 1,
         "jobcode": "AH003301",
@@ -56,14 +57,14 @@ let testData = [
         "workGroup": "SVBU"
     }
 ] },
-    { id: 3, jobcode: 'AH003302', name: 'BVD milk ELISA', type:"Work", wg: 'Wilelife' },
-    { id: 4, jobcode: 'AH003303', name: 'Brucella abortus ELISA',type:"Work", wg: 'Wilelife' },
+    { id: 3, jobcode: 'AH003302', name: 'BVD milk ELISA', type:"BWork", wg: 'Wilelife' },
+    { id: 4, jobcode: 'AH003303', name: 'Brucella abortus ELISA',type:"EWork", wg: 'Wilelife' },
     { id: 5, jobcode: 'AH003304', name: 'B abortus milk ELISA - Defra', type:"Work",wg: 'CIT' },
     { id: 6, jobcode: 'AH003305', name: 'Brucella abortus milk ELISA', type:"Work",wg: 'Bees' },
-    { id: 7, jobcode: 'AH003306', name: 'Brucella abortus MRT', type:"Work",wg: 'MRSA' },
+    { id: 7, jobcode: 'AH003306', name: 'Brucella abortus MRT', type:"FWork",wg: 'MRSA' },
     { id: 8, jobcode: 'AH003307', name: 'Brucella abortus RBT', type:"Work",wg: 'BSE' },
     { id: 9, jobcode: 'AH003308', name: 'Brucella abortus (Eire)', type:"Work",wg: 'CSCS' },
-    { id: 10, jobcode: 'AH003309', name: 'Brucella canis RSA/SAT',type:"Work", wg: 'CIT' },
+    { id: 10, jobcode: 'AH003309', name: 'Brucella canis RSA/SAT',type:"GWork", wg: 'CIT' },
     { id: 11, jobcode: 'AH003310', name: 'Brucella culture ID', type:"Work",wg: 'Bees' },
     { id: 12, jobcode: 'AH003311', name: 'Brucella ovis CFT', type:"Work",wg: 'MRSA' },
     { id: 13, jobcode: 'AH003315', name: 'Brucella abortus slides', type:"Work",wg: 'BSE' },
@@ -657,6 +658,10 @@ headers.forEach((header, index) => {
   header.addEventListener("click", function () {
 
     const column = this.dataset.column;
+    
+    // Only sort if column has data-column attribute
+    if (!column) return;
+    
     const currentOrder = this.dataset.order || "asc";
     const newOrder = currentOrder === "asc" ? "desc" : "asc";
 
@@ -673,8 +678,9 @@ headers.forEach((header, index) => {
     // Update the order for the clicked header
     this.dataset.order = newOrder;
 
-    // Add sorting icon only to the first header (index 0)
-    if (index === 0 || index === 1) {
+    // Add sorting icon for jobcode (index 0), name (index 1), and type (index 2) columns
+    // Other columns like wg (index 3) will sort but without visible arrows
+    if (index === 0 || index === 1 || index === 2) {
       const sortIcon = document.createElement("span");
       sortIcon.className = "sort-icon";
       

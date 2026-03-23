@@ -4,15 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>2025-2026 : Plan STAFF for Entire Programme</title>
+     <title>2025-2026 : Plan Projects Individually</title> 
    <!-- Bootstrap CSS -->
            <link rel="stylesheet" href="../css/bootstrap.min.css">
     	 <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css">
 	 <link rel="stylesheet" href="../css/fps_styles/styles.css">
 	  <link rel="stylesheet" href="../css/main_style.css">
 	 <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
+
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .page-content {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+    }
+
+    .footer {
+        margin-top: auto;
+        clear: both;
+        position: relative;
+        z-index: 1;
+    }
+
+    .sidenav {
+        margin-bottom: 0;
+        align-self: flex-start;
+    }
+</style>
 	
 <script>
+ 
+
+    window.addEventListener('load', function () {
+        // Get modal element
+        const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        // Show modal
+        myModal.show();
+    });
+
 </script>
 
 
@@ -70,7 +117,7 @@
             </div>
         </div>
     </header>
-   <nav class="navbar navbar-expand-lg main-nav ">
+  <nav class="navbar navbar-expand-lg main-nav ">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" aria-label="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
@@ -159,8 +206,8 @@
                         <div class="dropdown-menu my-flex-dropdown" style="border: 1px solid #000; left: -70px; ">
                             <ul>
 
-                                  <li><a class="dropdown-item" href="maintain_staff.html" aria-hidden="true">
-                                        Maintenance Menu</a> 
+                                 <li><a class="dropdown-item" href="maintain_staff.html" aria-hidden="true">
+                                        Maintenance Menu</a>
 
                                 </li>
                                 <li><a class="dropdown-item" href="#" aria-hidden="true">
@@ -241,55 +288,47 @@
         </div>
     </nav>
    
-    <div class="container-fluid">
+    <div class="container-fluid page-content" >
 	
-	<div class="govuk-grid-row">
-	<div class="govuk-grid-column-full">
+	
 	<div style="padding: 5px 5px;  border-bottom: 1px solid #b4b4b4" class="row">
             <div style="display: flex;  font-size: 14px;   align-items: center; justify-content: space-between; ">
-                <div class="col-md-6"> <a class="" href="fpshome.html">Home</a>  &gt; Programme Management &gt; Plan Projects &gt;  Plan STAFF for Entire Programme 
+                <div class="col-md-6"> <a class="" href="fpshome.html">Home</a>  &gt; MAB &gt; Maintenance Menu &gt;  Maintain Staff 
                  </div>
-				<div style="display: flex; 
-                    justify-content: flex-end;" class="col-md-6">
-                   <div class="col-sm-4" style="border: 2px solid #1d70b8;
-                        border-radius: 5px; 
-                        font-size: 13px;
-                        font-weight: normal;
-                        background-color: #fff;
-                        text-align: left;
-                        display: flex;					
+				<!-- <div style="display: flex;  -->
+                    <!-- justify-content: flex-end;" class="col-md-6"> -->
+                   <!-- <div class="col-sm-4" style="border: 2px solid #1d70b8; -->
+                        <!-- border-radius: 5px;  -->
+                        <!-- font-size: 13px; -->
+                        <!-- font-weight: normal; -->
+                        <!-- background-color: #fff; -->
+                        <!-- text-align: left; -->
+                        <!-- display: flex;					 -->
 					
-                        margin-right: 10px;
-                        align-items: center;
-                        justify-content: space-between;">
-                        <div class="col" style="border-right: 1px solid #684e00; text-align: left; padding: 1px 5px;">Programme:<strong id="resultprogram">Bact</strong>
-                        </div>
-                        <!-- <div class="col" style="text-align: left; padding: 1px 5px;">Project: <strong id="resultproject"> APHAB000000</strong></div> -->
-                    </div>
-                    <div>
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="govuk-button sup_margin_0" style="padding: 4px 14px;">Change</button>
-                    </div>
-                </div>
+                        <!-- margin-right: 10px; -->
+                        <!-- align-items: center; -->
+                        <!-- justify-content: space-between;"> -->
+                        <!-- <div class="col" style="border-right: 1px solid #684e00; text-align: left; padding: 1px 5px;">Programme:<strong id="resultprogram"> Bact </strong> -->
+                        <!-- </div> -->
+                        <!-- <!-- <div class="col" style="text-align: left; padding: 1px 5px;">Project: <strong id="resultproject"> APHAB000000</strong></div> -->
+                    <!-- </div> -->
+                    <!-- <div> -->
+                        <!-- <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" -->
+                            <!-- class="govuk-button sup_margin_0" style="padding: 4px 14px;">Change</button> -->
+                    <!-- </div> -->
+                <!-- </div> -->
             </div>
         </div>
 	
-	</div>
 	
-	
-	</div>
-	
-	
-	
-	 <div class="govuk-grid-row">
-	
-	<div class="govuk-grid-column-full">
+	<div class="col-lg-12">
 			<div class="row" style="display:flex;     align-items: center;">
 			
 			
 				<div class="col-sm-12" style="padding:0px;  ">
 			<div style="border-bottom: 2px solid #1d70b8; height:48px;">
 			 <div style="padding: 15px 0 5px 17px; font-size:16px; width: 50%;  font-weight: 700; float:left">
-                Plan All Staff Cost for Programme
+                Staff Maintenance
 					
 				
 					</div>
@@ -305,27 +344,179 @@
 			</div>
               
             </div>
-			 </div>
 	
        
-         <div class="govuk-grid-row">
+        <div class="row">
          
-           <div class="govuk-grid-column-one-half mt-2">
-		   <div class="" style=" border-radius: 5px;     justify-content: flex-start;   margin-bottom: 10px;  background-color: #edf4ff;    border: 1px solid #1d70b8;   padding: 4px;">
+          
+		
+			
+			<div class="col-lg-12" >
+		
+			<main class="main-content" style="padding:0;">
+       
+	
+       <div class="container-fluid " style="padding: 0;">
+
+     
+ 
+        
+        <!-- Modal for Add/Edit -->
+        
+
+           
+
+
+            
+
+
+
+        <!-- Financial Summary -->
+       
+ 
+         <div class="row">
+            <div class="container-fluid" style="padding-left:0px;">
+                 <div style="display: flex; flex-direction: row; align-items: flex-start;">
+                  <nav class="sidenav flex-column flex-shrink-0" id="shortnav">
+                <button class="toggle-btn" onclick="toggleSidebar()" style="right: -8px; top: 30px;">
+                   
+ <img src="../images/chevron-left-solid-full.svg" alt="side nav menu arrow" width="24">				   
+				   
+				   
+                </button>
+                  <ul>
+				    <li><a class="dropdown-item">Maintain Divisions</a></li>
+                    <li><a class="dropdown-item" href="#">
+                            Maintain Resource Centres</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                         Maintain Workgroups</a>
+                    </li>
+                    <li><a class="dropdown-item" href="planvsactaul_animals.html">
+                           Maintain Grades</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                              Maintain Total Buisness Overheads</a>
+                    </li>
+					 <li><a class="dropdown-item" href="#">
+                              Maintain Divison Grades</a>
+                    </li>
+
+ <li><a class="dropdown-item" href="#">
+                              Maintain RC Grades (Defra)</a>
+                    </li>
+                   
+				   
+				    <li><a class="dropdown-item" href="#">
+                              Maintain RC Grades (Non Defra)</a>
+                    </li>
+				   
+				     <li><a class="dropdown-item" href="#">
+                              Maintain WG Grades</a>
+                    </li>
+					
+					  <li><a class="dropdown-item" href="#">
+                              Maintain WG Staff</a>
+                    </li>
+					
+					<li><a class="dropdown-item sidenav-title" href="maintain_staff.html">
+                              Maintain Staff</a>
+                    </li>
+					
+					<li><a class="dropdown-item" href="maintain_programs.html">
+                              Maintain Programs</a>
+                    </li>
+					<li><a class="dropdown-item" href="#">
+                              Maintain Cost Centres</a>
+                    </li>					
+					
+					<li><a class="dropdown-item" href="#">
+                              Maintain Account Cats</a>
+                    </li>
+					
+					<li><a class="dropdown-item" href="#">
+                              Maintain Animals</a>
+                    </li>
+					
+					<li><a class="dropdown-item" href="#">
+                              Maintain User Permissions</a>
+                    </li>
+				   
+                </ul>
+              
+                        </nav>
+                     <div style="display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 0px 5px 8px;">
+	
+
+	<div class="govuk-grid-row">
+		 
+		       <div class="govuk-grid-column-full mt-2">
+			   
+			   
+			   
+			    
+			   
+			   </div>
+		 
+		 
+         
+         
+  
+   <div class="govuk-grid-column-full mt-2">
+		   
+		   
+		   
+		   <div class="" style=" border-radius: 5px;     justify-content: flex-start;   margin-bottom: 10px;  padding: 4px;">
 		    <div class="row">
-			<div class="col-lg-7">
-			 <label class="govuk-label--s" style="color:#3e3e3e">Programme Manager </label> 
-            <input type="text" value="East, Samantha" class="projectplan-code govuk-input" style=" width: 170px;   padding: 4px;">
+			<div class="col-lg-8 align-items-center">		
+			
+			
+			<div class="row">
+                                        <div class="col-lg-2">
+										<div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                                <div class="govuk-radios__item">
+                <input class="govuk-radios__input govuk-radios--small" id="staff-filter-all" name="staffFilter" type="radio" value="all" checked="">
+                <label class="govuk-label govuk-radios__label" for="staff-filter-all">
+          All
+        </label> 
+      </div></div>
+            </div>
+
+<div class="col-lg-5">
+<div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+ <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="staff-filter-temp" name="staffFilter" type="radio" value="temp-sp-only">
+                <label class="govuk-label govuk-radios__label" for="staff-filter-temp">
+          Temp Sp No.s only
+        </label>
+      </div>
+</div>
+</div>
+
+<div class="col-lg-5 ">
+<div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+  <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="staff-filter-grades" name="staffFilter" type="radio" value="generic-grades-only">
+                <label class="govuk-label govuk-radios__label" for="staff-filter-grades">
+         Generic Grades Only
+        </label>
+      </div>
+</div>
+</div>
+
+                                </div>
+            <!-- <input type="text" value="BAC2PORT1" class="projectplan-code govuk-input" style=" width: 170px;   padding: 4px;"> -->
 			
 			</div>
-			<div class="col-lg-5">
-			<label class="govuk-label--s" style="color:#3e3e3e">Target </label> 
-            <input type="text" value="BAC2PORT1" class="projectplan-code govuk-input" style=" width: 170px;   padding: 4px;">
-			
+			<div class="col-lg-4 " style=" text-align: right;">
+        <button class="govuk-button sup_margin_0" id="addStaffPlanBtn" aria-label="Add staff plan"><img alt="" aria-hidden="true" src="../images/circle-plus-solid-full-white.svg" width="16px">&nbsp;Add </button>
 			</div>
 			</div>
 		   </div>
-		   
 		   
 		   <!-- <div class="project-code-section" style="      justify-content: flex-start;   margin-bottom: 10px;  background-color: #edf4ff;    border: 1px solid #1d70b8;   padding: 4px;"> -->
            
@@ -335,23 +526,164 @@
 	<div class="container-fluid">
 	<div class="row">
 	<div class="col-lg-12 p-0">
-    <div class="jobcodediv " style="overflow-x: auto;max-height: 397px!important;height: 397px; border-top: 1px solid #1d70b8 !important; ">
+    <div class="jobcodediv height-300 max-height300" style="overflow-x: auto;max-height: 397px!important;height: 397px; border-top: 1px solid #1d70b8 !important;  ">
                                                   <table id="empTable" class="govuk-table custom-table" style="margin-bottom: 0px;">
+                                              <caption class="govuk-visually-hidden">Staff maintenance records</caption>
                                             <thead class="table-light govuk-table__head">
-                                                <tr class="govuk-table__row">
-							  <th class="govuk-table__header">Project</th>
-																		<th class="govuk-table__header">Description</th>
-																		<th class="govuk-table__header">Budget</th>
-																		<th class="govuk-table__header">IsDefraProject</th>																		
+                                               <tr class="govuk-table__row">
+                                                                        <th class="govuk-table__header">SP Number</th>
+																		<th class="govuk-table__header">Last Name</th>
+																		<th class="govuk-table__header">First Name</th>
+																		<th class="govuk-table__header">Title</th>																		
 																	   <th class="govuk-table__header">Actions</th>
                                                                      
-						
-      </tr>
+                                                                    </tr>
                                             </thead>
-                                            <tbody class="govuk-table__body" id="tableBody">
+                                          <tbody class="govuk-table__body" id="staffplandata"><tr>
+            <td>000005</td>
+            <td>G_V11</td>
+            <td>General</td>
+            <td></td>          
+            <td>
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000005" onclick="handlestaffplandataEdit(1)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                </button>
 
-            
-    </tbody>
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000005" onclick="handlestaffplandataDelete(1)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                </button>
+            </td>
+        </tr><tr>
+            <td>000006</td>
+            <td>D_AS3 SA</td>
+            <td></td>
+            <td></td>          
+            <td>
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000006" onclick="handlestaffplandataEdit(2)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                </button>
+
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000006" onclick="handlestaffplandataDelete(2)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                </button>
+            </td>
+        </tr><tr>
+            <td>000009</td>
+            <td>Cordero-Peters</td>
+            <td>Ruth</td>
+            <td></td>          
+            <td>
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000009" onclick="handlestaffplandataEdit(3)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                </button>
+
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000009" onclick="handlestaffplandataDelete(3)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                </button>
+            </td>
+        </tr><tr>
+            <td>000010</td>
+            <td>Phillips</td>
+            <td>Andrew</td>
+            <td></td>          
+            <td>
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000010" onclick="handlestaffplandataEdit(4)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                </button>
+
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000010" onclick="handlestaffplandataDelete(4)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                </button>
+            </td>
+        </tr><tr>
+            <td>000033</td>
+            <td>C_ROWA</td>
+            <td>Genral</td>
+            <td></td>          
+            <td>
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000033" onclick="handlestaffplandataEdit(5)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                </button>
+
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000033" onclick="handlestaffplandataDelete(5)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                </button>
+            </td>
+        </tr><tr>
+            <td>000043</td>
+            <td>Harraway</td>
+            <td>Donna</td>
+            <td></td>          
+            <td>
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000043" onclick="handlestaffplandataEdit(6)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                </button>
+
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000043" onclick="handlestaffplandataDelete(6)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                </button>
+            </td>
+        </tr><tr>
+            <td>000044</td>
+            <td>Rossi</td>
+            <td>Pedro</td>
+            <td></td>          
+            <td>
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000044" onclick="handlestaffplandataEdit(7)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                </button>
+
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000044" onclick="handlestaffplandataDelete(7)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                </button>
+            </td>
+        </tr><tr>
+            <td>000048</td>
+            <td>Abascal</td>
+            <td>Ruth</td>
+            <td></td>          
+            <td>
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000048" onclick="handlestaffplandataEdit(8)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                </button>
+
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000048" onclick="handlestaffplandataDelete(8)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                </button>
+            </td>
+        </tr><tr>
+            <td>000069</td>
+            <td>ESci_Poultry</td>
+            <td></td>
+            <td></td>          
+            <td>
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000069" onclick="handlestaffplandataEdit(9)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                </button>
+
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000069" onclick="handlestaffplandataDelete(9)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                </button>
+            </td>
+        </tr><tr>
+            <td>000070</td>
+            <td>ESCI_265</td>
+            <td></td>
+            <td></td>          
+            <td>
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000070" onclick="handlestaffplandataEdit(10)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                </button>
+
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000070" onclick="handlestaffplandataDelete(10)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                </button>
+            </td>
+        </tr><tr>
+            <td>000071</td>
+            <td>ESCI_266</td>
+            <td></td>
+            <td></td>          
+            <td>
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000071" onclick="handlestaffplandataEdit(11)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                </button>
+
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000071" onclick="handlestaffplandataDelete(11)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                </button>
+            </td>
+        </tr><tr>
+            <td>000072</td>
+            <td>ESCI_267</td>
+            <td></td>
+            <td></td>          
+            <td>
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000072" onclick="handlestaffplandataEdit(12)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                </button>
+
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000072" onclick="handlestaffplandataDelete(12)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                </button>
+            </td>
+        </tr></tbody>
 
                                         </table>
                                          
@@ -359,11 +691,11 @@
 										
 										<div class="sup_pagination_wrapper">
                                     <div class="sup_margin_left_right_10">
-                                        <label for="recordsPerPage"></label>
+                                        <label for="recordsPerPage" class="govuk-visually-hidden">Records per page</label>
                                         <select id="recordsPerPage" class="govuk-select sup_select_pagination_width" aria-label="Select number of records per page">
-                                            <option value="5" selected="">5</option>
-                                            <option value="10" >10</option>
-                                            <option value="15">15</option>
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15" selected="">15</option>
                                             <option value="20">20</option>
                                             <option value="25">25</option>
                                             <option value="30">30</option>
@@ -382,69 +714,7 @@
                                  
 
                                 </div>
-	
-	</div>
-	
-	</div>
-	</div>
-		   
-		   
-		   
-		   
-  
-  </div>
-  
-   <div class="govuk-grid-column-one-half mt-2">
-		   
-		   
-		   
-		   <div class="" style=" border-radius: 5px;     justify-content: flex-start;   margin-bottom: 10px;  background-color: #edf4ff;    border: 1px solid #1d70b8;   padding: 4px;">
-		    <div class="row">
-			<div class="col-lg-7">
-			 <label class="govuk-label--s" style="color:#3e3e3e">Staff Resource Plan for </label> 
-            <input type="text" value="BAC2PORT1" class="projectplan-code govuk-input" style=" width: 170px;   padding: 4px;">
-			
-			</div>
-			<div class="col-lg-5 d-flex   justify-content-end">
-        <button class="govuk-button sup_margin_0" id="addStaffPlanBtn" aria-label="Staff Resource Plan"><img alt="add staff Resource plan" src="../images/circle-plus-solid-full-white.svg" width="16px">&nbsp;Add </button>
-			</div>
-			</div>
-		   </div>
-		   
-		   <!-- <div class="project-code-section" style="      justify-content: flex-start;   margin-bottom: 10px;  background-color: #edf4ff;    border: 1px solid #1d70b8;   padding: 4px;"> -->
-           
-             
-        <!-- </div> -->
-	
-	<div class="container-fluid">
-	<div class="row">
-	<div class="col-lg-12 p-0">
-    <div class="jobcodediv height-300 max-height300" style="overflow-x: auto; border-top: 1px solid #1d70b8 !important; ">
-                                                  <table id="empTable" class="govuk-table custom-table" style="margin-bottom: 0px;">
-                                            <thead class="table-light govuk-table__head">
-                                               <tr class="govuk-table__row">
-                                                                        <th class="govuk-table__header">Name</th>
-																		<th class="govuk-table__header">Rate</th>
-																		<th class="govuk-table__header">Hrs</th>
-																		<th class="govuk-table__header">Days</th>
-																		<th class="govuk-table__header">StaffCost</th>
-																	   <th class="govuk-table__header">Actions</th>
-                                                                     
-                                                                    </tr>
-                                            </thead>
-                                          <tbody class="govuk-table__body" id="staffplandata">
-																
-		
-		
-		
-	
-		
-		
-		</tbody>
-
-                                        </table>
-                                         
-                                        </div>
+										
 										
 										<!-- <div class="sup_pagination_wrapper"> -->
                                     <!-- <div class="sup_margin_left_right_10"> -->
@@ -475,324 +745,90 @@
 	</div>
 	
 	
-	<div class="col-lg-12 p-0">
+	<div class="col-lg-12 p-0 mt-2 ">
    
-   <div class="financial-summary mt-2">
  
- 
+ <!-- <div class="financial-summary">       -->
 
- 
- <div class="summary-row">
-     <div class="summary-item">
-                    <label class="govuk-label--s" for="for_project">For Project:</label>
-                    <input type="text" value="BAC2PORT1" aria-label="for_project" id="for_project" class="govuk-input " name="">
-                </div>
-                <div class="summary-item">
-                     <label class="govuk-label--s" for="External Income">Staff Cost:</label>
-                    <input type="text" value="£0" aria-label="External Income" id="External Income" class="govuk-input text-AlignRight" name="">
-                </div>
+<!-- <div class="row align-items-center"> -->
+<!-- <div class="col-lg-6 text-AlignRight"> -->
+ <!-- <label class="govuk-label--s " for="External Income">Total Planned Cost :</label> -->
+<!-- </div> -->
+<!-- <div class="col-lg-6"> -->
+ <!-- <input type="text" value="£0" aria-label="External Income" id="External Income" class="govuk-input text-AlignRight" name=""> -->
+       
+<!-- </div> -->
+<!-- </div> -->
+
+                    
+                   
 				
 				  
-			    <div class="summary-item">
-                    <label class="govuk-label--s" for="BudgetCVL">Budget:</label>
-                    <input type="text" value="£0" aria-label="Budget CVL" id="BudgetCVL" class="govuk-input text-AlignRight" name="Budget">
-                </div>
-                <div class="summary-item">
-                     <label class="govuk-label--s" for="Total Costs">Remainder:</label>
-					 <input type="text" value="£0" aria-label="Total Costs" id="Total Costs" class="govuk-input text-AlignRight" name="">
-                 
-                </div>
+		<!-- </div>	     -->
             
 				
 				
-   </div>
-            
-			
-		
-        </div>
+ 
      </div>
    
   </div>
 </div>
 	
 	</div>
+	
+	
+	
+	  
+	
+	
 	</div>
-		   
-		   
-		   
-		   
+
+	
+	
+	
+					
+				</div>	
+					
+			
+            
+           
+        	
+       
+		
+		
+		 
+ 
+ 
+ 
   
-  </div>			
-				
+	   
+    
+					
+                    </div>
+            </div>
+            </div>
+ </div>
+
+        </div>
+ 
+	   
+    </main>
+			
+			</div>
+			
+			
            
         </div>
-		
-		<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full mt-3">
-   
-   <!-- <footer class="financial-summary"> -->
- 
- 
-
- 
- <!-- <div class="summary-row"> -->
-     <!-- <div class="summary-item"> -->
-                    <!-- <label class="govuk-label" for="for_project">For Project:</label> -->
-                    <!-- <input type="text" value="BAC2PORT1" aria-label="for_project" id="for_project" class="govuk-input " name=""> -->
-                <!-- </div> -->
-                <!-- <div class="summary-item"> -->
-                     <!-- <label class="govuk-label" for="External Income">Staff Cost:</label> -->
-                    <!-- <input type="text" value="£0" aria-label="External Income" id="External Income" class="govuk-input text-AlignRight" name=""> -->
-                <!-- </div> -->
-				
-				  
-			    <!-- <div class="summary-item"> -->
-                    <!-- <label class="govuk-label" for="BudgetCVL">Budget:</label> -->
-                    <!-- <input type="text" value="£0" aria-label="Budget CVL" id="BudgetCVL" class="govuk-input text-AlignRight" name="Budget"> -->
-                <!-- </div> -->
-                <!-- <div class="summary-item"> -->
-                     <!-- <label class="govuk-label" for="Total Costs">Remainder:</label> -->
-					 <!-- <input type="text" value="£0" aria-label="Total Costs" id="Total Costs" class="govuk-input text-AlignRight" name=""> -->
-                 
-                <!-- </div> -->
-            
-				
-				
-   <!-- </div> -->
-            
-			
-		
-        <!-- </footer> -->
-   
-   
-  </div>
-</div>
-		
-		
-		
-    </div>
+    
 	
 	<div class="footer">
 	© Copyright Defra 2025
 		</div>
 		
 		
-		<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-label="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-
-                <div class="modal-body">
-
-                    <form>
-                        <div class="display-flex">
-                            <div class="govuk-form-group sup_margin_0">
-                                <label for="select_program" class="govuk-label ">Select a Programme</label>
-                                <select class="govuk-select " required="" id="select_program" value="">
-                                    <option>--select programme--</option>
-                                    <option>ADMIN</option>
-                                    <option>ASU</option>
-									  <option>B&amp;M</option>
-                                    <option selected>Bact</option>
-									    <option>Bee Insp</option>
-										 <option>BTB</option>
-										  <option>Comm</option>
-										   <option>DoES</option>
-										    <option>GM</option>
-											  <option>LapT</option>
-											   <option>Path</option>
-											      <option>PHINSLT</option>
-												  <option>PHSIN</option>
-												   <option>PVS</option>
-                                </select>
-                            </div>
-                            <!-- <div class="col-1" -->
-                                <!-- style="font-size: 18px; font-weight: 600; text-align: center; margin-bottom: 5px;">OR -->
-                            <!-- </div> -->
-                            <!-- <div class="col-5"> -->
-                                <!-- <label for="project" class="col-form-label">Find Project</label> -->
-                                <!-- <select class="form-select" required="" id="project"> -->
-                                    <!-- <option value="">--select project--</option> -->
-                                    <!-- <option value="FZ200">FZ200</option> -->
-                                    <!-- <option value="FZ201">FZ201</option> -->
-                                <!-- </select> -->
-                            <!-- </div> -->
-                            <div class="ms-3">
-                                <button class="govuk-button sup_margin_0" type="button" onclick="SelectProgram()" data-bs-dismiss="modal"> 
-									<img src="../images/circle-chevron-right.png" alt="dropdown arrow for logout of application" width="20px" height="20px">
-                                    GO</button>
-                            </div>
-                        </div>
-                    </form>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-		
-      <div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <div class="modal-header flex-space-center">
-                    <h3 class="modal-title" style="margin: 0;" id="exampleModalLabel">Add Staff Booked</h3>
-                    <button type="button" class="btn-close btn-red" onclick="closeModal()">X</button>
-                </div>
-                <div class="modal-body" style="padding-top: 5px;">
-                    <form class="row" id="formAddJobcode">
-					
-					<div class="col-12">
-                            <label for="modal-WGgrade" class="form-label p-0 govuk-label">WG Grade:</label>
-                            <!-- <input type="text" class="form-control" id="modal-staffname"> -->
-							
-                            <select id="modal-WGgrade" name="" class="govuk-select" aria-label="WGgrade">
-							<option value=""></option>
-  <option value="A_AS2">A_AS2</option>
- <!-- <option value="A_BAC1,General">A_BAC1,General | A_BAC1 | 3714</option> -->
-<option value="F_AS2">F_AS2</option>
-<option value="E_SSP1">E_SSP1</option>
-
-</select>
-							
-							
-                        </div>
-					
-                        <div class="col-12">
-                            <label for="modal-staffname" class="form-label p-0 govuk-label"> Name:</label>
-                            <!-- <input type="text" class="form-control" id="modal-staffname"> -->
-							
-                            <select id="modal-staffname" name="" class="govuk-select" aria-label="StaffName">
-							<option value=""></option>
-  <option value="App_admin">App_admin</option>
- <!-- <option value="A_BAC1,General">A_BAC1,General | A_BAC1 | 3714</option> -->
-<option value="CAPS">CAPS</option>
-
-</select>
-							
-							
-                        </div>
-                        <div class="col-12">
-                            <label for="modal-rate" class="form-label govuk-label">Rate:</label>
-                            <!-- <input type="text" class="form-control" id="modal-name"> -->
-                         
-                             <input type="text" class="govuk-input" id="">
-                        </div>
-                        <div class="col-12">
-                            <label for="modal-hrs" class="form-label govuk-label">Hrs</label>
-                            <input type="text" class="govuk-input" id="">
-                        </div>
-                        <div class="col-12">
-                            <label for="modal-days" class="form-label govuk-label">Days</label>
-                            <input type="text" class="govuk-input" id="">
-                        </div>
-						
-						<div class="col-12">
-                            <label for="modal-staffcost" class="form-label govuk-label">Staff Cost</label>
-                            <input type="text" class="govuk-input" id="">
-                        </div>
-                      
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="govuk-button govuk-button--secondary sup_margin_0" data-module="govuk-button" onclick="closeModal()">Cancel</button>
-                    <button class="govuk-button sup_margin_0" data-module="govuk-button" id="modalsaveBtn">Save</button>
-                    <button class="govuk-button sup_margin_0" data-module="govuk-button" id="updateBtn" style="display: none;">Update</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
+      
 		
 		
-		
-		<div class="modal fade" id="AddYearModal" tabindex="-1" aria-labelledby="AddYearModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header flex-space-center">
-                    <h3 class="modal-title" style="margin: 0;" id="exampleModalLabel">Project Rates</h3>
-                    <button type="button" class="btn-close btn-red" onclick="closeModalYear()">X</button>
-                </div>
-                <div class="modal-body" style="padding-top: 5px;">
-                   
-				   
-				   <form id="editableGridForm">
-                          <div class="">
-       
-        
-        <div class="header-inputs" style="margin-bottom: 10px;">
-            <div class="input-group" style="display:inline;">
-                <label for="project" class="govuk-label" style="  margin-right: 12px;">Project</label>
-                <input type="text" class="govuk-input" id="project" value="2024/122c">
-            </div>
-            <div class="input-group" style="display:inline;">
-                <label for="year" class="govuk-label" style=" margin-right: 12px; margin-left: 20px;">Year</label>
-                <input type="text" class="govuk-input" id="year" value="2039">
-            </div>
-        </div>
-        
-        <div class="rates-container">
-            <div class="rates-section">
-                <h3>Contingency Mark-up %</h3>
-                <div class="rate-row">
-                    <label class="govuk-label">Time</label>
-                    <input type="number" class="govuk-input" value="15">
-                </div>
-                <div class="rate-row">
-                    <label class="govuk-label">Tests</label>
-                    <input type="number" class="govuk-input" value="15">
-                </div>
-                <div class="rate-row">
-                    <label class="govuk-label">Animals</label>
-                    <input type="number" class="govuk-input" value="15">
-                </div>
-                <div class="rate-row">
-                    <label class="govuk-label">Additional</label>
-                    <input type="number" class="govuk-input" value="15">
-                </div>
-            </div>
-            
-            <div class="rates-section">
-                <h3>Profit Margin %</h3>
-                <div class="rate-row">
-                    <label class="govuk-label">Time</label>
-                    <input type="number" class="govuk-input" value="3.5">
-                </div>
-                <div class="rate-row">
-                    <label class="govuk-label">Tests</label>
-                    <input type="number" class="govuk-input" value="3.5">
-                </div>
-                <div class="rate-row">
-                    <label class="govuk-label">Animals</label>
-                    <input type="number" class="govuk-input" value="3.5">
-                </div>
-                <div class="rate-row">
-                    <label class="govuk-label">Additional</label>
-                    <input type="number" class="govuk-input" value="3.5">
-                </div>
-            </div>
-        </div>
-        
-     
-    </div>
-                       
-                         
-                           
-                        </form>
-				   
-				   
-				   
-                </div>
-                <div class="modal-footer">
-                    <button class="govuk-button govuk-button--secondary sup_margin_0" data-module="govuk-button" onclick="closeModalYear()">Cancel</button>
-                    <button class="govuk-button sup_margin_0" data-module="govuk-button" id="modalsaveBtn">Save</button>
-                    <button class="govuk-button sup_margin_0" data-module="govuk-button" id="updateBtn" style="display: none;">Update</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-	
-
 <div class="modal fade" id="projectModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -803,30 +839,45 @@
 				 <button type="button" class="btn-close btn-red" data-bs-dismiss="modal">X</button>
             </div>
 
-            <div class="modal-body">
+            <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
                 <div class="row g-3">
 
                     <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label">Project</label>					
-                        <input type="text" id="modal-project" class="govuk-input">
+                        <label class="govuk-label" for="modal-WrkGrp">WorkGroup</label>					
+                        <input type="text" id="modal-WrkGrp" class="govuk-input">
                     </div>
 
                   <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label">Description</label>
-                        <input type="text" id="modal-description" class="govuk-input">
+                        <label class="govuk-label" for="modal-Grade">Grade</label>
+                        <input type="text" id="modal-Grade" class="govuk-input">
                     </div>
 
                      <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label">Manager</label>
-                        <input type="text" id="modal-budget" class="govuk-input">
+                        <label class="govuk-label" for="modal-Jobcode">JobCode</label>
+                        <input type="text" id="modal-Jobcode" class="govuk-input">
                     </div>
 
                    <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label">Program</label>
-                        <input type="text" id="modal-IsDefraProject" class="govuk-input">
+                        <label class="govuk-label" for="modal-ATStaffName">Name</label>
+                        <input type="text" id="modal-ATStaffName" class="govuk-input">
                     </div>
 
-                   
+                    <div class="govuk-form-group sup_margin_0">
+                        <label class="govuk-label" for="modal-Mnth">Month</label>
+                        <input type="text" id="modal-Mnth" class="govuk-input">
+                    </div>
+					
+					 <div class="govuk-form-group sup_margin_0">
+                        <label class="govuk-label" for="modal-Hrs">Hrs</label>
+                        <input type="text" id="modal-Hrs" class="govuk-input">
+                    </div>
+					
+					 <div class="govuk-form-group sup_margin_0">
+                        <label class="govuk-label" for="modal-Cost">Cost</label>
+                        <input type="text" id="modal-Cost" class="govuk-input">
+                    </div>
+					
+					
 
                 </div>
             </div>
@@ -856,39 +907,62 @@
                 <div class="row g-3">
 
                      <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label ">Name</label>
-						<select id="modal-name" name="" class="govuk-select" aria-label="modal-name">
+                        <label class="govuk-label " for="modal-spnumber">SP Number</label>
+						<select id="modal-spnumber" name="" class="govuk-select" aria-label="modal-spnumber">
 							<option value=""></option>
-  <option value="C_BAC2,General">C_BAC2,General</option>
+  <option value="000005">000005</option>
  <!-- <option value="A_BAC1,General">A_BAC1,General | A_BAC1 | 3714</option> -->
-<option value="D_BAC2,General">D_BAC2,General</option>
-<option value="E_BAC2,General">E_BAC2,General</option>
-<option value="F_BAC2,General">F_BAC2,General</option>
+<option value="000006">000006</option>
+<option value="000009">000009</option>
+<option value="000010">000010</option>
+<option value="000033">000033</option>
+<option value="000043">000043</option>
+<option value="000044">000044</option>
+<option value="000048">000048</option> 
+<option value="000069">000069</option>
+<option value="000070">000070</option>
+
+<option value="000071">000071</option>
+
+<option value="000072">000072</option>
+<option value="T195">T195</option>
+
+<option value="T369">T369</option>
 
 
+<option value="T452">T452</option>
+
+<option value="G100">G100</option>
+
+<option value="G1000">G1000</option>
+<option value="G1001">G1001</option>
+
+<option value="G1005">G1005</option>
+<option value="G1006">G1006</option>
+<option value="G1007">G1007</option>
 </select>
                        
                     </div>
 
                     <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label">Rate</label>
-                        <input type="text" id="modal-rate" class="govuk-input" value="">
+                        <label class="govuk-label" for="modal-lastname">Last Name</label>
+                        <input type="text" id="modal-lastname" class="govuk-input" value="">
                     </div>
 
                      <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label">Hrs</label>
-                        <input type="text" id="modal-hrs" class="govuk-input" value="">
+                        <label class="govuk-label" for="modal-firstname">First Name</label>
+                        <input type="text" id="modal-firstname" class="govuk-input" value="">
                     </div>
 
                        <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label">Days</label>
-                        <input type="text" id="modal-days" class="govuk-input" value="">
+                        <label class="govuk-label" for="modal-title">Title</label>
+                        <input type="text" id="modal-title" class="govuk-input" value="">
                     </div>
 
-                     <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label">StaffCost</label>
-                        <input type="text" id="modal-staffcost" class="govuk-input" value="">
-                    </div>
+                     <!-- <div class="govuk-form-group sup_margin_0"> -->
+                        <!-- <label class="govuk-label">StaffCost</label> -->
+                        <!-- <input type="text" id="modal-staffcost" class="govuk-input" value=""> -->
+                    <!-- </div> -->
 
                 </div>
             </div>
@@ -903,6 +977,17 @@
 </div>
 		
 		
+		
+	
+	
+	
+
+	
+	
+	
+
+
+		
 
     <!-- Bootstrap JS (required for dropdowns) -->
 	
@@ -915,8 +1000,29 @@
     </script>
 	
      <script>
+     function updateTableBodyVisibility(programmeName) {
+        const tableBody = document.getElementById("tableBody");
+        if (!tableBody) return;
+
+        const selectedProgramme = (programmeName || "").trim().toLowerCase();
+        tableBody.style.display = selectedProgramme === "bact" ? "table-row-group" : "none";
+     }
+
 	
-	
+	 function SelectProgram()
+	 {
+	 
+	  
+ const mySelect = document.getElementById("select_program").value;
+ console.log(mySelect);
+	 
+	  document.getElementById("resultprogram").innerHTML = mySelect;
+      updateTableBodyVisibility(mySelect);
+	 }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        updateTableBodyVisibility("");
+    });
 
 
         function showValue() {
@@ -944,18 +1050,6 @@
 	
 	
 	<script>
-	
-	function SelectProgram()
-	 {
-	 
-	  
- const mySelect = document.getElementById("select_program").value;
- console.log(mySelect);
-	 
-	  document.getElementById("resultprogram").innerHTML = mySelect;
-	 }
-	
-	
 	 function addStaffRow() {
  
  const mySelect = document.getElementById("WGgradevalue").value;
@@ -994,17 +1088,16 @@
 			cell5.innerHTML = "<span id='myInput'>"+staffTable_days+"</span>";
 			cell6.innerHTML = "<span id='myInput'>£"+staffTable_cost+"</span>";
 			
-            <!-- cell2.innerHTML = ""; -->
+          
             cell7.innerHTML = '<button type="button" class="govuk-button govuk-button--secondary sup_margin_0 edit-row-btn" data-module="govuk-button"><i class="fa fa-edit"></i></button> <button type="button" class="govuk-button govuk-button--warning sup_margin_0 delete-row-btn" data-module="govuk-button"><i class="fa fa-trash"></i></button>';
      
 	closeaddstaffModal();
-	  <!-- document.getElementById("select_permissions").value= ""; -->
-		
+	
 		}
 	</script>
  <script src="../js/bootstrap.bundle.min.js"></script>
-   <!-- <script src="../js/modalpopup.js"></script> -->
-   <script src="../js/fpsplanstaff.js"></script>
+ 
+   <script src="../js/staff_maintenance.js"></script>
 	 
 </body>
 

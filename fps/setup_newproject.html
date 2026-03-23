@@ -7,9 +7,11 @@
     <title>2025-2026 : Set Up New Project</title>
 <!-- <link rel="stylesheet" href="style_sidenav.css"> -->
     <!-- Bootstrap CSS -->
+	 <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 	 <link rel="stylesheet" href="../css/fps_styles/styles.css">
 	  <link rel="stylesheet" href="../css/main_style.css">
+	    <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
 	 
 	 
 <script>
@@ -187,7 +189,7 @@
             </div>
         </div>
     </header>
-   <nav class="navbar navbar-expand-lg main-nav ">
+  <nav class="navbar navbar-expand-lg main-nav ">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" aria-label="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
@@ -207,8 +209,8 @@
                             <li><a class="dropdown-item" aria-hidden="true"  style="display: flex;    justify-content: space-between;">Plan Projects  <img src="../images/right-arrow.png" alt="Arrow for Plan Projects Sub menu" width="30px" height="30px"></a> 
                                 <ul class="dropdown-menu">
 
-                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                            Set Up A New Projects</a>
+                                   <li><a class="dropdown-item" href="setup_newproject.html" aria-hidden="true">
+                                            Set Up A New Project</a>
                                     </li>
                                     <li><a class="dropdown-item" href="planproject_individually.html" aria-hidden="true">
                                             Plan Project Individually</a>
@@ -274,9 +276,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle " role="button" aria-hidden="true" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">MAB <span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Programme Management Menu" width="12px"></span></a>
                         <div class="dropdown-menu my-flex-dropdown" style="border: 1px solid #000; left: -70px; ">
-                            <ul>
+                            <ul> 
 
-                                <li><a class="dropdown-item" href="wgstaff.html" aria-hidden="true">
+                                  <li><a class="dropdown-item" href="maintain_staff.html" aria-hidden="true">
                                         Maintenance Menu</a>
 
                                 </li>
@@ -367,8 +369,8 @@
                     <form>
                         <div class="display-flex">
                             <div class="col">
-                                <label for="select_program" class="col-form-label">Select a Programme</label>
-                                <select class="form-select-sm" required="" id="select_program" value="">
+                                <label for="select_program" class="govuk-label">Select a Programme</label>
+                                <select class="govuk-select w-100 " required="" id="select_program" value="">
                                     <option >--select programme--</option>
                                     <option >ADMIN</option>
                                     <option>ASU</option>
@@ -398,7 +400,7 @@
                                 <!-- </select> -->
                             <!-- </div> -->
                             <div class="ms-3">
-                                <button class="btnBlue" type="button" onclick="SelectProgram()"
+                                <button class="govuk-button sup_margin_0" type="button" onclick="SelectProgram()"
                                     data-bs-dismiss="modal"> 
 									<img src="../images/circle-chevron-right.png" alt="dropdown arrow for logout of application" width="20px" height="20px">
                                     GO</button>
@@ -435,11 +437,18 @@
                     </div>
                     <div>
                         <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                            class="btnBlue" style="padding: 4px 14px;">Change</button>
+                            class="govuk-button sup_margin_0">Change</button>
                     </div>
                 </div>
             </div>
         </div>
+		
+		
+		<div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <h1 class="govuk-heading-s sup_border-bottom" style="padding:10px 0 10px 10px">Register a New Project in Programme </h1>
+        </div>
+    </div>
         <div class="row">
             <!-- <div class="col-sm-3">
                 <div class="leftmenu">
@@ -469,25 +478,7 @@
                     </ul>
                 </div>
             </div> -->
-           <div class="col-sm-12" style="padding:0px;">
-			
-			 <h1 style="padding: 10px 0 10px 17px; font-weight: 700; font-size:16px;
-                                border-bottom: 2px solid #1d70b8;
-                                margin-bottom: 10px;">
-                    Register a New Project in Programme</h1>
-			
-                <!-- <div style="margin: 10px 0 0 0;"> -->
-                    <!-- <h6 style="   -->
-					  <!-- padding-bottom: 10px; -->
-    <!-- border-left: 3px solid #9d7600; -->
-    <!-- padding-left: 16px; -->
-    <!-- font-size: 18px; -->
-    <!-- font-weight: 500; -->
-    <!-- padding: 5px 8px; -->
-    <!-- color: #333; font-size: 1rem !important; -->
-    <!-- margin: 10px 0 10px 0;">Register a New Project in Programme</h6> -->
-                <!-- </div> -->
-            </div>
+          
 			
 			<div class="col-lg-12">
 			
@@ -495,15 +486,17 @@
 			<div class="row d-flex align-items-center">	
 			<div class="col-lg-6">
 			
-		<span style=" font-size: 14px;    position: relative;       
-    font-weight: 700;">Please insert data for mandatory fields marked with *</span>
+	<h2 style=" left: 28px;" class=" sup_text_color govuk-heading-s sup_align_flexheading ">
+
+                                   Please insert data for mandatory fields marked with *
+                                </h2>
 			</div>
 			<div class="col-lg-6">
 			  <div class="action-buttons">
-            <button class="btn  btn-primary">Add Another Project</button>
-            <button class="btn  btn-primary">Plan this Project</button>
-            <button class="btn  btn-danger">Delete this Project</button>
-            <button class="btn   btn-primary">Save</button>
+            <button class="govuk-button sup_margin_0">Add Another Project</button>
+            <button class="govuk-button sup_margin_0">Plan this Project</button>
+            <button class="govuk-button sup_margin_0 govuk-button--warning">Delete this Project</button>
+            <button class="govuk-button sup_margin_0">Save</button>
         </div>
 			</div>
 			</div>
@@ -530,24 +523,24 @@
 
         <div class="form-container mt-3">
             <div class="form-left">
-                <div class="form-group">
-                   <label class="required" for="Projectcode">Project Code:</label>
-                    <input type="text" value="" class="form-control-sm" id="Projectcode" readonly="">
+                <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="Projectcode">Project Code:</label>
+                    <input type="text" value="" class="govuk-input" id="Projectcode" readonly="">
                 </div>
                 
-                <div class="form-group">
-                    <label class="required" for="Description">Description:</label>
-                    <input type="text" value="" id="Description">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="Description">Description:</label>
+                    <input type="text" value="" class="govuk-input" id="Description">
                 </div>
                 
-                <div class="form-group">
-                    <label class="required" for="ShortTitle">ShortTitle:</label>
-                    <input type="text" value="" id="ShortTitle">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="ShortTitle">ShortTitle:</label>
+                    <input type="text" value="" class="govuk-input" id="ShortTitle">
                 </div>
                 
-                <div class="form-group">
-                    <label class="required" for="Customer">Customer:</label>
-                   <select id="Customer">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="Customer">Customer:</label>
+                   <select class="govuk-select sup_select_option_width_100" id="Customer">
 				   <option></option>
                         <option>DEFRA Commission</option>
 						 <option>Delacon</option>
@@ -581,9 +574,9 @@
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label class="required" for="Programme">Programme:</label>
-                    <select id="Programme">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="Programme">Programme:</label>
+                    <select class="govuk-select sup_select_option_width_100" id="Programme">
 					 <option > </option>
                         <option >GM | GM Inspectorate </option>
 						  <option>IMT | Information Manageemnt & Technology</option>
@@ -596,9 +589,9 @@
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label class="required" for="Manager">Manager:</label>
-                    					<select id="Manager">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="Manager">Manager:</label>
+                					<select class="govuk-select sup_select_option_width_100" id="Manager">
 					 <option value=""></option>
                         <option>Aron Basia | CIT  </option>
 						  <option>Abad Jasen |  Wildlife </option>
@@ -613,9 +606,9 @@
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label class="required" for="disease">Disease:</label>
-                  <select id="disease">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="disease">Disease:</label>
+                  <select class="govuk-select sup_select_option_width_100" id="disease">
 				  <option Selected >Not Specified</option>
                         <option >PCMV</option>
 						 <option>Pestivirus</option>
@@ -635,24 +628,24 @@
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label class="required" for="CustomerIncome">Customer Income:</label>
-                    <input type="text" value="" id="CustomerIncome" class="currency-input">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="CustomerIncome">Customer Income:</label>
+                    <input type="text" value="" id="CustomerIncome" class="govuk-input currency-input">
                 </div>
                 
-                <div class="form-group">
-                    <label class="required" for="TransferIncome">Transfer Income:</label>
-                    <input type="text" value="" id="TransferIncome" class="currency-input">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="TransferIncome">Transfer Income:</label>
+                    <input type="text" value="" id="TransferIncome" class="govuk-input currency-input">
                 </div>
                 
-                <div class="form-group">
-                    <label class="required" for="TargetProfit">Target Profit:</label>
-                    <input type="text" value="" id="TargetProfit" class="currency-input">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="TargetProfit">Target Profit:</label>
+                    <input type="text" value="" id="TargetProfit" class="govuk-input currency-input">
                 </div>
                 
-                <div class="form-group">
-                   <label class="required" for="Status">Status:</label>
-                   <select id="Status">
+                <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="Status">Status:</label>
+                   <select class="govuk-select sup_select_option_width_100" id="Status">
 				                           <option ></option>
                         <option >Approved</option>
 						  <option>Completed</option>
@@ -660,14 +653,14 @@
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label for="CostBookNo">CostBookNo:</label>
-                    <input type="text" id="CostBookNo">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label" for="CostBookNo">CostBookNo:</label>
+                    <input type="text" class="govuk-input" id="CostBookNo">
                 </div>
                 
-                <div class="form-group">
-                   <label class="required" for="ContractNo">Contract No:</label>
-                   <select id="ContractNo">
+                <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="ContractNo">Contract No:</label>
+                   <select class="govuk-select sup_select_option_width_100" id="ContractNo">
 				   <option></option>
                         <option>SCN_INT | Seedcom Funded R&D</option>
 					 <option>SCN_PhD | Seedcom Funded PhDs</option>
@@ -681,18 +674,18 @@
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label class="required" for="DefraProject">Is Defra Project?</label>
-                   <select id="DefraProject">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="DefraProject">Is Defra Project?</label>
+                   <select class="govuk-select sup_select_option_width_100" id="DefraProject">
 				   <option></option>
                         <option>Yes</option>
 						  <option>No</option>
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label class="required" for="CostCentre">Cost Centre:</label>
-                    <select id="CostCentre">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label required" for="CostCentre">Cost Centre:</label>
+                    <select class="govuk-select sup_select_option_width_100" id="CostCentre">
 					 <option></option>
                         <option>1006620 | DoES | DoES1,DoES3,DSG</option>
 						 <option>1007110 | EU Exit | EU Exit</option>
@@ -704,14 +697,14 @@
                     </select>
                 </div>
                 
-                <div class="form-group">
-                    <label for="ResourceCentre">Resource Centre:</label>
-                    <input type="text" id="ResourceCentre">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label" for="ResourceCentre">Resource Centre:</label>
+                    <input type="text" class="govuk-input" id="ResourceCentre">
                 </div>
 				
-				<div class="form-group">
-                    <label for="ProjectGroup">Project Group:</label>
-                    <select id="ProjectGroup">
+				<div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label" for="ProjectGroup">Project Group:</label>
+                    <select class="govuk-select sup_select_option_width_100" id="ProjectGroup">
 					 <option></option>
                         <option>AHVLA_PROG</option>
 						<option>Commercial</option>
@@ -724,16 +717,16 @@
                     </select>
                 </div>
 				
-				 <div class="form-group">
-                   <label class="required" for="IncomeAccount">Income Account <br>Code:</label>
-                    <select id="IncomeAccount">
+				 <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="IncomeAccount">Income Account Code:</label>
+                    <select class="govuk-select sup_select_option_width_100" id="IncomeAccount">
                         <option></option>
                     </select>
                 </div>
 				
-				 <div class="form-group">
-                   <label class="required" for="ObjectiveCode">Objective Code:</label>
-                    <select id="ObjectiveCode">
+				 <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="ObjectiveCode">Objective Code:</label>
+                    <select class="govuk-select sup_select_option_width_100" id="ObjectiveCode">
                         <option></option>
                     </select>
                 </div>
@@ -743,33 +736,33 @@
             <div class="form-center">
              
                 
-                <div class="form-group">
-                   <label class="required" for="Budget">Budget:</label>
-                    <input type="text" value="" class="currency-input underlined" id="Budget">
+                <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label required" for="Budget">Budget:</label>
+                    <input type="text" value="" class="govuk-input currency-input" id="Budget">
                 </div>
                 
-                <div class="form-group" style="align-items: flex-start;">
-                    <label style="width:120px" for="PVSIncome">PVS Income: <br> (Surv Only)</label>
-                    <input type="text" class="underlined" id="PVSIncome">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label" for="PVSIncome">PVS Income:(Surv Only)</label>
+                    <input type="text" class="govuk-input" id="PVSIncome">
                 </div>
                 
-                <div class="form-group" style="align-items: flex-start;">
-                   <label style="width:120px" for="PlanCWDebit">Plan CW Debit: <br>(Surv Only)</label>
-                    <input type="text" class="underlined" id="PlanCWDebit">
+                <div class="govuk-form-group sup_margin_0">
+                   <label class="govuk-label" for="PlanCWDebit">Plan CW Debit:(Surv Only)</label>
+                    <input type="text" class="govuk-input" id="PlanCWDebit">
                 </div>
                 
-                <div class="form-group">
-                    <label for="CarryOver">CarryOver:</label>
-                    <input type="text" value="" class="currency-input" id="CarryOver">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label" for="CarryOver">CarryOver:</label>
+                    <input type="text" value="" class="govuk-input currency-input" id="CarryOver">
                 </div>
                 
-                <div class="form-group">
-                    <label for="CarryOverSeed">CarryOverSeed:</label>
-                    <input type="text" id="CarryOverSeed">
+                <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label" for="CarryOverSeed">CarryOverSeed:</label>
+                    <input type="text" class="govuk-input" id="CarryOverSeed">
                 </div>
-				  <div class="form-group" style="align-items: flex-start;">
-                    <label for="Comments">Comments::</label>
-                   <textarea id="Comments"></textarea>
+				  <div class="govuk-form-group sup_margin_0">
+                    <label class="govuk-label" for="Comments">Comments::</label>
+                   <textarea class="govuk-textarea sup_margin_0" id="Comments"></textarea>
                 </div>
                 
                 <!-- <div class="comments-section"> -->

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
+    <link rel="stylesheet" href="nav_menu/navstyle.css" />
+    <script src="nav_menu/menutemplate.js"></script>
+    <link rel="stylesheet" href="../css/pact_styles/style.css" />
+    <link rel="stylesheet" href="../css/pact_styles/suppliement_style_over_gov.uk_style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+    <style>
+        /* Sortable header styles */
+        th[data-column] {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+
+        th[data-column]:hover {
+            background-color: #d8e5f4 !important;
+        }
+
+        .sort-icon {
+            margin-left: 4px;
+            font-size: 10px;
+            color: #1d70b8;
+        }
+
+        th.sorted-asc,
+        th.sorted-desc {
+            background-color: #d8e5f4 !important;
+        }
+
+        /* Row hover and selection styles */
+        #workgroupTable tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        #workgroupTable tbody tr:hover {
+            background-color: #f3f2f1 !important;
+        }
+
+        #workgroupTable tbody tr[data-testcode] {
+            cursor: pointer;
+        }
+
+         .empdropdown {
+            position: relative;
+            z-index: 930;
+        }
+
+        .dropdown-panel {
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            right: 0;
+            border: 1px solid #aaa;
+            background: #fff;
+            z-index: 9999;
+            max-height: 220px;
+            overflow-y: auto;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-panel table {
+            width: 100%;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 6px 8px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+    </style>
+
+    <title>2025-2026 : Work Group Management - PACT</title>
+ 
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
+                </div>
+
+                <div class="pims-log">
+                    <span>PACT</span>
+                </div>
+
+                <div class="pims-log" style="width: 160px;font-size: 16px;">
+                    <label for="dpSelectyear" class="sr-only">select year</label>
+                    <select id="dpSelectyear" aria-label="Select year dropdown" class="pims-log"
+                        style="border: 0;border-radius: 0;margin-left: 0px;width: 150px;outline: 0;">
+                        <option>2017-2018</option>
+                        <option>2018-2019</option>
+                        <option>2019-2020</option>
+                        <option>2020-2021</option>
+                        <option>2021-2022</option>
+                        <option>2022-2023</option>
+                        <option>2023-2024</option>
+                        <option>2024-2025</option>
+                        <option selected>2025-2026</option>
+                    </select>
+
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <div id="header"></div>
+
+    <script src="../pact/nav_menu/script.js"></script>
+
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+
+    <div class="govuk-grid-row sup_margin_left_right_0">
+        <div class="govuk-grid-column-full">
+            <h1 class="heading_with_txtbox govuk-heading-s sup_border-bottom sup_margin_bottom_10">
+                <div class="sup_flex_left_center">
+                   Work Group
+                </div>
+                <div> <a id="backlink" href="home.html" class="govuk-back-link">Back</a></div>
+            </h1>
+        </div>
+    </div>
+    <div class="govuk-grid-row sup_margin_left_right_0 sup_flex_left_center sup_padding_bottom_10 sup_border-bottom">
+        <div class="govuk-grid-column-one-third">
+    
+            <div class="empdropdown input-group searchfiels" data-empdropdown
+                data-source="workgroups">
+                <label for="dpprogramme" class="govuk-label govuk-!-font-weight-bold">Select a Workgroup:</label>
+              
+                <input type="text" id="dpprogramme" placeholder="Select a WorkGroup"
+                    class="dropdown-input down-arrow-img govuk-input govuk-!-font-size-16" />
+    
+                <div class="dropdown-panel">
+                    <input type="text" class="search-box" placeholder="Type to search and select workgroup" />
+    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item Code</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+    
+        </div>
+        <div class="govuk-grid-column-two-third sup_margin_top_20">
+             OR 
+        </div>
+        
+         <div class="govuk-grid-column-one-third">
+           
+            <div class="empdropdown input-group searchfiels" data-empdropdown
+                data-source="employees">
+                <label for="txtstaffsearchBox" class="govuk-label govuk-!-font-weight-bold">a Test</label>
+              
+                <input type="text" id="txtstaffsearchBox" placeholder="Select TestCode"
+                    class="dropdown-input down-arrow-img govuk-input govuk-!-font-size-16"   />
+    
+                <div class="dropdown-panel">
+                    <input type="text" class="search-box" placeholder="Type to search and select staff" />
+    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item Code</th>
+                                <th>Item Description</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        
+                            <div class="govuk-grid-column-one-third sup_p_0_mt_24">
+                                <div class="govuk-button-group sup_margin_0 sup_float_right">
+                                    <button type="button" class="govuk-button sup_margin_0 sup_p_8 sup_flex" id="btnPortfolioMaintenance"
+                                        aria-label="Portfolio Maintenance" data-module="govuk-button">
+                                        
+                                          &nbsp;Portfolio Maintenance
+                                    </button>
+                                </div>
+                            </div>
+    </div>
+        <div class="govuk-grid-row sup_margin_left_right_0  sup_p_8 sup_border-bottom sup_margin_bottom_10">
+            <div class="govuk-grid-column-full sup_flex_center_center_center"> <label for="divTestcode"
+                    class="govuk-label govuk-!-font-weight-bold"> Test Requirement records for Test </label>
+                <div class="govuk-grid-column-one-third"> 
+                    <input type="text" id="divTestcode" class="govuk-input govuk-!-font-size-16">
+                </div>
+            </div>
+            <div class="govuk-grid-column-full sup_flex_center_center_center sup_p_8">
+                <p class="govuk-body sup_margin_0"> ------------Buyer Defaulter------------</p>
+            </div>
+        </div>
+ 
+            <div class="govuk-grid-row sup_margin_0">
+                <div class="govuk-grid-column-full sup_padding_right_left_10">
+                <!-- Left Column - Work Group Resources -->
+                <div class="govuk-grid-column-one-half col-5 sup_margin_bottom_10 sup_p_0 sup_padding_right_10">
+                    <div class="sup_border">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 5px; border-bottom: 1px solid #b1b4b6;">
+                            <h2 class="govuk-heading-s" style="margin: 0;">&nbsp;</h2>
+                            <button type="button" class="govuk-button sup_margin_0 sup_p_8" 
+                                id="addWorkgroupBtn" aria-label="Add Test Code" data-module="govuk-button">
+                                + &nbsp; Add Test Code
+                            </button>
+                        </div>
+                        <div class="table_scroll_wrapper">
+                            <table class="govuk-table custom-table" id="workgroupTable">
+                                <thead class="govuk-table__head">
+                                    <tr class="govuk-table__row">
+                                        <th data-column="0" scope="col" class="govuk-table__header">TestCode
+                                            <div class="resizer">&nbsp;</div>
+                                        </th>
+                                        <th data-column="1" class="govuk-table__header">WorkGroup<div
+                                                class="resizer">
+                                                &nbsp;</div>
+                                        </th>
+                                        <th data-column="2" class="govuk-table__header">PlanPortfolio<div class="resizer">&nbsp;</div>
+                                        </th>
+                                        <th class="govuk-table__header">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="govuk-table__body" id="workgroupTableBody">
+                                    <!-- Data will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+
+                        </div>
+                        
+                        <div class="sup_pagination_wrapper">
+                            <div class="sup_margin_top_bottom_5_10">
+                                <label for="recordsPerPage">Records per page</label>
+                                <select id="recordsPerPage" class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
+                                    aria-label="Select number of records per page">
+                                    <option value="5">5</option>
+                                    <option value="10" selected>10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+                            <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+                                <ul class="govuk-pagination__list" id="workgroupPagination">
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Column - Work Group Summary -->
+                <div class="govuk-grid-column-one-half col-7 sup_margin_bottom_10 sup_p_0" style="padding-left: 10px !important;">
+                    <div class="sup_border">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 5px; border-bottom: 1px solid #b1b4b6;">
+                            <h2 class="govuk-heading-s" style="margin: 0;">&nbsp;</h2>
+                            <div style="display: flex; gap: 8px;">
+                                <button type="button" class="govuk-button sup_margin_0 sup_gov_blue_bg sup_flex sup_width_140" 
+                                    id="exportSummaryExcel" aria-label="Export to Excel">
+                                    <img src="../images/file-export-solid-full.svg" width="16"
+                                        alt="icon for export data into excel file" />&nbsp; Export Excel
+                                </button>
+                                <button type="button" class="govuk-button sup_margin_0 sup_p_8" 
+                                    id="addSummaryBtn" aria-label="Add Test Requirement" data-module="govuk-button">
+                                    + &nbsp; Add Test Requirement
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="table_scroll_wrapper">
+                            <table class="govuk-table custom-table" id="summaryTable">
+                                <thead class="govuk-table__head">
+                                    <tr class="govuk-table__row">
+                                        <th data-column="0" scope="col" class="govuk-table__header">TestCode
+                                            <div class="resizer">&nbsp;</div>
+                                        </th>
+                                        <th data-column="1" class="govuk-table__header">Project<div
+                                                class="resizer">
+                                                &nbsp;</div>
+                                        </th>
+                                        <th data-column="2" class="govuk-table__header">Buyer<div class="resizer">&nbsp;</div>
+                                        </th>
+                                        <th data-column="3" class="govuk-table__header">UnitPrice<div class="resizer">&nbsp;</div>
+                                        </th>
+                                        <th data-column="4" class="govuk-table__header">No<div class="resizer">&nbsp;</div>
+                                        </th>
+                                        <th data-column="5" class="govuk-table__header">Active<div class="resizer">&nbsp;</div>
+                                        </th>
+                                        <th data-column="6" class="govuk-table__header">Defra Project?<div class="resizer">&nbsp;</div>
+                                        </th>
+                                        <th data-column="7" class="govuk-table__header">RecUnitPrice<div class="resizer">&nbsp;</div>
+                                        </th>
+                                        <th class="govuk-table__header">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="govuk-table__body" id="summaryTableBody">
+                                    <!-- Data will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="sup_pagination_wrapper">
+                            <div class="sup_margin_top_bottom_5_10">
+                                <label for="summaryRecordsPerPage">Records per page</label>
+                                <select id="summaryRecordsPerPage" class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
+                                    aria-label="Select number of records per page">
+                                    <option value="5">5</option>
+                                    <option value="10" selected>10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+                            <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+                                <ul class="govuk-pagination__list" id="summaryPagination">
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+    
+
+
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+        <div class="govuk-width-container sup_p_8 sup_text_center">
+            <span>
+                &copy; copyright Defra 2025
+            </span>
+        </div>
+    </div>
+
+    <!-- Add/Edit Workgroup Modal -->
+    <div class="modal" id="addWorkgroupModal" tabindex="-1">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title m-0" id="workgroupModalLabel">Add Test Code</h3>
+                    <button type="button" class="btn-close btn-red" id="closeWorkgroupModalBtn">X</button>
+                </div>
+                <div class="modal-body" style="padding: 8px 16px 0 0px;">
+                    <form class="govuk-grid-column-full" id="formAddWorkgroup">
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label for="txtmodal-testcode" class="govuk-label govuk-!-font-weight-bold">Test Code:</label>
+                            <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-testcode" 
+                                name="testcode" placeholder="Enter test code" required>
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <div class="empdropdown input-group searchfiels" data-empdropdown
+                                data-source="workgroups-modal">
+                                <label for="txtmodal-workgroup" class="govuk-label govuk-!-font-weight-bold">Work Group:</label>
+                                
+                                <input type="text" id="txtmodal-workgroup" 
+                                    class="dropdown-input down-arrow-img govuk-input govuk-!-font-size-16" required />
+                    
+                                <div class="dropdown-panel">
+                                    <input type="text" class="search-box" placeholder="Type to search and select work group" />
+                    
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Item Code</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label for="txtmodal-planportfolio" class="govuk-label govuk-!-font-weight-bold">Plan Portfolio:</label>
+                            <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-planportfolio" 
+                                name="planportfolio" placeholder="Enter plan portfolio" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" 
+                    style="display: flex; justify-content: space-between; align-items: center; flex-direction: row;">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" 
+                        aria-label="Cancel" id="cancelWorkgroupModalBtn">Cancel</button>
+                    <button class="govuk-button sup_margin_0" aria-label="Save" 
+                        id="saveWorkgroupBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Summary Test Modal -->
+    <div class="modal" id="addSummaryModal" tabindex="-1">
+        <div class="modal-dialog modal-custom">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title m-0" id="summaryModalLabel">Add Test Requirement</h3>
+                    <button type="button" class="btn-close btn-red" id="closeSummaryModalBtn">X</button>
+                </div>
+                <div class="modal-body" style="padding: 8px 16px 0 0px;">
+                    <form class="govuk-grid-column-full" id="formAddSummary">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-summary-testcode" class="govuk-label govuk-!-font-weight-bold">Test Code:</label>
+                                    <!-- <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-summary-testcode" 
+                                        name="testcode" placeholder="Enter test code" required> -->
+
+                                         <select class="govuk-select govuk-!-font-size-16 sup_width_100" id="txtmodal-summary-testcode" name="defraproject" required>
+                                       
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <div class="empdropdown input-group searchfiels" data-empdropdown
+                                        data-source="projects">
+                                        <label for="txtmodal-summary-project" class="govuk-label govuk-!-font-weight-bold">Project:</label>
+                                        
+                                        <input type="text" id="txtmodal-summary-project" 
+                                            class="dropdown-input down-arrow-img govuk-input govuk-!-font-size-16" required />
+                            
+                                        <div class="dropdown-panel">
+                                            <input type="text" class="search-box" placeholder="Type to search and select project" />
+                            
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Project Code</th>
+                                                        <th>Description</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-summary-buyer" class="govuk-label govuk-!-font-weight-bold">Buyer:</label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-summary-buyer" 
+                                        name="buyer" placeholder="Enter buyer" required>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-summary-unitprice" class="govuk-label govuk-!-font-weight-bold">Unit Price:</label>
+                                     <div class="govuk-input__wrapper">
+                                        <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                                        <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-summary-unitprice" 
+                                        name="unitprice" placeholder="Enter unit price (e.g., £100.00)" required>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-summary-no" class="govuk-label govuk-!-font-weight-bold">No:</label>
+                                    <input type="number" class="govuk-input govuk-!-font-size-16" id="txtmodal-summary-no" 
+                                        name="no" placeholder="Enter number" required>
+                                </div>
+                            </div>
+                         
+
+
+                              <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-summary-recunitprice" class="govuk-label govuk-!-font-weight-bold">Rec Unit Price:</label>
+                                    <div class="govuk-input__wrapper">
+                                        <div class="govuk-input__prefix" aria-hidden="true">$</div>
+                                        <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-summary-recunitprice"
+                                            name="recunitprice" placeholder="Enter rec unit price (e.g., £95.00)" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="govuk-grid-row">
+                        
+
+                             <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-summary-active" class="govuk-label govuk-!-font-weight-bold">Active:</label>
+                                    <select class="govuk-select govuk-!-font-size-16 sup_width_100" id="txtmodal-summary-active" name="active" required>
+                                        <option value="">--select active--</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                                <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-summary-defraproject" class="govuk-label govuk-!-font-weight-bold">Defra Project?</label>
+                                    <select class="govuk-select govuk-!-font-size-16 sup_width_100" id="txtmodal-summary-defraproject" name="defraproject" required>
+                                        <option value="">--select option--</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" 
+                    style="display: flex; justify-content: space-between; align-items: center; flex-direction: row;">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" 
+                        aria-label="Cancel" id="cancelSummaryModalBtn">Cancel</button>
+                    <button class="govuk-button sup_margin_0" aria-label="Save" 
+                        id="saveSummaryBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/pact_js/workgroup.js"></script>
+</body>
+
+</html>

@@ -1213,8 +1213,8 @@ background-color: #edf4ff;
 }
 
 .summary-item label {
-    font-weight: bold;
-    min-width: 90px;
+   
+    min-width: 80px;
 }
 
 .sidenav-title{

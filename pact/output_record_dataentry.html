@@ -196,10 +196,6 @@
 
     <script>
  
-
-
-
-
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidenav');
             sidebar.classList.toggle('collapsed');
@@ -344,7 +340,7 @@
          <div class="govuk-grid-row sup_margin_left_right_0">
             <div class="govuk-grid-column-full">
                 <h1 class="govuk-grid-row sup_border-bottom" style="padding:10px 0 10px 10px"> 
-                    Time Record Data Entry
+                    Output Record Data Entry
                 </h1>
             </div>
         </div>
@@ -352,33 +348,62 @@
         <div class="align-items-start m-10" id="search-grid">
             <div>
                 <div>
-                    <div class="sup_search_panel sup_p_0 sup_border_b_0">
+                    <div class="sup_search_panel sup_p_0">
 
                         <div class="input-group searchfiels">
 
                             <label class="govuk-label govuk-!-font-weight-bold" for="wgsearchBox">Work Group</label>
                             <select class="govuk-select govuk-!-font-size-16" id="wgsearchBox">
                                 <option value="">--select--</option>
-                                <option value="BAC2">BAC2</option>
-                                <option value="BAC3">BAC3</option>
-                                <option value="BAC4">BAC4</option>
-                                <option value="BAC5">BAC5</option>
-                                <option value="BDU">BDU</option>
-                                <option value="B&M">B&M</option>
-                                <option value="Bact">Bact</option>
-                                <option value="Bee Insp">Bee Insp</option>
-                                <option value="BM1">BM1</option>
-                                <option value="CIT">CIT</option>
-                                <option value="CITB">CITB</option>
-                                <option value="CPD">CPD</option>
-                                <option value="CSCC">CSCC</option>
+                                <option value="CSCW">CSCW</option>
+                                <option value="CSCS">CSCS</option>
+                                <option value="CSU">CSU</option>
+                                <option value="CTDS">CTDS</option>
+                                <option value="DIGP">DIGP</option>
+                                <option value="DIU">DIU</option>
+                                <option value="DoES1">DoES1</option>
+                                <option value="DoES3">DoES3</option>
+                                <option value="DSG">DSG</option>
+                                <option value="EUExit">EUExit</option>
+                                <option value="Field">Field</option>
+                                <option value="Field Activity">Field Activity</option>
+                                <option value="GM">GM</option>
+                                <option value="HMI">HMI</option>
+                                <option value="HNC">HNC</option>
+                                <option value="IMT">IMT</option>
+                                <option value="LT5">LT5</option>
+                                <option value="HNC">HNC</option>
+                                <option value="LTBU">LTBU</option>
+                                <option value="LTCA">LTCA</option>
+                                <option value="LTLA">LTLA</option>
+                                <option value="LTCA">LTCA</option>
+                                <option value="LTM">LTM</option>
+                                <option value="LTNC">LTNC</option>
+                                <option value="LTPE">LTPE</option>
+                                <option value="LTSB">LTSB</option>
+                                <option value="LT">LT</option>
                             </select>
 
                         </div>
 
+                        <div class="sup_p_0">
+                        
+                            <div class="input-group searchfiels">
+                        
+                                <label class="govuk-label govuk-!-font-weight-bold" for="dpTestcode">Test Code</label>
+                                <select class="govuk-select govuk-!-font-size-16" id="dpTestcode">
+                                    <option value="">--select--</option>
+                                    <option value="TC0012">TC0012</option>
+                                    <option value="TC0015">TC0015</option>
+                                    <option value="TC0019">TC0019</option>
+                                    <option value="TC0022">TC0022</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="empdropdown input-group searchfiels govuk-grid-column-one-quarter" data-empdropdown
                             data-source="employees">
-                            <label for="txtstaffsearchBox" class="govuk-label govuk-!-font-weight-bold">Staff</label>
+                            <label for="txtstaffsearchBox" class="govuk-label govuk-!-font-weight-bold">Buyer</label>
                             <input type="text" id="txtstaffsearchBox" value="--select--"
                                 class="dropdown-input down-arrow-img govuk-input govuk-!-font-size-16" readonly />
 
@@ -388,9 +413,8 @@
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Pact ID</th>
-                                            <th>WG Grade</th>
+                                            <th>Buyer</th>
+                                            <th>TestCode</th> 
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -398,7 +422,7 @@
                             </div>
                         </div>
 
-                        <div class="input-group searchfiels">
+                        <!-- <div class="input-group searchfiels">
                             <label class="govuk-label govuk-!-font-weight-bold" for="tcsearchBoxone">Timecode</label>
                             <select class="govuk-select govuk-!-font-size-16" id="tcsearchBoxone">
                                 <option value="">--select--</option>
@@ -418,21 +442,13 @@
                                 <option value="AH088052">AH088052</option>
                                 <option value="AH088053">AH088053</option>
                             </select>
-                        </div>
+                        </div> -->
+
+                
 
                         <div class="input-group searchfiels">
-                            <label class="govuk-label govuk-!-font-weight-bold" for="ppsearchBoxone">Parent
-                                Project</label>
-                            <select class="govuk-select govuk-!-font-size-16" id="ppsearchBoxone">
-                                <option value="">--select--</option>
-                                <!-- <option value="APHAINAH0088">APHAINAH0088</option>
-                                <option value="APHAINAH0107">APHAINAH0107</option> -->
-                            </select>
-                        </div>
-
-                        <div class="input-group searchfiels">
-                            <label class="govuk-label govuk-!-font-weight-bold" for="prsearchBoxtwo">Period</label>
-                            <select class="govuk-select govuk-!-font-size-16" id="prsearchBoxtwo">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="dpPeriod">Period</label>
+                            <select class="govuk-select govuk-!-font-size-16" id="dpPeriod">
                                 <option value="">--select--</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -475,17 +491,19 @@
                                     <tr class="govuk-table__row">
 
                                         <!-- <th>ID</th> -->
-                                        <th data-column="0" class="govuk-table__header text-align-left">Work Group<div class="resizer">&nbsp;</div>
+                                        <th data-column="0" class="govuk-table__header text-align-left"
+                                            style="position:relative;">Work Group<div class="resizer">&nbsp;</div>
                                         </th>
-                                        <th data-column="1" class="govuk-table__header text-align-left">PACT Staff Id<div class="resizer">&nbsp;</div>
+                                        <th data-column="1" class="govuk-table__header text-align-left"
+                                            style="position:relative;">Test code<div class="resizer">&nbsp;</div>
                                         </th>
-                                        <th data-column="2" class="govuk-table__header text-align-left">Time Code<div class="resizer">&nbsp;</div>
+                                        <th data-column="2" class="govuk-table__header text-align-left"
+                                            style="position:relative;">Buyer<div class="resizer">&nbsp;</div>
                                         </th>
-                                        <th data-column="3" class="govuk-table__header text-align-left">Parent Project<div class="resizer">&nbsp;</div>
+                                       
+                                        <th data-column="3" class="govuk-table__header text-align-left">Period<div class="resizer">&nbsp;</div>
                                         </th>
-                                        <th data-column="4" class="govuk-table__header text-align-left">Period<div class="resizer">&nbsp;</div>
-                                        </th>
-                                        <th data-column="5" class="govuk-table__header text-align-left">Hours<div class="resizer">&nbsp;</div>
+                                        <th data-column="4" class="govuk-table__header text-align-left">Volume<div class="resizer">&nbsp;</div>
                                         </th>
                                     </tr>
                                 </thead>
@@ -494,10 +512,8 @@
                         </div>
                         <div class="wrapper-makelivehours sup_border">
                             <div id="divMakeliveTotalhours">
-                                <span class="col-form-label p-0"
-                                    style="width: 600px;margin-right:4px;text-align: right;">Total Hours:</span>
-                                <input type="text" id="txtMakeliveTotalhours" class="govuk-input govuk-!-font-size-16"
-                                    style="text-align: right;margin-right: 9px; width: 80px;" />
+                                <span class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16 sup_margin_right_10">Total Volume: </span>    
+                                <input type="text" id="txtMakeliveTotalhours" class="govuk-input govuk-input--width-4 govuk-!-font-size-16 sup_text_align_right"  />
                             </div>
                         </div>
                         <div class="sup_pagination_footer sup_border">
@@ -526,7 +542,7 @@
                 </div>
             </div>
         </div>
-        <div style="display: flex;flex-direction: row;">
+        <div class="sup_flex_row">
             <div class="align-items-start m-10 sup_search_panel sup_p_0" style="width:90%;">
                 <div style="display: flex; gap:5px">
                     <div class="input-group searchfiels">
@@ -607,12 +623,12 @@
                 </div>
 
                 <div class="sup_width_100 div_import_table sup_top_border_1" style="position: relative;">
-                    <table id="dataTable" class="govuk-table custom-table sup_top_border_1" style="border-top: 0;">
+                    <table id="outputRecordataTable" class="govuk-table custom-table sup_top_border_1" style="border-top: 0;">
                         <thead class="govuk-table__head">
                             <tr class="govuk-table__row">
                                 <th class="govuk-table__header text-align-left">
                                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes"
-                                        style=" display: flex; align-items: center;  justify-content: flex-start;">
+                                        style=" display: flex; align-items: center;  justify-content: flex-start; margin-left: 5px;">
                                         <div class="govuk-checkboxes__item">
                                             <input type='checkbox' class="govuk-checkboxes__input" id="selectAllWG"
                                                 name="selectAllWG" />
@@ -623,24 +639,26 @@
                                     </div>
                                 </th>
                                 <!-- <th>ID</th> -->
-                                <th data-column="1" class="govuk-table__header text-align-left">WG<div class="resizer">&nbsp;</div>
+                                <th data-column="1" class="govuk-table__header text-align-left"
+                                    >WorkGroup<div class="resizer">&nbsp;</div>
                                 </th>
-                                <th data-column="2" class="govuk-table__header text-align-left">ID<div class="resizer">&nbsp;</div>
+                                <th data-column="2" class="govuk-table__header text-align-left"
+                                    >TestCode<div class="resizer">&nbsp;</div>
                                 </th>
-                                <th data-column="3" class="govuk-table__header text-align-left">Name<div class="resizer">&nbsp;</div>
+                                <th data-column="3" class="govuk-table__header text-align-left"
+                                    >Buyer<div class="resizer">&nbsp;</div>
                                 </th>
-                                <th data-column="4" class="govuk-table__header text-align-left">Time Code<div class="resizer">&nbsp;</div>
+                                <th data-column="4" class="govuk-table__header text-align-left"
+                                    >Period<div class="resizer">&nbsp;</div>
                                 </th>
-                                <th data-column="5" class="govuk-table__header text-align-left">Parent Project<div class="resizer">&nbsp;</div>
+                                <th data-column="5" class="govuk-table__header text-align-left volume"  data-col="Volume"
+                                    >Volume<div class="resizer">&nbsp;</div>
                                 </th>
-                                <th data-column="6" class="govuk-table__header text-align-left">Period<div class="resizer">&nbsp;</div>
+                                <th data-column="6" class="govuk-table__header text-align-left"
+                                    >Pass<div class="resizer">&nbsp;</div>
                                 </th>
-                                <th data-column="7" class="govuk-table__header text-align-left hours" data-col="Hours">Hours<div class="resizer">&nbsp;</div>
-                                </th>
-                                <th class="govuk-table__header text-align-left">Pass</th>
-                                <th data-column="9" class="govuk-table__header text-align-left">Pact ID<div class="resizer">&nbsp;</div>
-                                </th>
-                                <th data-column="10" class="govuk-table__header text-align-left">Comments<div class="resizer">&nbsp;</div>
+                                <th data-column="7" class="govuk-table__header text-align-left"
+                                    >Comments<div class="resizer">&nbsp;</div>
                                 </th>
                                 <th class="govuk-table__header text-align-left">Action</th>
                             </tr>
@@ -660,8 +678,8 @@
                 </div>
             </div> -->
                 <div id="hoursBoxContainer" class="sup_surface_bg">
-                    <label id="lbltotalhours" for="txtTotalhours" class="govuk-label govuk-!-font-weight-bold"> Total Hours: </label>
-                    <input type="text" id="txtTotalhours"
+                    <label id="lbltotalhours" for="txtTotalVolume" class="govuk-label govuk-!-font-weight-bold"> Total Volume: </label>
+                    <input type="text" id="txtTotalVolume"
                         class="govuk-input govuk-!-font-size-16 sup_margin_tb_5 sup_text_align_right">
                 </div>
                 <div class="sup_pagination_footer sup_p_0">
@@ -725,16 +743,7 @@
                     <button class="govuk-button sup_margin_0 sup_gov_blue_bg sup_flex sup_width_140" id="exportExcel">
                         <img src="../images/file-export-solid-full.svg" width="16"
                             alt="icon for export data into excel file" />&nbsp; Export Excel</button>
-                    <div class="govuk-checkboxes govuk-checkboxes--small sup_margin_0">
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input govuk-!-font-size-16" id="chkNameupdating"
-                                name="chkNameupdating" type="checkbox">
-                            <label class="govuk-label govuk-checkboxes__label sup_label_auto_width sup_p_0"
-                                for="chkNameupdating">
-                                Name updating
-                            </label>
-                        </div>
-                    </div>
+          
                 </div>
             </div>
         </div>
@@ -784,62 +793,30 @@
 
                     <form class="row" id="formWorkGroup">
                         <input type="hidden" id="rowId">
-                        <div class="govuk-grid-column-full">
-                        <div class="govuk-form-group sup_margin_top_10 sup_margin_bottom_10">
-                            <label for="WorkGroup" class="govuk-label" style="padding:0;margin:0">Work Group</label>
-                            <input type="text" class="govuk-input govuk-!-font-size-16" id="WorkGroup">
-                        </div>
-                        </div>
-                        <div class="govuk-grid-column-full">
-                        <div class="govuk-form-group sup_margin_bottom_10">
-                            <label for="txtID" class="govuk-label" style="padding:0;margin:0">ID</label>
-                            <input type="text" class="govuk-input govuk-!-font-size-16" id="txtID">
-                        </div>
+
+                        <div class="col-12">
+                            <label for="txtWorkgroup" class="govuk-label" style="padding:0;margin:0">Work Group:</label>
+                            <input type="text" class="govuk-input govuk-!-font-size-16" id="txtWorkgroup">
+                        </div> 
+
+                        <div class="col-12">
+                            <label for="txtTestcode" class="govuk-label" style="padding:0;margin:0">Test Code</label>
+                            <input type="text" class="govuk-input govuk-!-font-size-16" id="txtTestcode">
                         </div>
 
-                        <div class="govuk-grid-column-full">
-                        <div class="govuk-form-group sup_margin_bottom_10">
-                            <label for="dpName" class="govuk-label" style="padding:0;margin:0">Name</label>
-                            <select class="govuk-select govuk-!-font-size-16 sup_width_100" id="dpName">
-                                <option value="">--select--</option>
-                                <option value="1017932|Davers, Verge">Davers, Verge</option>
-                                <option value="1018004|Franklen, Elijah">Franklen, Elijah</option>
-                                <option value="G131|D_LTBU, General">D_LTBU, General</option>
-                                <option value="G153|E_LTBU, General">E_LTBU, General</option>
-                                <option value="98195|Belford, Selena">Belford, Selena</option>
-                                <option value="126540|Arnatt,Kitty">Arnatt,Kitty</option>
-                                <option value="126540|Carcass, Nesta">Carcass,Nesta</option>
-                            </select>
+                        <div class="col-12">
+                            <label for="ParentProject" class="govuk-label" style="padding:0;margin:0">Buyer</label>
+                            <input type="text" class="govuk-input govuk-!-font-size-16" id="txtBuyer">
                         </div>
+                        <div class="col-12">
+                            <label for="txtPeriod" class="govuk-label" style="padding:0;margin:0">Period</label>
+                            <input type="number" class="govuk-input govuk-!-font-size-16" id="txtPeriod">
+                        </div>
+                         <div class="col-12">
+                            <label for="txtVolume" class="govuk-label" style="padding:0;margin:0">Volume</label>
+                            <input type="number" class="govuk-input govuk-!-font-size-16" id="txtVolume">
                         </div>
 
-
-                        <div class="govuk-grid-column-full">
-                        <div class="govuk-form-group sup_margin_bottom_10">
-                            <label for="TimeCode" class="govuk-label" style="padding:0;margin:0">Time Code:</label>
-                            <input type="text" class="govuk-input govuk-!-font-size-16" id="TimeCode">
-                        </div>
-                        </div>
-
-                        <div class="govuk-grid-column-full">
-                        <div class="govuk-form-group sup_margin_bottom_10">
-                            <label for="ParentProject" class="govuk-label" style="padding:0;margin:0">Parent
-                                Project</label>
-                            <input type="text" class="govuk-input govuk-!-font-size-16" id="ParentProject">
-                        </div>
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                        <div class="govuk-form-group sup_margin_bottom_0">
-                            <label for="Period" class="govuk-label" style="padding:0;margin:0">Period</label>
-                            <input type="number" class="govuk-input govuk-!-font-size-16" id="Period">
-                        </div>
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                        <div class="govuk-form-group sup_margin_bottom_0">
-                            <label for="Hours" class="govuk-label" style="padding:0;margin:0">Hours</label>
-                            <input type="number" class="govuk-input govuk-!-font-size-16" id="Hours">
-                        </div>
-                        </div>
                     </form>
                 </div>
                 <div class="modal-footer flex_space_between py-2">
@@ -858,20 +835,16 @@
     <script>
 
         document.getElementById("failedmsg").style.display = "none";
-        // document.getElementById('failedBtn').addEventListener("click", function () {
-        //     document.getElementById("failedmsg").style.display = "block";
-        //     document.getElementById("txt-description").style.display = "flex";
-        //     document.getElementById("txt-description").value = "failed error message come here.";
-        // })
+        
     </script>
-    <script src="../js/pact_js/timerecorddata.js" defer></script>
+    <script src="../js/pact_js/outputdataentry.js" defer></script>
     <script>
 
         const modal = document.getElementById("testModal");
 
 
         let employeesData = [
-            { name: 'Arnatt, Kitty', pactid: "3558", wggrade: "D_BAC3" },
+            { name: 'Arnatt,Kitty', pactid: "3558", wggrade: "D_BAC3" },
             { name: 'B_BAC2, General', pactid: "8144", wggrade: "B_BAC3" },
             { name: 'Belford, Selena', pactid: "3465", wggrade: "D_BAC3" },
             { name: 'Burstow, Bekki', pactid: "3727", wggrade: "E_BAC3" },
@@ -911,15 +884,7 @@
         });
 
         // Clear search button - reset all search fields
-        document.getElementById("btnClearsearch")?.addEventListener("click", () => {
-            document.getElementById("wgsearchBox").value = "";
-            document.getElementById("txtstaffsearchBox").value = "--select--";
-            document.getElementById("tcsearchBoxone").value = "";
-            document.getElementById("ppsearchBoxone").value = "";
-            document.getElementById("prsearchBoxtwo").value = "";
-            currentPagetwo = 1;
-            applyPaginationLiveRecords();
-        });
+
 
         //ppsearchBoxone //tcsearchBoxone
 
@@ -928,33 +893,7 @@
             return "00" + randomNum;
         }
 
-        // Usage
-
-
-        document.getElementById('tcsearchBoxone').addEventListener("change", () => {
-            // if (e.target.value !== "") {
-            //     document.getElementById('ppsearchBoxone').value = e.target.value;
-            // }
-
-            const selected = this.value;
-            const secondSelect = document.getElementById("ppsearchBoxone");
-
-            // clear old options
-            secondSelect.innerHTML = '<option value="">--select--</option>';
-            let randomnumber = Math.random()
-            //generate random number
-
-            const randomCode = getRandomWithLeadingZeros();
-
-            // if (data[selected]) {
-            //  data[selected].forEach(function (item) {
-            const option = document.createElement("option");
-            option.value = "APHAINAH" + randomCode;
-            option.text = "APHAINAH" + randomCode;
-            secondSelect.appendChild(option);
-            //  });
-            // }
-        });
+        
 
         document.querySelectorAll('[data-empdropdown]').forEach(dd => {
             //const source = dd.dataset.source;
@@ -980,7 +919,7 @@
                     )
                     .forEach(d => {
                         const tr = document.createElement('tr');
-                        tr.innerHTML = `<td>${d.name}</td><td>${d.pactid}</td><td>${d.wggrade}</td>`;
+                        tr.innerHTML = `<td>${d.name}</td><td>${d.pactid}</td>`;
                         tr.onclick = () => {
                             input.value = `${d.name} (${d.pactid})`;
                             panel.style.display = 'none';
@@ -1021,10 +960,10 @@
 
 
 
-        const dtable = document.getElementById("dataTable");
+        const dtable = document.getElementById("outputRecordataTable");
         const lbl = document.getElementById("lbltotalhours");
-        const th = document.querySelector("th.hours");
-        const box = document.getElementById("txtTotalhours");
+        const th = document.querySelector("th.volume");
+        const box = document.getElementById("txtTotalVolume");
 
         function alignHoursBox() {
 

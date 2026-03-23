@@ -76,7 +76,7 @@ const htmlmenu = `<div style="display: flex; flex-direction: row;">
             </button>
             <div class="dropdown-menu" id="work-group">
                 <a href="#" class="dropdown-item">Work Group People</a>
-                <a href="#" class="dropdown-item">Test Capabilities</a>
+                <a href="workgroup_management.html" class="dropdown-item">Test Capabilities</a>
                 <a href="#" class="dropdown-item">Test Maintenance List</a>
             </div>
         </div>
@@ -107,9 +107,9 @@ const htmlmenu = `<div style="display: flex; flex-direction: row;">
             </button>
             <div class="dropdown-menu" id="time-data">
                 <a href="timerecording.html" class="dropdown-item">Time record data entry</a>
-                <a href="#" class="dropdown-item">Output record data entry</a>
-                <a href="#" class="dropdown-item">Create & email time & output summaries</a>				
-                <a href="#" class="dropdown-item">Create & print individual COS90s</a>
+                <a href="output_record_dataentry.html" class="dropdown-item">Output record data entry</a>
+                <a href="create_email_time_output_summary.html" class="dropdown-item">Create & email time & output summaries</a>				
+                <a href="create_print_individual_cos90s.html" class="dropdown-item">Create & print individual COS90s</a>
                 <a href="#" class="dropdown-item">Search Audit Log for Monthly Output Change</a>
                 <a href="#" class="dropdown-item">Search Audit Log for Monthly Time Change</a>
             </div>

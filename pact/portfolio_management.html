@@ -492,21 +492,14 @@
         &copy; Copyright Defra 2025
     </div>
 
-    <script src="../js/menuscript.js" defer></script>
+ 
 
     <script src="../js/testcode.js" defer></script>
 
     <!-- <script src="js/portfoliotimecode.js" defer></script> -->
-    <script src="../js/portfoliomaintenance.js" defer></script>
+    <script src="../js/pact_js/portfoliomaintenance.js" defer></script>
     <script>
-        //  new TomSelect("#dpselectportfolio",{
-        //         // onItemAdd() {
-        //         //         this.setTextboxValue("");  // clear search box
-        //         // },
-        //         onItemAdd: function () {
-        //                 this.blur();
-        //             }
-        // });
+        
         document.getElementById("dpselectportfolio").addEventListener("change", function () {
             const selectedValue = this.value;
             //  document.getElementById("accordionExample").style.display = 'block';
@@ -519,25 +512,7 @@
             // console.log("Selected:", selectedValue);
         });
     </script>
-
-    <!-- <script src="../pact_ver2.0/nav_menu/script.js"></script>
-    <script>
-
-        fetch("../pact_ver2.0/nav_menu/index.html")
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById("header").innerHTML = data;
-                initMenu();
-                btn();
-                // Execute <script> tags inside fetched HTML
-                // document.querySelectorAll("#header script").forEach(oldScript => {
-                // const newScript = document.createElement("script");
-                // newScript.text = oldScript.text;
-                // document.body.appendChild(newScript);
-                // });
-
-            });
-    </script> -->
+ 
 </body>
 
 </html>
