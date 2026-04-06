@@ -178,10 +178,10 @@ function openModal(index = null) {
         document.getElementById('txtmodal-itemdescription').value = item.ItemDescription;
         document.getElementById('txtmodal-testmanager').value = item.TestManager;
         // Remove $ symbols before setting values
-        document.getElementById('txtmodal-unitpricevlagen').value = item.UnitPriceVLAgen.replace(/[$,]/g, '');
+        document.getElementById('txtmodal-unitpricevlagen').value = item.UnitPriceVLAgen.replace(/[£,]/g, '');
         document.getElementById('txtmodal-owner').value = item.Owner;
         document.getElementById('txtmodal-shortdescription').value = item.ShortDescription;
-        document.getElementById('txtmodal-defraunitprice').value = item.DefraUnitPrice.replace(/[$,]/g, '');
+        document.getElementById('txtmodal-defraunitprice').value = item.DefraUnitPrice.replace(/[£,]/g, '');
     } else {
         // Add mode
         document.getElementById('txtmodal-itemcode').disabled = false;
@@ -229,8 +229,8 @@ function saveTest() {
     }
 
     // Format prices with $ symbol
-    const formattedVLAPrice = `$${parseFloat(unitPriceVLAgen).toFixed(2)}`;
-    const formattedDefraPrice = `$${parseFloat(defraUnitPrice).toFixed(2)}`;
+    const formattedVLAPrice = `£${parseFloat(unitPriceVLAgen).toFixed(2)}`;
+    const formattedDefraPrice = `£${parseFloat(defraUnitPrice).toFixed(2)}`;
 
     const newEntry = {
         ItemCode: itemCode,

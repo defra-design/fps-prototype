@@ -595,7 +595,7 @@ const summaryData = [
     "No": "0",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$488.00"
+    "RecUnitPrice": "£488.00"
   },
   {
     "TestCode": "PT0001",
@@ -605,7 +605,7 @@ const summaryData = [
     "No": "0",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$488.00"
+    "RecUnitPrice": "£488.00"
   },
   {
     "TestCode": "PT0001",
@@ -615,7 +615,7 @@ const summaryData = [
     "No": "0",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$488.00"
+    "RecUnitPrice": "£488.00"
   },
   {
     "TestCode": "TC0001",
@@ -625,7 +625,7 @@ const summaryData = [
     "No": "10",
     "Active": "Yes",
     "DefraProject": "Yes",
-    "RecUnitPrice": "$120.00"
+    "RecUnitPrice": "£120.00"
   },
   {
     "TestCode": "TC0001",
@@ -635,7 +635,7 @@ const summaryData = [
     "No": "8",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$125.00"
+    "RecUnitPrice": "£125.00"
   },
   {
     "TestCode": "TC001",
@@ -645,7 +645,7 @@ const summaryData = [
     "No": "15",
     "Active": "No",
     "DefraProject": "Yes",
-    "RecUnitPrice": "$115.00"
+    "RecUnitPrice": "£115.00"
   },
   // Multiple entries for TC002
   {
@@ -656,7 +656,7 @@ const summaryData = [
     "No": "15",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$95.00"
+    "RecUnitPrice": "£95.00"
   },
   {
     "TestCode": "TC0002",
@@ -666,7 +666,7 @@ const summaryData = [
     "No": "12",
     "Active": "Yes",
     "DefraProject": "Yes",
-    "RecUnitPrice": "$100.00"
+    "RecUnitPrice": "£100.00"
   },
   {
     "TestCode": "TC0002",
@@ -676,7 +676,7 @@ const summaryData = [
     "No": "20",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$90.00"
+    "RecUnitPrice": "£90.00"
   },
   // Multiple entries for TC003
   {
@@ -687,7 +687,7 @@ const summaryData = [
     "No": "8",
     "Active": "Yes",
     "DefraProject": "Yes",
-    "RecUnitPrice": "$145.00"
+    "RecUnitPrice": "£145.00"
   },
   {
     "TestCode": "TC0003",
@@ -697,7 +697,7 @@ const summaryData = [
     "No": "6",
     "Active": "No",
     "DefraProject": "Yes",
-    "RecUnitPrice": "$150.00"
+    "RecUnitPrice": "£150.00"
   },
   {
     "TestCode": "TC0003",
@@ -707,7 +707,7 @@ const summaryData = [
     "No": "10",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$143.00"
+    "RecUnitPrice": "£143.00"
   },
   // Multiple entries for TC004
   {
@@ -718,7 +718,7 @@ const summaryData = [
     "No": "20",
     "Active": "No",
     "DefraProject": "No",
-    "RecUnitPrice": "$82.00"
+    "RecUnitPrice": "£82.00"
   },
   {
     "TestCode": "TC0004",
@@ -728,7 +728,7 @@ const summaryData = [
     "No": "18",
     "Active": "Yes",
     "DefraProject": "Yes",
-    "RecUnitPrice": "$85.00"
+    "RecUnitPrice": "£85.00"
   },
   {
     "TestCode": "TC0004",
@@ -738,7 +738,7 @@ const summaryData = [
     "No": "22",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$87.00"
+    "RecUnitPrice": "£87.00"
   },
   // Multiple entries for TC005
   {
@@ -749,7 +749,7 @@ const summaryData = [
     "No": "5",
     "Active": "Yes",
     "DefraProject": "Yes",
-    "RecUnitPrice": "$195.00"
+    "RecUnitPrice": "£195.00"
   },
   {
     "TestCode": "TC0005",
@@ -759,7 +759,7 @@ const summaryData = [
     "No": "4",
     "Active": "Yes",
     "DefraProject": "Yes",
-    "RecUnitPrice": "$205.00"
+    "RecUnitPrice": "£205.00"
   },
   {
     "TestCode": "TC0005",
@@ -769,7 +769,7 @@ const summaryData = [
     "No": "7",
     "Active": "No",
     "DefraProject": "No",
-    "RecUnitPrice": "$190.00"
+    "RecUnitPrice": "£190.00"
   },
   // Multiple entries for TC006
   {
@@ -780,7 +780,7 @@ const summaryData = [
     "No": "12",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$72.00"
+    "RecUnitPrice": "£72.00"
   },
   {
     "TestCode": "TC0006",
@@ -852,7 +852,7 @@ const summaryData = [
     "No": "6",
     "Active": "Yes",
     "DefraProject": "Yes",
-    "RecUnitPrice": "$135.00"
+    "RecUnitPrice": "£135.00"
   },
   {
     "TestCode": "TC0008",
@@ -862,7 +862,7 @@ const summaryData = [
     "No": "9",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$128.00"
+    "RecUnitPrice": "£128.00"
   },
   // Multiple entries for TC009
   {
@@ -873,7 +873,7 @@ const summaryData = [
     "No": "25",
     "Active": "Yes",
     "DefraProject": "Yes",
-    "RecUnitPrice": "$90.00"
+    "RecUnitPrice": "£90.00"
   },
   {
     "TestCode": "TC0009",
@@ -883,7 +883,7 @@ const summaryData = [
     "No": "22",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$92.00"
+    "RecUnitPrice": "£92.00"
   },
   {
     "TestCode": "TC0009",
@@ -893,7 +893,7 @@ const summaryData = [
     "No": "28",
     "Active": "No",
     "DefraProject": "Yes",
-    "RecUnitPrice": "$87.00"
+    "RecUnitPrice": "£87.00"
   },
   // Multiple entries for TC010
   {
@@ -904,7 +904,7 @@ const summaryData = [
     "No": "6",
     "Active": "Yes",
     "DefraProject": "Yes",
-    "RecUnitPrice": "$160.00"
+    "RecUnitPrice": "£160.00"
   },
   {
     "TestCode": "TC0010",
@@ -914,7 +914,7 @@ const summaryData = [
     "No": "5",
     "Active": "Yes",
     "DefraProject": "Yes",
-    "RecUnitPrice": "$165.00"
+    "RecUnitPrice": "£165.00"
   },
   {
     "TestCode": "TC0010",
@@ -924,7 +924,7 @@ const summaryData = [
     "No": "8",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$158.00"
+    "RecUnitPrice": "£158.00"
   },
   {
     "TestCode": "TC0012",
@@ -934,7 +934,7 @@ const summaryData = [
     "No": "120",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$207.30"
+    "RecUnitPrice": "£207.30"
   },
   {
     "TestCode": "TC0012",
@@ -944,7 +944,7 @@ const summaryData = [
     "No": "20",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$207.30"
+    "RecUnitPrice": "£207.30"
   },
   {
     "TestCode": "TC0012",
@@ -954,7 +954,7 @@ const summaryData = [
     "No": "1",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$207.30"
+    "RecUnitPrice": "£207.30"
   },
   {
     "TestCode": "TC0012",
@@ -964,7 +964,7 @@ const summaryData = [
     "No": "0",
     "Active": "Yes",
     "DefraProject": "No",
-    "RecUnitPrice": "$207.30"
+    "RecUnitPrice": "£207.30"
   }
 ];
 
@@ -1735,7 +1735,7 @@ function saveSummary() {
     const active = document.getElementById('txtmodal-summary-active').value;
     const defraproject = document.getElementById('txtmodal-summary-defraproject').value;
     const recunitpriceValue = document.getElementById('txtmodal-summary-recunitprice').value.trim();
-    const recunitprice = `$${parseFloat(recunitpriceValue).toFixed(2)}`;
+    const recunitprice = `£${parseFloat(recunitpriceValue).toFixed(2)}`;
 
     // Validation
     if (!testcode || !project || !buyer || !unitprice || !no || !active || !defraproject || !recunitprice) {

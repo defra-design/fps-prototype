@@ -274,3 +274,209 @@ document.addEventListener("DOMContentLoaded", function () {
   populateProposedProjectForm(proposedProjectData);
   populateTableRecords(tableRecordsData);
 });
+
+function clearFormErrors() {
+  document.getElementById("editFormErrorBanner").style.display = "none";
+  ["edit-year", "edit-title", "edit-comment"].forEach(function (id) {
+    const el = document.getElementById(id);
+    el.classList.remove(
+      "govuk-input--error",
+      "govuk-select--error",
+      "govuk-textarea--error",
+    );
+    const group = el.closest(".govuk-form-group");
+    if (group) group.classList.remove("govuk-form-group--error");
+  });
+}
+
+// Close edit modal
+function closeEditModal() {
+  document.getElementById("editRecordModal").classList.remove("open");
+  clearFormErrors();
+  // Reset heading to default
+  document.querySelector(".govuk-edit-modal__title").textContent =
+    "Edit Record";
+}
+
+// Open edit modal with existing data
+function openEditModal(index, year, topic, comment) {
+  clearFormErrors();
+  document.querySelector(".govuk-edit-modal__title").textContent =
+    "Edit Record";
+  document.getElementById("edit-year").value = year;
+  document.getElementById("edit-title").value = topic;
+  document.getElementById("edit-comment").value = comment;
+  document.getElementById("editRecordModal").classList.add("open");
+  // Store the index for the save operation
+  window.currentEditingIndex = index;
+  window.isAddingNewComment = false;
+}
+
+// Open add comment modal (empty form)
+function openAddCommentModal() {
+  clearFormErrors();
+  document.querySelector(".govuk-edit-modal__title").textContent =
+    "Add Comment";
+  // Clear all fields for new entry
+  document.getElementById("edit-year").value = "";
+  document.getElementById("edit-title").value = "";
+  document.getElementById("edit-comment").value = "";
+  document.getElementById("editRecordModal").classList.add("open");
+  // Flag this as a new comment entry
+  window.isAddingNewComment = true;
+  window.currentEditingIndex = null;
+}
+
+// Save record (works for both edit and add)
+function saveRecord() {
+  const yearEl = document.getElementById("edit-year");
+  const topicEl = document.getElementById("edit-title");
+  const commentEl = document.getElementById("edit-comment");
+
+  const year = yearEl.value.trim();
+  const topic = topicEl.value;
+  const comment = commentEl.value.trim();
+
+  // Clear previous errors
+  clearFormErrors();
+
+  let hasError = false;
+
+  if (!year) {
+    yearEl.classList.add("govuk-input--error");
+    yearEl
+      .closest(".govuk-form-group")
+      .classList.add("govuk-form-group--error");
+    hasError = true;
+  }
+  if (!topic) {
+    topicEl.classList.add("govuk-select--error");
+    topicEl
+      .closest(".govuk-form-group")
+      .classList.add("govuk-form-group--error");
+    hasError = true;
+  }
+  if (!comment) {
+    commentEl.classList.add("govuk-textarea--error");
+    commentEl
+      .closest(".govuk-form-group")
+      .classList.add("govuk-form-group--error");
+    hasError = true;
+  }
+
+  if (hasError) {
+    document.getElementById("editFormErrorBanner").style.display = "block";
+    return;
+  }
+
+  // Check if editing existing record or adding new comment
+  if (window.isAddingNewComment) {
+    tableRecordsData.push({ year, topic, comments: comment });
+  } else if (
+    window.currentEditingIndex !== null &&
+    window.currentEditingIndex !== undefined
+  ) {
+    tableRecordsData[window.currentEditingIndex] = {
+      year,
+      topic,
+      comments: comment,
+    };
+  }
+
+  // Refresh table and close modal
+  renderTable();
+  closeEditModal();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll(".govuk-tabs__tab");
+  const panels = document.querySelectorAll(".govuk-tabs__panel");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", function (e) {
+      e.preventDefault(); // stop default anchor jump
+
+      const targetId = this.getAttribute("href").substring(1);
+
+      // Hide all panels
+      panels.forEach((panel) => {
+        panel.classList.add("govuk-tabs__panel--hidden");
+      });
+
+      // Remove selected class from all tabs
+      document
+        .querySelectorAll(".govuk-tabs__list-item")
+        .forEach((li) =>
+          li.classList.remove("govuk-tabs__list-item--selected"),
+        );
+
+      // Show selected panel
+      document
+        .getElementById(targetId)
+        .classList.remove("govuk-tabs__panel--hidden");
+
+      // Mark tab selected
+      this.parentElement.classList.add("govuk-tabs__list-item--selected");
+    });
+  });
+});
+
+const params = new URLSearchParams(window.location.search);
+//   document.getElementById("tbl").style.display = 'none';
+//     document.getElementById("invoicebtns").style.display = 'none';
+//      document.getElementById("accordionExample").style.display = 'none';
+// Get values
+//document.getElementById("id").innerText = params.get("jobcode");
+const urlParams = new URLSearchParams(window.location.search);
+const encoded = urlParams.get("data");
+
+if (encoded) {
+  const obj = JSON.parse(atob(encoded));
+  console.log(obj); // full object received
+  // document.getElementById("result").innerText =
+  //   `ID: ${obj.id}, Name: ${obj.name}, City: ${obj.jobcode}`;
+
+  document.getElementById("selected_project").innerText = obj.project;
+  // document.getElementById('project-title').value = obj.name;
+  // document.getElementById("tbl").style.display = 'flex';
+  // //   document.getElementById("shortnav").style.display = 'flex';
+  // document.getElementById("invoicebtns").style.display = 'flex';
+}
+function toggleSidebar() {
+  const sidebar = document.querySelector(".sidenav");
+  sidebar.classList.toggle("collapsed");
+}
+
+function toggleSubmenu(submenuId) {
+  const submenu = document.getElementById(submenuId);
+  const menuItem = submenu.previousElementSibling;
+
+  // Close all other submenus
+  const allSubmenus = document.querySelectorAll(".submenu");
+  const allMenuItems = document.querySelectorAll(".menu-item");
+
+  allSubmenus.forEach((menu) => {
+    if (menu.id !== submenuId) {
+      menu.classList.remove("open");
+    }
+  });
+
+  allMenuItems.forEach((item) => {
+    if (item !== menuItem) {
+      item.classList.remove("active");
+    }
+  });
+
+  // Toggle current submenu
+  submenu.classList.toggle("open");
+  menuItem.classList.toggle("active");
+}
+
+//      new TomSelect("#projectSelect",{
+//         // onItemAdd() {
+//         //         this.setTextboxValue("");  // clear search box
+//         // },
+//         onItemAdd: function () {
+//                 this.blur();
+//             }
+// });

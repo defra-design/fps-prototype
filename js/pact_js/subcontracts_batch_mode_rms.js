@@ -555,13 +555,13 @@ function openProjectCostModal(item = null, index = null) {
         document.getElementById('dpSelectproject').value = item.Project || '';
         //document.getElementById('txtmodal-project').value = item.Project || '';
         document.getElementById('txtmodal-accountcode').value = item.AcctCode || '';
-        document.getElementById('txtmodal-amount').value = String(item.Amount || '').replace(/[$,]/g, '');
+        document.getElementById('txtmodal-amount').value = String(item.Amount || '').replace(/[£,]/g, '');
         document.getElementById('txtmodal-month').value = item.Month || '';
         document.getElementById('txtmodal-testjob').value = item.TestJob || '';
         document.getElementById('txtmodal-description').value = item.Description || '';
         document.getElementById('txtmodal-supplier').value = item.Supplier || '';
         document.getElementById('txtmodal-suppliernumber').value = item.SupplierNumber || '';
-        document.getElementById('txtmodal-dailyrate').value = String(item.DailyRate || '').replace(/[$,]/g, '');
+        document.getElementById('txtmodal-dailyrate').value = String(item.DailyRate || '').replace(/[£,]/g, '');
         document.getElementById('txtmodal-animaldays').value = item.AnimalDays || '';
     } else {
         // Add mode
@@ -626,8 +626,8 @@ function saveProjectCost() {
     }
 
     // Format prices if provided
-    const formattedAmount = amount ? `$${parseFloat(amount).toFixed(2)}` : '';
-    const formattedDailyRate = dailyRate ? `$${parseFloat(dailyRate).toFixed(2)}` : '';
+    const formattedAmount = amount ? `£${parseFloat(amount).toFixed(2)}` : '';
+    const formattedDailyRate = dailyRate ? `£${parseFloat(dailyRate).toFixed(2)}` : '';
 
     const newEntry = {
         Project: project,
