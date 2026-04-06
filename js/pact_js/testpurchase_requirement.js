@@ -7,6 +7,44 @@
         let isAddMode = false;
         let editingTestCode = null;
         let editingIndex = null;
+        let buyerList = [];
+
+        // Populate select dropdown
+        function populateSelect(selectElement, data, valueKey, textKey) {
+            if (!selectElement) return;
+            
+            // Build options HTML with selected attribute on default option
+            let optionsHTML = '<option value="" selected>-- Select buyer --</option>';
+            
+            data.forEach(item => {
+                optionsHTML += `<option value="${item[valueKey]}">${item[textKey]}</option>`;
+            });
+            
+            selectElement.innerHTML = optionsHTML;
+            
+            // Force selection after DOM update
+            setTimeout(() => {
+                selectElement.selectedIndex = 0;
+                selectElement.value = '';
+            }, 0);
+        }
+
+        // Load buyer list
+        async function loadBuyerList() {
+            try {
+                const response = await fetch('../js/pact_js/data/project-codes.json');
+                if (!response.ok) throw new Error('Failed to load buyer list');
+                buyerList = await response.json();
+                
+                // Populate buyer dropdown
+                populateSelect(document.getElementById('modal-dpbuyer'), buyerList, 'code', 'code');
+                
+                return true;
+            } catch (error) {
+                console.error('Error loading buyer list:', error);
+                return false;
+            }
+        }
 
         // Render table function
         function renderTable() {
@@ -103,14 +141,18 @@
             const searchTerm = e.target.value.toLowerCase();
             const projectCodeFilter = document.getElementById('sp-projectcode')?.value.trim() || '';
             
-            filteredData = testPurchaseData.filter(item => {
-                const matchesSearch = (item.TestCode && item.TestCode.toString().toLowerCase().includes(searchTerm)) ||
-                       (item.UnitPrice && item.UnitPrice.toString().toLowerCase().includes(searchTerm)) ||
-                       (item.NoRequired && item.NoRequired.toString().toLowerCase().includes(searchTerm));
-                const matchesProjectCode = projectCodeFilter === '' || 
-                    (item.Projectcode && item.Projectcode.toLowerCase().includes(projectCodeFilter.toLowerCase()));
-                return matchesSearch && matchesProjectCode;
-            });
+            // If project code is empty, show no records
+            if (projectCodeFilter === '') {
+                filteredData = [];
+            } else {
+                filteredData = testPurchaseData.filter(item => {
+                    const matchesSearch = (item.TestCode && item.TestCode.toString().toLowerCase().includes(searchTerm)) ||
+                           (item.UnitPrice && item.UnitPrice.toString().toLowerCase().includes(searchTerm)) ||
+                           (item.NoRequired && item.NoRequired.toString().toLowerCase().includes(searchTerm));
+                    const matchesProjectCode = item.Projectcode && item.Projectcode.toLowerCase().includes(projectCodeFilter.toLowerCase());
+                    return matchesSearch && matchesProjectCode;
+                });
+            }
             currentPage = 1;
             renderTable();
         }
@@ -121,13 +163,8 @@
             const searchTerm = document.getElementById('testPurchaseSearch')?.value.toLowerCase() || '';
             
             if (projectCode === '') {
-                // If project code is empty, apply only search filter
-                filteredData = testPurchaseData.filter(item => {
-                    return searchTerm === '' || 
-                        (item.TestCode && item.TestCode.toString().toLowerCase().includes(searchTerm)) ||
-                        (item.UnitPrice && item.UnitPrice.toString().toLowerCase().includes(searchTerm)) ||
-                        (item.NoRequired && item.NoRequired.toString().toLowerCase().includes(searchTerm));
-                });
+                // If project code is empty, show no records
+                filteredData = [];
             } else {
                 // Apply both project code and search filters
                 filteredData = testPurchaseData.filter(item => {
@@ -231,7 +268,14 @@
                 }
                 const data = await response.json();
                 testPurchaseData = data;
-                filteredData = [...testPurchaseData];
+                
+                // Check if project code is empty on initial load
+                const initialProjectCode = document.getElementById('sp-projectcode')?.value.trim() || '';
+                if (initialProjectCode === '') {
+                    filteredData = [];
+                } else {
+                    filteredData = [...testPurchaseData];
+                }
                 
                 // Initialize table after data is loaded
                 renderTable();
@@ -257,6 +301,7 @@
 
         // Initialize - Load data first
         loadTestPurchaseData();
+        loadBuyerList();
 
         // ==================== CRUD FUNCTIONS ====================
 
@@ -265,11 +310,24 @@
             isAddMode = true;
             editingTestCode = null;
             editingIndex = null;
-            
+            document.getElementById('modal-dpbuyer').value = document.getElementById('sp-projectcode').value.trim();
+            document.getElementById('modal-dpbuyer').disabled = false;
             // Clear modal fields
             document.getElementById('modal-testcode').value = '';
             document.getElementById('modal-unitprice').value = '';
             document.getElementById('modal-norequired').value = '';
+            
+            // Clear error states
+            document.getElementById('modal-dpbuyer').classList.remove('govuk-select--error');
+            document.getElementById('modal-testcode').classList.remove('govuk-input--error');
+            document.getElementById('modal-unitprice').classList.remove('govuk-input--error');
+            document.getElementById('modal-norequired').classList.remove('govuk-input--error');
+            
+            // Hide error messages
+            document.getElementById('modal-dpbuyer-error').style.display = 'none';
+            document.getElementById('modal-testcode-error').style.display = 'none';
+            document.getElementById('modal-unitprice-error').style.display = 'none';
+            document.getElementById('modal-norequired-error').style.display = 'none';
             
             document.getElementById('testModalLabel').textContent = 'Add Test';
             openTestModal();
@@ -282,11 +340,24 @@
                 isAddMode = false;
                 editingTestCode = testCode;
                 editingIndex = index;
-                
+                document.getElementById('modal-dpbuyer').value = document.getElementById('sp-projectcode').value.trim();
+                document.getElementById('modal-dpbuyer').disabled = true;
                 // Populate modal fields
                 document.getElementById('modal-testcode').value = item.TestCode;
                 document.getElementById('modal-unitprice').value = item.UnitPrice.replace('£', '').replace(',', '');
                 document.getElementById('modal-norequired').value = item.NoRequired;
+                
+                // Clear error states
+                document.getElementById('modal-dpbuyer').classList.remove('govuk-select--error');
+                document.getElementById('modal-testcode').classList.remove('govuk-input--error');
+                document.getElementById('modal-unitprice').classList.remove('govuk-input--error');
+                document.getElementById('modal-norequired').classList.remove('govuk-input--error');
+                
+                // Hide error messages
+                document.getElementById('modal-dpbuyer-error').style.display = 'none';
+                document.getElementById('modal-testcode-error').style.display = 'none';
+                document.getElementById('modal-unitprice-error').style.display = 'none';
+                document.getElementById('modal-norequired-error').style.display = 'none';
                 
                 document.getElementById('testModalLabel').textContent = 'Edit Test';
                 openTestModal();
@@ -307,6 +378,19 @@
             if (modal) {
                 modal.classList.remove('show');
             }
+            
+            // Clear error states when closing
+            document.getElementById('modal-dpbuyer').classList.remove('govuk-select--error');
+            document.getElementById('modal-testcode').classList.remove('govuk-input--error');
+            document.getElementById('modal-unitprice').classList.remove('govuk-input--error');
+            document.getElementById('modal-norequired').classList.remove('govuk-input--error');
+            
+            // Hide error messages
+            document.getElementById('modal-dpbuyer-error').style.display = 'none';
+            document.getElementById('modal-testcode-error').style.display = 'none';
+            document.getElementById('modal-unitprice-error').style.display = 'none';
+            document.getElementById('modal-norequired-error').style.display = 'none';
+            
             isAddMode = false;
             editingTestCode = null;
             editingIndex = null;
@@ -315,13 +399,47 @@
         // Handle save test
         function handleSaveTest() {
             // Get form values
+            const buyer = document.getElementById('modal-dpbuyer').value.trim();
             const testCode = document.getElementById('modal-testcode').value.trim();
             const unitPrice = document.getElementById('modal-unitprice').value.trim();
             const noRequired = document.getElementById('modal-norequired').value.trim();
             
+            // Clear previous error states
+            document.getElementById('modal-dpbuyer').classList.remove('govuk-select--error');
+            document.getElementById('modal-testcode').classList.remove('govuk-input--error');
+            document.getElementById('modal-unitprice').classList.remove('govuk-input--error');
+            document.getElementById('modal-norequired').classList.remove('govuk-input--error');
+            
+            // Hide error messages
+            document.getElementById('modal-dpbuyer-error').style.display = 'none';
+            document.getElementById('modal-testcode-error').style.display = 'none';
+            document.getElementById('modal-unitprice-error').style.display = 'none';
+            document.getElementById('modal-norequired-error').style.display = 'none';
+            
             // Validate required fields
-            if (!testCode || !unitPrice || !noRequired) {
-                alert('Please fill in all required fields (Test Code, Unit Price, No Required)');
+            let hasError = false;
+            if (!buyer) {
+                document.getElementById('modal-dpbuyer').classList.add('govuk-select--error');
+                document.getElementById('modal-dpbuyer-error').style.display = 'block';
+                hasError = true;
+            }
+            if (!testCode) {
+                document.getElementById('modal-testcode').classList.add('govuk-input--error');
+                document.getElementById('modal-testcode-error').style.display = 'block';
+                hasError = true;
+            }
+            if (!unitPrice) {
+                document.getElementById('modal-unitprice').classList.add('govuk-input--error');
+                document.getElementById('modal-unitprice-error').style.display = 'block';
+                hasError = true;
+            }
+            if (!noRequired) {
+                document.getElementById('modal-norequired').classList.add('govuk-input--error');
+                document.getElementById('modal-norequired-error').style.display = 'block';
+                hasError = true;
+            }
+            
+            if (hasError) {
                 return;
             }
             
@@ -330,11 +448,11 @@
             
             if (isAddMode) {
 
-                let id = testPurchaseData.findIndex((el)=> el.TestCode === testCode);
-                if(id !== -1){
-                    alert('Test Code must be unique. A test with this code already exists.');
-                    return;
-                }
+                // let id = testPurchaseData.findIndex((el)=> el.TestCode === testCode);
+                // if(id !== -1){
+                //     alert('Test Code must be unique. A test with this code already exists.');
+                //     return;
+                // }
 
                 // Add new test
                 const newItem = {
@@ -349,15 +467,18 @@
                 const searchTerm = document.getElementById('testPurchaseSearch')?.value.toLowerCase() || '';
                 const projectCodeFilter = document.getElementById('sp-projectcode')?.value.trim() || '';
                 
-                filteredData = testPurchaseData.filter(item => {
-                    const matchesSearch = searchTerm === '' ||
-                        (item.TestCode && item.TestCode.toString().toLowerCase().includes(searchTerm)) ||
-                        (item.UnitPrice && item.UnitPrice.toString().toLowerCase().includes(searchTerm)) ||
-                        (item.NoRequired && item.NoRequired.toString().toLowerCase().includes(searchTerm));
-                    const matchesProjectCode = projectCodeFilter === '' || 
-                        (item.Projectcode && item.Projectcode.toLowerCase().includes(projectCodeFilter.toLowerCase()));
-                    return matchesSearch && matchesProjectCode;
-                });
+                if (projectCodeFilter === '') {
+                    filteredData = [];
+                } else {
+                    filteredData = testPurchaseData.filter(item => {
+                        const matchesSearch = searchTerm === '' ||
+                            (item.TestCode && item.TestCode.toString().toLowerCase().includes(searchTerm)) ||
+                            (item.UnitPrice && item.UnitPrice.toString().toLowerCase().includes(searchTerm)) ||
+                            (item.NoRequired && item.NoRequired.toString().toLowerCase().includes(searchTerm));
+                        const matchesProjectCode = item.Projectcode && item.Projectcode.toLowerCase().includes(projectCodeFilter.toLowerCase());
+                        return matchesSearch && matchesProjectCode;
+                    });
+                }
             } else {
                 // Edit existing test - find in original array
                 const originalIndex = testPurchaseData.findIndex(item => 
@@ -377,15 +498,18 @@
                     const searchTerm = document.getElementById('testPurchaseSearch')?.value.toLowerCase() || '';
                     const projectCodeFilter = document.getElementById('sp-projectcode')?.value.trim() || '';
                     
-                    filteredData = testPurchaseData.filter(item => {
-                        const matchesSearch = searchTerm === '' ||
-                            (item.TestCode && item.TestCode.toString().toLowerCase().includes(searchTerm)) ||
-                            (item.UnitPrice && item.UnitPrice.toString().toLowerCase().includes(searchTerm)) ||
-                            (item.NoRequired && item.NoRequired.toString().toLowerCase().includes(searchTerm));
-                        const matchesProjectCode = projectCodeFilter === '' || 
-                            (item.Projectcode && item.Projectcode.toLowerCase().includes(projectCodeFilter.toLowerCase()));
-                        return matchesSearch && matchesProjectCode;
-                    });
+                    if (projectCodeFilter === '') {
+                        filteredData = [];
+                    } else {
+                        filteredData = testPurchaseData.filter(item => {
+                            const matchesSearch = searchTerm === '' ||
+                                (item.TestCode && item.TestCode.toString().toLowerCase().includes(searchTerm)) ||
+                                (item.UnitPrice && item.UnitPrice.toString().toLowerCase().includes(searchTerm)) ||
+                                (item.NoRequired && item.NoRequired.toString().toLowerCase().includes(searchTerm));
+                            const matchesProjectCode = item.Projectcode && item.Projectcode.toLowerCase().includes(projectCodeFilter.toLowerCase());
+                            return matchesSearch && matchesProjectCode;
+                        });
+                    }
                 }
             }
             
@@ -410,15 +534,18 @@
                     const searchTerm = document.getElementById('testPurchaseSearch')?.value.toLowerCase() || '';
                     const projectCodeFilter = document.getElementById('sp-projectcode')?.value.trim() || '';
                     
-                    filteredData = testPurchaseData.filter(item => {
-                        const matchesSearch = searchTerm === '' ||
-                            (item.TestCode && item.TestCode.toString().toLowerCase().includes(searchTerm)) ||
-                            (item.UnitPrice && item.UnitPrice.toString().toLowerCase().includes(searchTerm)) ||
-                            (item.NoRequired && item.NoRequired.toString().toLowerCase().includes(searchTerm));
-                        const matchesProjectCode = projectCodeFilter === '' || 
-                            (item.Projectcode && item.Projectcode.toLowerCase().includes(projectCodeFilter.toLowerCase()));
-                        return matchesSearch && matchesProjectCode;
-                    });
+                    if (projectCodeFilter === '') {
+                        filteredData = [];
+                    } else {
+                        filteredData = testPurchaseData.filter(item => {
+                            const matchesSearch = searchTerm === '' ||
+                                (item.TestCode && item.TestCode.toString().toLowerCase().includes(searchTerm)) ||
+                                (item.UnitPrice && item.UnitPrice.toString().toLowerCase().includes(searchTerm)) ||
+                                (item.NoRequired && item.NoRequired.toString().toLowerCase().includes(searchTerm));
+                            const matchesProjectCode = item.Projectcode && item.Projectcode.toLowerCase().includes(projectCodeFilter.toLowerCase());
+                            return matchesSearch && matchesProjectCode;
+                        });
+                    }
                     
                     // Adjust page if necessary
                     const totalPages = Math.ceil(filteredData.length / recordsPerPage);
@@ -436,6 +563,38 @@
         document.getElementById('saveTestBtn').addEventListener('click', handleSaveTest);
         document.getElementById('closeTestModalBtn').addEventListener('click', closeTestModal);
         document.getElementById('cancelTestModalBtn').addEventListener('click', closeTestModal);
+        
+        // Clear error on input - Buyer dropdown
+        document.getElementById('modal-dpbuyer').addEventListener('change', function() {
+            if (this.value.trim() !== '') {
+                this.classList.remove('govuk-select--error');
+                document.getElementById('modal-dpbuyer-error').style.display = 'none';
+            }
+        });
+        
+        // Clear error on input - Test Code
+        document.getElementById('modal-testcode').addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                this.classList.remove('govuk-input--error');
+                document.getElementById('modal-testcode-error').style.display = 'none';
+            }
+        });
+        
+        // Clear error on input - No Required
+        document.getElementById('modal-norequired').addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                this.classList.remove('govuk-input--error');
+                document.getElementById('modal-norequired-error').style.display = 'none';
+            }
+        });
+        
+        // Clear error on input - Unit Price
+        document.getElementById('modal-unitprice').addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                this.classList.remove('govuk-input--error');
+                document.getElementById('modal-unitprice-error').style.display = 'none';
+            }
+        });
         
         // Close modal when clicking outside
         // const testModal = document.getElementById('addTestModal');

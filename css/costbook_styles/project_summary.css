@@ -1,0 +1,80 @@
+/* =================================================================
+   Project Summary – table & sticky tfoot
+   Prefix: ps-  (Project Summary)
+   ================================================================= */
+
+/* Scrollable table wrapper */
+.project-summary-table-wrap {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 250px;
+    height: 250px;
+    border: 1px solid var(--govuk-border-colour, #b1b4b6);
+}
+
+/* Keep the table layout fixed for alignment */
+/* #summaryTable {
+    margin-bottom: 0;
+} */
+
+/* ---- Sticky tfoot ---- */
+.ps-tfoot {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    background-color: #e8ebee;
+}
+
+.ps-tfoot__row td {
+    border: 1px solid #b1b4b6;
+    background: #f4f8fb !important;
+    padding: 6px 8px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.ps-tfoot__label {
+    font-weight: 700;
+    text-align: right;
+    font-size: 14px;
+    color: #0b0c0c;
+}
+
+.ps-tfoot__label--right {
+    text-align: right;
+}
+
+.ps-tfoot__value {
+    text-align: right;
+}
+
+.ps-tfoot__input {
+    width: 130px;
+    padding: 4px 6px;
+    text-align: right;
+    font-size: 14px;
+    border: 1px solid #919191;
+    background-color: #fff;
+    display: inline-block;
+}
+
+/* Sortable header cursor */
+#summaryTable th[data-column] {
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--govuk-surface-background-colour, #f4f8fb) !important;
+}
+
+/* Prevent flex child from overflowing header width */
+.project-requirement-page .project-main-column {
+    min-width: 0;
+}
+
+.tab-font {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.tab-font-size {
+    font-size: 14px;
+}

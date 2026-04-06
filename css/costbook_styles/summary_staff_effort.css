@@ -1,0 +1,97 @@
+/* =================================================================
+   Summary Staff Effort Query – table & pagination
+   Prefix: sse-  (Summary Staff Effort)
+   ================================================================= */
+
+/* Scrollable table wrapper */
+.sse-table-wrap {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 250px;
+    height: 250px;
+    border: 1px solid var(--govuk-border-colour, #b1b4b6);
+}
+
+/* Table base */
+#sseTable {
+    margin-bottom: 0;
+    min-width: 900px;
+}
+
+/* Header row – yellow background matching screenshot */
+#sseTable thead th {
+    background-color: #f9e77f;
+    color: #0b0c0c;
+    font-weight: 700;
+    white-space: nowrap;
+    border: 1px solid #b1b4b6;
+    position: sticky;
+    top: 0;
+    z-index: 4;
+}
+
+/* Sortable header cursor & hover */
+#sseTable th[data-column] {
+    cursor: pointer;
+    user-select: none;
+}
+
+#sseTable th[data-column]:hover {
+    background-color: #f0d94e;
+}
+
+/* Sort indicator */
+.sse-sort-indicator {
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+/* Alternating row stripes – blue / white matching screenshot */
+#sseTable tbody tr:nth-child(even) {
+    background-color: #d6eaf8;
+}
+
+#sseTable tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Cell borders */
+#sseTable tbody td {
+    border: 1px solid #d5d5d5;
+    padding: 6px 10px;
+    vertical-align: middle;
+}
+
+/* Prevent flex child from overflowing header width */
+.project-requirement-page .project-main-column {
+    min-width: 0;
+}
+
+/* Record count bar */
+.sse-record-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    font-size: 14px;
+    color: #0b0c0c;
+    background: #f3f2f1;
+    border-top: 1px solid #b1b4b6;
+}
+
+.sse-record-bar__label {
+    font-weight: 400;
+}
+
+.sse-record-bar__count {
+    font-weight: 700;
+}
+
+.tab-font {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.tab-font-size {
+    font-size: 14px;
+}

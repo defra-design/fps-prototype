@@ -1,132 +1,66 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
-    <link
-      href="https://getbootstrap.com/docs/5.2/assets/css/docs.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/pims_style/nav_menu/navstyle.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/pims_style/style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="../css/suppliement_style_over_gov.uk_style.css"
-    />
-  </head>
 
-  <body>
-    <header>
-      <div class="header-nav">
-        <div class="pims-log-wrapper">
-          <div>
-            <img alt="DEFRA Logo" src="../images/defra_logo.png" width="80px" />
-          </div>
-          <!-- <div class="menu-icon" onclick="openNav()">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div> -->
-          <div class="pims-log">
-            <span>PIMS</span>
-          </div>
-          <p>Project Information Management System</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/pims_style/nav_menu/navstyle.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/pims_style/style.css" />
+  <script src="../js/pims_js/nav_menu/menutemplate.js"></script>
+  <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-nav">
+      <div class="pims-log-wrapper">
+        <div>
+          <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
         </div>
-        <div class="btn-group flex-center font-size-16">
-          Meg Ved
 
-          <button
-            type="button"
-            aria-label="user dropdown arrow to go home page"
-            class="btn btn-secondary dropdown-toggle user-menu border-0"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <img
-              src="../images/circle-user-regular-full.svg"
-              alt="user icon"
-              width="24"
-            />
-            <img
-              src="../images/down-arrow.png"
-              alt="dropdown arrow for logout of application"
-              width="30px"
-              height="30px"
-            />
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button>
-                    </li>
-                    <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button>
-                    </li> -->
-            <li>
-              <a href="../index.html" class="dropdown-item" type="button">
-                <img
-                  src="../images/house-user-solid-full.svg"
-                  alt="dropdown home icon"
-                  width="22px"
-                />
-                Home
-              </a>
-            </li>
-          </ul>
+        <div class="pims-log">
+          <span>PIMS</span>
+        </div>
+
+        <div class="pims-log" style="width: 160px; font-size: 16px">
+
+          <select id="dpSelectyear" aria-label="Select year dropdown" class="pims-log" style="
+                    border: 0;
+                    border-radius: 0;
+                    margin-left: 0px;
+                    width: 150px;
+                    outline: 0;
+                  ">
+            <option>2017-2018</option>
+            <option>2018-2019</option>
+            <option>2019-2020</option>
+            <option>2020-2021</option>
+            <option>2021-2022</option>
+            <option>2022-2023</option>
+            <option>2023-2024</option>
+            <option>2024-2025</option>
+            <option selected>2025-2026</option>
+          </select>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
+  <div id="header"></div>
+  <script src="../js/pims_js/nav_menu/script.js"></script>
+  <script>
+    document.getElementById("header").innerHTML = htmlmenu;
+    initMenu();
+    btn();
+  </script>
 
-    <nav class="navbar navbar-expand-lg main-nav">
-      <div class="nav-item dropdown">
-        <button class="nav-button dropdown-toggle" data-dropdown="work-group">
-          <div class="align-menu-text">
-            <span> Choose Project </span>
-          </div>
-        </button>
-      </div>
-      <div class="nav-item dropdown">
-        <button class="nav-button dropdown-toggle" data-dropdown="work-group">
-          <div class="align-menu-text">
-            <span> Print Reports </span>
-          </div>
-        </button>
-      </div>
-      <div class="nav-item dropdown">
-        <button class="nav-button dropdown-toggle" data-dropdown="work-group">
-          <div class="align-menu-text">
-            <span> Publications </span>
-          </div>
-        </button>
-      </div>
-      <div class="nav-item dropdown">
-        <button class="nav-button dropdown-toggle" data-dropdown="work-group">
-          <div class="align-menu-text">
-            <span> Maintenance </span>
-          </div>
-        </button>
-      </div>
 
-      <div class="nav-item dropdown">
-        <button class="nav-button dropdown-toggle" data-dropdown="work-group">
-          <div class="align-menu-text">
-            <span> Pop-up Data Check </span>
-          </div>
-        </button>
-      </div>
-    </nav>
-
-    <div class="d-flex">
-      <!-- <main class="main-content">
+  <div class="d-flex">
+    <!-- <main class="main-content">
          <div class="container-fluid">
              <h2>Welcome to NexusFlow</h2>
              <p class="text-muted">Streamline your workflow with our intuitive dashboard.</p>
@@ -135,191 +69,110 @@
 
         </main> -->
 
-      <main class="main-content p-0">
-        <div class="govuk-grid-row sup_border-bottom px-1">
-          <div class="govuk-grid-column-full">
-            <h5
-              class="govuk-heading-s sup_margin_0"
-              style="padding: 10px 0 10px 15px"
-            >
-              Select Project
-            </h5>
-          </div>
+    <main class="main-content p-0">
+      <div class="govuk-grid-row sup_border-bottom px-1">
+        <div class="govuk-grid-column-full">
+          <h5 class="govuk-heading-s sup_margin_0" style="padding: 10px 0 10px 15px">
+            Select Project
+          </h5>
         </div>
-        <div class="px-3 pt-2">
-          <div class="search-panel">
-            <div
-              class="govuk-grid-column-full display-flex justify-content-between"
-            >
-              <div>
+      </div>
+      <div class="px-3 pt-2">
+        <div class="search-panel">
+          <div class="govuk-grid-column-full display-flex justify-content-between">
+            <div>
+              <div class="govuk-input__wrapper">
+                <input type="text" id="txtsearchBox" class="govuk-input" placeholder="Search by Project"
+                  aria-label="Amount (to the nearest dollar)" />
                 <div class="govuk-input__wrapper">
-                  <input
-                    type="text"
-                    id="txtsearchBox"
-                    class="govuk-input"
-                    placeholder="Search by Project"
-                    aria-label="Amount (to the nearest dollar)"
-                  />
-                  <div class="govuk-input__wrapper">
-                    <span
-                      class="govuk-input"
-                      style="border-left: none !important"
-                    >
-                      <i class="fas fa-search"></i>
-                    </span>
-                  </div>
+                  <span class="govuk-input" style="border-left: none !important">
+                    <i class="fas fa-search"></i>
+                  </span>
                 </div>
-              </div>
-              <div>
-                <div
-                  class="govuk-radios govuk-radios--inline govuk-radios govuk-radios--small"
-                  data-module="govuk-radios"
-                >
-                  <div class="govuk-radios__item">
-                    <input
-                      class="govuk-radios__input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="rdactive"
-                      value="not_specified"
-                      for="inlineRadio1"
-                    />
-                    <label
-                      class="govuk-label govuk-radios__label"
-                      for="inlineRadio1"
-                      >Active</label
-                    >
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input
-                      class="govuk-radios__input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="rdall"
-                      value="all"
-                      for="inlineRadio2"
-                      checked
-                    />
-                    <label
-                      class="govuk-label govuk-radios__label"
-                      for="inlineRadio2"
-                      >All</label
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="govuk-!-margin-right-10">
-                <button class="govuk-button sup_margin_0" id="addBtn">
-                  + &nbsp;New project
-                </button>
               </div>
             </div>
-          </div>
-
-          <div class="custom-scroll-table">
-            <table class="govuk-table custom-table" id="tblmaintenance">
-              <thead class="govuk-table__head thead-light bordertop">
-                <tr class="govuk-table__row">
-                  <th class="govuk-table__header">Project</th>
-                  <th class="govuk-table__header">Program</th>
-                  <th class="govuk-table__header">Customer</th>
-                  <th class="govuk-table__header">On FPS</th>
-                  <th class="govuk-table__header">Action</th>
-                </tr>
-              </thead>
-              <tbody class="govuk-table__body" id="tableBody"></tbody>
-            </table>
-          </div>
-          <div class="sup_pagination_footer sup_border">
-            <div class="sup_pagination_wrapper">
-              <div class="sup_margin_top_bottom_5_10">
-                <label class="pagination-label" for="recordsPerPage"
-                  >Records per page</label
-                >
-                <select
-                  id="recordsPerPage"
-                  class="govuk-select sup_select_pagination_width"
-                >
-                  <option value="5" selected="">5</option>
-                  <option value="10">10</option>
-                  <option value="15">15</option>
-                  <option value="20">20</option>
-                  <option value="25">25</option>
-                  <option value="30">30</option>
-                </select>
+            <div>
+              <div class="govuk-radios govuk-radios--inline govuk-radios govuk-radios--small"
+                data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" name="inlineRadioOptions" id="rdactive"
+                    value="not_specified" for="inlineRadio1" />
+                  <label class="govuk-label govuk-radios__label" for="inlineRadio1">Active</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" type="radio" name="inlineRadioOptions" id="rdall" value="all"
+                    for="inlineRadio2" checked />
+                  <label class="govuk-label govuk-radios__label" for="inlineRadio2">All</label>
+                </div>
               </div>
-              <nav
-                class="govuk-!-margin-bottom-0 govuk-pagination"
-                aria-label="Pagination"
-              >
-                <ul class="govuk-pagination__list" id="pagination">
-                  <li
-                    class="govuk-pagination__item disabled aria-disabled=&quot;true&quot;"
-                  >
-                    <a
-                      class="govuk-link govuk-pagination__link"
-                      onclick="goToPage(0)"
-                    >
-                      <svg
-                        class="govuk-pagination__icon govuk-pagination__icon--prev"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="13"
-                        width="15"
-                        aria-hidden="true"
-                        focusable="false"
-                        viewBox="0 0 15 13"
-                      ></svg>
-                      <span class="govuk-pagination__link-title">
-                        Previous<span class="govuk-visually-hidden"> page</span>
-                      </span>
-                    </a>
-                  </li>
-                  <li
-                    class="govuk-pagination__item govuk-pagination__item--current aria-disabled=&quot;true&quot;"
-                  >
-                    <a
-                      class="govuk-link govuk-pagination__link"
-                      onclick="goToPage(1)"
-                      >1</a
-                    >
-                  </li>
-                  <li
-                    class="govuk-pagination__item aria-disabled=&quot;true&quot;"
-                  >
-                    <a
-                      class="govuk-link govuk-pagination__link"
-                      onclick="goToPage(2)"
-                      >2</a
-                    >
-                  </li>
-                  <li
-                    class="govuk-pagination__next aria-disabled=&quot;true&quot;"
-                  >
-                    <a
-                      class="govuk-link govuk-pagination__link"
-                      onclick="goToPage(2)"
-                      rel="next"
-                    >
-                      <span class="govuk-pagination__link-title">Next</span
-                      ><svg
-                        class="govuk-pagination__icon govuk-pagination__icon--next"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="13"
-                        width="15"
-                        aria-hidden="true"
-                        focusable="false"
-                        viewBox="0 0 15 13"
-                      ></svg>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
+            </div>
+            <div class="govuk-!-margin-right-10">
+              <button class="govuk-button sup_margin_0" id="addBtn">
+                + &nbsp;New project
+              </button>
             </div>
           </div>
         </div>
-      </main>
-      <!--Slideout form-->
-      <!--<div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="custom-scroll-table">
+          <table class="govuk-table custom-table" id="tblmaintenance">
+            <thead class="govuk-table__head thead-light bordertop">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header">Project</th>
+                <th class="govuk-table__header">Program</th>
+                <th class="govuk-table__header">Customer</th>
+                <th class="govuk-table__header">On FPS</th>
+                <th class="govuk-table__header">Action</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body" id="tableBody"></tbody>
+          </table>
+        </div>
+        <div class="sup_pagination_footer sup_border">
+          <div class="sup_pagination_wrapper">
+            <div class="sup_margin_top_bottom_5_10">
+              <label class="pagination-label" for="recordsPerPage">Records per page</label>
+              <select id="recordsPerPage" class="govuk-select sup_select_pagination_width">
+                <option value="5" selected="">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+              </select>
+            </div>
+            <nav class="govuk-!-margin-bottom-0 govuk-pagination" aria-label="Pagination">
+              <ul class="govuk-pagination__list" id="pagination">
+                <li class="govuk-pagination__item disabled aria-disabled=&quot;true&quot;">
+                  <a class="govuk-link govuk-pagination__link" onclick="goToPage(0)">
+                    <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg"
+                      height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13"></svg>
+                    <span class="govuk-pagination__link-title">
+                      Previous<span class="govuk-visually-hidden"> page</span>
+                    </span>
+                  </a>
+                </li>
+                <li class="govuk-pagination__item govuk-pagination__item--current aria-disabled=&quot;true&quot;">
+                  <a class="govuk-link govuk-pagination__link" onclick="goToPage(1)">1</a>
+                </li>
+                <li class="govuk-pagination__item aria-disabled=&quot;true&quot;">
+                  <a class="govuk-link govuk-pagination__link" onclick="goToPage(2)">2</a>
+                </li>
+                <li class="govuk-pagination__next aria-disabled=&quot;true&quot;">
+                  <a class="govuk-link govuk-pagination__link" onclick="goToPage(2)" rel="next">
+                    <span class="govuk-pagination__link-title">Next</span><svg
+                      class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg"
+                      height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13"></svg>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--Slideout form-->
+    <!--<div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header flex-space-center">
@@ -334,8 +187,8 @@
                             </div>
                             <div class="col-12 mb-2">
                                 <label for="txtTitle" class="form-label mb-0">Title:</label>-->
-      <!-- <input type="text" class="form-control" id="modal-name"> -->
-      <!--<textarea class="form-control" id="txtTitle" rows="3"></textarea>
+    <!-- <input type="text" class="form-control" id="modal-name"> -->
+    <!--<textarea class="form-control" id="txtTitle" rows="3"></textarea>
         </div>
         <div class="col-6 mb-2">
             <label for="txtStatus" class="form-label mb-0">Status</label>
@@ -401,10 +254,10 @@
             <label for="proposal" class="form-label mb-0">Reason for new proposal</label>
             <textarea type="text" class="form-control"></textarea>
         </div>-->
-      <!-- <div class="mt-2">
+    <!-- <div class="mt-2">
         <button class="btn btn-primary" type="submit" >Save</button>
         </div> -->
-      <!--</form>
+    <!--</form>
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
@@ -415,57 +268,58 @@
                 </div>
             </div>
         </div>-->
+  </div>
+
+  <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+    <div class="govuk-width-container sup_p_8 text-center">
+      <span> &copy; Copyright Defra 2025 </span>
     </div>
+  </div>
 
-    <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
-      <div class="govuk-width-container sup_p_8 text-center">
-        <span> &copy; Copyright Defra 2025 </span>
-      </div>
-    </div>
+  <script src="../js/bootstrap.bundle.min.js"></script>
 
-    <script src="../js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.querySelector(".sidebar");
+      sidebar.classList.toggle("collapsed");
+    }
 
-    <script>
-      function toggleSidebar() {
-        const sidebar = document.querySelector(".sidebar");
-        sidebar.classList.toggle("collapsed");
-      }
+    function toggleSubmenu(submenuId) {
+      const submenu = document.getElementById(submenuId);
+      const menuItem = submenu.previousElementSibling;
 
-      function toggleSubmenu(submenuId) {
-        const submenu = document.getElementById(submenuId);
-        const menuItem = submenu.previousElementSibling;
+      // Close all other submenus
+      const allSubmenus = document.querySelectorAll(".submenu");
+      const allMenuItems = document.querySelectorAll(".menu-item");
 
-        // Close all other submenus
-        const allSubmenus = document.querySelectorAll(".submenu");
-        const allMenuItems = document.querySelectorAll(".menu-item");
+      allSubmenus.forEach((menu) => {
+        if (menu.id !== submenuId) {
+          menu.classList.remove("open");
+        }
+      });
 
-        allSubmenus.forEach((menu) => {
-          if (menu.id !== submenuId) {
-            menu.classList.remove("open");
-          }
-        });
+      allMenuItems.forEach((item) => {
+        if (item !== menuItem) {
+          item.classList.remove("active");
+        }
+      });
 
-        allMenuItems.forEach((item) => {
-          if (item !== menuItem) {
-            item.classList.remove("active");
-          }
-        });
+      // Toggle current submenu
+      submenu.classList.toggle("open");
+      menuItem.classList.toggle("active");
+    }
 
-        // Toggle current submenu
-        submenu.classList.toggle("open");
-        menuItem.classList.toggle("active");
-      }
+    //      new TomSelect("#projectSelect",{
+    //         // onItemAdd() {
+    //         //         this.setTextboxValue("");  // clear search box
+    //         // },
+    //         onItemAdd: function () {
+    //                 this.blur();
+    //             }
+    // });
+  </script>
+  <script src="../js/script.js"></script>
+  <script src="../js/projectlist.js"></script>
+</body>
 
-      //      new TomSelect("#projectSelect",{
-      //         // onItemAdd() {
-      //         //         this.setTextboxValue("");  // clear search box
-      //         // },
-      //         onItemAdd: function () {
-      //                 this.blur();
-      //             }
-      // });
-    </script>
-    <script src="../js/script.js"></script>
-    <script src="../js/projectlist.js"></script>
-  </body>
 </html>

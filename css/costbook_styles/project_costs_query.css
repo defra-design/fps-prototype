@@ -1,0 +1,123 @@
+/* =================================================================
+   Project Costs Query – table, sticky tfoot & pagination
+   Prefix: pcq-  (Project Costs Query)
+   ================================================================= */
+
+/* Scrollable table wrapper */
+
+.pcq-table-wrap {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 420px;
+    border: 1px solid var(--govuk-border-colour, #b1b4b6);
+}
+
+/* Table base */
+#projectCostsTable {
+    margin-bottom: 0;
+    min-width: 900px;
+}
+
+/* Header row – yellow background matching screenshot */
+#projectCostsTable thead th {
+    background-color: #f9e77f;
+    color: #0b0c0c;
+    font-weight: 700;
+    white-space: nowrap;
+    border: 1px solid #b1b4b6;
+    position: sticky;
+    top: 0;
+    z-index: 4;
+}
+
+/* Sortable header cursor & hover */
+#projectCostsTable th[data-column] {
+    cursor: pointer;
+    user-select: none;
+}
+
+#projectCostsTable th[data-column]:hover {
+    background-color: #f0d94e;
+}
+
+/* Sort indicator styling */
+.sort-indicator {
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+/* Alternating row: blue highlight (even rows) matching screenshot */
+#projectCostsTable tbody tr:nth-child(even) {
+    background-color: #d6eaf8;
+}
+
+#projectCostsTable tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Cell borders */
+#projectCostsTable tbody td {
+    border: 1px solid #d5d5d5;
+    padding: 6px 10px;
+    vertical-align: middle;
+}
+
+/* ---- Sticky tfoot ---- */
+.pcq-tfoot {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    background-color: #e8ebee;
+}
+
+.pcq-tfoot__row td {
+    border: 1px solid #b1b4b6;
+    padding: 6px 8px;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 14px;
+    color: #0b0c0c;
+}
+
+/* Prevent flex child from overflowing header width */
+.project-requirement-page .project-main-column {
+    min-width: 0;
+}
+
+/* ---- Record count bar (bottom-left of screenshot) ---- */
+.pcq-record-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    font-size: 14px;
+    color: #0b0c0c;
+    background: #f3f2f1;
+    border-top: 1px solid #b1b4b6;
+}
+
+.pcq-record-bar__label {
+    font-weight: 400;
+}
+
+.pcq-record-bar__count {
+    font-weight: 700;
+}
+
+.pcq-table-wrap {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 250px;
+    height: 250px;
+    border: 1px solid var(--govuk-border-colour, #b1b4b6);
+}
+
+.tab-font {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.tab-font-size {
+    font-size: 14px;
+}

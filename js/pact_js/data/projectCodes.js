@@ -1,0 +1,53 @@
+// Project codes data extracted from system
+const projectCodesData = [
+    { "code": "AH0002", "name": "AH0002" },
+    { "code": "AH0006", "name": "AH0006" },
+    { "code": "AH0009", "name": "AH0009" },
+    { "code": "AH0011", "name": "AH0011" },
+    { "code": "AH0032", "name": "AH0032" },
+    { "code": "AH0033", "name": "AH0033" },
+    { "code": "APHAA8H0RN25", "name": "APHAA8H0RN25" },
+    { "code": "APHAABCD0000", "name": "APHAABCD0000" },
+    { "code": "APHAABCD00000", "name": "APHAABCD00000" },
+    { "code": "APHAEN006", "name": "APHAEN006" },
+    { "code": "APHAEUTAH090", "name": "APHAEUTAH090" },
+    { "code": "APHAH0038", "name": "APHAH0038" },
+    { "code": "APHAH0040", "name": "APHAH0040" },
+    { "code": "APHAH0047", "name": "APHAH0047" },
+    { "code": "APHAH0048", "name": "APHAH0048" },
+    { "code": "APHAH0049", "name": "APHAH0049" },
+    { "code": "APHAH0050", "name": "APHAH0050" },
+    { "code": "APHAH0051", "name": "APHAH0051" },
+    { "code": "APHAH0052", "name": "APHAH0052" },
+    { "code": "APHAH0053", "name": "APHAH0053" },
+    { "code": "APHAH0058", "name": "APHAH0058" },
+    { "code": "APHAH0061", "name": "APHAH0061" },
+    { "code": "APHAH0074", "name": "APHAH0074" },
+    { "code": "APHAHD032", "name": "APHAHD032" },
+    { "code": "APHAI0D00000", "name": "APHAI0D00000" },
+    { "code": "APHAINAH0065", "name": "APHAINAH0065" },
+    { "code": "APHAINAH0066", "name": "APHAINAH0066" },
+    { "code": "APHAINAH0075", "name": "APHAINAH0075" },
+    { "code": "APHAINAH0076", "name": "APHAINAH0076" },
+    { "code": "APHAINAH0077", "name": "APHAINAH0077" },
+    { "code": "APHAINAH0083", "name": "APHAINAH0083" },
+    { "code": "APHAINAH0087", "name": "APHAINAH0087" },
+    { "code": "APHAINAH0088", "name": "APHAINAH0088" },
+    { "code": "APHAINAH0089", "name": "APHAINAH0089" },
+    { "code": "APHAINAH0105", "name": "APHAINAH0105" },
+    { "code": "APHAINAH0107", "name": "APHAINAH0107" },
+    { "code": "APHAINAH0108", "name": "APHAINAH0108" },
+    { "code": "APHAINAH0155", "name": "APHAINAH0155" },
+    { "code": "APHAINAH0158", "name": "APHAINAH0158" },
+    { "code": "APHAINAH0161", "name": "APHAINAH0161" },
+    { "code": "APHAINAH0162", "name": "APHAINAH0162" },
+    { "code": "APHAINAH1034", "name": "APHAINAH1034" },
+    { "code": "APHAINEUMIT", "name": "APHAINEUMIT" },
+    { "code": "APHAINF0000", "name": "APHAINF0000" },
+    { "code": "APHAINFH0002", "name": "APHAINFH0002" }
+];
+
+// Export for use in other files
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = projectCodesData;
+}

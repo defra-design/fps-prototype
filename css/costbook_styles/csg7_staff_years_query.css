@@ -1,0 +1,105 @@
+/* =================================================================
+   CSG7 Staff Years Query – table & pagination
+   Prefix: csg7-  (CSG7 Staff Years Query)
+   ================================================================= */
+
+/* Scrollable table wrapper */
+.csg7-table-wrap {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 420px;
+    border: 1px solid var(--govuk-border-colour, #b1b4b6);
+}
+
+/* Table base */
+#csg7Table {
+    margin-bottom: 0;
+    min-width: 700px;
+}
+
+.csg7-table-wrap {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 250px;
+    height: 250px;
+    border: 1px solid var(--govuk-border-colour, #b1b4b6);
+}
+
+/* Header row – yellow background matching screenshot */
+#csg7Table thead th {
+    background-color: #f9e77f;
+    color: #0b0c0c;
+    font-weight: 700;
+    white-space: nowrap;
+    border: 1px solid #b1b4b6;
+    position: sticky;
+    top: 0;
+    z-index: 4;
+}
+
+/* Sortable header cursor & hover */
+#csg7Table th[data-column] {
+    cursor: pointer;
+    user-select: none;
+}
+
+#csg7Table th[data-column]:hover {
+    background-color: #f0d94e;
+}
+
+/* Sort indicator */
+.csg7-sort-indicator {
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+/* Alternating row stripes – blue / white matching screenshot */
+#csg7Table tbody tr:nth-child(even) {
+    background-color: #d6eaf8;
+}
+
+#csg7Table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Cell borders */
+#csg7Table tbody td {
+    border: 1px solid #d5d5d5;
+    padding: 6px 10px;
+    vertical-align: middle;
+}
+
+/* Prevent flex child from overflowing header width */
+.project-requirement-page .project-main-column {
+    min-width: 0;
+}
+
+/* Record count bar */
+.csg7-record-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    font-size: 14px;
+    color: #0b0c0c;
+    background: #f3f2f1;
+    border-top: 1px solid #b1b4b6;
+}
+
+.csg7-record-bar__label {
+    font-weight: 400;
+}
+
+.csg7-record-bar__count {
+    font-weight: 700;
+}
+
+/* Table header and cell font sizes */
+.tab-font {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.tab-font-size {
+    font-size: 14px;
+}

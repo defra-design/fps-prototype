@@ -515,7 +515,7 @@ function renderWorkingHoursTable() {
                     <button class="edit-btn" data-item='${JSON.stringify(item)}'  data-index="${actualIndex}" ${editOnClick} style="background: none; border: none; cursor: ${cursorStyle}; margin-right: 8px;" ${isDisabled ? 'disabled' : ''}>
                         <img src="${editIcon}" alt="Edit" width="20" />
                     </button>
-                    <button class="delete-btn" ${deleteOnClick} style="background: none; border: none; cursor: ${deleteCursorStyle};">
+                    <button class="delete-btn" ${deleteOnClick} style="background: none; visibility:hidden; border: none; cursor: ${deleteCursorStyle};">
                         <img src="${deleteIcon}" alt="Delete" width="20" />
                     </button>
                 </td>
