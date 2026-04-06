@@ -48,8 +48,8 @@ document.getElementById("wgupdateBtn").addEventListener("click", () => {
   addOrUpdateRow(
     {
       WorkGroup: document.getElementById("WorkGroup").value,
-      ID: document.getElementById("txtID").value,
-      Name: document.getElementById("dpName").value.split('|')[1],
+      ID: pactStaffID,
+      Name: pactStaffName,
       TimeCode: document.getElementById("TimeCode").value,
       ParentProject: document.getElementById("ParentProject").value,
       Period: document.getElementById("Period").value,
@@ -60,25 +60,6 @@ document.getElementById("wgupdateBtn").addEventListener("click", () => {
   editingRow = null;
   closeModal();
 });
-
-
-
-//  const data = getRowData(row);
-//   editingRow = row;
-//   //document.getElementById("rowId").value = data[2];
-//   document.getElementById("WorkGroup").value = data[1];
-//   document.getElementById("txtID").value = data[2];
-//   document.getElementById("dpName").value = data[2] + "|" + data[3];
-//   document.getElementById("TimeCode").value = data[4];
-//   document.getElementById("ParentProject").value = data[5];
-//   document.getElementById("Period").value = data[6];
-//   document.getElementById("Hours").value = data[7];
-//   document.getElementById("modalTitle").textContent = "Edit Data";
-//   previousHours = data[7];
-//   openModal();
-
-
-
 
 document.getElementById("moveBtn").addEventListener("click", () => {
   const rows = [...tbody.rows];
@@ -344,7 +325,7 @@ function addOrUpdateRow(data, existingRow) {
     
     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes"  style="margin-left: 5px;">
               <div class="govuk-checkboxes__item"> 
-                <input class="govuk-checkboxes__input" type="checkbox" onclick="event.stopPropagation()" ${tr.cells[10].innerText ? "checked" : ""} checkbox.checked ? "true" : "false" disabled/>
+                <input class="govuk-checkboxes__input timerecordCheckbox" type="checkbox" onclick="event.stopPropagation()" ${tr.cells[10].innerText ? "checked" : ""} checkbox.checked ? "true" : "false" disabled/>
                   <label class="govuk-label govuk-checkboxes__label sup_label_auto_width" for="selectRow${tr.cells[10].innerText}" style="padding: 0;">  </label>    
               </div> 
           </div>
@@ -1548,11 +1529,11 @@ selectAllWG.addEventListener("change", function () {
     const item = JSON.parse(cb.dataset.id);
 
     if (this.checked) {
-      if (!selectedWG.includes(item)) {
-        selectedWG.push(item);
+      if (!selectedWG.includes(item.jobcode)) {
+        selectedWG.push(JSON.parse(cb.dataset.id));
       }
     } else {
-      selectedWG = selectedWG.filter((p) => p.id !== item);
+      selectedWG = selectedWG.filter((p) => p.id !== item.jobcode);
     }
 
     // let tcId = JSON.parse(cb.dataset.id).id;

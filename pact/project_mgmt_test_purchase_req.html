@@ -9,7 +9,31 @@
     <link rel="stylesheet" href="nav_menu/navstyle.css" />
     <script src="nav_menu/menutemplate.js"></script>
     <link rel="stylesheet" href="../css/pact_styles/style.css" />
-    <link rel="stylesheet" href="../css/pact_styles/supplement_style_over_gov.uk_style.css" /> 
+    <link rel="stylesheet" href="../css/pact_styles/suppliement_style_over_gov.uk_style.css" />
+
+    <style>
+        /* Sortable header styles */
+        th[data-column] {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+        
+        th[data-column]:hover {
+            background-color: #d8e5f4 !important;
+        }
+        
+        .sort-icon {
+            margin-left: 4px;
+            font-size: 10px;
+            color: #1d70b8;
+        }
+        
+        th.sorted-asc,
+        th.sorted-desc {
+            background-color: #d8e5f4 !important;
+        }
+    </style>
 
     <title>2025-2026 : Project Milestones - PACT</title>
 
@@ -59,7 +83,7 @@
         <div class="govuk-grid-column-full">
             <h1 class="heading_with_txtbox govuk-heading-s sup_border-bottom">
                 <div class="sup_flex_left_center">
-                    Test Purchase Requirements for:<label class="sup_hidden_label" for="sp-projectcode">project code</label>
+                    Test Purchase Requirements for:
                     <input type="text" id="sp-projectcode" class="govuk-input govuk-!-font-size-16 govuk-input--width-10">
                 </div>
                 <div> <a id="backlink" class="govuk-back-link">Back</a></div>
@@ -67,61 +91,67 @@
         </div>
     </div>
 
-    <div class="govuk-grid-row sup_flex_row sup_margin_left_right_0 sup_margin_bottom_10">
-        <nav class="sidenav flex-column flex-shrink-0 sup_margin_bottom_10" id="shortnav">
-            <button class="toggle-btn toggle-btn-position" onclick="toggleSidebar()">
-                <img src="../images/chevron-left-solid-full.svg" width="20" alt="side menu left arrow" class="toggle-btn-arrow" />
+    <div style="display: flex; margin-left: 0; margin-right: 0; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;"
+        class="govuk-grid-row">
+        <nav class="sidenav flex-column flex-shrink-0" id="shortnav">
+            <button class="toggle-btn" onclick="toggleSidebar()" style="right: -8px; top: 30px;">
+                <img src="../images/chevron-left-solid-full.svg" width="20" alt="side menu left arrow"
+                    style="margin: -4px 8px 0 -4px;" />
             </button>
             <ul>
-                   <li class="sidebar-link-two side-nav-link-bg">
-                    <a id="invoiecsubcontract" class="sup_white_color">Invoices & Subcontracted Costs</a>
+                   <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a id="invoiecsubcontract"   style="color: #fff;">Invoices & Subcontracted Costs</a>
                 </li>
-                <li class="sidebar-link-two side-nav-link-bg">
-                    <a id="milestones" class="sup_white_color"> Milestones</a>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0;cursor: pointer; background-color: #1d70b8;">
+                    <a id="milestones" style="color: #fff;"> Milestones</a>
                 </li>
-                <li class="sidebar-link-two side-nav-link-bg">
-                    <a id="testpurchasereq" class="sup_white_color">Test Purchase Requirements</a>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a id="testpurchasereq" style="color: #fff;">Test Purchase Requirements</a>
                 </li>
             </ul>
         </nav>
 
         <div class="govuk-grid-column-full">
-            <div class="govuk-grid-row sup_margin_left_right_0 sup_margin_bottom_10">
+            <div class="govuk-grid-row sup_margin_left_right_0">
                 <div class="sup_border">
                     <h2 class="sup_border-bottom sup_text_color sup_heading_bg_color govuk-heading-s sup_align_heading" id="headingOne">
                        Test to Buy....
                     </h2>
                     
-                    <div class="sup_flex_space_center">
-                        <div class="govuk-grid-column-one-third sup_padding_left_6">
-                            <label for="testPurchaseSearch" class="sr-only">Search</label>
-                            <input type="text" id="testPurchaseSearch" class="govuk-input govuk-!-font-size-16 sup_margin_tb_5" placeholder="Search by test code">
+                    <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                        <div class="govuk-grid-column-one-third" style="padding-top: 0; padding-left: 6px; padding-bottom: 0;">
+                            <label for="milestoneSearch" class="sr-only">Search</label>
+                            <input type="text" id="milestoneSearch" class="govuk-input govuk-!-font-size-16"
+                                style="padding: 5px; margin: 5px 0px;" placeholder="Search by test code">
                         </div>
 
-                        <div class="govuk-grid-column-one-third sup_padding_right_8 sup_text_align_right">
-                            <div class="govuk-button-group sup_margin_0 sup_float_right">
+                        <!-- <div class="govuk-grid-column-one-third" style="padding: 0 8px 0 0; text-align: right;">
+                            <div class="govuk-button-group sup_margin_0" style="float:right">
                                 <button type="button" class="govuk-button sup_margin_0 sup_p_8" id="addMilestoneBtn"
-                                    aria-label="Add test purchase requirement" data-module="govuk-button">
-                                    + &nbsp; Add Test
+                                    aria-label="Add milestone" data-module="govuk-button">
+                                    + &nbsp; Add Milestone
                                 </button>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
-                    <div class="table_scroll_wrapper">
-                        <table class="govuk-table custom-table" id="testPurchaseReqTable">
+                    <div class="table_scroll_wrapper" style="position: relative;">
+                        <table class="govuk-table custom-table" id="testPurchaseReqTable" style="margin-bottom: 0px;">
                             <thead class="govuk-table__head">
                                 <tr class="govuk-table__row">
                                     <th data-column="0" scope="col" class="govuk-table__header">Test code
                                         <div class="resizer">&nbsp;</div>
                                     </th>
-                                      <th data-column="2" class="govuk-table__header">No Required
+                                    <th data-column="1" class="govuk-table__header">No Required
                                         <div class="resizer">&nbsp;</div>
                                     </th>
-                                    <th data-column="1" class="govuk-table__header">Unit Price
+                                    <th data-column="2" class="govuk-table__header">Unit Price
                                         <div class="resizer">&nbsp;</div>
-                                    </th> 
-                                    <th class="govuk-table__header">Action</th>
+                                    </th>
+                                    
                                 </tr>
                             </thead>
                             <tbody class="govuk-table__body" id="testpurchasereqTableBody">
@@ -152,70 +182,267 @@
         </div>
     </div>
 
-        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
-        <div class="govuk-width-container sup_p_8 sup_text_center">
-            <span>
-                &copy; copyright Defra 2025
-            </span>
-        </div>
-    </div>
-    <!-- Add/Edit Test Purchase Requirement Modal -->
-    <div class="modal fade" id="addTestModal" tabindex="-1" aria-labelledby="testModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header flex-space-center">
-                    <h3 class="govuk-heading-s sup_margin_0" id="testModalLabel">Add/Edit Test</h3>
-                    <button type="button" class="btn-close" id="closeTestModalBtn">x</button>
-                </div>
-                <div class="modal-body sup_p_0">
-                    <form class="govuk-grid-column-full" id="formAddTest">
-                        <div class="govuk-grid-row sup_margin_top_10">
-                            <div class="govuk-grid-column-full">
-                                <div class="govuk-form-group sup_margin_bottom_10">
-                                    <label for="modal-testcode" class="govuk-label">Test Code:<span class="sup_color_red"
-                                            >*</span></label>
-                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="modal-testcode"
-                                        required placeholder="e.g., TC0025">
-                                </div>
-                            </div> 
-                        </div>
-                         <div class="govuk-grid-row">
-                             <div class="govuk-grid-column-full">
-                                <div class="govuk-form-group sup_margin_bottom_10">
-                                    <label for="modal-norequired" class="govuk-label">No Required:<span class="sup_color_red"
-                                            >*</span></label>
-                                    <input type="number" class="govuk-input govuk-!-font-size-16" id="modal-norequired"
-                                        required placeholder="e.g., 0">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="govuk-grid-row">
-                            <div class="govuk-grid-column-full">
-                                <div class="govuk-form-group sup_margin_bottom_10">
-                                    <label for="modal-unitprice" class="govuk-label">Unit Price:<span class="sup_color_red">*</span></label>
-                                    <div class="govuk-input__wrapper">
-                                        <div class="govuk-input__prefix" aria-hidden="true">£</div>
-                                        <input type="number" class="govuk-input govuk-!-font-size-16"  id="modal-unitprice"
-                                            placeholder="e.g., 23.80" required>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                       
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="govuk-button govuk-button--secondary sup_margin_0"
-                        data-module="govuk-button" id="cancelTestModalBtn">Cancel</button>
-                    <button type="button" class="govuk-button sup_margin_0" data-module="govuk-button"
-                        id="saveTestBtn">Save</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <script>
+        // Milestone data array
+        //TestCode	NoRequired	NoRequired
+        const milestoneData = [
+            {
+                TestCode: "TC0025",
+                UnitPrice: 2,
+                NoRequired: "£23.80"
+                
+            },
+            {
+                TestCode: "TC0025",
+                UnitPrice: 11,
+                NoRequired: "£116.30"
+                
+            },
 
-    <script src="../js/pact_js/testpurchase_requirement.js"></script>
+            {
+                TestCode: "TC0092S",
+                UnitPrice: 45,
+                NoRequired: "£130.70"
+                
+            },
+
+             {
+                TestCode: "TC0093S",
+                UnitPrice: 26,
+                NoRequired: "£121.20"
+                
+            },
+
+              {
+                TestCode: "TC0343",
+                UnitPrice: 2,
+                NoRequired: "£2,455.60" 
+            },
+            {
+                TestCode: "TC0352",
+                UnitPrice: 2,
+                NoRequired: "£126.10" 
+            },
+            {
+                TestCode: "TC0511",
+                UnitPrice: 0,
+                NoRequired: "£712.10" 
+            },
+            {
+                TestCode: "TC0555",
+                UnitPrice: 0,
+                NoRequired: "£89.00" 
+            } 
+            
+        ];
+
+        // Pagination variables
+        let currentPage = 1;
+        let recordsPerPage = 10;
+        let filteredData = [...milestoneData];
+
+        // Render table function
+        function renderTable() {
+            const tbody = document.getElementById('testpurchasereqTableBody');
+            tbody.innerHTML = '';
+
+            const startIndex = (currentPage - 1) * recordsPerPage;
+            const endIndex = startIndex + recordsPerPage;
+            const pageData = filteredData.slice(startIndex, endIndex);
+
+            if (pageData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" class="norecords" style="text-align: center;">No records found</td></tr>';
+                return;
+            }
+
+            pageData.forEach(item => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td class="govuk-table__cell">${item.TestCode || ''}</td>
+                    <td class="govuk-table__cell">${item.UnitPrice || '0'}</td>
+                    <td class="govuk-table__cell">${item.NoRequired || ''}</td> 
+                `;
+            });
+
+            renderPagination();
+        }
+
+        // Render pagination
+        function renderPagination() {
+            const pagination = document.getElementById('milestonePagination');
+            pagination.innerHTML = '';
+
+            const totalPages = Math.ceil(filteredData.length / recordsPerPage);
+
+            if (totalPages <= 1) return;
+
+            // Previous button
+            const prevLi = document.createElement('li');
+            prevLi.className = `govuk-pagination__item ${currentPage === 1 ? 'disabled' : ''}`;
+            prevLi.innerHTML = `
+                <a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); ${currentPage > 1 ? 'goToPage(' + (currentPage - 1) + ')' : ''}">
+                    <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                    </svg>
+                    <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>
+                </a>
+            `;
+            pagination.appendChild(prevLi);
+
+            // Page numbers
+            const startPage = Math.max(1, currentPage - 2);
+            const endPage = Math.min(totalPages, currentPage + 2);
+
+            for (let i = startPage; i <= endPage; i++) {
+                const li = document.createElement('li');
+                li.className = `govuk-pagination__item ${i === currentPage ? 'govuk-pagination__item--current' : ''}`;
+                li.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); goToPage(${i})">${i}</a>`;
+                pagination.appendChild(li);
+            }
+
+            // Next button
+            const nextLi = document.createElement('li');
+            nextLi.className = `govuk-pagination__next ${currentPage === totalPages ? 'disabled' : ''}`;
+            nextLi.innerHTML = `
+                <a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); ${currentPage < totalPages ? 'goToPage(' + (currentPage + 1) + ')' : ''}" rel="next">
+                    <span class="govuk-pagination__link-title">Next</span>
+                    <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                    </svg>
+                </a>
+            `;
+            pagination.appendChild(nextLi);
+        }
+
+        // Go to page function
+        function goToPage(page) {
+            const totalPages = Math.ceil(filteredData.length / recordsPerPage);
+            if (page < 1 || page > totalPages) return;
+            currentPage = page;
+            renderTable();
+        }
+
+        // Search functionality
+        function handleSearch(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            filteredData = milestoneData.filter(item => {
+                return (item.TestCode && item.TestCode.toString().toLowerCase().includes(searchTerm)) ||
+                       (item.UnitPrice && item.UnitPrice.toString().toLowerCase().includes(searchTerm)) ||
+                       (item.NoRequired && item.NoRequired.toString().toLowerCase().includes(searchTerm));
+            });
+            currentPage = 1;
+            renderTable();
+        }
+        
+        document.getElementById('milestoneSearch').addEventListener('input', handleSearch);
+
+        // Records per page change
+        document.getElementById('recordsPerPage').addEventListener('change', function(e) {
+            recordsPerPage = parseInt(e.target.value);
+            currentPage = 1;
+            renderTable();
+        });
+
+        // Sorting functionality
+        const headers = document.querySelectorAll("#testPurchaseReqTable th[data-column]");
+        const columnNames = ['TestCode', 'UnitPrice', 'NoRequired', '', '', '', '', ''];
+
+        headers.forEach((header, index) => {
+            header.addEventListener("click", function () {
+                const columnIndex = parseInt(this.dataset.column);
+                const columnName = columnNames[columnIndex];
+                const currentOrder = this.dataset.order || "asc";
+                const newOrder = currentOrder === "asc" ? "desc" : "asc";
+
+                // Remove sorting icons from all headers
+                headers.forEach(h => {
+                    h.classList.remove("sorted-asc", "sorted-desc");
+                    const existingIcon = h.querySelector(".sort-icon");
+                    if (existingIcon) {
+                        existingIcon.remove();
+                    }
+                });
+
+                // Update the order for the clicked header
+                this.dataset.order = newOrder;
+
+                // Add sorting icon to the clicked header
+                const sortIcon = document.createElement("span");
+                sortIcon.className = "sort-icon";
+                
+                if (newOrder === "asc") {
+                    sortIcon.innerHTML = " ▲";
+                    this.classList.add("sorted-asc");
+                } else {
+                    sortIcon.innerHTML = " ▼";
+                    this.classList.add("sorted-desc");
+                }
+                
+                this.appendChild(sortIcon);
+
+                // Sort data
+                filteredData.sort((a, b) => {
+                    let aVal = a[columnName];
+                    let bVal = b[columnName];
+                    
+                    // Handle numeric columns
+                    if (columnName === 'ObjRf' || columnName === 'UnitPrice' || columnName === 'Month') {
+                        aVal = Number(aVal);
+                        bVal = Number(bVal);
+                    }
+                    
+                    if (newOrder === "asc") {
+                        if (aVal < bVal) return -1;
+                        if (aVal > bVal) return 1;
+                        return 0;
+                    } else {
+                        if (aVal < bVal) return 1;
+                        if (aVal > bVal) return -1;
+                        return 0;
+                    }
+                });
+                
+                renderTable();
+            });
+        });
+
+        // Initialize
+        renderTable();
+
+             function toggleSidebar() {
+            const sidebar = document.querySelector('.sidenav');
+            sidebar.classList.toggle('collapsed');
+        }
+
+        // Add Milestone button (placeholder)
+        // document.getElementById('addMilestoneBtn').addEventListener('click', function() {
+        //     alert('Add Milestone functionality - to be implemented');
+        // });
+
+        const params = new URLSearchParams(window.location.search);
+        const encoded = params.get("data");
+
+
+        if (encoded) {
+
+            const data = JSON.parse(atob(encoded));
+            document.getElementById("sp-projectcode").value  = data.jobcode
+            console.log(data.name);
+
+               document.getElementById("invoiecsubcontract").href =
+                "project_invoices_subcontracts.html?data=" + encodeURIComponent(encoded);
+
+              document.getElementById("milestones").href =
+                "project_mgmt_milestone.html?data=" + encodeURIComponent(encoded);
+
+              document.getElementById("testpurchasereq").href =
+                "project_mgmt_test_purchase_req.html?data=" + encodeURIComponent(encoded);
+
+             document.getElementById("backlink").href =
+                "project_management_five.opttwo.html?data=" + encodeURIComponent(encoded); 
+
+        }
+    </script>
 </body>
 
 </html>
-

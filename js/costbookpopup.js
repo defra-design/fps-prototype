@@ -67,11 +67,11 @@ function renderTable() {
             <td class="editable-cell text-AlignRight" data-field="hrs" data-id="${item.id}">${item.hrs}</td>
                         <td class="editable-cell text-AlignRight" data-field="days" data-id="${item.id}">${item.days}</td>
 						<td class="editable-cell text-AlignRight" data-field="staffcost" data-id="${item.id}">${item.staffcost}</td>
-            <td class="text-AlignCenter">
-                <button class="btn btn-sm btn-outline-primary" onclick="handleEdit(${item.id})" aria-label="Edit staff row ${item.id}"><img src="../images/pen-to-square-regular-full.svg"
+            <td>
+                <button class="btn btn-sm btn-outline-primary" onclick="handleEdit(${item.id})"><img src="../images/pen-to-square-regular-full.svg"
                                                                                  alt="Edit icon for selected record" class="editstaffname"
                                                                                  width="20"></button>
-                <button class="btn btn-sm btn-outline-danger" onclick="handleDelete(${item.id})" aria-label="Delete staff row ${item.id}"> <img src="../images/trash-can-regular-full.svg" alt="Delete icon for selected record"
+                <button class="btn btn-sm btn-outline-danger" onclick="handleDelete(${item.id})"> <img src="../images/trash-can-regular-full.svg" alt="Delete icon for selected record"
                                                                                  width="20"></button>
             </td>
         `;
@@ -130,12 +130,12 @@ function renderTestTable() {
             <td class="text-AlignRight">${item.unitprice}</td>
             <td class="text-AlignRight">${item.quantity}</td>
             <td class="text-AlignRight">${item.testcost}</td>
-             <td class="text-AlignCenter">
-                <button class="btn btn-sm btn-outline-primary" onclick="handleTestEdit(${item.id})" aria-label="Edit test row ${item.id}">
-                    <img src="../images/pen-to-square-regular-full.svg" alt="Edit test row" width="20">
+            <td>
+                <button class="btn btn-sm btn-outline-primary" onclick="handleTestEdit(${item.id})">
+                    <img src="../images/pen-to-square-regular-full.svg" width="20">
                 </button>
-                <button class="btn btn-sm btn-outline-danger" onclick="handleTestDelete(${item.id})" aria-label="Delete test row ${item.id}">
-                    <img src="../images/trash-can-regular-full.svg" alt="Delete test row" width="20">
+                <button class="btn btn-sm btn-outline-danger" onclick="handleTestDelete(${item.id})">
+                    <img src="../images/trash-can-regular-full.svg" width="20">
                 </button>
             </td>
         `;
@@ -169,12 +169,12 @@ function renderAnimalTable() {
             <td class="text-AlignRight">${item.quantity}</td>
             <td class="text-AlignRight">${item.days}</td>
             <td class="text-AlignRight">${item.animalcost}</td>
-             <td class="text-AlignCenter">
-                <button class="btn btn-sm btn-outline-primary" onclick="handleAnimalEdit(${item.id})" aria-label="Edit animal row ${item.id}">
-                    <img src="../images/pen-to-square-regular-full.svg" alt="Edit animal row" width="20">
+            <td>
+                <button class="btn btn-sm btn-outline-primary" onclick="handleAnimalEdit(${item.id})">
+                    <img src="../images/pen-to-square-regular-full.svg" width="20">
                 </button>
-                <button class="btn btn-sm btn-outline-danger" onclick="handleAnimalDelete(${item.id})" aria-label="Delete animal row ${item.id}">
-                    <img src="../images/trash-can-regular-full.svg" alt="Delete animal row" width="20">
+                <button class="btn btn-sm btn-outline-danger" onclick="handleAnimalDelete(${item.id})">
+                    <img src="../images/trash-can-regular-full.svg" width="20">
                 </button>
             </td>
         `;
@@ -548,12 +548,12 @@ function renderAdditionalTable() {
             <td class="text-AlignRight">${item.costno}</td>
             <td class="text-AlignRight">${item.costinf}</td>
             <td>${item.accountcat}</td>
-            <td class="text-AlignCenter">
-                <button class="btn btn-sm btn-outline-primary" onclick="handleAdditionalEdit(${item.id})" aria-label="Edit additional cost row ${item.id}">
-                    <img src="../images/pen-to-square-regular-full.svg" alt="Edit additional cost row" width="20">
+            <td>
+                <button class="btn btn-sm btn-outline-primary" onclick="handleAdditionalEdit(${item.id})">
+                    <img src="../images/pen-to-square-regular-full.svg" width="20">
                 </button>
-                <button class="btn btn-sm btn-outline-danger" onclick="handleAdditionalDelete(${item.id})" aria-label="Delete additional cost row ${item.id}">
-                    <img src="../images/trash-can-regular-full.svg" alt="Delete additional cost row" width="20">
+                <button class="btn btn-sm btn-outline-danger" onclick="handleAdditionalDelete(${item.id})">
+                    <img src="../images/trash-can-regular-full.svg" width="20">
                 </button>
             </td>
         `;
@@ -892,9 +892,7 @@ function handleDelete(id) {
 
 
 function openModal() {
-    modal.style.display = "block";
   modal.classList.add("show");
-    modal.setAttribute("aria-hidden", "false");
   if (isAddMode) {
       document.getElementById("modalsaveBtn").style.display = "inline-block";
       document.getElementById("staffUpdateBtn").style.display = "none";
@@ -906,15 +904,12 @@ function openModal() {
 }
 
 function openModalyear() {
-    modal_year.style.display = "block";
+ // modal.classList.add("show");
   modal_year.classList.add("show");
-    modal_year.setAttribute("aria-hidden", "false");
 }
 
 function closeModal() {
-    modal.style.display = "none";
   modal.classList.remove("show");
-    modal.setAttribute("aria-hidden", "true");
     isAddMode = true;
 
   document.getElementById("modalsaveBtn").style.display = "inline-block";
@@ -926,9 +921,8 @@ function closeModal() {
 	// modal_tests.classList.remove("show");}
 
 function closeModalYear() {
-    modal_year.style.display = "none";
+  //modal.classList.remove("show");
    modal_year.classList.remove("show");
-    modal_year.setAttribute("aria-hidden", "true");
 }
 
 // Handle save

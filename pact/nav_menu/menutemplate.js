@@ -61,7 +61,7 @@ const htmlmenu = `<div style="display: flex; flex-direction: row;">
                 <a class="dropdown-item" href="#">FT & UT Project Work In Progress (WIP Over-ride)</a>
 
                 <a class="dropdown-item" href="#">SubContracts (Exceptional Costs) (Manual)</a>
-                <a class="dropdown-item" href="subcontracts_batch_mode_rms.html">SubContracts (Exceptional Costs) (Batch mode from RMS)</a>
+                <a class="dropdown-item" href="#">SubContracts (Exceptional Costs) (Batch mode from RMS)</a>
                 <a class="dropdown-item" href="#">SubContracts By Month</a>
             </div>
         </div>
@@ -77,7 +77,7 @@ const htmlmenu = `<div style="display: flex; flex-direction: row;">
             <div class="dropdown-menu" id="work-group">
                 <a href="#" class="dropdown-item">Work Group People</a>
                 <a href="workgroup_management.html" class="dropdown-item">Test Capabilities</a>
-                <a href="test_maintenance_list.html" class="dropdown-item">Test Maintenance List</a>
+                <a href="#" class="dropdown-item">Test Maintenance List</a>
             </div>
         </div>
 		
@@ -109,7 +109,7 @@ const htmlmenu = `<div style="display: flex; flex-direction: row;">
                 <a href="timerecording.html" class="dropdown-item">Time record data entry</a>
                 <a href="output_record_dataentry.html" class="dropdown-item">Output record data entry</a>
                 <a href="create_email_time_output_summary.html" class="dropdown-item">Create & email time & output summaries</a>				
-                <a href="createprint_cos90.html" class="dropdown-item">Create & print individual COS90s</a>
+                <a href="create_print_individual_cos90s.html" class="dropdown-item">Create & print individual COS90s</a>
                 <a href="#" class="dropdown-item">Search Audit Log for Monthly Output Change</a>
                 <a href="#" class="dropdown-item">Search Audit Log for Monthly Time Change</a>
             </div>

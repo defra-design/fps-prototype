@@ -5,117 +5,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Select project</title>
+  <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
+ <link rel="stylesheet" href="../css/bootstrap.min.css">	
+ <link rel="stylesheet" href="../css/costbook_styles/styles.css">   	
+  <link rel="stylesheet" href="../css/main_style.css">
+<link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" /> 
+	 
+	 
 	
-
-
-	
-  <link rel="stylesheet" href="../css/apps/common.css" />
-  <link rel="stylesheet" href="../css/apps/costbook-app.css" />
 </head>
-<body class="govuk-template__body costbook-home-page">
+<script>
+ 
+
+    window.addEventListener('load', function () {
+        // Get modal element
+        const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        // Show modal
+        myModal.show();
+    });
+
+</script>
 
 
+<style>
+.input-group-text {
+    border-radius: 0 5px 5px 0;
+    padding: 7px 6px 6px 6px;
+    border: 1px solid #919191;
+}
+</style>
+
+<body>
 
 
- <header  class="govuk-header" role="banner">
+<header>
         <div class="header-nav">
 
             <div class="pims-log-wrapper">
 
                 <div>
-                    <img src="../images/defra_logo.png" alt="Defra logo" width="80px">
+                    <img src="../images/defra_logo.png" width="80px">
                 </div>
-
+              
                 <div class="pims-log">
                     <span>Costbook</span>
                 </div>
+           
             </div>
 			
 			
 		
           
 			
-			<div class="btn-group home-user-menu">
-                Ken Rod <button type="button" aria-label="user dropdown arrow to go home page" class="btn btn-secondary dropdown-toggle user-menu home-user-btn" data-bs-toggle="dropdown" aria-expanded="false">
+			<div class="btn-group" style=" display: flex; align-items: center;     font-size: 16px;">
+                Ken Rod <button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
                    <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24"> <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px" height="30px">
                 </button> 
-                <ul class="dropdown-menu dropdown-menu-end">
-                    
+                <ul class="dropdown-menu dropdown-menu-end" style="">
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button> -->
+                    <!-- </li> -->
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button> -->
+                    <!-- </li> -->
                     <li><a href="../index.html" class="dropdown-item" type="button" aria-hidden="true">
-                            <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
-                            Home</a></li>
+                          <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">  Home</a></li>
                 </ul>
             </div>
         </div>
     </header>
    
-   
-   
-      <div id="header"></div>
+     <nav class="navbar navbar-expand-lg main-nav">
+        <div class="container-fluid">
 
-    <!-- Global navigation stats -->
-    <script src="../js/costbook_nav_menu.js"></script>
-    <script>
-        document.getElementById('header').innerHTML = htmlmenu;
-        initMenu();
-        btn();
-    </script>
-    <!-- END Global navigation stats -->
-     
-	 
-	 <main class="govuk-main-wrapper govuk-!-padding-top-0" id="main-content" role="main">
-    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    
-        <div class="govuk-grid-row sup_margin_left_right_0 sup_border-bottom">
-            <div class="govuk-grid-column-full ">
-                <div class="govuk-grid-column-one-half govuk-!-padding-left-0 ">
-				
-				<h1 class="govuk-grid-row govuk-heading-s " style="padding:12px 0 0px 10px; margin-bottom:0px;">
-                   Choose Existing Project</h1>
-                </div>
-				
-				<div class="govuk-grid-column-one-half">
-                    <a href="costbookproject_newproject.html" class="govuk-button govuk-!-margin-bottom-1 govuk-!-margin-top-1 floatRight" >+ Add New Project</a>
-                </div>
-				
-				
-				
-				
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+
+                
+				  <li class="nav-item"><a class="nav-link" href="costbookhome.html">Choose Project </a></li>
+				  
+                  
+					 <li class="nav-item">
+                        <a class="nav-link" href="#">Maintainance </a>
+                    </li>
+
+                   
+
+                </ul>
             </div>
         </div>
+    </nav>
   
-
-    
-<div class="govuk-grid-row sup_margin_left_right_0">
-
-<div class="govuk-grid-column-full">
-
-
-
-              
-		<div class="align-items-start m-10" id="search-grid">
-            
-
-
-<div>
-                            <div class="fps-sr-staff-header govuk-!-margin-top-2 govuk-!-margin-bottom-2 ">
-                               <label class="govuk-label">Select Year</label>
+    <div class="container-fluid" style=" min-height: 415px;">
+	
+		<div class="govuk-grid-row sup_border-bottom">
+		
+		<div class="govuk-grid-column-one-half">
+		 <h1 class="govuk-heading-s sup_margin_0" style="padding:10px 0 10px 10px">   Choose Existing Project  </h1>
+		</div>
+		<div class="govuk-grid-column-one-half">
+		<div style=" float: right; text-align:right;     margin-top: 2px;    width:50%;">
+		
+                               <a href="costbookproject_newproject.html" class="govuk-button sup_margin_0 " >+ Add New Project</a>
+                          
+							</div>
+		</div>
+   
+    </div>
+      
+        <div class="row">
+		
+		
+		
+		
+           
+            <div class="col-lg-6">
+                <div style="margin: 2px 0 0 0;">
+                   
+	
+	
+                </div>
+            </div>
+			
+				<div class="col-lg-6">
+				<!-- <button class="btn btn-sm " style="background-color: #1d70b8 ;color:#fff;float: right; margin-top: 5px; font-size: 12px">Maintainance</button> -->
+			</div>
+			
+			<div class="col-lg-12">
+			
+			<main class="main-content" style="padding:0;">
+       
+	
+       <div class="container-fluid" style="padding: 0;">
+<div class="col-12">
+                                       
+											
+											
+											<div class="align-items-start m-10" id="search-grid">
+            <div class="search-panel">
+               <div class="grid-header" style="">
+				 <div class="grid-toolbar">
+                        <div style="display: flex; align-items: center; gap: 8px; " >
+						<label class="govuk-label">Select Year</label>
 						
 						 <select class="govuk-select me-3" aria-label="Select a Programme" >
                                              <option value="">2024</option>
                                             <option value="" selected >2025</option>
                                             <option value="" >2026</option>
-											<option value="" >2027</option>											
-										
+											<option value="" >2027</option>
+											
+											
+											<!-- <option value="">LabT</option> -->
+                                            <!-- <option value="">Path</option> -->
+                                            <!-- <option value="">PHINSLT</option> -->
+											
+											<!-- <option value="">PHSIN</option> -->
+                                            <!-- <option value="">PVS</option> -->
+                                            <!-- <option value="">ROMD</option> -->
+											 <!-- <option value="">RONT</option> -->
                                         </select>
-										
-										
-										
-				<div class="home-search-shell">
+
+                        </div>
+                    </div>
 				
-				<div class="input-group home-input-group">
-                         
+				<div style="float:right; width: 245px;">
+				
+				<div class="input-group" style="flex-wrap: nowrap;">
+                            <!-- <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div> -->
                             <input type="text" id="searchInput" onkeyup='searchTable()' class="govuk-input" placeholder="Search by Costbook Code" aria-label="Amount (to the nearest dollar)" >
                             <div class="input-group-append">
                                 <span class="input-group-text"> 
@@ -125,28 +185,40 @@
                         </div>
 				
 				
-						
+										<!-- <input type="text" id="searchInput" onkeyup='searchTable()' class="form-control form-control-sm" placeholder="Search..." style="width: 180px; border: 1px solid #919191;    padding: 5px 5px;float:left;"> -->
+                            <!-- <button type="button" class="btn btn-sm btn-primary" id="searchBtn" style="float:left;"> -->
+                                <!-- <i class="fa fa-search"></i> -->
+                            <!-- </button> -->
 										
 										</div>
 										
-                            </div>
-                            <div class="fps-sr-fixedheader-wrap">
-                                <table class="govuk-table fps-sr-themed-table fps-sr-data-table" aria-label="Staff table">
-                                    <thead class="govuk-table__head">
-                                        <tr class="govuk-table__row">
-                                          <tr class="govuk-table__row">
-                           <th class="govuk-table__header home-table-header-code">Project  </th>
-                                    <th class="govuk-table__header home-table-header-title">Project Title </th>
-                                    <th class="govuk-table__header home-table-header-contract">Contract </th>
-                                    <th class="govuk-table__header home-table-header-date">Start Date </th>
+			
+				
+                    <!-- <h2>WG Staff</h2> -->
+                   
+					
+						
+                </div>
+            </div>
+            <div id="divprojectcode" style="display: block;">
+                <div style="border: 1px solid #1d70b8 !important;   max-height: 300px; overflow-y: auto; height: 230px; border-bottom: 0 !important;
+    border-top: 0 !important;   ">
+                <table class="govuk-table custom-table" id="tblmaintenance" style="">
+                    <thead class="govuk-table__head thead-light bordertop">
+                        <tr class="govuk-table__row">
+                           <th style="width: 80px;" class="govuk-table__header">Project  </th>
+                                    <th style="width: 150px;" class="govuk-table__header">Project Title </th>
+                                    <th style="width: 120px;" class="govuk-table__header">Contract </th>
+                                    <th style="width: 80px;" class="govuk-table__header">Start Date </th>
                                   
-                                    <th class="govuk-table__header home-table-header-action">Action</th>
+                                    <th class="govuk-table__header" style="width: 80px;">Action</th>
                                
                         </tr>
-                                    </thead>
-                                    <tbody class="govuk-table__body" id="tableBody">
+                    </thead>
+                  <tbody class="govuk-table__body" id="tableBody">
                                 <tr data-row-index="0">
-                                  
+                                    <!-- <td class="row-number">0</td> -->
+                                    <!-- <td class="checkbox-cell"><input type="checkbox" class="row-checkbox"></td> -->
                                     <td data-property="" class="govuk-table__cell">2025/109</td>
                                     <td data-property="StaffName" class="govuk-table__cell">Test TVG
 									</td>
@@ -160,17 +232,23 @@
                                     <td class="text-AlignCenter govuk-table__cell" >
 									<button class="btn btn-sm btn-outline-primary">
 									<a href="costbookproject_edit.html" class="text_link">
-									<img src="../images/view_icon.png" alt="View icon for Project" class="editjobcode" width="20" title="View">
+									<img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected Project" class="editjobcode" width="20" title="Edit Project">
 									</a>	
 									</button>
 									
 									
-							 
+							  <!-- <button type="button" class="btn btn-outline-primary" > -->
+									<!-- <a href="Project-Requirement.html" class="text_link"> -->
+									<!-- <img src="../images/view_icon.png" width="20px" height="20px"  -->
+									<!-- style=" position: relative;  top: 2px;" alt="View Project" title="Yearly Details"/> -->
+									<!-- </a>	 -->
+									<!-- </button> -->
                                     
                                     </td>
                                 </tr>
-                                <tr data-row-index="1" class="home-table-row-highlight">
-                                 
+                                <tr data-row-index="1" style="background-color: rgb(255, 255, 204);">
+                                    <!-- <td class="row-number">1</td> -->
+                                    <!-- <td class="checkbox-cell"><input type="checkbox" class="row-checkbox"></td> -->
                                     <td data-property="" class="govuk-table__cell">2025/108</td>
                                     <td data-property="StaffName" class="govuk-table__cell">
 									Assessing efficacy of new BRSV vaccine in cal
@@ -185,16 +263,23 @@
                                     <td class="text-AlignCenter govuk-table__cell" >
 									<button class="btn btn-sm btn-outline-primary">
 									<a href="costbookproject_edit.html" class="text_link">
-									<img src="../images/view_icon.png" alt="View icon for Project" class="editjobcode" width="20" title="View">
+									<img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected Project" class="editjobcode" width="20" title="Edit Project">
 									</a>	
 									</button>
 									
-							
+									
+							  <!-- <button type="button" class="btn btn-outline-primary" > -->
+									<!-- <a href="Project-Requirement.html" class="text_link"> -->
+									<!-- <img src="../images/view_icon.png" width="20px" height="20px"  -->
+									<!-- style=" position: relative;  top: 2px;" alt="View Project" title="Yearly Details"/> -->
+									<!-- </a>	 -->
+									<!-- </button> -->
                                     
                                     </td>
                                 </tr>
                                 <tr data-row-index="2">
-                                 
+                                    <!-- <td class="row-number">2</td> -->
+                                    <!-- <td class="checkbox-cell"><input type="checkbox" class="row-checkbox"></td> -->
                                     <td data-property="" class="govuk-table__cell">2025/107</td>
                                     <td data-property="StaffName" class="govuk-table__cell">
 									MDT Bridging Project
@@ -208,19 +293,24 @@
                                    
                                    <td class="text-AlignCenter govuk-table__cell">
 									<button class="btn btn-sm btn-outline-primary">
-										
 									<a href="costbookproject_edit.html" class="text_link">
-									<img src="../images/view_icon.png" alt="View icon for Project" class="editjobcode" width="20" title="View">
-									</a>
+									<img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected Project" class="editjobcode" width="20" title="Edit Project">
+									</a>	
 									</button>
 									
 									
-							
+							  <!-- <button type="button" class="btn btn-outline-primary" > -->
+									<!-- <a href="Project-Requirement.html" class="text_link"> -->
+									<!-- <img src="../images/view_icon.png" width="20px" height="20px"  -->
+									<!-- style=" position: relative;  top: 2px;" alt="View Project" title="Yearly Details"/> -->
+									<!-- </a>	 -->
+									<!-- </button> -->
                                     
                                     </td>
                                 </tr>
                                 <tr data-row-index="3">
-                                  
+                                    <!-- <td class="row-number">3</td> -->
+                                    <!-- <td class="checkbox-cell"><input type="checkbox" class="row-checkbox"></td> -->
                                     <td data-property="" class="govuk-table__cell">2026/106</td>
                                     <td data-property="StaffName" class="govuk-table__cell">
 									Salmonella training day for Elanco
@@ -235,17 +325,23 @@
                                     <td class="text-AlignCenter govuk-table__cell">
 									<button class="btn btn-sm btn-outline-primary">
 									<a href="costbookproject_edit.html" class="text_link">
-									<img src="../images/view_icon.png" alt="View icon for Project" class="editjobcode" width="20" title="View">
+									<img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected Project" class="editjobcode" width="20" title="Edit Project">
 									</a>	
 									</button>
 									
 									
-							
+							  <!-- <button type="button" class="btn btn-outline-primary" > -->
+									<!-- <a href="Project-Requirement.html" class="text_link"> -->
+									<!-- <img src="../images/view_icon.png" width="20px" height="20px"  -->
+									<!-- style=" position: relative;  top: 2px;" alt="View Project" title="Yearly Details"/> -->
+									<!-- </a>	 -->
+									<!-- </button> -->
                                     
                                     </td>
                                 </tr>
                                 <tr data-row-index="4">
-                                  
+                                    <!-- <td class="row-number">4</td> -->
+                                    <!-- <td class="checkbox-cell"><input type="checkbox" class="row-checkbox"></td> -->
                                     <td data-property="" class="govuk-table__cell">2026/105</td>
                                     <td data-property="StaffName" class="govuk-table__cell">
 									Biogene folloew on funding - Validation and deploy
@@ -260,18 +356,24 @@
                                     <td class="text-AlignCenter govuk-table__cell">
 									<button class="btn btn-sm btn-outline-primary">
 									<a href="costbookproject_edit.html" class="text_link">
-									<img src="../images/view_icon.png" alt="View icon for Project" class="editjobcode" width="20" title="View">
+									<img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected Project" class="editjobcode" width="20" title="Edit Project">
 									</a>	
 									</button>
 									
 									
-						
+							  <!-- <button type="button" class="btn btn-outline-primary" > -->
+									<!-- <a href="Project-Requirement.html" class="text_link"> -->
+									<!-- <img src="../images/view_icon.png" width="20px" height="20px"  -->
+									<!-- style=" position: relative;  top: 2px;" alt="View Project" title="Yearly Details"/> -->
+									<!-- </a>	 -->
+									<!-- </button> -->
                                     
                                     </td>
                                 </tr>
 								
 								   <tr data-row-index="4">
-                                  
+                                    <!-- <td class="row-number">4</td> -->
+                                    <!-- <td class="checkbox-cell"><input type="checkbox" class="row-checkbox"></td> -->
                                     <td data-property="" class="govuk-table__cell">2026/104</td>
                                     <td data-property="StaffName" class="govuk-table__cell">Pheasant dispersal from Release Pens</td>
                                     <td data-property="WGGrade" class="govuk-table__cell">
@@ -284,19 +386,33 @@
                                     <td class="text-AlignCenter govuk-table__cell">
 									<button class="btn btn-sm btn-outline-primary">
 									<a href="costbookproject_edit.html" class="text_link">
-									<img src="../images/view_icon.png" alt="View icon for Project" class="editjobcode" width="20" title="View">
+									<img src="../images/pen-to-square-regular-full.svg" alt="Edit icon for selected Project" class="editjobcode" width="20" title="Edit Project">
 									</a>	
 									</button>
 									
 									
-							
+							  <!-- <button type="button" class="btn btn-outline-primary" > -->
+									<!-- <a href="Project-Requirement.html" class="text_link"> -->
+									<!-- <img src="../images/view_icon.png" width="20px" height="20px"  -->
+									<!-- style=" position: relative;  top: 2px;" alt="View Project" title="Yearly Details"/> -->
+									<!-- </a>	 -->
+									<!-- </button> -->
+                                    
                                     </td>
                                 </tr>
                             </tbody>
-
-									</table>
-                            </div>
-                          <div class="home-pagination-container">
+                </table>
+            </div>
+                <!-- Pagination -->
+                <div style="display: flex;
+                                                    margin-top: 0;
+                                                    margin-bottom: 0;
+                                                    border: 1px solid #1d70b8;
+                                                    padding: 5px 10px 5px 10px;
+                                                    border-top: 0;
+                                                    justify-content: space-between;
+                                                    align-items: center;
+                                                    border-radius: 0 0 10px 10px;">
                                                     <div class="">
                                                 <select id="recordsPerPage" class="govuk-select sup_select_pagination_width">
                                                     <option value="5" selected="">5</option>
@@ -307,7 +423,16 @@
                                                     <option value="30">30</option>
                                                 </select>
                                             </div>
-                                                  
+                                                    <!-- Pagination -->
+                                                    <!-- <nav aria-label="Page navigation" class="govuk-pagination"> -->
+                                                        <!-- <ul class="govuk-pagination__list justify-content-center" id="pagination" style="margin: 0;"> -->
+														<!-- <li class="govuk-pagination__item disabled aria-disabled=&quot;true&quot;"> -->
+														<!-- <a class="govuk-link govuk-pagination__link" onclick="goToPage(1)">First</a> -->
+														<!-- </li> -->
+														<!-- <li class="page-item disabled aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(0)">Previous</a></li> -->
+														<!-- <li class="page-item active aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(1)">1</a></li> -->
+														<!-- <li class="page-item  aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(2)">2</a></li><li class="page-item  aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(2)">Next</a></li><li class="page-item  aria-disabled=&quot;true&quot;"><a class="page-link" onclick="goToPage(2)">Last</a></li></ul> -->
+                                                    <!-- </nav> -->
                                                  <nav class="govuk-pagination sup_margin_left_right_10" aria-label="Pagination">
                                             
                                             <ul class="govuk-pagination__list" id="pagination"><li class="govuk-pagination__item disabled aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(0)"> <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
@@ -320,114 +445,129 @@
                                     </nav>
                                                    
                                                 </div>
-                        </div>
-
-
-           
+            </div>
 
 
             
-        </div>		
-				
-				
-</div>
-
-</div>
-    
-
-
-
-
-
-    </div>
-
-
-    </div>
-
-
-
-
-    </div>
-
-
-
-
-
-   
-
-    <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
-        <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
-            <span class="fps-sr-page-footer-text">
-                © copyright Defra 2025
-            </span>
         </div>
-    </div>
-</main>
-	 
-  
-    <div class="container-fluid home-modal-hidden">
-	
-		
-      
-        <div class="row">
-		
-		
-		
-		
-           
-            <div class="col-lg-6">
-                <div class="home-row-spacing">
-                   
-	
-	
+                                        
+     
+ 
+       
+         
+                
+        <!-- Modal for Add/Edit -->
+        <div id="editModal" class="modal" tabindex="-1" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Staff</h5>
+                        <button type="button" class="close"
+						style=" padding: 0px 5px;    border: 1px solid #a8a8a8;    border-radius: 4px;" 	onclick="closeEditModal()">×</button>
+                    </div>
+                    <div class="modal-body" id="editModalBody">
+                        <form id="editableGridForm">
+                            <div class="form-group mb-2">
+                                <label for="PACTid">Project</label>
+                                  <input type="text" class="form-control" id="StaffName" name="StaffName">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="StaffName">Project title</label>
+                                <input type="text" class="form-control" id="StaffName" name="StaffName">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="WGGrade">Contract</label>
+                                <input type="text" class="form-control" id="StaffName" name="StaffName">
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="Status">Start Date</label>
+                               <input type="date" class="form-control" id="StaffName" name="StaffName">
+                            </div>
+                         
+                      
+                          
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Cancel</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-			
-				<div class="col-lg-6">
-					</div>
-			
-			<div class="col-lg-12">
-			
-			<main class="main-content home-main-content">
-       
+        </div>
 
-                                       
-											
-											
-											
            
 
-        <!-- Bootstrap JS (required for dropdowns) -->
+            
 
-        <script src="../js/bootstrap.bundle.min.js">    </script>
+ 
 
         <!-- Financial Summary -->
        
  
        
-  <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
-        <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
-            <span class="fps-sr-page-footer-text">
-                © copyright Defra 2025
-            </span>
-        </div>
-    </div>
+ 
 	   
     </main>
 			
 			
 			
 			
-   
+           
+        </div>
+    </div>
 	
+	<div class="footer">
+	© Copyright Defra 2025
+		</div>
 
     <!-- Bootstrap JS (required for dropdowns) -->
 	
      <script src="../js/bootstrap.bundle.min.js">    </script>
  
-    <script src="../js/costbook_common.js">    </script>
+   
+    
+    <script>
+
+        function showValue() {
+            const selectBox = document.getElementById("project");
+            const selectedValue = selectBox.value;
+            const selectedText = selectBox.options[selectBox.selectedIndex].text;
+
+
+            const selectBoxProgram = document.getElementById("program");
+            const selectedValueProgram = selectBoxProgram.value;
+            const selectedTextProgram = selectBoxProgram.options[selectBoxProgram.selectedIndex].text;
+
+
+            document.getElementById("resultproject").innerHTML = `<b>${selectedText}</b>`;
+            document.getElementById("resultprogram").innerHTML = `<b>${selectedTextProgram}</b>`;
+        }
+    </script>
+	
+	<script>
+function searchTable() {
+    var input, filter, found, table, tr, td, i, j;
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("tableBody");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                found = true;
+            }
+        }
+        if (found) {
+            tr[i].style.display = "";
+			 
+            found = false;
+        } else {
+            tr[i].style.display = "none";
+        }
+    }
+}
+</script>
  
 </body>
 
 </html>
-
