@@ -1,0 +1,430 @@
+[
+            {
+                "TestCode": "TC0025",
+                "UnitPrice": "£23.80",
+                "NoRequired": "2",
+                "Projectcode": "AH0011"
+                
+            },
+            {
+                "TestCode": "TC0025",
+                "UnitPrice": "£116.30",
+                "NoRequired": "11",
+                "Projectcode": "AH0032"
+                
+            },
+
+            {
+                "TestCode": "TC0092S",
+                "UnitPrice": "£130.70",
+                "NoRequired": "45",
+                "Projectcode": "AH0032"
+                
+            },
+
+             {
+                "TestCode": "TC0093S",
+                "UnitPrice": "£121.20",
+                "NoRequired": "26",
+                "Projectcode": "APHAH0038"
+                
+            },
+
+              {
+                "TestCode": "TC0343",
+                "UnitPrice": "£2,455.60",
+                "NoRequired": "2",
+                "Projectcode": "AB0G0508"
+            },
+            {
+                "TestCode": "TC0352",
+                "UnitPrice": "£126.10",
+                "NoRequired": "2",
+                "Projectcode": "AH0033"
+            },
+            {
+                "TestCode": "TC0511",
+                "UnitPrice": "£712.10",
+                "NoRequired": "2",
+                "Projectcode": "APHABC0000"
+            },
+            {
+                "TestCode": "TC0555",
+                "UnitPrice": "£89.00",
+                "NoRequired": "2",
+                "Projectcode": "APHAASHORN24"
+            },
+            {
+                "TestCode": "PT0001",
+                "UnitPrice": "£488.00",
+                "NoRequired": "1",
+                "Projectcode": "APHAEUTAH"
+            },
+            {
+                "TestCode": "PT0003",
+                "UnitPrice": "£488.00",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0040"
+            },
+            {
+                "TestCode": "PT0010",
+                "UnitPrice": "£144.00",
+                "NoRequired": "2",
+                "Projectcode": "AH0011"
+            },
+            {
+                "TestCode": "PT0021",
+                "UnitPrice": "£488.00",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0038"
+            },
+            {
+                "TestCode": "TC0060",
+                "UnitPrice": "£19.10",
+                "NoRequired": "2",
+                "Projectcode": "AB0G0508"
+            },
+            {
+                "TestCode": "TC0789",
+                "UnitPrice": "£66.20",
+                "NoRequired": "2",
+                "Projectcode": "AH0033"
+            },
+            {
+                "TestCode": "TC0889",
+                "UnitPrice": "£34.10",
+                "NoRequired": "2",
+                "Projectcode": "APHABC0000"
+            },
+            {
+                "TestCode": "TC0116",
+                "UnitPrice": "£9.30",
+                "NoRequired": "2",
+                "Projectcode": "APHAASHORN24"
+            },
+            {
+                "TestCode": "TC0123",
+                "UnitPrice": "£8.20",
+                "NoRequired": "2",
+                "Projectcode": "APHAEUTAH"
+            },
+            {
+                "TestCode": "TC0124",
+                "UnitPrice": "£8.30",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0040"
+            },
+            {
+                "TestCode": "TC0125",
+                "UnitPrice": "£8.20",
+                "NoRequired": "2",
+                "Projectcode": "AH0011"
+            },
+            {
+                "TestCode": "TC0140",
+                "UnitPrice": "£27.70",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0038"
+            },
+            {
+                "TestCode": "TC0141",
+                "UnitPrice": "£52.40",
+                "NoRequired": "2",
+                "Projectcode": "AB0G0508"
+            },
+            {
+                "TestCode": "TC0160",
+                "UnitPrice": "£55.00",
+                "NoRequired": "2",
+                "Projectcode": "AH0033"
+            },
+            {
+                "TestCode": "TC0186",
+                "UnitPrice": "£11.60",
+                "NoRequired": "2",
+                "Projectcode": "APHABC0000"
+            },
+            {
+                "TestCode": "TC0219",
+                "UnitPrice": "£10.20",
+                "NoRequired": "2",
+                "Projectcode": "APHAASHORN24"
+            },
+            {
+                "TestCode": "TC0246",
+                "UnitPrice": "£0.00",
+                "NoRequired": "2",
+                "Projectcode": "APHAEUTAH"
+            },
+            {
+                "TestCode": "TC0306",
+                "UnitPrice": "£8.60",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0040"
+            },
+            {
+                "TestCode": "TC0307",
+                "UnitPrice": "£8.60",
+                "NoRequired": "2",
+                "Projectcode": "AH0011"
+            },
+            {
+                "TestCode": "TC0313",
+                "UnitPrice": "£20.80",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0038"
+            },
+            {
+                "TestCode": "TC0323",
+                "UnitPrice": "£37.20",
+                "NoRequired": "2",
+                "Projectcode": "AB0G0508"
+            },
+            {
+                "TestCode": "TC0324",
+                "UnitPrice": "£60.30",
+                "NoRequired": "2",
+                "Projectcode": "AH0033"
+            },
+            {
+                "TestCode": "TC0375",
+                "UnitPrice": "£77.00",
+                "NoRequired": "2",
+                "Projectcode": "APHABC0000"
+            },
+            {
+                "TestCode": "TC0383",
+                "UnitPrice": "£18.20",
+                "NoRequired": "2",
+                "Projectcode": "APHAASHORN24"
+            },
+            {
+                "TestCode": "TC0400",
+                "UnitPrice": "£10.60",
+                "NoRequired": "2",
+                "Projectcode": "APHAEUTAH"
+            },
+            {
+                "TestCode": "TC0403",
+                "UnitPrice": "£20.10",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0040"
+            },
+            {
+                "TestCode": "TC0412",
+                "UnitPrice": "£11.90",
+                "NoRequired": "2",
+                "Projectcode": "AH0011"
+            },
+            {
+                "TestCode": "TC0413",
+                "UnitPrice": "£35.20",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0038"
+            },
+            {
+                "TestCode": "TC0488",
+                "UnitPrice": "£15.30",
+                "NoRequired": "2",
+                "Projectcode": "AB0G0508"
+            },
+            {
+                "TestCode": "TC0501",
+                "UnitPrice": "£3.70",
+                "NoRequired": "2",
+                "Projectcode": "AH0033"
+            },
+            {
+                "TestCode": "TC0519",
+                "UnitPrice": "£3.70",
+                "NoRequired": "2",
+                "Projectcode": "APHABC0000"
+            },
+            {
+                "TestCode": "TC0546",
+                "UnitPrice": "£0.00",
+                "NoRequired": "2",
+                "Projectcode": "APHAASHORN24"
+            },
+            {
+                "TestCode": "TC0583",
+                "UnitPrice": "£11.40",
+                "NoRequired": "2",
+                "Projectcode": "APHAEUTAH"
+            },
+            {
+                "TestCode": "TC0593",
+                "UnitPrice": "£99.80",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0040"
+            },
+            {
+                "TestCode": "TC0655",
+                "UnitPrice": "£26.10",
+                "NoRequired": "2",
+                "Projectcode": "AH0011"
+            },
+            {
+                "TestCode": "TC0661",
+                "UnitPrice": "£33.40",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0038"
+            },
+            {
+                "TestCode": "TC0669",
+                "UnitPrice": "£15.30",
+                "NoRequired": "2",
+                "Projectcode": "AB0G0508"
+            },
+            {
+                "TestCode": "TC0672",
+                "UnitPrice": "£82.30",
+                "NoRequired": "2",
+                "Projectcode": "AH0033"
+            },
+            {
+                "TestCode": "TC0680",
+                "UnitPrice": "£12.00",
+                "NoRequired": "2",
+                "Projectcode": "APHABC0000"
+            },
+            {
+                "TestCode": "TC0692",
+                "UnitPrice": "£10.60",
+                "NoRequired": "2",
+                "Projectcode": "APHAASHORN24"
+            },
+            {
+                "TestCode": "TC0722",
+                "UnitPrice": "£66.30",
+                "NoRequired": "2",
+                "Projectcode": "APHAEUTAH"
+            },
+            {
+                "TestCode": "TC0730",
+                "UnitPrice": "£3.10",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0040"
+            },
+            {
+                "TestCode": "TC0740",
+                "UnitPrice": "£45.90",
+                "NoRequired": "2",
+                "Projectcode": "AH0011"
+            },
+            {
+                "TestCode": "TC0741",
+                "UnitPrice": "£9.10",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0038"
+            },
+            {
+                "TestCode": "TC0805",
+                "UnitPrice": "£45.50",
+                "NoRequired": "2",
+                "Projectcode": "AB0G0508"
+            },
+            {
+                "TestCode": "TC0827",
+                "UnitPrice": "£77.60",
+                "NoRequired": "2",
+                "Projectcode": "AH0033"
+            },
+            {
+                "TestCode": "TC0832",
+                "UnitPrice": "£10.90",
+                "NoRequired": "2",
+                "Projectcode": "APHABC0000"
+            },
+            {
+                "TestCode": "TC0834",
+                "UnitPrice": "£11.70",
+                "NoRequired": "2",
+                "Projectcode": "APHAASHORN24"
+            },
+            {
+                "TestCode": "TC0835",
+                "UnitPrice": "£11.40",
+                "NoRequired": "2",
+                "Projectcode": "APHAEUTAH"
+            },
+            {
+                "TestCode": "TC0853",
+                "UnitPrice": "£185.80",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0040"
+            },
+            {
+                "TestCode": "TC0866",
+                "UnitPrice": "£7.50",
+                "NoRequired": "2",
+                "Projectcode": "AH0011"
+            },
+            {
+                "TestCode": "TC0872",
+                "UnitPrice": "£6.00",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0038"
+            },
+            {
+                "TestCode": "TC0878",
+                "UnitPrice": "£32.10",
+                "NoRequired": "2",
+                "Projectcode": "AB0G0508"
+            },
+            {
+                "TestCode": "TC0917",
+                "UnitPrice": "£7.50",
+                "NoRequired": "2",
+                "Projectcode": "AH0033"
+            },
+            {
+                "TestCode": "TC1159",
+                "UnitPrice": "£18.70",
+                "NoRequired": "2",
+                "Projectcode": "APHABC0000"
+            },
+            {
+                "TestCode": "TC1165",
+                "UnitPrice": "£60.00",
+                "NoRequired": "2",
+                "Projectcode": "APHAASHORN24"
+            },
+            {
+                "TestCode": "TC1171",
+                "UnitPrice": "£68.10",
+                "NoRequired": "2",
+                "Projectcode": "APHAEUTAH"
+            },
+            {
+                "TestCode": "TC1221",
+                "UnitPrice": "£0.00",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0040"
+            },
+            {
+                "TestCode": "TC1226",
+                "UnitPrice": "£41.70",
+                "NoRequired": "2",
+                "Projectcode": "AH0011"
+            },
+            {
+                "TestCode": "TC1247",
+                "UnitPrice": "£25.50",
+                "NoRequired": "2",
+                "Projectcode": "APHAH0038"
+            },
+            {
+                "TestCode": "TC1251",
+                "UnitPrice": "£12.70",
+                "NoRequired": "2",
+                "Projectcode": "AB0G0508"
+            },
+            {
+                "TestCode": "TC1675",
+                "UnitPrice": "£11.90",
+                "NoRequired": "2",
+                "Projectcode": "AH0033"
+            }
+            
+        ]

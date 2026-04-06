@@ -1,0 +1,354 @@
+[
+  {
+    "Project": "AB0G0508B",
+    "Month": "1",
+    "Amount": "£57.50",
+    "AcctCode": "10066218-5219700000",
+    "Test": "",
+    "Counter": 1001
+  },
+  {
+    "Project": "AB0G0508B",
+    "Month": "2",
+    "Amount": "£24",
+    "AcctCode": "10066218-5219700000",
+    "Test": "",
+    "Counter": 1002
+  },
+  {
+    "Project": "AB0G0508B",
+    "Month": "3",
+    "Amount": "£33.33",
+    "AcctCode": "10066218-5219700000",
+    "Test": "",
+    "Counter": 1003
+  },
+  {
+    "Project": "AB0G0508B",
+    "Month": "4",
+    "Amount": "£45.22",
+    "AcctCode": "10066218-5219700000",
+    "Test": "",
+    "Counter": 1004
+  },
+  {
+    "Project": "AB0G0508B",
+    "Month": "5",
+    "Amount": "£98.32",
+    "AcctCode": "10066218-5219700000",
+    "Test": "",
+    "Counter": 1005
+  },
+  {
+    "Project": "AB0G0508B",
+    "Month": "6",
+    "Amount": "£90.21",
+    "AcctCode": "10066218-5219700000",
+    "Test": "",
+    "Counter": 1006
+  },
+  {
+    "Project": "AB0G0508B",
+    "Month": "7",
+    "Amount": "£35.99",
+    "AcctCode": "10066218-5219700000",
+    "Test": "",
+    "Counter": 1007
+  },
+  {
+    "Project": "AB0G0508B",
+    "Month": "8",
+    "Amount": "£88.32",
+    "AcctCode": "10066218-5219700000",
+    "Test": "",
+    "Counter": 1008
+  },
+  {
+    "Project": "AB0G0508B",
+    "Month": "9",
+    "Amount": "£67.00",
+    "AcctCode": "10066218-5219700000",
+    "Test": "",
+    "Counter": 1009
+  },
+  {
+    "Project": "AB0G0508B",
+    "Month": "10",
+    "Amount": "£67.21",
+    "AcctCode": "10066218-5219700000",
+    "Test": "",
+    "Counter": 1010
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "2",
+    "Amount": "£255.00",
+    "AcctCode": "10063266-5811400004",
+    "Test": "",
+    "Counter": 262729
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "3",
+    "Amount": "£255.00",
+    "AcctCode": "10063101-5811400004",
+    "Test": "",
+    "Counter": 266871
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "3",
+    "Amount": "£5.00",
+    "AcctCode": "10063266-5215100000",
+    "Test": "",
+    "Counter": 266872
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "3",
+    "Amount": "£854.96",
+    "AcctCode": "10063266-5219600000",
+    "Test": "",
+    "Counter": 266873
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "3",
+    "Amount": "£2,215.47",
+    "AcctCode": "10063266-5219700000",
+    "Test": "",
+    "Counter": 266874
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "3",
+    "Amount": "£180.95",
+    "AcctCode": "10063266-5223100000",
+    "Test": "",
+    "Counter": 266875
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "3",
+    "Amount": "(£255.00)",
+    "AcctCode": "10063266-5811400004",
+    "Test": "",
+    "Counter": 266876
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "3",
+    "Amount": "£348.77",
+    "AcctCode": "10063266-5811400004",
+    "Test": "",
+    "Counter": 266877
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "3",
+    "Amount": "£247.86",
+    "AcctCode": "10063266-5811400004",
+    "Test": "",
+    "Counter": 266878
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "4",
+    "Amount": "(£854.96)",
+    "AcctCode": "10063266-5219600000",
+    "Test": "",
+    "Counter": 271106
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "4",
+    "Amount": "(£180.95)",
+    "AcctCode": "10063266-5223100000",
+    "Test": "",
+    "Counter": 271107
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "4",
+    "Amount": "(£255.00)",
+    "AcctCode": "10063266-5811400004",
+    "Test": "",
+    "Counter": 271108
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "2",
+    "Amount": "£2.00",
+    "AcctCode": "",
+    "Test": "",
+    "Counter": 276013
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "3",
+    "Amount": "£1.00",
+    "AcctCode": "",
+    "Test": "",
+    "Counter": 276014
+  },
+  {
+    "Project": "AH0033",
+    "Month": "1",
+    "Amount": "£125.50",
+    "AcctCode": "10055123-5219700000",
+    "Test": "",
+    "Counter": 300001
+  },
+  {
+    "Project": "AH0033",
+    "Month": "2",
+    "Amount": "£450.00",
+    "AcctCode": "10055123-5811400004",
+    "Test": "",
+    "Counter": 300002
+  },
+  {
+    "Project": "AH0033",
+    "Month": "3",
+    "Amount": "£275.80",
+    "AcctCode": "10055123-5215100000",
+    "Test": "",
+    "Counter": 300003
+  },
+  {
+    "Project": "AH0033",
+    "Month": "4",
+    "Amount": "£680.25",
+    "AcctCode": "10055123-5219600000",
+    "Test": "",
+    "Counter": 300004
+  },
+  {
+    "Project": "AH0033",
+    "Month": "5",
+    "Amount": "£1,150.00",
+    "AcctCode": "10055123-5219700000",
+    "Test": "",
+    "Counter": 300005
+  },
+  {
+    "Project": "ABSE4406",
+    "Month": "1",
+    "Amount": "£320.00",
+    "AcctCode": "10077345-5219700000",
+    "Test": "",
+    "Counter": 400001
+  },
+  {
+    "Project": "ABSE4406",
+    "Month": "2",
+    "Amount": "£485.50",
+    "AcctCode": "10077345-5811400004",
+    "Test": "",
+    "Counter": 400002
+  },
+  {
+    "Project": "ABSE4406",
+    "Month": "3",
+    "Amount": "£650.75",
+    "AcctCode": "10077345-5215100000",
+    "Test": "",
+    "Counter": 400003
+  },
+  {
+    "Project": "ABSE4406",
+    "Month": "4",
+    "Amount": "£890.00",
+    "AcctCode": "10077345-5219600000",
+    "Test": "",
+    "Counter": 400004
+  },
+  {
+    "Project": "ABSE4406",
+    "Month": "5",
+    "Amount": "£1,235.25",
+    "AcctCode": "10077345-5223100000",
+    "Test": "",
+    "Counter": 400005
+  },
+  {
+    "Project": "ABSE4406",
+    "Month": "6",
+    "Amount": "£775.00",
+    "AcctCode": "10077345-5811400004",
+    "Test": "",
+    "Counter": 400006
+  },
+  {
+    "Project": "AH0011",
+    "Month": "1",
+    "Amount": "£215.00",
+    "AcctCode": "10088456-5219700000",
+    "Test": "",
+    "Counter": 500001
+  },
+  {
+    "Project": "AH0011",
+    "Month": "2",
+    "Amount": "£340.50",
+    "AcctCode": "10088456-5811400004",
+    "Test": "",
+    "Counter": 500002
+  },
+  {
+    "Project": "AH0011",
+    "Month": "3",
+    "Amount": "£425.75",
+    "AcctCode": "10088456-5215100000",
+    "Test": "",
+    "Counter": 500003
+  },
+  {
+    "Project": "AH0011",
+    "Month": "4",
+    "Amount": "£580.00",
+    "AcctCode": "10088456-5219600000",
+    "Test": "",
+    "Counter": 500004
+  },
+  {
+    "Project": "APHAH0038",
+    "Month": "1",
+    "Amount": "£395.00",
+    "AcctCode": "10099567-5219700000",
+    "Test": "",
+    "Counter": 600001
+  },
+  {
+    "Project": "APHAH0038",
+    "Month": "2",
+    "Amount": "£560.25",
+    "AcctCode": "10099567-5811400004",
+    "Test": "",
+    "Counter": 600002
+  },
+  {
+    "Project": "APHAH0038",
+    "Month": "3",
+    "Amount": "£720.80",
+    "AcctCode": "10099567-5215100000",
+    "Test": "",
+    "Counter": 600003
+  },
+  {
+    "Project": "APHAH0038",
+    "Month": "4",
+    "Amount": "£915.50",
+    "AcctCode": "10099567-5219600000",
+    "Test": "",
+    "Counter": 600004
+  },
+  {
+    "Project": "APHAH0038",
+    "Month": "5",
+    "Amount": "£1,080.00",
+    "AcctCode": "10099567-5223100000",
+    "Test": "",
+    "Counter": 600005
+  }
+]

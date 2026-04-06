@@ -219,6 +219,35 @@ button:hover {
     padding: 20px;
 }
 
+.fps-sr-page-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.fps-sr-page-footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    max-width: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: center;
+}
+
+.fps-sr-page-footer-text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    line-height: 1.2;
+}
+
 
 .modal-title{
 	font-size: 20px;
@@ -258,6 +287,7 @@ h5 { font-size: 1.25rem; }  /* 20px */
 	
 	font-size:40px;
 }
+
 
 
 

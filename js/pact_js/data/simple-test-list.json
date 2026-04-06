@@ -1,0 +1,542 @@
+[
+    {
+        "ItemCode": "PT0001",
+        "ItemDescription": "African horse sickness",
+        "TestManager": "abc",
+        "UnitPriceVLAgen": "£488.00",
+        "Owner": "LT",
+        "ShortDescription": "African horse sick",
+        "DefraUnitPrice": "£488.00"
+    },
+    {
+        "ItemCode": "PT0002",
+        "ItemDescription": "B. anthracis microscopy",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£199.50",
+        "Owner": "SD",
+        "ShortDescription": "B. anthracis micro",
+        "DefraUnitPrice": "£199.50"
+    },
+    {
+        "ItemCode": "PT0003",
+        "ItemDescription": "Aujeszky's disease",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£487.00",
+        "Owner": "LT",
+        "ShortDescription": "Aujeszky's disease",
+        "DefraUnitPrice": "£487.00"
+    },
+    {
+        "ItemCode": "PT0004",
+        "ItemDescription": "Aujeszky's - blood disc",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£576.00",
+        "Owner": "LT",
+        "ShortDescription": "Aujeszky's - blood",
+        "DefraUnitPrice": "£576.00"
+    },
+    {
+        "ItemCode": "PT0005",
+        "ItemDescription": "Avian influenza serology",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£688.00",
+        "Owner": "LT",
+        "ShortDescription": "Avian influenza s",
+        "DefraUnitPrice": "£688.00"
+    },
+    {
+        "ItemCode": "PT0006",
+        "ItemDescription": "Avian influ. and ND Ag detect.",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£696.00",
+        "Owner": "LT",
+        "ShortDescription": "Avian influ. and N",
+        "DefraUnitPrice": "£696.00"
+    },
+    {
+        "ItemCode": "PT0007",
+        "ItemDescription": "Babesia caballi",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£288.00",
+        "Owner": "LT",
+        "ShortDescription": "Babesia caballi ",
+        "DefraUnitPrice": "£288.00"
+    },
+    {
+        "ItemCode": "PT0008",
+        "ItemDescription": "Bacteria in cold water fish",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£324.00",
+        "Owner": "LT",
+        "ShortDescription": "Bacteria in cold w",
+        "DefraUnitPrice": "£324.00"
+    },
+    {
+        "ItemCode": "PT0009",
+        "ItemDescription": "Big liver and spleen disease",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£238.00",
+        "Owner": "LT",
+        "ShortDescription": "Big liver and sple",
+        "DefraUnitPrice": "£238.00"
+    },
+    {
+        "ItemCode": "PT0010",
+        "ItemDescription": "BVD AgELISA/PCR",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£144.00",
+        "Owner": "LT",
+        "ShortDescription": "BVD AgELISA/PCR ",
+        "DefraUnitPrice": "£144.00"
+    },
+    {
+        "ItemCode": "PT0011",
+        "ItemDescription": "BVD milk ELISA",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£476.00",
+        "Owner": "LT",
+        "ShortDescription": "BVD milk ELISA ",
+        "DefraUnitPrice": "£476.00"
+    },
+    {
+        "ItemCode": "PT0012",
+        "ItemDescription": "BVD serum Ab ELISA",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£387.00",
+        "Owner": "LT",
+        "ShortDescription": "BVD serum Ab ELISA",
+        "DefraUnitPrice": "£387.00"
+    },
+    {
+        "ItemCode": "PT0013",
+        "ItemDescription": "B. hyodysenteriae FAT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£231.00",
+        "Owner": "LT",
+        "ShortDescription": "B. hyodysenteriae ",
+        "DefraUnitPrice": "£231.00"
+    },
+    {
+        "ItemCode": "PT0014",
+        "ItemDescription": "Brucella cELISA",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£576.00",
+        "Owner": "LT",
+        "ShortDescription": "Brucella cELISA ",
+        "DefraUnitPrice": "£576.00"
+    },
+    {
+        "ItemCode": "PT0015",
+        "ItemDescription": "Brucella abortus CFT/SAT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£476.00",
+        "Owner": "LT",
+        "ShortDescription": "Brucella abortus C",
+        "DefraUnitPrice": "£476.00"
+    },
+    {
+        "ItemCode": "PT0016",
+        "ItemDescription": "Brucella abortus ELISA",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£476.00",
+        "Owner": "LT",
+        "ShortDescription": "Brucella abortus i",
+        "DefraUnitPrice": "£476.00"
+    },
+    {
+        "ItemCode": "PT0017",
+        "ItemDescription": "B abortus milk ELISA - Defra",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£476.00",
+        "Owner": "LT",
+        "ShortDescription": "B abortus milk ELI",
+        "DefraUnitPrice": "£476.00"
+    },
+    {
+        "ItemCode": "PT0018",
+        "ItemDescription": "Brucella abortus milk ELISA",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£476.00",
+        "Owner": "LT",
+        "ShortDescription": "Brucella abortus m",
+        "DefraUnitPrice": "£476.00"
+    },
+    {
+        "ItemCode": "PT0019",
+        "ItemDescription": "Brucella abortus MRT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£387.00",
+        "Owner": "LT",
+        "ShortDescription": "Brucella abortus M",
+        "DefraUnitPrice": "£387.00"
+    },
+    {
+        "ItemCode": "PT0020",
+        "ItemDescription": "Brucella abortus RBT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£387.00",
+        "Owner": "LT",
+        "ShortDescription": "Brucella abortus R",
+        "DefraUnitPrice": "£387.00"
+    },
+    {
+        "ItemCode": "PT0021",
+        "ItemDescription": "Brucella abortus (Eire)",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£416.00",
+        "Owner": "LT",
+        "ShortDescription": "Brucella abortus ",
+        "DefraUnitPrice": "£416.00"
+    },
+    {
+        "ItemCode": "PT0022",
+        "ItemDescription": "Brucella canis RSA/SAT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£576.00",
+        "Owner": "LT",
+        "ShortDescription": "Brucella canis RSA",
+        "DefraUnitPrice": "£576.00"
+    },
+    {
+        "ItemCode": "PT0023",
+        "ItemDescription": "Brucella culture ID",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£167.00",
+        "Owner": "SD",
+        "ShortDescription": "Brucella culture I",
+        "DefraUnitPrice": "£167.00"
+    },
+    {
+        "ItemCode": "PT0024",
+        "ItemDescription": "Brucella ovis CFT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£776.00",
+        "Owner": "SD",
+        "ShortDescription": "Brucella ovis CFT ",
+        "DefraUnitPrice": "£776.00"
+    },
+    {
+        "ItemCode": "PT0025",
+        "ItemDescription": "Brucella abortus slides",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£306.00",
+        "Owner": "LT",
+        "ShortDescription": "Brucella abortus s",
+        "DefraUnitPrice": "£306.00"
+    },
+    {
+        "ItemCode": "PT0026",
+        "ItemDescription": "Staphylococci incl MRSA",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£134.00",
+        "Owner": "LT",
+        "ShortDescription": "Staphloc-inc MRSA ",
+        "DefraUnitPrice": "£134.00"
+    },
+    {
+        "ItemCode": "PT0027",
+        "ItemDescription": "BSE (NRL) Immunoblot test",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£150.00",
+        "Owner": "LT",
+        "ShortDescription": "BSE (NRL) Immunobl",
+        "DefraUnitPrice": "£150.00"
+    },
+    {
+        "ItemCode": "PT0028",
+        "ItemDescription": "BSE (CRL) Immunoblot test",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£380.00",
+        "Owner": "LT",
+        "ShortDescription": "BSE (CRL) Immunobl",
+        "DefraUnitPrice": "£380.00"
+    },
+    {
+        "ItemCode": "PT0029",
+        "ItemDescription": "BSE(CRL) rapid test tissue",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£380.00",
+        "Owner": "SD",
+        "ShortDescription": "BSE(CRL) rapid te",
+        "DefraUnitPrice": "£380.00"
+    },
+    {
+        "ItemCode": "PT0030",
+        "ItemDescription": "BSE(NRL) rapid test tissue",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£600.00",
+        "Owner": "PA",
+        "ShortDescription": "BSE(NRL) rapid te",
+        "DefraUnitPrice": "£600.00"
+    },
+    {
+        "ItemCode": "PT0031",
+        "ItemDescription": "IBR/RSV/PI3 FAT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£255.00",
+        "Owner": "LT",
+        "ShortDescription": "BVD/IBR/RSV/PI3 FA",
+        "DefraUnitPrice": "£255.00"
+    },
+    {
+        "ItemCode": "PT0032",
+        "ItemDescription": "ABPR C.perfringens - cult&ID",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£268.00",
+        "Owner": "LT",
+        "ShortDescription": "ABPR C.perfringens",
+        "DefraUnitPrice": "£268.00"
+    },
+    {
+        "ItemCode": "PT0033",
+        "ItemDescription": "ABPR Entero cult&ID",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£268.00",
+        "Owner": "LT",
+        "ShortDescription": "ABPR Entero cult&I",
+        "DefraUnitPrice": "£268.00"
+    },
+    {
+        "ItemCode": "PT0034",
+        "ItemDescription": "ABPR Salmonella culture & ID",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£144.00",
+        "Owner": "LT",
+        "ShortDescription": "ABPR Salmonella cu",
+        "DefraUnitPrice": "£144.00"
+    },
+    {
+        "ItemCode": "PT0035",
+        "ItemDescription": "Chlamydophila CFT/ELISA",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£476.00",
+        "Owner": "LT",
+        "ShortDescription": "Chlamydophila CFT/",
+        "DefraUnitPrice": "£476.00"
+    },
+    {
+        "ItemCode": "PT0036",
+        "ItemDescription": "CSF SNT/ELISA",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£476.00",
+        "Owner": "LT",
+        "ShortDescription": "CSF SNT/ELISA ",
+        "DefraUnitPrice": "£476.00"
+    },
+    {
+        "ItemCode": "PT0037",
+        "ItemDescription": "Clostridia FAT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£154.00",
+        "Owner": "LT",
+        "ShortDescription": "Clostridia FAT ",
+        "DefraUnitPrice": "£154.00"
+    },
+    {
+        "ItemCode": "PT0038",
+        "ItemDescription": "Cryptosporidia MZN",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£163.00",
+        "Owner": "LT",
+        "ShortDescription": "Cryptosporidia MZN",
+        "DefraUnitPrice": "£163.00"
+    },
+    {
+        "ItemCode": "PT0039",
+        "ItemDescription": "E coli O157 isolation & ID",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£516.00",
+        "Owner": "LT",
+        "ShortDescription": "E coli O157 isolat",
+        "DefraUnitPrice": "£516.00"
+    },
+    {
+        "ItemCode": "PT0040",
+        "ItemDescription": "E coli serotyping",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£392.00",
+        "Owner": "LT",
+        "ShortDescription": "E coli serotyping ",
+        "DefraUnitPrice": "£392.00"
+    },
+    {
+        "ItemCode": "PT0041",
+        "ItemDescription": "Egg drop syndrome HAIT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£238.00",
+        "Owner": "LT",
+        "ShortDescription": "Egg drop syndrome ",
+        "DefraUnitPrice": "£238.00"
+    },
+    {
+        "ItemCode": "PT0042",
+        "ItemDescription": "Ehrlichia canis IFAT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£476.00",
+        "Owner": "LT",
+        "ShortDescription": "Ehrlichia canis IF",
+        "DefraUnitPrice": "£476.00"
+    },
+    {
+        "ItemCode": "PT0043",
+        "ItemDescription": "EBL milk ELISA x12",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£1,428.00",
+        "Owner": "LT",
+        "ShortDescription": "EBL milk ELISA x12",
+        "DefraUnitPrice": "£1,428.00"
+    },
+    {
+        "ItemCode": "PT0044",
+        "ItemDescription": "EBL milk ELISA x4",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£476.00",
+        "Owner": "LT",
+        "ShortDescription": "EBL milk ELISA x4 ",
+        "DefraUnitPrice": "£476.00"
+    },
+    {
+        "ItemCode": "PT0045",
+        "ItemDescription": "EBL serum ELISA/AGIDT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£387.00",
+        "Owner": "LT",
+        "ShortDescription": "EBL serum ELISA/AG",
+        "DefraUnitPrice": "£387.00"
+    },
+    {
+        "ItemCode": "PT0046",
+        "ItemDescription": "EIA AGIDT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£238.00",
+        "Owner": "LT",
+        "ShortDescription": "EIA AGIDT ",
+        "DefraUnitPrice": "£238.00"
+    },
+    {
+        "ItemCode": "PT0047",
+        "ItemDescription": "EVA serology",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£159.00",
+        "Owner": "LT",
+        "ShortDescription": "EVA serology ",
+        "DefraUnitPrice": "£159.00"
+    },
+    {
+        "ItemCode": "PT0048",
+        "ItemDescription": "European bat lyssavirus sero",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£488.00",
+        "Owner": "LT",
+        "ShortDescription": "European bat lyssa",
+        "DefraUnitPrice": "£488.00"
+    },
+    {
+        "ItemCode": "PT0049",
+        "ItemDescription": "Glanders serology",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£313.00",
+        "Owner": "LT",
+        "ShortDescription": "Glanders serology ",
+        "DefraUnitPrice": "£313.00"
+    },
+    {
+        "ItemCode": "PT0050",
+        "ItemDescription": "Haematology - cell counts",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£432.00",
+        "Owner": "LT",
+        "ShortDescription": "Haematology - cell",
+        "DefraUnitPrice": "£432.00"
+    },
+    {
+        "ItemCode": "PT0051",
+        "ItemDescription": "Hypoderma bovis ELISAx3",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£536.00",
+        "Owner": "LT",
+        "ShortDescription": "Hypoderma bovis EL",
+        "DefraUnitPrice": "£536.00"
+    },
+    {
+        "ItemCode": "PT0052",
+        "ItemDescription": "IBR milk ELISA",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£476.00",
+        "Owner": "LT",
+        "ShortDescription": "IBR milk ELISA ",
+        "DefraUnitPrice": "£476.00"
+    },
+    {
+        "ItemCode": "PT0053",
+        "ItemDescription": "IBR serum ELISA",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£367.00",
+        "Owner": "LT",
+        "ShortDescription": "IBR serum ELISA ",
+        "DefraUnitPrice": "£367.00"
+    },
+    {
+        "ItemCode": "PT0054",
+        "ItemDescription": "IBR/RSV/PI3 ELISA",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£228.00",
+        "Owner": "LT",
+        "ShortDescription": "IBR/RSV/PI3 ELISA ",
+        "DefraUnitPrice": "£228.00"
+    },
+    {
+        "ItemCode": "PT0055",
+        "ItemDescription": "IBV HAIT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£238.00",
+        "Owner": "LT",
+        "ShortDescription": "IBV HAIT ",
+        "DefraUnitPrice": "£238.00"
+    },
+    {
+        "ItemCode": "PT0056",
+        "ItemDescription": "IBD AGIDT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£238.00",
+        "Owner": "LT",
+        "ShortDescription": "IBD AGIDT ",
+        "DefraUnitPrice": "£238.00"
+    },
+    {
+        "ItemCode": "PT0057",
+        "ItemDescription": "Leptospira hardjo ELISA",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£476.00",
+        "Owner": "LT",
+        "ShortDescription": "Leptospira hardjo ",
+        "DefraUnitPrice": "£476.00"
+    },
+    {
+        "ItemCode": "PT0058",
+        "ItemDescription": "Leptospira hardjo bovis MAT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£576.00",
+        "Owner": "LT",
+        "ShortDescription": "Leptospira hardjo ",
+        "DefraUnitPrice": "£576.00"
+    },
+    {
+        "ItemCode": "PT0059",
+        "ItemDescription": "Maedi visna/CAE ELISA/AGIDT",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£476.00",
+        "Owner": "LT",
+        "ShortDescription": "Maedi visna/CAE EL",
+        "DefraUnitPrice": "£476.00"
+    },
+    {
+        "ItemCode": "PT0060",
+        "ItemDescription": "Mastitis - bovine cult&ID",
+        "TestManager": "",
+        "UnitPriceVLAgen": "£134.00",
+        "Owner": "LT",
+        "ShortDescription": "Mastitis - bovine ",
+        "DefraUnitPrice": "£134.00"
+    }
+]

@@ -14,9 +14,24 @@
 
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   font-family: "GDS Transport";
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
 }
 
 table,
@@ -1537,8 +1552,8 @@ blockquote {
   transition: transform 0.3s ease;
 }
 
-.modal.show .modal-dialog { 
-  transform: translateY(120px);
+.modal.show .modal-dialog {
+  transform: translateY(20px);
   margin: 0 auto;
 }
 
@@ -1571,7 +1586,8 @@ blockquote {
 }
 
 .modal-custom {
-  max-width: 900px; /* any value you prefer */
+  max-width: 900px;
+  /* any value you prefer */
 }
 
 /* Fullscreen */
@@ -2149,13 +2165,13 @@ table#selectedTable>tbody>tr>td:last-child {
   padding: 0 5px 0 0 !important;
 }
 
-table#selectedTable > tbody > tr >td.norecords {
-    padding: 10px !important;
+table#selectedTable>tbody>tr>td.norecords {
+  padding: 10px !important;
 }
 
 
-table#outputRecordataTable > tbody > tr > td:nth-child(5), table#outputRecordataTable > tbody > tr > td:nth-child(6) {
-    text-align: right;
+table#outputRecordataTable>tbody>tr>td:nth-child(5), table#outputRecordataTable>tbody>tr>td:nth-child(6) {
+  text-align: right;
 }
 
 .wrapper-makelivehours {
@@ -2225,6 +2241,11 @@ table#outputRecordataTable > tbody > tr > td:nth-child(5), table#outputRecordata
   background-color: #00005c;
 }
 
+.sidenav_li_bg {
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  background-color: #1d70b8;
+}
 
 .sidebar-link-two {
   transition: all 0.2s ease;
@@ -2440,7 +2461,7 @@ td.send-email-cell .send-email-yes {
   padding-bottom: 0.9em;
 }
 
-.pc-actions-panel .govuk-button + .govuk-button {
+.pc-actions-panel .govuk-button+.govuk-button {
   margin-top: 1rem;
 }
 
@@ -2460,7 +2481,7 @@ td.send-email-cell .send-email-yes {
   padding-bottom: 0.9em;
 }
 
-.pc-actions-panel .govuk-button + .govuk-button {
+.pc-actions-panel .govuk-button+.govuk-button {
   margin-top: 1rem;
 }
 
@@ -2483,6 +2504,24 @@ td.send-email-cell .send-email-yes {
   transform: rotate(180deg);
 }
 
+.toggle-btn-position {
+  right: -8px;
+  top: 30px;
+}
+
+.toggle-btn-arrow {
+  margin: -4px 8px 0 -4px;
+}
+
+.side-nav-link-bg {
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  background-color: var(--govuk-brand-colour, #1d70b8) !important;
+}
+
+.side-nav-link-bg>a {
+  color: #ffffff
+}
 
 .pims-log-wrapper {
   display: flex;
@@ -2760,6 +2799,22 @@ tbody#testpurchasereqTableBody>tr>td:nth-child(3) {
   text-align: right;
 }
 
+#invoiceTable>tbody>tr>td:last-child>button {
+  padding: 0;
+  margin-right: 8px;
+}
+
+table#workgroupPrintTable>thead>tr>th, table#workgroupPrintTable>tbody>tr>td {
+  border-right: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+table#workgroupPrintTable>thead>tr>th:first-child {
+  border-left: 0;
+}
+
+
 table>tbody>tr>td:last-child {
   outline: none;
   cursor: pointer;
@@ -2774,9 +2829,11 @@ table>thead>tr>th {
 
 .table_scroll_wrapper {
   max-height: 423px;
-  height: 403px;
+  height: 365px;
   border: 0 !important;
   overflow-y: auto;
+  overflow-x: auto;
+  position: relative;
 }
 
 
@@ -2801,15 +2858,54 @@ table#milestoneTable>thead>tr>th {
   padding: 8px !important;
 }
 
-#testDataTableBody>tr>td:nth-child(5) {
+#subcontractInvoiceTableBody>tr>td:nth-child(5) {
   text-align: left !important;
   padding: 6px 5px !important;
 }
 
-#testDataTable>tbody>tr>td:nth-child(2),
-#testDataTable>tbody>tr>td:nth-child(3),
-#testDataTable>tbody>tr>td:nth-child(6) {
+#subcontractInvoiceTable>tbody>tr>td:nth-child(2),
+#subcontractInvoiceTable>tbody>tr>td:nth-child(3),
+#subcontractInvoiceTable>tbody>tr>td:nth-child(6) {
   text-align: right !important;
+}
+
+#subcontractInvoiceTable>tbody>tr>td:last-child {
+  text-align: center !important;
+  padding: 0 !important;
+  vertical-align: bottom !important;
+}
+
+
+#invoiceTable>tbody>tr>td:last-child {
+  text-align: center !important;
+  padding: 0 !important;
+  vertical-align: bottom !important;
+}
+
+#subcontractInvoiceTable>tbody>tr>td:last-child>button {
+  text-align: center !important;
+  padding: 0 !important;
+}
+
+#subcontractInvoiceTable>thead>tr>th[data-column] {
+  cursor: pointer;
+  user-select: none;
+}
+
+
+
+#subcontractInvoiceTable>thead>tr>th span.sort-icon {
+  margin-left: 4px;
+  font-size: 10px;
+  color: #1d70b8;
+}
+
+#subcontractInvoiceTable>thead>tr>th.sorted-asc {
+  background-color: #d8e5f4 !important;
+}
+
+#subcontractInvoiceTable>thead>tr>th.sorted-desc {
+  background-color: #d8e5f4 !important;
 }
 
 .heading_with_txtbox {
@@ -2821,7 +2917,7 @@ table#milestoneTable>thead>tr>th {
   margin-right: -15px;
   flex-direction: row;
 }
- 
+
 .period-dropdown {
   position: relative;
   z-index: 50;
@@ -2864,9 +2960,9 @@ table#milestoneTable>thead>tr>th {
   border-collapse: collapse;
   font-size: 14px;
 
-   tbody td{
+  tbody td {
     padding: 0px 5px !important;
-   }
+  }
 
 }
 
@@ -2889,6 +2985,67 @@ table#milestoneTable>thead>tr>th {
   cursor: pointer;
 }
 
+/* create_email_time_output_summary: keep the three criteria blocks aligned */
+.email-output-top-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.email-output-top-row > .isProfitSummary {
+  width: 48%;
+}
+
+.email-output-top-row > .isTimesheetsSelected {
+  width: 22%;
+}
+
+.email-output-top-row > .isTimesheetLayout {
+  width: 30%;
+  margin-left: 0;
+}
+
+.email-output-top-row .isTimesheetLayout .sup-highlighted-forms-blue-bg {
+  padding: 10px 12px;
+}
+
+.email-output-top-row .isTimesheetLayout .layout-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.email-output-top-row .isTimesheetLayout .layout-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.email-output-top-row .isTimesheetLayout .layout-option__input {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  accent-color: #1d70b8;
+}
+
+.email-output-top-row .isTimesheetLayout .layout-option__label {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+@media (max-width: 1024px) {
+  .email-output-top-row {
+    flex-wrap: wrap;
+  }
+
+  .email-output-top-row > .isProfitSummary,
+  .email-output-top-row > .isTimesheetsSelected,
+  .email-output-top-row > .isTimesheetLayout {
+    width: 100%;
+  }
+}
+
 /* Align and equalise the three top criteria boxes */
 .email-criteria-row {
   display: flex;
@@ -2902,20 +3059,89 @@ table#milestoneTable>thead>tr>th {
   gap: 12px;
   flex: 1 1 0;
 }
-.email-edit-btn{
+
+.email-edit-btn {
   cursor: pointer;
 }
-#dataTable{
+
+#dataTable {
   margin-left: 0 !important;
 
-  .govuk-checkboxes--small .govuk-checkboxes__input{
+  .govuk-checkboxes--small .govuk-checkboxes__input {
     margin-left: -8px;
   }
-  .govuk-input{
+
+  .govuk-input {
     height: 1rem !important;
   }
 }
-.dropdown-panel > table > tbody > tr > td {
-    padding: 6px 8px;
-    border-bottom: 1px solid var(--govuk-border-colour);
+
+.dropdown-panel>table>tbody>tr>td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--govuk-border-colour);
+}
+
+.p-tb-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.p-l-10 {
+  padding-left: 10px;
+}
+
+table#testTable thead tr:nth-child(1) th {
+  position: sticky;
+  top: 0;
+  background-color: var(--govuk-surface-background-colour, #f4f8fb);
+  z-index: 2;
+}
+
+table#testTable thead tr:nth-child(2) th {
+  position: sticky;
+  top: 40px;
+  /* height of first row */
+  background-color: var(--govuk-surface-background-colour, #f4f8fb);
+  z-index: 1;
+}
+
+table#testTable>tbody>tr>td:nth-child(6), table#testTable>tbody>tr>td:nth-child(7) {
+  text-align: right;
+}
+
+table#testTable>tbody>tr>td:last-child {
+  text-align: center;
+}
+
+table#workgroupPrintTable>thead>tr>th {
+  padding: 0 !important;
+  border-top: 0;
+}
+
+table#tblMonthPeriod>tbody>tr:hover {
+  background-color: var(--govuk-surface-background-colour, #f4f8fb);
+  cursor: pointer;
+}
+
+tbody#projectCostTableBody>tr>td:nth-child(2), tbody#projectCostTableBody>tr>td:nth-child(6), tbody#projectCostTableBody>tr>td:nth-child(7) {
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+tbody#projectCostTableBody>tr>td:nth-child(3), tbody#projectCostTableBody>tr>td:nth-child(4), tbody#projectCostTableBody>tr>td:nth-child(8), tbody#projectCostTableBody>tr>td:nth-child(9), tbody#projectCostTableBody>tr>td:nth-child(10) {
+  text-align: right;
+}
+
+.sup_min_width_232 {
+  min-width: 232px;
+}
+
+.ytd_total_div {
+  width: 100%;
+  border: 1px solid var(--govuk-border-colour);
+  border-top: 0;
+  background-color: var(--govuk-surface-background-colour, #f4f8fb);
+  height: 46px;
 }

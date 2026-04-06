@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2025-2026 : Plan STAFF for Entire Programme</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css"> -->
+    <link rel="stylesheet" href="../css/fps_styles/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/fps_styles/styles.css" />
+    <link rel="stylesheet" href="../css/main_style.css" />
+    <link rel="stylesheet" href="../css/supplement_style_over_gov.uk_style.css" />
+    <link rel="stylesheet" href="../css/fps_styles/setup_resource.css" />
+</head>
+
+<body class="govuk-template__body">
+    <header  class="govuk-header" role="banner">
+        <div class="header-nav">
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" alt="Logo of Animal & Plant Health Agency" width="80px">
+                </div>
+
+                <div class="pims-log">
+                    <span class="fps-sr-brand-pill-text">FPS</span>
+
+                </div>
+                <div class="pims-log">
+                    <select class="pims-log fps-sr-year-select" aria-label="Year">
+                        <option class="pims-log fps-sr-year-option">2017-2018</option>
+                        <option class="pims-log fps-sr-year-option">2018-2019</option>
+                        <option class="pims-log fps-sr-year-option">2019-2020</option>
+                        <option class="pims-log fps-sr-year-option">2020-2021</option>
+                        <option class="pims-log fps-sr-year-option">2021-2022</option>
+                        <option class="pims-log fps-sr-year-option">2022-2023</option>
+                        <option class="pims-log fps-sr-year-option">2023-2024</option>
+                        <option class="pims-log fps-sr-year-option">2024-2025</option>
+                        <option class="pims-log fps-sr-year-option" selected>2025-2026</option>
+                    </select>
+
+                </div>
+
+                <!-- <p>PACT</p> -->
+            </div>
+            <div class="btn-group fps-sr-user-group">
+                Ken Rod
+                <button type="button" aria-label="user dropdown arrow to go home page"
+                    id="userdropdownbtn" class="btn btn-secondary dropdown-toggle user-menu fps-sr-user-btn-reset" aria-expanded="false">
+                    <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24">
+                    <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30"
+                        height="30">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end userdropdown fps-sr-userdropdown-menu">
+                    <li><a href="../index.html" class="dropdown-item" type="button" aria-hidden="true">
+                            <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22">
+                            Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="header"></div>
+
+    <!-- Global navigation stats -->
+    <script src="../js/fps_nav_menu.js"></script>
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+    <!-- END Global navigation stats -->
+
+    <main class="govuk-main-wrapper govuk-!-padding-top-0" id="main-content" role="main">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <div class="row fps-sr-breadcrumb-row">
+                <div class="fps-sr-breadcrumb-flex">
+                    <div class="col-md-6">
+                        <nav class="govuk-breadcrumbs govuk-!-padding-left-3" aria-label="Breadcrumb">
+                            <ol class="govuk-breadcrumbs__list">
+                                <li class="govuk-breadcrumbs__list-item">
+                                    <a class="govuk-breadcrumbs__link" href="fpshome.html">Home</a>
+                                </li>
+                                <li class="govuk-breadcrumbs__list-item">
+                                    <a class="govuk-breadcrumbs__link" href="#">Resource
+                                        Management</a>
+                                </li>
+                                <li class="govuk-breadcrumbs__list-item">
+                                    <a class="govuk-breadcrumbs__link" href="#">Setup Resource</a>
+                                </li>
+                                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                                    Enter Staff Resources (by Resource Center)
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 fps-sr-breadcrumb-actions">
+                        <div class="col-sm-4 fps-sr-program-pill">
+                            <div class="col fps-sr-program-pill-text">
+                                Resource:<strong id="resultprogram">-</strong>
+                            </div>
+                            <!-- <div class="col">Project: <strong id="resultproject"> APHAB000000</strong></div> -->
+                        </div>
+                        <div>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="govuk-button sup_margin_0 fps-sr-change-btn">Change</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-row sup_margin_left_right_0">
+            <div class="govuk-grid-column-full">
+                <div class="govuk-grid-column-full">
+                    <h1 class="govuk-grid-row govuk-heading-s sup_border-bottom govuk-!-margin-top-2 govuk-!-padding-bottom-2 govuk-!-padding-left-4"> Resource Set-Up<span id="srPageRcTitle"></span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <div class="data-table-container sup_border govuk-!-top-bottom-2 govuk-!-margin-left-2">
+                <section class="fps-sr-shell" aria-label="Setup Resource planning grid">
+                    <div class="fps-sr-top-grid">
+                        <div>
+                            <h3 class="fps-sr-section-title govuk-heading-s">RC Grades Available</h3>
+                            <div class="fps-sr-table-wrap">
+                                <table class="govuk-table fps-sr-themed-table fps-sr-data-table" aria-label="RC grades table">
+                                    <thead class="govuk-table__head">
+                                        <tr class="govuk-table__row">
+                                            <th scope="col" class="govuk-table__header">RCGrade</th>
+                                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">ChargeRate</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="govuk-table__body" id="fpsSrRcBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="fps-sr-section-title govuk-heading-s">WG Grades Available within</h3>
+                            <input id="fpsSrRcFilter" class="govuk-input fps-sr-filter-input"
+                                aria-label="Selected RC grade" readonly>
+                            <div class="fps-sr-table-wrap">
+                                <table class="govuk-table fps-sr-themed-table fps-sr-data-table" aria-label="WG grades table">
+                                    <thead class="govuk-table__head">
+                                        <tr class="govuk-table__row">
+                                            <th scope="col" class="govuk-table__header">WGGrade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="govuk-table__body" id="fpsSrWgBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fps-sr-bottom-grid">
+                        <div>
+                            <div class="fps-sr-staff-header">
+                                <h3 class="fps-sr-section-title govuk-heading-s sup_margin_0">Staff of WG Grade
+                                </h3>
+                                <input id="fpsSrSelectedWg" class="govuk-input" aria-label="Selected WG grade" readonly>
+                            </div>
+                            <div class="fps-sr-staff-wrap">
+                                <table class="govuk-table fps-sr-themed-table fps-sr-data-table" aria-label="Staff table">
+                                    <thead class="govuk-table__head">
+                                        <tr class="govuk-table__row">
+                                            <th scope="col" class="govuk-table__header">SP No</th>
+                                            <th scope="col" class="govuk-table__header">Name</th>
+                                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">HrsPaid</th>
+                                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Leave</th>
+                                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">SickSp</th>
+                                            <th scope="col" class="govuk-table__header govuk-table__header--numeric">AtWork</th>
+                                            <th scope="col" class="govuk-table__header">Planable</th>
+                                            <th scope="col" class="govuk-table__header">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="govuk-table__body" id="fpsSrStaffBody"></tbody>
+                                    <tfoot class="govuk-table__foot">
+                                        <tr class="govuk-table__row">
+                                            <td class="govuk-table__cell" colspan="2">Totals</td>
+                                            <td class="govuk-table__cell govuk-table__cell--numeric" id="fpsSrTotalHrsPaid">0</td>
+                                            <td class="govuk-table__cell govuk-table__cell--numeric" id="fpsSrTotalLeave">0</td>
+                                            <td class="govuk-table__cell govuk-table__cell--numeric" id="fpsSrTotalSick">0</td>
+                                            <td class="govuk-table__cell govuk-table__cell--numeric" id="fpsSrTotalAtWork">0</td>
+                                            <td class="govuk-table__cell"></td>
+                                            <td class="govuk-table__cell"></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
+                        <aside class="fps-sr-person-panel" aria-label="Person selected panel">
+                            <h2 class="govuk-fieldset__legend govuk-fieldset__legend--s">Person Selected</h2>
+                            <strong id="fpsSrPersonName" class="fps-sr-person-value"></strong>
+                            <button type="button" id="fpsSrPlanBtn" class="govuk-button govuk-button--secondary"
+                                data-module="govuk-button">
+                                Plan Person onto ZT Codes
+                            </button>
+                        </aside>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="govuk-grid-row fps-sr-hidden-row">
+
+        <div class="govuk-grid-column-one-half mt-2">
+            <div class="fps-sr-summary-card">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <label class="govuk-label--s fps-sr-muted-label">Programme Manager </label>
+                        <input type="text" value="East, Samantha" class="projectplan-code govuk-input fps-sr-fixed-input">
+
+                    </div>
+                    <div class="col-lg-5">
+                        <label class="govuk-label--s fps-sr-muted-label">Target </label>
+                        <input type="text" value="BAC2PORT1" class="projectplan-code govuk-input fps-sr-fixed-input">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div class="project-code-section"> -->
+
+
+            <!-- </div> -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 p-0">
+                        <div class="jobcodediv fps-sr-project-table-wrap">
+                            <table id="empTable" class="govuk-table fps-sr-themed-table custom-table fps-sr-table-mb0">
+                                <thead class="table-light govuk-table__head">
+                                    <tr class="govuk-table__row">
+                                        <th class="govuk-table__header">Project</th>
+                                        <th class="govuk-table__header">Description</th>
+                                        <th class="govuk-table__header">Budget</th>
+                                        <th class="govuk-table__header">IsDefraProject</th>
+                                        <th class="govuk-table__header">Actions</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody class="govuk-table__body" id="tableBody">
+
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                        <div class="sup_pagination_wrapper">
+                            <div class="sup_margin_left_right_10">
+                                <label for="recordsPerPage"></label>
+                                <select id="recordsPerPage" class="govuk-select sup_select_pagination_width"
+                                    aria-label="Select number of records per page">
+                                    <option value="5" selected="">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+                            <nav class="govuk-pagination sup_margin_left_right_10" aria-label="Pagination">
+
+                                <ul class="govuk-pagination__list" id="pagination">
+                                    <li class="govuk-pagination__item disabled aria-disabled=&quot;true&quot;"><a
+                                            class="govuk-link govuk-pagination__link" onclick="goToPage(0)"> <svg
+                                                class="govuk-pagination__icon govuk-pagination__icon--prev"
+                                                xmlns="http://www.w3.org/2000/svg" height="13" width="15"
+                                                aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+
+                                            </svg> <span class="govuk-pagination__link-title">
+                                                Previous<span class="govuk-visually-hidden"> page</span>
+                                            </span></a></li>
+                                    <li
+                                        class="govuk-pagination__item govuk-pagination__item--current aria-disabled=&quot;true&quot;">
+                                        <a class="govuk-link govuk-pagination__link" onclick="goToPage(1)">1</a>
+                                    </li>
+                                    <li class="govuk-pagination__item  aria-disabled=&quot;true&quot;"><a
+                                            class="govuk-link govuk-pagination__link" onclick="goToPage(2)">2</a>
+                                    </li>
+                                    <li class="govuk-pagination__next  aria-disabled=&quot;true&quot;"><a
+                                            class="govuk-link govuk-pagination__link" onclick="goToPage(2)"
+                                            rel="next"><span class="govuk-pagination__link-title">Next</span><svg
+                                                class="govuk-pagination__icon govuk-pagination__icon--next"
+                                                xmlns="http://www.w3.org/2000/svg" height="13" width="15"
+                                                aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+
+                                            </svg></a></li>
+                                </ul>
+                            </nav>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+        <div class="govuk-grid-column-one-half mt-2">
+
+
+
+            <div class="fps-sr-summary-card">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <label class="govuk-label--s fps-sr-muted-label">Staff Resource Plan for </label>
+                        <input type="text" value="BAC2PORT1" class="projectplan-code govuk-input fps-sr-fixed-input">
+
+                    </div>
+                    <div class="col-lg-5 d-flex   justify-content-end">
+                        <button class="govuk-button sup_margin_0" id="addStaffPlanBtn"
+                            aria-label="Staff Resource Plan"><img alt="add staff Resource plan"
+                                src="../images/circle-plus-solid-full-white.svg" width="16px">&nbsp;Add </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 p-0">
+                        <div class="jobcodediv height-300 max-height300 fps-sr-staff-table-wrap">
+                            <table id="empTable" class="govuk-table fps-sr-themed-table custom-table fps-sr-table-mb0">
+                                <thead class="table-light govuk-table__head">
+                                    <tr class="govuk-table__row">
+                                        <th class="govuk-table__header">Name</th>
+                                        <th class="govuk-table__header">Rate</th>
+                                        <th class="govuk-table__header">Hrs</th>
+                                        <th class="govuk-table__header">Days</th>
+                                        <th class="govuk-table__header">StaffCost</th>
+                                        <th class="govuk-table__header">Actions</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody class="govuk-table__body" id="staffplandata">
+
+
+
+
+
+
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                        <!-- <div class="sup_pagination_wrapper"> -->
+                        <!-- <div class="sup_margin_left_right_10"> -->
+                        <!-- <label for="recordsPerPage"></label> -->
+                        <!-- <select id="recordsPerPage" class="govuk-select sup_select_pagination_width" aria-label="Select number of records per page"> -->
+                        <!-- <option value="5" selected="">5</option> -->
+                        <!-- <option value="10" >10</option> -->
+                        <!-- <option value="15">15</option> -->
+                        <!-- <option value="20">20</option> -->
+                        <!-- <option value="25">25</option> -->
+                        <!-- <option value="30">30</option> -->
+                        <!-- </select> -->
+                        <!-- </div> -->
+                        <!-- <nav class="govuk-pagination sup_margin_left_right_10" aria-label="Pagination"> -->
+
+                        <!-- <ul class="govuk-pagination__list" id="pagination"><li class="govuk-pagination__item disabled aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(0)"> <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13"> -->
+
+                        <!-- </svg> <span class="govuk-pagination__link-title"> -->
+                        <!-- Previous<span class="govuk-visually-hidden"> page</span> -->
+                        <!-- </span></a></li><li class="govuk-pagination__item govuk-pagination__item--current aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(1)">1</a></li><li class="govuk-pagination__item  aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(2)">2</a></li><li class="govuk-pagination__next  aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(2)" rel="next"><span class="govuk-pagination__link-title">Next</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13"> -->
+
+                        <!-- </svg></a></li></ul> -->
+                        <!-- </nav> -->
+
+
+                        <!-- </div> -->
+
+                    </div>
+
+
+                    <div class="col-lg-12 p-0">
+
+                        <div class="financial-summary mt-2">
+
+
+
+
+                            <div class="summary-row">
+                                <div class="summary-item">
+                                    <label class="govuk-label--s" for="for_project">For Project:</label>
+                                    <input type="text" value="BAC2PORT1" aria-label="for_project" id="for_project"
+                                        class="govuk-input " name="">
+                                </div>
+                                <div class="summary-item">
+                                    <label class="govuk-label--s" for="External Income">Staff Cost:</label>
+                                    <input type="text" value="£0" aria-label="External Income" id="External Income"
+                                        class="govuk-input text-AlignRight" name="">
+                                </div>
+
+
+                                <div class="summary-item">
+                                    <label class="govuk-label--s" for="BudgetCVL">Budget:</label>
+                                    <input type="text" value="£0" aria-label="Budget CVL" id="BudgetCVL"
+                                        class="govuk-input text-AlignRight" name="Budget">
+                                </div>
+                                <div class="summary-item">
+                                    <label class="govuk-label--s" for="Total Costs">Remainder:</label>
+                                    <input type="text" value="£0" aria-label="Total Costs" id="Total Costs"
+                                        class="govuk-input text-AlignRight" name="">
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    </div>
+
+
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full mt-3">
+
+            <!-- <footer class="financial-summary"> -->
+
+
+
+
+            <!-- <div class="summary-row"> -->
+            <!-- <div class="summary-item"> -->
+            <!-- <label class="govuk-label" for="for_project">For Project:</label> -->
+            <!-- <input type="text" value="BAC2PORT1" aria-label="for_project" id="for_project" class="govuk-input " name=""> -->
+            <!-- </div> -->
+            <!-- <div class="summary-item"> -->
+            <!-- <label class="govuk-label" for="External Income">Staff Cost:</label> -->
+            <!-- <input type="text" value="£0" aria-label="External Income" id="External Income" class="govuk-input text-AlignRight" name=""> -->
+            <!-- </div> -->
+
+
+            <!-- <div class="summary-item"> -->
+            <!-- <label class="govuk-label" for="BudgetCVL">Budget:</label> -->
+            <!-- <input type="text" value="£0" aria-label="Budget CVL" id="BudgetCVL" class="govuk-input text-AlignRight" name="Budget"> -->
+            <!-- </div> -->
+            <!-- <div class="summary-item"> -->
+            <!-- <label class="govuk-label" for="Total Costs">Remainder:</label> -->
+            <!-- <input type="text" value="£0" aria-label="Total Costs" id="Total Costs" class="govuk-input text-AlignRight" name=""> -->
+
+            <!-- </div> -->
+
+
+
+            <!-- </div> -->
+
+
+
+            <!-- </footer> -->
+
+
+        </div>
+    </div>
+
+
+
+    </div>
+
+    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-label="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md fps-sr-resource-centre-modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <form id="fpsSrResourceCentreForm">
+                        <div class="display-flex">
+                            <div class="govuk-form-group sup_margin_0">
+                                <label for="fpsSrResourceCentreSelect" class="govuk-label ">Select a Resource Centre</label>
+                                <select class="govuk-select " required="" id="fpsSrResourceCentreSelect">
+                                    <option value="" selected disabled>--select resource centre--</option>
+                                    <option value="B&amp;M">B&amp;M</option>
+                                    <option value="Bact">Bact</option>
+                                    <option value="Build">Build</option>
+                                    <option value="BTB">BTB</option>
+                                    <option value="DoES">DoES</option>
+                                    <option value="IDBAC">IDBAC</option>
+                                    <option value="IMT">IMT</option>
+                                    <option value="LabT">LabT</option>
+                                    <option value="Path">Path</option>
+                                    <option value="SIU">SIU</option>
+                                    <option value="SLSD">SLSD</option>
+                                    <option value="SSP">SSP</option>
+                                    <option value="Viro">Viro</option>
+                                    <option value="Wildlife">Wildlife</option>
+                                </select>
+                            </div>
+                            <!-- <div class="col-1" -->
+                            <!-- class="fps-sr-modal-or-text">OR -->
+                            <!-- </div> -->
+                            <!-- <div class="col-5"> -->
+                            <!-- <label for="project" class="col-form-label">Find Project</label> -->
+                            <!-- <select class="form-select" required="" id="project"> -->
+                            <!-- <option value="">--select project--</option> -->
+                            <!-- <option value="FZ200">FZ200</option> -->
+                            <!-- <option value="FZ201">FZ201</option> -->
+                            <!-- </select> -->
+                            <!-- </div> -->
+                            <div class="ms-3">
+                                <button class="govuk-button sup_margin_0" type="button" id="fpsSrResourceCentreGoBtn">
+                                    <img src="../images/circle-chevron-right.png"
+                                        alt="dropdown arrow for logout of application" width="20px" height="20px">
+                                    GO</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="testModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title sup_margin_0" id="exampleModalLabel">Add Staff Booked</h3>
+                    <button type="button" class="btn-close btn-red" onclick="closeModal()">X</button>
+                </div>
+                <div class="modal-body fps-sr-modal-body-pt5">
+                    <form class="row" id="formAddJobcode">
+
+                        <div class="col-12">
+                            <label for="modal-WGgrade" class="form-label p-0 govuk-label">WG Grade:</label>
+                            <!-- <input type="text" class="form-control" id="modal-staffname"> -->
+
+                            <select id="modal-WGgrade" name="" class="govuk-select" aria-label="WGgrade">
+                                <option value=""></option>
+                                <option value="A_AS2">A_AS2</option>
+                                <!-- <option value="A_BAC1,General">A_BAC1,General | A_BAC1 | 3714</option> -->
+                                <option value="F_AS2">F_AS2</option>
+                                <option value="E_SSP1">E_SSP1</option>
+
+                            </select>
+
+
+                        </div>
+
+                        <div class="col-12">
+                            <label for="modal-staffname" class="form-label p-0 govuk-label"> Name:</label>
+                            <!-- <input type="text" class="form-control" id="modal-staffname"> -->
+
+                            <select id="modal-staffname" name="" class="govuk-select" aria-label="StaffName">
+                                <option value=""></option>
+                                <option value="App_admin">App_admin</option>
+                                <!-- <option value="A_BAC1,General">A_BAC1,General | A_BAC1 | 3714</option> -->
+                                <option value="CAPS">CAPS</option>
+
+                            </select>
+
+
+                        </div>
+                        <div class="col-12">
+                            <label for="modal-rate" class="form-label govuk-label">Rate:</label>
+                            <!-- <input type="text" class="form-control" id="modal-name"> -->
+
+                            <input type="text" class="govuk-input" id="">
+                        </div>
+                        <div class="col-12">
+                            <label for="modal-hrs" class="form-label govuk-label">Hrs</label>
+                            <input type="text" class="govuk-input" id="">
+                        </div>
+                        <div class="col-12">
+                            <label for="modal-days" class="form-label govuk-label">Days</label>
+                            <input type="text" class="govuk-input" id="">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="modal-staffcost" class="form-label govuk-label">Staff Cost</label>
+                            <input type="text" class="govuk-input" id="">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" data-module="govuk-button"
+                        onclick="closeModal()">Cancel</button>
+                    <button class="govuk-button sup_margin_0" data-module="govuk-button" id="modalsaveBtn">Save</button>
+                    <button class="govuk-button sup_margin_0 fps-sr-hidden-btn" data-module="govuk-button" id="updateBtn">Update</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="AddYearModal" tabindex="-1" aria-labelledby="AddYearModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title sup_margin_0" id="exampleModalLabel">Project Rates</h3>
+                    <button type="button" class="btn-close btn-red" onclick="closeModalYear()">X</button>
+                </div>
+                <div class="modal-body fps-sr-modal-body-pt5">
+
+
+                    <form id="editableGridForm">
+                        <div class="">
+
+
+                            <div class="header-inputs fps-sr-header-inputs">
+                                <div class="input-group fps-sr-inline-group">
+                                    <label for="project" class="govuk-label fps-sr-project-label">Project</label>
+                                    <input type="text" class="govuk-input" id="project" value="2024/122c">
+                                </div>
+                                <div class="input-group fps-sr-inline-group">
+                                    <label for="year" class="govuk-label fps-sr-year-label">Year</label>
+                                    <input type="text" class="govuk-input" id="year" value="2039">
+                                </div>
+                            </div>
+
+                            <div class="rates-container">
+                                <div class="rates-section">
+                                    <h3>Contingency Mark-up %</h3>
+                                    <div class="rate-row">
+                                        <label class="govuk-label">Time</label>
+                                        <input type="number" class="govuk-input" value="15">
+                                    </div>
+                                    <div class="rate-row">
+                                        <label class="govuk-label">Tests</label>
+                                        <input type="number" class="govuk-input" value="15">
+                                    </div>
+                                    <div class="rate-row">
+                                        <label class="govuk-label">Animals</label>
+                                        <input type="number" class="govuk-input" value="15">
+                                    </div>
+                                    <div class="rate-row">
+                                        <label class="govuk-label">Additional</label>
+                                        <input type="number" class="govuk-input" value="15">
+                                    </div>
+                                </div>
+
+                                <div class="rates-section">
+                                    <h3>Profit Margin %</h3>
+                                    <div class="rate-row">
+                                        <label class="govuk-label">Time</label>
+                                        <input type="number" class="govuk-input" value="3.5">
+                                    </div>
+                                    <div class="rate-row">
+                                        <label class="govuk-label">Tests</label>
+                                        <input type="number" class="govuk-input" value="3.5">
+                                    </div>
+                                    <div class="rate-row">
+                                        <label class="govuk-label">Animals</label>
+                                        <input type="number" class="govuk-input" value="3.5">
+                                    </div>
+                                    <div class="rate-row">
+                                        <label class="govuk-label">Additional</label>
+                                        <input type="number" class="govuk-input" value="3.5">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" data-module="govuk-button"
+                        onclick="closeModalYear()">Cancel</button>
+                    <button class="govuk-button sup_margin_0" data-module="govuk-button" id="modalsaveBtn">Save</button>
+                    <button class="govuk-button sup_margin_0 fps-sr-hidden-btn" data-module="govuk-button" id="updateBtn">Update</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="fpsSrStaffEditModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title sup_margin_0">Edit Staff Row</h3>
+                    <button type="button" class="btn-close btn-red" id="fpsSrStaffEditCloseBtn">X</button>
+                </div>
+                <div class="modal-body fps-sr-modal-body-pt5">
+                    <form id="fpsSrStaffEditForm">
+                        <div class="fps-sr-edit-form-grid">
+                            <div class="fps-sr-edit-form-row">
+                                <div class="govuk-form-group fps-sr-edit-form-field">
+                                    <label class="govuk-label" for="fpsSrEditSpNo">SP No</label>
+                                    <input class="govuk-input" id="fpsSrEditSpNo" readonly>
+                                </div>
+                                <div class="govuk-form-group fps-sr-edit-form-field">
+                                    <label class="govuk-label" for="fpsSrEditName">Name</label>
+                                    <input class="govuk-input" id="fpsSrEditName" readonly>
+                                </div>
+                            </div>
+                            <div class="fps-sr-edit-form-row">
+                                <div class="govuk-form-group fps-sr-edit-form-field">
+                                    <label class="govuk-label" for="fpsSrEditHrsPaid">HrsPaid</label>
+                                    <input class="govuk-input" id="fpsSrEditHrsPaid" type="number" step="1">
+                                </div>
+                                <div class="govuk-form-group fps-sr-edit-form-field">
+                                    <label class="govuk-label" for="fpsSrEditLeave">Leave</label>
+                                    <input class="govuk-input" id="fpsSrEditLeave" type="number" step="1">
+                                </div>
+                            </div>
+                            <div class="fps-sr-edit-form-row">
+                                <div class="govuk-form-group fps-sr-edit-form-field">
+                                    <label class="govuk-label" for="fpsSrEditSickSp">SickSp</label>
+                                    <input class="govuk-input" id="fpsSrEditSickSp" type="number" step="1">
+                                </div>
+                                <div class="govuk-form-group fps-sr-edit-form-field">
+                                    <label class="govuk-label" for="fpsSrEditAtWork">AtWork</label>
+                                    <input class="govuk-input" id="fpsSrEditAtWork" type="number" step="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-form-group fps-sr-edit-planable-row">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="fpsSrEditPlanable" type="checkbox">
+                                    <label class="govuk-label govuk-checkboxes__label govuk-!-margin-0" for="fpsSrEditPlanable">Planable</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" type="button" id="fpsSrStaffEditCancelBtn">Cancel</button>
+                    <button class="govuk-button sup_margin_0" type="button" id="fpsSrStaffEditSaveBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
+        <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
+            <span class="fps-sr-page-footer-text">
+                © copyright Defra 2025
+            </span>
+        </div>
+    </div>
+</main>
+
+    <!-- <script src="../js/setupresource_page.js"></script> -->
+    <script src="../js/setup_resource.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="../js/modalpopup.js"></script> -->
+
+
+</body>
+
+</html>

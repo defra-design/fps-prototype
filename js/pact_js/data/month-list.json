@@ -1,0 +1,14 @@
+[
+  { "period": 1, "monthName": "April", "monthNumber": 4 },
+  { "period": 2, "monthName": "May", "monthNumber": 5 },
+  { "period": 3, "monthName": "June", "monthNumber": 6 },
+  { "period": 4, "monthName": "July", "monthNumber": 7 },
+  { "period": 5, "monthName": "August", "monthNumber": 8 },
+  { "period": 6, "monthName": "September", "monthNumber": 9 },
+  { "period": 7, "monthName": "October", "monthNumber": 10 },
+  { "period": 8, "monthName": "November", "monthNumber": 11 },
+  { "period": 9, "monthName": "December", "monthNumber": 12 },
+  { "period": 10, "monthName": "January", "monthNumber": 1 },
+  { "period": 11, "monthName": "February", "monthNumber": 2 },
+  { "period": 12, "monthName": "March", "monthNumber": 3 }
+]

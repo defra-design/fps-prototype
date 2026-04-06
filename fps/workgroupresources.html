@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2025-2026 : WorkGroup Selection</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css"> -->
+    <link rel="stylesheet" href="../css/fps_styles/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/fps_styles/styles.css" />
+    <link rel="stylesheet" href="../css/main_style.css" />
+    <link rel="stylesheet" href="../css/supplement_style_over_gov.uk_style.css" />
+    <link rel="stylesheet" href="../css/fps_styles/setup_resource.css" />
+</head>
+
+<body class="govuk-template__body">
+    <header  class="govuk-header" role="banner">
+        <div class="header-nav">
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" alt="Logo of Animal & Plant Health Agency" width="80px">
+                </div>
+
+                <div class="pims-log">
+                    <span class="fps-sr-brand-pill-text">FPS</span>
+
+                </div>
+                <div class="pims-log">
+                    <select class="pims-log fps-sr-year-select" aria-label="Year">
+                        <option class="pims-log fps-sr-year-option">2017-2018</option>
+                        <option class="pims-log fps-sr-year-option">2018-2019</option>
+                        <option class="pims-log fps-sr-year-option">2019-2020</option>
+                        <option class="pims-log fps-sr-year-option">2020-2021</option>
+                        <option class="pims-log fps-sr-year-option">2021-2022</option>
+                        <option class="pims-log fps-sr-year-option">2022-2023</option>
+                        <option class="pims-log fps-sr-year-option">2023-2024</option>
+                        <option class="pims-log fps-sr-year-option">2024-2025</option>
+                        <option class="pims-log fps-sr-year-option" selected>2025-2026</option>
+                    </select>
+
+                </div>
+
+                <!-- <p>PACT</p> -->
+            </div>
+            <div class="btn-group fps-sr-user-group">
+                Ken Rod
+                <button type="button" aria-label="user dropdown arrow to go home page"
+                    id="userdropdownbtn" class="btn btn-secondary dropdown-toggle user-menu fps-sr-user-btn-reset" aria-expanded="false">
+                    <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24">
+                    <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30"
+                        height="30">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end userdropdown fps-sr-userdropdown-menu">
+                    <li><a href="../index.html" class="dropdown-item" type="button" aria-hidden="true">
+                            <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22">
+                            Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="header"></div>
+
+    <!-- Global navigation stats -->
+    <script src="../js/fps_nav_menu.js"></script>
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+    <!-- END Global navigation stats -->
+
+    <main class="govuk-main-wrapper govuk-!-padding-top-0" id="main-content" role="main">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <div class="row fps-sr-breadcrumb-row">
+                <div class="fps-sr-breadcrumb-flex">
+                    <div class="col-md-6">
+                        <nav class="govuk-breadcrumbs govuk-!-padding-left-3" aria-label="Breadcrumb">
+                            <ol class="govuk-breadcrumbs__list">
+                                <li class="govuk-breadcrumbs__list-item">
+                                    <a class="govuk-breadcrumbs__link" href="fpshome.html">Home</a>
+                                </li>
+                                <li class="govuk-breadcrumbs__list-item">
+                                    <a class="govuk-breadcrumbs__link" href="#">Resource
+                                        Management</a>
+                                </li>
+                                <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                                    WorkGroup Resources
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 fps-sr-breadcrumb-actions">
+                        <div class="col-sm-4 fps-sr-program-pill">
+                            <div class="col fps-sr-program-pill-text">
+                                Programme:<strong id="resultprogram">-</strong>
+                            </div>
+                            <!-- <div class="col">Project: <strong id="resultproject"> APHAB000000</strong></div> -->
+                        </div>
+                        <div>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="govuk-button sup_margin_0 fps-sr-change-btn">Change</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-row sup_margin_left_right_0">
+            <div class="govuk-grid-column-full">
+                <div class="govuk-grid-column-full">
+                    <h1 class="govuk-grid-row govuk-heading-s sup_border-bottom govuk-!-margin-top-2 govuk-!-padding-bottom-2 govuk-!-padding-left-7">
+                        WorkGroup Selection Screen for <span id="wgSelResourceCentreTitle" class="govuk-link" style="color:#1d70b8; cursor:pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal"></span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <div class="data-table-container sup_border govuk-!-top-bottom-2 govuk-!-margin-left-2 govuk-!-padding-4">
+                <div class="wg-selection-layout" style="display:flex; gap:16px; min-height:340px;">
+
+                    <!-- Left: WorkGroup list -->
+                    <div class="wg-selection-left" style="flex:0 0 160px; border:1px solid #b1b4b6; padding:0;">
+                        <div class="govuk-table__header govuk-!-padding-2" style="background:#dee0e2; font-weight:600;">WorkGroup</div>
+                        <div style="overflow-y:auto; max-height:300px;">
+                            <select id="wgSelList" size="10" class="govuk-select" aria-label="WorkGroup list"
+                                style="width:100%; border:none; border-radius:0; height:100%; min-height:260px; padding:0;">
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Right: Selected WG label + three action panels -->
+                    <div class="wg-selection-right" style="flex:1; display:flex; flex-direction:column; gap:12px;">
+
+                        <!-- Selected WorkGroup bar -->
+                        <div style="display:flex; align-items:center; gap:12px; padding:8px 12px; background:#f3f2f1; border:1px solid #b1b4b6;">
+                            <span class="govuk-body-s" style="font-weight:600;">Selected WorkGroup...</span>
+                            <input id="wgSelSelectedWg" class="govuk-input" style="max-width:160px;" aria-label="Selected WorkGroup" readonly value="">
+                        </div>
+
+                        <!-- Three panels row -->
+                        <div style="display:flex; gap:12px; flex:1;">
+
+                            <!-- Set Up Resources -->
+                            <div style="flex:1; border:1px solid #b1b4b6; padding:16px; background:#f3f2f1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;">
+                                <em class="govuk-body-s" style="font-style:italic; font-weight:600; color:#0b0c0c;">Set Up Resources</em>
+                                <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button"
+                                    style="width:100%; text-align:center;" id="wgSelSetupBtn">
+                                    Set Up Staff Resources
+                                </button>
+                            </div>
+
+                            <!-- Review Plans -->
+                            <div style="flex:1; border:1px solid #b1b4b6; padding:16px; background:#f3f2f1; display:flex; flex-direction:column; align-items:center; gap:10px;">
+                                <em class="govuk-body-s" style="font-style:italic; font-weight:600; color:#0b0c0c;">Review Plans</em>
+                                <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="wgSelStage1Btn"
+                                    style="width:100%; text-align:center;">
+                                    Stage 1 Resource Allocation
+                                </button>
+                                <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="wgSelStage2Btn"
+                                    style="width:100%; text-align:center;">
+                                    Stage 2 Check Resource Allocation
+                                </button>
+                                <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" id="wgSelPivotBtn"
+                                    style="width:100%; text-align:center;">
+                                    Staff / Project Pivot Table
+                                </button>
+                            </div>
+
+                            <!-- Reports -->
+                            <div style="flex:1; border:1px solid #b1b4b6; padding:16px; background:#f3f2f1; display:flex; flex-direction:column; align-items:center; gap:10px;">
+                                <em class="govuk-body-s" style="font-style:italic; font-weight:600; color:#0b0c0c;">Reports</em>
+                                <button type="button" class="govuk-button govuk-button--warning" data-module="govuk-button" id="wgSelUtilReportBtn"
+                                    style="width:100%; text-align:center; background:#1d70b8; border-color:#1d70b8;">
+                                    Print WG Utilisation Report
+                                </button>
+                                <button type="button" class="govuk-button govuk-button--warning" data-module="govuk-button" id="wgSelSoctReportBtn"
+                                    style="width:100%; text-align:center; background:#1d70b8; border-color:#1d70b8;">
+                                    Print WG SOCT Report
+                                </button>
+                                <fieldset class="govuk-fieldset" style="border:1px solid #b1b4b6; padding:8px; width:100%;">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Choose Work Type</legend>
+                                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="wgWorkTypeAll" name="wgWorkType" type="radio" value="all" checked>
+                                            <label class="govuk-label govuk-radios__label" for="wgWorkTypeAll">All Projects</label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="wgWorkTypeAssured" name="wgWorkType" type="radio" value="assured">
+                                            <label class="govuk-label govuk-radios__label" for="wgWorkTypeAssured">Assured Work Only</label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="wgWorkTypeNotAssured" name="wgWorkType" type="radio" value="notassured">
+                                            <label class="govuk-label govuk-radios__label" for="wgWorkTypeNotAssured">Not Assured Work Only</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-label="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md fps-sr-resource-centre-modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <form id="fpsSrResourceCentreForm">
+                        <div class="display-flex">
+                            <div class="govuk-form-group sup_margin_0">
+                                <label for="fpsSrResourceCentreSelect" class="govuk-label ">Select a Resource Centre</label>
+                                <select class="govuk-select " required="" id="fpsSrResourceCentreSelect">
+                                    <option value="" selected disabled>--select resource centre--</option>
+                                    <option value="B&amp;M">B&amp;M</option>
+                                    <option value="Bact">Bact</option>
+                                    <option value="Build">Build</option>
+                                    <option value="BTB">BTB</option>
+                                    <option value="DoES">DoES</option>
+                                    <option value="IDBAC">IDBAC</option>
+                                    <option value="IMT">IMT</option>
+                                    <option value="LabT">LabT</option>
+                                    <option value="Path">Path</option>
+                                    <option value="SIU">SIU</option>
+                                    <option value="SLSD">SLSD</option>
+                                    <option value="SSP">SSP</option>
+                                    <option value="Viro">Viro</option>
+                                    <option value="Wildlife">Wildlife</option>
+                                </select>
+                            </div>
+                            <!-- <div class="col-1" -->
+                            <!-- class="fps-sr-modal-or-text">OR -->
+                            <!-- </div> -->
+                            <!-- <div class="col-5"> -->
+                            <!-- <label for="project" class="col-form-label">Find Project</label> -->
+                            <!-- <select class="form-select" required="" id="project"> -->
+                            <!-- <option value="">--select project--</option> -->
+                            <!-- <option value="FZ200">FZ200</option> -->
+                            <!-- <option value="FZ201">FZ201</option> -->
+                            <!-- </select> -->
+                            <!-- </div> -->
+                            <div class="ms-3">
+                                <button class="govuk-button sup_margin_0" type="button" id="fpsSrResourceCentreGoBtn">
+                                    <img src="../images/circle-chevron-right.png"
+                                        alt="dropdown arrow for logout of application" width="20px" height="20px">
+                                    GO</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="wgDataModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title sup_margin_0" id="wgDataModalTitle">WorkGroup Data</h3>
+                    <button type="button" class="btn-close btn-red" data-bs-dismiss="modal">X</button>
+                </div>
+                <div class="modal-body fps-sr-modal-body-pt5">
+                    <div class="fps-sr-table-wrap" style="max-height:520px; overflow:auto;">
+                        <table class="govuk-table fps-sr-themed-table fps-sr-data-table" aria-label="WorkGroup data table">
+                            <thead class="govuk-table__head" id="wgDataHead"></thead>
+                            <tbody class="govuk-table__body" id="wgDataBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" type="button" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="wgEditRowModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title sup_margin_0" id="wgEditRowTitle">Edit Row</h3>
+                    <button type="button" class="btn-close btn-red" data-bs-dismiss="modal">X</button>
+                </div>
+                <div class="modal-body fps-sr-modal-body-pt5">
+                    <form id="wgEditRowForm"></form>
+                </div>
+                <div class="modal-footer">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" type="button" data-bs-dismiss="modal">Cancel</button>
+                    <button class="govuk-button sup_margin_0" type="button" id="wgEditRowSaveBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
+        <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
+            <span class="fps-sr-page-footer-text">
+                © copyright Defra 2025
+            </span>
+        </div>
+    </div>
+</main>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/workgroupresources.js"></script>
+
+
+</body>
+
+</html>

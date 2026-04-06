@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="nav_menu/menutemplate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <title>SubContracts (Exceptional Costs) (Batch mode from RMS)</title> 
+  <link rel="stylesheet" href="../css/apps/common.css" />
+  <link rel="stylesheet" href="../css/apps/pact-app.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
+                </div>
+                <!-- <div class="menu-icon" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> -->
+                <div class="pims-log">
+                    <span>PACT</span>
+                </div>
+                <!-- <p style="color: #000;">Project Accounting for Cost and Time</p> -->
+                <!-- <p>PACT</p> -->
+                <div class="pims-log" style="width: 160px;font-size: 16px;">
+                    <select aria-label="Select year" class="pims-log"
+                        style="border: 0;border-radius: 0;margin-left: 0px;width: 150px;outline: 0;">
+                        <option>2017-2018</option>
+                        <option>2018-2019</option>
+                        <option>2019-2020</option>
+                        <option>2020-2021</option>
+                        <option>2021-2022</option>
+                        <option>2022-2023</option>
+                        <option>2023-2024</option>
+                        <option>2024-2025</option>
+                        <option selected>2025-2026</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </header>
+    <div id="header"></div>
+
+    <script src="../pact/nav_menu/script.js"></script>
+
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+
+    <div class="content-wrapper sup_margin_bottom_10">
+        <div class="govuk-grid-row sup_margin_left_right_0">
+            <div class="govuk-grid-column-full">  
+                <h1 class="heading_with_txtbox govuk-heading-s sup_border-bottom sup_margin_bottom_0 ">
+                    <div class="sup_flex_left_center">
+                        Project
+                        Cost from RMS for Month...
+                        <div class="display-flex">
+                            <label class="govuk-label sup_visually_hidden sup_label_width_10" for="dpSelectmonth">Select month</label>
+                            <div class="m-0 p-0" style="display: flex;  align-items: center;justify-content: flex-start;">
+                        
+                                <select class="govuk-select govuk-!-font-size-16" name="dpSelectmonth" id="dpSelectmonth">
+                                    <option value="">--select month--</option>
+                                </select>
+                            </div>
+                        </div>
+                        <label class="sup_visually_hidden sup_label_width_10" for="txtSelectedMonth">Selected month</label>
+                        <input type="text" id="txtSelectedMonth" class="govuk-input govuk-!-font-size-16 sup_text_center govuk-input--width-2"
+                            readonly />
+                    </div> 
+                </h1> 
+            </div>
+        </div>
+ 
+
+        <!-- Project Cost Data Table -->
+        <div class="govuk-grid-row sup_margin_left_right_0 sup_margin_bottom_10 sup_margin_top_10">
+            <div class="govuk-grid-column-full">
+                <p class="govuk-body sup_margin_0">Animal format</p>
+                <div class="sup_border">
+                   
+                    <!--searchpanel-->
+                    <div class="sup_search_panel sup_border_t_0 sup_border-left_0 sup_border-right_0">
+                        <div class="sup_flex_end sup_gap_8 sup_width_100"> 
+                            <div class="govuk-form-group sup_margin_0">
+                                <button type="button" class="govuk-button sup_margin_0" id="addProjectCostBtn"
+                                    aria-label="Add Project Cost" data-module="govuk-button">
+                                    + &nbsp; Add Project Cost
+                                </button>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!--panel end-->
+
+                    <div class="table_scroll_wrapper">
+                        <table class="govuk-table custom-table" id="projectCostTable">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th data-column="0" scope="col" class="govuk-table__header">Project<div class="resizer">&nbsp;</div></th>
+                                    <th data-column="1" class="govuk-table__header">Account Code<div class="resizer">&nbsp;</div></th>
+                                    <th data-column="2" class="govuk-table__header">Amount<div class="resizer">&nbsp;</div></th>
+                                    <th data-column="3" class="govuk-table__header">Month<div class="resizer">&nbsp;</div></th>
+                                    <th data-column="4" class="govuk-table__header">Test Job<div class="resizer">&nbsp;</div></th>
+                                    <th data-column="5" class="govuk-table__header">Description<div class="resizer">&nbsp;</div></th>
+                                    <th data-column="6" class="govuk-table__header">Supplier<div class="resizer">&nbsp;</div></th>
+                                    <th data-column="7" class="govuk-table__header">Supplier Number<div class="resizer">&nbsp;</div></th>
+                                    <th data-column="8" class="govuk-table__header">Daily Rate<div class="resizer">&nbsp;</div></th>
+                                    <th data-column="9" class="govuk-table__header">Animal Days<div class="resizer">&nbsp;</div></th>
+                                    <th class="govuk-table__header">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" id="projectCostTableBody">
+                                <tr>
+                                    <td colspan="12" style="text-align: center; padding: 20px; color: #505a5f;">
+                                        Select a period to view data
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sup_pagination_wrapper">
+                        <div class="sup_margin_top_bottom_5_10">
+                            <label for="recordsPerPage">Records per page</label>
+                            <select id="recordsPerPage" class="govuk-select govuk-input--width-3 govuk-!-font-size-16"
+                                aria-label="Select number of records per page">
+                                <option value="10">10</option>
+                                <option value="20" selected>20</option>
+                                <option value="30">30</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </div>
+                        <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+                            <ul class="govuk-pagination__list" id="projectCostPagination">
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+            <div class="govuk-width-container sup_p_8 sup_text_center">
+                <span>
+                    &copy; copyright Defra 2025
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add/Edit Project Cost Modal -->
+    <div class="modal" id="addProjectCostModal" tabindex="-1">
+        <div class="modal-dialog modal-custom" style="max-width: 800px;">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title m-0" id="projectCostModalLabel">Add Project Cost</h3>
+                    <button type="button" class="btn-close btn-red" id="closeProjectCostModalBtn">X</button>
+                </div>
+                <div class="modal-body" style="padding: 8px 16px 0 0px;">
+                    <form class="govuk-grid-column-full" id="formAddProjectCost">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="dpSelectproject" class="govuk-label govuk-!-font-weight-bold">Project:</label>
+                                        <select class="govuk-select govuk-!-font-size-16 sup_select_option_width_100" name="dpSelectproject" id="dpSelectproject">
+                                            <option value="">--select project--</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-accountcode" class="govuk-label govuk-!-font-weight-bold">Account Code:</label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16"
+                                        id="txtmodal-accountcode" name="accountcode" placeholder="Enter account code" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-amount" class="govuk-label govuk-!-font-weight-bold">Amount:</label>
+                                    <div class="govuk-input__wrapper">
+                                        <div class="govuk-input__prefix" aria-hidden="true">$</div>
+                                        <input type="text" class="govuk-input govuk-!-font-size-16"
+                                            id="txtmodal-amount" name="amount" placeholder="0.00" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-month" class="govuk-label govuk-!-font-weight-bold">Month:</label>
+                                    <input type="number" min="1" max="12" class="govuk-input govuk-!-font-size-16" id="txtmodal-month"
+                                        name="month" placeholder="Enter month" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-testjob" class="govuk-label govuk-!-font-weight-bold">Test Job:</label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-testjob"
+                                        name="testjob" placeholder="Enter test job">
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-description" class="govuk-label govuk-!-font-weight-bold">Description:</label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16"
+                                        id="txtmodal-description" name="description" placeholder="Enter description">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-supplier" class="govuk-label govuk-!-font-weight-bold">Supplier:</label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-supplier"
+                                        name="supplier" placeholder="Enter supplier">
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-suppliernumber" class="govuk-label govuk-!-font-weight-bold">Supplier Number:</label>
+                                    <input type="number" class="govuk-input govuk-!-font-size-16"
+                                        id="txtmodal-suppliernumber" name="suppliernumber" placeholder="Enter supplier number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-dailyrate" class="govuk-label govuk-!-font-weight-bold">Daily Rate:</label>
+                                    <div class="govuk-input__wrapper">
+                                        <div class="govuk-input__prefix" aria-hidden="true">$</div>
+                                        <input type="text" class="govuk-input govuk-!-font-size-16"
+                                            id="txtmodal-dailyrate" name="dailyrate" placeholder="0.00">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-animaldays" class="govuk-label govuk-!-font-weight-bold">Animal Days:</label>
+                                    <input type="number" class="govuk-input govuk-!-font-size-16"
+                                        id="txtmodal-animaldays" name="animaldays" placeholder="Enter animal days">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer"
+                    style="display: flex; justify-content: space-between; align-items: center; flex-direction: row;">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" aria-label="Cancel"
+                        id="cancelProjectCostModalBtn">Cancel</button>
+                    <button class="govuk-button sup_margin_0" aria-label="Save" id="saveProjectCostBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/pact_js/subcontracts_batch_mode_rms.js"></script>
+</body>
+
+</html>
+

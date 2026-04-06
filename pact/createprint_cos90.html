@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="nav_menu/menutemplate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <title>Create and Print Individual COS90s</title> 
+  <link rel="stylesheet" href="../css/apps/common.css" />
+  <link rel="stylesheet" href="../css/apps/pact-app.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
+                </div>
+                <!-- <div class="menu-icon" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> -->
+                <div class="pims-log">
+                    <span>PACT</span>
+                </div>
+                <!-- <p style="color: #000;">Project Accounting for Cost and Time</p> -->
+                <!-- <p>PACT</p> -->
+                <div class="pims-log" style="width: 160px;font-size: 16px;">
+                    <select aria-label="Select year" class="pims-log"
+                        style="border: 0;border-radius: 0;margin-left: 0px;width: 150px;outline: 0;">
+                        <option>2017-2018</option>
+                        <option>2018-2019</option>
+                        <option>2019-2020</option>
+                        <option>2020-2021</option>
+                        <option>2021-2022</option>
+                        <option>2022-2023</option>
+                        <option>2023-2024</option>
+                        <option>2024-2025</option>
+                        <option selected>2025-2026</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </header>
+    <div id="header"></div>
+
+    <script src="../pact/nav_menu/script.js"></script>
+
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+    <div class="sup_min_height_900">
+        <div class="govuk-grid-row sup_margin_left_right_0">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-grid-row govuk-heading-s sup_border-bottom sup_heading_padding sup_margin_bottom_10">
+                    Create & print individual COS90s</h1>
+            </div>
+        </div>
+
+
+        <div class="govuk-grid-column-full">
+            <div class="govuk-grid-row sup_flex_row">
+                <div class="govuk-grid-column-two-thirds sup_p_0">
+
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="project-code">
+                                Profit Centre
+                            </label>
+                            <select class="govuk-select govuk-!-font-size-16 sup_select_option_width_100"
+                                id="dpProfitcenter" name="dpProfitcenter" aria-label="select profit centre">
+                                <option value="">--select profit centre--</option>
+                                <option value="Bee Insp" selected="">Bee Insp</option>
+                                <option value="BTB">BTB</option>
+                                <option value="Comm">Comm</option>
+                                <option value="CSU">CSU</option>
+                                <option value="DoES">DoES</option>
+                                <option value="DSG">DSG</option>
+                                <option value="EU Exit">EU Exit</option>
+                                <option value="GM">GM</option>
+                                <option value="HNC">HNC</option>
+                                <option value="IMT">IMT</option>
+                                <option value="LabT">LabT</option>
+                            </select>
+                        </div>
+
+                        <div class="govuk-form-group sup_margin_bottom_10">
+
+                            <div class="tableselectdropdown input-group searchfiels" data-perioddropdown data-source="monthlist">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="txtstaffsearchBox">
+                                    For Period
+                                </label>
+
+                                <input type="text" id="txtstaffsearchBox" placeholder="Select Period"
+                                    class="dropdown-input down-arrow-img govuk-input govuk-!-font-size-16" />
+
+                                <div class="tbl-dropdown-panel">
+                                    <input type="text" class="select-search-box"
+                                        placeholder="Type to search and select period" />
+
+                                    <table id="tblMonthPeriod">
+                                        <thead>
+                                            <tr>
+                                                <th>Accnts Period</th>
+                                                <th>Month Name</th>
+                                                <th>Month Number</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div> 
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="govuk-grid-column-one-third sup_margin_top_25">
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <button class="govuk-button sup_margin_bottom_0 sup_width_100"
+                                id="maintainWorkHoursDaysBtn">Maintain Working Hours &
+                                Days</button>
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_35">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="project-code">
+                                In Year
+                            </label>
+                            <select class="govuk-select govuk-!-font-size-16 sup_select_option_width_100" id="dpInYear"
+                                name="dpInYear" aria-label="select In year">
+                                <option value="" selected>--select In Year-</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+                <div>
+                    <div class="govuk-grid-column-two-thirds sup_border sup_margin_tb_lr_0_20 sup_padding_tb_15_lr_0">
+
+                        <div class="govuk-grid-column-three-quarters">
+                            <div class="sup_border-top">
+                                <div class="sup_table_height sup_border-left">
+                                    <table id="workgroupPrintTable" class="govuk-table custom-table">
+                                        <thead class="govuk-table__head">
+                                            <tr class="govuk-table__row">
+
+                                                <!-- <th>ID</th> -->
+                                                <th data-column="0" class="govuk-table__header text-align-left">Work
+                                                    Group
+                                                    <div class="resizer">&nbsp;</div>
+                                                </th>
+                                                <th data-column="1" class="govuk-table__header text-align-left">
+                                                    <div class="sup_flex_column">
+                                                        <div>Print COS90?</div>
+                                                        <div class="sup_flex_row_center_gap_50"> <span>Yes</span><span>No</span></div>
+                                                    </div>
+                                                    <div class="resizer">&nbsp;</div>
+
+                                                </th>
+                                                <th class="govuk-table__header text-align-center">Actions</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody class="govuk-table__body"></tbody>
+                                    </table>
+                                </div>
+                                <div class="sup_pagination_wrapper sup_border">
+                                    <div class="sup_margin_top_bottom_5_10">
+                                        <label for="recordsPerPage">Records per page</label>
+                                        <select id="recordsPerPage"
+                                            class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
+                                            aria-label="Select number of records per page">
+                                            <option value="5">5</option>
+                                            <option value="10" selected>10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="25">25</option>
+                                            <option value="30">30</option>
+                                        </select>
+                                    </div>
+                                    <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+                                        <ul class="govuk-pagination__list" id="workgroupPagination">
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-column-one-quarter">
+                            <p class="govuk-body">For the current profit centre...</p>
+                            <div class="sup_flex_column">
+                                <button class="govuk-button" aria-label="Select PC's Work Groups"
+                                    id="selectPCWorkgroupsBtn">Select PC's Work Groups</button>
+                                <button class="govuk-button govuk-button--warning" aria-label="Clear PC's Work Groups"
+                                    id="clearPCWorkgroupsBtn">Clear PC's Work
+                                    Groups</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            
+                <div class="sup_flex_center_space">
+                    <div
+                        class="govuk-grid-column-one-half sup_margin_top_10 sup_p_0 sup_flex_center_space sup_flex_start_space">
+                        <button class="govuk-button govuk-button--warning sup_margin_bottom_10"
+                            data-module="govuk-button" aria-label="Clear All Work Group"
+                            id="clearAllWorkgroupsBtn">Clear
+                            All Work Groups</button>
+                        <button class="govuk-button sup_margin_bottom_20" data-module="govuk-button"
+                            aria-label="Print COS90s" id="printCOS90sBtn">Print COS90s</button>
+                    </div>
+                </div>
+           
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half sup_margin_bottom_20  sup_flex_center_space sup_mr_0_pr_0">
+                    <div class="govuk-grid-column-one-quarter sup_p_0 sup_flex_end_space">
+                        <button class="govuk-button sup_margin_bottom_0" aria-label="Excel COS90"
+                            id="excelCOS90sBtn">Excel
+                            COS90s</button>
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_0 sup_flex_row_gap_3">
+                        <label for="dpWgMemberList" class="govuk-label govuk-!-font-weight-bold sup_margin_0">Person(leave blank to use WGs above)</label>
+
+                        <select class="govuk-select govuk-!-font-size-16 sup_select_option_width_50"
+                            id="dpWgMemberList" name="dpWgMemberList" aria-label="Person(leave blank to use WGs above)">
+                            <option value="">--select--</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="govuk-grid-row sup_p_0 sup_margin_0">
+                <div class="sup_file_location_wrapper sup_margin_0 govuk-grid-column-three-quarters sup_p_0">
+                    <div class="govuk-form-group sup_p_0 sup_margin_bottom_10 govuk-grid-column-one-third">
+                        <label class="govuk-label govuk-!-font-weight-bold" for="inputSavetofile">Save To:</label>
+                        <input type="text" id="inputSavetofile" class="govuk-input govuk-!-font-size-16"
+                            placeholder="No file selected" readonly>
+                           
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <button onclick="saveFile()" class="govuk-button sup_margin_0">Change</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Edit Print COS90 Modal -->
+    <div class="modal" id="editPrintCOS90Modal" tabindex="-1">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title m-0" id="printModalLabel">Edit Print COS90</h3>
+                    <button type="button" class="btn-close btn-red" id="closePrintModalBtn">X</button>
+                </div>
+                <div class="modal-body">
+                    <form id="formEditPrintCOS90">
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="txtmodal-workgroup">Work
+                                Group:</label>
+                            <input type="text" class="govuk-input govuk-!-font-size-16 sup_readonly" id="txtmodal-workgroup" readonly/>
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold">Print COS90?</label>
+                            <div class="govuk-radios govuk-radios--inline govuk-radios govuk-radios--small">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="printCOS90-yes" name="printCOS90"
+                                        type="radio" value="Yes">
+                                    <label class="govuk-label govuk-radios__label" for="printCOS90-yes">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="printCOS90-no" name="printCOS90" type="radio"
+                                        value="No">
+                                    <label class="govuk-label govuk-radios__label" for="printCOS90-no">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer sup_flex_center_space">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" aria-label="Cancel"
+                        id="cancelPrintModalBtn">Cancel</button>
+                    <button class="govuk-button sup_margin_0" aria-label="Save" id="savePrintBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Maintain Working Hours & Days Modal -->
+    <div class="modal" id="workingHoursModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal_position_transform_y_40">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title m-0" id="workingHoursModalLabel">Maintain Working Hours & Days</h3>
+                    <button type="button" class="btn-close btn-red" id="closeWorkingHoursModalBtn">X</button>
+                </div>
+                <div class="modal-body">
+                     <!--<div>
+                        <h4 class="govuk-heading-s" style="margin: 0;">Working Hours Data</h4> 
+                          <button type="button" class="govuk-button sup_margin_0 sup_p_8" id="addWorkingHoursBtn"
+                            aria-label="Add Working Hours" data-module="govuk-button">
+                            + Add
+                        </button> 
+                    </div>-->
+                    <div class="sup_border">
+                        <div class="sup_table_wrapper">
+                            <table class="govuk-table custom-table sup_margin_bottom_0" id="workingHoursTable">
+                                <thead class="govuk-table__head">
+                                    <tr class="govuk-table__row">
+                                        <th data-column="0" class="govuk-table__header">Year<div class="resizer">&nbsp;</div></th>
+                                        <th data-column="1" class="govuk-table__header">Month<div class="resizer">&nbsp;</div></th>
+                                        <th data-column="2" class="govuk-table__header">Days<div class="resizer">&nbsp;</div></th>
+                                        <th data-column="3" class="govuk-table__header">CVL Hours<div class="resizer">&nbsp;</div></th>
+                                        <th data-column="4" class="govuk-table__header">VID Hours<div class="resizer">&nbsp;</div></th>
+                                        <th class="govuk-table__header">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="govuk-table__body" id="workingHoursTableBody">
+                                    <!-- Data will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="sup_pagination_wrapper sup_border">
+                            <div class="sup_margin_top_bottom_5_10">
+                                <label for="workingHoursRecordsPerPage">Records per page</label>
+                                <select id="workingHoursRecordsPerPage"
+                                    class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
+                                    aria-label="Select number of records per page">
+                                    <option value="5">5</option>
+                                    <option value="10" selected>10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+                            <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+                                <ul class="govuk-pagination__list" id="workingHoursPagination">
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer sup_flex_end_center">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" aria-label="Close"
+                        id="closeWorkingHoursBtn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Working Hours Entry Modal -->
+    <div class="modal" id="addEditHoursModal" tabindex="-1">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title m-0" id="hoursEntryModalLabel">Add Working Hours Entry</h3>
+                    <button type="button" class="btn-close btn-red" id="closeHoursEntryModalBtn">X</button>
+                </div>
+                <div class="modal-body">
+                    <form id="formWorkingHours">
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="txtYear">Year:</label>
+                            <input type="number" class="govuk-input govuk-!-font-size-16" id="txtYear" name="year"
+                                placeholder="Enter year" required min="2020" max="2030">
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="txtMonth">Month:</label>
+                            <input type="number" class="govuk-input govuk-!-font-size-16" id="txtMonth" name="month"
+                                placeholder="Enter month (1-12)" required min="1" max="12">
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="txtDays">Days:</label>
+                            <input type="number" class="govuk-input govuk-!-font-size-16" id="txtDays" name="days"
+                                placeholder="Enter days" required min="1" max="31" step="1">
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="txtCVLHours">CVL Hours:</label>
+                            <input type="number" class="govuk-input govuk-!-font-size-16" id="txtCVLHours"
+                                name="cvlhours" placeholder="Enter CVL hours" required step="0.1" min="0">
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="txtVIDHours">VID Hours:</label>
+                            <input type="number" class="govuk-input govuk-!-font-size-16" id="txtVIDHours"
+                                name="vidhours" placeholder="Enter VID hours" required step="0.1" min="0">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer sup_flex_center_space">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" aria-label="Cancel"
+                        id="cancelHoursEntryBtn">Cancel</button>
+                    <button class="govuk-button sup_margin_0" aria-label="Save" id="saveHoursEntryBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+            <div class="govuk-width-container sup_p_8 sup_text_center">
+                <span>
+                    &copy; copyright Defra 2025
+                </span>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/pact_js/print_individual_cos90.js"></script>
+</body>
+
+</html>
+

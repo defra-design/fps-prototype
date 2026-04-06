@@ -15,7 +15,17 @@
 
         }
 
-
+:root {
+  --govuk-success-colour: #0f7a52;
+  --govuk-brand-colour: #1d70b8;
+  --govuk-link-colour: #1a65a6;
+  --blue-govuk-shade-25:#16548a;
+  --govuk-surface-background-colour: #f4f8fb;
+  --govuk-link-hover-colour: #0f385c;
+  --govuk-purple-primary: #54319f;
+  --blue-govuk-shade-50: #0f385c;
+  
+}
 
 
 html,
@@ -23,13 +33,11 @@ body {
   height: 100%;
   margin: 0;
   font-family: "GDS Transport";
-    background-color: #fff;
-	font-size: 14px;
+    background-color: #fff; 
 }
 
 .parent {
-  height: 100%;
-  /* or 80%, 60vh, etc. */
+  height: 100%; 
   max-height: 100%;
   position: relative;
   background: #f0f8ff;
@@ -45,6 +53,10 @@ body {
   height: 65px;
 }
 
+.uklogofont{
+  font-family: HelveticaNeue, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
 .loginbg {
   background-image: url('images/fieldbg2.jpg');
   background-position: center center;
@@ -52,58 +64,122 @@ body {
   background-size: cover;
 }
 
-.tile {
-  border-bottom: 8px solid #00a33b;
-  background-color: #f4f8fb;
-  width: 160px;
 
+
+.tile-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 170px;
+    align-items: center;
+    position: relative;
+    z-index: 9999;
+}
+
+.defra-logo-div-wrapper{
+    width: 220px;
+    margin-right: 20px;
+    background: #fff;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 3px #383838;
+}
+
+.defra-four-app-wrapper{
+   display: flex;
+   padding: 30px;
+   flex-direction: row;
+}
+
+
+.border_left_2{
+  border-left:2px solid var(--govuk-success-colour);
+}
+
+.padding_left_10 {
+  padding-left: 10px;
+}
+
+.tile {
+  border-bottom: 8px solid var(--govuk-success-colour); 
+  color:var(--govuk-brand-colour) !important;
   letter-spacing: 1px;
   font-family: HelveticaNeue, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  font-size: 27px;
-  padding: 20px;
-  display: flex;
-  color: #1d70b8;
+  font-size: 27px; 
+  display: flex; 
   text-shadow: -1px 0px 0px #666666;
-  font-weight: 600;
-  height: 110px;
+  font-weight: 600; 
   /* border-radius: 20px; */
   align-items: center;
   justify-content: center;
-
+  background-color: var(--govuk-surface-background-colour, #f4f8fb);
   border-left: 1px solid #1d70b8;
   border-top: 1px solid #1d70b8;
   border-right: 1px solid #1d70b8;
   /* transition: background-color 0.4s ease;*/
   transition: all 0.3s ease;
+  
+  margin:0;
 }
 
+ 
 .tile a {
-  color: #1d70b8;
+  color:var(--govuk-link-colour) !important; 
   text-decoration: none;
   display: flex;
-  width: 160px;
-  height: 110px;
-  padding: 20px;
+  width: 200px;
+  height: 170px;
+  padding: 0px;
   font-size: 27px;
   align-items: center;
-  justify-content: center;
-  /* border:1px dashed #ccc;
-    width: 200px;
-    font-size: 33px;
-    padding: 20px;
-    height: 200px; */
+  justify-content: center; 
 }
 
-.tile:hover {
-  background: #1d70b8;
-  color: #fff;
-  text-decoration: underline;
-  text-shadow: -1px 0px 0px #666666;
-  border-bottom: 8px solid #003078;
+.tile:hover { 
+  background: var(--govuk-brand-colour) !important;
+  color: #ffffff !important; 
+  border-bottom: 8px solid var(--blue-govuk-shade-50) !important;  
 }
 
-.tile:hover a {
-  color: #fff;
+.tile:hover > a{
+  color:#fff !important;
+}
+ 
+
+.tile:hover > a:focus {
+    outline: 3px solid transparent;
+    color:#000 !important;
+    background-color: var(--govuk-focus-colour, #fd0);
+    box-shadow: 0 -2px var(--govuk-focus-colour, #fd0), 0 4px var(--govuk-focus-text-colour, #0b0c0c);
+    text-decoration: none;
+
+}
+
+.link-wrapper{
+  display: flex;
+  flex-direction: row;
+  gap:20px;margin-top: 20px;
+}
+
+.footer-circle-one{
+   position: absolute;
+    top: -69px;
+    z-index: 1200;
+    width: 100%;
+    left: -40px;
+    transform: rotate(173deg);
+    opacity: 0.1;
+    height: 100%;
+    transform-origin: 50% 48%;
+}
+
+.footer-circle-two{
+    position: absolute;
+    top: -49px;
+    width: 100%;
+    right: 0;
+    transform: rotate(0deg);
+    opacity: 0.1;
+    height: 100%;
 }
 
 .footerline {
@@ -306,7 +382,7 @@ td.action-cell:nth-child(5) {
 .custom-table thead th {
   position: sticky;
   top: 0;
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
   z-index: 10;
   border-bottom: 1px solid #ccc;
 }
@@ -338,9 +414,9 @@ td.action-cell:nth-child(5) {
 }
 
 .custom-table thead th{
-  box-shadow: 0 2px 2px rgba(0,0,0,0.05);
-  background: #edf4ff !important;
-  border: 1px solid #dee2e6 !important;
+  /* box-shadow: 0 2px 2px rgba(0,0,0,0.05); */
+   background: #f4f8fb !important; 
+  /* border: 1px solid #dee2e6 !important; */
   text-align: center;
 }
 
@@ -365,20 +441,7 @@ td.action-cell:nth-child(5) {
   font-size: 14px;
 }
 
-/* .table th, */
-/* .table td { */
-  /* padding: 12px 14px;  */
-  /* border: 1px solid #dee2e6; */
-  /* text-align: left; */
-/* } */
 
-
-/* .table td { */
-  /* /*padding: 12px 14px;*/ */
-  /* padding: 6px 10px !important; */
-  /* border: 1px solid #dee2e6; */
-  /* text-align: left; */
-/* } */
 
 /* Header */
 .table thead th {
@@ -1223,19 +1286,11 @@ padding: 5px 3px;
 	border-radius: 0 8px 8px 0;
 }
 
-
-/* 
-.summary-item input {
-    padding: 4px;
-    border: 1px solid #E0E0E0;
-    border-radius: 4px;
-     font-family: "GDS Transport";
-    font-size: 14px;
-    font-weight: 600; 
-    background-color: #FAFAFA;
-	    text-align: right;
-} */
+ 
 
 
 
+button {
+    font-size: 16px !important;
+}
 

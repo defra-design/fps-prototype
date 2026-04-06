@@ -1,0 +1,424 @@
+[
+  {
+    "Project": "APHAASHORN24",
+    "Month": "2",
+    "Amount": "£12",
+    "CostOfWork": "£95,000",
+    "WIP": "£30,000",
+    "ProfitLoss": "£20",
+    "Detail": "Testing",
+    "Counter": 10132
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "3",
+    "Amount": "£15",
+    "CostOfWork": "£3.00",
+    "WIP": "£40,000",
+    "ProfitLoss": "£2.00",
+    "Detail": "Implementation",
+    "Counter": 10133
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "12",
+    "Amount": "£18",
+    "CostOfWork": "£140,000",
+    "WIP": "£0",
+    "ProfitLoss": "£4",
+    "Detail": "Completion",
+    "Counter": 10134
+  },
+  {
+    "Project": "Digital Transformation",
+    "Month": "6",
+    "Amount": "£85",
+    "CostOfWork": "£70,000",
+    "WIP": "£15,000",
+    "ProfitLoss": "£8",
+    "Detail": "Requirements",
+    "Counter": 10135
+
+  },
+  {
+    "Project": "Digital Transformation",
+    "Month": "8",
+    "Amount": "£95,000",
+    "CostOfWork": "£75,000",
+    "WIP": "£20,000",
+    "ProfitLoss": "£6",
+    "Detail": "Development",
+    "Counter": 10136
+
+  },
+  {
+    "Project": "Environmental Compliance",
+    "Month": "9",
+    "Amount": "£21.00",
+    "CostOfWork": "£50,000",
+    "WIP": "£10.00",
+    "ProfitLoss": "£2.00",
+    "Detail": "Ongoing",
+    "Counter": 10137
+
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "12",
+    "Amount": "£18",
+    "CostOfWork": "£140,000",
+    "WIP": "£0",
+    "ProfitLoss": "£4",
+    "Detail": "Completion",
+    "Counter": 10138
+  },
+  {
+    "Project": "Digital Transformation",
+    "Month": "6",
+    "Amount": "£85",
+    "CostOfWork": "£70,000",
+    "WIP": "£15,000",
+    "ProfitLoss": "£8",
+    "Detail": "Requirements",
+    "Counter": 10139
+
+  },
+  {
+    "Project": "Digital Transformation",
+    "Month": "8",
+    "Amount": "£95,000",
+    "CostOfWork": "£75,000",
+    "WIP": "£20,000",
+    "ProfitLoss": "£6",
+    "Detail": "Development",
+    "Counter": 10140
+
+  },
+  {
+    "Project": "Environmental Compliance",
+    "Month": "9",
+    "Amount": "£21.00",
+    "CostOfWork": "£50,000",
+    "WIP": "£10.00",
+    "ProfitLoss": "£2.00",
+    "Detail": "Ongoing",
+    "Counter": 10141
+
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "12",
+    "Amount": "£18",
+    "CostOfWork": "£140,000",
+    "WIP": "£0",
+    "ProfitLoss": "£4",
+    "Detail": "Completion",
+    "Counter": 10142
+  },
+  {
+    "Project": "Digital Transformation",
+    "Month": "6",
+    "Amount": "£85",
+    "CostOfWork": "£70,000",
+    "WIP": "£15,000",
+    "ProfitLoss": "£8",
+    "Detail": "Requirements",
+    "Counter": 10143
+
+  },
+  {
+    "Project": "Digital Transformation",
+    "Month": "8",
+    "Amount": "£95,000",
+    "CostOfWork": "£75,000",
+    "WIP": "£20,000",
+    "ProfitLoss": "£6",
+    "Detail": "Development",
+    "Counter": 10144
+
+  },
+  {
+    "Project": "Environmental Compliance",
+    "Month": "9",
+    "Amount": "£21.00",
+    "CostOfWork": "£50,000",
+    "WIP": "£10.00",
+    "ProfitLoss": "£2.00",
+    "Detail": "Ongoing",
+    "Counter": 10145
+
+  },
+  {
+    "Project": "APHAASHORN24",
+    "Month": "12",
+    "Amount": "£18",
+    "CostOfWork": "£140,000",
+    "WIP": "£0",
+    "ProfitLoss": "£4",
+    "Detail": "Completion",
+    "Counter": 10146
+  },
+  {
+    "Project": "Digital Transformation",
+    "Month": "6",
+    "Amount": "£85",
+    "CostOfWork": "£70,000",
+    "WIP": "£15,000",
+    "ProfitLoss": "£8",
+    "Detail": "Requirements",
+    "Counter": 10147
+
+  },
+  {
+    "Project": "Digital Transformation",
+    "Month": "8",
+    "Amount": "£95,000",
+    "CostOfWork": "£75,000",
+    "WIP": "£20,000",
+    "ProfitLoss": "£6",
+    "Detail": "Development",
+    "Counter": 10148
+
+  },
+  {
+    "Project": "Environmental Compliance",
+    "Month": "9",
+    "Amount": "£21.00",
+    "CostOfWork": "£50,000",
+    "WIP": "£10.00",
+    "ProfitLoss": "£2.00",
+    "Detail": "Ongoing",
+    "Counter": 10149
+
+  },
+  {
+    "Project": "AH0033",
+    "Month": "1",
+    "Amount": "£250",
+    "CostOfWork": "£45,000",
+    "WIP": "£12,000",
+    "ProfitLoss": "£3.50",
+    "Detail": "Initial Setup",
+    "Counter": 10150
+  },
+  {
+    "Project": "AH0033",
+    "Month": "2",
+    "Amount": "£500",
+    "CostOfWork": "£60,000",
+    "WIP": "£18,000",
+    "ProfitLoss": "£5.00",
+    "Detail": "Development Phase",
+    "Counter": 10151
+  },
+  {
+    "Project": "AH0033",
+    "Month": "3",
+    "Amount": "£750",
+    "CostOfWork": "£85,000",
+    "WIP": "£25,000",
+    "ProfitLoss": "£7.50",
+    "Detail": "Testing and QA",
+    "Counter": 10152
+  },
+  {
+    "Project": "AH0033",
+    "Month": "4",
+    "Amount": "£1,200",
+    "CostOfWork": "£110,000",
+    "WIP": "£30,000",
+    "ProfitLoss": "£10.00",
+    "Detail": "Deployment",
+    "Counter": 10153
+  },
+  {
+    "Project": "AB0G0508",
+    "Month": "1",
+    "Amount": "£150",
+    "CostOfWork": "£35,000",
+    "WIP": "£8,000",
+    "ProfitLoss": "£2.50",
+    "Detail": "Project Initiation",
+    "Counter": 10154
+  },
+  {
+    "Project": "AB0G0508",
+    "Month": "2",
+    "Amount": "£300",
+    "CostOfWork": "£48,000",
+    "WIP": "£12,000",
+    "ProfitLoss": "£4.00",
+    "Detail": "Planning Phase",
+    "Counter": 10155
+  },
+  {
+    "Project": "AB0G0508",
+    "Month": "3",
+    "Amount": "£425",
+    "CostOfWork": "£65,000",
+    "WIP": "£18,500",
+    "ProfitLoss": "£5.50",
+    "Detail": "Implementation",
+    "Counter": 10156
+  },
+  {
+    "Project": "AB0G0508",
+    "Month": "4",
+    "Amount": "£600",
+    "CostOfWork": "£82,000",
+    "WIP": "£24,000",
+    "ProfitLoss": "£7.00",
+    "Detail": "Review and Testing",
+    "Counter": 10157
+  },
+  {
+    "Project": "AB0G0508",
+    "Month": "5",
+    "Amount": "£850",
+    "CostOfWork": "£105,000",
+    "WIP": "£32,000",
+    "ProfitLoss": "£9.50",
+    "Detail": "Final Deployment",
+    "Counter": 10158
+  },
+  {
+    "Project": "ABSE4406",
+    "Month": "1",
+    "Amount": "£380",
+    "CostOfWork": "£52,000",
+    "WIP": "£14,000",
+    "ProfitLoss": "£4.80",
+    "Detail": "Project Kick-off",
+    "Counter": 10159
+  },
+  {
+    "Project": "ABSE4406",
+    "Month": "2",
+    "Amount": "£620",
+    "CostOfWork": "£68,000",
+    "WIP": "£19,500",
+    "ProfitLoss": "£6.20",
+    "Detail": "Analysis Phase",
+    "Counter": 10160
+  },
+  {
+    "Project": "ABSE4406",
+    "Month": "3",
+    "Amount": "£940",
+    "CostOfWork": "£92,000",
+    "WIP": "£28,000",
+    "ProfitLoss": "£8.40",
+    "Detail": "Development",
+    "Counter": 10161
+  },
+  {
+    "Project": "ABSE4406",
+    "Month": "4",
+    "Amount": "£1,150",
+    "CostOfWork": "£118,000",
+    "WIP": "£35,000",
+    "ProfitLoss": "£11.00",
+    "Detail": "Integration Testing",
+    "Counter": 10162
+  },
+  {
+    "Project": "ABSE4406",
+    "Month": "5",
+    "Amount": "£875",
+    "CostOfWork": "£98,000",
+    "WIP": "£26,500",
+    "ProfitLoss": "£8.75",
+    "Detail": "UAT and Deployment",
+    "Counter": 10163
+  },
+  {
+    "Project": "AH0011",
+    "Month": "1",
+    "Amount": "£280",
+    "CostOfWork": "£42,000",
+    "WIP": "£11,000",
+    "ProfitLoss": "£3.20",
+    "Detail": "Initial Analysis",
+    "Counter": 10164
+  },
+  {
+    "Project": "AH0011",
+    "Month": "2",
+    "Amount": "£465",
+    "CostOfWork": "£58,000",
+    "WIP": "£16,500",
+    "ProfitLoss": "£5.40",
+    "Detail": "Design Phase",
+    "Counter": 10165
+  },
+  {
+    "Project": "AH0011",
+    "Month": "3",
+    "Amount": "£690",
+    "CostOfWork": "£76,000",
+    "WIP": "£22,000",
+    "ProfitLoss": "£7.80",
+    "Detail": "Build Phase",
+    "Counter": 10166
+  },
+  {
+    "Project": "AH0011",
+    "Month": "4",
+    "Amount": "£825",
+    "CostOfWork": "£88,000",
+    "WIP": "£27,500",
+    "ProfitLoss": "£9.20",
+    "Detail": "Testing and Handover",
+    "Counter": 10167
+  },
+  {
+    "Project": "APHAH0038",
+    "Month": "1",
+    "Amount": "£510",
+    "CostOfWork": "£64,000",
+    "WIP": "£18,000",
+    "ProfitLoss": "£6.50",
+    "Detail": "Project Setup",
+    "Counter": 10168
+  },
+  {
+    "Project": "APHAH0038",
+    "Month": "2",
+    "Amount": "£745",
+    "CostOfWork": "£82,000",
+    "WIP": "£24,500",
+    "ProfitLoss": "£8.90",
+    "Detail": "Requirements Gathering",
+    "Counter": 10169
+  },
+  {
+    "Project": "APHAH0038",
+    "Month": "3",
+    "Amount": "£980",
+    "CostOfWork": "£102,000",
+    "WIP": "£31,000",
+    "ProfitLoss": "£11.20",
+    "Detail": "Implementation",
+    "Counter": 10170
+  },
+  {
+    "Project": "APHAH0038",
+    "Month": "4",
+    "Amount": "£1,240",
+    "CostOfWork": "£125,000",
+    "WIP": "£38,000",
+    "ProfitLoss": "£13.80",
+    "Detail": "Quality Assurance",
+    "Counter": 10171
+  },
+  {
+    "Project": "APHAH0038",
+    "Month": "5",
+    "Amount": "£1,095",
+    "CostOfWork": "£112,000",
+    "WIP": "£34,000",
+    "ProfitLoss": "£12.50",
+    "Detail": "Go-Live Support",
+    "Counter": 10172
+  }
+]
