@@ -13,12 +13,12 @@ const htmlmenu = `
                             aria-expanded="false" aria-current="page" href="#">Programme Management<span
                                 class="arrow"><img src="../images/arrow-down.svg"
                                     alt="dropdown arrow for Programme Management Menu" width="12"></span></a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu w-100">
                             <li><a class="dropdown-item" aria-hidden="true" href="program_management.html">Select Programme</a></li>
                             <li><a class="dropdown-item" aria-hidden="true" style="display: flex; justify-content: space-between;">Plan Projects <img
                                         src="../images/right-arrow.png" alt="Arrow for Plan Projects Sub menu" width="30" height="30"></a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#" aria-hidden="true">Set Up A New Projects</a></li>
+                                    <li><a class="dropdown-item" href="setup_newproject.html" aria-hidden="true">Set Up A New Projects</a></li>
                                     <li><a class="dropdown-item" href="planproject_individually.html" aria-hidden="true">Plan Project Individually</a></li>
                                     <li><a class="dropdown-item" href="planstaff_entireprogram.html" aria-hidden="true">Plan STAFF for Entire Programme</a></li>
                                     <li><a class="dropdown-item" href="#" aria-hidden="true">Plan Animals for Entire Programme</a></li>
@@ -47,7 +47,7 @@ const htmlmenu = `
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" role="button" aria-hidden="true"
                             aria-expanded="false" aria-current="page" href="#">Resource Management<span class="arrow"><img src="../images/arrow-down.svg"
                                     alt="dropdown arrow for Resource Management Menu" width="12"></span></a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu w-100">
                             <li><a class="dropdown-item" href="createresourcecenter.html" aria-hidden="true">Create Resource Center</a></li>                           
 
                             <li><a class="dropdown-item" aria-hidden="true" style="display: flex; justify-content: space-between;" href="#">Setup Resource
@@ -96,9 +96,9 @@ const htmlmenu = `
                                     src="../images/arrow-down.svg" alt="dropdown arrow for Programme Management Menu" width="12"></span></a>
                         <div class="dropdown-menu my-flex-dropdown" style="border: 1px solid #000; left: -70px;">
                             <ul>
-                                <li><a class="dropdown-item" href="wgstaff.html" aria-hidden="true">Maintenance Menu</a></li>
+                                <li><a class="dropdown-item" href="maintain_division.html" aria-hidden="true">Maintenance Menu</a></li>
                                 <li><a class="dropdown-item" href="#" aria-hidden="true">Stage 1 Plans</a></li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">ASU Data View</a></li>
+                                <li><a class="dropdown-item" href="fps_asuview.html" aria-hidden="true">ASU Data View</a></li>
                                 <li><a class="dropdown-item" href="#" aria-hidden="true">VLA Project Totals</a></li>
                                 <li><a class="dropdown-item" href="#" aria-hidden="true">Generic Bids</a></li>
                                 <li><a class="dropdown-item" href="#" aria-hidden="true">Project Audit Trails</a></li>

@@ -1,18 +1,25 @@
-let projectData = [
-     {id: 1, description: 'SPF Egg Incubation charges - 38 @ 1.10 per egg Apr-Jun', acctCode: 'SmallAnimals', fMont: 3, amount: '$41.80' },
-    {id: 2, description: 'Poultry, Medium - Small Rm 330 x 25 @ £34.08', acctCode: 'SmallAnimals', fMont: 3, amount: '$852.00' }  
-	 	 
-	
-	
+let ActualAdditionalCost = [
+    { id: 1, description: 'EA - Accr for Fuel Cards Rchg - Jan 25 to', acctCode: '10062313-5223100', fMont: 1, amount: '£110.12' },
+    { id: 2, description: 'EA - Accr for Novuna Fleet SIMAR - Rchg -', acctCode: '10062313-5223100', fMont: 1, amount: '£35.56' },
+    { id: 3, description: 'EA - Accr for Fuel Cards Rchg - Jan 25 to', acctCode: '10066215-5223100', fMont: 1, amount: '£211.63' },
+    { id: 4, description: 'EA - Accr for Novuna Fleet SIMAR - Mgmt F', acctCode: '10066215-5223100', fMont: 1, amount: '£34.47' },
+    { id: 5, description: 'EA - Accrual for Fuel Cards Rchgs - Jan 25 to', acctCode: '10062313-5223100', fMont: 2, amount: '£183.53' },
+    { id: 6, description: 'EA - Accrual for Novuna Fleet SIMAR - Rchgs -', acctCode: '10062313-5223100', fMont: 2, amount: '£53.34' },
+    { id: 7, description: 'EA - Accrual for Fuel Cards Rchgs - Jan 25 to', acctCode: '10066215-5223100', fMont: 2, amount: '£352.72' },
+    { id: 8, description: 'EA - Accrual for Novuna Fleet SIMAR - Management F', acctCode: '10066215-5223100', fMont: 2, amount: '£48.25' },
+    { id: 9, description: 'EA - Accr for Fuel Cards recharges - Jan 25 to', acctCode: '10062313-5223100', fMont: 3, amount: '£220.24' },
+    { id: 10, description: 'EA - Accr for Fuel Cards recharges - Jan 25 to', acctCode: '10062313-5223100', fMont: 3, amount: '£183.53' },
+    { id: 11, description: 'EA - Accr for Novuna Fleet SIMAR - Recharges -', acctCode: '10062313-5223100', fMont: 3, amount: '£53.34' },
+    { id: 12, description: 'EA - Accr for Novuna Fleet SIMAR - Recharges -', acctCode: '10062313-5223100', fMont: 3, amount: '£62.23' }
 ];
 
 
-let staffplandata = [
+let plannedAdditionalCost = [
 
 
-    { id: 1, animalType: 'Poultry, Medium - Per Small Room', day: 14, noReq: 1, dailyR: '£34.08', cost: '£477.12' },
-    {  id: 2, animalType: 'Eggs (Chicken) - Hatching', day: 1, noReq: 125, dailyR: '£1.10', cost: '£137.50' },
-    {  id: 3, animalType: 'Poultry, Medium - Per Small Room', day: 21, noReq: 4, dailyR: '£34.08', cost: '£2,862.72' }
+    { id: 1, description: 'Animals', account: 'Animals', totalCost: '£0.00', freqOrMonth: '', supplier: '' },
+    { id: 2, description: 'Lab consumables', account: 'Consumables', totalCost: '£0.00', freqOrMonth: '', supplier: '' },
+    { id: 3, description: 'Vaccine construction', account: 'Consumables', totalCost: '£0.00', freqOrMonth: '', supplier: '' }
     
 	
 ];
@@ -52,14 +59,14 @@ function openAddStaffPlanModal() {
     const staffPlanModalEl = document.getElementById("staffplanModal");
     const titleElement = staffPlanModalEl ? staffPlanModalEl.querySelector(".modal-title") : null;
     if (titleElement) {
-        titleElement.innerText = "Add Animal Plan";
+        titleElement.innerText = "Add Planned Additional Cost";
     }
 
-    document.getElementById("modal-animal-type").value = "";
-    document.getElementById("modal-day").value = "";
-    document.getElementById("modal-no-re").value = "";
-    document.getElementById("modal-daily-rate").value = "£0.00";
-    document.getElementById("modal-cost").value = "£0.00";
+    document.getElementById("modal-planned-description").value = "";
+    document.getElementById("modal-planned-account").value = "";
+    document.getElementById("modal-planned-total-cost").value = "£0.00";
+    document.getElementById("modal-planned-freq-month").value = "";
+    document.getElementById("modal-planned-supplier").value = "";
 
     staffplanModal.show();
 }
@@ -71,7 +78,18 @@ function formatCurrency(value) {
 }
 
 function parseMoney(value) {
-    return parseFloat(String(value || "").replace(/[^\d.-]/g, "")) || 0;
+    const rawValue = String(value || "").trim();
+    if (!rawValue) return 0;
+
+    const isAccountingNegative = /^\(.*\)$/.test(rawValue);
+    const cleaned = rawValue
+        .replace(/[£$,\s]/g, "")
+        .replace(/[()]/g, "");
+
+    const parsed = parseFloat(cleaned);
+    if (isNaN(parsed)) return 0;
+
+    return isAccountingNegative ? -Math.abs(parsed) : parsed;
 }
 
 function formatPound(value) {
@@ -81,13 +99,23 @@ function formatPound(value) {
     })}`;
 }
 
+function formatSignedPound(value) {
+    const number = Number(value) || 0;
+    const absoluteValue = Math.abs(number).toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    return number < 0 ? `-£${absoluteValue}` : `£${absoluteValue}`;
+}
+
 
 function renderProjectTable() {
 
     const tbody = document.getElementById("tableBody");
     tbody.innerHTML = "";
 
-    projectData.forEach(item => {
+    ActualAdditionalCost.forEach(item => {
 
         const row = document.createElement("tr");
 
@@ -115,25 +143,25 @@ function renderstaffplanTable() {
     const tbody = document.getElementById("staffplandata");
     tbody.innerHTML = "";
 
-    staffplandata.forEach(item => {
+    plannedAdditionalCost.forEach(item => {
 
         const row = document.createElement("tr");
 
         row.innerHTML = `
-            <td>${item.animalType}</td>
-            <td>${item.day}</td>
-            <td>${item.noReq}</td>
-            <td>${item.dailyR}</td>
-            <td>${item.cost}</td>
+            <td>${item.description || ""}</td>
+            <td>${item.account || ""}</td>
+            <td>${item.totalCost || "£0.00"}</td>
+            <td>${item.freqOrMonth || ""}</td>
+            <td>${item.supplier || ""}</td>
             <td class="text-AlignCenter">
                 <button class="btn btn-sm btn-outline-primary"
-                    onclick="handlestaffplandataEdit(${item.id})"><img src="../images/pen-to-square-regular-full.svg"
+                    onclick="handleplannedAdditionalCostEdit(${item.id})"><img src="../images/pen-to-square-regular-full.svg"
                                                                                  alt="Edit icon for selected record" class="editstaffname"
                                                                                  width="20">
                 </button>
 
                 <button class="btn btn-sm btn-outline-danger"
-                    onclick="handlestaffplandataDelete(${item.id})"><img src="../images/trash-can-regular-full.svg" alt="Delete icon for selected record"
+                    onclick="handleplannedAdditionalCostDelete(${item.id})"><img src="../images/trash-can-regular-full.svg" alt="Delete icon for selected record"
                                                                                  width="20">
                 </button>
             </td>
@@ -146,8 +174,8 @@ function renderstaffplanTable() {
 }
 
 function updateStaffPlanTotal() {
-    const total = staffplandata.reduce((sum, item) => {
-        return sum + parseMoney(item.cost);
+    const total = plannedAdditionalCost.reduce((sum, item) => {
+        return sum + parseMoney(item.totalCost);
     }, 0);
 
     const totalField = document.getElementById("planned-total-cost") || document.getElementById("External Income");
@@ -158,12 +186,12 @@ function updateStaffPlanTotal() {
 }
 
 function updateProjectSummary() {
-    const totalActualCost = projectData.reduce((sum, item) => {
+    const totalActualCost = ActualAdditionalCost.reduce((sum, item) => {
         return sum + parseMoney(item.amount);
     }, 0);
 
-    const totalPlannedCost = staffplandata.reduce((sum, item) => {
-        return sum + parseMoney(item.cost);
+    const totalPlannedCost = plannedAdditionalCost.reduce((sum, item) => {
+        return sum + parseMoney(item.totalCost);
     }, 0);
 
     const percentOfPlan = totalPlannedCost > 0
@@ -185,15 +213,15 @@ function updateProjectSummary() {
 function handleProjectDelete(id) {
 
     if (confirm("Are you sure you want to delete this project?")) {
-        projectData = projectData.filter(item => item.id !== id);
+        ActualAdditionalCost = ActualAdditionalCost.filter(item => item.id !== id);
         renderProjectTable();
     }
 }
 
-function handlestaffplandataDelete(id) {
+function handleplannedAdditionalCostDelete(id) {
 
-    if (confirm("Are you sure you want to delete this animal row?")) {
-        staffplandata = staffplandata.filter(item => item.id !== id);
+    if (confirm("Are you sure you want to delete this planned additional cost row?")) {
+        plannedAdditionalCost = plannedAdditionalCost.filter(item => item.id !== id);
         renderstaffplanTable();
     }
 }
@@ -202,7 +230,7 @@ function handlestaffplandataDelete(id) {
 
 function handleProjectEdit(id) {
 
-    const item = projectData.find(x => x.id === id);
+    const item = ActualAdditionalCost.find(x => x.id === id);
     if (!item) return;
 
     editingProjectId = id;
@@ -222,9 +250,9 @@ function handleProjectEdit(id) {
 
 
 
-function handlestaffplandataEdit(id) {
+function handleplannedAdditionalCostEdit(id) {
 
-    const item = staffplandata.find(x => x.id === id);
+    const item = plannedAdditionalCost.find(x => x.id === id);
     if (!item) return;
 
     staffplanId = id;
@@ -232,14 +260,14 @@ function handlestaffplandataEdit(id) {
     const staffPlanModalEl = document.getElementById("staffplanModal");
     const titleElement = staffPlanModalEl ? staffPlanModalEl.querySelector(".modal-title") : null;
     if (titleElement) {
-        titleElement.innerText = "Edit Animal Plan";
+        titleElement.innerText = "Edit Planned Additional Cost";
     }
 
-    document.getElementById("modal-animal-type").value = item.animalType;
-    document.getElementById("modal-day").value = item.day;
-    document.getElementById("modal-no-re").value = item.noReq;
-    document.getElementById("modal-daily-rate").value = item.dailyR;
-    document.getElementById("modal-cost").value = item.cost;
+    document.getElementById("modal-planned-description").value = item.description || "";
+    document.getElementById("modal-planned-account").value = item.account || "";
+    document.getElementById("modal-planned-total-cost").value = item.totalCost || "£0.00";
+    document.getElementById("modal-planned-freq-month").value = item.freqOrMonth || "";
+    document.getElementById("modal-planned-supplier").value = item.supplier || "";
 
     // update selected project field
     //document.querySelector(".projectplan-code").value = item.project;
@@ -256,9 +284,7 @@ function saveProject() {
     const amount = document.getElementById("modal-amount").value.trim();
 
     const normalizeCurrency = (value) => {
-        const cleanedValue = (value || "").trim();
-        if (!cleanedValue) return "£0";
-        return /^[£$]/.test(cleanedValue) ? cleanedValue : `£${cleanedValue}`;
+        return formatSignedPound(parseMoney(value));
     };
 
     if (!description || !acctCode || !fMont) {
@@ -268,10 +294,10 @@ function saveProject() {
 
     if (editingProjectId) {
 
-        const index = projectData.findIndex(x => x.id === editingProjectId);
+        const index = ActualAdditionalCost.findIndex(x => x.id === editingProjectId);
 
-        projectData[index] = {
-            ...projectData[index],
+        ActualAdditionalCost[index] = {
+            ...ActualAdditionalCost[index],
             description,
             acctCode,
             fMont,
@@ -283,11 +309,11 @@ function saveProject() {
 
     } else {
 
-        const newId = projectData.length > 0
-            ? Math.max(...projectData.map(x => x.id)) + 1
+        const newId = ActualAdditionalCost.length > 0
+            ? Math.max(...ActualAdditionalCost.map(x => x.id)) + 1
             : 1;
 
-        projectData.push({
+        ActualAdditionalCost.push({
             id: newId,
             description,
             acctCode,
@@ -305,35 +331,33 @@ function saveProject() {
 
 function savestaffplan() {
 
-    const animalType = document.getElementById("modal-animal-type").value.trim();
-    const day = document.getElementById("modal-day").value.trim();
-    const noReq = document.getElementById("modal-no-re").value.trim();
-    const dailyR = document.getElementById("modal-daily-rate").value.trim();
-    const cost = document.getElementById("modal-cost").value.trim();
+    const description = document.getElementById("modal-planned-description").value.trim();
+    const account = document.getElementById("modal-planned-account").value.trim();
+    const totalCost = document.getElementById("modal-planned-total-cost").value.trim();
+    const freqOrMonth = document.getElementById("modal-planned-freq-month").value.trim();
+    const supplier = document.getElementById("modal-planned-supplier").value.trim();
 
     const addPoundSymbol = (value) => {
-        const cleanedValue = (value || "").trim();
-        if (!cleanedValue) return "£0";
-        return cleanedValue.startsWith("£") ? cleanedValue : `£${cleanedValue}`;
+        return formatSignedPound(parseMoney(value));
     };
 
-    if (!animalType || !day || !noReq) {
-        alert("Please complete Animal Type, Days, and No.Req.");
+    if (!description || !account) {
+        alert("Please complete Description and Account.");
         return;
     }
    
 
     if (staffplanId) {
 
-        const index = staffplandata.findIndex(x => x.id === staffplanId);
+        const index = plannedAdditionalCost.findIndex(x => x.id === staffplanId);
 
-        staffplandata[index] = {
-            ...staffplandata[index],
-            animalType,
-            day,
-            noReq,
-            dailyR: addPoundSymbol(dailyR),
-            cost: addPoundSymbol(cost)
+        plannedAdditionalCost[index] = {
+            ...plannedAdditionalCost[index],
+            description,
+            account,
+            totalCost: addPoundSymbol(totalCost),
+            freqOrMonth,
+            supplier
           
         };
 
@@ -341,17 +365,17 @@ function savestaffplan() {
 
     } else {
 
-        const newId = staffplandata.length > 0
-            ? Math.max(...staffplandata.map(x => x.id)) + 1
+        const newId = plannedAdditionalCost.length > 0
+            ? Math.max(...plannedAdditionalCost.map(x => x.id)) + 1
             : 1;
 
-        staffplandata.push({
+        plannedAdditionalCost.push({
             id: newId,
-            animalType,
-            day,
-            noReq,
-            dailyR: addPoundSymbol(dailyR),
-            cost: addPoundSymbol(cost)
+            description,
+            account,
+            totalCost: addPoundSymbol(totalCost),
+            freqOrMonth,
+            supplier
         });
     }
 
@@ -367,7 +391,7 @@ function savestaffplan() {
     // let totalTrans = 0;
     // let totalDebit = 0;
 
-    // projectData.forEach(item => {
+    // ActualAdditionalCost.forEach(item => {
         // totalBudget += parseFloat(item.budget.replace(/[£,]/g, "")) || 0;
         // totalCost += parseFloat(item.costInc.replace(/[£,]/g, "")) || 0;
         // totalTrans += parseFloat(item.transInc.replace(/[£,]/g, "")) || 0;

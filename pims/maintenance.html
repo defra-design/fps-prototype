@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Admin Maintenance - PIMS</title>
+    <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/pims_style/style.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+    <link href="../css/pims_style/nav_menu/navstyle.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/pims_style/maintenance_style.css" />
+    <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
+    <script src="../js/pims_js/nav_menu/menutemplate.js"></script>
+</head>
+
+<body class="govuk-template__body govuk-frontend-supported" style="overflow-x: hidden;">
+    <header>
+        <div class="header-nav">
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
+                </div>
+
+                <div class="pims-log">
+                    <span>PIMS</span>
+                </div>
+
+                <div class="pims-log" style="width: 160px; font-size: 16px">
+                    <select id="dpSelectyear" aria-label="Select year dropdown" class="pims-log" style="
+                        border: 0;
+                        border-radius: 0;
+                        margin-left: 0px;
+                        width: 150px;
+                        outline: 0;
+                      ">
+                        <option>2017-2018</option>
+                        <option>2018-2019</option>
+                        <option>2019-2020</option>
+                        <option>2020-2021</option>
+                        <option>2021-2022</option>
+                        <option>2022-2023</option>
+                        <option>2023-2024</option>
+                        <option>2024-2025</option>
+                        <option selected>2025-2026</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="header"></div>
+    <script src="../js/pims_js/nav_menu/script.js"></script>
+    <script>
+        document.getElementById("header").innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+
+    <div class="govuk-grid-row sup_border-bottom" style="padding: 0">
+        <h5 class="govuk-heading-s sup_margin_0" style="padding: 10px 0 5px 24px; border-bottom: 2px solid #1d70b8">
+            Maintenance
+            <!-- <div style="margin-right: 16px;"> -->
+            <!-- <a href="pimshome.html" class="btn btn-outline-primary btn-sm">Back</a> -->
+            <!-- </div> -->
+        </h5>
+    </div>
+    <div class="d-flex govuk-!-padding-top-2" style="width: 100%; overflow: hidden;">
+        <!-- <nav class="sidenav flex-column flex-shrink-0" id="shortnav">
+            <button class="toggle-btn" onclick="toggleSidebar()" style="right: -8px; top: 30px">
+                <img src="../images/chevron-left-solid-full.svg" width="20" alt="side menu left arrow"
+                    style="margin: -2px 5px 0 0px" />
+            </button>
+            <ul>
+                <!-- <li class="sidebar-link-two" style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                                        <a id="btnSection2" style="color: #fff;">Project code</a>
+                                    </li>
+                                    <li class="sidebar-link-two" style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                                        <a id="btnSection1" style="color: #fff;">Project Details</a>
+                                    </li> 
+        <li class="sidebar-link-two" style="
+                      border-radius: 0 8px 8px 0;
+                      cursor: pointer;
+                      background-color: #1d70b8;
+                    ">
+            <a id="testpurchasereq" href="selectedprojectdetails.html" style="color: #fff">Project Details</a>
+        </li>
+        <li class="sidebar-link-two" style="
+                      border-radius: 0 8px 8px 0;
+                      cursor: pointer;
+                      background-color: #1d70b8;
+                    ">
+            <a id="testpurchasereq" href="#" style="color: #fff">Yearly Financial
+                Details</a>
+        </li>
+
+        <li class="sidebar-link-two" style="
+                      border-radius: 0 8px 8px 0;
+                      cursor: pointer;
+                      background-color: #1d70b8;
+                    ">
+            <a id="testpurchasereq" href="#" style="color: #fff">A&F Report Data</a>
+        </li>
+        <li class="sidebar-link-two" style="
+                      border-radius: 0 8px 8px 0;
+                      cursor: pointer;
+                      background-color: #1d70b8;
+                    ">
+            <a id="testpurchasereq" href="pimsMilestones.html" style="color: #fff">Milestones</a>
+        </li>
+        <li class="sidebar-link-two" style="
+                      border-radius: 0 8px 8px 0;
+                      cursor: pointer;
+                      background-color: #1d70b8;
+                    ">
+            <a id="testpurchasereq" href="yearlyfinance.html" style="color: #fff">Yearly Finances</a>
+        </li>
+        <li class="sidebar-link-two" style="
+                              border-radius: 0 8px 8px 0;
+                              cursor: pointer;
+                              background-color: #1d70b8;
+                            ">
+            <a id="testpurchasereq" href="#" style="color: #fff">Invoices</a>
+        </li>
+        <li class="sidebar-link-two" style="
+                              border-radius: 0 8px 8px 0;
+                              cursor: pointer;
+                              background-color: #1d70b8;
+                            ">
+            <a id="testpurchasereq" href="#" style="color: #fff">Comments</a>
+        </li>
+        <li class="sidebar-link-two" style="
+                              border-radius: 0 8px 8px 0;
+                              cursor: pointer;
+                              background-color: #1d70b8;
+                            ">
+            <a id="testpurchasereq" href="#" style="color: #fff">Project Review</a>
+        </li>
+        <li class="sidebar-link-two" style="
+                              border-radius: 0 8px 8px 0;
+                              cursor: pointer;
+                              background-color: #1d70b8;
+                            ">
+            <a id="testpurchasereq" href="#" style="color: #fff">PMD Milestone</a>
+        </li>
+        </ul>
+        </nav> -->
+        <main class="main-content" style="padding-top: 0px; min-width: 0; overflow: hidden;">
+            <!-- GOV.UK Tabs -->
+            <div class="govuk-grid-row sup_margin_left_right_0" style="width: 100%;">
+                <div class="govuk-grid-column-full">
+                    <div class="govuk-tabs ra-tabs" id="mainTabs">
+                        <ul class="govuk-tabs__list" role="tablist">
+                            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation">
+                                <a class="govuk-tabs__tab" href="#tab-reports" role="tab" id="tab-reports-link"
+                                    aria-controls="tab-reports" aria-selected="false" tabindex="-1">
+                                    Reports
+                                </a>
+                            </li>
+                            <li class="govuk-tabs__list-item" role="presentation">
+                                <a class="govuk-tabs__tab" href="#tab-programme" role="tab" id="tab-programme-link"
+                                    aria-controls="tab-programme" aria-selected="false" tabindex="-1">
+                                    Programme
+                                </a>
+                            </li>
+                            <li class="govuk-tabs__list-item" role="presentation">
+                                <a class="govuk-tabs__tab" href="#tab-manager" role="tab" id="tab-manager-link"
+                                    aria-controls="tab-manager" aria-selected="false" tabindex="-1">
+                                    Manager
+                                </a>
+                            </li>
+                            <li class="govuk-tabs__list-item" role="presentation">
+                                <a class="govuk-tabs__tab" href="#tab-time" role="tab" id="tab-time-link"
+                                    aria-controls="tab-time" aria-selected="false" tabindex="-1">
+                                    Time
+                                </a>
+                            </li>
+                            <li class="govuk-tabs__list-item " role="presentation">
+                                <a class="govuk-tabs__tab" href="#tab-admin-maintenance" role="tab"
+                                    id="tab-admin-maintenance-link" aria-controls="tab-admin-maintenance"
+                                    aria-selected="true" tabindex="0">
+                                    Admin Maintenance
+                                </a>
+                            </li>
+                            <li class="govuk-tabs__list-item" role="presentation">
+                                <a class="govuk-tabs__tab" href="#tab-other" role="tab" id="tab-other-link"
+                                    aria-controls="tab-other" aria-selected="false" tabindex="-1">
+                                    Other
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Reports Tab Panel -->
+                        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab-reports" role="tabpanel"
+                            aria-labelledby="tab-reports-link">
+                            <!-- ===== MAINTENANCE GRID ===== -->
+                            <div class="sup_border ra-grid-wrapper">
+
+                                <div class="ra-grid-toolbar sup_border-bottom">
+                                    <span></span>
+                                    <button type="button" class="govuk-button sup_margin_0 ra-btn-add" id="btnAddReport"
+                                        data-module="govuk-button" aria-label="Add new report">
+                                        + &nbsp; Add Report
+                                    </button>
+                                </div>
+
+                                <div class="ra-table-scroll-wrapper">
+                                    <table class="govuk-table custom-table tab-font-size " id="maintenanceTable"
+                                        aria-label="Reports maintenance grid">
+
+                                        <thead class="govuk-table__head">
+                                            <tr class="govuk-table__row">
+                                                <th scope="col" class="govuk-table__header ra-th-sortable"
+                                                    data-col="name" data-table="maintenance" aria-sort="none"
+                                                    tabindex="0">
+                                                    Name <span class="ra-sort-icon" aria-hidden="true"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header ra-th-sortable"
+                                                    data-col="description" data-table="maintenance" aria-sort="none"
+                                                    tabindex="0">
+                                                    Description <span class="ra-sort-icon" aria-hidden="true"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header ra-th-sortable"
+                                                    data-col="reportHelp" data-table="maintenance" aria-sort="none"
+                                                    tabindex="0">
+                                                    Report Help <span class="ra-sort-icon" aria-hidden="true"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header ra-th-sortable"
+                                                    data-col="mailComment" data-table="maintenance" aria-sort="none"
+                                                    tabindex="0">
+                                                    Mail Comment <span class="ra-sort-icon" aria-hidden="true"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header ra-th-sortable"
+                                                    data-col="mailTitle" data-table="maintenance" aria-sort="none"
+                                                    tabindex="0">
+                                                    Mail Title <span class="ra-sort-icon" aria-hidden="true"></span>
+                                                </th>
+                                                <th scope="col"
+                                                    class="govuk-table__header ra-th-sortable ra-col-emailable"
+                                                    data-col="emailable" data-table="maintenance" aria-sort="none"
+                                                    tabindex="0">
+                                                    Email-able <span class="ra-sort-icon" aria-hidden="true"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header ra-th-sortable ra-col-order"
+                                                    data-col="order" data-table="maintenance" aria-sort="none"
+                                                    tabindex="0">
+                                                    Order <span class="ra-sort-icon" aria-hidden="true"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header ra-col-actions">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="govuk-table__body" id="maintenanceTableBody">
+                                            <!-- Populated by JS from maintenance_data.json -->
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Pagination - Maintenance -->
+                                <div class="sup_pagination_footer sup_border" id="maintenancePaginationBar">
+                                    <div class="sup_pagination_wrapper">
+                                        <div class="sup_margin_top_bottom_5_10">
+                                            <label class="pagination-label" for="maintenanceRecordsPerPage">Records per
+                                                page</label>
+                                            <select id="maintenanceRecordsPerPage"
+                                                class="govuk-select sup_select_pagination_width">
+                                                <option value="5" selected>5</option>
+                                                <option value="10">10</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                            </select>
+                                        </div>
+                                        <nav class="govuk-!-margin-bottom-0 govuk-pagination"
+                                            aria-label="Maintenance grid pagination">
+                                            <ul class="govuk-pagination__list" id="maintenancePagination">
+                                                <li
+                                                    class="govuk-pagination__item disabled aria-disabled=&quot;true&quot;">
+                                                    <a class="govuk-link govuk-pagination__link">
+                                                        <svg class="govuk-pagination__icon govuk-pagination__icon--prev"
+                                                            xmlns="http://www.w3.org/2000/svg" height="13" width="15"
+                                                            aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                                                            <path
+                                                                d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z">
+                                                            </path>
+                                                        </svg>
+                                                        <span class="govuk-pagination__link-title">Previous<span
+                                                                class="govuk-visually-hidden">
+                                                                page</span></span>
+                                                    </a>
+                                                </li>
+                                                <li
+                                                    class="govuk-pagination__item govuk-pagination__item--current aria-disabled=&quot;true&quot;">
+                                                    <a class="govuk-link govuk-pagination__link">1</a>
+                                                </li>
+                                                <li class="govuk-pagination__item aria-disabled=&quot;true&quot;">
+                                                    <a class="govuk-link govuk-pagination__link">2</a>
+                                                </li>
+                                                <li class="govuk-pagination__next aria-disabled=&quot;true&quot;">
+                                                    <a class="govuk-link govuk-pagination__link" rel="next">
+                                                        <span class="govuk-pagination__link-title">Next<span
+                                                                class="govuk-visually-hidden">
+                                                                page</span></span>
+                                                        <svg class="govuk-pagination__icon govuk-pagination__icon--next"
+                                                            xmlns="http://www.w3.org/2000/svg" height="13" width="15"
+                                                            aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                                                            <path
+                                                                d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
+                                                            </path>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /MAINTENANCE GRID -->
+
+                            <!-- ===== REPORT GROUPS GRID ===== -->
+                            <div class="sup_margin_top_20">
+
+                                <div class="ra-grid-toolbar sup_border-bottom">
+
+                                    <div class="ra-groups-row">
+                                        <span class="govuk-body ra-groups-heading">Report
+                                            Groups that this report
+                                            will
+                                            appear in</span>
+                                        <div class="ra-table-scroll-wrapper ra-groups-table-wrap">
+                                            <table class="govuk-table custom-table tab-font-size" id="reportGroupsTable"
+                                                aria-label="Report groups grid">
+                                                <thead class="govuk-table__head">
+                                                    <tr class="govuk-table__row">
+                                                        <th scope="col" class="govuk-table__header ra-th-sortable"
+                                                            data-col="name" data-table="groups" aria-sort="none"
+                                                            tabindex="0">
+                                                            Report Group <span class="ra-sort-icon"
+                                                                aria-hidden="true"></span>
+                                                        </th>
+                                                        <th scope="col" class="govuk-table__header ra-col-actions">
+                                                            Actions
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="govuk-table__body" id="reportGroupsTableBody">
+                                                    <!-- Populated by JS -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <!-- Programme Tab Panel -->
+                        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab-programme" role="tabpanel"
+                            aria-labelledby="tab-programme-link">
+                            <div class="govuk-grid-row">
+
+                                <!-- ===== PIMS PROGRAMS GRID ===== -->
+                                <div class="govuk-grid-column-two-thirds">
+                                    <div class="prog-grid-wrapper">
+                                        <div class="ra-grid-toolbar sup_border-bottom">
+                                            <span></span>
+                                            <button type="button" class="govuk-button ra-btn-add sup_margin_0"
+                                                id="btnAddProg">+ Add Programme</button>
+                                        </div>
+                                        <div class="prog-table-scroll">
+                                            <table class="govuk-table custom-table govuk-!font-size-14"
+                                                id="pimsProgTable" aria-label="PIMS Programs grid">
+                                                <thead class="govuk-table__head">
+                                                    <tr class="govuk-table__row">
+                                                        <th scope="col" class="govuk-table__header prog-th-sortable"
+                                                            data-col="programme" data-table="pimsProg" aria-sort="none"
+                                                            tabindex="0">
+                                                            PIMS Programs
+                                                            <span class="prog-sort-icon" aria-hidden="true"></span>
+                                                        </th>
+                                                        <th scope="col" class="govuk-table__header prog-th-sortable"
+                                                            data-col="publicationPrefix" data-table="pimsProg"
+                                                            aria-sort="none" tabindex="0">
+                                                            Publication Prefix
+                                                            <span class="prog-sort-icon" aria-hidden="true"></span>
+                                                            <span class="prog-col-hint">(If blank, the first part of
+                                                                the programme name is used).</span>
+                                                        </th>
+                                                        <th scope="col" class="govuk-table__header ra-col-actions">
+                                                            Actions
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="govuk-table__body" id="pimsProgTableBody"></tbody>
+                                            </table>
+                                        </div>
+                                        <div class="sup_pagination_footer sup_border">
+                                            <div class="sup_pagination_wrapper">
+                                                <div class="sup_margin_top_bottom_5_10">
+                                                    <label class="pagination-label" for="pimsProgRecordsPerPage">Records
+                                                        per
+                                                        page</label>
+                                                    <select id="pimsProgRecordsPerPage"
+                                                        class="govuk-select sup_select_pagination_width">
+                                                        <option value="5" selected>5</option>
+                                                        <option value="10">10</option>
+                                                        <option value="15">15</option>
+                                                        <option value="20">20</option>
+                                                    </select>
+                                                </div>
+                                                <nav class="govuk-!-margin-bottom-0 govuk-pagination"
+                                                    aria-label="PIMS Programs pagination">
+                                                    <ul class="govuk-pagination__list" id="pimsProgPagination"></ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ===== USERS POP UP PROGRAMME NOTIFICATION GRID ===== -->
+                                <!-- <div class="govuk-grid-column-one-half">
+                                    <p class="govuk-!-font-size-16 " style="margin-bottom: 1px;">Users Pop
+                                        up Programme Notification</p>
+                                    <div class="prog-grid-wrapper">
+
+                                        <div class="prog-table-scroll">
+                                            <table class="govuk-table custom-table govuk-!font-size-14"
+                                                id="usersNotifTable"
+                                                aria-label="Users Pop up Programme Notification grid">
+                                                <thead class="govuk-table__head">
+                                                    <tr class="govuk-table__row">
+                                                        <th scope="col" class="govuk-table__header prog-th-sortable"
+                                                            data-col="name" data-table="usersNotif" aria-sort="none"
+                                                            tabindex="0">
+                                                            Name
+                                                            <span class="prog-sort-icon" aria-hidden="true"></span>
+                                                        </th>
+                                                        <th scope="col" class="govuk-table__header prog-th-sortable"
+                                                            data-col="programme" data-table="usersNotif"
+                                                            aria-sort="none" tabindex="0">
+                                                            Program
+                                                            <span class="prog-sort-icon" aria-hidden="true"></span>
+                                                        </th>
+                                                        <th scope="col" class="govuk-table__header ra-col-actions">
+                                                            Actions
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="govuk-table__body" id="usersNotifTableBody"></tbody>
+                                            </table>
+                                        </div>
+                                        <div class="sup_pagination_footer sup_border">
+                                            <div class="sup_pagination_wrapper">
+                                                <div class="sup_margin_top_bottom_5_10">
+                                                    <label class="pagination-label"
+                                                        for="usersNotifRecordsPerPage">Records
+                                                        per page</label>
+                                                    <select id="usersNotifRecordsPerPage"
+                                                        class="govuk-select sup_select_pagination_width">
+                                                        <option value="5" selected>5</option>
+                                                        <option value="10">10</option>
+                                                        <option value="15">15</option>
+                                                        <option value="20">20</option>
+                                                    </select>
+                                                </div>
+                                                <nav class="govuk-!-margin-bottom-0 govuk-pagination"
+                                                    aria-label="Users Notification pagination">
+                                                    <ul class="govuk-pagination__list" id="usersNotifPagination"></ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                            </div>
+                        </div>
+
+                        <!-- Manager Tab Panel -->
+                        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab-manager" role="tabpanel"
+                            aria-labelledby="tab-manager-link">
+
+                            <!-- ===== MANAGER GRID ===== -->
+                            <div class="sup_border mgr-grid-wrapper">
+                                <div class="ra-grid-toolbar sup_border-bottom">
+                                    <span class="govuk-heading-s sup_margin_0 ra-mgr-heading">Manager</span>
+                                    <button type="button" class="govuk-button ra-btn-add sup_margin_0"
+                                        id="btnAddManager">+ Add Manager</button>
+                                </div>
+                                <div class="ra-table-scroll-wrapper">
+                                    <table class="govuk-table custom-table" id="mgrTable">
+                                        <thead class="govuk-table__head  ">
+                                            <tr class="govuk-table__row">
+                                                <th scope="col" class="govuk-table__header mgr-th-name ra-th-sortable"
+                                                    data-mgr-col="name" tabindex="0" aria-sort="none">
+                                                    Manager <span class="ra-sort-icon" aria-hidden="true"
+                                                        id="mgrSortIcon-name"></span>
+                                                </th>
+                                                <th scope="col"
+                                                    class="govuk-table__header mgr-th-mnumber ra-th-sortable"
+                                                    data-mgr-col="mnumber" tabindex="0" aria-sort="none">
+                                                    MNumber <span class="ra-sort-icon" aria-hidden="true"
+                                                        id="mgrSortIcon-mnumber"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header mgr-th-email ra-th-sortable"
+                                                    data-mgr-col="email" tabindex="0" aria-sort="none">
+                                                    Manager's email <span class="ra-sort-icon" aria-hidden="true"
+                                                        id="mgrSortIcon-email"></span>
+                                                </th>
+                                                <th scope="col"
+                                                    class="govuk-table__header mgr-th-disable ra-th-sortable"
+                                                    data-mgr-col="disabled" tabindex="0" aria-sort="none">
+                                                    Disable <span class="ra-sort-icon" aria-hidden="true"
+                                                        id="mgrSortIcon-disabled"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header ra-col-actions">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="govuk-table__body" id="mgrTableBody"></tbody>
+                                    </table>
+                                </div>
+                                <!-- Pagination -->
+                                <div class="sup_pagination_footer sup_border" id="mgrPaginationBar">
+                                    <div class="sup_pagination_wrapper">
+                                        <div class="sup_margin_top_bottom_5_10">
+                                            <label class="pagination-label" for="mgrRecordsPerPage">Records per
+                                                page</label>
+                                            <select id="mgrRecordsPerPage"
+                                                class="govuk-select sup_select_pagination_width">
+                                                <option value="5">5</option>
+                                                <option value="10" selected>10</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                            </select>
+                                        </div>
+                                        <nav class="govuk-!-margin-bottom-0 govuk-pagination"
+                                            aria-label="Manager grid pagination">
+                                            <ul class="govuk-pagination__list" id="mgrPagination"></ul>
+                                        </nav>
+                                        <!-- <div class="ra-record-count govuk-body govuk-!-font-size-14 sup_margin_top_bottom_5_10"
+                                            id="mgrRecordCount"></div>
+                                        <input type="search" class="mgr-search-input" id="mgrSearchInput"
+                                            placeholder="Search" aria-label="Search managers" /> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /MANAGER GRID -->
+
+                            <!-- ===== SUB-GRIDS (shown on row click) ===== -->
+                            <div id="mgrSubGrids" class="mgr-subgrids-wrapper ra-subgrids-hidden">
+                                <div class="govuk-grid-row">
+
+                                    <!-- Program sub-grid -->
+                                    <div class="govuk-grid-column-one-half">
+                                        <div class="mgr-sub-grid-box">
+                                            <div class="mgr-sub-table-wrapper">
+                                                <table class="govuk-table custom-table " id="mgrProgramTable">
+                                                    <thead class="govuk-table__head">
+                                                        <tr class="govuk-table__row">
+                                                            <th scope="col"
+                                                                class="govuk-table__header mgr-sub-th-value">Program
+                                                            </th>
+                                                            <th scope="col"
+                                                                class="govuk-table__header mgr-sub-th-actions">Actions
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="govuk-table__body" id="mgrProgramTableBody"></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Resource Centre sub-grid -->
+                                    <div class="govuk-grid-column-one-half">
+                                        <div class="mgr-sub-grid-box">
+                                            <div class="mgr-sub-table-wrapper">
+                                                <table class="govuk-table custom-table " id="mgrResourceTable">
+                                                    <thead class="govuk-table__head">
+                                                        <tr class="govuk-table__row">
+                                                            <th scope="col"
+                                                                class="govuk-table__header mgr-sub-th-value">Resource
+                                                                Centre</th>
+                                                            <th scope="col"
+                                                                class="govuk-table__header mgr-sub-th-actions">Actions
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="govuk-table__body" id="mgrResourceTableBody"></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- /SUB-GRIDS -->
+
+                        </div>
+
+                        <!-- Time Tab Panel -->
+                        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab-time" role="tabpanel"
+                            aria-labelledby="tab-time-link">
+
+                            <!-- DB / server error banner -->
+                            <div class="govuk-error-summary ra-form-error-banner ra-hidden" id="timeDbError"
+                                role="alert" aria-labelledby="timeDbErrorTitle" tabindex="-1">
+                                <h2 class="govuk-error-summary__title govuk-!-font-size-14" id="timeDbErrorTitle">There
+                                    is a problem</h2>
+                                <div class="govuk-error-summary__body">
+                                    <p class="govuk-body govuk-!-font-size-14" id="timeDbErrorText"></p>
+                                </div>
+                            </div>
+
+                            <div class="time-form-container">
+
+                                <!-- Working Hours in a Day -->
+                                <div class="govuk-form-group time-form-row" id="timeWorkingHoursGroup">
+                                    <div class="time-form-label-col">
+                                        <label for="timeWorkingHours"
+                                            class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">
+                                            Working Hours in a Day:
+                                            <span class="ra-required-star" aria-hidden="true"> *</span>
+                                        </label>
+                                    </div>
+                                    <div class="time-form-input-col">
+                                        <input type="number" id="timeWorkingHours" name="timeWorkingHours"
+                                            class="govuk-input govuk-!-font-size-16" step="0.1" min="0.1" max="24"
+                                            aria-required="true"
+                                            aria-describedby="timeWorkingHoursError timeWorkingHoursHint" value="7.2" />
+                                        <p class="govuk-error-message" id="timeWorkingHoursError" style="display:none">
+                                            <span class="govuk-visually-hidden">Error:</span>
+                                            <span id="timeWorkingHoursErrorText">Working Hours in a Day is
+                                                required</span>
+                                        </p>
+                                    </div>
+                                    <div class="time-form-hint-col">
+                                        <span class="govuk-hint govuk-!-font-size-16" id="timeWorkingHoursHint">NB.
+                                            This is the same figure used in the costbook. Do not adjust without proper
+                                            consultation</span>
+                                    </div>
+                                </div>
+
+                                <!-- Working Days in a Year -->
+                                <div class="govuk-form-group time-form-row" id="timeWorkingDaysGroup">
+                                    <div class="time-form-label-col">
+                                        <label for="timeWorkingDays"
+                                            class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">
+                                            Working Days in a Year:
+                                            <span class="ra-required-star" aria-hidden="true"> *</span>
+                                        </label>
+                                    </div>
+                                    <div class="time-form-input-col">
+                                        <input type="number" id="timeWorkingDays" name="timeWorkingDays"
+                                            class="govuk-input govuk-!-font-size-16" step="0.5" min="0.5" max="366"
+                                            aria-required="true" aria-describedby="timeWorkingDaysError"
+                                            value="220.5" />
+                                        <p class="govuk-error-message" id="timeWorkingDaysError" style="display:none">
+                                            <span class="govuk-visually-hidden">Error:</span>
+                                            <span id="timeWorkingDaysErrorText">Working Days in a Year is
+                                                required</span>
+                                        </p>
+                                    </div>
+                                    <div class="time-form-hint-col"></div>
+                                </div>
+
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="time-form-footer">
+                                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0"
+                                    id="btnCancelTime">Cancel</button>
+                                <button type="button" class="govuk-button sup_margin_0" id="btnSaveTime">Save</button>
+                            </div>
+
+                        </div>
+
+                        <!-- Admin Maintenance Tab Panel -->
+                        <div class="govuk-tabs__panel" id="tab-admin-maintenance" role="tabpanel"
+                            aria-labelledby="tab-admin-maintenance-link">
+
+                            <div class="admin-layout">
+
+                                <!-- ===== USERS GRID ===== -->
+                                <div class="admin-users-panel">
+                                    <div class="admin-panel-header">
+                                        <span>Users (First add users here)</span>
+                                        <button type="button" class="govuk-button ra-btn-add sup_margin_0"
+                                            id="btnAddUser">+ Add User</button>
+                                    </div>
+                                    <div class="admin-table-scroll">
+                                        <table class="govuk-table custom-table admin-users-table" id="adminUsersTable"
+                                            aria-label="Users grid">
+                                            <thead class="govuk-table__head">
+                                                <tr class="govuk-table__row">
+                                                    <th scope="col"
+                                                        class="govuk-table__header admin-th-sortable adminUsers-th admin-col-ntlogin"
+                                                        data-sort="ntlogin" tabindex="0" aria-sort="none">
+                                                        NTLogin
+                                                        <span class="admin-sort-icon" aria-hidden="true"></span>
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="govuk-table__header admin-th-sortable adminUsers-th"
+                                                        data-sort="username" tabindex="0" aria-sort="none">
+                                                        UserName
+                                                        <span class="admin-sort-icon" aria-hidden="true"></span>
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="govuk-table__header ra-col-actions admin-col-actions">
+                                                        Actions
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="govuk-table__body" id="adminUsersTableBody"></tbody>
+                                        </table>
+                                    </div>
+                                    <div id="adminUsersPaginationBar"></div>
+                                </div>
+                                <!-- /USERS GRID -->
+
+                                <!-- ===== USER ACCESS GRID ===== -->
+                                <div class="admin-access-panel">
+                                    <div class="admin-panel-header">
+                                        <span>User Access (Add or remove permissions here)</span>
+                                        <button type="button" class="govuk-button ra-btn-add sup_margin_0"
+                                            id="btnAddAccess">+ Add
+                                            Access</button>
+                                    </div>
+                                    <div class="admin-table-scroll">
+                                        <table class="govuk-table custom-table admin-access-table" id="adminAccessTable"
+                                            aria-label="User Access grid">
+                                            <thead class="govuk-table__head">
+                                                <tr class="govuk-table__row">
+                                                    <th scope="col"
+                                                        class="govuk-table__header admin-th-sortable adminAccess-th"
+                                                        data-sort="user" tabindex="0" aria-sort="none">
+                                                        User
+                                                        <span class="admin-sort-icon" aria-hidden="true"></span>
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="govuk-table__header admin-th-sortable adminAccess-th admin-col-access"
+                                                        data-sort="accessLevel" tabindex="0" aria-sort="none">
+                                                        AccessLevel
+                                                        <span class="admin-sort-icon" aria-hidden="true"></span>
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="govuk-table__header ra-col-actions admin-col-actions">
+                                                        Actions
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="govuk-table__body" id="adminAccessTableBody"></tbody>
+                                        </table>
+                                    </div>
+                                    <div id="adminAccessPaginationBar"></div>
+                                </div>
+                                <!-- /USER ACCESS GRID -->
+
+                            </div>
+
+                        </div>
+                        <!-- /Admin Maintenance Tab Panel -->
+
+                        <!-- Other Tab Panel -->
+                        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab-other" role="tabpanel"
+                            aria-labelledby="tab-other-link">
+
+                            <div class="other-layout">
+
+                                <!-- ===== GRID 1 – LIST DESCRIPTION ===== -->
+                                <div class="other-list-panel">
+                                    <div class="other-panel-header">List Description</div>
+                                    <table class="other-list-table custom-table" id="otherListTable"
+                                        aria-label="List description selection grid" role="grid">
+                                        <tbody id="otherListBody">
+                                            <!-- Rows populated by other.js -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /GRID 1 -->
+
+                                <!-- ===== GRID 2 – VALUES ===== -->
+                                <div class="other-values-panel" id="otherValuesPanel">
+
+                                    <!-- Panel header -->
+                                    <div class="other-panel-header"
+                                        style="display:flex;justify-content:space-between;align-items:center;">
+                                        <span>Values</span>
+                                        <button type="button"
+                                            class="govuk-button govuk-button--primary sup_margin_0 other-btn-add-value"
+                                            id="btnOtherAddValue" style="font-size:14px;padding:5px 4px;"
+                                            aria-label="Add new value">+ Add Value</button>
+                                    </div>
+
+                                    <!-- Values table -->
+                                    <div class="other-table-scroll">
+                                        <table class="govuk-table custom-table other-values-table" id="otherValuesTable"
+                                            aria-label="Values grid">
+                                            <!-- Column headers are defined per-tbody below; one header row per list -->
+                                            <!-- ── Frequency (default visible) ── -->
+                                            <tbody class="govuk-table__body other-values-tbody"
+                                                id="otherValuesBody-Frequency" data-list="Frequency">
+                                                <tr class="other-tbody-header govuk-table__row">
+                                                    <th scope="col"
+                                                        class="govuk-table__header other-th-sortable other-col-id"
+                                                        data-sort="id" tabindex="0" aria-sort="none">FrequencyID<span
+                                                            class="other-sort-icon" aria-hidden="true"></span></th>
+                                                    <th scope="col" class="govuk-table__header other-th-sortable"
+                                                        data-sort="value" tabindex="0" aria-sort="none">Frequency<span
+                                                            class="other-sort-icon" aria-hidden="true"></span></th>
+                                                    <th scope="col" class="govuk-table__header ra-col-actions">Actions
+                                                    </th>
+                                                </tr>
+                                                <!-- Data rows populated from OTHER_LISTS by other.js -->
+                                            </tbody>
+
+                                            <!-- ── PublicationTypes (hidden) ── -->
+                                            <tbody class="govuk-table__body other-values-tbody"
+                                                id="otherValuesBody-PublicationTypes" data-list="PublicationTypes"
+                                                hidden>
+                                                <tr class="other-tbody-header govuk-table__row">
+                                                    <th scope="col"
+                                                        class="govuk-table__header other-th-sortable other-col-id"
+                                                        data-sort="id" tabindex="0" aria-sort="none">
+                                                        PublicationTypeID<span class="other-sort-icon"
+                                                            aria-hidden="true"></span></th>
+                                                    <th scope="col" class="govuk-table__header other-th-sortable"
+                                                        data-sort="value" tabindex="0" aria-sort="none">
+                                                        PublicationType<span class="other-sort-icon"
+                                                            aria-hidden="true"></span></th>
+                                                    <th scope="col" class="govuk-table__header ra-col-actions">Actions
+                                                    </th>
+                                                </tr>
+                                                <!-- Data rows populated from OTHER_LISTS by other.js -->
+                                            </tbody>
+
+                                            <!-- ── ReportGroups (hidden) ── -->
+                                            <tbody class="govuk-table__body other-values-tbody"
+                                                id="otherValuesBody-ReportGroups" data-list="ReportGroups" hidden>
+                                                <tr class="other-tbody-header govuk-table__row">
+                                                    <th scope="col"
+                                                        class="govuk-table__header other-th-sortable other-col-id"
+                                                        data-sort="id" tabindex="0" aria-sort="none">GroupID<span
+                                                            class="other-sort-icon" aria-hidden="true"></span></th>
+                                                    <th scope="col" class="govuk-table__header other-th-sortable"
+                                                        data-sort="value" tabindex="0" aria-sort="none">Description<span
+                                                            class="other-sort-icon" aria-hidden="true"></span></th>
+                                                    <th scope="col" class="govuk-table__header ra-col-actions">Actions
+                                                    </th>
+                                                </tr>
+                                                <!-- Data rows populated from OTHER_LISTS by other.js -->
+                                            </tbody>
+
+                                            <!-- ── ReviewItems (hidden) ── -->
+                                            <tbody class="govuk-table__body other-values-tbody"
+                                                id="otherValuesBody-ReviewItems" data-list="ReviewItems" hidden>
+                                                <tr class="other-tbody-header govuk-table__row">
+                                                    <th scope="col"
+                                                        class="govuk-table__header other-th-sortable other-col-id"
+                                                        data-sort="id" tabindex="0" aria-sort="none">ItemID<span
+                                                            class="other-sort-icon" aria-hidden="true"></span></th>
+                                                    <th scope="col" class="govuk-table__header other-th-sortable"
+                                                        data-sort="value" tabindex="0" aria-sort="none">Item<span
+                                                            class="other-sort-icon" aria-hidden="true"></span></th>
+                                                    <th scope="col" class="govuk-table__header ra-col-actions">Actions
+                                                    </th>
+                                                </tr>
+                                                <!-- Data rows populated from OTHER_LISTS by other.js -->
+                                            </tbody>
+
+                                            <!-- ── Risk (hidden) ── -->
+                                            <tbody class="govuk-table__body other-values-tbody"
+                                                id="otherValuesBody-Risk" data-list="Risk" hidden>
+                                                <tr class="other-tbody-header govuk-table__row">
+                                                    <th scope="col"
+                                                        class="govuk-table__header other-th-sortable other-col-id"
+                                                        data-sort="id" tabindex="0" aria-sort="none">RiskID<span
+                                                            class="other-sort-icon" aria-hidden="true"></span></th>
+                                                    <th scope="col" class="govuk-table__header other-th-sortable"
+                                                        data-sort="value" tabindex="0" aria-sort="none">Risk<span
+                                                            class="other-sort-icon" aria-hidden="true"></span></th>
+                                                    <th scope="col" class="govuk-table__header ra-col-actions">Actions
+                                                    </th>
+                                                </tr>
+                                                <!-- Data rows populated from OTHER_LISTS by other.js -->
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+
+                                    <!-- Pagination -->
+                                    <div class="sup_pagination_footer sup_border">
+                                        <div class="sup_pagination_wrapper">
+                                            <div class="sup_margin_top_bottom_5_10">
+                                                <label class="pagination-label" for="otherRecordsPerPage">Records per
+                                                    page</label>&nbsp;
+                                                <select id="otherRecordsPerPage"
+                                                    class="govuk-select sup_select_pagination_width">
+                                                    <option value="5" selected>5</option>
+                                                    <option value="10">10</option>
+                                                    <option value="15">15</option>
+                                                    <option value="20">20</option>
+                                                </select>
+                                            </div>
+                                            <nav class="govuk-pagination govuk-!-margin-bottom-0"
+                                                aria-label="Values grid pagination">
+                                                <ul class="govuk-pagination__list" id="otherPaginationList">
+                                                    <!-- Pagination items populated by other.js -->
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Row template: structure, columns and CSS live here; JS only fills data -->
+                                <template id="otherDataRowTemplate">
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell other-col-id"></td>
+                                        <td class="govuk-table__cell other-col-value"></td>
+                                        <td class="govuk-table__cell other-col-actions">
+                                            <button type="button"
+                                                class="action-btn ra-btn-action ra-btn-edit other-edit-btn"
+                                                style="border:none;background:#fff;">
+                                                <img src="../images/pen-to-square-regular-full.svg" alt="Edit"
+                                                    class="editjobcode" width="20" />
+                                            </button>
+                                            <button type="button"
+                                                class="action-btn ra-btn-action ra-btn-delete other-delete-btn"
+                                                style="border:none;background:#fff;">
+                                                <img src="../images/trash-can-regular-full.svg" alt="Delete"
+                                                    width="20" />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </template>
+
+                                <!-- /GRID 2 -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /GOV.UK Tabs -->
+
+                <!-- WCAG 2.2 live region for dynamic updates -->
+                <div id="detail-panel-status" role="status" aria-live="polite" class="govuk-visually-hidden"></div>
+
+            </div>
+        </main>
+    </div>
+
+
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+        <div class="govuk-width-container sup_p_8 text-center">
+            <span> &copy; Copyright Defra 2025 </span>
+        </div>
+    </div>
+
+    <!-- ===== MAINTENANCE EDIT MODAL ===== -->
+    <div class="govuk-edit-modal" id="maintenanceEditModal" role="dialog" aria-modal="true"
+        aria-labelledby="maintenanceEditModalTitle" hidden>
+        <div class="govuk-edit-modal-dialog">
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-heading-s govuk-edit-modal__title" id="maintenanceEditModalTitle">
+                    Edit Record</h2>
+                <button type="button" class="govuk-edit-modal__close-btn" id="btnCloseMaintenanceEdit"
+                    aria-label="Close edit modal">&#x2715;</button>
+            </div>
+            <div class="govuk-edit-modal__body">
+                <input type="hidden" id="editRecordId" />
+                <!-- DB / server error banner -->
+                <div class="govuk-error-summary ra-form-error-banner ra-hidden" id="maintDbError" role="alert"
+                    aria-labelledby="maintDbErrorTitle" tabindex="-1">
+                    <h2 class="govuk-error-summary__title govuk-!-font-size-14" id="maintDbErrorTitle">There is
+                        a
+                        problem</h2>
+                    <div class="govuk-error-summary__body">
+                        <p class="govuk-body govuk-!-font-size-14" id="maintDbErrorText"></p>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="editNameGroup">
+                            <label for="editName"
+                                class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">Name:
+                                <span class="ra-required-star" aria-hidden="true">*</span></label>
+                            <input type="text" id="editName" name="editName" class="govuk-input govuk-!-font-size-16"
+                                aria-required="true" aria-describedby="editNameError" />
+                            <p class="govuk-error-message" id="editNameError" style="display:none">
+                                <span class="govuk-visually-hidden">Error:</span> Name is required
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="editDescriptionGroup">
+                            <label for="editDescription"
+                                class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">Description:
+                                <span class="ra-required-star" aria-hidden="true">*</span></label>
+
+                            <input type="text" id="editDescription" name="editDescription"
+                                class="govuk-input govuk-!-font-size-16" aria-required="true"
+                                aria-describedby="editDescriptionError" />
+                            <p class="govuk-error-message" id="editDescriptionError" style="display:none">
+                                <span class="govuk-visually-hidden">Error:</span> Description is required
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="editReportHelpGroup">
+                            <label for="editReportHelp"
+                                class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">Report
+                                Help: <span class="ra-required-star" aria-hidden="true">*</span></label>
+
+                            <textarea id="editReportHelp" name="editReportHelp"
+                                class="govuk-textarea govuk-!-font-size-16 sup_margin_0" rows="3" aria-required="true"
+                                aria-describedby="editReportHelpError"></textarea>
+                            <p class="govuk-error-message" id="editReportHelpError" style="display:none">
+                                <span class="govuk-visually-hidden">Error:</span> Report help is required
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="editMailCommentGroup">
+                            <label for="editMailComment"
+                                class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">Mail
+                                Comment: <span class="ra-required-star" aria-hidden="true">*</span></label>
+
+                            <input type="text" id="editMailComment" name="editMailComment"
+                                class="govuk-input govuk-!-font-size-16" aria-required="true"
+                                aria-describedby="editMailCommentError" />
+                            <p class="govuk-error-message" id="editMailCommentError" style="display:none">
+                                <span class="govuk-visually-hidden">Error:</span> Mail comment is required
+                            </p>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="editMailTitleGroup">
+                            <label for="editMailTitle"
+                                class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">Mail
+                                Title: <span class="ra-required-star" aria-hidden="true">*</span></label>
+
+                            <input type="text" id="editMailTitle" name="editMailTitle"
+                                class="govuk-input govuk-!-font-size-16" aria-required="true"
+                                aria-describedby="editMailTitleError" />
+                            <p class="govuk-error-message" id="editMailTitleError" style="display:none">
+                                <span class="govuk-visually-hidden">Error:</span> Mail title is required
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="editOrderGroup">
+                            <label for="editOrder"
+                                class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">Order:</label>
+
+                            <input type="number" id="editOrder" name="editOrder"
+                                class="govuk-input govuk-input--width-30 govuk-!-font-size-16" min="0"
+                                aria-describedby="editOrderError" />
+                            <p class="govuk-error-message" id="editOrderError" style="display:none">
+                                <span class="govuk-visually-hidden">Error:</span> Enter a whole number 0 or
+                                above
+                            </p>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" style="padding-top: 20px;">
+                                <div class="govuk-checkboxes__item">
+                                    <input type="checkbox" id="editEmailable" name="editEmailable"
+                                        class="govuk-checkboxes__input" />
+                                    <label for="editEmailable"
+                                        class="govuk-label govuk-checkboxes__label govuk-!-font-size-16 sup_label_auto_width">
+                                        Email-able
+                                    </label>
+                                    <p class="govuk-error-message" id="editEmailableError" style="display:none">
+                                        <span class="govuk-visually-hidden">Error:</span> Name is required
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-edit-modal__footer">
+                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0"
+                    id="btnCancelMaintenanceEdit">Cancel</button>
+                <button type="button" class="govuk-button sup_margin_0" id="btnSaveMaintenanceEdit">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/pims_js/maintenance.js"></script>
+
+    <!-- ===== GROUP EDIT MODAL ===== -->
+    <div class="govuk-edit-modal" id="groupEditModal" role="dialog" aria-modal="true"
+        aria-labelledby="groupEditModalTitle" hidden>
+        <div class="govuk-edit-modal-dialog" style="max-width:480px">
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-heading-s govuk-edit-modal__title" id="groupEditModalTitle">Edit
+                    Report Group</h2>
+                <button type="button" class="govuk-edit-modal__close-btn" id="btnCloseGroupModal"
+                    aria-label="Close report group modal">&#x2715;</button>
+            </div>
+            <div class="govuk-edit-modal__body">
+                <input type="hidden" id="groupEditRecordId" />
+                <!-- DB / server error banner -->
+                <div class="govuk-error-summary ra-form-error-banner ra-hidden" id="groupDbError" role="alert"
+                    aria-labelledby="groupDbErrorTitle" tabindex="-1">
+                    <h2 class="govuk-error-summary__title govuk-!-font-size-16" id="groupDbErrorTitle">There is
+                        a
+                        problem</h2>
+                    <div class="govuk-error-summary__body">
+                        <p class="govuk-body govuk-!-font-size-16" id="groupDbErrorText"></p>
+                    </div>
+                </div>
+                <div class="govuk-form-group" id="groupFormGroup">
+                    <label for="groupReportGroup"
+                        class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">Report Group:
+                        <span class="ra-required-star" aria-hidden="true">*</span></label>
+                    <p class="govuk-error-message" id="groupReportGroupError" style="display:none">
+                        <span class="govuk-visually-hidden">Error:</span> Please select a report group
+                    </p>
+                    <select id="groupReportGroup" name="groupReportGroup" class="govuk-select govuk-!-font-size-16"
+                        style="width:100%" aria-required="true" aria-describedby="groupReportGroupError">
+                        <option value="">-- Select Report Group --</option>
+                        <option>EU</option>
+                        <option>Annual &amp; Final</option>
+                        <option>Deliverables</option>
+                        <option>Invoicing</option>
+                        <option>Milestones</option>
+                        <option>Programme &amp; Project Monitoring</option>
+                        <option>Surveilance Contracts</option>
+                    </select>
+                </div>
+            </div>
+            <div class="govuk-edit-modal__footer">
+                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0"
+                    id="btnCancelGroupEdit">Cancel</button>
+                <button type="button" class="govuk-button sup_margin_0" id="btnSaveGroupEdit">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== PIMS PROGRAMME EDIT MODAL ===== -->
+    <div class="govuk-edit-modal" id="progProgEditModal" role="dialog" aria-modal="true"
+        aria-labelledby="progProgModalTitle" hidden>
+        <div class="govuk-edit-modal-dialog" style="max-width:520px">
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-heading-s govuk-edit-modal__title" id="progProgModalTitle">Edit PIMS
+                    Program</h2>
+                <button type="button" class="govuk-edit-modal__close-btn" id="btnCloseProgModal"
+                    aria-label="Close modal">&#x2715;</button>
+            </div>
+            <div class="govuk-edit-modal__body">
+                <input type="hidden" id="progProgRecordId" />
+                <div class="govuk-error-summary ra-form-error-banner ra-hidden" id="progProgDbError" role="alert"
+                    aria-labelledby="progProgDbErrorTitle" tabindex="-1">
+                    <h2 class="govuk-error-summary__title govuk-!-font-size-14" id="progProgDbErrorTitle">There
+                        is a
+                        problem</h2>
+                    <div class="govuk-error-summary__body">
+                        <p class="govuk-body govuk-!-font-size-14" id="progProgDbErrorText"></p>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="progProgNameGroup">
+                            <label for="progProgName"
+                                class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">Programme:
+                                <span class="ra-required-star" aria-hidden="true">*</span></label>
+                            <select id="progProgName" name="progProgName" class="govuk-select govuk-!-font-size-16"
+                                style="width:100%" aria-required="true" aria-describedby="progProgNameError">
+                                <option value="">-- Select Programme --</option>
+                                <option>APHA_MISC</option>
+                                <option>ASU</option>
+                                <option>ASUMisc</option>
+                                <option>B&amp;M</option>
+                                <option>Bact</option>
+                                <option>BactMisc</option>
+                                <option>BactTest</option>
+                                <option>Bee Insp</option>
+                                <option>BOVINE_TB</option>
+                                <option>BPUMisc</option>
+                                <option>BTB</option>
+                                <option>BTUMisc</option>
+                                <option>ClubFive</option>
+                                <option>Comm</option>
+                                <option>Commercial</option>
+                                <option>CSG</option>
+                                <option>DoES</option>
+                                <option>DSG</option>
+                                <option>END_RES</option>
+                                <option>END_SURV</option>
+                                <option>EU Exit</option>
+                                <option>EU_PROG</option>
+                                <option>FES_RES</option>
+                                <option>FES_SURV</option>
+                                <option>FS_SURV</option>
+                                <option>FSZ_RES</option>
+                                <option>FSZ_RESMVN</option>
+                                <option>GM</option>
+                                <option>HPE_PROG</option>
+                                <option>IMT</option>
+                                <option>IT_SURV</option>
+                                <option>IT_WB</option>
+                                <option>MISC</option>
+                                <option>NFC</option>
+                                <option>NI_PROG</option>
+                                <option>PHSI</option>
+                                <option>PLANT_HEALTH</option>
+                                <option>RABIES</option>
+                                <option>SA_SURV</option>
+                                <option>SHE</option>
+                                <option>TBSE</option>
+                                <option>VIG</option>
+                                <option>WB_SURV</option>
+                                <option>WLD_HEALTH</option>
+                                <option>ZOO_PROG</option>
+                            </select>
+                            <p class="govuk-error-message" id="progProgNameError" style="display:none">
+                                <span class="govuk-visually-hidden">Error:</span> Programme is required
+                            </p>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="progProgPrefixGroup">
+                            <label for="progProgPrefix"
+                                class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">Publication
+                                Prefix:</label>
+                            <input type="text" id="progProgPrefix" name="progProgPrefix"
+                                class="govuk-input govuk-!-font-size-16" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-edit-modal__footer">
+                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0"
+                    id="btnCancelProgEdit">Cancel</button>
+                <button type="button" class="govuk-button sup_margin_0" id="btnSaveProgEdit">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== USER NOTIFICATION EDIT MODAL ===== -->
+    <div class="govuk-edit-modal" id="progUserEditModal" role="dialog" aria-modal="true"
+        aria-labelledby="progUserModalTitle" hidden>
+        <div class="govuk-edit-modal-dialog" style="max-width:520px">
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-heading-s govuk-edit-modal__title" id="progUserModalTitle">Edit User
+                    Notification</h2>
+                <button type="button" class="govuk-edit-modal__close-btn" id="btnCloseUserModal"
+                    aria-label="Close modal">&#x2715;</button>
+            </div>
+            <div class="govuk-edit-modal__body">
+                <input type="hidden" id="progUserRecordId" />
+                <div class="govuk-error-summary ra-form-error-banner ra-hidden" id="progUserDbError" role="alert"
+                    aria-labelledby="progUserDbErrorTitle" tabindex="-1">
+                    <h2 class="govuk-error-summary__title govuk-!-font-size-14" id="progUserDbErrorTitle">There
+                        is a
+                        problem</h2>
+                    <div class="govuk-error-summary__body">
+                        <p class="govuk-body govuk-!-font-size-14" id="progUserDbErrorText"></p>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="progUserNameGroup">
+                            <label for="progUserName"
+                                class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">Name:
+                                <span class="ra-required-star" aria-hidden="true">*</span></label>
+                            <select id="progUserName" name="progUserName" class="govuk-select govuk-!-font-size-16"
+                                style="width:100%" aria-required="true" aria-describedby="progUserNameError">
+                                <option value="">-- Select Name --</option>
+                                <option>Adebowale, Lade</option>
+                                <option>Adeola, Adedapo</option>
+                                <option>Bateman, Rebecca</option>
+                                <option>Bell, Howard</option>
+                                <option>Brown, Kiera</option>
+                                <option>Butler, Tom</option>
+                                <option>Ferguson, Jennifer</option>
+                                <option>Fowler, Ayesha</option>
+                                <option>Foxon, Janee</option>
+                                <option>Gage, Amanda</option>
+                                <option>Jackson, George</option>
+                                <option>Lambert, Abby</option>
+                                <option>Martin, Steve</option>
+                                <option>Moore, Tony</option>
+                                <option>Moran, Michaela</option>
+                            </select>
+                            <p class="govuk-error-message" id="progUserNameError" style="display:none">
+                                <span class="govuk-visually-hidden">Error:</span> Name is required
+                            </p>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="progUserProgrammeGroup">
+                            <label for="progUserProgramme"
+                                class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">Programme:
+                                <span class="ra-required-star" aria-hidden="true">*</span></label>
+                            <p class="govuk-error-message" id="progUserProgrammeError" style="display:none">
+                                <span class="govuk-visually-hidden">Error:</span> Please select a programme
+                            </p>
+                            <select id="progUserProgramme" name="progUserProgramme"
+                                class="govuk-select govuk-!-font-size-16" style="width:100%" aria-required="true"
+                                aria-describedby="progUserProgrammeError">
+                                <option value="">-- Select Programme --</option>
+                                <option>AHVLA_PROG</option>
+                                <option>ASU</option>
+                                <option>B&amp;M</option>
+                                <option>Bact</option>
+                                <option>BactMisc</option>
+                                <option>Bee Insp</option>
+                                <option>BOVINE_TB</option>
+                                <option>BTB</option>
+                                <option>ClubFive</option>
+                                <option>Comm</option>
+                                <option>DoES</option>
+                                <option>DSG</option>
+                                <option>END_RES</option>
+                                <option>END_SURV</option>
+                                <option>EU Exit</option>
+                                <option>EU_PROG</option>
+                                <option>FES_RES</option>
+                                <option>FES_SURV</option>
+                                <option>FS_SURV</option>
+                                <option>FSZ_RES</option>
+                                <option>GM</option>
+                                <option>HPE_PROG</option>
+                                <option>IMT</option>
+                                <option>IT_SURV</option>
+                                <option>MISC</option>
+                                <option>NFC</option>
+                                <option>NI_PROG</option>
+                                <option>PHSI</option>
+                                <option>PLANT_HEALTH</option>
+                                <option>RABIES</option>
+                                <option>SA_SURV</option>
+                                <option>SHE</option>
+                                <option>TBSE</option>
+                                <option>VIG</option>
+                                <option>WB_SURV</option>
+                                <option>WLD_HEALTH</option>
+                                <option>ZOO_PROG</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-edit-modal__footer">
+                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0"
+                    id="btnCancelUserEdit">Cancel</button>
+                <button type="button" class="govuk-button sup_margin_0" id="btnSaveUserEdit">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/pims_js/programme.js"></script>
+    <!-- ===== OTHER VALUES EDIT MODAL ===== -->
+    <div class="govuk-edit-modal" id="otherEditModal" role="dialog" aria-modal="true"
+        aria-labelledby="otherEditModalTitle" hidden>
+        <div class="govuk-edit-modal-dialog" style="max-width:520px">
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-heading-s govuk-edit-modal__title" id="otherEditModalTitle">Add
+                    Value</h2>
+                <button type="button" class="govuk-edit-modal__close-btn" id="btnCloseOtherEdit"
+                    aria-label="Close modal">&#x2715;</button>
+            </div>
+            <div class="govuk-edit-modal__body">
+                <!-- DB / server error banner -->
+                <div class="govuk-error-summary ra-form-error-banner ra-hidden" id="otherDbError" role="alert"
+                    aria-labelledby="otherDbErrorTitle" tabindex="-1">
+                    <h2 class="govuk-error-summary__title govuk-!-font-size-14" id="otherDbErrorTitle">There is a
+                        problem</h2>
+                    <div class="govuk-error-summary__body">
+                        <p class="govuk-body govuk-!-font-size-14" id="otherDbErrorText"></p>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="otherEditIdGroup">
+                            <label for="otherEditId" class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">
+                                <span id="otherEditIdLabel">ID</span><span class="ra-required-star" aria-hidden="true">
+                                    *</span>
+                            </label>
+                            <input class="govuk-input govuk-!-font-size-16" id="otherEditId" name="otherEditId"
+                                type="text" aria-required="true" aria-describedby="otherEditIdError" />
+                            <p class="govuk-error-message" id="otherEditIdError" style="display:none">
+                                <span class="govuk-visually-hidden">Error:</span>
+                                <span id="otherEditIdErrorText">ID is required</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="otherEditValueGroup">
+                            <label for="otherEditValue"
+                                class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">
+                                <span id="otherEditValueLabel">Value</span><span class="ra-required-star"
+                                    aria-hidden="true"> *</span>
+                            </label>
+                            <input class="govuk-input govuk-!-font-size-16" id="otherEditValue" name="otherEditValue"
+                                type="text" aria-required="true" aria-describedby="otherEditValueError" />
+                            <p class="govuk-error-message" id="otherEditValueError" style="display:none">
+                                <span class="govuk-visually-hidden">Error:</span> Value is required
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-edit-modal__footer">
+                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0"
+                    id="btnCancelOtherEdit">Cancel</button>
+                <button type="button" class="govuk-button sup_margin_0" id="btnSaveOtherEdit">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/pims_js/other.js"></script>
+    <script src="../js/pims_js/time.js"></script>
+
+    <!-- ===== MANAGER EDIT / ADD MODAL ===== -->
+    <div class="govuk-edit-modal" id="mgrManagerEditModal" role="dialog" aria-modal="true"
+        aria-labelledby="mgrManagerEditModalTitle" hidden>
+        <div class="govuk-edit-modal-dialog" style="max-width:560px">
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-heading-s govuk-edit-modal__title" id="mgrManagerEditModalTitle">
+                    Edit Manager</h2>
+                <button type="button" class="govuk-edit-modal__close-btn" id="btnCloseMgrEdit"
+                    aria-label="Close modal">&#x2715;</button>
+            </div>
+            <div class="govuk-edit-modal__body">
+                <input type="hidden" id="mgrEditId" />
+                <div class="govuk-error-summary ra-form-error-banner ra-hidden" id="mgrEditDbError" role="alert"
+                    aria-labelledby="mgrEditDbErrorTitle" tabindex="-1">
+                    <h2 class="govuk-error-summary__title govuk-!-font-size-14" id="mgrEditDbErrorTitle">There is a
+                        problem</h2>
+                    <div class="govuk-error-summary__body">
+                        <p class="govuk-body govuk-!-font-size-14" id="mgrEditDbErrorText"></p>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="mgrEditNameGroup">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="mgrEditName">
+                                Manager Name: <span class="ra-required-star" aria-hidden="true">*</span>
+                            </label>
+                            <select id="mgrEditName" name="mgrEditName" class="govuk-select govuk-!-font-size-16"
+                                aria-required="true" style="width:100%" aria-describedby="mgrEditNameError">
+                                <option value="">-- Select Manager --</option>
+                            </select>
+                            <p class="govuk-error-message" id="mgrEditNameError" style="display:none"><span
+                                    class="govuk-visually-hidden">Error:</span> <span></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+
+                    <div class="govuk-grid-column-one-half" style="padding-left: 10px;">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="mgrEditMNumberGroup">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="mgrEditMNumber">MNumber:</label>
+                            <input type="text" id="mgrEditMNumber" name="mgrEditMNumber"
+                                class="govuk-input govuk-!-font-size-16" aria-describedby="mgrEditMNumberError" />
+                            <p class="govuk-error-message" id="mgrEditMNumberError" style="display:none"><span
+                                    class="govuk-visually-hidden">Error:</span> <span></span></p>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half" style="padding-right: 10px;">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="mgrEditEmailGroup">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="mgrEditEmail">Manager's email:</label>
+                            <input type="text" id="mgrEditEmail" name="mgrEditEmail"
+                                class="govuk-input govuk-!-font-size-16" aria-describedby="mgrEditEmailError" />
+                            <p class="govuk-error-message" id="mgrEditEmailError" style="display:none"><span
+                                    class="govuk-visually-hidden">Error:</span> <span></span></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <div class="govuk-checkboxes govuk-checkboxes--small">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="mgrEditDisabled" name="mgrEditDisabled"
+                                        type="checkbox" />
+                                    <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-regular"
+                                        for="mgrEditDisabled">Disable</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-edit-modal__footer">
+                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0"
+                    id="btnCancelMgrEdit">Cancel</button>
+                <button type="button" class="govuk-button sup_margin_0" id="btnSaveMgrEdit">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ASSIGNMENT EDIT MODAL (Program / Resource Centre) ===== -->
+    <div class="govuk-edit-modal" id="mgrAssignEditModal" role="dialog" aria-modal="true"
+        aria-labelledby="mgrAssignEditModalTitle" hidden>
+        <div class="govuk-edit-modal-dialog" style="max-width:420px">
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-heading-s govuk-edit-modal__title" id="mgrAssignEditModalTitle">Add
+                    Program</h2>
+                <button type="button" class="govuk-edit-modal__close-btn" id="btnCloseMgrAssign"
+                    aria-label="Close modal">&#x2715;</button>
+            </div>
+            <div class="govuk-edit-modal__body">
+                <div class="govuk-error-summary ra-form-error-banner ra-hidden" id="mgrAssignDbError" role="alert"
+                    aria-labelledby="mgrAssignDbErrorTitle" tabindex="-1">
+                    <h2 class="govuk-error-summary__title govuk-!-font-size-14" id="mgrAssignDbErrorTitle">There is
+                        a problem</h2>
+                    <div class="govuk-error-summary__body">
+                        <p class="govuk-body govuk-!-font-size-14" id="mgrAssignDbErrorText"></p>
+                    </div>
+                </div>
+                <div class="govuk-form-group" id="mgrAssignValueGroup">
+                    <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="mgrAssignValue">
+                        <span id="mgrAssignLabel">Program:</span> <span class="ra-required-star"
+                            aria-hidden="true">*</span>
+                    </label>
+                    <select id="mgrAssignValue" name="mgrAssignValue" class="govuk-select govuk-!-font-size-16"
+                        style="width:100%" aria-required="true" aria-describedby="mgrAssignValueError">
+                        <option value="">-- Select --</option>
+                    </select>
+                    <p class="govuk-error-message" id="mgrAssignValueError" style="display:none"><span
+                            class="govuk-visually-hidden">Error:</span> <span></span></p>
+                </div>
+            </div>
+            <div class="govuk-edit-modal__footer">
+                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0"
+                    id="btnCancelMgrAssign">Cancel</button>
+                <button type="button" class="govuk-button sup_margin_0" id="btnSaveMgrAssign">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/pims_js/manager.js"></script>
+
+    <!-- ===== ADMIN USER EDIT / ADD MODAL ===== -->
+    <div class="govuk-edit-modal" id="adminUserEditModal" role="dialog" aria-modal="true"
+        aria-labelledby="adminUserModalTitle" hidden>
+        <div class="govuk-edit-modal-dialog" style="max-width:480px">
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-heading-s govuk-edit-modal__title" id="adminUserModalTitle">Add User
+                </h2>
+                <button type="button" class="govuk-edit-modal__close-btn" id="btnCloseAdminUser"
+                    aria-label="Close modal">&#x2715;</button>
+            </div>
+            <div class="govuk-edit-modal__body">
+                <!-- DB / server error banner -->
+                <div class="govuk-error-summary ra-form-error-banner ra-hidden" id="adminUserDbError" role="alert"
+                    aria-labelledby="adminUserDbErrorTitle" tabindex="-1">
+                    <h2 class="govuk-error-summary__title govuk-!-font-size-14" id="adminUserDbErrorTitle">There is
+                        a
+                        problem</h2>
+                    <div class="govuk-error-summary__body">
+                        <p class="govuk-body govuk-!-font-size-14" id="adminUserDbErrorText"></p>
+                    </div>
+                </div>
+                <!-- NTLogin -->
+                <div class="govuk-form-group sup_margin_bottom_10" id="adminUserNTLoginGroup">
+                    <label for="adminUserNTLogin" class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">
+                        NTLogin<span class="ra-required-star" aria-hidden="true"> *</span>
+                    </label>
+                    <p class="govuk-error-message" id="adminUserNTLoginError" style="display:none">
+                        <span class="govuk-visually-hidden">Error:</span>
+                        <span class="admin-error-text">NTLogin is required</span>
+                    </p>
+                    <input class="govuk-input govuk-!-font-size-16" id="adminUserNTLogin" name="adminUserNTLogin"
+                        type="text" aria-required="true" aria-describedby="adminUserNTLoginError" autocomplete="off" />
+                </div>
+                <!-- UserName -->
+                <div class="govuk-form-group sup_margin_bottom_10" id="adminUserNameGroup">
+                    <label for="adminUserName" class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">
+                        UserName<span class="ra-required-star" aria-hidden="true"> *</span>
+                    </label>
+                    <p class="govuk-error-message" id="adminUserNameError" style="display:none">
+                        <span class="govuk-visually-hidden">Error:</span>
+                        <span class="admin-error-text">UserName is required</span>
+                    </p>
+                    <input class="govuk-input govuk-!-font-size-16" id="adminUserName" name="adminUserName" type="text"
+                        aria-required="true" aria-describedby="adminUserNameError" autocomplete="off" />
+                </div>
+            </div>
+            <div class="govuk-edit-modal__footer">
+                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0"
+                    id="btnCancelAdminUser">Cancel</button>
+                <button type="button" class="govuk-button sup_margin_0" id="btnSaveAdminUser">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ADMIN ACCESS EDIT / ADD MODAL ===== -->
+    <div class="govuk-edit-modal" id="adminAccessEditModal" role="dialog" aria-modal="true"
+        aria-labelledby="adminAccessModalTitle" hidden>
+        <div class="govuk-edit-modal-dialog" style="max-width:480px">
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-heading-s govuk-edit-modal__title" id="adminAccessModalTitle">Add
+                    User Access</h2>
+                <button type="button" class="govuk-edit-modal__close-btn" id="btnCloseAdminAccess"
+                    aria-label="Close modal">&#x2715;</button>
+            </div>
+            <div class="govuk-edit-modal__body">
+                <!-- DB / server error banner -->
+                <div class="govuk-error-summary ra-form-error-banner ra-hidden" id="adminAccessDbError" role="alert"
+                    aria-labelledby="adminAccessDbErrorTitle" tabindex="-1">
+                    <h2 class="govuk-error-summary__title govuk-!-font-size-14" id="adminAccessDbErrorTitle">There
+                        is a
+                        problem</h2>
+                    <div class="govuk-error-summary__body">
+                        <p class="govuk-body govuk-!-font-size-14" id="adminAccessDbErrorText"></p>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <!-- User -->
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="adminAccessUserGroup">
+                            <label for="adminAccessUser"
+                                class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">
+                                User<span class="ra-required-star" aria-hidden="true"> *</span>
+                            </label>
+                            <p class="govuk-error-message" id="adminAccessUserError" style="display:none">
+                                <span class="govuk-visually-hidden">Error:</span>
+                                <span class="admin-error-text">User name is required</span>
+                            </p>
+                            <select class="govuk-select govuk-!-font-size-16" id="adminAccessUser"
+                                name="adminAccessUser" aria-required="true" aria-describedby="adminAccessUserError"
+                                style="width:100%">
+                                <option value="">-- Select User --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Access Level -->
+                    <div class="govuk-grid-column-one-half">
+                        <div class="govuk-form-group sup_margin_bottom_10" id="adminAccessLevelGroup">
+                            <label for="adminAccessLevel"
+                                class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16">
+                                Access Level<span class="ra-required-star" aria-hidden="true"> *</span>
+                            </label>
+                            <p class="govuk-error-message" id="adminAccessLevelError" style="display:none">
+                                <span class="govuk-visually-hidden">Error:</span>
+                                <span class="admin-error-text">Access Level is required</span>
+                            </p>
+                            <select class="govuk-select govuk-!-font-size-16" id="adminAccessLevel"
+                                name="adminAccessLevel" aria-required="true" aria-describedby="adminAccessLevelError">
+                                <option value="">-- Select --</option>
+                                <option value="Maintenance">Maintenance</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-edit-modal__footer">
+                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0"
+                    id="btnCancelAdminAccess">Cancel</button>
+                <button type="button" class="govuk-button sup_margin_0" id="btnSaveAdminAccess">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/pims_js/admin.js"></script>
+</body>
+
+</html>

@@ -1683,3 +1683,25 @@ main {
 .govuk-pagination__item--current .govuk-link {
     color: white !important;
 }
+
+.tab-3-side-border {
+    border-top: 1px solid var(--govuk-border-colour);
+    border-left: 1px solid var(--govuk-border-colour);
+    border-right: 1px solid var(--govuk-border-colour);
+}
+
+.main-content-cs {
+    margin-left: 0;
+    min-height: 100vh;
+    padding: 20px 0 20px 20px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.govuk-link {
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1)) !important;
+}
+
+/* .govuk-link:visited {
+    color: white !important;
+} */

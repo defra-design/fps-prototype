@@ -36,7 +36,7 @@ const htmlmenu = `<div style="display: flex; flex-direction: row;">
             <a class="nav-button" href="#" style="text-decoration: none">Publications</a>
         </div>
         <div class="nav-item">
-            <a class="nav-button" href="#" style="text-decoration: none">Maintenance</a>
+            <a class="nav-button" href="maintenance.html" style="text-decoration: none">Maintenance</a>
         </div>
         <div class="nav-item">
             <a class="nav-button" href="#" style="text-decoration: none">Pop-up Data Check</a>

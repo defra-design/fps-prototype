@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
+    <link rel="stylesheet" href="nav_menu/navstyle.css" />
+    <script src="nav_menu/menutemplate.js"></script>
+    <link rel="stylesheet" href="../css/pact_styles/style.css" />
+    <link rel="stylesheet" href="../css/pact_styles/suppliement_style_over_gov.uk_style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+    <title>2025-2026 : Program Financial Summary - PACT</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
+                </div>
+                <div class="pims-log">
+                    <span>PACT</span>
+                </div>
+                <div class="pims-log" style="width: 160px;font-size: 16px;">
+                    <label for="dpSelectyear" class="sr-only">select year</label>
+                    <select id="dpSelectyear" aria-label="Select year dropdown" class="pims-log"
+                        style="border: 0;border-radius: 0;margin-left: 0px;width: 150px;outline: 0;">
+                        <option>2017-2018</option>
+                        <option>2018-2019</option>
+                        <option>2019-2020</option>
+                        <option>2020-2021</option>
+                        <option>2021-2022</option>
+                        <option>2022-2023</option>
+                        <option>2023-2024</option>
+                        <option>2024-2025</option>
+                        <option selected>2025-2026</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="header"></div>
+
+    <script src="../pact/nav_menu/script.js"></script>
+
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+    <div class="content-wrapper">
+        <div class="govuk-grid-row sup_margin_left_right_0">
+            <div class="govuk-grid-column-full">
+                <h1 class="heading_with_txtbox govuk-heading-s sup_border-bottom sup_margin_bottom_10 p-tb-10 p-l-10">
+                    <div class="sup_flex_left_center">
+                        Invoice by Month
+                    </div>
+                </h1>
+            </div>
+        </div>
+
+        <div class="govuk-grid-row sup_margin_0">
+            <div class="govuk-grid-column-full sup_padding_right_left_10 sup_margin_bottom_10">
+                <div class="sup_border">
+                    <!-- <div style="display: flex; justify-content: space-between; align-items: center; padding: 5px; border-bottom: 1px solid #b1b4b6;">
+                    <h2 class="govuk-heading-s" style="margin: 0;">Program Financial Data by Period</h2>
+                    <div style="display: flex; gap: 8px;">
+                        <button type="button" class="govuk-button sup_margin_0 sup_gov_blue_bg sup_flex sup_width_140" 
+                            id="exportExcelBtn" aria-label="Export to Excel">
+                            <img src="../images/file-export-solid-full.svg" width="16"
+                                alt="icon for export data into excel file" />&nbsp; Export Excel
+                        </button>
+                    </div>
+                </div> -->
+
+                    <div class="table_scroll_wrapper">
+                        <table class="govuk-table custom-table" id="programFinancialTable">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th data-column="0" scope="col" class="govuk-table__header">Program
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="1" class="govuk-table__header">Parent Project
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="2" class="govuk-table__header">1
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="3" class="govuk-table__header">2
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="4" class="govuk-table__header">3
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="5" class="govuk-table__header">4
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="6" class="govuk-table__header">5
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="7" class="govuk-table__header">6
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="8" class="govuk-table__header">7
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="9" class="govuk-table__header">8
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" id="programFinancialTableBody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sup_pagination_wrapper">
+                        <div class="sup_margin_top_bottom_5_10">
+                            <label for="recordsPerPage">Records per page</label>
+                            <select id="recordsPerPage" class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
+                                aria-label="Select number of records per page">
+                                <option value="10" selected>10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                            </select>
+                        </div>
+                        <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+                            <ul class="govuk-pagination__list" id="programFinancialPagination">
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+        <div class="govuk-width-container sup_p_8 sup_text_center">
+            <span>
+                &copy; copyright Defra 2025
+            </span>
+        </div>
+    </div>
+
+    <!-- Program Financial JavaScript -->
+    <script src="../js/pact_js/invoice_by_month.js"></script>
+</body>
+
+</html>

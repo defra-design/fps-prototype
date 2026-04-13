@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "parentProject": "FT1201",
+        "wipEOY": 0.00,
+        "wipLimit": 3.00,
+        "wipCurrent": 4.00
+    },
+    {
+        "id": 2,
+        "parentProject": "FT1295",
+        "wipEOY": 0.00,
+        "wipLimit": null,
+        "wipCurrent": null
+    },
+    {
+        "id": 3,
+        "parentProject": "FT1368",
+        "wipEOY": 0.00,
+        "wipLimit": null,
+        "wipCurrent": null
+    },
+    {
+        "id": 4,
+        "parentProject": "FT1410",
+        "wipEOY": 0.00,
+        "wipLimit": null,
+        "wipCurrent": null
+    },
+    {
+        "id": 5,
+        "parentProject": "FT1434",
+        "wipEOY": 0.00,
+        "wipLimit": null,
+        "wipCurrent": null
+    },
+    {
+        "id": 6,
+        "parentProject": "FT1446",
+        "wipEOY": 0.00,
+        "wipLimit": null,
+        "wipCurrent": null
+    },
+    {
+        "id": 7,
+        "parentProject": "FT5146",
+        "wipEOY": 0.00,
+        "wipLimit": null,
+        "wipCurrent": null
+    },
+    {
+        "id": 8,
+        "parentProject": "FT5158",
+        "wipEOY": 0.00,
+        "wipLimit": null,
+        "wipCurrent": null
+    },
+    {
+        "id": 9,
+        "parentProject": "FT5161",
+        "wipEOY": 0.00,
+        "wipLimit": null,
+        "wipCurrent": null
+    },
+    {
+        "id": 10,
+        "parentProject": "FT6031",
+        "wipEOY": 0.00,
+        "wipLimit": null,
+        "wipCurrent": null
+    },
+    {
+        "id": 11,
+        "parentProject": "FT6032",
+        "wipEOY": 0.00,
+        "wipLimit": null,
+        "wipCurrent": null
+    },
+    {
+        "id": 12,
+        "parentProject": "FT6033",
+        "wipEOY": 0.00,
+        "wipLimit": null,
+        "wipCurrent": null
+    },
+    {
+        "id": 13,
+        "parentProject": "FT6034",
+        "wipEOY": 0.00,
+        "wipLimit": null,
+        "wipCurrent": null
+    },
+    {
+        "id": 14,
+        "parentProject": "FT6070",
+        "wipEOY": 0.00,
+        "wipLimit": 4.00,
+        "wipCurrent": 4.00
+    }
+]

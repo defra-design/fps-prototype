@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2025-2026 : ASU View</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css">
+    <link rel="stylesheet" href="../css/fps_styles/styles.css">
+    <link rel="stylesheet" href="../css/fps_styles/fps_asuview.css">
+    <link rel="stylesheet" href="../css/main_style.css">
+    <link rel="stylesheet" href="../css/fps_styles/suppliement_style_fps.css">
+    <link rel="stylesheet" href="../css/fps_styles/setup_resource.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" alt="Logo of Animal and Plant Health Agency" width="80">
+                </div>
+                <div class="pims-log">
+                    <span class="pva-logo-text">FPS</span>
+                </div>
+                <div class="pims-log">
+                    <select class="pims-log pva-year-select" aria-label="Year">
+                        <option class="pims-log pva-year-option">2024-2025</option>
+                        <option class="pims-log pva-year-option" selected>2025-2026</option>
+                    </select>
+                </div>
+            </div>
+            <div class="btn-group pva-user-group">
+                Ken Rod
+                <button type="button" aria-label="Open user menu" class="btn btn-secondary dropdown-toggle user-menu pva-user-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../images/circle-user-regular-full.svg" alt="User icon" width="24">
+                    <img src="../images/down-arrow.png" alt="Dropdown arrow" width="30" height="30">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <a href="../index.html" class="dropdown-item" aria-hidden="true">
+                            <img src="../images/house-user-solid-full.svg" alt="Home icon" width="22">
+                            Home
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div id="header"></div>
+
+    <main class="govuk-main-wrapper govuk-!-padding-top-0 asu-main-content" id="main-content" role="main">
+        <div class="container-fluid">         
+			
+			
+			<div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+           <div class="row fps-sr-breadcrumb-row">
+                <div class="fps-sr-breadcrumb-flex">
+                    <div class="col-md-11">
+                        <nav class="govuk-breadcrumbs " aria-label="Breadcrumb">
+                            <ol class="govuk-breadcrumbs__list">
+                                <li class="govuk-breadcrumbs__list-item">
+                                    <a class="govuk-breadcrumbs__link" href="fpshome.html">Home</a>
+                                </li>                             
+								
+								 <li class="govuk-breadcrumbs__list-item">
+                                   MAB
+                                </li>
+								<li class="govuk-breadcrumbs__list-item">
+                                    ASU Data View
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+					
+					
+					
+					
+					
+					
+                </div>
+            </div>
+
+        </div>
+		 <div class="govuk-grid-column-full">
+                    <h1 class="govuk-grid-row govuk-heading-s sup_border-bottom govuk-!-margin-top-2 govuk-!-padding-bottom-2 govuk-!-padding-left-4">ASU Data View</h1>
+         </div>
+
+    </div>
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-form-group govuk-!-margin-bottom-2">
+                        <label class="govuk-label govuk-!-font-weight-bold" for="animalTypeFilter">Choose an Animal Type</label>
+                        <select id="animalTypeFilter" class="govuk-select govuk-!-font-size-16 " aria-label="Choose an animal type">
+                            <option value="Poultry, High - Per Room">Poultry, High - Per Room</option>
+                            <option value="B and B Fixed Price, Avian">B and B Fixed Price, Avian</option>
+                            <option value="B and B Fixed Price, Small Animals">B and B Fixed Price, Small Animals</option>
+                            <option value="Eggs [Chicken] - Hatching">Eggs [Chicken] - Hatching</option>
+                            <option value="Ferrets, Medium Security" selected>Ferrets, Medium Security</option>
+                        </select>
+                    </div>
+
+                    <div class="asu-view-grid-head govuk-!-padding-right-0 govuk-!-padding-left-0">
+                        <h2 class="govuk-heading-s govuk-!-margin-bottom-0">Animal Type Usage</h2>
+                        <div class="govuk-button-group sup_margin_0">
+                            <button type="button" class="govuk-button sup_margin_0 sup_flex_row_center_center" data-module="govuk-button" id="btnAsuUsageAdd" aria-label="Add new animal type usage row">
+                                <img src="../images/circle-plus-solid-full-white.svg" alt="Add icon for animal type usage" width="16">
+                                &nbsp; Add Row
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="jobcodediv pva-table-actual-349-ce">
+                        <table id="asuUsageTable" class="govuk-table custom-table pva-table-no-margin" style="margin-bottom: 0;">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">Project</th>
+                                    <th scope="col" class="govuk-table__header">Animal Days</th>
+                                    <th scope="col" class="govuk-table__header">Cost</th>
+                                    <th scope="col" class="govuk-table__header">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" id="asuUsageBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="sup_pagination_footer sup_border">
+                        <div class="sup_pagination_wrapper">
+                            <div class="sup_margin_left_right_10 sup_margin_top_bottom_5_10">
+                                <label for="asuRecordsPerPage" class="">Records per page</label>
+                                <select id="asuRecordsPerPage" class="govuk-select sup_select_pagination_width" aria-label="Select number of records per page">
+                                    <option value="5" >5</option>
+                                    <option value="10" selected>10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                </select>
+                            </div>
+                            <nav class="govuk-pagination sup_margin_left_right_10 sup_margin_top_bottom_5_10" aria-label="Pagination">
+                                <ul class="govuk-pagination__list" id="asuPagination"></ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="asu-summary-row">
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label class="govuk-label govuk-label--s govuk-!-margin-bottom-0" for="asuTotalDays">Total Animal Days</label>
+                            <input type="text" id="asuTotalDays" class="govuk-input text-AlignRight pva-input-95" value="0" readonly aria-label="Total animal days">
+                        </div>
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label class="govuk-label govuk-label--s govuk-!-margin-bottom-0" for="asuTotalCost">Total Cost</label>
+                            <input type="text" id="asuTotalCost" class="govuk-input text-AlignRight pva-input-160" value="£0.00" readonly aria-label="Total cost">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-grid-column-one-third">
+                    <div class="pva-summary-card asu-side-card">
+                        <div class="asu-side-actions">
+                            <a href="#" class="govuk-button asu-side-button" data-module="govuk-button" role="button">PREVIEW<br>All Large Animal Plans</a>
+                            <a href="#" class="govuk-button govuk-button--secondary asu-side-button" data-module="govuk-button" role="button">Email ASU Charge<br>Rates</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		 <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
+        <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
+            <span class="fps-sr-page-footer-text">© copyright Defra 2025</span>
+        </div>
+    </div>
+    </main>
+
+   
+
+    <div class="modal fade" id="asuUsageModal" tabindex="-1" aria-labelledby="asuUsageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="govuk-heading-s" style="margin: 0;" id="asuUsageModalLabel">Add Animal Type Usage</h3>
+                    <button type="button" class="btn-close" onclick="closeAsuUsageModal()" aria-label="Close">x</button>
+                </div>
+                <div class="modal-body" style="overflow: hidden; padding: 0;">
+                    <form class="govuk-grid-column-full" id="formAsuUsage">
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="modal-project">Project</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="modal-project" name="project" type="text" autocomplete="off" aria-required="true" required>
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="modal-animal-days">Animal Days</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="modal-animal-days" name="animal-days" type="text" autocomplete="off" aria-required="true" required>
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold" for="modal-cost">Cost</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="modal-cost" name="cost" type="text" autocomplete="off" aria-required="true" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer asu-modal-footer">
+                    <button type="button" class="govuk-button govuk-button--secondary sup_margin_0" data-module="govuk-button" onclick="closeAsuUsageModal()">Cancel</button>
+                    <button type="button" class="govuk-button sup_margin_0" data-module="govuk-button" id="asuUsageSaveBtn" onclick="saveAsuUsage()">Save</button>
+                    <button type="button" class="govuk-button sup_margin_0" data-module="govuk-button" id="asuUsageUpdateBtn" style="display: none;" onclick="saveAsuUsage()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/fps_nav_menu.js"></script>
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/fps_js/fps_asuview.js"></script>
+</body>
+
+</html>

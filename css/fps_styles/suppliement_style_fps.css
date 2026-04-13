@@ -38,8 +38,6 @@
     --primary-purple: #54319f;
     --shade-25: #16548a;
     --magenta-shade-25: #98285d;
-    --black-tint-80: #cecece;
-    --black-tint-95: #f3f3f3;
 
 }
 
@@ -52,16 +50,8 @@
     width: 100% !important;
 }
 
-.sup_select_option_width_50 {
-    width: 50% !important;
-}
-
 .sup_margin_0 {
     margin: 0 !important;
-}
-
-.sup_margin_5{
-    margin: 5px !important;
 }
 
 .sup_margin_top_10 {
@@ -85,10 +75,6 @@
     margin-top: 20px;
 }
 
-.sup_margin_top_25 {
-    margin-top: 25px;
-}
-
 .sup_margin_bottom_20 {
     margin-bottom: 20px;
 }
@@ -109,7 +95,7 @@
 
 
 .sup_justify_content {
-    justify-content: space-between !important;
+    justify-content: space-between;
 }
 
 .sup_border {
@@ -136,25 +122,6 @@
     border-bottom: 1px solid var(--govuk-border-colour);
 }
 
-.sup_border-top {
-    border-top: 1px solid var(--govuk-border-colour);
-}
-
-.sup_border-left {
-    border-left: 1px solid var(--govuk-border-colour) !important;
-    border-top: 0 !important;
-    border-right: 0 !important;
-    border-bottom: 0 !important;
-}
-
-.sup_border-right_0 {
-    border-right: 0 !important;
-}
-
-.sup_border-left_0{
-    border-left: 0 !important;
-}
-
 .sup_text_color {
     color: var(--govuk-text-colour);
 }
@@ -173,10 +140,6 @@
 }
 
 
-.sup_padding_right_left_10 {
-    padding: 0 10px 0 10px;
-}
-
 .sup_pagination_wrapper {
     display: flex;
     justify-content: space-between;
@@ -184,12 +147,10 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
-    border-top: 1px solid var(--govuk-border-colour);
+    /* border-top: 1px solid var(--govuk-border-colour); */
+	    margin-top: 3px;
 }
 
-.sup_padding_left_6{
-    padding-left: 6px;
-}
 
 .sup_business_area_wrapper {
     display: flex;
@@ -253,31 +214,16 @@
     padding: 8px;
 }
 
-.sup_p_5 {
-    padding: 5px;
-}
-
-.sup_flex_row {
-    display: flex;
-    flex-direction: row;
-}
-
-.sup_padding_bottom_10 {
-    padding-bottom: 10px;
-}
-
-.sup_padding_right_10 {
-    padding-right: 10px;
-}
-
-.sup_padding_right_8 {
-    padding-right: 8px;
-}
-
 .sup_flex_row_center_center {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+}
+.sup_flex_between_center {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
     align-items: center;
 }
 
@@ -293,12 +239,6 @@
     display: flex;
 }
 
-.sup_flex_end_center {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
 .sup_text_center {
     text-align: center;
 }
@@ -311,23 +251,9 @@
     margin: 5px 10px;
 }
 
-.sup_margin_tb_lr_0_20 {
-    margin: 0 20px;
-}
-
-.sup_padding_tb_15_lr_0 {
-    padding: 15px 0;
-}
-
-
 .sup_margin_left_right_0 {
     margin-left: 0;
     margin-right: 0;
-}
-
-.sup_mr_0_pr_0 {
-    margin-right: 0 !important;
-    padding-right: 0 !important;
 }
 
 .sup_width_100 {
@@ -395,17 +321,6 @@
     background-color: var(--magenta-shade-25) !important;
 }
 
-.sup_heading_padding {
-    padding: 10px 0 10px 10px;
-}
-
-.sup_file_location_wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    gap: 20px;
-}
-
 /* override the default gov.uk style for pagination */
 
 .govuk-pagination__item,
@@ -427,11 +342,6 @@
 .govuk-input__prefix {
     height: 2.2rem !important;
     /* width: 100% !important; */
-}
-
-.govuk-input--width-3 {
-    max-width: 3.75em !important;
-    min-width: 3.75em !important;
 }
 
 .govuk-checkboxes__input {
@@ -515,294 +425,11 @@
     background-color: var(--govuk-surface-background-colour, #f4f8fb);
 }
 
-.sup_flex_column {
-    display: flex;
-    flex-direction: column;
+.govuk-tabs__list a{ font-size:16px !important;}
+
+.modal-body  select.govuk-select 
+{
+	    min-width: 100%;
 }
 
-.sup_flex_center_center_center {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-}
-
-.sup_flex_row_center_gap_50 {
-    display: flex;
-    gap: 50px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.sup_p_0_mt_24 {
-    padding: 0;
-    margin-top: 24px;
-}
-
-.sup_float_right {
-    float: right;
-}
-
-.sup_heading-pad {
-    padding: 10px 0 0px 10px;
-}
-
-.sup_zero-pad {
-    padding: 0 !important;
-}
-
-.sup-pad-top-10px {
-    padding-top: 1em !important;
-}
-
-.sup-pad-left-10px {
-    padding-left: 1em !important;
-}
-
-.sup-pad-left-20px {
-    padding-left: 1em !important;
-}
-
-.sup-margin-left-20px {
-    margin-left: 2em !important;
-}
-
-.sup-pad-top-all-10px {
-    padding: 1em;
-    /* overflow: hidden; */
-}
-
-.sup-highlighted-forms-blue-bg {
-    border-radius: 8px;
-    border: 1px solid #1d70b8;
-    border-radius: 8px;
-    margin: 010px 0 0;
-    align-items: flex-end;
-    background: #bce0ff;
-    padding: 0 10px;
-    gap: 1px;
-    padding-bottom: 10px;
-}
-
-.sup_flex_center_space {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.sup_flex_end_space {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-
-.sup_flex_end {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-
-.sup_flex_start_space {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.sup_flex_space_center{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.sup_visually_hidden {
-    visibility: hidden;
-}
-
-.sup_hidden_label{ 
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0; 
-}
-
-.modal_position_transform_y_40 {
-    transform: translateY(40px) !important;
-}
-
-.sup_readonly {
-    background: var(--black-tint-80) !important;
-}
-
-.sup_flex_row_gap_3 {
-    gap: 3px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.sup_table_wrapper {
-    overflow-y: auto;
-    max-height: 423px;
-    height: 403px;
-    border: 0 !important;
-}
-
-.sup_min_height_900 {
-    min-height: 900px;
-}
-
-.sup_width_0 {
-    width: 0px !important;
-}
-
-.tableselectdropdown {
-    position: relative;
-    z-index: 930;
-}
-
-.tbl-dropdown-panel {
-    position: absolute;
-    top: 100%;
-    left: 0px;
-    right: 0;
-    border: 1px solid #aaa;
-    background: #fff;
-    z-index: 9999;
-    max-height: 220px;
-    overflow-y: auto;
-    display: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.multicolumn-dropdown-panel {
-    position: absolute;
-    top: 100%;
-    left: 0px;
-    right: 0;
-    border: 1px solid #aaa;
-    background: #fff;
-    z-index: 9999;
-    max-height: 300px;
-    overflow-y: auto;
-    display: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;
-}
-
-.multicolumn-dropdown-panel .search-box-wrapper {
-    position: sticky;
-    top: 0;
-    background: #fff;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--govuk-border-colour);
-}
-
-.multicolumn-dropdown-panel .search-box {
-    width: 100%;
-    padding: 8px;
-    border: none;
-    outline: none;
-    box-sizing: border-box;
-}
-
-.multicolumn-dropdown-panel .clear-search-btn {
-    padding: 4px 12px;
-    margin: 4px;
-    min-width: auto;
-    display: none;
-}
-
-.multicolumn-dropdown-panel table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-.multicolumn-dropdown-panel tbody tr {
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.multicolumn-dropdown-panel tbody tr:hover {
-    background-color: #f3f2f1;
-}
-
-.multicolumn-dropdown-panel tbody td {
-    padding: 8px;
-    border-bottom: 1px solid var(--govuk-border-colour);
-}
-
-.multicolumn-dropdown-panel thead th {
-    padding: 8px;
-    background-color: #f3f2f1;
-    border-bottom: 2px solid var(--govuk-border-colour);
-    font-weight: bold;
-    text-align: left;
-}
-
-.tbl-dropdown-panel table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-.tbl-dropdown-panel > table >tbody > tr >td {
-    border-bottom: 1px solid var(--govuk-border-colour);
-    padding: 5px;
-}
-
-table#tblMonthPeriod > tbody > tr >td {
-    padding: 6px 5px !important;
-    border-bottom: 1px solid var(--govuk-border-colour);
-    margin: 0;
-}
-
-.select-search-box {
-    width: 100%;
-    padding: 6px 8px;
-    border: none;
-    border-bottom: 1px solid var(--govuk-border-colour);
-    outline: none;
-    box-sizing: border-box;
-}
-
-.sup_label_width_10{
-    min-width: 10px;
-    max-width: 10px;
-}
-
-.sup_white_color{
-    color: #fff !important;
-}
-
-.sup_color_red{
-  color:red;
-}
-
-.sup_position_relative{
-  position: relative;
-}
-
-.sup_error_text_color {
-    color: var(--govuk-error-colour);
-}
-
-.sup_padding_16{
-    padding: 16px;
-}
-
-.sup_overflow_hidden {
-    overflow: hidden;
-}
+.govuk-button {font-size:16px;}

@@ -1,0 +1,284 @@
+/* ============================================================
+   costbookmaintainance.css
+   Page-specific styles for the Costbook Maintainance screen.
+   Add rules here only when they are absent from existing
+   shared stylesheets (styles.css, suppliement_style_costbook.css,
+   layout_style.css).
+   ============================================================ */
+
+/* SC 2.4.11 — Focus Not Obscured: prevent focused elements from
+   hiding behind the sticky header (approx. 60 px tall).        */
+:focus {
+    scroll-margin-top: 60px;
+}
+
+/* SC 2.5.8 — Minimum pointer target size (24 × 24 CSS px)
+   for inline icon buttons inside table cells.                  */
+.govuk-table__cell button {
+    min-width: 24px;
+    min-height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Equal-height columns: stretch grid columns to the tallest sibling */
+.govuk-grid-row:has(.maint-panel) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.govuk-grid-row:has(.maint-panel)>[class*="govuk-grid-column"] {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Bordered panel used in Inflation and Profit Margins tabs */
+.maint-panel {
+    border: 1px solid #b1b4b6;
+    padding: 10px 15px 15px;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.maint-panel .govuk-heading-s {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* Horizontal label + input row inside a maint-panel */
+.maint-field-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.maint-field-label {
+    min-width: 250px;
+    margin-bottom: 0;
+}
+
+/* Tab link overrides */
+.govuk-tabs__tab {
+    font-size: 14px;
+    width: fit-content;
+    text-decoration: none;
+
+}
+
+.govuk-tabs__list-item--selected,
+.govuk-tabs__list-item {
+    padding: 5px !important;
+}
+
+/* Inflation tab — apply 16px font-size to all content */
+#tab-inflation {
+    font-size: 16px;
+}
+
+/* All grid tables — 14px font size, font-weight unchanged */
+.govuk-table__header,
+.govuk-table__cell {
+    font-size: 14px;
+}
+
+.sup_pagination_wrapper {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* ── Layout ──────────────────────────────────────────────────── */
+
+/* Page h1 top-left padding */
+.maint-page-heading {
+    padding: 10px 0 0 2px;
+}
+
+/* Sidenav + main content flex wrapper */
+.maint-layout-flex {
+    display: flex;
+}
+
+/* 2/3-width wrapper for CSG7 and CAPS Staff grids */
+.maint-two-thirds {
+    width: 66.66%;
+}
+
+.main-content-cs {
+    padding: 20px 0 20px 16px !important;
+}
+
+/* ── Typography ──────────────────────────────────────────────── */
+
+/* Section intro paragraph (small bottom margin) */
+.maint-intro-text {
+    margin-bottom: 5px;
+}
+
+/* Panel sub-heading (zero bottom margin) */
+.maint-panel-subheading {
+    margin-bottom: 0;
+}
+
+/* Small hint / footnote text */
+.maint-hint-text {
+    font-size: 14px;
+}
+
+/* ── Form layout ─────────────────────────────────────────────── */
+
+/* Field row with extra top spacing (Other Figures first row) */
+.maint-field-row--top-spaced {
+    margin-top: 30px;
+}
+
+/* Button group aligned to the right with gap */
+.maint-btn-group-end {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+/* Button group right-aligned with vertical centering */
+.maint-btn-group-end-align {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* ── Grid / table ─────────────────────────────────────────────── */
+
+/* Grid header row: label left, Add button right */
+.maint-grid-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Add button bottom margin */
+.maint-add-btn {
+    margin-bottom: 5px;
+}
+
+/* Scrollable grid container */
+.maint-grid-scroll {
+    overflow-x: auto;
+    overflow-y: auto;
+    height: 260px;
+    max-height: 260px;
+}
+
+/* Bordered variant (CSG7, CAPS Staff) */
+.maint-grid-scroll--bordered {
+    border: 1px solid #b1b4b6;
+}
+
+/* Remove default bottom margin from grid tables */
+.maint-grid-table {
+    margin-bottom: 0;
+}
+
+/* Footnote paragraph below a grid */
+.maint-grid-footnote {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* ── Modals ───────────────────────────────────────────────────── */
+
+/* Modal title — remove default heading margin */
+.maint-modal-title {
+    margin: 0;
+}
+
+/* Modal body — clip overflow, remove default padding */
+.maint-modal-body {
+    overflow: hidden;
+    padding: 0;
+}
+
+/* Modal footer — flex row, Cancel left / Save right */
+.maint-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* Top margin before the first form group in all modals */
+.maint-modal-body form .govuk-form-group:first-child {
+    margin-top: 15px;
+}
+
+/* ── Validation ──────────────────────────────────────────────── */
+
+/* Mandatory fields note — top-right of modal form */
+.maint-mandatory-note {
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    color: #d4351c;
+}
+
+/* Red asterisk on mandatory labels and the mandatory note */
+.maint-mandatory-asterisk {
+    color: #d4351c;
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+/* DB / server error spacing */
+.maint-db-error {
+    margin: 12px 0 8px;
+}
+
+/* Error message font size */
+.govuk-error-message {
+    font-size: 14px;
+}
+
+/* Remove the GOV.UK left red border on error form groups */
+.govuk-form-group--error {
+    border-left: none;
+    padding-left: 0;
+}
+
+/* Inline field rows (Inflation, Profit Margins) — indent error to align with input */
+.maint-inline-form-group .govuk-error-message {
+    margin-left: 250px;
+}
+
+.govuk-button-group .govuk-button {
+    margin-bottom: 5px !important;
+}
+
+/* ── Sortable column headers ──────────────────────────────────── */
+#tblAccCat th[data-sort-key],
+#tblCsg7 th[data-sort-key],
+#tblCapsStaff th[data-sort-key] {
+    cursor: pointer;
+    user-select: none;
+}
+
+#tblAccCat th[data-sort-key]:hover,
+#tblCsg7 th[data-sort-key]:hover,
+#tblCapsStaff th[data-sort-key]:hover {
+    background-color: #f0d94e;
+}
+
+/* Sort indicator — shows ▲ / ▼ after click, blank otherwise */
+.maint-sort-indicator {
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+.govuk-button-group .govuk-button,
+.govuk-button-group .govuk-link {
+    margin-right: auto !important;
+}

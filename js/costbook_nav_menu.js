@@ -14,7 +14,7 @@ const htmlmenu = `
 				  
                   
 					 <li class="nav-item">
-                        <a class="nav-link" href="#">Maintainance </a>
+                        <a class="nav-link" href="costbookmaintainance.html">Maintainance </a>
                     </li>
 
                    
@@ -26,59 +26,73 @@ const htmlmenu = `
 `;
 
 function btn() {
-    const userBtn = document.getElementById('userdropdownbtn');
-    if (!userBtn) {
-        return;
-    }
+  const userBtn = document.getElementById("userdropdownbtn");
+  if (!userBtn) {
+    return;
+  }
 
-    userBtn.addEventListener('click', function (event) {
-        event.stopPropagation();
-        const menu = document.querySelector('.userdropdown');
-        if (menu) {
-            menu.classList.toggle('show');
-        }
-    });
+  userBtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+    const menu = document.querySelector(".userdropdown");
+    if (menu) {
+      menu.classList.toggle("show");
+    }
+  });
 }
 
 function initMenu() {
-    const dropdownToggles = document.querySelectorAll('#header .dropdown-toggle');
+  const dropdownToggles = document.querySelectorAll("#header .dropdown-toggle");
 
-    dropdownToggles.forEach(function (toggle) {
-        toggle.addEventListener('click', function (event) {
-            event.preventDefault();
-            event.stopPropagation();
+  dropdownToggles.forEach(function (toggle) {
+    toggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
 
-            const parentDropdown = this.closest('.dropdown');
-            const dropdownMenu = parentDropdown ? parentDropdown.querySelector(':scope > .dropdown-menu') : null;
+      const parentDropdown = this.closest(".dropdown");
+      const dropdownMenu = parentDropdown
+        ? parentDropdown.querySelector(":scope > .dropdown-menu")
+        : null;
 
-            if (!parentDropdown || !dropdownMenu) {
-                return;
-            }
+      if (!parentDropdown || !dropdownMenu) {
+        return;
+      }
 
-            document.querySelectorAll('#header .dropdown-menu').forEach(function (menu) {
-                if (menu !== dropdownMenu && !menu.contains(dropdownMenu)) {
-                    menu.classList.remove('show');
-                }
-            });
-
-            document.querySelectorAll('#header .dropdown').forEach(function (dropdown) {
-                if (dropdown !== parentDropdown && !dropdown.contains(parentDropdown)) {
-                    dropdown.classList.remove('active');
-                }
-            });
-
-            dropdownMenu.classList.toggle('show');
-            parentDropdown.classList.toggle('active');
-            this.setAttribute('aria-expanded', dropdownMenu.classList.contains('show') ? 'true' : 'false');
+      document
+        .querySelectorAll("#header .dropdown-menu")
+        .forEach(function (menu) {
+          if (menu !== dropdownMenu && !menu.contains(dropdownMenu)) {
+            menu.classList.remove("show");
+          }
         });
+
+      document
+        .querySelectorAll("#header .dropdown")
+        .forEach(function (dropdown) {
+          if (
+            dropdown !== parentDropdown &&
+            !dropdown.contains(parentDropdown)
+          ) {
+            dropdown.classList.remove("active");
+          }
+        });
+
+      dropdownMenu.classList.toggle("show");
+      parentDropdown.classList.toggle("active");
+      this.setAttribute(
+        "aria-expanded",
+        dropdownMenu.classList.contains("show") ? "true" : "false",
+      );
     });
+  });
 
-    document.addEventListener('click', function () {
-        document.querySelectorAll('#header .dropdown-menu').forEach(function (menu) {
-            menu.classList.remove('show');
-        });
-        document.querySelectorAll('#header .dropdown').forEach(function (dropdown) {
-            dropdown.classList.remove('active');
-        });
+  document.addEventListener("click", function () {
+    document
+      .querySelectorAll("#header .dropdown-menu")
+      .forEach(function (menu) {
+        menu.classList.remove("show");
+      });
+    document.querySelectorAll("#header .dropdown").forEach(function (dropdown) {
+      dropdown.classList.remove("active");
     });
+  });
 }

@@ -423,3 +423,7 @@
 .sup_surface_bg {
     background-color: var(--govuk-surface-background-colour, #f4f8fb);
 }
+
+.sup_overflow_hidden {
+    overflow: hidden;
+}

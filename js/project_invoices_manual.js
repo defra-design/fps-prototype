@@ -416,46 +416,66 @@ function renderPagination() {
     if (totalPages <= 1) return;
     
     // Previous button
-    if (currentPage > 1) {
-        const prevLi = document.createElement('li');
-        prevLi.className = 'govuk-pagination__item';
-        prevLi.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#" rel="prev">‹ Previous</a>`;
-        prevLi.querySelector('a').addEventListener('click', (e) => {
-            e.preventDefault();
+    const prevItem = document.createElement('li');
+    prevItem.className = 'govuk-pagination__item govuk-pagination__item--prev';
+    prevItem.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+        <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+        </svg>
+        Previous
+    </a>`;
+    prevItem.querySelector('a').addEventListener('click', function(e) {
+        e.preventDefault();
+        if (currentPage > 1) {
             currentPage--;
             renderInvoiceTable();
-        });
-        pagination.appendChild(prevLi);
+        }
+    });
+    pagination.appendChild(prevItem);
+    
+    // Page numbers with smart range display
+    const maxPagesToShow = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
+    let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+    
+    if (endPage - startPage < maxPagesToShow - 1) {
+        startPage = Math.max(1, endPage - maxPagesToShow + 1);
     }
     
-    // Page buttons
-    for (let i = 1; i <= totalPages; i++) {
-        const li = document.createElement('li');
-        li.className = `govuk-pagination__item${i === currentPage ? ' govuk-pagination__item--current' : ''}`;
-        li.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#">${i}</a>`;
-        
-        if (i !== currentPage) {
-            li.querySelector('a').addEventListener('click', (e) => {
+    for (let i = startPage; i <= endPage; i++) {
+        const pageItem = document.createElement('li');
+        if (i === currentPage) {
+            pageItem.className = 'govuk-pagination__item govuk-pagination__item--current';
+            pageItem.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#" aria-label="Page ${i}" aria-current="page">${i}</a>`;
+        } else {
+            pageItem.className = 'govuk-pagination__item';
+            pageItem.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#" aria-label="Page ${i}">${i}</a>`;
+            pageItem.querySelector('a').addEventListener('click', function(e) {
                 e.preventDefault();
                 currentPage = i;
                 renderInvoiceTable();
             });
         }
-        pagination.appendChild(li);
+        pagination.appendChild(pageItem);
     }
     
     // Next button
-    if (currentPage < totalPages) {
-        const nextLi = document.createElement('li');
-        nextLi.className = 'govuk-pagination__item';
-        nextLi.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#" rel="next">Next ›</a>`;
-        nextLi.querySelector('a').addEventListener('click', (e) => {
-            e.preventDefault();
+    const nextItem = document.createElement('li');
+    nextItem.className = 'govuk-pagination__item govuk-pagination__item--next';
+    nextItem.innerHTML = `<a class="govuk-link govuk-pagination__link" href="#" rel="next">
+        Next
+        <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+        </svg>
+    </a>`;
+    nextItem.querySelector('a').addEventListener('click', function(e) {
+        e.preventDefault();
+        if (currentPage < totalPages) {
             currentPage++;
             renderInvoiceTable();
-        });
-        pagination.appendChild(nextLi);
-    }
+        }
+    });
+    pagination.appendChild(nextItem);
 }
 
 /**
@@ -593,9 +613,8 @@ function saveInvoice() {
    const invCntr = 1000 + (invoicesData.length + 1); // Simple counter for invoice number, can be improved
     
     // Validation
-    if (!project || !month || isNaN(amount) || isNaN(costOfWork) || isNaN(wip) || 
-        isNaN(profitLoss) || !details) {
-        alert('Please fill in all required fields with valid data');
+    if (!project) {
+        alert('Project field should not be empty');
         return;
     }
     
@@ -603,10 +622,10 @@ function saveInvoice() {
         id: editingIndex !== null ? invoicesData[editingIndex].id : (invoicesData.length > 0 ? Math.max(...invoicesData.map(inv => inv.id || 0)) + 1 : 1),
         project: project,
         month: month,
-        amount: amount,
-        costOfWork: costOfWork,
-        wip: wip,
-        profitLoss: profitLoss,
+        amount: amount || 0,
+        costOfWork: costOfWork || 0,
+        wip: wip || 0,
+        profitLoss: profitLoss || 0,
         details: details,
         invCntr: document.getElementById('txtmodal-invcntr').value.trim() || invCntr 
     };

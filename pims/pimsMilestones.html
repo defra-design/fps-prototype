@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milestones/Deliverables - PIMS</title>
+    <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet" />
+    <link href="../css/pims_style/nav_menu/navstyle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
+    <link rel="stylesheet" href="../css/pims_style/style.css" />
+    <link rel="stylesheet" href="../css/pims_style/pims-milestones.css" />
+    <script src="../js/pims_js/nav_menu/menutemplate.js"></script>
+    <script src="../js/pims_js/pims-milestones.js"></script>
+    <script src="../js/pims_js/milestone_financial_grid.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
+                </div>
+
+                <div class="pims-log">
+                    <span>PIMS</span>
+                </div>
+
+                <div class="pims-log" style="width: 160px; font-size: 16px">
+                    <select id="dpSelectyear" aria-label="Select year dropdown" class="pims-log"
+                        style="border: 0; border-radius: 0; margin-left: 0px; width: 150px; outline: 0;">
+                        <option>2017-2018</option>
+                        <option>2018-2019</option>
+                        <option>2019-2020</option>
+                        <option>2020-2021</option>
+                        <option>2021-2022</option>
+                        <option>2022-2023</option>
+                        <option>2023-2024</option>
+                        <option>2024-2025</option>
+                        <option selected>2025-2026</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="header"></div>
+    <script src="../js/pims_js/nav_menu/script.js"></script>
+    <script>
+        document.getElementById("header").innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+
+    <div class="govuk-grid-row sup_border-bottom" style="padding: 0">
+        <h5 class="govuk-heading-s sup_margin_0" style="padding: 10px 0 5px 24px; border-bottom: 2px solid #1d70b8">
+            Milestones/Deliverables</h5>
+    </div>
+
+    <div class="d-flex">
+        <nav class="sidenav flex-column flex-shrink-0" id="shortnav">
+            <button class="toggle-btn" onclick="toggleSidebar()" style="right: -8px; top: 30px">
+                <img src="../images/chevron-left-solid-full.svg" width="20" alt="side menu left arrow"
+                    style="margin: -2px 5px 0 0px" />
+            </button>
+            <ul>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="selectedprojectdetails.html" style="color: #fff">Project Details</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="#" style="color: #fff">Yearly Financial Details</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="#" style="color: #fff">A&F Report Data</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="pimsMilestones.html" style="color: #fff">Milestones</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="yearlyfinance.html" style="color: #fff">Yearly Finances</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="#" style="color: #fff">Invoices</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="#" style="color: #fff">Comments</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="#" style="color: #fff">Project Review</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="#" style="color: #fff">PMD Milestone</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content" style="padding-top: 0; overflow: hidden;">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <div class="milestones-toolbar">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <label class="govuk-label font-size-16" for="projectSelectGrid">Project</label>
+                            <select class=" govuk-select font-size-16" id="projectSelectGrid"
+                                style="margin-right: 15px;">
+                                <option>ABSE4406</option>
+                                <option>ABSE4407</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button id="importBtnGrid" class="govuk-button font-size-16"
+                                style="margin-bottom: 5px; margin-right: 15px;">Import</button>
+                        </div>
+                        <div>
+                            <button id="logBtnGrid" class="govuk-button govuk-button--secondary font-size-16"
+                                style="margin-bottom: 5px;">Log of
+                                Updates</button>
+                        </div>
+                        <div style="margin-left: auto;">
+                            <button id="addMilestoneBtn" class="govuk-button font-size-16" style="margin-bottom: 5px;"
+                                onclick="openAddModal()">
+                                + &nbsp; Add Milestone
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="pims-grid-panel">
+                        <table class="custom-table govuk-table pims-grid-table" id="milestonesTable">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-table__header sortable-header" data-column="0"
+                                        style="cursor:pointer;white-space:nowrap;">Number <span
+                                            class="sort-icon"></span></th>
+                                    <th class="govuk-table__header sortable-header" data-column="1"
+                                        style="cursor:pointer;white-space:nowrap;">Type <span class="sort-icon"></span>
+                                    </th>
+                                    <th class="govuk-table__header sortable-header" data-column="2"
+                                        style="cursor:pointer;white-space:nowrap;">Description <span
+                                            class="sort-icon"></span></th>
+                                    <th class="govuk-table__header sortable-header" data-column="3"
+                                        style="cursor:pointer;white-space:nowrap;">P Leader's Comment <span
+                                            class="sort-icon"></span></th>
+                                    <th class="govuk-table__header sortable-header" data-column="4"
+                                        style="cursor:pointer;white-space:nowrap;">CAP's Comment <span
+                                            class="sort-icon"></span></th>
+                                    <th class="govuk-table__header sortable-header" data-column="5"
+                                        style="cursor:pointer;white-space:nowrap;">Due <span class="sort-icon"></span>
+                                    </th>
+                                    <th class="govuk-table__header sortable-header" data-column="6"
+                                        style="cursor:pointer;white-space:nowrap;">Completed/Delivered <span
+                                            class="sort-icon"></span></th>
+                                    <th class="govuk-table__header sortable-header" data-column="7"
+                                        style="cursor:pointer;white-space:nowrap;">Under Review? <span
+                                            class="sort-icon"></span></th>
+                                    <th class="govuk-table__header sortable-header" data-column="8"
+                                        style="cursor:pointer;white-space:nowrap;">On Target <span
+                                            class="sort-icon"></span></th>
+                                    <th colspan="2" class="govuk-table__header">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" id="tableBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="sup_pagination_footer sup_border">
+                        <div class="sup_pagination_wrapper">
+                            <div class="sup_margin_top_bottom_5_10">
+                                <label class="pagination-label" for="recordsPerPage">Records per page</label>
+                                <select id="recordsPerPage" class="govuk-select sup_select_pagination_width">
+                                    <option value="5" selected="">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+                            <nav class="govuk-!-margin-bottom-0 govuk-pagination" aria-label="Pagination">
+                                <ul class="govuk-pagination__list" id="pagination">
+                                    <li class="govuk-pagination__item disabled aria-disabled=&quot;true&quot;">
+                                        <a class="govuk-link govuk-pagination__link" onclick="goToPage(0)">
+                                            <svg class="govuk-pagination__icon govuk-pagination__icon--prev"
+                                                xmlns="http://www.w3.org/2000/svg" height="13" width="15"
+                                                aria-hidden="true" focusable="false" viewBox="0 0 15 13"></svg>
+                                            <span class="govuk-pagination__link-title">
+                                                Previous<span class="govuk-visually-hidden"> page</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="govuk-pagination__item govuk-pagination__item--current aria-disabled=&quot;true&quot;">
+                                        <a class="govuk-link govuk-pagination__link" onclick="goToPage(1)">1</a>
+                                    </li>
+                                    <li class="govuk-pagination__item aria-disabled=&quot;true&quot;">
+                                        <a class="govuk-link govuk-pagination__link" onclick="goToPage(2)">2</a>
+                                    </li>
+                                    <li class="govuk-pagination__next aria-disabled=&quot;true&quot;">
+                                        <a class="govuk-link govuk-pagination__link" onclick="goToPage(2)" rel="next">
+                                            <span class="govuk-pagination__link-title">Next</span><svg
+                                                class="govuk-pagination__icon govuk-pagination__icon--next"
+                                                xmlns="http://www.w3.org/2000/svg" height="13" width="15"
+                                                aria-hidden="true" focusable="false" viewBox="0 0 15 13"></svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <p id="noData" class="govuk-body govuk-!-font-weight-bold" hidden>No records found.</p>
+                    </div>
+                </div>
+
+                <!-- financial grid -->
+                <div class="govuk-grid-row sup_margin_left_right_0" style="margin-top: 20px;">
+                    <div class="govuk-grid-column-full govuk-!-padding-4">
+                        <div class="milestone-container">
+                            <!-- Checkbox Section + Add button -->
+                            <div class="checkbox-section"
+                                style="display: flex; align-items: center; gap: 20px; flex-wrap: nowrap; justify-content: space-between;">
+                                <span class="govuk-label tab-font-bold-size"
+                                    style="margin: 0; white-space: nowrap;">Show Milestone/Deliverable Update
+                                    Received</span>
+                                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes"
+                                    style="margin: 0; display: flex; align-items: center; white-space: nowrap;">
+                                    <div class="govuk-checkboxes__item"
+                                        style="margin: 0; display: flex; align-items: center; white-space: nowrap;">
+                                        <input
+                                            class="govuk-checkboxes__input govuk-checkboxes__input--small govuk-!-font-size-16"
+                                            id="chkMilestoneDeliverable" name="chkMilestoneDeliverable" type="checkbox"
+                                            value="milestone" style="margin: 0; flex-shrink: 0;">
+                                        <label class="govuk-label govuk-checkboxes__label" for="chkMilestoneDeliverable"
+                                            style="margin: 0; font-size: 14px; font-weight: normal; white-space: nowrap;">
+                                            Form Required
+                                        </label>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 8px;">
+                                    <button type="button" class="govuk-button sup_margin_0 govuk-!-font-size-16"
+                                        style="padding: 6px 12px;;" id="btnAddFinancialRow"
+                                        onclick="openFinancialModal('add')" aria-label="Add new financial year row">
+                                        + &nbsp; Add Financial Year
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Data Grid -->
+                            <div class="pims-grid-panel" style="overflow: auto;">
+                                <table class="custom-table govuk-table pims-grid-table" id="tblMilestoneGrid">
+                                    <thead class="custom-table govuk-table__head thead-light">
+                                        <tr class="govuk-table__row">
+                                            <th class="govuk-table__header" data-column="0">Financial Year <span
+                                                    class="sort-icon"></span></th>
+                                            <th class="govuk-table__header" data-column="1">Jun <span
+                                                    class="sort-icon"></span></th>
+                                            <th class="govuk-table__header" data-column="2">Sep <span
+                                                    class="sort-icon"></span></th>
+                                            <th class="govuk-table__header" data-column="3">Dec <span
+                                                    class="sort-icon"></span></th>
+                                            <th class="govuk-table__header" data-column="4">Jan <span
+                                                    class="sort-icon"></span></th>
+                                            <th class="govuk-table__header" data-column="5">Feb <span
+                                                    class="sort-icon"></span></th>
+                                            <th class="govuk-table__header" data-column="6">Mar <span
+                                                    class="sort-icon"></span></th>
+                                            <th class="govuk-table__header" style="white-space:nowrap;">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="govuk-table__body" id="tableMilestoneBody">
+                                        <!-- Data will be populated by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Pagination Section -->
+                            <div class="sup_pagination_footer sup_border">
+                                <div class="sup_pagination_wrapper">
+                                    <div class="sup_margin_top_bottom_5_10">
+                                        <label class="pagination-label" for="recordsPerPageMilestone">Records
+                                            per
+                                            page:</label>
+                                        <select id="recordsPerPageMilestone"
+                                            class="govuk-select sup_select_pagination_width"
+                                            aria-label="Select number of records per page">
+                                            <option value="5" selected>5</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="25">25</option>
+                                            <option value="30">30</option>
+                                        </select>
+                                    </div>
+                                    <nav class="govuk-!-margin-bottom-0 govuk-pagination" aria-label="Pagination">
+                                        <ul class="govuk-pagination__list" id="paginationMilestone">
+                                            <!-- Pagination items will be generated by JavaScript -->
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+        <div class="govuk-width-container sup_p_8 text-center">
+            <span> &copy; Copyright Defra 2025 </span>
+        </div>
+    </div>
+
+
+    <!-- Financial Grid Add/Edit Modal -->
+    <div id="financialModal" class="govuk-edit-modal" style="display:none;">
+        <div class="govuk-edit-modal-dialog" style="max-width:580px;">
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-edit-modal__title" id="financialModalTitle">Add Financial Year Record</h2>
+                <button type="button" onclick="closeFinancialModal()" aria-label="Close financial modal"
+                    class="govuk-edit-modal__close-btn">&#x2715;</button>
+            </div>
+            <div class="govuk-edit-modal__body">
+                <form id="financialForm" novalidate>
+
+                    <!-- Financial Year – full width -->
+                    <div class="govuk-form-group" id="fgFinYear">
+                        <label class="govuk-label font-size-16" for="finYear">
+                            Financial Year <span class="required-asterisk">*</span>
+                        </label>
+                        <input class="govuk-input" id="finYear" name="finYear" type="text" placeholder="e.g. 2026"
+                            maxlength="9" aria-required="true" style="width:100%;" />
+                        <p class="govuk-error-message" id="finYearError" hidden>
+                            <span class="govuk-visually-hidden">Error:</span>
+                            <span id="finYearErrorMsg"></span>
+                        </p>
+                    </div>
+
+                    <!-- Month dates – 2 columns x 3 rows -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px;">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label font-size-16" for="finJun">Jun</label>
+                            <input class="govuk-input govuk-input--width-20" id="finJun" name="finJun" type="date" />
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label font-size-16" for="finSep">Sep</label>
+                            <input class="govuk-input govuk-input--width-20" id="finSep" name="finSep" type="date" />
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label font-size-16" for="finDec">Dec</label>
+                            <input class="govuk-input govuk-input--width-20" id="finDec" name="finDec" type="date" />
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label font-size-16" for="finJan">Jan</label>
+                            <input class="govuk-input govuk-input--width-20" id="finJan" name="finJan" type="date" />
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label font-size-16" for="finFeb">Feb</label>
+                            <input class="govuk-input govuk-input--width-20" id="finFeb" name="finFeb" type="date" />
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label font-size-16" for="finMar">Mar</label>
+                            <input class="govuk-input govuk-input--width-20" id="finMar" name="finMar" type="date" />
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="govuk-edit-modal__footer">
+                <button type="button" class="govuk-button govuk-button--secondary font-size-16"
+                    onclick="closeFinancialModal()" aria-label="Cancel">Cancel</button>
+                <button type="button" class="govuk-button font-size-16" id="financialSaveBtn"
+                    onclick="saveFinancialRow()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Financial Grid Delete Confirm Modal -->
+    <div id="financialDeleteModal" class="govuk-edit-modal" style="display:none;">
+        <div class="govuk-edit-modal-dialog" style="max-width:420px;">
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-edit-modal__title">Confirm Delete</h2>
+                <button type="button" onclick="closeFinancialDeleteModal()" aria-label="Close delete modal"
+                    class="govuk-edit-modal__close-btn">&#x2715;</button>
+            </div>
+            <div class="govuk-edit-modal__body">
+                <p class="govuk-body">Are you sure you want to delete the record for financial year <strong
+                        id="deleteFinYearLabel"></strong>? This action cannot be undone.</p>
+            </div>
+            <div class="govuk-edit-modal__footer">
+                <button type="button" class="govuk-button govuk-button--secondary font-size-16"
+                    onclick="closeFinancialDeleteModal()">Cancel</button>
+                <button type="button" class="govuk-button govuk-button--warning font-size-16" id="confirmDeleteBtn"
+                    onclick="confirmDeleteFinancialRow()">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="editModal" class="govuk-edit-modal">
+        <div class="govuk-edit-modal-dialog">
+            <!-- Modal Header -->
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-edit-modal__title">Edit Milestone/Deliverable - Type: <span
+                        id="modalTypeDisplay"></span></h2>
+                <button type="button" onclick="closeEditModal()" aria-label="Close" class="govuk-edit-modal__close-btn">
+                    ✕
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="govuk-edit-modal__body">
+
+                <form id="editForm" class="govuk-form" novalidate>
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                            <div class="govuk-form-group" id="numberGroup">
+                                <label class="govuk-label font-size-16" for="modalNumber">Number <span
+                                        class="required-asterisk">*</span></label>
+                                <input class="govuk-input" id="modalNumber" name="number" type="text"
+                                    pattern="\d{2}/\d{2}" maxlength="5" required aria-describedby="numberError">
+                                <p class="govuk-error-message" id="numberError" hidden>
+                                    <span class="govuk-visually-hidden">Error:</span>
+                                    <span id="numberErrorMsg"></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="govuk-grid-column-one-half">
+                            <div class="govuk-form-group" id="typeGroup">
+                                <label class="govuk-label font-size-16" for="modalType">Type <span
+                                        class="required-asterisk">*</span></label>
+                                <select class="govuk-select" id="modalType" name="type" style="width: stretch;"
+                                    aria-describedby="typeError">
+                                    <option value="">Select type</option>
+                                    <option value="Milestone">Milestone</option>
+                                    <option value="Deliverable">Deliverable</option>
+                                </select>
+                                <p class="govuk-error-message" id="typeError" hidden>
+                                    <span class="govuk-visually-hidden">Error:</span>
+                                    <span id="typeErrorMsg"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="govuk-form-group" id="descriptionGroup">
+                        <label class="govuk-label font-size-16" for="modalDescription">Description <span
+                                class="required-asterisk">*</span></label>
+                        <textarea class="govuk-textarea" id="modalDescription" name="description" rows="3" required
+                            aria-describedby="descriptionError" style="margin-bottom: auto;"></textarea>
+                        <p class="govuk-error-message" id="descriptionError" hidden>
+                            <span class="govuk-visually-hidden">Error:</span>
+                            <span id="descriptionErrorMsg"></span>
+                        </p>
+                    </div>
+
+                    <div class="govuk-form-group" id="pLeaderGroup">
+                        <label class="govuk-label font-size-16" for="modalPLeader">P Leader's Comment</label>
+                        <textarea class="govuk-textarea" id="modalPLeader" name="pLeader" rows="3"
+                            aria-describedby="pLeaderError" style="margin-bottom: auto;"></textarea>
+                        <p class="govuk-error-message" id="pLeaderError" hidden>
+                            <span class="govuk-visually-hidden">Error:</span>
+                            <span id="pLeaderErrorMsg"></span>
+                        </p>
+                    </div>
+
+                    <div class="govuk-form-group" id="capGroup">
+                        <label class="govuk-label font-size-16" for="modalCap">CAP's Comment</label>
+                        <textarea class="govuk-textarea" id="modalCap" name="cap" rows="3" aria-describedby="capError"
+                            style="margin-bottom: auto;"></textarea>
+                        <p class="govuk-error-message" id="capError" hidden>
+                            <span class="govuk-visually-hidden">Error:</span>
+                            <span id="capErrorMsg"></span>
+                        </p>
+                    </div>
+
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                            <div class="govuk-form-group" id="dueGroup">
+                                <label class="govuk-label font-size-16" for="modalDue">Due <span
+                                        class="required-asterisk">*</span></label>
+                                <input class="govuk-input" id="modalDue" name="due" type="date" required
+                                    aria-describedby="dueError" style="width: stretch;">
+                                <p class="govuk-error-message" id="dueError" hidden>
+                                    <span class="govuk-visually-hidden">Error:</span>
+                                    <span id="dueErrorMsg"></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="govuk-grid-column-one-half">
+                            <div class="govuk-form-group" id="completedGroup">
+                                <label class="govuk-label font-size-16" for="modalCompleted">Completed/Delivered <span
+                                        class="required-asterisk">*</span></label>
+                                <input class="govuk-input" id="modalCompleted" name="completed" type="date"
+                                    aria-describedby="completedError" style="width: stretch;">
+                                <p class="govuk-error-message" id="completedError" hidden>
+                                    <!-- <span class="govuk-visually-hidden">Error:</span> -->
+                                    <span id="completedErrorMsg"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                            <div class="govuk-checkboxes govuk-checkboxes--small">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="modalReview" name="review"
+                                        type="checkbox" value="Yes">
+                                    <label class="govuk-checkboxes__label font-size-16" for="modalReview"
+                                        style="font-weight: normal;">
+                                        Under Review
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="govuk-grid-column-one-half">
+                            <div class="govuk-checkboxes govuk-checkboxes--small">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="modalTarget" name="target"
+                                        type="checkbox" value="Yes">
+                                    <label class="govuk-checkboxes__label font-size-16" for="modalTarget"
+                                        style="font-weight: normal;">
+                                        On Target
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="govuk-edit-modal__footer">
+                <button type="button" class="govuk-button govuk-button--secondary font-size-16"
+                    onclick="closeEditModal()" aria-label="Cancel editing">
+                    Cancel
+                </button>
+                <button type="button" class="govuk-button font-size-16" id="saveBtn" onclick="saveMilestone()">
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

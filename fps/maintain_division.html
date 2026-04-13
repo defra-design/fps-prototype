@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>2025-2026 : staff Maintenance</title>
+    <title>2025-2026 : Division Maintenance</title>
    <!-- Bootstrap CSS -->
            <link rel="stylesheet" href="../css/bootstrap.min.css">
     	 <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css">
@@ -99,7 +99,7 @@
                                     <a class="govuk-breadcrumbs__link" href="maintain_division.html"> Maintenance Menu </a>
                                 </li>
                                 <li class="govuk-breadcrumbs__list-item">
-                                     Maintain Staff
+                                     Maintain Divisions
                                 </li>
                                
                             </ol>
@@ -115,7 +115,7 @@
             </div>
         </div>
 		<div class="govuk-grid-column-full">
-                    <h1 class="govuk-grid-row govuk-heading-s sup_border-bottom govuk-!-margin-top-2 govuk-!-padding-bottom-2 govuk-!-padding-left-4 ">Staff Maintenance
+                    <h1 class="govuk-grid-row govuk-heading-s sup_border-bottom govuk-!-margin-top-2 govuk-!-padding-bottom-2 govuk-!-padding-left-4 ">Division Maintenance
 					<!-- <a href="planproject_individually.html" class="govuk-back-link sup_align_right govuk-!-margin-bottom-0 ">Back</a> -->
 					</h1>
                 </div>
@@ -216,54 +216,20 @@
 		 
          
          
-  <div class="govuk-grid-column-full mt-2">
+  
+   <div class="govuk-grid-column-full ">
 		   
 		   
 		   
 		   <div class="" style=" border-radius: 5px;     justify-content: flex-start;   margin-bottom: 10px;  padding: 4px;">
 		    <div class="row">
-			<div class="col-lg-8 align-items-center">		
+			<div class="col-lg-7 d-flex align-items-center">		
 			
-			
-			<div class="row">
-                                        <div class="col-lg-2">
-										<div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                                <div class="govuk-radios__item">
-                <input class="govuk-radios__input govuk-radios--small" id="staff-filter-all" name="staffFilter" type="radio" value="all" checked="">
-                <label class="govuk-label govuk-radios__label" for="staff-filter-all">
-          All
-        </label> 
-      </div></div>
-            </div>
-
-<div class="col-lg-5">
-<div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
- <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="staff-filter-temp" name="staffFilter" type="radio" value="temp-sp-only">
-                <label class="govuk-label govuk-radios__label" for="staff-filter-temp">
-          Temp Sp No.s only
-        </label>
-      </div>
-</div>
-</div>
-
-<div class="col-lg-5 ">
-<div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-  <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="staff-filter-grades" name="staffFilter" type="radio" value="generic-grades-only">
-                <label class="govuk-label govuk-radios__label" for="staff-filter-grades">
-         Generic Grades Only
-        </label>
-      </div>
-</div>
-</div>
-
-                                </div>
             <!-- <input type="text" value="BAC2PORT1" class="projectplan-code govuk-input" style=" width: 170px;   padding: 4px;"> -->
 			
 			</div>
-			<div class="col-lg-4 " style=" text-align: right;">
-        <button class="govuk-button sup_margin_0" id="addStaffPlanBtn" aria-label="Add staff plan"><img alt="" aria-hidden="true" src="../images/circle-plus-solid-full-white.svg" width="16px">&nbsp;Add </button>
+                <div class="col-lg-5 d-flex   justify-content-end">
+        <button class="govuk-button sup_margin_0" id="addStaffPlanBtn" aria-label="Add division"><img alt="" aria-hidden="true" src="../images/circle-plus-solid-full-white.svg" width="16px">&nbsp;Add </button>
 			</div>
 			</div>
 		   </div>
@@ -278,159 +244,173 @@
 	<div class="col-lg-12 p-0">
     <div class="jobcodediv height-300 max-height300" style="overflow-x: auto;max-height: 397px!important;height: 397px; border-top: 1px solid #1d70b8 !important;  ">
                                                   <table id="empTable" class="govuk-table custom-table" style="margin-bottom: 0px;">
-                                              <caption class="govuk-visually-hidden">Staff maintenance records</caption>
+                                              <caption class="govuk-visually-hidden">Division maintenance records</caption>
                                             <thead class="table-light govuk-table__head">
-                                               <tr class="govuk-table__row">
-                                                                        <th class="govuk-table__header">SP Number</th>
-																		<th class="govuk-table__header">Last Name</th>
-																		<th class="govuk-table__header">First Name</th>
-																		<th class="govuk-table__header">Title</th>																		
-																	   <th class="govuk-table__header">Actions</th>
+                                               <tr class="govuk-table__row">                                                                     
                                                                      
+																	 
+							<th class="govuk-table__header">DivisionID</th>
+							<th class="govuk-table__header">AgencyID</th>
+                            <th class="govuk-table__header">DivName</th>
+                            <th class="govuk-table__header">CentOverhead</th>
+							
+                            <th class="govuk-table__header">Actions</th>
                                                                     </tr>
                                             </thead>
-                                          <tbody class="govuk-table__body" id="staffplandata"><tr>
-            <td>000005</td>
-            <td>G_V11</td>
-            <td>General</td>
-            <td></td>          
+									  <tbody class="govuk-table__body" id="staffplandata"><tr>
+            <td>7</td>
+            <td>2</td>
+            <td>BSD</td>
+            <td>£0.00</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000005" onclick="handlestaffplandataEdit(1)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit division BSD" onclick="handlestaffplandataEdit(1)">
+                    <img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
                 </button>
-
-                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000005" onclick="handlestaffplandataDelete(1)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete division BSD" onclick="handlestaffplandataDelete(1)">
+                    <img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
                 </button>
             </td>
         </tr><tr>
-            <td>000006</td>
-            <td>D_AS3 SA</td>
-            <td></td>
-            <td></td>          
+            <td>11</td>
+            <td>2</td>
+            <td>CPD</td>
+            <td>£0.00</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000006" onclick="handlestaffplandataEdit(2)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit division CPD" onclick="handlestaffplandataEdit(2)">
+                    <img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
                 </button>
-
-                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000006" onclick="handlestaffplandataDelete(2)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete division CPD" onclick="handlestaffplandataDelete(2)">
+                    <img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
                 </button>
             </td>
         </tr><tr>
-            <td>000009</td>
-            <td>Cordero-Peters</td>
-            <td>Ruth</td>
-            <td></td>          
+            <td>9</td>
+            <td>2</td>
+            <td>EU Exit</td>
+            <td>£0.00</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000009" onclick="handlestaffplandataEdit(3)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit division EU Exit" onclick="handlestaffplandataEdit(3)">
+                    <img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
                 </button>
-
-                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000009" onclick="handlestaffplandataDelete(3)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete division EU Exit" onclick="handlestaffplandataDelete(3)">
+                    <img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
                 </button>
             </td>
         </tr><tr>
-            <td>000010</td>
-            <td>Phillips</td>
-            <td>Andrew</td>
-            <td></td>          
+            <td>12</td>
+            <td>2</td>
+            <td>HNC</td>
+            <td>£0.00</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000010" onclick="handlestaffplandataEdit(4)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit division HNC" onclick="handlestaffplandataEdit(4)">
+                    <img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
                 </button>
-
-                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000010" onclick="handlestaffplandataDelete(4)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete division HNC" onclick="handlestaffplandataDelete(4)">
+                    <img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
                 </button>
             </td>
         </tr><tr>
-            <td>000033</td>
-            <td>C_ROWA</td>
-            <td>Genral</td>
-            <td></td>          
+            <td>8</td>
+            <td>2</td>
+            <td>INSP</td>
+            <td>£0.00</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000033" onclick="handlestaffplandataEdit(5)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit division INSP" onclick="handlestaffplandataEdit(5)">
+                    <img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
                 </button>
-
-                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000033" onclick="handlestaffplandataDelete(5)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete division INSP" onclick="handlestaffplandataDelete(5)">
+                    <img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
                 </button>
             </td>
         </tr><tr>
-            <td>000043</td>
-            <td>Harraway</td>
-            <td>Donna</td>
-            <td></td>          
+            <td>14</td>
+            <td>2</td>
+            <td>NATBORI</td>
+            <td>£0.00</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000043" onclick="handlestaffplandataEdit(6)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit division NATBORI" onclick="handlestaffplandataEdit(6)">
+                    <img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
                 </button>
-
-                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000043" onclick="handlestaffplandataDelete(6)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete division NATBORI" onclick="handlestaffplandataDelete(6)">
+                    <img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
                 </button>
             </td>
         </tr><tr>
-            <td>000044</td>
-            <td>Rossi</td>
-            <td>Pedro</td>
-            <td></td>          
+            <td>4</td>
+            <td>2</td>
+            <td>Ops</td>
+            <td>£0.00</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000044" onclick="handlestaffplandataEdit(7)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit division Ops" onclick="handlestaffplandataEdit(7)">
+                    <img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
                 </button>
-
-                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000044" onclick="handlestaffplandataDelete(7)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete division Ops" onclick="handlestaffplandataDelete(7)">
+                    <img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
                 </button>
             </td>
         </tr><tr>
-            <td>000048</td>
-            <td>Abascal</td>
-            <td>Ruth</td>
-            <td></td>          
+            <td>3</td>
+            <td>2</td>
+            <td>PH-B-Adv</td>
+            <td>£0.00</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000048" onclick="handlestaffplandataEdit(8)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit division PH-B-Adv" onclick="handlestaffplandataEdit(8)">
+                    <img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
                 </button>
-
-                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000048" onclick="handlestaffplandataDelete(8)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete division PH-B-Adv" onclick="handlestaffplandataDelete(8)">
+                    <img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
                 </button>
             </td>
         </tr><tr>
-            <td>000069</td>
-            <td>ESci_Poultry</td>
-            <td></td>
-            <td></td>          
+            <td>2</td>
+            <td>2</td>
+            <td>R&amp;D</td>
+            <td>£0.00</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000069" onclick="handlestaffplandataEdit(9)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit division R&amp;D" onclick="handlestaffplandataEdit(9)">
+                    <img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
                 </button>
-
-                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000069" onclick="handlestaffplandataDelete(9)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete division R&amp;D" onclick="handlestaffplandataDelete(9)">
+                    <img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
                 </button>
             </td>
         </tr><tr>
-            <td>000070</td>
-            <td>ESCI_265</td>
-            <td></td>
-            <td></td>          
+            <td>10</td>
+            <td>2</td>
+            <td>SPI</td>
+            <td>£0.00</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000070" onclick="handlestaffplandataEdit(10)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit division SPI" onclick="handlestaffplandataEdit(10)">
+                    <img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
                 </button>
-
-                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000070" onclick="handlestaffplandataDelete(10)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete division SPI" onclick="handlestaffplandataDelete(10)">
+                    <img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
                 </button>
             </td>
         </tr><tr>
-            <td>000071</td>
-            <td>ESCI_266</td>
-            <td></td>
-            <td></td>          
+            <td>5</td>
+            <td>2</td>
+            <td>Surv</td>
+            <td>£0.00</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000071" onclick="handlestaffplandataEdit(11)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit division Surv" onclick="handlestaffplandataEdit(11)">
+                    <img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
                 </button>
-
-                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000071" onclick="handlestaffplandataDelete(11)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete division Surv" onclick="handlestaffplandataDelete(11)">
+                    <img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
                 </button>
             </td>
         </tr><tr>
-            <td>000072</td>
-            <td>ESCI_267</td>
-            <td></td>
-            <td></td>          
+            <td>6</td>
+            <td>2</td>
+            <td>Vet</td>
+            <td>£0.00</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary" aria-label="Edit staff record 000072" onclick="handlestaffplandataEdit(12)"><img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
+                <button class="btn btn-sm btn-outline-primary" aria-label="Edit division Vet" onclick="handlestaffplandataEdit(12)">
+                    <img src="../images/pen-to-square-regular-full.svg" alt="" aria-hidden="true" class="editstaffname" width="20">
                 </button>
-
-                <button class="btn btn-sm btn-outline-danger" aria-label="Delete staff record 000072" onclick="handlestaffplandataDelete(12)"><img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
+                <button class="btn btn-sm btn-outline-danger" aria-label="Delete division Vet" onclick="handlestaffplandataDelete(12)">
+                    <img src="../images/trash-can-regular-full.svg" alt="" aria-hidden="true" width="20">
                 </button>
             </td>
         </tr></tbody>
@@ -493,7 +473,7 @@
 
                                 <!-- </div> -->
 	
-	</div>
+	</div> 
 	
 	
 	<div class="col-lg-12 p-0 mt-2 ">
@@ -526,7 +506,6 @@
 </div>
 	
 	</div>
-   
 	
 	
 	
@@ -602,68 +581,63 @@
 	
 	
 		
-			
-<div class="modal fade" id="projectModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
+		
+		<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-label="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
 
-            <div class="modal-header">
-                <h5 class="modal-title" id="projectModalTitle">Add Project</h5>
-               
-				 <button type="button" class="btn-close btn-red" data-bs-dismiss="modal">X</button>
-            </div>
+                <div class="modal-body">
 
-            <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
-                <div class="row g-3">
-
-                    <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label" for="modal-WrkGrp">WorkGroup</label>					
-                        <input type="text" id="modal-WrkGrp" class="govuk-input">
-                    </div>
-
-                  <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label" for="modal-Grade">Grade</label>
-                        <input type="text" id="modal-Grade" class="govuk-input">
-                    </div>
-
-                     <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label" for="modal-Jobcode">JobCode</label>
-                        <input type="text" id="modal-Jobcode" class="govuk-input">
-                    </div>
-
-                   <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label" for="modal-ATStaffName">Name</label>
-                        <input type="text" id="modal-ATStaffName" class="govuk-input">
-                    </div>
-
-                    <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label" for="modal-Mnth">Month</label>
-                        <input type="text" id="modal-Mnth" class="govuk-input">
-                    </div>
-					
-					 <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label" for="modal-Hrs">Hrs</label>
-                        <input type="text" id="modal-Hrs" class="govuk-input">
-                    </div>
-					
-					 <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label" for="modal-Cost">Cost</label>
-                        <input type="text" id="modal-Cost" class="govuk-input">
-                    </div>
-					
-					
+                    <form>
+                        <div class="display-flex">
+                            <div class="col sup_margin_0">
+                                <label for="select_program" class="govuk-label ">Select a Project</label>
+                                <select class="govuk-select w-100 " required="" id="select_program" value="">
+                                    <option>--select programme--</option>
+                                    <option selected>CSKZ0023</option>
+                                    <option>ABSE4406</option>
+									  <option>AH0002</option>
+                                    <option >AH0033</option>
+									 
+                                </select>
+                            </div>
+                            <!-- <div class="col-1" -->
+                                <!-- style="font-size: 18px; font-weight: 600; text-align: center; margin-bottom: 5px;">OR -->
+                            <!-- </div> -->
+                            <!-- <div class="col-5"> -->
+                                <!-- <label for="project" class="col-form-label">Find Project</label> -->
+                                <!-- <select class="form-select" required="" id="project"> -->
+                                    <!-- <option value="">--select project--</option> -->
+                                    <!-- <option value="FZ200">FZ200</option> -->
+                                    <!-- <option value="FZ201">FZ201</option> -->
+                                <!-- </select> -->
+                            <!-- </div> -->
+                            <div class="ms-3">
+                                <button class="govuk-button sup_margin_0  govuk-!-padding-top-1 govuk-!-padding-bottom-1" type="button" onclick="SelectProgram()" data-bs-dismiss="modal"> 
+									<img src="../images/circle-chevron-right.png" alt="dropdown arrow for logout of application" width="20px" height="20px">
+                                    GO</button>
+                            </div>
+                        </div>
+                    </form>
 
                 </div>
-            </div>
 
-            <<div class="modal-footer justify-content-between flex-nowrap">
-                <button class="govuk-button govuk-button--secondary sup_margin_0" data-module="govuk-button" data-bs-dismiss="modal">Cancel</button>
-                <button class="govuk-button sup_margin_0" data-module="govuk-button" onclick="saveProject()">Save</button>
             </div>
-
         </div>
     </div>
-</div>
+		
+     
+		
+		
+		
+		
+	
+
+
+		
+		
+		
 		
 		
 		
@@ -672,7 +646,7 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title" id="projectModalTitle">Edit Project</h5>
+                <h5 class="modal-title" id="divisionModalTitle">Edit Division</h5>
                
 				 <button type="button" class="btn-close btn-red" data-bs-dismiss="modal">X</button>
             </div>
@@ -680,77 +654,37 @@
             <div class="modal-body">
                 <div class="row g-3">
 
-                     <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label " for="modal-spnumber">SP Number</label>
-						<select id="modal-spnumber" name="" class="govuk-select" aria-label="modal-spnumber">
-							<option value=""></option>
-  <option value="000005">000005</option>
- <!-- <option value="A_BAC1,General">A_BAC1,General | A_BAC1 | 3714</option> -->
-<option value="000006">000006</option>
-<option value="000009">000009</option>
-<option value="000010">000010</option>
-<option value="000033">000033</option>
-<option value="000043">000043</option>
-<option value="000044">000044</option>
-<option value="000048">000048</option> 
-<option value="000069">000069</option>
-<option value="000070">000070</option>
-
-<option value="000071">000071</option>
-
-<option value="000072">000072</option>
-<option value="T195">T195</option>
-
-<option value="T369">T369</option>
-
-
-<option value="T452">T452</option>
-
-<option value="G100">G100</option>
-
-<option value="G1000">G1000</option>
-<option value="G1001">G1001</option>
-
-<option value="G1005">G1005</option>
-<option value="G1006">G1006</option>
-<option value="G1007">G1007</option>
-</select>
-                       
+                    <div class="govuk-form-group sup_margin_0">
+                        <label class="govuk-label" for="modal-division-id">DivisionID</label>
+                        <input type="number" min="1" id="modal-division-id" class="govuk-input" value="">
                     </div>
 
                     <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label" for="modal-lastname">Last Name</label>
-                        <input type="text" id="modal-lastname" class="govuk-input" value="">
+                        <label class="govuk-label" for="modal-agency-id">AgencyID</label>
+                        <input type="number" min="1" id="modal-agency-id" class="govuk-input" value="2">
                     </div>
 
-                     <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label" for="modal-firstname">First Name</label>
-                        <input type="text" id="modal-firstname" class="govuk-input" value="">
+                    <div class="govuk-form-group sup_margin_0">
+                        <label class="govuk-label" for="modal-div-name">DivName</label>
+                        <input type="text" id="modal-div-name" class="govuk-input" value="">
                     </div>
 
-                       <div class="govuk-form-group sup_margin_0">
-                        <label class="govuk-label" for="modal-title">Title</label>
-                        <input type="text" id="modal-title" class="govuk-input" value="">
+                    <div class="govuk-form-group sup_margin_0">
+                        <label class="govuk-label" for="modal-cent-overhead">CentOverhead</label>
+                        <input type="text" id="modal-cent-overhead" class="govuk-input" value="£0.00">
                     </div>
-
-                     <!-- <div class="govuk-form-group sup_margin_0"> -->
-                        <!-- <label class="govuk-label">StaffCost</label> -->
-                        <!-- <input type="text" id="modal-staffcost" class="govuk-input" value=""> -->
-                    <!-- </div> -->
 
                 </div>
             </div>
 
-           <div class="modal-footer justify-content-between flex-nowrap">
+            <div class="modal-footer justify-content-between flex-nowrap">
                 <button class="govuk-button govuk-button--secondary sup_margin_0" data-module="govuk-button" data-bs-dismiss="modal">Cancel</button>
-                <button class="govuk-button sup_margin_0" data-module="govuk-button" onclick="savestaffplan()">Save</button>
+                <button class="govuk-button sup_margin_0" data-module="govuk-button" onclick="saveDivision()">Save</button>
             </div>
 
         </div>
     </div>
 </div>
-		
-		
 		
 
     <!-- Bootstrap JS (required for dropdowns) -->
@@ -776,7 +710,7 @@
 	
  <script src="../js/bootstrap.bundle.min.js"></script>
    <!-- <script src="../js/modalpopup.js"></script> -->
-   <script src="../js/staff_maintenance.js"></script>
+  <script src="../js/division_maintenance.js"></script>
 	 
 </body>
 

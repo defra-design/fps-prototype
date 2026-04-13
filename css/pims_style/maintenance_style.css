@@ -1,0 +1,1068 @@
+/* =====================================================
+   Report Admin Maintenance - PIMS Custom Styles
+   Module  : pims
+   File    : maintenance.html
+   Extends : GOV.UK Frontend & PIMS supplemental styles
+   ===================================================== */
+
+/* =====================================================
+   Inline-style extractions
+   ===================================================== */
+
+/* <body> */
+.ra-body {
+    overflow-x: hidden;
+}
+
+/* Header bar row (page title row) */
+.ra-header-bar {
+    padding: 0;
+}
+
+/* Maintenance page heading */
+.ra-page-heading {
+    padding: 10px 0 5px 24px;
+    border-bottom: 2px solid #1d70b8;
+}
+
+/* Top flex wrapper (sidenav + main) */
+.ra-layout-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Year-selector wrapper in header */
+.ra-year-selector-wrapper {
+    width: 160px;
+    font-size: 16px;
+}
+
+/* Year dropdown select */
+.ra-year-select {
+    border: 0;
+    border-radius: 0;
+    margin-left: 0;
+    width: 150px;
+    outline: 0;
+}
+
+/* Sidebar toggle button */
+.ra-sidebar-toggle {
+    right: -8px;
+    top: 30px;
+}
+
+/* Chevron icon inside toggle button */
+.ra-sidebar-chevron {
+    margin: -2px 5px 0 0;
+}
+
+/* Sidebar nav links */
+.ra-sidebar-link {
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    background-color: #1d70b8;
+}
+
+.ra-sidebar-link a {
+    color: #fff;
+}
+
+/* Main content area */
+.ra-main-content {
+    padding-top: 0;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Full-width grid row wrapper */
+.ra-full-width {
+    width: 100%;
+}
+
+/* Manager grid heading */
+.ra-mgr-heading {
+    line-height: 2;
+}
+
+/* Sub-grids container (hidden by default, shown on row select) */
+.ra-subgrids-hidden {
+    display: none;
+}
+
+/* Report groups row (label + table side-by-side) */
+.ra-groups-row {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+/* Report groups label */
+.ra-groups-heading {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+/* Report groups table wrapper */
+.ra-groups-table-wrap {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Error/hidden elements (shown/hidden by JS) */
+.ra-hidden {
+    display: none;
+}
+
+/* Modal dialog width variants */
+.ra-modal-dialog--w420 {
+    max-width: 420px;
+}
+
+.ra-modal-dialog--w480 {
+    max-width: 480px;
+}
+
+.ra-modal-dialog--w520 {
+    max-width: 520px;
+}
+
+.ra-modal-dialog--w560 {
+    max-width: 560px;
+}
+
+/* Full-width selects inside modals */
+.ra-select-full {
+    width: 100%;
+}
+
+/* --- Focus: SC 2.4.11 - ensure focused items are not
+      fully obscured by sticky header (WCAG 2.2 AA) --- */
+.custom-table td {
+    padding: 0px 10px 0px 10px !important
+}
+
+:focus {
+    scroll-margin-top: 64px;
+}
+
+/* --- Page title --- */
+.ra-page-title {
+    padding: 10px 0 10px 0;
+    margin-top: 10px;
+}
+
+/* --- Tab overrides for compact look --- */
+.ra-tabs .govuk-tabs__list {
+    margin-bottom: 0;
+}
+
+.ra-tabs .govuk-tabs__tab {
+    padding: 6px 11px 4px 5px;
+    font-size: 14px;
+    width: fit-content;
+    text-decoration: none;
+}
+
+.ra-tabs .govuk-tabs__panel {
+    padding: 10px 10px;
+}
+
+/* --- Grid wrapper --- */
+.ra-grid-wrapper {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+/* --- Toolbar row (title + add button) --- */
+.ra-grid-toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+}
+
+/* --- Add button font size override --- */
+.ra-btn-add {
+    margin: 0;
+    padding: 5px 4px;
+    font-size: 14px;
+
+}
+
+/* --- Scrollable table wrapper --- */
+.ra-table-scroll-wrapper {
+    overflow-x: auto;
+    width: 100%;
+    max-height: 250px;
+    height: 250px;
+    border: 0 !important;
+}
+
+/* --- Table base --- */
+.ra-table {
+    width: 100%;
+    min-width: 900px;
+    table-layout: auto;
+    border-collapse: collapse;
+    margin-bottom: 0;
+}
+
+.ra-table .govuk-table__header,
+.ra-table .govuk-table__cell {
+    font-size: 14px;
+    padding: 7px 8px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.govuk-table__header {
+    background-color: var(--govuk-surface-background-colour, #f4f8fb);
+}
+
+/* --- Sortable header (SC 2.5.8 - min 24px target) --- */
+.ra-th-sortable {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    background-color: var(--govuk-surface-background-colour, #f4f8fb);
+    z-index: 2;
+    min-height: 24px;
+}
+
+.ra-th-sortable:hover {
+    background-color: var(--tint-80, #d2e2f1);
+}
+
+.ra-sort-icon {
+    font-size: 11px;
+    color: #505a5f;
+    margin-left: 4px;
+    display: inline-block;
+    min-width: 10px;
+}
+
+.ra-th-sortable.ra-sort-asc .ra-sort-icon,
+.ra-th-sortable.ra-sort-desc .ra-sort-icon {
+
+    font-weight: bold;
+}
+
+/* --- Fixed-width columns --- */
+.ra-col-emailable {
+    width: 80px;
+    text-align: center !important;
+}
+
+.ra-col-order {
+    width: 65px;
+    text-align: center !important;
+}
+
+.ra-col-actions {
+    width: 130px;
+    text-align: center !important;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+/* --- Emailable checkbox cell --- */
+.ra-cell-emailable {
+    text-align: center;
+}
+
+.ra-cell-emailable input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: default;
+    pointer-events: none;
+    accent-color: #1d70b8;
+}
+
+/* --- Order cell --- */
+.ra-cell-order {
+    text-align: center;
+}
+
+/* --- Action buttons in table (SC 2.5.8 - min 24x24px) --- */
+.ra-action-cell {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.ra-btn-edit,
+.ra-btn-delete {
+    font-size: 13px;
+    padding: 4px 10px;
+    border: 0;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #fff;
+    white-space: nowrap;
+    font-family: "GDS Transport", Arial, sans-serif;
+    min-width: 24px;
+    min-height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ra-btn-edit {
+    background-color: #1d70b8;
+}
+
+.ra-btn-edit:hover {
+    background-color: #16548a;
+}
+
+.ra-btn-delete {
+    background-color: #d4351c;
+}
+
+.ra-btn-delete:hover {
+    background-color: #aa2a16;
+}
+
+/* --- Row hover & alternating --- */
+.ra-table .govuk-table__body .govuk-table__row:hover {
+    background-color: #cecece;
+}
+
+.ra-table .govuk-table__body .govuk-table__row:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* --- Selected row highlight --- */
+.govuk-table__body .ra-row-selected td,
+.govuk-table__body .ra-row-selected:nth-child(even) td,
+.govuk-table__body .ra-row-selected:hover td {
+    background-color: #cecece !important;
+}
+
+.ra-records-per-page {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.ra-records-per-page .govuk-label {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.ra-record-count {
+    font-size: 14px;
+    color: #505a5f;
+    white-space: nowrap;
+}
+
+
+/* --- Report Groups section --- */
+.ra-groups-section {
+    padding-top: 10px;
+}
+
+.ra-groups-label-row {
+    margin-bottom: 10px;
+}
+
+.ra-groups-label-row .govuk-fieldset {
+    border: 1px solid var(--govuk-border-colour, #b1b4b6);
+    padding: 8px 12px 12px;
+    margin-bottom: 10px;
+}
+
+.ra-groups-label-row .govuk-fieldset__legend {
+    padding: 0 4px;
+}
+
+.ra-groups-form-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0;
+}
+
+.ra-groups-form-row .govuk-label {
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+.ra-groups-select {
+    min-width: 220px;
+}
+
+/* --- Modals --- */
+/* Bridge govuk-edit-modal (uses .open class) with hidden-attribute JS pattern */
+.govuk-edit-modal:not([hidden]) {
+    display: flex;
+}
+
+/* --- Notification banner (save/delete feedback) --- */
+.ra-notification {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    z-index: 1100;
+    min-width: 260px;
+    padding: 12px 16px;
+    border-left: 4px solid #0f7a52;
+    background: #e8f5f0;
+    color: #0b0c0c;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    animation: ra-fade-in 0.2s ease;
+}
+
+.ra-notification--error {
+    border-left-color: #d4351c;
+    background: #fdf0ef;
+}
+
+@keyframes ra-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Spacing utilities used on this page --- */
+.sup_margin_top_20 {
+    margin-top: 20px;
+}
+
+.sup_margin_top_bottom_5_10 {
+    margin: 5px 10px;
+}
+
+.sup_p_8 {
+    padding: 8px;
+}
+
+.sup_p_0 {
+    padding: 0;
+}
+
+.sup_text_center {
+    text-align: center;
+}
+
+.sup_margin_left_right_0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* ===== GOV.UK / Defra form validation ===== */
+.ra-required-star {
+    color: #d4351c;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.ra-form-error-banner {
+    margin-bottom: 14px;
+}
+
+.govuk-error-message {
+    font-size: 14px !important;
+}
+
+/* =====================================================
+   Admin Maintenance Tab Panel Styles
+   (#tab-admin-maintenance)
+   ===================================================== */
+
+/* ── Two-panel layout ──────────────────────────────── */
+.admin-layout {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* ── Individual panels ──────────────────────────── */
+.admin-users-panel,
+.admin-access-panel {
+    flex: 1 1 0;
+    min-width: 0;
+    border: 1px solid #b1b4b6;
+}
+
+/* ── Panel header ───────────────────────────────── */
+.admin-panel-header {
+    border-bottom: 1px solid #b1b4b6;
+    padding: 7px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0b0c0c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 38px;
+}
+
+.admin-panel-header span {
+    line-height: 1.4;
+}
+
+/* ── Table scroll wrapper ────────────────────────── */
+.admin-table-scroll {
+    overflow-x: auto;
+    width: 100%;
+    max-height: 230px;
+    height: 230px;
+}
+
+/* ── Sortable column headers ─────────────────────── */
+.admin-th-sortable {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    background-color: #f4f8fb;
+    vertical-align: middle;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    font-size: 14px;
+}
+
+.admin-th-sortable:hover {
+    background-color: #d2e2f1;
+}
+
+.admin-sort-icon {
+    font-size: 11px;
+    color: #505a5f;
+    margin-left: 4px;
+    display: inline-block;
+    min-width: 10px;
+}
+
+.admin-th-sortable.admin-sort-asc .admin-sort-icon::after {
+    content: " \25B2";
+    color: #1d70b8;
+    font-weight: bold;
+}
+
+.admin-th-sortable.admin-sort-desc .admin-sort-icon::after {
+    content: " \25BC";
+    color: #1d70b8;
+    font-weight: bold;
+}
+
+/* ── Table rows & cells ──────────────────────────── */
+.admin-users-table td,
+.admin-access-table td {
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.admin-users-table tbody tr:hover td,
+.admin-access-table tbody tr:hover td {
+    background-color: #cecece;
+    cursor: pointer;
+}
+
+.admin-users-table tbody tr.admin-row-selected td {
+    background-color: #cecece;
+    color: #0b0c0c;
+}
+
+.admin-users-table tbody tr.admin-row-selected td button img {
+    filter: none;
+}
+
+/* ── Empty / loading state ────────────────────────── */
+.admin-empty-row td {
+    color: #505a5f;
+    font-style: italic;
+    text-align: center;
+    padding: 12px 10px !important;
+}
+
+/* ── NTLogin column ──────────────────────────────── */
+.admin-col-ntlogin {
+    width: 110px;
+    white-space: nowrap;
+}
+
+/* ── AccessLevel column ──────────────────────────── */
+.admin-col-access {
+    width: 130px;
+    white-space: nowrap;
+}
+
+/* ── Actions column ──────────────────────────────── */
+.admin-col-actions {
+    width: 72px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* =====================================================
+   Programme Tab Panel Styles
+   (#tab-programme)
+   ===================================================== */
+
+/* --- Grid wrapper and header --- */
+.prog-grid-wrapper {
+    border: 1px solid #b1b4b6;
+}
+
+.prog-grid-header {
+    padding: 8px 12px;
+    background-color: #f3f2f1;
+    border-bottom: 1px solid #b1b4b6;
+}
+
+/* --- Horizontal scroll container --- */
+.prog-table-scroll {
+    overflow: auto;
+    width: 100%;
+    max-height: 250px;
+    height: 250px;
+    border: 0 !important;
+}
+
+/* --- Sortable column header --- */
+.prog-th-sortable {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    background-color: #f4f8fb;
+    vertical-align: top;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.prog-th-sortable:hover {
+    background-color: #d2e2f1;
+}
+
+/* --- Sort icon --- */
+.prog-sort-icon {
+    font-size: 11px;
+    color: #505a5f;
+    margin-left: 4px;
+    display: inline-block;
+    min-width: 10px;
+}
+
+.prog-th-sortable.prog-sort-asc .prog-sort-icon,
+.prog-th-sortable.prog-sort-desc .prog-sort-icon {
+    color: #1d70b8;
+    font-weight: bold;
+}
+
+/* --- Hint text under column header (e.g. "If blank…") --- */
+.prog-col-hint {
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    color: #505a5f;
+    white-space: normal;
+    line-height: 1.4;
+    margin-top: 3px;
+}
+
+/* --- Pagination footer: stack rpp + nav vertically for narrow half-columns --- */
+.prog-pagination-wrapper {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0 !important;
+}
+
+.prog-pagination-wrapper .govuk-pagination {
+    margin-top: 0;
+}
+
+.prog-pagination-wrapper .govuk-pagination__list {
+    flex-wrap: nowrap;
+}
+
+/* =====================================================
+   Other Tab Panel Styles
+   (#tab-other)
+   ===================================================== */
+
+/* ── Two-panel layout ──────────────────────────────── */
+.other-layout {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* ── Left panel – List Description ────────────────── */
+.other-list-panel {
+    flex: 0 0 150px;
+    min-width: 120px;
+    border: 1px solid #b1b4b6;
+}
+
+.other-panel-header {
+    border-bottom: 1px solid #b1b4b6;
+    padding: 7px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0b0c0c;
+    margin-bottom: 1px;
+}
+
+.other-list-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.other-list-table tbody tr {
+    cursor: pointer;
+}
+
+.other-list-table tbody tr td {
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #0b0c0c;
+    border-bottom: 1px solid #f0f0f0;
+    white-space: nowrap;
+}
+
+.other-list-table tbody tr:hover td {
+    background-color: #f5f5f5;
+}
+
+.other-list-table tbody tr.other-row-selected td {
+    background-color: #f5f5f5;
+    color: #0b0c0c;
+    font-weight: 600;
+}
+
+/* ── Right panel – Values ──────────────────────────── */
+.other-values-panel {
+    flex: 1 1 auto;
+    max-width: 50%;
+    min-width: 0;
+    border: 1px solid #b1b4b6;
+}
+
+.other-values-panel .other-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ── Values table scrollable wrapper ──────────────── */
+.other-table-scroll {
+    overflow-x: auto;
+    width: 100%;
+    max-height: 180px;
+    height: 180px;
+}
+
+/* ── Sortable column headers ───────────────────────── */
+.other-th-sortable {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    background-color: #f4f8fb;
+    vertical-align: middle;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    font-size: 14px;
+}
+
+.other-th-sortable:hover {
+    background-color: #d2e2f1;
+}
+
+.other-sort-icon {
+    font-size: 11px;
+    color: #505a5f;
+    margin-left: 4px;
+    display: inline-block;
+    min-width: 10px;
+}
+
+.other-th-sortable.other-sort-asc .other-sort-icon::after {
+    content: " \25B2";
+    color: #1d70b8;
+    font-weight: bold;
+}
+
+.other-th-sortable.other-sort-desc .other-sort-icon::after {
+    content: " \25BC";
+    color: #1d70b8;
+    font-weight: bold;
+}
+
+/* ── Values table rows ─────────────────────────────── */
+.other-values-table td {
+    font-size: 14px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* ── Empty / loading state ─────────────────────────── */
+.other-empty-row td {
+    color: #505a5f;
+    font-style: italic;
+    text-align: center;
+}
+
+/* ── Actions column ────────────────────────────────── */
+.other-col-actions {
+    width: 80px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.other-action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px 5px;
+    font-size: 13px;
+    color: #1d70b8;
+    text-decoration: underline;
+}
+
+.other-action-btn:hover {
+    color: #003078;
+}
+
+/* ── No-selection placeholder ──────────────────────── */
+.other-no-selection {
+    padding: 24px 16px;
+    color: #505a5f;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* ── ID column (narrow) ────────────────────────────── */
+.other-col-id {
+    width: 90px;
+}
+
+/* =====================================================
+   Manager Tab Panel Styles
+   (#tab-manager)
+   ===================================================== */
+
+/* ── Main manager grid ─────────────────────────────── */
+.mgr-grid-wrapper {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+/* ── Selected row in main manager table ─────────────── */
+#mgrTable .govuk-table__body .mgr-row-selected td,
+#mgrTable .govuk-table__body .mgr-row-selected:nth-child(even) td,
+#mgrTable .govuk-table__body .mgr-row-selected:hover td {
+    background-color: #cecece !important;
+}
+
+#mgrTable .govuk-table__body .govuk-table__row {
+    cursor: pointer;
+}
+
+/* ── Disable checkbox (read-only display) ────────────── */
+.mgr-checkbox-display {
+    width: 16px;
+    height: 16px;
+    cursor: default;
+    accent-color: #1d70b8;
+}
+
+/* ── Manager search input ────────────────────────────── */
+.mgr-search-input {
+    font-size: 13px;
+    padding: 3px 8px;
+    border: 1px solid #b1b4b6;
+    font-family: "GDS Transport", Arial, sans-serif;
+    height: 28px;
+    width: 130px;
+}
+
+.mgr-search-input:focus {
+    outline: 3px solid #ffdd00;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 2px #0b0c0c;
+}
+
+/* ── Sub-grids container ───────────────────────────── */
+.mgr-subgrids-wrapper {
+    margin-top: 16px;
+}
+
+/* ── Sub-grid box ──────────────────────────────────── */
+.mgr-sub-grid-box {
+    border: 1px solid #b1b4b6;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.mgr-sub-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    border-bottom: 1px solid #b1b4b6;
+    background-color: #f8f8f8;
+}
+
+/* ── Sub-grid table ────────────────────────────────── */
+.mgr-sub-table-wrapper {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+.mgr-sub-table .govuk-table__body .govuk-table__row:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* ── Column widths ─────────────────────────────────── */
+.mgr-th-name {
+    min-width: 160px;
+}
+
+.mgr-th-mnumber {
+    min-width: 100px;
+}
+
+.mgr-th-email {
+    min-width: 220px;
+}
+
+.mgr-th-disable {
+    min-width: 70px;
+    text-align: center !important;
+}
+
+.mgr-th-actions {
+    min-width: 100px;
+    text-align: center !important;
+}
+
+.mgr-sub-th-value {
+    min-width: 180px;
+}
+
+.mgr-sub-th-actions {
+    min-width: 100px;
+    text-align: center !important;
+}
+
+/* ── Action cell centring ──────────────────────────── */
+.mgr-action-cell {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.mgr-disable-cell {
+    text-align: center;
+}
+
+.govuk-edit-modal__footer {
+    margin-bottom: 15px !important;
+}
+
+.govuk-edit-modal__close-btn {
+    color: white !important;
+}
+
+.govuk-grid-column-full {
+    padding: 0px 10px !important;
+}
+
+/* =====================================================
+   Time Tab – Working Hours & Working Days
+   PIMS Report Admin Maintenance
+   ===================================================== */
+
+/* ── Form container ────────────────────────────────── */
+.time-form-container {
+    max-width: 900px;
+    padding: 16px 0 8px 0;
+}
+
+/* ── Each field row (label | input | hint inline) ──── */
+.time-form-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 0;
+    padding: 6px 0;
+    border-left: none;
+}
+
+.time-form-row.govuk-form-group--error {
+    border-left: 4px solid #d4351c;
+    padding-left: 12px;
+}
+
+/* ── Label column ──────────────────────────────────── */
+.time-form-label-col {
+    flex: 0 0 200px;
+    min-width: 0;
+    padding-top: 5px;
+}
+
+.time-form-label-col .govuk-label {
+    margin-bottom: 0;
+}
+
+/* ── Input column ──────────────────────────────────── */
+.time-form-input-col {
+    flex: 0 0 250px;
+    min-width: 0px;
+}
+
+.time-form-input-col .govuk-input {
+    width: 100%;
+}
+
+.time-form-input-col .govuk-error-message {
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+/* ── Hint column ───────────────────────────────────── */
+.time-form-hint-col {
+    flex: 1;
+    min-width: 0;
+    padding-top: 5px;
+}
+
+.time-form-hint-col .govuk-hint {
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #505a5f;
+}
+
+/* ── Footer (Cancel / Save buttons) ───────────────── */
+.time-form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    margin-top: 12px;
+    max-width: 470px;
+}

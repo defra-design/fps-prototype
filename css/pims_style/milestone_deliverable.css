@@ -1,0 +1,511 @@
+/* ============================================
+   Milestone Deliverable Page - Standalone CSS
+   ============================================ */
+
+:root {
+    --color-primary: #1d70b8;
+    --color-border: #bbb;
+    --color-table-bg: #ffffff;
+    --color-row-odd: #fafafa;
+    --color-row-hover: #f0f4f5;
+    --color-header-bg: #f3f2f1;
+    --color-text: #0b0c0c;
+    --spacing-small: 5px;
+    --spacing-medium: 10px;
+    --spacing-large: 15px;
+    --spacing-xlarge: 20px;
+}
+
+/* ============================================
+   General Styles
+   ============================================ */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: var(--color-text);
+    background-color: #f8f8f8;
+}
+
+main.main-content {
+    background-color: white;
+    min-height: calc(100vh - 200px);
+}
+
+/* ============================================
+   Milestone Container
+   ============================================ */
+
+.milestone-container {
+    background-color: white;
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+    overflow: hidden;
+}
+
+/* ============================================
+   Checkbox Section
+   ============================================ */
+
+.checkbox-section {
+    padding: var(--spacing-large);
+    border-bottom: 1px solid var(--color-border);
+    background-color: #fafafa;
+}
+
+.govuk-checkboxes__label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.govuk-checkboxes__input {
+    cursor: pointer;
+}
+
+.govuk-checkboxes__item {
+    margin-bottom: var(--spacing-small);
+}
+
+/* ============================================
+   Grid/Table Styles
+   ============================================ */
+
+.grid-wrapper {
+    padding: var(--spacing-large);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.custom-scroll-table {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    background-color: white;
+    border-radius: 0;
+}
+
+.milestone-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    background-color: var(--color-table-bg);
+}
+
+.milestone-table thead {
+    background-color: var(--color-header-bg);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.milestone-table th {
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--spacing-medium);
+    text-align: left;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.milestone-table th:last-child {
+    border-right: none;
+}
+
+.milestone-table th:hover {
+    background-color: #e8e8e8;
+}
+
+/* Sort Icons */
+.sort-icon {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 12px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+    font-weight: normal;
+}
+
+.milestone-table th.sorted-asc .sort-icon,
+.milestone-table th.sorted-desc .sort-icon {
+    opacity: 1;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* Table Body */
+.milestone-table tbody tr {
+    border-bottom: 1px solid #e8e8e8;
+    transition: background-color 0.2s ease;
+}
+
+.milestone-table tbody tr:nth-child(odd) {
+    background-color: var(--color-row-odd);
+}
+
+.milestone-table tbody tr:hover {
+    background-color: var(--color-row-hover);
+}
+
+.milestone-table tbody td {
+    border-right: 1px solid #e8e8e8;
+    padding: var(--spacing-medium);
+    text-align: center;
+}
+
+.milestone-table tbody td:last-child {
+    border-right: none;
+}
+
+.milestone-table tbody td:first-child {
+    text-align: left;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+/* No Records Message */
+.milestone-table tbody tr td[colspan] {
+    text-align: center;
+    padding: 40px var(--spacing-medium);
+    color: #626a6e;
+    font-style: italic;
+}
+
+/* ============================================
+   Pagination Section
+   ============================================ */
+
+.pagination-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-xlarge);
+    padding: var(--spacing-large);
+    background-color: #f8f8f8;
+    border-top: 1px solid var(--color-border);
+    flex-wrap: wrap;
+}
+
+.records-per-page {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-medium);
+    flex-shrink: 0;
+}
+
+.pagination-label {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+#recordsPerPageMilestone {
+    min-width: 80px;
+    padding: 8px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+    font-size: 14px;
+}
+
+/* GOV.UK Pagination */
+.govuk-pagination {
+    margin: 0;
+}
+
+.govuk-pagination__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-small);
+    flex-wrap: wrap;
+}
+
+.govuk-pagination__item {
+    display: inline-block;
+}
+
+.govuk-pagination__link {
+    display: inline-block;
+    padding: 8px 12px;
+    min-width: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.govuk-pagination__link:hover {
+    background-color: #f0f4f5;
+    text-decoration: underline;
+}
+
+.govuk-pagination__item--current .govuk-pagination__link {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.govuk-pagination__item.disabled .govuk-pagination__link {
+    pointer-events: none;
+    opacity: 0.5;
+    color: #626a6e;
+    cursor: not-allowed;
+}
+
+.govuk-pagination__item.disabled .govuk-pagination__link:hover {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* Pagination Icons */
+.govuk-pagination__icon {
+    width: 15px;
+    height: 13px;
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+.govuk-pagination__link-title {
+    display: inline-block;
+}
+
+/* ============================================
+   Header Styles
+   ============================================ */
+
+.header-nav {
+    background-color: white;
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--spacing-medium) var(--spacing-large);
+}
+
+.pims-log-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-large);
+}
+
+.pims-log {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+/* ============================================
+   Footer Styles
+   ============================================ */
+
+.govuk-footer {
+    background-color: #f8f8f8;
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-large);
+    text-align: center;
+    color: #626a6e;
+    font-size: 14px;
+    margin-top: var(--spacing-xlarge);
+}
+
+.sup_text_center {
+    text-align: center;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .pagination-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .records-per-page {
+        width: 100%;
+    }
+
+    .govuk-pagination__list {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    main.main-content {
+        min-height: auto;
+    }
+
+    .govuk-grid-row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .govuk-grid-column-full {
+        padding: 0 var(--spacing-medium);
+    }
+
+    .milestone-container {
+        border: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .grid-wrapper {
+        padding: var(--spacing-medium);
+    }
+
+    .custom-scroll-table {
+        border: none;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .milestone-table {
+        min-width: 500px;
+    }
+
+    .milestone-table th,
+    .milestone-table td {
+        padding: var(--spacing-small);
+        font-size: 12px;
+    }
+
+    .checkbox-section {
+        padding: var(--spacing-medium);
+    }
+
+    .pagination-section {
+        padding: var(--spacing-medium);
+        gap: var(--spacing-medium);
+    }
+
+    .records-per-page {
+        gap: var(--spacing-small);
+    }
+
+    .govuk-pagination__link {
+        padding: 6px 10px;
+        min-width: 35px;
+        font-size: 12px;
+    }
+
+    .pagination-label {
+        font-size: 12px;
+    }
+
+    #recordsPerPageMilestone {
+        min-width: 70px;
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
+    .sort-icon {
+        margin-left: 3px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .govuk-heading-l {
+        font-size: 20px !important;
+    }
+
+    .milestone-table {
+        min-width: 400px;
+        font-size: 11px;
+    }
+
+    .milestone-table th,
+    .milestone-table td {
+        padding: 4px;
+    }
+
+    .govuk-pagination__list {
+        gap: 2px;
+    }
+
+    .govuk-pagination__link {
+        padding: 5px 8px;
+        min-width: 32px;
+        font-size: 11px;
+    }
+
+    .pagination-label {
+        font-size: 11px;
+    }
+
+    #recordsPerPageMilestone {
+        min-width: 60px;
+        padding: 5px 6px;
+        font-size: 11px;
+    }
+
+    .checkbox-section .govuk-label {
+        font-size: 14px;
+    }
+
+    .govuk-pagination__link-title {
+        display: none;
+    }
+
+    .govuk-pagination__icon {
+        margin: 0;
+    }
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.sup_border-bottom {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.sup_align_right {
+    float: right;
+    margin-right: var(--spacing-large);
+}
+
+.sup_p_8 {
+    padding: var(--spacing-large) !important;
+}
+
+.govuk- !-padding-4 {
+    padding: var(--spacing-xlarge) !important;
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Focus Styles */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #ffbf47;
+    outline-offset: 0;
+}
+
+.govuk-table__header:focus {
+    outline: 3px solid #ffbf47;
+    outline-offset: -1px;
+}

@@ -1,0 +1,142 @@
+.milestones-toolbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 5px;
+}
+
+.pims-grid-panel {
+    border: 1px solid #b1b4b6;
+    overflow: auto;
+    max-height: 310px;
+    height: 310px;
+}
+
+.pims-grid-header,
+.pims-grid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 2fr 2fr 1fr 1fr 1fr 1fr;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    align-items: center;
+}
+
+.pims-grid-header {
+    background: #ffffff;
+    font-weight: 700;
+    font-size: 0.875rem;
+    border-bottom: 1px solid #b1b4b6;
+}
+
+.pims-grid-row {
+    background: #ffffff;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.pims-grid-row:nth-child(odd) {
+    background: #ffffff;
+}
+
+.pims-grid-row:nth-child(even) {
+    background: #f9fafb;
+}
+
+.pims-grid-body {
+    overflow-y: auto;
+    max-height: 260px;
+}
+
+.pims-grid-row span {
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#pagination {
+    margin-top: 0.5rem;
+}
+
+#noData {
+    margin-top: 1rem;
+    color: #0b0c0c;
+}
+
+.btn-close {
+    background: none;
+    background: #ff4239;
+    opacity: inherit;
+    border: none;
+    font-size: 16px;
+    padding: 9px 7px 10px 7px;
+    line-height: 5px;
+    cursor: pointer;
+}
+
+/* GOV.UK Checkbox styling for tables */
+.govuk-table__cell .govuk-checkboxes__input {
+    display: block !important;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    cursor: not-allowed;
+    accent-color: #1d70b8;
+}
+
+/* Required field asterisk */
+.required-asterisk {
+    color: #d4351c;
+    text-decoration: none;
+    font-style: normal;
+    margin-left: 2px;
+}
+
+
+/* Error message font size inside modal form */
+#editForm .govuk-error-message {
+    font-size: 14px;
+}
+
+/* GOV.UK error summary inside modal */
+#formErrorSummary {
+    margin-bottom: 20px;
+    outline: 3px solid transparent;
+}
+
+#formErrorSummary:focus {
+    outline: 3px solid #ffdd00;
+}
+
+/* Financial grid modals */
+#financialModal,
+#financialDeleteModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+/* GOV.UK warning button (delete) */
+.govuk-button--warning {
+    background-color: #d4351c;
+    color: #fff;
+    box-shadow: 0 2px 0 #942514;
+}
+
+.govuk-button--warning:hover {
+    background-color: #aa2a16;
+}
+
+/* Financial grid error summary */
+#financialErrorSummary {
+    margin-bottom: 20px;
+}
+
+#financialForm .govuk-error-message {
+    font-size: 14px;
+}

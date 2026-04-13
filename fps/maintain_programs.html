@@ -4,62 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <title>2025-2026 : Plan Projects Individually</title> 
+    <title>2025-2026 : Program Maintenance</title>
    <!-- Bootstrap CSS -->
            <link rel="stylesheet" href="../css/bootstrap.min.css">
     	 <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css">
 	 <link rel="stylesheet" href="../css/fps_styles/styles.css">
 	  <link rel="stylesheet" href="../css/main_style.css">
-	 <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
-
-<style>
-    html,
-    body {
-        height: 100%;
-    }
-
-    body {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .page-content {
-        flex: 1 0 auto;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .main-content {
-        display: flex;
-        flex-direction: column;
-        flex: 1 0 auto;
-    }
-
-    .footer {
-        margin-top: auto;
-        clear: both;
-        position: relative;
-        z-index: 1;
-    }
-
-    .sidenav {
-        margin-bottom: 0;
-        align-self: flex-start;
-    }
-</style>
-	
+	<link rel="stylesheet" href="../css/fps_styles/suppliement_style_fps.css" />
+	<link rel="stylesheet" href="../css/fps_styles/setup_resource.css" />
 <script>
- 
-
-    window.addEventListener('load', function () {
-        // Get modal element
-        const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-        // Show modal
-        myModal.show();
-    });
-
 </script>
 
 
@@ -80,32 +33,32 @@
                 </div>
               
                 <div class="pims-log">
-                    <span style="display:inline-block; padding: 2px;">FPS</span>
+                    <span class="pva-logo-text">FPS</span>
 					
                 </div>
 				    <div class="pims-log">
-                 <select class="pims-log" style="border:0; margin-left: 0px;" aria-label="Year">
-				 <option  class="pims-log" style="border:0; margin-left: 0px;">2017-2018</option>
-					<option  class="pims-log" style="border:0; margin-left: 0px;">2018-2019</option>
-				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2019-2020</option>
-				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2020-2021</option>
-				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2021-2022</option>
-				 	<option  class="pims-log" style="border:0; margin-left: 0px;">2022-2023</option>
-					<option  class="pims-log" style="border:0; margin-left: 0px;">2023-2024</option>
-					<option  class="pims-log" style="border:0; margin-left: 0px;">2024-2025</option>
-					<option  class="pims-log" style="border:0; margin-left: 0px;" selected>2025-2026</option>
+                 <select class="pims-log pva-year-select" aria-label="Year">
+                 <option  class="pims-log pva-year-option">2017-2018</option>
+                    <option  class="pims-log pva-year-option">2018-2019</option>
+                 	<option  class="pims-log pva-year-option">2019-2020</option>
+                 	<option  class="pims-log pva-year-option">2020-2021</option>
+                 	<option  class="pims-log pva-year-option">2021-2022</option>
+                 	<option  class="pims-log pva-year-option">2022-2023</option>
+                    <option  class="pims-log pva-year-option">2023-2024</option>
+                    <option  class="pims-log pva-year-option">2024-2025</option>
+                    <option  class="pims-log pva-year-option" selected>2025-2026</option>
 					</select>
 					
                 </div>
 				
                 <!-- <p>PACT</p> -->
             </div>
-            <div class="btn-group" style=" display: flex; align-items: center;     font-size: 16px;">
-                Ken Rod <button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="btn-group pva-user-group">
+                Ken Rod <button type="button" aria-label="user dropdown arrow to go home page" class="btn btn-secondary dropdown-toggle user-menu pva-user-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                    <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24">
 				   <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px" height="30px"></span>
                 </button> 
-                <ul class="dropdown-menu dropdown-menu-end" style="">
+                <ul class="dropdown-menu dropdown-menu-end">
                     <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button> -->
                     <!-- </li> -->
                     <!-- <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button> -->
@@ -117,264 +70,68 @@
             </div>
         </div>
     </header>
-  <nav class="navbar navbar-expand-lg main-nav ">
-        <div class="container-fluid">
-
-            <button class="navbar-toggler" type="button" aria-label="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-hidden="true"
-                            aria-expanded="false" aria-current="page" href="#">Programme Management<span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Programme Management Menu" width="12px"></span></a>
-
-							
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" aria-hidden="true" href="program_management.html">Select Programme</a></li>
-                            <li><a class="dropdown-item" aria-hidden="true"  style="display: flex;    justify-content: space-between;">Plan Projects  <img src="../images/right-arrow.png" alt="Arrow for Plan Projects Sub menu" width="30px" height="30px"></a> 
-                                <ul class="dropdown-menu">
-
-                                   <li><a class="dropdown-item" href="setup_newproject.html" aria-hidden="true">
-                                             Set Up A New Project</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="planproject_individually.html" aria-hidden="true">
-                                            Plan Project Individually</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="planstaff_entireprogram.html" aria-hidden="true">
-                                            Plan STAFF for Entire Programme</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                            Plan Animals for Entire Programme</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                            Plan Test Purchases for Entire Programme for Entire Programme</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                            Plan Additional cost for Entire Programme</a>
-                                    </li> 
-                                </ul>
-                            </li>
-                            <li><a class="dropdown-item" aria-hidden="true"  style="display: flex;    justify-content: space-between;" href="#">Review Plans <img src="../images/right-arrow.png" alt="Arrow for Review Plans Sub menu" width="30px" height="30px"></a>
-                             <ul class="dropdown-menu">
-
-                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Project Portability</a>                                 </li>
-                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Staff Plan Pivot</a></li>
-                                    
-                                </ul>
-                            </li>
-                            <li><a class="dropdown-item"  aria-hidden="true" style="display: flex;    justify-content: space-between;" href="#">Summary Printouts <img src="../images/right-arrow.png" alt="Arrow for Summary Printouts Sub menu" width="30px" height="30px"></a>
-                             <ul class="dropdown-menu">
-
-                                    <li><a class="dropdown-item" aria-hidden="true" aria-label="Programme Profitability Report" href="#">Programme Profitability Report</a>
-                                    </li>
-                                    <li><a class="dropdown-item" aria-hidden="true" aria-label="Summarized by disease" href="#">Summarized by disease</a>
-                                    </li>
-                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Summarized by Customer</a>
-                                    </li>
-                                    <li><a class="dropdown-item" aria-hidden="true" href="#">Project Specifics</a>
-                                    </li>
+     <div id="header"></div>
+	
+	    <script src="../js/fps_nav_menu.js"></script>
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+    <!-- END Global navigation stats -->
+   <main class="govuk-main-wrapper govuk-!-padding-top-0" id="main-content" role="main">
+    <div class="container-fluid">
+	
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <div class="row fps-sr-breadcrumb-row">
+                <div class="fps-sr-breadcrumb-flex">
+                    <div class="col-md-8">
+                        <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+                            <ol class="govuk-breadcrumbs__list">
+                                <li class="govuk-breadcrumbs__list-item">
+                                    <a class="govuk-breadcrumbs__link" href="fpshome.html">Home</a>
+                                </li>
+                                <li class="govuk-breadcrumbs__list-item">
+                                   MAB 
+                                </li>
+                                <li class="govuk-breadcrumbs__list-item">
+                                    <a class="govuk-breadcrumbs__link" href="maintain_division.html"> Maintenance Menu </a>
+                                </li>
+                                <li class="govuk-breadcrumbs__list-item">
+                                     Maintain Programs
+                                </li>
                                
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown"><a class="nav-link  dropdown-toggle" role="button" aria-hidden="true"
-                            data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">Resource
-                            Management<span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Resource Management Menu" width="12px"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="createresourcecenter.html" aria-hidden="true">Create Resource Center</a>
-                            </li>
-                            <li><a class="dropdown-item" href="setupresource.html" aria-hidden="true">Setup Resource</a></li>
-                            <li><a class="dropdown-item" href="reviewplans.html" aria-hidden="true">Review Plans</a></li>
-                            <li><a class="dropdown-item" href="reports.html" aria-hidden="true">Reports</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" aria-hidden="true">Contract </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" aria-hidden="true">Lab Testing Manager's </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"aria-hidden="true" >Luvley Pivots</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle " role="button" aria-hidden="true" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">MAB <span class="arrow"><img src="../images/arrow-down.svg" alt="dropdown arrow for Programme Management Menu" width="12px"></span></a>
-                        <div class="dropdown-menu my-flex-dropdown" style="border: 1px solid #000; left: -70px; ">
-                            <ul>
-
-                                <li><a class="dropdown-item" href="maintain_staff.html" aria-hidden="true">
-                                        Maintenance Menu</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                        Stage 1 Plans</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                        ASU Data View</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                        VLA Project Totals</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                        Generic Bids</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                        Project Audit Trails</a>
-                                </li>
-                            </ul>
-
-
-                            <ul>
-
-
-
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                        SMG Summary Report - All Work</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                        SMG Summary Report - Assured Work Only</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                        All Programs Profitability</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                        Program Exceptional Bids</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                        Income Contribution Rpt</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                        Income Cont - Summary</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">
-                                        Project Specific - Query</a>
-                                </li>
-                            </ul>
-
-
-
-                            <ul>
-
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">Resource Grades by
-                                        Programme</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">Resource Utilisation</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">Open FPS</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">Close FPS</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">Run Snapshot Queries</a>
-                                </li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">Run Comparison Queries</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </li>
-
-                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Project Plan Viewer</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Project Group </a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" aria-hidden="true">Management Account </a></li>
-
-                   
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-   
-    <div class="container-fluid page-content" >
-	
-	
-	<div style="padding: 5px 5px;  border-bottom: 1px solid #b4b4b4" class="row">
-            <div style="display: flex;  font-size: 14px;   align-items: center; justify-content: space-between; ">
-                <div class="col-md-6"> <a class="" href="fpshome.html">Home</a>  &gt; MAB &gt; Maintenance Menu &gt;  Maintain Programs  
-                 </div>
-				<!-- <div style="display: flex;  -->
-                    <!-- justify-content: flex-end;" class="col-md-6"> -->
-                   <!-- <div class="col-sm-4" style="border: 2px solid #1d70b8; -->
-                        <!-- border-radius: 5px;  -->
-                        <!-- font-size: 13px; -->
-                        <!-- font-weight: normal; -->
-                        <!-- background-color: #fff; -->
-                        <!-- text-align: left; -->
-                        <!-- display: flex;					 -->
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-md-4 pva-project-wrap">
 					
-                        <!-- margin-right: 10px; -->
-                        <!-- align-items: center; -->
-                        <!-- justify-content: space-between;"> -->
-                        <!-- <div class="col" style="border-right: 1px solid #684e00; text-align: left; padding: 1px 5px;">Programme:<strong id="resultprogram"> Bact </strong> -->
-                        <!-- </div> -->
-                        <!-- <!-- <div class="col" style="text-align: left; padding: 1px 5px;">Project: <strong id="resultproject"> APHAB000000</strong></div> -->
-                    <!-- </div> -->
-                    <!-- <div> -->
-                        <!-- <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" -->
-                            <!-- class="govuk-button sup_margin_0" style="padding: 4px 14px;">Change</button> -->
-                    <!-- </div> -->
-                <!-- </div> -->
-            </div>
-        </div>
-	
-	
-	<div class="col-lg-12">
-			<div class="row" style="display:flex;     align-items: center;">
-			
-			
-				<div class="col-sm-12" style="padding:0px;  ">
-			<div style="border-bottom: 2px solid #1d70b8; height:48px;">
-			 <div style="padding: 15px 0 5px 17px; font-size:16px; width: 50%;  font-weight: 700; float:left">
-              Program Maintenance
-					
+                     
 				
-					</div>
-					<div style=" float: right; text-align:right;     margin-top: 8px;    width:50%; float:left">
-			<!-- <a class="btn btn-outline-primary btn-sm btn-back" a="" aria-hidden="true" href="program_management.html" aria-label="back to select a program" style="margin-right: 16px;border: 1px solid #0d6efd;">Back</a> -->
-			</div>
-			</div>
-		
+                    </div>
+					
+                </div>
             </div>
+        </div>
+		<div class="govuk-grid-column-full">
+                    <h1 class="govuk-grid-row govuk-heading-s sup_border-bottom govuk-!-margin-top-2 govuk-!-padding-bottom-2 govuk-!-padding-left-4 ">Program Maintenance
+					<!-- <a href="planproject_individually.html" class="govuk-back-link sup_align_right govuk-!-margin-bottom-0 ">Back</a> -->
+					</h1>
+                </div>
+				
 			
-			
-			
-			</div>
-              
-            </div>
+    </div>
+	
+	
+	
 	
        
-        <div class="row">
-         
-          
-		
-			
-			<div class="col-lg-12" >
-		
-			<main class="main-content" style="padding:0;">
-       
-	
-       <div class="container-fluid " style="padding: 0;">
-
-     
- 
-        
-        <!-- Modal for Add/Edit -->
-        
-
-           
-
-
-            
-
-
-
-        <!-- Financial Summary -->
-       
- 
-         <div class="row">
-            <div class="container-fluid" style="padding-left:0px;">
+         <div class="govuk-grid-row">
+		 
+		      
+		 
+		 <div class="container-fluid" style="padding-left:0px;">
                  <div style="display: flex; flex-direction: row; align-items: flex-start;">
                   <nav class="sidenav flex-column flex-shrink-0" id="shortnav">
                 <button class="toggle-btn" onclick="toggleSidebar()" style="right: -8px; top: 30px;">
@@ -384,14 +141,14 @@
 				   
                 </button>
                   <ul>
-				    <li><a class="dropdown-item">Maintain Divisions</a></li>
+				     <li><a class="dropdown-item" href="maintain_division.html">Maintain Divisions</a></li>
                     <li><a class="dropdown-item" href="#">
                             Maintain Resource Centres</a>
                     </li>
                     <li><a class="dropdown-item" href="#">
                          Maintain Workgroups</a>
                     </li>
-                    <li><a class="dropdown-item" href="planvsactaul_animals.html">
+                    <li><a class="dropdown-item" href="#">
                            Maintain Grades</a>
                     </li>
                     <li><a class="dropdown-item" href="#">
@@ -449,21 +206,10 @@
 	
 
 	
-<div class="govuk-grid-row">
-		 
-		       <div class="govuk-grid-column-full mt-2">
-			   
-			   
-			   
-			 
-			   
-			   </div>
-		 
-		 
-         
-         
+<div class="govuk-grid-row"> 
+		      
   
-   <div class="govuk-grid-column-full mt-2">
+   <div class="govuk-grid-column-full ">
 		   
 		   
 		   
@@ -691,31 +437,32 @@
                                          
                                         </div>
 										
+										<div class="sup_pagination_footer sup_border">
 										<div class="sup_pagination_wrapper">
-                                    <div class="sup_margin_left_right_10">
-                                        <label for="recordsPerPage" class="govuk-visually-hidden">Records per page</label>
-                                        <select id="recordsPerPage" class="govuk-select sup_select_pagination_width" aria-label="Select number of records per page">
-                                            <option value="5">5</option>
-                                            <option value="10">10</option>
-                                            <option value="15" selected="">15</option>
-                                            <option value="20">20</option>
-                                            <option value="25">25</option>
-                                            <option value="30">30</option>
-                                        </select>
-                                    </div>
-                                    <nav class="govuk-pagination sup_margin_left_right_10" aria-label="Pagination">
-                                            
-                                            <ul class="govuk-pagination__list" id="pagination"><li class="govuk-pagination__item disabled aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(0)"> <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-       
-      </svg> <span class="govuk-pagination__link-title">
+                                <div class="sup_margin_top_bottom_5_10">
+                                    <label for="recordsPerPage">Records per page</label>
+                                    <select id="recordsPerPage" class="govuk-select govuk-select--width-2 govuk-!-font-size-16" aria-label="Select number of records per page">
+                                        <option value="5">5</option>
+                                        <option value="10" selected="">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                        <option value="25">25</option>
+                                        <option value="30">30</option>
+                                    </select>
+                                </div>
+                                <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+
+                                    <ul class="govuk-pagination__list" id="pagination"><li class="govuk-pagination__item disabled aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(0)"> <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+      </svg> <span class="govuk-pagina  tion__link-title">
         Previous<span class="govuk-visually-hidden"> page</span>
       </span></a></li><li class="govuk-pagination__item govuk-pagination__item--current aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(1)">1</a></li><li class="govuk-pagination__item  aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(2)">2</a></li><li class="govuk-pagination__next  aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(2)" rel="next"><span class="govuk-pagination__link-title">Next</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-       
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
       </svg></a></li></ul>
-                                    </nav>
-                                 
+                                </nav>
 
-                                </div>
+
+                            </div> </div>
 										
 										
 										<!-- <div class="sup_pagination_wrapper"> -->
@@ -807,32 +554,62 @@
 					
                     </div>
             </div>
-            </div>
- </div>
-
-        </div>
- 
-	   
-    </main>
-			
-			</div>
-			
-			
-           
-        </div>
-    
+         
+         
+  
+   
 	
-    <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
+	
+	
+	  
+		   
+		   
+		   
+		   
+  
+  </div>
+	
+	
+	</div>
+		   
+		   
+		   
+		   
+  
+  </div>			
+				
+           
+        
+		
+		<div class="govuk-grid-row">
+  
+  
+  
+  <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
         <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
             <span class="fps-sr-page-footer-text">
                 © copyright Defra 2025
             </span>
         </div>
-    </div>
+    </div> 
+</div>
 		
+		</main>
 		
-      
+    
 	
+	
+		
+
+		
+		
+		
+	
+
+
+
+
+
 <div class="modal fade" id="projectModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -886,7 +663,7 @@
                 </div>
             </div>
 
-            <div class="modal-footer">
+         <div class="modal-footer justify-content-between flex-nowrap">
                 <button class="govuk-button govuk-button--secondary sup_margin_0" data-module="govuk-button" data-bs-dismiss="modal">Cancel</button>
                 <button class="govuk-button sup_margin_0" data-module="govuk-button" onclick="saveProject()">Save</button>
             </div>
@@ -961,7 +738,7 @@
                 </div>
             </div>
 
-            <div class="modal-footer">
+          <div class="modal-footer justify-content-between flex-nowrap">
                 <button class="govuk-button govuk-button--secondary sup_margin_0" data-module="govuk-button" data-bs-dismiss="modal">Cancel</button>
                 <button class="govuk-button sup_margin_0" data-module="govuk-button" onclick="savestaffplan()">Save</button>
             </div>
@@ -972,14 +749,8 @@
 		
 		
 	
-	
-	
-
-	
-	
-	
-
-
+		
+		
 		
 
     <!-- Bootstrap JS (required for dropdowns) -->
@@ -992,47 +763,7 @@
         }
     </script>
 	
-     <script>
-     function updateTableBodyVisibility(programmeName) {
-        const tableBody = document.getElementById("tableBody");
-        if (!tableBody) return;
-
-        const selectedProgramme = (programmeName || "").trim().toLowerCase();
-        tableBody.style.display = selectedProgramme === "bact" ? "table-row-group" : "none";
-     }
-
-	
-	 function SelectProgram()
-	 {
-	 
-	  
- const mySelect = document.getElementById("select_program").value;
- console.log(mySelect);
-	 
-	  document.getElementById("resultprogram").innerHTML = mySelect;
-      updateTableBodyVisibility(mySelect);
-	 }
-
-    document.addEventListener("DOMContentLoaded", function () {
-        updateTableBodyVisibility("");
-    });
-
-
-        function showValue() {
-            const selectBox = document.getElementById("project");
-            const selectedValue = selectBox.value;
-            const selectedText = selectBox.options[selectBox.selectedIndex].text;
-
-
-            const selectBoxProgram = document.getElementById("program");
-            const selectedValueProgram = selectBoxProgram.value;
-            const selectedTextProgram = selectBoxProgram.options[selectBoxProgram.selectedIndex].text;
-
-
-            document.getElementById("resultproject").innerHTML = `<b>${selectedText}</b>`;
-            document.getElementById("resultprogram").innerHTML = `<b>${selectedTextProgram}</b>`;
-        }
-    </script>
+    
 	
 	
 	
@@ -1042,55 +773,10 @@
    
 	
 	
-	<script>
-	 function addStaffRow() {
- 
- const mySelect = document.getElementById("WGgradevalue").value;
- const staffTable_name = document.getElementById("staff_name").value;
- const staffTable_rate = document.getElementById("rate_value").value;
- const staffTable_hour = document.getElementById("hour_value").value;
- const staffTable_days = document.getElementById("days_value").value;
- const staffTable_cost = document.getElementById("hrspaid_value").value;
- 
- console.log(mySelect);
- 
- 
- 
-            const table = document.getElementById("staffTableBody_data").getElementsByTagName('tbody')[0];
-            const newRow = table.insertRow();
-            
-            const cell1 = newRow.insertCell(0);
-            const cell2 = newRow.insertCell(1);
-			const cell3 = newRow.insertCell(2);
-            const cell4 = newRow.insertCell(3);
-			   const cell5 = newRow.insertCell(4);
-			      const cell6 = newRow.insertCell(5);
-				     const cell7 = newRow.insertCell(6);
-			cell1.style.textAlign = "left";
-			cell2.style.textAlign = "left";
-			cell3.style.textAlign = "right";
-			cell4.style.textAlign = "right";
-			cell5.style.textAlign = "right";
-			cell6.style.textAlign = "right";
-            <!-- const cell3 = newRow.insertCell(2); -->
-
-            cell1.innerHTML = "<span id='myInput' >"+mySelect+"</span>";
-			cell2.innerHTML = "<span id='myInput' >"+staffTable_name+"</span>";
-			cell3.innerHTML = "<span id='myInput' >£"+staffTable_rate+"</span>";
-			cell4.innerHTML = "<span id='myInput'>"+staffTable_hour+"</span>";
-			cell5.innerHTML = "<span id='myInput'>"+staffTable_days+"</span>";
-			cell6.innerHTML = "<span id='myInput'>£"+staffTable_cost+"</span>";
-			
-          
-            cell7.innerHTML = '<button type="button" class="govuk-button govuk-button--secondary sup_margin_0 edit-row-btn" data-module="govuk-button"><i class="fa fa-edit"></i></button> <button type="button" class="govuk-button govuk-button--warning sup_margin_0 delete-row-btn" data-module="govuk-button"><i class="fa fa-trash"></i></button>';
-     
-	closeaddstaffModal();
 	
-		}
-	</script>
  <script src="../js/bootstrap.bundle.min.js"></script>
- 
-    <script src="../js/program_maintenance.js"></script>
+   <!-- <script src="../js/modalpopup.js"></script> -->
+  <script src="../js/program_maintenance.js"></script>
 	 
 </body>
 

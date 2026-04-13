@@ -2701,7 +2701,6 @@ div#jobcodediv>table>tbody>tr>td:nth-child(5) {
   height: 100%;
   cursor: col-resize;
   user-select: none;
-  background: transparent;
 }
 
 
@@ -3100,4 +3099,12 @@ tbody#projectCostTableBody>tr>td:nth-child(3), tbody#projectCostTableBody>tr>td:
 
 .clear-search-btn span {
     line-height: 10px !important;
+}
+
+table#programFinancialTable > tbody > tr > td:nth-child(5) {
+    padding:4px 3px 4px 0 !important;
+}
+
+table#programFinancialTable > thead > tr >th {
+    border-top: 0;
 }

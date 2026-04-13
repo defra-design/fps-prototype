@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="https://design-system.service.gov.uk/stylesheets/govuk-frontend-110050e5900f36079383aecb46ca62bc.min.css" rel="stylesheet"/> -->
     <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
     <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
     <link rel="stylesheet" href="nav_menu/navstyle.css" />
     <script src="nav_menu/menutemplate.js"></script>
     <link rel="stylesheet" href="../css/pact_styles/style.css" />
     <link rel="stylesheet" href="../css/pact_styles/suppliement_style_over_gov.uk_style.css" />
-    <title>2025-2026 : Project Management - PACT</title>
+    <title>2025-2026 : Project Parent Invoice Data - PACT</title>
  
 </head>
 
@@ -47,9 +46,6 @@
                 </div>
             </div>
 
-
-
-
         </div>
     </header>
     <div id="header"></div>
@@ -60,95 +56,37 @@
         document.getElementById('header').innerHTML = htmlmenu;
         initMenu();
         btn();
-    </script> 
+    </script>
     <div class="content-wrapper">
-        <div class="govuk-grid-row sup_margin_left_right_0">
+    <div class="govuk-grid-row sup_margin_left_right_0">
         <div class="govuk-grid-column-full">
             <h1 class="heading_with_txtbox govuk-heading-s sup_border-bottom sup_margin_bottom_10 p-tb-10 p-l-10">
                 <div class="sup_flex_left_center">
-                  Invoice Recording 
+                   Monthly Commercial Invoice "Clean Out" Facility
                 </div> 
             </h1>
         </div>
     </div>
 
-    <div class="govuk-grid-row sup_margin_left_right_0 sup_flex_left_center sup_padding_bottom_10 sup_border-bottom">
-        <div class="govuk-grid-column-one-third">
-                            <div class="govuk-form-group sup_margin_bottom_0">
-                                    <label for="projectCodeSelect" class="govuk-label govuk-!-font-weight-bold">Project</label>
-                                    <select id="projectCodeSelect" class="govuk-select sup_select_option_width_100 govuk-!-font-size-16" required>
-                                        <option value="">-- Select Project --</option>
-                                    </select>
-                                </div>
-                        </div>
-                        <div class="govuk-grid-column-one-third">
-                            <div class="tableselectdropdown input-group searchfiels" data-empdropdown data-source="months">
-                                <label for="monthSelect" class="govuk-label govuk-!-font-weight-bold">Month</label>
-                                <input type="text" id="monthSelect" placeholder="Select Month" class="dropdown-input down-arrow-img govuk-input govuk-!-font-size-16" />
-                                <div class="tbl-dropdown-panel">
-                                    
-                                        <input type="text" class="select-search-box" placeholder="Type to search month" />
-                                        <button type="button" class="govuk-button govuk-button--secondary clear-search-btn" aria-label="Clear search"><span class="sup_error_text_color govuk-!-font-size-19">&times;</span>
-                                        </button>
-                                     
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Sr. No</th>
-                                                <th>Month</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody></tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-
-
-
-                        </div>
-
-                        
-
-                        <div class="govuk-grid-column-one-third sup_p_0_mt_24">
-                            <div class="govuk-button-group sup_margin_0 sup_float_right">
-                                <!-- <button type="button" class="govuk-button govuk-button--warning sup_margin_0 sup_p_8"
-                                    id="deleteSelectedBtn" aria-label="Delete selected invoices"
-                                    data-module="govuk-button">
-                                    Delete Selected
-                                </button> -->
-                                <!-- <button type="button" class="govuk-button sup_margin_0 sup_p_8 sup_flex" id="addInvoiceBtn"
-                                    aria-label="Add invoice" data-module="govuk-button">
-                                    <img alt="plus icon for add invoice" src="../images/circle-plus-solid-full-white.svg" width="16px" />
-                                      &nbsp;Add Invoice
-                                </button> -->
-                            </div>
+    <div class="sup_margin_top_10 sup_margin_bottom_10">
+        <div class="govuk-grid-row sup_margin_0">
+            <div class="govuk-grid-column-two-thirds sup_padding_right_left_10">
+                <div class="sup_border">
+                    <div class="sup_flex_end_center sup_justify_content"> 
+                        <h2 class="govuk-!-font-size-16 sup_margin_5">For OM, OG, FT & UT Project Invoices</h2>
+                        <div class="sup_flex_end_center sup_margin_5">
+                            <button type="button" class="govuk-button sup_margin_0 sup_p_8" 
+                                id="addProjectParentInvoiceBtn" aria-label="Add Invoice" data-module="govuk-button">
+                                + &nbsp; Add Invoice
+                            </button>
                         </div>
                     </div>
-
-    <div class="sup_margin_top_10 sup_margin_bottom_10 sup_overflow_hidden">
-        <div class="govuk-grid-column-full sup_padding_right_left_10">
-            <div class="sup_border">
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 5px; border-bottom: 1px solid #b1b4b6;">
-                    <h2 class="govuk-heading-s" style="margin: 0;">Invoice Records</h2>
-                    <div style="display: flex; gap: 8px;">
-                        <!-- <button type="button" class="govuk-button sup_margin_0 sup_gov_blue_bg sup_flex sup_width_140" 
-                            id="exportInvoiceExcel" aria-label="Export to Excel">
-                            <img src="../images/file-export-solid-full.svg" width="16"
-                                alt="icon for export data into excel file" />&nbsp; Export Excel
-                        </button> -->
-                        <button type="button" class="govuk-button sup_margin_0 sup_p_8" 
-                            id="addInvoiceBtn" aria-label="Add Invoice" data-module="govuk-button">
-                            + &nbsp; Add Invoice
-                        </button>
-                    </div>
-                </div>
                 
                 <div class="table_scroll_wrapper">
-                    <table class="govuk-table custom-table" id="invoiceTable">
+                    <table class="govuk-table custom-table" id="projectParentInvoiceTable">
                         <thead class="govuk-table__head">
                             <tr class="govuk-table__row">
-                                <th data-column="0" scope="col" class="govuk-table__header">Project
+                                <th data-column="0" scope="col" class="govuk-table__header">Project Parent
                                     <div class="resizer">&nbsp;</div>
                                 </th>
                                 <th data-column="1" class="govuk-table__header">Month
@@ -157,25 +95,16 @@
                                 <th data-column="2" class="govuk-table__header">Amount
                                     <div class="resizer">&nbsp;</div>
                                 </th>
-                                <th data-column="3" class="govuk-table__header">Cost of Work
+                                <th data-column="3" class="govuk-table__header">Cost Of Work
                                     <div class="resizer">&nbsp;</div>
                                 </th>
                                 <th data-column="4" class="govuk-table__header">WIP
                                     <div class="resizer">&nbsp;</div>
                                 </th>
-                                <th data-column="5" class="govuk-table__header">Profit/Loss
-                                    <div class="resizer">&nbsp;</div>
-                                </th>
-                                <th data-column="6" class="govuk-table__header">Details
-                                    <div class="resizer">&nbsp;</div>
-                                </th>
-                                <th data-column="7" class="govuk-table__header">Invoice Counter
-                                    <div class="resizer">&nbsp;</div>
-                                </th>
                                 <th class="govuk-table__header">Actions</th>
                             </tr>
                         </thead>
-                        <tbody class="govuk-table__body" id="invoiceTableBody">
+                        <tbody class="govuk-table__body" id="projectParentInvoiceTableBody">
                             <!-- Data will be populated by JavaScript -->
                         </tbody>
                     </table>
@@ -195,14 +124,57 @@
                         </select>
                     </div>
                     <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
-                        <ul class="govuk-pagination__list" id="invoicePagination">
+                        <ul class="govuk-pagination__list" id="projectParentInvoicePagination">
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
-    </div>
 
+        <!-- Instructions Panel on the Right -->
+        <div class="govuk-grid-column-one-third sup_padding_right_left_10">
+            <div class="sup_border">
+                <div class="sup_padding_16">
+                    <h2 class="govuk-heading-s sup_margin_bottom_10">
+                        Using this Form
+                    </h2>
+                    
+                    <div>
+                        <p class="govuk-body-s sup_margin_bottom_10">
+                            This form allows you to update all invoices of the type indicated.
+                        </p>
+                        
+                        <p class="govuk-body-s">
+                            Typically you will need a spreadsheet with data & layout identical to those shown in the datasheet.
+                        </p>
+                        
+                        <p class="govuk-body-s">
+                            You can then delete all existing records from the datasheet and paste in new ones from the spreadsheet.
+                        </p>
+                        
+                        <p class="govuk-body-s">
+                            Tip: To highlight all records click on the square in the top left hand corner of the datasheet. Then press the delete key to remove them.
+                        </p>
+                        
+                        <p class="govuk-body-s sup_margin_bottom_10">
+                            If the database integrity rejects any pasted records, these will be entered in to a table called "Paste Errors". Use the button to view & print them.
+                        </p>
+                        
+                        <p class="govuk-body-s sup_margin_bottom_10">
+                            NB "Paste Errors" will be overwritten with then next set of rejected records
+                        </p>
+                        
+                        <div>
+                            <button type="button" id="btnPasteErrors" class="govuk-button govuk-button--secondary sup_margin_0" aria-label="View Paste Errors">
+                                Paste Errors
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
     <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
         <div class="govuk-width-container sup_p_8 sup_text_center">
@@ -212,42 +184,31 @@
         </div>
     </div> 
 
-    <!-- Add/Edit Invoice Modal -->
-    <div class="modal" id="addInvoiceModal" tabindex="-1">
+    <!-- Add/Edit Project Parent Invoice Modal -->
+    <div class="modal" id="addProjectParentInvoiceModal" tabindex="-1">
         <div class="modal-dialog modal-custom">
-            <div class="modal-content">
+            <div class="modal-content sup_overflow_visible">
                 <div class="modal-header flex-space-center">
-                    <h3 class="modal-title m-0" id="invoiceModalLabel">Add Invoice</h3>
-                    <button type="button" class="btn-close btn-red" id="closeInvoiceModalBtn">X</button>
+                    <h3 class="modal-title m-0" id="projectParentInvoiceModalLabel">Add Invoice</h3>
+                    <button type="button" class="btn-close btn-red" id="closeProjectParentInvoiceModalBtn">X</button>
                 </div>
                 <div class="modal-body" style="padding: 8px 16px 0 0px;">
-                    <form class="govuk-grid-column-full" id="formAddInvoice">
-                        <div class="govuk-grid-row" id="divInvoicecounter">
-                             <div class="govuk-grid-column-one-half">
-                                <div class="govuk-form-group sup_margin_bottom_10">
-                                    <label for="txtmodal-invcntr" class="govuk-label govuk-!-font-weight-bold">Invoice Counter:</label>
-                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-invcntr" 
-                                        name="invcntr" placeholder="Enter invoice counter" readonly disabled>
-                                </div>
-                            </div>
-                        </div>
+                    <form class="govuk-grid-column-full" id="formAddProjectParentInvoice">
                         <div class="govuk-grid-row">
-                     
                             <div class="govuk-grid-column-one-half">
-                            <div class="govuk-form-group sup_margin_bottom_0">
-                                    <label for="dpmodalproject" class="govuk-label govuk-!-font-weight-bold">Project <span class="sup_color_red">*</span></label>
-                                    <select id="dpmodalproject" class="govuk-select sup_select_option_width_100 govuk-!-font-size-16" required>
-                                        <option value="">-- Select Project --</option>
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-projectparent" class="govuk-label govuk-!-font-weight-bold">Project Parent <span class="sup_color_red">*</span></label>
+                                    <select id="txtmodal-projectparent" class="govuk-select sup_select_option_width_100 govuk-!-font-size-16" required>
+                                        <option value="">-- Select Project Parent --</option>
                                     </select>
                                 </div>
-                                </div>
+                            </div>
                             <div class="govuk-grid-column-one-half">
-                          
                                 <div class="govuk-form-group sup_margin_bottom_10">
                                     <div class="tableselectdropdown input-group searchfiels" data-editmonthdropdown data-source="editmodal-month">
                                         <label for="txtmodal-month" class="govuk-label govuk-!-font-weight-bold">Month</label>
                                         <input type="text" id="txtmodal-month" placeholder="Select Month"
-                                            class="dropdown-input down-arrow-img govuk-input govuk-!-font-size-16" />
+                                            class="dropdown-input down-arrow-img govuk-input govuk-!-font-size-16" required />
                                         <div class="multicolumn-dropdown-panel tbl-dropdown-panel">
                                             <div class="search-box-wrapper">
                                                 <input type="text" class="search-box" placeholder="Type to search month" />
@@ -286,7 +247,7 @@
                                     <div class="govuk-input__wrapper">
                                         <div class="govuk-input__prefix" aria-hidden="true">£</div>
                                         <input type="number" step="0.01" class="govuk-input govuk-!-font-size-16" id="txtmodal-costofwork" 
-                                            name="costofwork" placeholder="0.00" required>
+                                            name="costofwork" placeholder="0.00">
                                     </div>
                                 </div>
                             </div>
@@ -298,46 +259,26 @@
                                     <div class="govuk-input__wrapper">
                                         <div class="govuk-input__prefix" aria-hidden="true">£</div>
                                         <input type="number" step="0.01" class="govuk-input govuk-!-font-size-16" id="txtmodal-wip" 
-                                            name="wip" placeholder="0.00" required>
+                                            name="wip" placeholder="0.00">
                                     </div>
                                 </div>
                             </div>
-                            <div class="govuk-grid-column-one-half">
-                                <div class="govuk-form-group sup_margin_bottom_10">
-                                    <label for="txtmodal-profitloss" class="govuk-label govuk-!-font-weight-bold">Profit/Loss:</label>
-                                    <div class="govuk-input__wrapper">
-                                        <div class="govuk-input__prefix" aria-hidden="true">£</div>
-                                        <input type="number" step="0.01" class="govuk-input govuk-!-font-size-16" id="txtmodal-profitloss" 
-                                            name="profitloss" placeholder="0.00" required>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="govuk-grid-row">
-                            <div class="govuk-grid-column-full">
-                                <div class="govuk-form-group sup_margin_bottom_10">
-                                    <label for="txtmodal-details" class="govuk-label govuk-!-font-weight-bold">Details:</label>
-                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-details" 
-                                        name="details" placeholder="Enter details" required>
-                                </div>
-                            </div>
-                           
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer" 
                     style="display: flex; justify-content: space-between; align-items: center; flex-direction: row;">
                     <button class="govuk-button govuk-button--secondary sup_margin_0" 
-                        aria-label="Cancel" id="cancelInvoiceModalBtn">Cancel</button>
+                        aria-label="Cancel" id="cancelProjectParentInvoiceModalBtn">Cancel</button>
                     <button class="govuk-button sup_margin_0" aria-label="Save" 
-                        id="saveInvoiceBtn">Save</button>
+                        id="saveProjectParentInvoiceBtn">Save</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Main Invoice Management Script -->
-    <script src="../js/project_invoices_manual.js"></script>
+    <!-- Project Parent Invoice JavaScript -->
+    <script src="../js/pact_js/monthly_commercial_invoice_cleanout.js"></script>
 </body>
 
 </html>

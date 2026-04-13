@@ -738,6 +738,7 @@ tbody#tableBody >tr >td >  .btnBlue {
 
 .btn-group .btn:first-child {
   border-radius: 6px 0 0 6px;
+  border:0 !important;
 }
 
 .btn-group .btn:last-child {
@@ -1255,7 +1256,7 @@ textarea.form-control {
 
 .financial-summary {
 background-color: #edf4ff;
-    border: 1px solid #1d70b8;
+    border: 1px solid #cecece;
     padding: 8px;
     border-radius: 4px;
 }
@@ -1294,3 +1295,6 @@ button {
     font-size: 16px !important;
 }
 
+table, th, td, button, label, input , select, textarea{
+    font-size: 16px !important;
+}
