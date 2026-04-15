@@ -44,9 +44,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeBtn = document.querySelector('.close-btn');
     if (closeBtn) {
         closeBtn.addEventListener('click', function() {
-            if (confirm('Are you sure you want to close the application?')) {
+            showGovukConfirm('Are you sure you want to close the application?').then((result) => {
+                if (result) {
                 window.close();
             }
+            });
         });
     }
 });

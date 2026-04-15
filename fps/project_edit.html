@@ -3,15 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
     <title>2025-2026 : Project Edit</title>
-<!-- <link rel="stylesheet" href="style_sidenav.css"> -->
+<!-- <link rel="stylesheet" href="../css/fps_styles/style.css"> -->
     <!-- Bootstrap CSS -->
 	 <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 	 <link rel="stylesheet" href="../css/fps_styles/styles.css">
 	  <link rel="stylesheet" href="../css/main_style.css">
-	    <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
+	    <link rel="stylesheet" href="../css/supplement_style_over_gov.uk_style.css" />
 	  
 <script>
     // function onChangeProject(){
@@ -97,6 +98,7 @@
 
     <!-- Global navigation stats -->
     <script src="../js/fps_nav_menu.js"></script>
+    <script src="../js/govuk-modal-dialog.js"></script>
     <script>
         document.getElementById('header').innerHTML = htmlmenu;
         initMenu();
@@ -107,16 +109,34 @@
 	
     
     <div class="container-fluid">
-	
-	
-	<div style="padding: 5px 5px;  border-bottom: 1px solid #b4b4b4" class="row">
-            <div style="display: flex;  font-size: 14px;   align-items: center; justify-content: space-between; ">
-               <div> <a class="" href="fpshome.html">Home</a> &gt; Programme Management &gt; <a class="" href="program_management.html">Select Programme</a>  &gt; Edit Project
-                 </div>
-				
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div class="row fps-sr-breadcrumb-row">
+                    <div class="fps-sr-breadcrumb-flex">
+                        <div class="col-md-8">
+                            <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+                                <ol class="govuk-breadcrumbs__list">
+                                    <li class="govuk-breadcrumbs__list-item">
+                                        <a class="govuk-breadcrumbs__link" href="fpshome.html">Home</a>
+                                    </li>
+                                    <li class="govuk-breadcrumbs__list-item">
+                                        <a class="govuk-breadcrumbs__link" href="program_management.html">Programme Management</a>
+                                    </li>
+                                    <li class="govuk-breadcrumbs__list-item">
+                                        <a class="govuk-breadcrumbs__link" href="program_management.html">Select Programme</a>
+                                    </li>
+                                    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                                        Edit Project
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="col-md-4 pva-project-wrap">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-		
 		<div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
             <h1 class="govuk-heading-s sup_border-bottom" style="padding:10px 0 10px 10px">   Edit Project details in Programme  <a href="program_management.html" class="govuk-back-link sup_align_right">Back</a></h1>
@@ -405,13 +425,15 @@ Lucy Snow is PM while Jo is on M/L wef June 24
            
         </div>
     </div>
-    <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
-        <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
-            <span class="fps-sr-page-footer-text">
-                © copyright Defra 2025
-            </span>
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+                </span>
+            </div>
         </div>
     </div>
+</div>
 
     <!-- Bootstrap JS (required for dropdowns) -->
    <script src="../js/bootstrap.bundle.min.js">    </script>
@@ -438,3 +460,7 @@ Lucy Snow is PM while Jo is on M/L wef June 24
 </body>
 
 </html>
+
+</html>
+
+

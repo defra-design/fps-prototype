@@ -429,12 +429,13 @@ function saveTblAccCat() {
       allRecordsAccCat.length > 0
         ? allRecordsAccCat[allRecordsAccCat.length - 1].id + 1
         : 1;
-    allRecordsAccCat.push({
+    allRecordsAccCat.unshift({
       id: newId,
       accountShortName: shortName,
       description: description,
       csg7Group: csg7Group,
     });
+    currentPageAccCat = 1;
   }
   filteredRecordsAccCat = allRecordsAccCat.slice();
   renderTableAccCat();
@@ -667,11 +668,12 @@ function saveTblCsg7() {
       allRecordsCsg7.length > 0
         ? allRecordsCsg7[allRecordsCsg7.length - 1].id + 1
         : 1;
-    allRecordsCsg7.push({
+    allRecordsCsg7.unshift({
       id: newId,
       csg7Group: csg7Group,
       useInflation: useInflation,
     });
+    currentPageCsg7 = 1;
   }
   filteredRecordsCsg7 = allRecordsCsg7.slice();
   renderTableCsg7();
@@ -917,7 +919,8 @@ function saveTblCapsStaff() {
       allRecordsCapsStaff.length > 0
         ? allRecordsCapsStaff[allRecordsCapsStaff.length - 1].id + 1
         : 1;
-    allRecordsCapsStaff.push({ id: newId, mNumber: mNumber, name: name });
+    allRecordsCapsStaff.unshift({ id: newId, mNumber: mNumber, name: name });
+    currentPageCapsStaff = 1;
   }
   filteredRecordsCapsStaff = allRecordsCapsStaff.slice();
   renderTableCapsStaff();

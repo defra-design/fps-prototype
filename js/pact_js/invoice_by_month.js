@@ -290,7 +290,7 @@ function setupEventListeners() {
  */
 function exportToExcel() {
     if (typeof XLSX === 'undefined') {
-        alert('Excel export library not loaded');
+        showGovukAlert('Excel export library not loaded');
         return;
     }
     

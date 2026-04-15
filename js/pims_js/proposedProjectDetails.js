@@ -229,7 +229,8 @@ function saveRecord() {
 
 // Delete record
 function deleteRecord(index) {
-  if (confirm("Are you sure you want to delete this record?")) {
+  showGovukConfirm("Are you sure you want to delete this record?").then((result) => {
+      if (result) {
     const tableRows = document.querySelectorAll(
       "table.custom-table tbody tr.govuk-table__row",
     );
@@ -239,6 +240,7 @@ function deleteRecord(index) {
       showNotification("Record deleted successfully", "danger");
     }
   }
+  });
 }
 
 // Show notification message

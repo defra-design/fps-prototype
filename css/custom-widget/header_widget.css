@@ -1,0 +1,31 @@
+.govuk-header__container{
+    overflow: hidden;
+
+    .govuk-header__logo,
+    .logsWrapper{
+        float: left;
+
+        select{
+            border: none;
+            font-size: 20px;
+            font-weight: bold;
+            height: 36px;
+}
+        }
+    }
+
+    .logsWrapper{
+        border: 1px solid #0374e9;
+        border-radius: 10px;
+        color: #00005c;
+        text-shadow: 1px 1px #b0d7ff;
+        letter-spacing: 1px;
+        background: #fff;
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        padding: 2px;
+        margin-left: 10px;
+    }
+}
+

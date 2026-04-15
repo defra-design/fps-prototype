@@ -250,7 +250,7 @@ function handleSave() {
     const workGroup = document.getElementById('workGroupSelect').value;
     
     if (!testCode || !workGroup) {
-        alert('Please fill in all required fields');
+        showGovukAlert('Please fill in all required fields');
         return;
     }
     
@@ -340,7 +340,8 @@ function closeModal() {
 
 // Handle delete
 function handleDelete(id) {
-    if (confirm('Are you sure you want to delete this test?')) {
+    showGovukConfirm('Are you sure you want to delete this test?').then((result) => {
+        if (result) {
         testData = testData.filter(item => item.id !== id);
         
         // Update filtered data
@@ -354,6 +355,7 @@ function handleDelete(id) {
         renderTable();
         renderPagination();
     }
+    });
 }
 
 // Render table

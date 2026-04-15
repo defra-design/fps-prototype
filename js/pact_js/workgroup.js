@@ -1099,7 +1099,7 @@ function setupEventListeners() {
 
     if (addTestBtn) {
         addTestBtn.addEventListener('click', function() {
-            alert('Test project details add functionality would be implemented here.');
+            showGovukAlert('Test project details add functionality would be implemented here.');
         });
     }
 
@@ -1300,7 +1300,7 @@ function renderSummaryTable() {
 //    
 //     const clearFilterBtn = document.getElementById('clearFilterBtn');
 //     filterIndicator.innerText =  document.getElementById('txtstaffsearchBox').value;
-//     alert(filterIndicator,"filterIndicator")
+//     showGovukAlert(filterIndicator,"filterIndicator")
     // Update filter indicator
     if (selectedTestCode) {
        // filterIndicator.textContent = `(Filtered by: ${selectedTestCode})`;
@@ -1608,7 +1608,7 @@ function saveWorkgroup() {
 
     // Validation
     if (!testcode || !workgroup || !planportfolio) {
-        alert('Please fill in all required fields');
+        showGovukAlert('Please fill in all required fields');
         return;
     }
 
@@ -1621,11 +1621,11 @@ function saveWorkgroup() {
     if (editingIndex !== null) {
         // Update existing entry
         workgroupData[editingIndex] = newEntry;
-        alert('Test Code updated successfully!');
+        showGovukAlert('Test Code updated successfully!');
     } else {
         // Add new entry
         workgroupData.push(newEntry);
-        alert('Test Code added successfully!');
+        showGovukAlert('Test Code added successfully!');
     }
 
     closeModal();
@@ -1641,10 +1641,12 @@ function editWorkgroupWithData(event) {
 }
 
 function deleteWorkgroup(index) {
-    if (confirm('Are you sure you want to delete this entry?')) {
+    showGovukConfirm('Are you sure you want to delete this entry?').then((result) => {
+        if (result) {
         workgroupData.splice(index, 1);
         renderWorkgroupTable();
     }
+    });
 }
 
 function editTest(index) {
@@ -1652,7 +1654,8 @@ function editTest(index) {
 }
 
 function deleteTest(index) {
-    if (confirm('Are you sure you want to delete this test requirement?')) {
+    showGovukConfirm('Are you sure you want to delete this test requirement?').then((result) => {
+        if (result) {
         // Find the actual item in summaryData based on the filtered index
         const itemToDelete = summaryFilteredData[index];
         const actualIndex = summaryData.findIndex(item => 
@@ -1664,9 +1667,10 @@ function deleteTest(index) {
         if (actualIndex !== -1) {
             summaryData.splice(actualIndex, 1);
             renderSummaryTable();
-            alert('Test requirement deleted successfully!');
+            showGovukAlert('Test requirement deleted successfully!');
         }
     }
+    });
 }
 
 function openSummaryModal(index = null) {
@@ -1739,7 +1743,7 @@ function saveSummary() {
 
     // Validation
     if (!testcode || !project || !buyer || !unitprice || !no || !active || !defraproject || !recunitprice) {
-        alert('Please fill in all required fields');
+        showGovukAlert('Please fill in all required fields');
         return;
     }
 
@@ -1767,17 +1771,17 @@ function saveSummary() {
         
         if (actualIndex !== -1) {
             summaryData[actualIndex] = newEntry;
-            alert('Test requirement updated successfully!');
+            showGovukAlert('Test requirement updated successfully!');
         }
     } else {
           let isprojectcodeexist = summaryData.filter(item => item.Project === project && item.TestCode === testcode).length > 0;
             if(isprojectcodeexist){
-                alert(`Project code ${project} already exists with ${testcode}. Please use a unique project code.`);
+                showGovukAlert(`Project code ${project} already exists with ${testcode}. Please use a unique project code.`);
                 return;
             }
         // Add new entry
         summaryData.push(newEntry);
-        alert('Test requirement added successfully!');
+        showGovukAlert('Test requirement added successfully!');
     }
 
     closeSummaryModal();
@@ -1859,7 +1863,7 @@ function exportSummaryToExcel() {
     });
 
     if (rows.length === 1) {
-        alert("No data to export");
+        showGovukAlert("No data to export");
         return;
     }
 

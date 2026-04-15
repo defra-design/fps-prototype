@@ -202,7 +202,7 @@ function updateCode(selectedId, productlist) {
 
 function handleSaveCopyTCForJobcode() {
   if (selectedWG.length == 0) {
-    alert("Please select at least one Job code to copy Work Group");
+    showGovukAlert("Please select at least one Job code to copy Work Group");
     return;
   }
 
@@ -257,7 +257,8 @@ function handleDeleteAllTC() {
     // renderTimeCodeTable();
     // renderTimecodePagination();
 
-  if (confirm("Are you sure you want to delete selected Work Group?")) {
+  showGovukConfirm("Are you sure you want to delete selected Work Group?").then((result) => {
+      if (result) {
     const selectedIds = selectedWG.map(item => item.id);
     
     selectedWG.forEach((el) => {
@@ -286,6 +287,7 @@ function handleDeleteAllTC() {
 
     
   }
+  });
 }
 
 document.getElementById("addTimecodeBtn").addEventListener("click", handleAdd);
@@ -342,7 +344,8 @@ function handleTimeCodeEdit(selecteditem) {
 }
 
 function handleDeleteTimecode(id) {
-  if (confirm("Are you sure you want to delete this Work Group?")) {
+  showGovukConfirm("Are you sure you want to delete this Work Group?").then((result) => {
+      if (result) {
     testData.findIndex((item) => {
       if (item.jobcode === selectedTCRowjobcode) {
         let tcIndex = item.timecode.findIndex((tc) => tc.id === id);
@@ -366,6 +369,7 @@ function handleDeleteTimecode(id) {
     renderTimecodePagination();
     sortTableWorkgroup("workGroup", "asc");
   }
+  });
 }
 
 function replaceJobcodeWhileEditTimecode(id) {
@@ -450,7 +454,7 @@ function handleSaveTimecode() {
   const workGroup = document.getElementById("dpworkgroup").value;
 
   if (!jobcode || !workGroup) {
-    alert("Please fill in all required fields");
+    showGovukAlert("Please fill in all required fields");
     return;
   }
   // { id: 1, jobcode: 'AH003308', isactive: 'true', workGroup: 'CIT' },
@@ -481,7 +485,7 @@ function handleSaveTimecode() {
         (item) => item.workGroup.toLowerCase() === workGroup.toLowerCase(),
       );
       if(iswgExist){
-        alert("This Work Group already exists for the selected Job code, please enter different Work Group");
+        showGovukAlert("This Work Group already exists for the selected Job code, please enter different Work Group");
         return;
       }
       testData[idx]["timecode"].unshift({
@@ -523,7 +527,7 @@ function handleSaveTimecode() {
             item.workGroup.toLowerCase() === workGroup.toLowerCase(),
         );
         if (iswgExist) {
-          alert(
+          showGovukAlert(
             "This Work Group already exists for the selected Job code, please enter different Work Group",
           );
           return;
@@ -546,7 +550,7 @@ function handleSaveTimecode() {
               item.workGroup.toLowerCase() === workGroup.toLowerCase(),
           );
           if (iswgExist) {
-            alert(
+            showGovukAlert(
               "This Work Group already exists for the selected Job code, please enter different Work Group",
             );
             return;
@@ -761,7 +765,7 @@ function selectParentByCode(currentjobcode) {
 
 
 function sortTableWorkgroup(column, order) {
- // alert(selectedRowjobcode,"selectedRowjobcode")
+ // showGovukAlert(selectedRowjobcode,"selectedRowjobcode")
   timecodelist = getTimecodeData(selectedRowjobcode);
   timecodelist.sort((a, b) => {
 

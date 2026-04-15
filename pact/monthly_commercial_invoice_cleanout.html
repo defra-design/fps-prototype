@@ -3,11 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
     <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
     <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
     <link rel="stylesheet" href="nav_menu/navstyle.css" />
     <script src="nav_menu/menutemplate.js"></script>
+    <script src="../js/govuk-modal-dialog.js"></script>
     <link rel="stylesheet" href="../css/pact_styles/style.css" />
     <link rel="stylesheet" href="../css/pact_styles/suppliement_style_over_gov.uk_style.css" />
     <title>2025-2026 : Project Parent Invoice Data - PACT</title>
@@ -176,13 +178,15 @@
     </div>
     </div>
     </div>
-    <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
-        <div class="govuk-width-container sup_p_8 sup_text_center">
-            <span>
-                &copy; copyright Defra 2025
-            </span>
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+                </span>
+            </div>
         </div>
-    </div> 
+    </div>
+</div> 
 
     <!-- Add/Edit Project Parent Invoice Modal -->
     <div class="modal" id="addProjectParentInvoiceModal" tabindex="-1">
@@ -282,3 +286,5 @@
 </body>
 
 </html>
+
+

@@ -125,7 +125,7 @@ function renderstaffplanTable() {
             <td>${item.noReq}</td>
             <td>${item.dailyR}</td>
             <td>${item.cost}</td>
-            <td>
+            <td class="text-AlignCenter">
                 <button class="btn btn-sm btn-outline-primary"
                     onclick="handlestaffplandataEdit(${item.id})"><img src="../images/pen-to-square-regular-full.svg"
                                                                                  alt="Edit icon for selected record" class="editstaffname"
@@ -184,18 +184,22 @@ function updateProjectSummary() {
 
 function handleProjectDelete(id) {
 
-    if (confirm("Are you sure you want to delete this project?")) {
+    showGovukConfirm("Are you sure you want to delete this project?").then((result) => {
+        if (result) {
         projectData = projectData.filter(item => item.id !== id);
         renderProjectTable();
     }
+    });
 }
 
 function handlestaffplandataDelete(id) {
 
-    if (confirm("Are you sure you want to delete this animal row?")) {
+    showGovukConfirm("Are you sure you want to delete this animal row?").then((result) => {
+        if (result) {
         staffplandata = staffplandata.filter(item => item.id !== id);
         renderstaffplanTable();
     }
+    });
 }
 
 
@@ -262,7 +266,7 @@ function saveProject() {
     };
 
     if (!description || !acctCode || !fMont) {
-        alert("Please complete Description, Acct Code, and F.Mont.");
+        showGovukAlert("Please complete Description, Acct Code, and F.Mont.");
         return;
     }
 
@@ -318,7 +322,7 @@ function savestaffplan() {
     };
 
     if (!animalType || !day || !noReq) {
-        alert("Please complete Animal Type, Days, and No.Req.");
+        showGovukAlert("Please complete Animal Type, Days, and No.Req.");
         return;
     }
    

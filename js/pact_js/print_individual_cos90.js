@@ -160,7 +160,7 @@ document.querySelectorAll('[data-perioddropdown]').forEach(dd => {
 
 document.getElementById("printCOS90sBtn").addEventListener("click", function () {
     if (document.getElementById('txtstaffsearchBox').value == "") {
-        alert("You must state the period");
+        showGovukAlert("You must state the period");
         return;
     }
 });
@@ -277,7 +277,7 @@ function filterByProfitCenter(profitCenter) {
 // Bulk set Print COS90 for current profit center
 function bulkSetPrintForCurrentPc(printYes) {
     if (!selectedProfitCenter) {
-        alert('Please select a profit center first.');
+        showGovukAlert('Please select a profit center first.');
         return;
     }
 
@@ -299,21 +299,22 @@ function bulkSetPrintForCurrentPc(printYes) {
 
 // Clear all work groups across all profit centers
 function clearAllWorkgroupsAllProfitCentres() {
-    const ok = window.confirm("Are you sure you want to clear all work groups print flagging, irrespective of profit centre?");
-    if (!ok) return;
+    showGovukConfirm("Are you sure you want to clear all work groups print flagging, irrespective of profit centre?").then((result) => {
+        if (!result) return;
 
-    // Reset all items to 'No'
-    allWorkgroupPrintData.forEach(item => {
-        item.printCOS90 = 'No';
+        // Reset all items to 'No'
+        allWorkgroupPrintData.forEach(item => {
+            item.printCOS90 = 'No';
+        });
+
+        // Update current filtered view
+        workgroupPrintData.forEach(item => {
+            item.printCOS90 = 'No';
+        });
+
+        renderWorkgroupPrintTable();
+        console.log('Cleared all work groups across all profit centres');
     });
-
-    // Update current filtered view
-    workgroupPrintData.forEach(item => {
-        item.printCOS90 = 'No';
-    });
-
-    renderWorkgroupPrintTable();
-    console.log('Cleared all work groups across all profit centres');
 }
 
 // Populate WG Member List dropdown
@@ -692,7 +693,8 @@ function editWorkingHours(event) {
 }
 
 function deleteWorkingHours(index) {
-    if (confirm('Are you sure you want to delete this working hours entry?')) {
+    showGovukConfirm('Are you sure you want to delete this working hours entry?').then((result) => {
+        if (result) {
         workingHoursData.splice(index, 1);
         // Adjust current page if needed
         const totalPages = Math.ceil(workingHoursData.length / hoursRecordsPerPage);
@@ -702,6 +704,7 @@ function deleteWorkingHours(index) {
         renderWorkingHoursTable();
         console.log('Deleted working hours entry at index:', index);
     }
+    });
 }
 
 function setupBulkActionButtons() {
@@ -1041,7 +1044,7 @@ document.getElementById('excelCOS90sBtn').addEventListener('click', function () 
     }
 
     if (error.length > 0) {
-        alert(error.join(', '));
+        showGovukAlert(error.join(', '));
         return;
     }
 

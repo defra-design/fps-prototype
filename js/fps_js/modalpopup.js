@@ -91,7 +91,7 @@ function onclickRowNew(obj) {
          
             selectedRow = obj;
             //  if (event.target.parentElement.closest('.edit-btn') || event.target.closest('.rowbtns')) {
-            //   //  alert("EDIT CLICKED")
+            //   //  showGovukAlert("EDIT CLICKED")
             //     console.log("Edit button clicked inside this row");
             //     document.getElementById("modalsaveBtn").style.display = "none";
             //     document.getElementById("updateBtn").style.display = "inline-block"; 
@@ -219,7 +219,8 @@ function handleEdit(id) {
 
 
 function handleDelete(id) {
-    if (confirm('Are you sure you want to delete this test?')) {
+    showGovukConfirm('Are you sure you want to delete this test?').then((result) => {
+        if (result) {
         testData = testData.filter(item => item.id !== id);
         
         // Update filtered data
@@ -234,6 +235,7 @@ function handleDelete(id) {
         renderTable();
         renderPagination();
     }
+    });
 }
 
 
@@ -259,7 +261,7 @@ function handleSave() {
 
     
     if (!staffname || !days) {
-        alert('Please fill in all required fields');
+        showGovukAlert('Please fill in all required fields');
         return;
     }
     

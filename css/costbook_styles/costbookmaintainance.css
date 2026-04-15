@@ -282,3 +282,7 @@
 .govuk-button-group .govuk-link {
     margin-right: auto !important;
 }
+
+.pagination-label {
+    font-size: 16px;
+}

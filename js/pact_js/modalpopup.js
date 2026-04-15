@@ -175,7 +175,7 @@ function onclickRowNewModal(obj,currentjobcode = null) {
          
             selectedRow = obj;
             //  if (event.target.parentElement.closest('.edit-btn') || event.target.closest('.rowbtns')) {
-            //   //  alert("EDIT CLICKED")
+            //   //  showGovukAlert("EDIT CLICKED")
             //     console.log("Edit button clicked inside this row");
             //     document.getElementById("modalsaveBtn").style.display = "none";
             //     document.getElementById("updateBtn").style.display = "inline-block"; 
@@ -329,11 +329,12 @@ function handleCopy(id){
 
 function handleDelete(e,id) {
     e.stopPropagation(); // Prevent row click event
-    if (confirm('Are you sure you want to delete this Job code?')) {
+    showGovukConfirm('Are you sure you want to delete this Job code?').then((result) => {
+        if (result) {
 
         let idx = testData.findIndex((el)=>el.id === id);
         if(testData[idx].timecode.length > 0){
-            alert("This job code has related work group, please delete work group first before deleting job code");
+            showGovukAlert("This job code has related work group, please delete work group first before deleting job code");
             return;
         }else{
             
@@ -377,6 +378,7 @@ function handleDelete(e,id) {
         
         
     }
+    });
 }
 
 
@@ -398,7 +400,7 @@ function handleSave() {
 
     let isjobcodeExist =  testData.filter(item => item.jobcode.toString() == jobcode );
     if(isAddMode && isjobcodeExist.length > 0){
-        alert("job code " + jobcode + " already exist try different job code");
+        showGovukAlert("job code " + jobcode + " already exist try different job code");
         return;
     }
 
@@ -406,7 +408,7 @@ function handleSave() {
 
     
     if (!jobcode || !workGroup) {
-        alert('Please fill in all required fields');
+        showGovukAlert('Please fill in all required fields');
         return;
     }
     
@@ -428,7 +430,7 @@ function handleSave() {
         const index = testData.findIndex(item => item.id === editingRow);
         if(isAddMode && index !== -1){
             if("timecode" in testData[index]){
-                alert("Job code has timecode associated, if you want to update job code with same timecode then please use copy with workgroup option");
+                showGovukAlert("Job code has timecode associated, if you want to update job code with same timecode then please use copy with workgroup option");
                 return;
               
             }
@@ -504,7 +506,7 @@ function handleCopyWithWgSave(){
     let isjobcodeExist =  testData.filter(item => item.jobcode.toString() == jobcode );
     if(ischeckedwg){
         if(updateTimecode == undefined){
-            alert("time code does not exist for " + jobcode );  
+            showGovukAlert("time code does not exist for " + jobcode );  
             return
         }
         updateTimecode = updateTimecode.length > 0 ? updateTimecode : [];
@@ -512,13 +514,13 @@ function handleCopyWithWgSave(){
         updateTimecode = [];
     }
     if(isjobcodeExist.length > 0){
-        alert(jobcode + " already exist. Please try with a different job code.");
+        showGovukAlert(jobcode + " already exist. Please try with a different job code.");
         return;
     }
 
     
     if (!jobcode || !workGroup) {
-        alert('Please fill in all required fields');
+        showGovukAlert('Please fill in all required fields');
         return;
     }
     

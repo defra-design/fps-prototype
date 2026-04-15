@@ -3,13 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
     <title>2025-2026 : Programme Management</title> 
-	<!-- <link rel="stylesheet" href="style_sidenav.css"> -->
+	<!-- <link rel="stylesheet" href="../css/fps_styles/style.css"> -->
+     <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 	 <link rel="stylesheet" href="../css/fps_styles/styles.css">
-	  <link rel="stylesheet" href="../css/main_style.css">
+      <link rel="stylesheet" href="../css/main_style.css">
+    <link rel="stylesheet" href="../css/fps_styles/fps_table_utils.css" />
 	 
 	 
 	 
@@ -95,6 +98,7 @@
 
     <!-- Global navigation stats -->
     <script src="../js/fps_nav_menu.js"></script>
+    <script src="../js/govuk-modal-dialog.js"></script>
     <script>
         document.getElementById('header').innerHTML = htmlmenu;
         initMenu();
@@ -102,32 +106,54 @@
     </script>
     <!-- END Global navigation stats -->
     <div class="container-fluid">
-        <div style="padding: 5px 5px;  border-bottom: 1px solid #b4b4b4" class="row">
-            <div style="display: flex;  font-size: 14px;   align-items: center; justify-content: space-between; ">
-                <div>  <a class="" href="fpshome.html">Home</a> &gt;  Programme Management &gt; Select Program 
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                 <div class="row fps-sr-breadcrumb-row">
+                    <div class="fps-sr-breadcrumb-flex">
+                        <div class="col-md-8">
+                            <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+                                <ol class="govuk-breadcrumbs__list">
+                                    <li class="govuk-breadcrumbs__list-item">
+                                        <a class="govuk-breadcrumbs__link" href="fpshome.html">Home</a>
+                                    </li>
+                                    <li class="govuk-breadcrumbs__list-item">
+                                        <a class="govuk-breadcrumbs__link" href="program_management.html">Programme
+                                            Management</a>
+                                    </li>
+                                    <li class="govuk-breadcrumbs__list-item">
+                                        <a class="govuk-breadcrumbs__link" href="projectplanning.html">Plan Projects</a>
+                                    </li>
+                                    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+                                        Select Program
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="col-md-4 pva-project-wrap">
+                            <div class="col-sm-4" style="border: 2px solid #1d70b8;
+                        border-radius: 5px; 
+                        font-size: 13px;
+                        font-weight: normal;
+                        background-color: #fff;
+                        text-align: left;
+                        display: flex;					
+					
+                        margin-right: 10px;
+                        align-items: center;
+                        justify-content: space-between;">
+                                <div class="col"
+                                    style="border-right: 1px solid #684e00; text-align: left; padding: 1px 5px;">
+                                    Programme:<strong id="resultprogram"> ADMIN </strong>
+                                </div>
+                                <!-- <div class="col" style="text-align: left; padding: 1px 5px;">Project: <strong id="resultproject"> APHAB000000</strong></div> -->
+                            </div>
+                            <div>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    class="govuk-button sup_margin_0">Change</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- <div style="display: flex;  -->
-                    <!-- justify-content: flex-end;" class="col-md-6"> -->
-                    <!-- <div class="col-sm-6" style="border: 1px solid #684e00; -->
-                        <!-- border-radius: 5px;  -->
-                        <!-- font-size: 13px; -->
-                        <!-- font-weight: normal; -->
-                        <!-- background-color: #ffcf40; -->
-                        <!-- text-align: center; -->
-                        <!-- display: flex; -->
-                        <!-- margin-right: 10px; -->
-                        <!-- align-items: center; -->
-                        <!-- justify-content: space-between;"> -->
-                        <!-- <div class="col" style="border-right: 1px solid #684e00;">Selected program:<strong -->
-                                <!-- id="resultprogram"> </strong> -->
-                        <!-- </div> -->
-                        <!-- <div class="col">Selected Project: <strong id="resultproject"> </strong></div> -->
-                    <!-- </div> -->
-                    <!-- <div> -->
-                        <!-- <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" -->
-                            <!-- class="btn btn-primary btn-sm">Change</button> -->
-                    <!-- </div> -->
-                <!-- </div> -->
             </div>
         </div>
         <div class="row">
@@ -431,16 +457,19 @@
 	
     </div>
 	
-        <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
-            <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
-                <span class="fps-sr-page-footer-text">
-                    © copyright Defra 2025
+        <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
                 </span>
             </div>
         </div>
+    </div>
+</div>
 
     <!-- Bootstrap JS (required for dropdowns) -->
-     <script src="../js/bootstrap.bundle.min.js">    </script>
+    <script src="../js/bootstrap.bundle.min.js">    </script>
+    <script src="../js/fps_js/fps-table-utils.js"></script>
     <script>
 
         function showValue() {
@@ -521,3 +550,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 
 </html>
+
+</html>
+
+

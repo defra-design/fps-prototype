@@ -2,22 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
     <link rel="stylesheet" href="../css/pact_styles/style.css" />
     <!-- <link rel="stylesheet" href="css/custom_style.css" /> -->
     <link rel="stylesheet" href="../pact/nav_menu/navstyle.css" />
+    <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
     <script src="../pact/nav_menu/menutemplate.js"></script>
+    <script src="../js/govuk-modal-dialog.js"></script>
 
     <title>2025-2026 : PACT Home page</title>
-
-
-
-    <script>
-
- 
-
+    <script type="text/css">
         function tablerowClick(str) {
             document.getElementById("project-code").value = str;
             document.getElementById("txt-description").value = "Sample comments for " + str + " goes here";
@@ -32,8 +27,6 @@
                     }
                 });
             }
-
-
         }
 
 
@@ -53,81 +46,74 @@
 </head>
 
 <body>
- 
+    <div class="isPactHomePage govuk-main-wrapper govuk-!-padding-top-0">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full govuk-!-padding-0 govuk-!-margin-0">
+           
+                <header>
+                    <div class="header-nav">
+                        <div class="pims-log-wrapper">
+                            <div>
+                                <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
+                            </div>
 
+                            <div class="pims-log">
+                                <span>PACT</span>
+                            </div>
 
-    <header>
-        <div class="header-nav">
+                            <div class="pims-log" style="width: 160px;font-size: 16px;">
+                                <select class="pims-log"
+                                    style="border: 0;border-radius: 0;margin-left: 0px;width: 150px;outline: 0;">
+                                    <option>2017-2018</option>
+                                    <option>2018-2019</option>
+                                    <option>2019-2020</option>
+                                    <option>2020-2021</option>
+                                    <option>2021-2022</option>
+                                    <option>2022-2023</option>
+                                    <option>2023-2024</option>
+                                    <option>2024-2025</option>
+                                    <option selected>2025-2026</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div id="header"></div>
 
-            <div class="pims-log-wrapper">
-
-                <div>
-                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
-                </div>
-              
-                <div class="pims-log">
-                    <span>PACT</span>
-                </div>
-               
-                <div class="pims-log" style="width: 160px;font-size: 16px;">
-                    <select class="pims-log"
-                        style="border: 0;border-radius: 0;margin-left: 0px;width: 150px;outline: 0;">
-                        <option>2017-2018</option>
-                        <option>2018-2019</option>
-                        <option>2019-2020</option>
-                        <option>2020-2021</option>
-                        <option>2021-2022</option>
-                        <option>2022-2023</option>
-                        <option>2023-2024</option>
-                        <option>2024-2025</option>
-                        <option selected>2025-2026</option>
-                    </select>
-
-                </div>
+                <script src="../pact/nav_menu/script.js"></script>
+                <script>
+                    document.getElementById('header').innerHTML = htmlmenu;
+                    initMenu();
+                    btn();
+                </script>
             </div>
-
-        </div>
-    </header>
-    <div id="header"></div>
-
-    <script src="../pact/nav_menu/script.js"></script>
-
-    <script>
-        document.getElementById('header').innerHTML = htmlmenu;
-        initMenu();
-        btn();
-    </script>
-
-
-
-    <div>
-
-
-        <div class="dashboard-bg">
-
-            <div class="dashboard-child-div">
-                <div style="font-size: 40px;
-    color: #ffffff;   
-    text-align: center;
-    padding-top: 20px;
-    z-index: 99;">
-                    Welcome<br />
-                    To Our Animal & Plant Health Agency's<br />
-                    <h1 style="font-size: 50px; font-weight: normal;"> Project Accounting for Cost and Time</h1>
-                </div>
-            </div>
-
-
         </div>
 
 
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full isBanner">
+                <div class="isBannerInfo govuk-!-padding-top-6 govuk-!-padding-bottom-4">
+                    <h1 class="govuk-heading-l govuk-!-text-align-centre govuk-!-font-weight-regular govuk-!-margin-bottom-0">
+                        Welcome To</h1>
+                    <h1 class="govuk-heading-l govuk-!-text-align-centre govuk-!-font-weight-regular govuk-!-margin-bottom-0">
+                        To Our Animal & Plant Health Agency's</h1>
+                    <h1 class="govuk-heading-xl govuk-!-text-align-centre govuk-!-font-weight-regular">
+                        Project Accounting for Cost and Time</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+                    <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-
-    <div class="footer">
-        &copy; Copyright Defra 2025
-    </div>
-
+   
 
     <script>
         function addRow() {
@@ -151,10 +137,12 @@
             row.classList.add("selected-row");
         }
 
-    
+
 
     </script>
- 
+
 </body>
+
+</html>
 
 </html>

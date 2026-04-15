@@ -1,0 +1,83 @@
+/*
+ * fps_table_utils.css
+ * ──────────────────────────────────────────────────────────────────────────
+ * Styles for FPS table sort indicators and column resize handles.
+ *
+ * Matches the PACT reference page:
+ *   docs/pact/project_management_five.opttwo.html
+ * Using the same class names as docs/css/pact_styles/custom_style.css
+ * so visual output is identical across PACT and FPS.
+ *
+ * Classes introduced / reused:
+ *   .fps-th-sortable    — added by JS to every sortable <th>
+ *   .fps-th-resizable   — added by JS to every resizable <th>
+ *   .sort-icon          — <span> injected by JS for ▲ / ▼ arrow
+ *   .sorted-asc         — active state on ascending sort header
+ *   .sorted-desc        — active state on descending sort header
+ *   .resizer            — drag handle <div> injected by JS
+ *   .resizer.resizing   — active drag state
+ */
+
+/* ── Sortable header ──────────────────────────────────────────────────────── */
+
+.fps-th-sortable {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    outline: none;              /* keyboard focus handled via :focus-visible    */
+}
+
+.fps-th-sortable:hover {
+    background-color: rgba(29, 112, 184, 0.08);
+}
+
+.fps-th-sortable:focus-visible {
+    outline: 3px solid #ffdd00; /* GOV.UK focus yellow                          */
+    outline-offset: 0;
+}
+
+/* Sort icon — ▲ ascending / ▼ descending (matches PACT custom_style.css)     */
+.fps-th-sortable .sort-icon {
+    margin-left: 4px;
+    font-size: 10px;
+    color: #1d70b8;
+}
+
+/* Active sort column header shading */
+.fps-th-sortable.sorted-asc,
+.fps-th-sortable.sorted-desc {
+    background-color: rgba(29, 112, 184, 0.12);
+}
+
+/* ── Resizable header ────────────────────────────────────────────────────── */
+
+.fps-th-resizable {
+    position: relative;
+    overflow: visible;
+}
+
+/* Drag handle — matches PACT custom_style.css .resizer exactly              */
+.fps-th-resizable .resizer {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    cursor: col-resize;
+    user-select: none;
+    z-index: 1;
+}
+
+/* Visual indicator on hover / active drag */
+.fps-th-resizable .resizer:hover,
+.fps-th-resizable .resizer.resizing {
+    background-color: #1d70b8;
+    opacity: 0.4;
+}
+
+/* ── GOV.UK table header position fix (needed for absolute resizer) ─────── */
+table.govuk-table thead th,
+table.custom-table thead th,
+table.table thead th {
+    position: relative;
+}

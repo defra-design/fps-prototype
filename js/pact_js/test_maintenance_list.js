@@ -147,7 +147,8 @@ function editTest(index) {
 // Delete test function
 function deleteTest(index) {
     const item = testData[index];
-    if (confirm(`Are you sure you want to delete test ${item.ItemCode}?`)) {
+    showGovukConfirm(`Are you sure you want to delete test ${item.ItemCode}?`).then((result) => {
+        if (result) {
         testData.splice(index, 1);
         
         // Adjust current page if needed
@@ -159,6 +160,7 @@ function deleteTest(index) {
         renderTable();
         console.log('Test deleted:', item);
     }
+    });
 }
 
 // Modal functions
@@ -224,7 +226,7 @@ function saveTest() {
 
     // Validation
     if (!itemCode || !itemDescription || !unitPriceVLAgen || !owner || !shortDescription || !defraUnitPrice) {
-        alert('Please fill in all required fields');
+        showGovukAlert('Please fill in all required fields');
         return;
     }
 
@@ -245,16 +247,16 @@ function saveTest() {
     if (editingIndex !== null) {
         // Update existing entry
         testData[editingIndex] = newEntry;
-        alert('Test updated successfully!');
+        showGovukAlert('Test updated successfully!');
     } else {
         // Add new entry
         if (testData.filter(test => test.ItemCode === itemCode).length > 0) {
-            alert(`Item Code ${itemCode} already exists. Please use a unique Item Code.`);
+            showGovukAlert(`Item Code ${itemCode} already exists. Please use a unique Item Code.`);
             return;
         }
         testData.push(newEntry);
         currentPage = 1; // Go to first page to show new entry
-        alert('Test added successfully!');
+        showGovukAlert('Test added successfully!');
     }
 
     closeModal();

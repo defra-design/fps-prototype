@@ -966,7 +966,7 @@ function saveEditModal() {
   const nameVal = document.getElementById("editName").value.trim();
 
   if (!nameVal) {
-    alert("Name is required.");
+    showGovukAlert("Name is required.");
     document.getElementById("editName").focus();
     return;
   }

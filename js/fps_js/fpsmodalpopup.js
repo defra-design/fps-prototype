@@ -98,10 +98,12 @@ function renderProjectTable() {
 
 function handleProjectDelete(id) {
 
-    if (confirm("Are you sure you want to delete this project?")) {
+    showGovukConfirm("Are you sure you want to delete this project?").then((result) => {
+        if (result) {
         projectData = projectData.filter(item => item.id !== id);
         renderProjectTable();
     }
+    });
 }
 
 

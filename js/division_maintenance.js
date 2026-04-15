@@ -78,19 +78,21 @@ function handlestaffplandataEdit(id) {
 }
 
 function handlestaffplandataDelete(id) {
-    if (!confirm("Are you sure you want to delete this division?")) {
-        return;
-    }
+    showGovukConfirm("Are you sure you want to delete this division?").then((result) => {
+        if (!result) {
+            return;
+        }
 
-    divisionData = divisionData.filter(item => item.id !== id);
-    renderstaffplanTable();
+        divisionData = divisionData.filter(item => item.id !== id);
+        renderstaffplanTable();
+    });
 }
 
 function saveDivision() {
     const values = getModalFieldValues();
 
     if (!values.divisionId || !values.agencyId || !values.divName) {
-        alert("Please complete DivisionID, AgencyID and DivName.");
+        showGovukAlert("Please complete DivisionID, AgencyID and DivName.");
         return;
     }
 

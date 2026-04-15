@@ -295,7 +295,7 @@
                 }
             } catch (error) {
                 console.error('Error loading test purchase data:', error);
-                alert('Failed to load test purchase requirements. Please refresh the page.');
+                showGovukAlert('Failed to load test purchase requirements. Please refresh the page.');
             }
         }
 
@@ -450,7 +450,7 @@
 
                 // let id = testPurchaseData.findIndex((el)=> el.TestCode === testCode);
                 // if(id !== -1){
-                //     alert('Test Code must be unique. A test with this code already exists.');
+                //     showGovukAlert('Test Code must be unique. A test with this code already exists.');
                 //     return;
                 // }
 
@@ -520,7 +520,8 @@
 
         // Handle delete test
         function handleDeleteTest(testCode, index) {
-            if (confirm('Are you sure you want to delete this test purchase requirement?')) {
+            showGovukConfirm('Are you sure you want to delete this test purchase requirement?').then((result) => {
+                if (result) {
                 // Find in original array
                 const originalIndex = testPurchaseData.findIndex(item => 
                     item.TestCode === testCode && 
@@ -556,6 +557,7 @@
                     renderTable();
                 }
             }
+            });
         }
 
         // Modal event listeners

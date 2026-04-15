@@ -2984,6 +2984,67 @@ table#milestoneTable>thead>tr>th {
   cursor: pointer;
 }
 
+/* create_email_time_output_summary: keep the three criteria blocks aligned */
+.email-output-top-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.email-output-top-row > .isProfitSummary {
+  width: 48%;
+}
+
+.email-output-top-row > .isTimesheetsSelected {
+  width: 22%;
+}
+
+.email-output-top-row > .isTimesheetLayout {
+  width: 30%;
+  margin-left: 0;
+}
+
+.email-output-top-row .isTimesheetLayout .sup-highlighted-forms-blue-bg {
+  padding: 10px 12px;
+}
+
+.email-output-top-row .isTimesheetLayout .layout-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.email-output-top-row .isTimesheetLayout .layout-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.email-output-top-row .isTimesheetLayout .layout-option__input {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  accent-color: #1d70b8;
+}
+
+.email-output-top-row .isTimesheetLayout .layout-option__label {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+@media (max-width: 1024px) {
+  .email-output-top-row {
+    flex-wrap: wrap;
+  }
+
+  .email-output-top-row > .isProfitSummary,
+  .email-output-top-row > .isTimesheetsSelected,
+  .email-output-top-row > .isTimesheetLayout {
+    width: 100%;
+  }
+}
+
 /* Align and equalise the three top criteria boxes */
 .email-criteria-row {
   display: flex;

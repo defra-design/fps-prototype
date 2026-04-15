@@ -57,7 +57,7 @@ const htmlmenu = `<div style="display: flex; flex-direction: row;">
                 <a class="dropdown-item" href="project_invoices_manual.html">Project Invoices (Manual)</a>
                 <a class="dropdown-item" href="monthly_commercial_invoice_cleanout.html">OM, OG, FT & UT Invoices (Batch Mode from RMS)</a>
 
-                <a class="dropdown-item" href="#">Invoices by Month</a>
+                <a class="dropdown-item" href="invoicebymonth.html">Invoices by Month</a>
                 <a class="dropdown-item" href="wip_override_facility.html">FT & UT Project Work In Progress (WIP Over-ride)</a>
 
                 <a class="dropdown-item" href="#">SubContracts (Exceptional Costs) (Manual)</a>

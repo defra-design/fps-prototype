@@ -887,31 +887,33 @@ function saveMgrEditModal() {
 function mgrDeleteRecord(id) {
   var m = mgrGetManager(id);
   if (!m) return;
-  if (!confirm("Are you sure you want to delete this record?")) return;
-  for (var i = 0; i < MGR_MANAGERS.length; i++) {
-    if (MGR_MANAGERS[i].id === id) {
-      MGR_MANAGERS.splice(i, 1);
-      break;
+  showGovukConfirm("Are you sure you want to delete this record?").then((result) => {
+    if (!result) return;
+    for (var i = 0; i < MGR_MANAGERS.length; i++) {
+      if (MGR_MANAGERS[i].id === id) {
+        MGR_MANAGERS.splice(i, 1);
+        break;
+      }
     }
-  }
-  // Remove sub-data
-  delete MGR_PROGRAMS[id];
-  delete MGR_RESOURCES[id];
+    // Remove sub-data
+    delete MGR_PROGRAMS[id];
+    delete MGR_RESOURCES[id];
 
-  if (mgrState.selectedId === id) {
-    mgrState.selectedId = null;
-    document.getElementById("mgrSubGrids").style.display = "none";
-  }
+    if (mgrState.selectedId === id) {
+      mgrState.selectedId = null;
+      document.getElementById("mgrSubGrids").style.display = "none";
+    }
 
-  mgrBuildFiltered();
+    mgrBuildFiltered();
 
-  var pages = Math.max(
-    1,
-    Math.ceil(mgrState.filtered.length / mgrState.pageSize),
-  );
-  if (mgrState.page > pages) mgrState.page = pages;
-  mgrRenderTable();
-  mgrRenderPagination();
+    var pages = Math.max(
+      1,
+      Math.ceil(mgrState.filtered.length / mgrState.pageSize),
+    );
+    if (mgrState.page > pages) mgrState.page = pages;
+    mgrRenderTable();
+    mgrRenderPagination();
+  });
 }
 
 // ═══════════════════════════════════════════════════════
@@ -1042,18 +1044,20 @@ function mgrAssignDeleteRecord(type, managerId, assignId) {
       break;
     }
   }
-  if (!confirm("Are you sure you want to delete this record?")) return;
-  for (var j = 0; j < rows.length; j++) {
-    if (rows[j].id === assignId) {
-      rows.splice(j, 1);
-      break;
+  showGovukConfirm("Are you sure you want to delete this record?").then((result) => {
+    if (!result) return;
+    for (var j = 0; j < rows.length; j++) {
+      if (rows[j].id === assignId) {
+        rows.splice(j, 1);
+        break;
+      }
     }
-  }
-  if (isProgram) {
-    renderMgrProgramGrid(managerId);
-  } else {
-    renderMgrResourceGrid(managerId);
-  }
+    if (isProgram) {
+      renderMgrProgramGrid(managerId);
+    } else {
+      renderMgrResourceGrid(managerId);
+    }
+  });
 }
 
 // ═══════════════════════════════════════════════════════

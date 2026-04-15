@@ -3,13 +3,39 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
     <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
     <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
     <link rel="stylesheet" href="nav_menu/navstyle.css" />
     <script src="nav_menu/menutemplate.js"></script>
+    <script src="../js/govuk-modal-dialog.js"></script>
     <link rel="stylesheet" href="../css/pact_styles/style.css" />
-    <link rel="stylesheet" href="../css/pact_styles/suppliement_style_over_gov.uk_style.css" /> 
+    <link rel="stylesheet" href="../css/pact_styles/supplement_style_over_gov.uk_style.css" />
+
+    <style>
+        /* Sortable header styles */
+        th[data-column] {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+        
+        th[data-column]:hover {
+            background-color: #d8e5f4 !important;
+        }
+        
+        .sort-icon {
+            margin-left: 4px;
+            font-size: 10px;
+            color: #1d70b8;
+        }
+        
+        th.sorted-asc,
+        th.sorted-desc {
+            background-color: #d8e5f4 !important;
+        }
+    </style>
 
     <title>2025-2026 : Project Milestones - PACT</title>
 
@@ -152,13 +178,15 @@
         </div>
     </div>
 
+        <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
         <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
-        <div class="govuk-width-container sup_p_8 sup_text_center">
-            <span>
-                &copy; copyright Defra 2025
-            </span>
+            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+                </span>
+            </div>
         </div>
     </div>
+</div>
     <!-- Add/Edit Test Purchase Requirement Modal -->
     <div class="modal fade" id="addTestModal" tabindex="-1" aria-labelledby="testModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
@@ -241,3 +269,6 @@
 </body>
 
 </html>
+
+
+

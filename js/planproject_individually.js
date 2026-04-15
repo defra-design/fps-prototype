@@ -1770,12 +1770,14 @@ function selectProject(projectCode, selectedRow) {
 }
 
 function handleProjectDelete(id) {
-    if (confirm("Are you sure you want to delete this project?")) {
+    showGovukConfirm("Are you sure you want to delete this project?").then((result) => {
+        if (result) {
         projectData = projectData.filter(function (item) {
             return item.id !== id;
         });
         renderProjectTable(getSelectedProgramme());
     }
+    });
 }
 
 function handleProjectEdit(id) {

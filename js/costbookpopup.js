@@ -228,10 +228,12 @@ function handleAnimalEdit(id) {
 /* ---------- DELETE ---------- */
 function handleAnimalDelete(id) {
 
-    if (confirm("Are you sure you want to delete this animal record?")) {
+    showGovukConfirm("Are you sure you want to delete this animal record?").then((result) => {
+        if (result) {
         animalData = animalData.filter(item => item.id !== id);
         renderAnimalTable();
     }
+    });
 }
 
 
@@ -244,7 +246,7 @@ document.getElementById("animalmodalsaveBtn").addEventListener("click", function
     const daysRaw = document.getElementById("modal-animaldays").value;
 
     if (!animaltype || !rateRaw || !quantityRaw || !daysRaw) {
-        alert("Please fill all required fields");
+        showGovukAlert("Please fill all required fields");
         return;
     }
 
@@ -253,7 +255,7 @@ document.getElementById("animalmodalsaveBtn").addEventListener("click", function
     const days = parseFloat(daysRaw);
 
     if (isNaN(rate) || isNaN(qty) || isNaN(days)) {
-        alert("Invalid numeric values");
+        showGovukAlert("Invalid numeric values");
         return;
     }
 
@@ -406,10 +408,12 @@ function handleTestEdit(id) {
 /* ---------- DELETE ---------- */
 function handleTestDelete(id) {
 
-    if (confirm("Are you sure you want to delete this test?")) {
+    showGovukConfirm("Are you sure you want to delete this test?").then((result) => {
+        if (result) {
         testTabData = testTabData.filter(item => item.id !== id);
         renderTestTable();
     }
+    });
 }
 
 
@@ -421,7 +425,7 @@ document.getElementById("testmodalsaveBtn").addEventListener("click", function (
     const quantityRaw = document.getElementById("modal-quantity").value;
 
     if (!testcode || !unitRaw || !quantityRaw) {
-        alert("Please fill all required fields");
+        showGovukAlert("Please fill all required fields");
         return;
     }
 
@@ -429,7 +433,7 @@ document.getElementById("testmodalsaveBtn").addEventListener("click", function (
     const qty = parseFloat(quantityRaw);
 
     if (isNaN(unit) || isNaN(qty)) {
-        alert("Invalid number values");
+        showGovukAlert("Invalid number values");
         return;
     }
 
@@ -605,10 +609,12 @@ function handleAdditionalEdit(id) {
 
 function handleAdditionalDelete(id) {
 
-    if (confirm("Are you sure you want to delete this additional cost?")) {
+    showGovukConfirm("Are you sure you want to delete this additional cost?").then((result) => {
+        if (result) {
         additionalData = additionalData.filter(item => item.id !== id);
         renderAdditionalTable();
     }
+    });
 }
 
 document.getElementById("additionalsaveBtn").addEventListener("click", function () {
@@ -618,14 +624,14 @@ document.getElementById("additionalsaveBtn").addEventListener("click", function 
     const accountcat = document.getElementById("modal-accountcat").value;
 
     if (!description || !costnoRaw || !accountcat) {
-        alert("Please fill all required fields");
+        showGovukAlert("Please fill all required fields");
         return;
     }
 
     const costno = parseFloat(costnoRaw.replace("£", "").replace(/,/g, ""));
 
     if (isNaN(costno)) {
-        alert("Invalid cost value");
+        showGovukAlert("Invalid cost value");
         return;
     }
 
@@ -728,7 +734,7 @@ function onclickRowNew(obj) {
          
             selectedRow = obj;
             //  if (event.target.parentElement.closest('.edit-btn') || event.target.closest('.rowbtns')) {
-            //   //  alert("EDIT CLICKED")
+            //   //  showGovukAlert("EDIT CLICKED")
             //     console.log("Edit button clicked inside this row");
             //     document.getElementById("modalsaveBtn").style.display = "none";
             //     document.getElementById("updateBtn").style.display = "inline-block"; 
@@ -873,7 +879,8 @@ document.getElementById("staffUpdateBtn").style.display = "inline-block";
 
 
 function handleDelete(id) {
-    if (confirm('Are you sure you want to delete this test?')) {
+    showGovukConfirm('Are you sure you want to delete this test?').then((result) => {
+        if (result) {
         testData = testData.filter(item => item.id !== id);
         
         // Update filtered data
@@ -888,6 +895,7 @@ function handleDelete(id) {
         renderTable();
         renderPagination();
     }
+    });
 }
 
 
@@ -942,7 +950,7 @@ function handleSave() {
     let daysRaw = document.getElementById('modal-days').value;
 
     if (!staffname || !rateRaw || !hrsRaw || !daysRaw) {
-        alert('Please fill in all required fields');
+        showGovukAlert('Please fill in all required fields');
         return;
     }
 
@@ -951,7 +959,7 @@ function handleSave() {
     const days = parseFloat(daysRaw);
 
     if (isNaN(rate) || isNaN(hrs) || isNaN(days)) {
-        alert("Invalid numeric values");
+        showGovukAlert("Invalid numeric values");
         return;
     }
 

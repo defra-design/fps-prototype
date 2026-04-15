@@ -3,15 +3,55 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
     <title>2025-2026 : Program Maintenance</title>
    <!-- Bootstrap CSS -->
            <link rel="stylesheet" href="../css/bootstrap.min.css">
     	 <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css">
 	 <link rel="stylesheet" href="../css/fps_styles/styles.css">
 	  <link rel="stylesheet" href="../css/main_style.css">
-	<link rel="stylesheet" href="../css/fps_styles/suppliement_style_fps.css" />
-	<link rel="stylesheet" href="../css/fps_styles/setup_resource.css" />
+     <link rel="stylesheet" href="../css/supplement_style_over_gov.uk_style.css" />
+    <link rel="stylesheet" href="../css/fps_styles/fps_table_utils.css" />
+
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .page-content {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+    }
+
+    .footer {
+        margin-top: auto;
+        clear: both;
+        position: relative;
+        z-index: 1;
+    }
+
+    .sidenav {
+        margin-bottom: 0;
+        align-self: flex-start;
+    }
+</style>
+	
 <script>
 </script>
 
@@ -73,6 +113,7 @@
      <div id="header"></div>
 	
 	    <script src="../js/fps_nav_menu.js"></script>
+    <script src="../js/govuk-modal-dialog.js"></script>
     <script>
         document.getElementById('header').innerHTML = htmlmenu;
         initMenu();
@@ -148,7 +189,7 @@
                     <li><a class="dropdown-item" href="#">
                          Maintain Workgroups</a>
                     </li>
-                    <li><a class="dropdown-item" href="#">
+                    <li><a class="dropdown-item" href="planvsactual_animals.html">
                            Maintain Grades</a>
                     </li>
                     <li><a class="dropdown-item" href="#">
@@ -585,13 +626,15 @@
   
   
   
-  <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
-        <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
-            <span class="fps-sr-page-footer-text">
-                © copyright Defra 2025
-            </span>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+                </span>
+            </div>
         </div>
-    </div> 
+    </div>
+</div> 
 </div>
 		
 		</main>
@@ -775,9 +818,13 @@
 	
 	
  <script src="../js/bootstrap.bundle.min.js"></script>
-   <!-- <script src="../js/modalpopup.js"></script> -->
-  <script src="../js/program_maintenance.js"></script>
+ 
+    <script src="../js/fps_js/program_maintenance.js"></script>
+    <script src="../js/fps_js/fps-table-utils.js"></script>
 	 
 </body>
 
 </html>
+</html>
+
+

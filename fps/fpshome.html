@@ -3,111 +3,110 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>2025-2026 : Home </title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css">
-    <link rel="stylesheet" href="../css/fps_styles/styles.css">
-    <link rel="stylesheet" href="../css/main_style.css">
 
+    <title>2025-2026 : Home </title>
+    <!-- <link rel="stylesheet" href="style_sidenav.css"> -->
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
+    <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/fps_styles/styles.css" />
+    <link rel="stylesheet" href="../css/main_style.css" />
+
+    <script>
+        window.addEventListener('load', function () {
+            // Get modal element
+            const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            // Show modal
+            myModal.show();
+        });
+    </script>
 </head>
 
-
-
-
 <body>
-
-    <header>
-        <div class="header-nav">
-
-            <div class="pims-log-wrapper">
-
-                <div>
-                    <img src="../images/defra_logo.png" alt="Logo of Animal & Plant Health Agency" width="80px">
-                </div>
-                <div class="pims-log">
-                    <span style="display:inline-block; padding: 2px;">FPS</span>
-
-                </div>
-                <div class="pims-log">
-                    <select class="pims-log" style="border:0; margin-left: 0px;" aria-label="Year">
-                        <option class="pims-log" style="border:0; margin-left: 0px;">2017-2018</option>
-                        <option class="pims-log" style="border:0; margin-left: 0px;">2018-2019</option>
-                        <option class="pims-log" style="border:0; margin-left: 0px;">2019-2020</option>
-                        <option class="pims-log" style="border:0; margin-left: 0px;">2020-2021</option>
-                        <option class="pims-log" style="border:0; margin-left: 0px;">2021-2022</option>
-                        <option class="pims-log" style="border:0; margin-left: 0px;">2022-2023</option>
-                        <option class="pims-log" style="border:0; margin-left: 0px;">2023-2024</option>
-                        <option class="pims-log" style="border:0; margin-left: 0px;">2024-2025</option>
-                        <option class="pims-log" style="border:0; margin-left: 0px;" selected>2025-2026</option>
-                    </select>
-
-                </div>
-            </div>
-            <div class="btn-group" style=" display: flex; align-items: center;     font-size: 16px;">
-                Ken Rod <button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;"
-                    class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24">
-                    <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px"
-                        height="30px"></span>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a href="../index.html" class="dropdown-item" type="button" aria-hidden="true">
-                            <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
-                            Home</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <div id="header"></div>
-
-    <!-- Global navigation stats -->
-    <script src="../js/fps_nav_menu.js"></script>
-    <script>
-        document.getElementById('header').innerHTML = htmlmenu;
-        initMenu();
-        btn();
-    </script>
-    <!-- END Global navigation stats -->
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-            </div>
-
-            <div class="col-lg-12 p-0">
-                <main class="main-content" style="padding:0;">
-                    <section class="">
-                        <div class="section-content" style="padding:0;position:relative;display: flex;
-		  align-content: center;justify-content: center;align-items: center;">
-                            <div class="banner_text">
-                                <div class="banner_titletext"> <span class="text-with-overlay"> Welcome</span></div>
-                                <p> <span class="text-with-overlay"> To</span>
-                                    <br>
-                                    <span class="text-with-overlay" style="font-size: 40px;">Financial Planning
-                                        System</span>
-                                <p>
+    <div class="isFpsHomePage govuk-main-wrapper govuk-!-padding-top-0">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full govuk-!-padding-0 govuk-!-margin-0">
+                <header>
+                    <div class="header-nav">
+                        <div class="pims-log-wrapper">
+                            <div>
+                                <img src="../images/defra_logo.png" alt="Logo of Animal & Plant Health Agency"
+                                    width="80px">
                             </div>
-                            <img src="../images/home_image.jpg" width="100%" alt="Home Page Banner"
-                                style="height: 100vh;" />
+                            <div class="pims-log">
+                                <span style="display:inline-block; padding: 2px;">FPS</span>
+                           </div>
+                            <div class="pims-log">
+                                <select class="pims-log" style="border:0; margin-left: 0px;" aria-label="Year">
+                                    <option class="pims-log" style="border:0; margin-left: 0px;">2017-2018</option>
+                                    <option class="pims-log" style="border:0; margin-left: 0px;">2018-2019</option>
+                                    <option class="pims-log" style="border:0; margin-left: 0px;">2019-2020</option>
+                                    <option class="pims-log" style="border:0; margin-left: 0px;">2020-2021</option>
+                                    <option class="pims-log" style="border:0; margin-left: 0px;">2021-2022</option>
+                                    <option class="pims-log" style="border:0; margin-left: 0px;">2022-2023</option>
+                                    <option class="pims-log" style="border:0; margin-left: 0px;">2023-2024</option>
+                                    <option class="pims-log" style="border:0; margin-left: 0px;">2024-2025</option>
+                                    <option class="pims-log" style="border:0; margin-left: 0px;" selected>2025-2026
+                                    </option>
+                                </select>
 
-
-                            <div class="grad1"></div>
-
+                            </div>
                         </div>
-                    </section>
-                </main>
+                        <div class="btn-group" style=" display: flex; align-items: center;     font-size: 16px;">
+                            Ken Rod <button type="button" aria-label="user dropdown arrow to go home page"
+                                style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24">
+                                <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application"
+                                    width="30px" height="30px"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a href="../index.html" class="dropdown-item" type="button" aria-hidden="true">
+                                        <img src="../images/house-user-solid-full.svg" alt="dropdown home icon"
+                                            width="22px">
+                                        Home</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+                <div id="header"></div>
+
+                <!-- Global navigation stats -->
+                <script src="../js/fps_nav_menu.js"></script>
+                <script src="../js/govuk-modal-dialog.js"></script>
+                <script>
+                    document.getElementById('header').innerHTML = htmlmenu;
+                    initMenu();
+                    btn();
+                </script>
+                <!-- END Global navigation stats -->
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full isBanner">
+                <div class="isBannerInfo govuk-!-padding-top-6 govuk-!-padding-bottom-4">
+                    <h1
+                        class="govuk-heading-l govuk-!-text-align-centre govuk-!-font-weight-regular govuk-!-margin-bottom-0">
+                        Welcome To</h1>
+                    <h1 class="govuk-heading-l govuk-!-text-align-centre govuk-!-font-weight-regular">
+                        The Financial Planning System (FPS)</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+                    <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
-        <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
-            <span class="fps-sr-page-footer-text">
-                © copyright Defra 2025
-            </span>
-        </div>
-    </div>
-
     <script src="../js/bootstrap.bundle.min.js">  </script>
     <script>
 

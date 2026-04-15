@@ -224,18 +224,22 @@ function renderstaffplanTable() {
 
 function handleProjectDelete(id) {
 
-    if (confirm("Are you sure you want to delete this project?")) {
+    showGovukConfirm("Are you sure you want to delete this project?").then((result) => {
+        if (result) {
         projectData = projectData.filter(item => item.id !== id);
         renderProjectTable();
     }
+    });
 }
 
 function handlestaffplandataDelete(id) {
 
-    if (confirm("Are you sure you want to delete this program?")) {
+    showGovukConfirm("Are you sure you want to delete this program?").then((result) => {
+        if (result) {
         staffplandata = staffplandata.filter(item => item.id !== id);
         renderstaffplanTable();
     }
+    });
 }
 
 
@@ -361,7 +365,7 @@ function savestaffplan() {
     };
 
     if (!program || !name || !directorate || !manager) {
-        alert("Please complete Program, Program Name, Directorate, and Manager.");
+        showGovukAlert("Please complete Program, Program Name, Directorate, and Manager.");
         return;
     }
    

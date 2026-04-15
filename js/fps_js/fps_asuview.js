@@ -179,15 +179,17 @@ function saveAsuUsage() {
 }
 
 function handleAsuUsageDelete(id) {
-    if (!confirm('Are you sure you want to delete this animal row?')) {
-        return;
-    }
+    showGovukConfirm('Are you sure you want to delete this animal row?').then((result) => {
+        if (!result) {
+            return;
+        }
 
-    allRecords = allRecords.filter(function (record) {
-        return record.id !== id;
+        allRecords = allRecords.filter(function (record) {
+            return record.id !== id;
+        });
+
+        applyAnimalTypeFilter();
     });
-
-    applyAnimalTypeFilter();
 }
 
 document.addEventListener('DOMContentLoaded', function () {

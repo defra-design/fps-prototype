@@ -173,7 +173,7 @@ function validatePeriodAndTimesheetsAlert({ requirePeriod = false, requireTimesh
     }
 
     if (errors.length) {
-        alert(errors.join("\n"));
+        showGovukAlert(errors.join("\n"));
         return false;
     }
 
@@ -220,7 +220,7 @@ function renderTable() {
             editBtn.addEventListener("click", () => {
                 const { tsChecked, osChecked } = getTimeSheetFlagsValid();
                 if (!tsChecked && !osChecked) {
-                    alert("There is a problem\nYou must choose either an output sheet and/or time sheet");
+                    showGovukAlert("There is a problem\nYou must choose either an output sheet and/or time sheet");
                     return;
                 }
                 openEditModal(row);
@@ -362,23 +362,24 @@ function bulkSetSendForCurrentPc(sendYes) {
 }
 
 function clearAllWorkGroupsAllProfitCentres() {
-    const ok = window.confirm("Are you sure you want to clear all work groups email flagging, irrespective of profit centre?");
-    if (!ok) return;
+    showGovukConfirm("Are you sure you want to clear all work groups email flagging, irrespective of profit centre?").then((result) => {
+        if (!result) return;
 
-    Object.keys(tableDataByProfitCentre).forEach((pc) => {
-        const rows = tableDataByProfitCentre[pc] || [];
-        rows.forEach((row) => {
-            row.send = "No";
-            updateSendEmailInDb(row.profitCentre, row.workgroup, 0);
+        Object.keys(tableDataByProfitCentre).forEach((pc) => {
+            const rows = tableDataByProfitCentre[pc] || [];
+            rows.forEach((row) => {
+                row.send = "No";
+                updateSendEmailInDb(row.profitCentre, row.workgroup, 0);
+            });
         });
-    });
 
-    if (currentProfitCentre) {
-        loadProfitCentreData(currentProfitCentre);
-    } else {
-        filteredData = [];
-        renderTable();
-    }
+        if (currentProfitCentre) {
+            loadProfitCentreData(currentProfitCentre);
+        } else {
+            filteredData = [];
+            renderTable();
+        }
+    });
 }
 
 function onSendEmailsClick() {

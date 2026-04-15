@@ -94,7 +94,7 @@ document.getElementById("moveBtn").addEventListener("click", () => {
   });
 
   if (failedRecords.length > 0) {
-    alert("Please correct all failed records before moving passed records.");
+    showGovukAlert("Please correct all failed records before moving passed records.");
     return;
   }
 
@@ -108,18 +108,18 @@ document.getElementById("moveBtn").addEventListener("click", () => {
   });
 
   // if (filtered.length > 0) {
-  //   alert("Please correct all failed records before moving passed records.");
+  //   showGovukAlert("Please correct all failed records before moving passed records.");
   //   return;
   // }
   //const checked = sourceBody.querySelectorAll(".row-check:checked");
   // selected checked will be moved
   // const checked = sourceBody.querySelectorAll("#dataTable input[type='checkbox'][data-id]:checked");
-  // if (!checked.length) return alert("No rows selected");
+  // if (!checked.length) return showGovukAlert("No rows selected");
 
   // const checked = sourceBody.querySelectorAll(
   //   "#dataTable input[type='checkbox'][data-id]",
   // );
-  // if (!checked.length) return alert("No rows selected");
+  // if (!checked.length) return showGovukAlert("No rows selected");
 
   filtered.forEach((cb) => {
     const tr = cb.closest("tr");
@@ -448,13 +448,15 @@ function openEditModal(row) {
 function handleDelete(tr) {
   if (!tr) return;
 
-  if (confirm("Are you sure you want to delete this row?")) {
+  showGovukConfirm("Are you sure you want to delete this row?").then((result) => {
+      if (result) {
     const tdhours = !tr.cells[7].innerText ? 0 : Number(tr.cells[7].innerText);
     thours.value = Number(thours.value) - tdhours;
     tr.remove();
 
     applyPagination(); // refresh pagination
   }
+  });
 }
 
 function saveEdit(tr) {
@@ -978,7 +980,7 @@ document.getElementById("csvInput").addEventListener("change", (e) => {
   } else if (ext === "xlsx" || ext === "xls") {
     readExcelWithXLSX(file);
   } else {
-    alert("Unsupported file format");
+    showGovukAlert("Unsupported file format");
   }
   //document.getElementById("csvInput").value = "";
   e.target.value = "";
@@ -1351,7 +1353,7 @@ function exportToExcel() {
   });
 
   if (rows.length === 1) {
-    alert("No data to export");
+    showGovukAlert("No data to export");
     return;
   }
 
@@ -1416,58 +1418,50 @@ function handleDeleteAllWG() {
 
   if (isFailedBtnClicked || isPassedBtnClicked) {
     if (filtered.length > 0) {
-      confirmDelete = confirm(
+      showGovukConfirm(
         `Are you sure you want to delete ${filtered.length} record(s)?`,
-      );
-      if (!confirmDelete) {
-        return;
-      }else{
+      ).then((result) => {
+        if (!result) {
+          return;
+        }
+
         filtered.forEach((tr) => {
           tr.remove();
           thours.value = Number(thours.value) - Number(tr.cells[5].innerText);
-        } );
+        });
         document.getElementById("selectAllWG").checked = false;
-        return;
-      }
+      });
+      return;
     }
   }
   const checkboxes = document.querySelectorAll(
     "#dataTable tbody tr td:first-child input[type='checkbox']:checked",
   );
    if (checkboxes.length === 0) {
-    alert("Please select at least one record to delete.");
+    showGovukAlert("Please select at least one record to delete.");
     return;
   }
   if (checkboxes.length > 0) {
-    confirmDelete = confirm(
+    showGovukConfirm(
       `Are you sure you want to delete ${checkboxes.length} record(s)?`,
-    );
-    if (!confirmDelete) {
-      return;
-    }
+    ).then((result) => {
+      if (!result) {
+        return;
+      }
 
-    checkboxes.forEach((cb) => {
-      const row = cb.closest("tr");
-      // filtered.forEach((tr) => {
-      //   tr.remove();
-      //   thours.value = Number(thours.value) - Number(tr.cells[7].innerText);
-      // });
-      [...row.cells].forEach((td) => {
-        if (td.cellIndex === 7) {
-          thours.value = Number(thours.value) - Number(td.innerText);
-        }
+      checkboxes.forEach((cb) => {
+        const row = cb.closest("tr");
+        [...row.cells].forEach((td) => {
+          if (td.cellIndex === 7) {
+            thours.value = Number(thours.value) - Number(td.innerText);
+          }
+        });
+        row.remove();
       });
-      row.remove();
-      // filtered = rows.filter(
-      //   (row) =>
-      //     row.innerText.toLowerCase().includes(searchText) &&
-      //     !row.cells[8]?.querySelector("input")?.checked,
-      // );
-      //filtered.remove();
-      // if (row.innerText.toLowerCase().includes(searchText)) {
-      //   row.remove();
-      // }
+
+      document.getElementById("selectAllWG").checked = false;
     });
+    return;
   }
 
   document.getElementById("selectAllWG").checked = false;

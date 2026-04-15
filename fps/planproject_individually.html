@@ -3,15 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
      <title>2025-2026 : Plan Projects Individually</title> 
    <!-- Bootstrap CSS -->
            <link rel="stylesheet" href="../css/bootstrap.min.css">
     	 <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css">
 	 <link rel="stylesheet" href="../css/fps_styles/styles.css">
 	  <link rel="stylesheet" href="../css/main_style.css">
-	 <link rel="stylesheet" href="../css/fps_styles/suppliement_style_fps.css" />
-	<link rel="stylesheet" href="../css/fps_styles/setup_resource.css" />
+     <link rel="stylesheet" href="../css/supplement_style_over_gov.uk_style.css" />
+    <link rel="stylesheet" href="../css/fps_styles/fps_table_utils.css" />
+	
+<script>
+ 
+
+    window.addEventListener('load', function () {
+        // Get modal element
+        const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        // Show modal
+        myModal.show();
+    });
+
+</script>
+
+
 </head>
 
 
@@ -69,6 +84,7 @@
   <div id="header"></div>
 	
 	    <script src="../js/fps_nav_menu.js"></script>
+    <script src="../js/govuk-modal-dialog.js"></script>
     <script>
         document.getElementById('header').innerHTML = htmlmenu;
         initMenu();
@@ -206,7 +222,7 @@
                   <li><a class="dropdown-item" href="planvsactaul_test.html">
                             Tests</a>
                     </li>
-                    <li><a class="dropdown-item" href="planvsactaul_animals.html">
+                    <li><a class="dropdown-item" href="planvsactual_animals.html">
                             Animals</a>
                     </li>
                  <li><a class="dropdown-item" href="planvsactaul_additional.html">
@@ -350,13 +366,15 @@
  </div>
 
         </div>
-  <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
-        <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
-            <span class="fps-sr-page-footer-text">
-                © copyright Defra 2025
-            </span>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+                </span>
+            </div>
         </div>
     </div>
+</div>
 	   
     </div>
 			
@@ -965,9 +983,13 @@
 		}
 	</script>
  <script src="../js/bootstrap.bundle.min.js"></script>
-   <script src="../js/modalpopup.js"></script>
-   <script src="../js/planproject_individually.js"></script>
+   <script src="../js/fps_js/modalpopup.js"></script>
+    <script src="../js/fps_js/fpsmodalpopup.js"></script>
+     <script src="../js/fps_js/fps-table-utils.js"></script>
 	 
 </body>
 
 </html>
+</html>
+
+

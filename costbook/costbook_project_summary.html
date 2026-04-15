@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
     <title>Project Edit</title>
     <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -66,6 +67,7 @@
 
     <!-- Global navigation stats -->
     <script src="../js/costbook_nav_menu.js"></script>
+    <script src="../js/govuk-modal-dialog.js"></script>
     <script>
         document.getElementById('header').innerHTML = htmlmenu;
         initMenu();
@@ -375,13 +377,15 @@
 
 
 
-        <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
-            <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
-                <span class="fps-sr-page-footer-text">
-                    © copyright Defra 2025
+        <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
                 </span>
             </div>
         </div>
+    </div>
+</div>
     </main>
 
 
@@ -392,6 +396,7 @@
     <script src="../js/bootstrap.bundle.min.js">    </script>
     <script src="../js/costbook_common.js"></script>
     <script src="../js/costbook_js/costbook_project_summary.js"></script>
+    <script src="../js/costbook_js/costbook-column-resize.js"></script>
 
 
 
@@ -399,3 +404,5 @@
 </body>
 
 </html>
+
+

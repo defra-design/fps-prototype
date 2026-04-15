@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
     <title>Report Admin Maintenance - PIMS</title>
     <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
     <link rel="stylesheet" href="../css/pims_style/style.css" />
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="../css/pims_style/maintenance_style.css" />
     <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
     <script src="../js/pims_js/nav_menu/menutemplate.js"></script>
+    <script src="../js/govuk-modal-dialog.js"></script>
 </head>
 
 <body class="govuk-template__body govuk-frontend-supported" style="overflow-x: hidden;">
@@ -955,11 +957,15 @@
     </div>
 
 
-    <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
-        <div class="govuk-width-container sup_p_8 text-center">
-            <span> &copy; Copyright Defra 2025 </span>
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+                </span>
+            </div>
         </div>
     </div>
+</div>
 
     <!-- ===== MAINTENANCE EDIT MODAL ===== -->
     <div class="govuk-edit-modal" id="maintenanceEditModal" role="dialog" aria-modal="true"
@@ -1679,3 +1685,5 @@
 </body>
 
 </html>
+
+
