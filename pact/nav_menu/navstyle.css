@@ -214,18 +214,11 @@ input {
 }
 
 .userdropdown > ul > li > a:hover {
-    background: #1d70b8;
-    color: #fff;
+    background: aliceblue;
 }
 
 .userdropdown > ul > li > a > img {
     margin-right: 5px;
-    transition: filter 0.15s ease;
-}
-
-.userdropdown > ul > li > a:hover > img,
-.userdropdown > ul > li > a:focus > img {
-    filter: brightness(0) invert(1);
 }
 
 

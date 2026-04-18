@@ -515,8 +515,7 @@ function editProjectCost(event) {
 // Delete project cost function
 function deleteProjectCost(index) {
     const item = filteredProjectCostData[index];
-    showGovukConfirm(`Are you sure you want to delete project cost for ${item.Project}?`).then((result) => {
-        if (result) {
+    if (confirm(`Are you sure you want to delete project cost for ${item.Project}?`)) {
         filteredProjectCostData.splice(index, 1);
         
         // Also remove from the main data array
@@ -539,7 +538,6 @@ function deleteProjectCost(index) {
         renderPagination();
         console.log('Project cost deleted:', item);
     }
-    });
 }
 
 // Modal functions
@@ -618,12 +616,12 @@ function saveProjectCost() {
 
     // Validation
     if (!project || !accountCode || !amount || !month) {
-        showGovukAlert('Please fill in all required fields (Project, Account Code, Amount, Month)');
+        alert('Please fill in all required fields (Project, Account Code, Amount, Month)');
         return;
     }
 
     if(month > 12 || month < 1){
-        showGovukAlert('Please enter a valid month number (1-12)');
+        alert('Please enter a valid month number (1-12)');
         return;
     }
 
@@ -659,13 +657,13 @@ function saveProjectCost() {
             projectCostData[mainIndex] = newEntry;
         }
         
-        showGovukAlert('Project cost updated successfully!');
+        alert('Project cost updated successfully!');
     } else {
         // Add new entry
         filteredProjectCostData.push(newEntry);
         projectCostData.push(newEntry);
         currentPage = 1; // Go to first page to show new entry
-        showGovukAlert('Project cost added successfully!');
+        alert('Project cost added successfully!');
     }
 
     closeProjectCostModal();

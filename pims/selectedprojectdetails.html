@@ -3,8 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-
-    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Details</title>
   <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
   <link rel="stylesheet" href="../css/bootstrap.min.css" />
@@ -15,7 +14,6 @@
   <link rel="stylesheet" href="../css/pims_style/style.css" />
 
   <script src="../js/pims_js/nav_menu/menutemplate.js"></script>
-    <script src="../js/govuk-modal-dialog.js"></script>
 
 </head>
 
@@ -1100,15 +1098,13 @@ Pathogens and Animal By-products</textarea>
     </div>
   </div>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
-            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+          <div class="govuk-footer sup_p_0 sup_margin_left_right_0" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+            <div class="govuk-width-container sup_p_8 sup_text_center">
+                <span>
+                    &copy; copyright Defra 2025
                 </span>
             </div>
         </div>
-    </div>
-</div>
 
   <!-- <div class="col-sm-6">
          <label for="project" class="col-form-label">Select a Project</label>
@@ -1196,9 +1192,7 @@ Pathogens and Animal By-products</textarea>
     </div>
   </div>
 
+    <script src="../js/defra-dialogs.js"></script>
 </body>
 
 </html>
-</html>
-
-

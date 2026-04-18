@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025-2026 : Portfolio Maintenance</title>
+
+    <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
+    <link rel="stylesheet" href="../css/pact_styles/style.css" />
+    <link rel="stylesheet" href="../css/pact_styles/suppliement_style_over_gov.uk_style.css" />
+    <link rel="stylesheet" href="../pact/nav_menu/navstyle.css" />
+    <link rel="stylesheet" href="../css/pact_styles/portfolio_management.css" />
+    <script src="../pact/nav_menu/menutemplate.js"></script>
+
+</head>
+
+<body class="govuk-template__body">
+    <header class="govuk-header" role="banner">
+        <div class="header-nav">
+            <div class="pims-log-wrapper">
+                <div><img src="../images/defra_logo.png" width="80" alt="Animal & Plant Health Agency" /></div>
+                <div class="pims-log"><span>PACT</span></div>
+                <div class="pims-log" style="width: 160px;font-size: 16px;">
+                    <select aria-label="Select year" class="pims-log"
+                        style="border: 0;border-radius: 0;margin-left: 0;width: 150px;outline: 0;">
+                        <option>2017-2018</option>
+                        <option>2018-2019</option>
+                        <option>2019-2020</option>
+                        <option>2020-2021</option>
+                        <option>2021-2022</option>
+                        <option>2022-2023</option>
+                        <option>2023-2024</option>
+                        <option>2024-2025</option>
+                        <option selected>2025-2026</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="header"></div>
+
+    <script src="../pact/nav_menu/script.js"></script>
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+
+    <main class="govuk-main-wrapper govuk-!-padding-top-0 pm-layout" id="main-content" role="main">
+        <section class="pm-page-title-wrap" aria-label="Page title">
+            <h1 class="govuk-heading-m pm-page-title">Portfolio Maintenance</h1>
+        </section>
+
+        <section class="pm-portfolio-banner" aria-label="Portfolio selector">
+            <div class="pm-portfolio-card">
+                <label class="govuk-label" for="pmPortfolioSelect">Select a Portfolio</label>
+                <select id="pmPortfolioSelect" class="govuk-select" aria-label="Select a Portfolio">
+                    <option>ABOG0508 | Welsh Government for assistance with bovine TB programme</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="pm-content-grid" aria-label="Portfolio details and tests">
+            <aside class="pm-details-panel">
+                <div class="pm-field-block">
+                    <label class="govuk-label" for="pmParentProject">Parent Project:</label>
+                    <input class="govuk-input" id="pmParentProject" readonly>
+                </div>
+
+                <div class="pm-field-block">
+                    <label class="govuk-label" for="pmProjectTitle">Project Title:</label>
+                    <input class="govuk-input" id="pmProjectTitle" readonly>
+                </div>
+
+                <div class="pm-checkbox-row">
+                    <label class="govuk-label" for="pmFinished">Finished:</label>
+                    <input type="checkbox" class="pm-checkbox" id="pmFinished" disabled>
+                </div>
+
+                <div class="pm-row-two">
+                    <div class="pm-field-block">
+                        <label class="govuk-label" for="pmProgramme">Programme:</label>
+                        <select class="govuk-select" id="pmProgramme" aria-label="Programme"></select>
+                    </div>
+                    <div class="pm-field-block">
+                        <label class="govuk-label" for="pmManager">Manager:</label>
+                        <select class="govuk-select" id="pmManager" aria-label="Manager"></select>
+                    </div>
+                </div>
+
+                <div class="pm-row-two">
+                    <div class="pm-field-block">
+                        <label class="govuk-label" for="pmBudget">Budget-cvt:</label>
+                        <input class="govuk-input" id="pmBudget" readonly>
+                    </div>
+                    <div class="pm-field-block">
+                        <label class="govuk-label" for="pmTransferIncome">Transfer Income:</label>
+                        <input class="govuk-input" id="pmTransferIncome" readonly>
+                    </div>
+                </div>
+
+                <div class="pm-field-block">
+                    <label class="govuk-label" for="pmSelectedPortfolioTest">Selected PortfolioTest is:</label>
+                    <input class="govuk-input" id="pmSelectedPortfolioTest" readonly>
+                </div>
+
+                <div class="pm-field-block pm-comment-block">
+                    <label class="govuk-label" for="pmComments">Comments: (Double-click to Zoom)</label>
+                    <textarea class="govuk-textarea" id="pmComments" readonly></textarea>
+                </div>
+            </aside>
+
+            <section class="pm-table-panel" aria-label="Constituent tests">
+                <div class="pm-toolbar">
+                    <input type="search" class="govuk-input pm-search-input" id="pmTestSearch"
+                        placeholder="Search tests..." aria-label="Search tests">
+                    <button type="button" class="govuk-button pm-primary-btn" id="pmAddTestBtn" data-module="govuk-button">Add New Test</button>
+                    <button type="button" class="govuk-button pm-primary-btn pm-time-code-btn" id="pmTimeCodesBtn"
+                        data-module="govuk-button">Portfolio Time Codes</button>
+                </div>
+
+                <div id="pmConstituentScroll" class="pm-table-shell">
+                    <table class="govuk-table pm-table" aria-label="Constituent tests table">
+                        <thead>
+                            <tr>
+                                <th class="govuk-table__header">Test Code</th>
+                                <th class="govuk-table__header">Item Description</th>
+                                <th class="govuk-table__header">Work Group</th>
+                                <th class="govuk-table__header">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pmConstituentBody"></tbody>
+                    </table>
+                </div>
+
+                <div class="pm-pagination-row">
+                    <div class="pm-pagination-controls" id="pmConstituentPagination"></div>
+                    <div class="pm-page-size-wrap">
+                        <label class="govuk-visually-hidden" for="pmConstituentPageSize">Rows per page</label>
+                        <select id="pmConstituentPageSize" class="govuk-select" aria-label="Rows per page">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="pm-workgroups-panel" aria-label="Portfolio workgroups">
+            <div class="pm-workgroups-search-row">
+                <input type="search" class="govuk-input pm-workgroups-search" id="pmWorkgroupSearch"
+                    placeholder="Search..." aria-label="Search workgroups">
+            </div>
+
+            <div class="pm-workgroups-shell" id="pmWorkgroupsScroll">
+                <table class="govuk-table pm-table pm-workgroups-table" aria-label="Workgroups table">
+                    <thead>
+                        <tr>
+                            <th class="govuk-table__header">WorkGrp</th>
+                            <th class="govuk-table__header">Active</th>
+                            <th class="govuk-table__header">TimeCode</th>
+                            <th class="govuk-table__header">Project</th>
+                            <th class="govuk-table__header">TestCode</th>
+                            <th class="govuk-table__header">Portfolio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pmWorkgroupsBody"></tbody>
+                </table>
+            </div>
+
+            <div class="pm-workgroups-footer">
+                <div class="pm-workgroups-page-size-wrap">
+                    <label for="pmWorkgroupsPageSize">records per page</label>
+                    <select id="pmWorkgroupsPageSize" class="govuk-select" aria-label="Workgroup rows per page">
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+                <div class="pm-pagination-controls" id="pmWorkgroupsPagination"></div>
+            </div>
+        </section>
+
+        <div class="pm-hidden-elements" aria-hidden="true">
+            <button type="button" id="pmOverheadBtn"></button>
+        </div>
+
+        <footer class="pm-footer">&copy; copyright Defra 2025</footer>
+    </main>
+
+    <script src="../js/pact_js/portfoliomaintenance.js"></script>
+    <script src="../js/defra-dialogs.js"></script>
+</body>
+
+</html>

@@ -590,27 +590,25 @@ function progDeleteRecord(id, tableKey) {
       ? rec.programme
       : rec.name
     : String(id);
-  showGovukConfirm("Are you sure you want to delete this record?").then((result) => {
-    if (!result) return;
-    progState[tableKey].data = progState[tableKey].data.filter(function (r) {
-      return r.id !== id;
-    });
-    progState[tableKey].filtered = progState[tableKey].filtered.filter(
-      function (r) {
-        return r.id !== id;
-      },
-    );
-    var totalPages = Math.max(
-      1,
-      Math.ceil(
-        progState[tableKey].filtered.length / progState[tableKey].rowsPerPage,
-      ),
-    );
-    if (progState[tableKey].currentPage > totalPages)
-      progState[tableKey].currentPage = totalPages;
-    progRenderTable(tableKey);
-    progRenderPagination(tableKey);
+  if (!confirm("Are you sure you want to delete this record?")) return;
+  progState[tableKey].data = progState[tableKey].data.filter(function (r) {
+    return r.id !== id;
   });
+  progState[tableKey].filtered = progState[tableKey].filtered.filter(
+    function (r) {
+      return r.id !== id;
+    },
+  );
+  var totalPages = Math.max(
+    1,
+    Math.ceil(
+      progState[tableKey].filtered.length / progState[tableKey].rowsPerPage,
+    ),
+  );
+  if (progState[tableKey].currentPage > totalPages)
+    progState[tableKey].currentPage = totalPages;
+  progRenderTable(tableKey);
+  progRenderPagination(tableKey);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

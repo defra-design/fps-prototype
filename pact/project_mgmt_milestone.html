@@ -3,15 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
     <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
     <link rel="stylesheet" href="nav_menu/navstyle.css" />
     <script src="nav_menu/menutemplate.js"></script>
-    <script src="../js/govuk-modal-dialog.js"></script>
     <link rel="stylesheet" href="../css/pact_styles/style.css" />
-    <link rel="stylesheet" href="../css/pact_styles/supplement_style_over_gov.uk_style.css" />
+    <link rel="stylesheet" href="../css/pact_styles/suppliement_style_over_gov.uk_style.css" />
 
     <style>
         /* Sortable header styles */
@@ -40,8 +38,7 @@
     <title>2025-2026 : Project Milestones - PACT</title>
 
   
-  <link rel="stylesheet" href="../css/apps/common.css" />
-  <link rel="stylesheet" href="../css/apps/pact-app.css" /></head>
+</head>
 
 <body>
     <header>
@@ -81,7 +78,7 @@
         initMenu();
         btn();
     </script>
- 
+    <div class="content-wrapper">
        <div class="govuk-grid-row sup_margin_left_right_0">
         <div class="govuk-grid-column-full">
             <h1 class="heading_with_txtbox govuk-heading-s sup_border-bottom">
@@ -92,9 +89,9 @@
                 <div> <a id="backlink" class="govuk-back-link">Back</a></div>
             </h1>
         </div>
-    </div>
+      </div>
 
-    <div style="display: flex; margin-left: 0; margin-right: 0; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;"
+    <div style="display: flex; margin-left: 0; margin-right: 0; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; margin-bottom: 10px;"
         class="govuk-grid-row">
         <nav class="sidenav flex-column flex-shrink-0" id="shortnav">
             <button class="toggle-btn" onclick="toggleSidebar()" style="right: -8px; top: 30px;">
@@ -106,10 +103,10 @@
                     style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
                     <a id="invoiecsubcontract"   style="color: #fff;">Invoices & Subcontracted Costs</a>
                 </li>
-                <li class="sidebar-link-two"
+                <!-- <li class="sidebar-link-two"
                     style="border-radius: 0 8px 8px 0;cursor: pointer; background-color: #1d70b8;">
                     <a id="milestones" style="color: #fff;"> Milestones</a>
-                </li>
+                </li> -->
                 <li class="sidebar-link-two"
                     style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
                     <a id="testpurchasereq" style="color: #fff;">Test Purchase Requirements</a>
@@ -198,7 +195,14 @@
             </div>
         </div>
     </div>
-
+    </div>
+         <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+            <div class="govuk-width-container sup_p_8 sup_text_center">
+                <span>
+                    &copy; copyright Defra 2025
+                </span>
+            </div>
+        </div>
     <script>
         // Milestone data array
         const milestoneData = [
@@ -450,7 +454,7 @@
 
         // Add Milestone button (placeholder)
         // document.getElementById('addMilestoneBtn').addEventListener('click', function() {
-        //     showGovukAlert('Add Milestone functionality - to be implemented');
+        //     alert('Add Milestone functionality - to be implemented');
         // });
 
            function toggleSidebar() {
@@ -492,8 +496,7 @@
             //  document.getElementById("invoicebtns").style.display = 'flex';
         }
     </script>
+    <script src="../js/defra-dialogs.js"></script>
 </body>
 
 </html>
-
-

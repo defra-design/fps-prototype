@@ -672,19 +672,17 @@ function closeAdminUserModal() {
 // ════════════════════════════════════════════════════
 
 function adminUserDeleteRecord(rec) {
-  showGovukConfirm("Are you sure you want to delete this record?").then((result) => {
-    if (!result) return;
-    ADMIN_USERS = ADMIN_USERS.filter(function (r) {
-      return r.id !== rec.id;
-    });
-    var totalPages = Math.max(
-      1,
-      Math.ceil(ADMIN_USERS.length / adminUsersState.rowsPerPage),
-    );
-    if (adminUsersState.currentPage > totalPages)
-      adminUsersState.currentPage = totalPages;
-    renderAdminUsersTable();
+  if (!confirm("Are you sure you want to delete this record?")) return;
+  ADMIN_USERS = ADMIN_USERS.filter(function (r) {
+    return r.id !== rec.id;
   });
+  var totalPages = Math.max(
+    1,
+    Math.ceil(ADMIN_USERS.length / adminUsersState.rowsPerPage),
+  );
+  if (adminUsersState.currentPage > totalPages)
+    adminUsersState.currentPage = totalPages;
+  renderAdminUsersTable();
 }
 
 // ════════════════════════════════════════════════════
@@ -827,19 +825,17 @@ function closeAdminAccessModal() {
 // ════════════════════════════════════════════════════
 
 function adminAccessDeleteRecord(rec) {
-  showGovukConfirm("Are you sure you want to delete this record?").then((result) => {
-    if (!result) return;
-    ADMIN_ACCESS = ADMIN_ACCESS.filter(function (r) {
-      return r.id !== rec.id;
-    });
-    var totalPages = Math.max(
-      1,
-      Math.ceil(ADMIN_ACCESS.length / adminAccessState.rowsPerPage),
-    );
-    if (adminAccessState.currentPage > totalPages)
-      adminAccessState.currentPage = totalPages;
-    renderAdminAccessTable();
+  if (!confirm("Are you sure you want to delete this record?")) return;
+  ADMIN_ACCESS = ADMIN_ACCESS.filter(function (r) {
+    return r.id !== rec.id;
   });
+  var totalPages = Math.max(
+    1,
+    Math.ceil(ADMIN_ACCESS.length / adminAccessState.rowsPerPage),
+  );
+  if (adminAccessState.currentPage > totalPages)
+    adminAccessState.currentPage = totalPages;
+  renderAdminAccessTable();
 }
 
 // ════════════════════════════════════════════════════

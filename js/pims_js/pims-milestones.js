@@ -1,4 +1,4 @@
-const tableBody = document.getElementById("tableBody");
+﻿const tableBody = document.getElementById("tableBody");
 const pagination = document.getElementById("pagination");
 const rowsPerPage = document.getElementById("rowsPerPage");
 const noData = document.getElementById("noData");
@@ -542,8 +542,7 @@ function openAddModal() {
 
 // Handle delete button click
 function handleDeleteTimecode(id) {
-  showGovukConfirm("Are you sure you want to delete this record?").then((result) => {
-      if (result) {
+  if (confirm("Are you sure you want to delete this record?")) {
     // Find and remove the item from dummyData
     const index = dummyData.findIndex((item) => item.project === id);
     if (index > -1) {
@@ -553,7 +552,6 @@ function handleDeleteTimecode(id) {
       updatePagination();
     }
   }
-  });
 }
 
 // Save milestone with GOV.UK validation

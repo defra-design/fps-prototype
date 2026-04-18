@@ -1,0 +1,227 @@
+/*
+  Reusable GOV.UK override layer
+  --------------------------------
+  Usage:
+  1) Include this stylesheet AFTER govuk-frontend and any app base styles.
+  2) Apply .app-theme at the root (usually on <body>) to enable controlled overrides.
+  3) Optionally add app variants: .app-theme--pims, .app-theme--pact, .app-theme--costbook, .app-theme--fps.
+
+  Example:
+  <body class="app-theme app-theme--pims">
+*/
+
+/* ------------------------------------------------------------
+   Theme tokens (safe defaults)
+   Keep GOV.UK as base and expose app-level custom properties.
+------------------------------------------------------------- */
+:root {
+  --app-font-family: "GDS Transport", Arial, sans-serif;
+
+  --app-text-color: #0b0c0c;
+  --app-muted-text-color: #505a5f;
+  --app-bg-color: #ffffff;
+  --app-surface-color: #f4f8fb;
+  --app-border-color: #b1b4b6;
+
+  --app-primary-color: #1d70b8;
+  --app-primary-hover-color: #144e81;
+  --app-primary-active-color: #0f385c;
+  --app-primary-contrast-color: #ffffff;
+
+  --app-secondary-color: #e6eff7;
+  --app-secondary-contrast-color: #0b0c0c;
+
+  --app-link-color: #1a65a6;
+  --app-link-hover-color: #0f385c;
+
+  --app-focus-ring-color: #ffdd00;
+  --app-focus-text-color: #0b0c0c;
+
+  --app-space-1: 0.25rem;
+  --app-space-2: 0.5rem;
+  --app-space-3: 0.75rem;
+  --app-space-4: 1rem;
+  --app-space-5: 1.5rem;
+  --app-space-6: 2rem;
+
+  --app-heading-1-size: clamp(1.875rem, 1.5rem + 1.2vw, 2.25rem);
+  --app-heading-2-size: clamp(1.5rem, 1.25rem + 0.9vw, 1.875rem);
+  --app-heading-3-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+
+  --app-input-min-height: 2.5rem;
+  --app-input-radius: 0.125rem;
+  --app-button-radius: 0.125rem;
+}
+
+/* ------------------------------------------------------------
+   App variants (token-only changes)
+   Keep per-app theming centralized and maintainable.
+------------------------------------------------------------- */
+.app-theme--pims {
+  --app-primary-color: #005ea5;
+  --app-primary-hover-color: #003f73;
+  --app-primary-active-color: #002f55;
+}
+
+.app-theme--pact {
+  --app-primary-color: #1d70b8;
+  --app-primary-hover-color: #0f5a96;
+  --app-primary-active-color: #0f385c;
+}
+
+.app-theme--costbook {
+  --app-primary-color: #2f6f3e;
+  --app-primary-hover-color: #22512d;
+  --app-primary-active-color: #1b3d23;
+}
+
+.app-theme--fps {
+  --app-primary-color: #7a2e8f;
+  --app-primary-hover-color: #5a216a;
+  --app-primary-active-color: #42184e;
+}
+
+/* ------------------------------------------------------------
+   Utility classes
+   Lightweight helpers for pages that need small one-off style hooks.
+------------------------------------------------------------- */
+.app-text-primary {
+  color: var(--app-primary-color) !important;
+}
+
+.app-text-muted {
+  color: var(--app-muted-text-color) !important;
+}
+
+.app-bg-secondary {
+  background-color: var(--app-secondary-color) !important;
+  color: var(--app-secondary-contrast-color) !important;
+}
+
+.app-border {
+  border: 1px solid var(--app-border-color) !important;
+}
+
+.app-p-4 {
+  padding: var(--app-space-4) !important;
+}
+
+.app-mb-4 {
+  margin-bottom: var(--app-space-4) !important;
+}
+
+/* ------------------------------------------------------------
+   Controlled GOV.UK component overrides
+   Scoped under .app-theme to avoid modifying GOV.UK core behavior.
+------------------------------------------------------------- */
+.app-theme {
+  color: var(--app-text-color);
+  background-color: var(--app-bg-color);
+  font-family: var(--app-font-family);
+}
+
+.app-theme .govuk-link {
+  color: var(--app-link-color);
+}
+
+.app-theme .govuk-link:hover {
+  color: var(--app-link-hover-color);
+}
+
+/* Buttons */
+.app-theme .govuk-button {
+  background-color: var(--app-primary-color);
+  color: var(--app-primary-contrast-color);
+  border-radius: var(--app-button-radius);
+  min-height: 2.75rem;
+  box-shadow: 0 2px 0 var(--app-primary-active-color);
+}
+
+.app-theme .govuk-button:hover {
+  background-color: var(--app-primary-hover-color);
+}
+
+.app-theme .govuk-button:active {
+  background-color: var(--app-primary-active-color);
+}
+
+.app-theme .govuk-button:focus,
+.app-theme .govuk-input:focus,
+.app-theme .govuk-table a:focus,
+.app-theme .govuk-link:focus {
+  outline: 3px solid transparent;
+  background-color: var(--app-focus-ring-color);
+  color: var(--app-focus-text-color);
+  box-shadow: 0 -2px var(--app-focus-ring-color), 0 4px var(--app-focus-text-color);
+}
+
+/* Headings */
+.app-theme .govuk-heading-xl,
+.app-theme .govuk-heading-l,
+.app-theme .govuk-heading-m,
+.app-theme .govuk-heading-s {
+  color: var(--app-text-color);
+  letter-spacing: 0.01em;
+}
+
+.app-theme .govuk-heading-xl {
+  font-size: var(--app-heading-1-size);
+}
+
+.app-theme .govuk-heading-l {
+  font-size: var(--app-heading-2-size);
+}
+
+.app-theme .govuk-heading-m {
+  font-size: var(--app-heading-3-size);
+}
+
+/* Inputs */
+.app-theme .govuk-input,
+.app-theme .govuk-textarea,
+.app-theme .govuk-select {
+  border-color: var(--app-border-color);
+  border-radius: var(--app-input-radius);
+  min-height: var(--app-input-min-height);
+}
+
+.app-theme .govuk-input:focus,
+.app-theme .govuk-textarea:focus,
+.app-theme .govuk-select:focus {
+  border-color: var(--app-text-color);
+}
+
+/* Tables */
+.app-theme .govuk-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.app-theme .govuk-table__head {
+  background-color: var(--app-surface-color);
+}
+
+.app-theme .govuk-table__header,
+.app-theme .govuk-table__cell {
+  border-bottom: 1px solid var(--app-border-color);
+  vertical-align: middle;
+  padding: var(--app-space-3) var(--app-space-4);
+}
+
+.app-theme .govuk-table__row:nth-child(even) {
+  background-color: #fafbfd;
+}
+
+/* ------------------------------------------------------------
+   Responsive guardrails
+------------------------------------------------------------- */
+@media (max-width: 40.0525em) {
+  .app-theme .govuk-button {
+    width: 100%;
+  }
+
+  .app-theme .govuk-table__header,
+  .app-theme .govuk-table__cell {
+    padding: var(--app-space-2) var(--app-space-3);
+  }
+}

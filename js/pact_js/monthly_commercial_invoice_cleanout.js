@@ -550,7 +550,7 @@ function saveProjectParentInvoice() {
     // Validation
     //if (!projectParent || !month || isNaN(amount)) {
     if (!projectParent) {
-        showGovukAlert('Project field should not be empty');
+        alert('Project field should not be empty');
         return;
     }
     
@@ -566,11 +566,11 @@ function saveProjectParentInvoice() {
     if (editingIndex !== null) {
         // Update existing entry
         projectParentInvoiceData[editingIndex] = newEntry;
-        showGovukAlert('Invoice updated successfully!');
+        alert('Invoice updated successfully!');
     } else {
         // Add new entry
         projectParentInvoiceData.push(newEntry);
-        showGovukAlert('Invoice added successfully!');
+        alert('Invoice added successfully!');
     }
     
     closeProjectParentInvoiceModal();
@@ -592,17 +592,15 @@ function editProjectParentInvoice(event) {
  */
 function deleteProjectParentInvoice(index) {
     const item = projectParentInvoiceData[index];
-    showGovukConfirm(`Are you sure you want to delete invoice for ${item.projectParent}?`).then((result) => {
-        if (result) {
+    if (confirm(`Are you sure you want to delete invoice for ${item.projectParent}?`)) {
         projectParentInvoiceData.splice(index, 1);
         filterAndRenderProjectParentInvoice();
-        showGovukAlert('Invoice deleted successfully!');
+        alert('Invoice deleted successfully!');
     }
-    });
 }
 
 document.getElementById('btnPasteErrors').addEventListener('click', function() {
-    showGovukAlert('Print paste errors');
+    alert('Print paste errors');
 });
 
 // Wait for DOM to be fully loaded

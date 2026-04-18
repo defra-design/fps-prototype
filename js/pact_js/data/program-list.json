@@ -1,0 +1,178 @@
+[
+    {
+        "id": 1,
+        "programCode": "ROMD",
+        "jobcode": "APHAROMD0001",
+        "programName": "Midlands Surveillance and Ops",
+        "sectorName": "Charge",
+        "customer": "a",
+        "leader": "a",
+        "minim": "3",
+        "directorate": "Operations"
+    },
+    {
+        "id": 2,
+        "programCode": "RONT",
+        "jobcode": "APHARONT0002",
+        "programName": "North Surveillance and Ops",
+        "sectorName": "Surveillance",
+        "customer": "b",
+        "leader": "b",
+        "minim": "2",
+        "directorate": "Operations"
+    },
+    {
+        "id": 3,
+        "programCode": "ROSC",
+        "jobcode": "APHAROSC0003",
+        "programName": "Scotland Field Services",
+        "sectorName": "Field",
+        "customer": "c",
+        "leader": "c",
+        "minim": "4",
+        "directorate": "Operations"
+    },
+    {
+        "id": 4,
+        "programCode": "ROSE",
+        "jobcode": "APHAROSE0004",
+        "programName": "South East Surveillance and Ops",
+        "sectorName": "Surveillance",
+        "customer": "d",
+        "leader": "d",
+        "minim": "5",
+        "directorate": "Operations"
+    },
+    {
+        "id": 5,
+        "programCode": "ROSW",
+        "jobcode": "APHAROSW0005",
+        "programName": "South West Surveillance and Ops",
+        "sectorName": "Surveillance",
+        "customer": "e",
+        "leader": "e",
+        "minim": "3",
+        "directorate": "Operations"
+    },
+    {
+        "id": 6,
+        "programCode": "ROWA",
+        "jobcode": "APHAROWA0006",
+        "programName": "Wales Surveillance and Ops",
+        "sectorName": "Surveillance",
+        "customer": "f",
+        "leader": "f",
+        "minim": "6",
+        "directorate": "Operations"
+    },
+    {
+        "id": 7,
+        "programCode": "SEYBO",
+        "jobcode": "APHASEYBO007",
+        "programName": "Sevington Border Operations Team",
+        "sectorName": "Border",
+        "customer": "g",
+        "leader": "g",
+        "minim": "2",
+        "directorate": "Operations"
+    },
+    {
+        "id": 8,
+        "programCode": "SIU",
+        "jobcode": "APHASIU0008",
+        "programName": "Surveillance Intelligence Unit",
+        "sectorName": "Intelligence",
+        "customer": "h",
+        "leader": "h",
+        "minim": "4",
+        "directorate": "Intelligence"
+    },
+    {
+        "id": 9,
+        "programCode": "SSR",
+        "jobcode": "APHASSR0009",
+        "programName": "Science and Research",
+        "sectorName": "Research",
+        "customer": "i",
+        "leader": "i",
+        "minim": "5",
+        "directorate": "Science"
+    },
+    {
+        "id": 10,
+        "programCode": "SSU",
+        "jobcode": "APHASSU0010",
+        "programName": "Scientific Services Unit",
+        "sectorName": "Science",
+        "customer": "j",
+        "leader": "j",
+        "minim": "3",
+        "directorate": "Science"
+    },
+    {
+        "id": 11,
+        "programCode": "TSE",
+        "jobcode": "APHATSE0011",
+        "programName": "Transmissible Spongiform Encephalopathy",
+        "sectorName": "Disease",
+        "customer": "k",
+        "leader": "k",
+        "minim": "4",
+        "directorate": "Science"
+    },
+    {
+        "id": 12,
+        "programCode": "Viro",
+        "jobcode": "APHAVIRO0012",
+        "programName": "Virology",
+        "sectorName": "Lab",
+        "customer": "l",
+        "leader": "l",
+        "minim": "5",
+        "directorate": "Science"
+    },
+    {
+        "id": 13,
+        "programCode": "VSI_GB",
+        "jobcode": "APHAVSI0013",
+        "programName": "GB Only Surveillance",
+        "sectorName": "Surveillance",
+        "customer": "m",
+        "leader": "m",
+        "minim": "3",
+        "directorate": "Operations"
+    },
+    {
+        "id": 14,
+        "programCode": "Wildlife",
+        "jobcode": "APHAWILD0014",
+        "programName": "Wildlife Portfolio",
+        "sectorName": "Wildlife",
+        "customer": "n",
+        "leader": "n",
+        "minim": "4",
+        "directorate": "Operations"
+    },
+    {
+        "id": 15,
+        "programCode": "Y_Leave",
+        "jobcode": "APHALEAVE015",
+        "programName": "Y Leave",
+        "sectorName": "Admin",
+        "customer": "o",
+        "leader": "o",
+        "minim": "1",
+        "directorate": "Admin"
+    },
+    {
+        "id": 16,
+        "programCode": "ZET_Prog",
+        "jobcode": "APHAZET0016",
+        "programName": "ZET Programme",
+        "sectorName": "Programme",
+        "customer": "p",
+        "leader": "p",
+        "minim": "6",
+        "directorate": "Operations"
+    }
+]

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>2025-2026 : Portfolio Maintenance</title>
+    <!-- <script src="../pact/nav_menu/menutemplate.js"></script>
+      
+   <link rel="stylesheet" href="../css/pact_styles/style.css" /> -->
+    <!-- <link rel="stylesheet" href="../css/apps/common.css" />
+  <link rel="stylesheet" href="../css/apps/pact-app.css" /> -->
+    <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
+    <link rel="stylesheet" href="../css/pact_styles/style.css" />
+    <link rel="stylesheet" href="../css/pact_styles/suppliement_style_over_gov.uk_style.css" />
+    <link rel="stylesheet" href="../pact/nav_menu/navstyle.css" />
+    <link rel="stylesheet" href="../css/pact_styles/portfolio_management.css" />
+    <script src="../pact/nav_menu/menutemplate.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+
+            <div class="pims-log-wrapper">
+
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
+                </div>
+                <!-- <div class="menu-icon" onclick="openNav()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> -->
+                <div class="pims-log">
+                    <span>PACT</span>
+                </div>
+                <!-- <p>PACT</p> -->
+            </div>
+
+
+
+
+        </div>
+    </header>
+    <div id="header"></div>
+
+    <script src="../pact/nav_menu/script.js"></script>
+
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+
+
+    <div class="govuk-grid-row" id="section1">
+        <div class="cgovuk-grid-column-full pm-p-0">
+            <h5 class="pm-page-heading-legacy">
+                Portfolio Maintenance </h5>
+        </div>
+
+        <div class="cgovuk-grid-column-full govuk-!-padding-0">
+            <div class="pm-top-band">
+
+                <div class="govuk-grid-row govuk-!-margin-bottom-3">
+                    <div class="govuk-grid-column-one-half">
+                        <form class="govuk-grid-column-full govuk-!-padding-0">
+                            <div class="isplay-flex pm-portfolio-picker-wrap">
+                                <div class="govuk-grid-column-full govuk-!-padding-2">
+                                    <div class="pm-portfolio-dropdown" id="pmPortfolioPicker">
+                                        <label for="pmPortfolioInput"
+                                            class="govuk-label govuk-!-font-weight-bold">Select a Portfolio</label>
+                                        <input type="text"
+                                            class="govuk-input govuk-!-font-size-16 sup_select_option_width_100 pm-portfolio-trigger"
+                                            id="pmPortfolioInput" value="--select--" aria-haspopup="dialog"
+                                            aria-expanded="false" autocomplete="on"
+                                            placeholder="Type to search and select portfolio">
+                                        <input type="hidden" id="pmPortfolioSelect" value="">
+                                        <div class="dropdown-panel pm-portfolio-panel" id="pmPortfolioPanel">
+                                            <div class="pm-portfolio-grid-shell">
+                                                <table class="pm-portfolio-grid-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Portfolio Code</th>
+                                                            <th>Portfolio Title</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="pmPortfolioTableBody"></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="govuk-grid-column-one-half govuk-!-padding-left-0">
+                        <div class="pm-timecode-below-table govuk-!-margin-top-8">
+                            <button
+                                class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 govuk-body govuk-!-font-weight-bold"
+                                data-module="govuk-button" id="pmTimeCodesBtn" type="button">Portfolio Time
+                                Codes</button>
+                        </div>
+                        </ </div>
+                    </div>
+                </div>
+
+                <div class="govuk-grid-column-one-half pm-content-wrap">
+                    <div class="pm-main-panels">
+                        <!-- Left Panel -->
+                        <div class="govuk-grid-column-full govuk-!-padding-0">
+                            <div class="card blue-panel pm-details-card">
+                                <div class="card-body pm-details-card-body govuk-!-padding-0">
+                                    <div class="govuk-grid-row govuk-!-padding-top-2">
+                                        <div class="govuk-grid-column-full">
+                                            <div class="mb-2 govuk-grid-column-one-half">
+                                                <label class="govuk-label govuk-!-font-weight-bold">Parent
+                                                    Project:</label>
+                                                <input type="text" id="pmParentProject"
+                                                    class="govuk-input govuk-!-font-size-16" value="APHAEM000000">
+                                            </div>
+                                            <div class="mb-2 govuk-grid-column-one-half">
+                                                <label class="govuk-label govuk-!-font-weight-bold">Project
+                                                    Title:</label>
+                                                <textarea class="govuk-textarea govuk-!-font-size-16 sup_margin_0"
+                                                    id="pmProjectTitle" name="projectTitle" rows="3"
+                                                    value="Egg Marketing"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="govuk-grid-row pm-finished-row govuk-!-margin-bottom-2 govuk-!-padding-left-3">
+                                        <fieldset class="govuk-fieldset">
+                                            <div class="govuk-checkboxes govuk-checkboxes--small sup_margin_0 pm-finished-checkboxes"
+                                                data-module="govuk-checkboxes">
+                                                <div class="govuk-checkboxes__item">
+
+                                                    <input class="govuk-checkboxes__input" id="pmFinished"
+                                                        name="pmFinished" type="checkbox">
+                                                    <label
+                                                        class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold"
+                                                        for="pmFinished">Finished</label>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <!-- <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="pmFinished" name="pmFinished"
+                                                type="checkbox">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="pmFinished">Finished hb</label>
+                                        </div> -->
+                                    </div>
+                                    </fieldset>
+                                </div>
+
+                                <div class="govuk-grid-row govuk-!-margin-bottom-0 govuk-!-padding-2">
+
+                                    <div class="govuk-grid-column-one-half">
+                                        <label class="govuk-label govuk-!-font-weight-bold">Programme:</label>
+                                        <select class="govuk-select govuk-!-font-size-16 sup_select_option_width_100"
+                                            id="pmProgramme">
+                                            <option>ADMIN</option>
+                                            <option>RESEARCH</option>
+                                            <option>DEVELOPMENT</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="govuk-grid-column-one-half">
+                                        <label class="govuk-label govuk-!-font-weight-bold">Manager:</label>
+                                        <select class="govuk-select govuk-!-font-size-16 sup_select_option_width_100"
+                                            id="pmManager">
+                                            <option>Manager1</option>
+                                            <option>Manager2</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="govuk-grid-row govuk-!-margin-bottom-0 govuk-!-padding-2">
+                                    <div class="govuk-grid-column-one-half">
+                                        <label class="govuk-label govuk-!-font-weight-bold">Budget-cvt:</label>
+                                        <div><input type="text" id="pmBudget" class="govuk-input govuk-!-font-size-16"
+                                                value="£0.00"></div>
+                                    </div>
+                                    <div class="govuk-grid-column-one-half">
+                                        <label class="govuk-label govuk-!-font-weight-bold">Transfer Income:</label>
+                                        <div><input type="text" id="pmTransferIncome"
+                                                class="govuk-input govuk-!-font-size-16" value="£0.00">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="govuk-grid-row govuk-!-margin-bottom-0 govuk-!-padding-2">
+                                    <div class="govuk-grid-column-one-half">
+                                        <label class="govuk-label govuk-!-font-weight-bold">Selected PortfolioTest
+                                            is:</label>
+                                        <input type="text" id="pmSelectedPortfolioTest"
+                                            class="govuk-input govuk-!-font-size-16">
+                                    </div>
+
+
+                                    <div class="govuk-grid-column-one-half govuk-!-margin-bottom-0">
+                                        <label class="govuk-label govuk-!-font-weight-bold">Comments: (Double-click
+                                            to
+                                            Zoom)</label>
+                                        <textarea class="govuk-textarea govuk-!-font-size-16 govuk-!-margin-bottom-0"
+                                            id="pmComments" rows="3">Egg Marketing SLA - Inspections UK</textarea>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                              <div class="card blue-panel pm-details-card govuk-!-margin-top-2">
+                                <div class="govuk-grid-row govuk-!-margin-bottom-0 govuk-!-padding-2">
+                                    <div class="govuk-grid-column-one-half">
+                                        <label class="govuk-label govuk-!-font-weight-bold">Selected PortfolioTest
+                                            is:</label>
+                                        <input type="text" id="pmSelectedPortfolioTest"
+                                            class="govuk-input govuk-!-font-size-16">
+                                    </div>
+
+
+                                    <div class="govuk-grid-column-one-half govuk-!-margin-bottom-0">
+                                        <label class="govuk-label govuk-!-font-weight-bold">Comments: (Double-click
+                                            to
+                                            Zoom)</label>
+                                        <textarea class="govuk-textarea govuk-!-font-size-16 govuk-!-margin-bottom-0"
+                                            id="pmComments" rows="3">Egg Marketing SLA - Inspections UK</textarea>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel -->
+                <div class="govuk-grid-column-one-half govuk-!-padding-0">
+                    <div class="pm-right-panel-stack">
+                        <div class="table-box pm-constituent-heading-wrap">
+                            <h2 class="sup_border sup_text_color sup_heading_bg_color govuk-heading-s sup_align_flexheading sup_decrease_font_size_s pm-constituent-heading">
+                                Constituent Tests
+                            </h2>
+                        </div>
+
+
+                        <!-- Search and Controls -->
+                        <div class="search-panel pm-search-panel-bar">
+                            <div class="pm-search-controls-row govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+                                <div
+                                    class="cgovuk-grid-column-two-thirds pm-test-search-wrap govuk-grid-column-one-half">
+                                    <input type="text" id="pmTestSearch" class="govuk-input govuk-!-font-size-16"
+                                        placeholder="Search by test code, description or work group">
+                                </div>
+
+                                <div class="cgovuk-grid-column-one-third pm-add-test-wrap govuk-grid-column-one-half">
+                                    <button type="button" class="govuk-button pm-add-test-btn"
+                                        data-module="govuk-button" id="pmAddTestBtn" aria-label="Add test code">
+                                        + Add Test Code
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Table -->
+                        <div class="pm-constituent-table-wrap" id="pmConstituentScroll">
+                            <div class="table-responsive pm-grid-scroll">
+                                <table
+                                    class="table table-striped table-bordered custom-table reducepadding pm-grid-table">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th class="govuk-!-text-align-center pm-sortable" data-column="testCode">Test Code</th>
+                                            <th class="govuk-!-text-align-center pm-sortable" data-column="itemDescription">Item Description</th>
+                                            <th class="govuk-!-text-align-center pm-sortable" data-column="workGrp">Work Group</th>
+                                            <th class="govuk-!-text-align-center">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="pmConstituentBody"></tbody>
+                                </table>
+                            </div>
+                            <div class="sup_pagination_wrapper">
+                                <div class="sup_margin_top_bottom_5_10">
+                                    <label for="pmConstituentPageSize">Records per page</label>
+                                    <select id="pmConstituentPageSize"
+                                        class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
+                                        aria-label="Select number of records per page">
+                                        <option value="5">5</option>
+                                        <option value="10" selected>10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                        <option value="25">25</option>
+                                        <option value="30">30</option>
+                                    </select>
+                                </div>
+                                <nav class="govuk-pagination govuk-!-margin-top-4 govuk-!-margin-bottom-0" id="pmConstituentPagination"
+                                    aria-label="Constituent tests pagination"></nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pm-workgroups-container govuk-!-margin-left-6 govuk-!-margin-right-4 govuk-!-padding-0">
+                <div class="pm-workgroups-search-container">
+                    <div class="col-3">
+                        <input type="text" class="govuk-input govuk-!-font-size-16 pm-input-sm" id="pmWorkgroupSearch"
+                            placeholder="Search...">
+                    </div>
+                    <button type="button" class="govuk-button pm-add-test-btn" id="pmAddWorkgroupBtn">
+                        + Add Workgroup
+                    </button>
+                    <button type="button" class="govuk-button govuk-button--warning sup_margin_0 sup_flex_row_center_center"
+                        data-module="govuk-button" id="pmDeleteAllWorkgroupsBtn" disabled>
+                        <img src="../images/trash-can-regular-full-white.svg" alt="Delete all selected workgroups" width="16px" />
+                        Delete All
+                    </button>
+                </div>
+
+                <!-- WorkGroups Table -->
+                <div class="pm-workgroups-grid-shell" id="pmWorkgroupsScroll">
+                    <div class="table-responsive pm-grid-scroll pm-workgroups-table-wrap">
+                        <table class="table table-sm table-bordered pm-grid-table" id="workGroupsTable">
+                            <thead>
+                                <tr>
+                                    <th class="govuk-!-text-align-center">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-checkboxes__item">
+                                                <input type="checkbox" class="govuk-checkboxes__input" id="pmSelectAllWorkgroups"
+                                                    name="pmSelectAllWorkgroups" aria-label="Select all workgroups rows" />
+                                                <label class="govuk-label govuk-checkboxes__label govuk-!-static-margin-0 govuk-!-static-padding-0" for="pmSelectAllWorkgroups">&nbsp;</label>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th class="govuk-!-text-align-center pm-sortable" data-column="workGrp">Work Group</th>
+                                    <th class="govuk-!-text-align-center pm-sortable" data-column="active">Active</th>
+                                    <th class="govuk-!-text-align-center pm-sortable" data-column="timeCode">Time Code</th>
+                                    <th class="govuk-!-text-align-center pm-sortable" data-column="project">Project</th>
+                                    <th class="govuk-!-text-align-center pm-sortable" data-column="testCode">Test Code</th>
+                                    <th class="govuk-!-text-align-center pm-sortable" data-column="portfolio">Portfolio</th>
+                                    <th class="govuk-!-text-align-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="pmWorkgroupsBody" class="pm-workgroups-tbody"></tbody>
+                        </table>
+                    </div>
+                    <div class="sup_pagination_wrapper">
+                        <div class="sup_margin_top_bottom_5_10">
+                            <label for="pmWorkgroupsPageSize">Records per page</label>
+                            <select class="govuk-select govuk-select--width-2 govuk-!-font-size-16" id="pmWorkgroupsPageSize"
+                                aria-label="Select number of records per page">
+                                <option value="5">5</option>
+                                <option value="10" selected>10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                                <option value="30">30</option>
+                            </select>
+                        </div>
+                        <nav class="govuk-pagination sup_margin_top_bottom_5_10" id="pmWorkgroupsPagination" aria-label="Workgroups pagination">
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Add/Edit Modal -->
+    <!-- <div id="testModal" class="fade-box"><h3>custom modal</h3> <button onclick="closeModal()">close</button></div> -->
+
+    <div class="modal pm-modal" id="testModal" tabindex="-1" aria-hidden="true" role="dialog"
+        aria-labelledby="modalTitle">
+        <div class="modal-dialog modal-md pm-modal-dialog">
+            <div class="modal-content pm-modal-content">
+                <div class="modal-header flex-space-center pm-modal-header">
+                    <h2 class="govuk-heading-s govuk-!-margin-bottom-0" id="modalTitle">Add Test</h2>
+                    <button type="button" class="btn-close btn-red" onclick="closeModal()">X</button>
+                </div>
+                <div class="modal-body pm-modal-body isCustomModal">
+                    <p
+                        class="govuk-body-s govuk-!-text-align-right govuk-!-margin-bottom-0 govuk-error-message govuk-!-font-weight-regular govuk-!-font-size-16">
+                        <sup>*</sup> Mandatory fields
+                    </p>
+                    <form id="testForm">
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label for="testCodeSelect" class="govuk-label govuk-!-font-weight-bold"><sup
+                                    class="govuk-error-message govuk-!-font-weight-bold govuk-!-font-size-16 govuk-!-display-inline">*</sup>Test
+                                Code</label>
+                            <select class="govuk-select govuk-!-font-size-16" id="testCodeSelect" required>
+                                <option value="">Select Test Code</option>
+                            </select>
+                            <p id="pmTestCodeError"
+                                class="govuk-error-message  govuk-!-font-weight-normal govuk-!-font-size-16 govuk-!-margin-bottom-0"
+                                hidden>
+                                <span class="govuk-visually-hidden">Error:</span> Please select test code.
+                            </p>
+                        </div>
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label for="workGroupSelect" class="govuk-label govuk-!-font-weight-bold"><sup
+                                    class="govuk-error-message govuk-!-font-weight-bold govuk-!-font-size-16 govuk-!-display-inline">*</sup>Work Group</label>
+                            <select class="govuk-select govuk-!-font-size-16" id="workGroupSelect" required>
+                                <option value="">Select Work Group</option>
+                                <option value="CSCS">CSCS</option>
+                                <option value="CIT">CIT</option>
+                                <option value="Bees">Bees</option>
+                                <option value="MRSA">MRSA</option>
+                                <option value="BSE">BSE</option>
+                            </select>
+                            <p id="pmWorkGroupError"
+                                class="govuk-error-message  govuk-!-font-weight-normal govuk-!-font-size-16 govuk-!-margin-bottom-0"
+                                hidden>
+                                <span class="govuk-visually-hidden">Error:</span> Please select a work group.
+                            </p>
+                        </div>
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label for="descriptionInput" class="govuk-label govuk-!-font-weight-bold">Description</label>
+                            <textarea class="govuk-textarea govuk-!-font-size-16 govuk-!-margin-bottom-0"
+                                id="descriptionInput" rows="3" readonly></textarea>
+                            <p id="pmDescriptionError"
+                                class="govuk-error-message  govuk-!-font-weight-normal govuk-!-font-size-16 govuk-!-margin-bottom-0"
+                                hidden>
+                                <span class="govuk-visually-hidden">Error:</span> Please enter description.
+                            </p>
+                        </div>
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <p id="pmFormError"
+                                class="govuk-error-message  govuk-!-font-weight-normal govuk-!-font-size-16 govuk-!-margin-bottom-0"
+                                hidden>
+                                <span class="govuk-visually-hidden">Error:</span> This test code already exists in the
+                                current portfolio.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button"
+                        class="govuk-button govuk-button--secondary sup_margin_0 govuk-!-margin-right-5"
+                        data-bs-dismiss="modal" onclick="closeModal()">Cancel</button>
+
+                    <button type=" button" class="govuk-button sup_margin_0" id="saveBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; Copyright Defra 2025
+    </div>
+
+
+
+    <div class="pm-hidden-hook" aria-hidden="true">
+        <button type="button" id="pmOverheadBtn"></button>
+    </div>
+
+    <!-- Workgroup Add/Edit Modal -->
+    <div class="modal pm-modal" id="workgroupModal" tabindex="-1" aria-hidden="true" role="dialog"
+        aria-labelledby="workgroupModalTitle">
+        <div class="modal-dialog modal-md pm-modal-dialog">
+            <div class="modal-content pm-modal-content">
+                <div class="modal-header flex-space-center pm-modal-header">
+                    <h2 class="govuk-heading-s govuk-!-margin-bottom-0" id="workgroupModalTitle">Add Workgroup</h2>
+                    <button type="button" class="btn-close btn-red" onclick="closeWorkgroupModal()">X</button>
+                </div>
+                <div class="modal-body pm-modal-body isCustomModal">
+                    <p
+                        class="govuk-body-s govuk-!-text-align-right govuk-!-margin-bottom-0 govuk-error-message govuk-!-font-weight-regular govuk-!-font-size-16">
+                        <sup>*</sup> Mandatory fields
+                    </p>
+                    <form id="workgroupForm">
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label for="workgroupTimeCode" class="govuk-label govuk-!-font-weight-bold"><sup
+                                    class="govuk-error-message govuk-!-font-weight-bold govuk-!-font-size-16 govuk-!-display-inline">*</sup>Timecode</label>
+                            <select class="govuk-select govuk-!-font-size-16" id="workgroupTimeCode" required>
+                                <option value="">Select Timecode</option>
+                            </select>
+                            <p id="pmWorkgroupTimeCodeError"
+                                class="govuk-error-message  govuk-!-font-weight-normal govuk-!-font-size-16 govuk-!-margin-bottom-0"
+                                hidden>
+                                <span class="govuk-visually-hidden">Error:</span> Please select timecode.
+                            </p>
+                        </div>
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label for="workgroupWorkGrp" class="govuk-label govuk-!-font-weight-bold"><sup
+                                    class="govuk-error-message govuk-!-font-weight-bold govuk-!-font-size-16 govuk-!-display-inline">*</sup>Workgroup</label>
+                            <select class="govuk-select govuk-!-font-size-16" id="workgroupWorkGrp" required>
+                                <option value="">Select Workgroup</option>
+                                <option value="CSCS">CSCS</option>
+                                <option value="CIT">CIT</option>
+                                <option value="Bees">Bees</option>
+                                <option value="MRSA">MRSA</option>
+                                <option value="BSE">BSE</option>
+                            </select>
+                            <p id="pmWorkgroupWorkGrpError"
+                                class="govuk-error-message  govuk-!-font-weight-normal govuk-!-font-size-16 govuk-!-margin-bottom-0"
+                                hidden>
+                                <span class="govuk-visually-hidden">Error:</span> Please select workgroup.
+                            </p>
+                        </div>
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label for="workgroupParentProject" class="govuk-label govuk-!-font-weight-bold"><sup
+                                    class="govuk-error-message govuk-!-font-weight-bold govuk-!-font-size-16 govuk-!-display-inline">*</sup>Parent Project</label>
+                            <select class="govuk-select govuk-!-font-size-16" id="workgroupParentProject" required>
+                                <option value="">Select Parent Project</option>
+                            </select>
+                            <p id="pmWorkgroupParentProjectError"
+                                class="govuk-error-message  govuk-!-font-weight-normal govuk-!-font-size-16 govuk-!-margin-bottom-0"
+                                hidden>
+                                <span class="govuk-visually-hidden">Error:</span> Please select parent project.
+                            </p>
+                        </div>
+                        <div class="govuk-form-group govuk-!-margin-bottom-0">
+                            <label for="workgroupActive" class="govuk-label govuk-!-font-weight-bold">Active</label>
+                            <input type="checkbox" class="pm-modal-checkbox" id="workgroupActive">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button"
+                        class="govuk-button govuk-button--secondary sup_margin_0 govuk-!-margin-right-5"
+                        data-bs-dismiss="modal" onclick="closeWorkgroupModal()">Cancel</button>
+                    <button type="button" class="govuk-button sup_margin_0" id="workgroupSaveBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="pm-delete-modal" id="pmDeleteModal" role="dialog" aria-labelledby="pmDeleteModalTitle" aria-hidden="true">
+        <div class="pm-delete-modal-backdrop" id="pmDeleteBackdrop"></div>
+        <div class="pm-delete-modal-content">
+            <div class="pm-delete-modal-header">
+                <h2 id="pmDeleteModalTitle" class="pm-delete-modal-title">Delete Item</h2>
+            </div>
+            <div class="pm-delete-modal-body">
+                <p id="pmDeleteMessage">Are you sure you want to delete this item?</p>
+            </div>
+            <div class="pm-delete-modal-footer">
+                <button type="button" id="pmDeleteCancelBtn" class="govuk-button govuk-button--secondary">Cancel</button>
+                <button type="button" id="pmDeleteConfirmBtn" class="govuk-button govuk-button--warning">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/pact_js/portfoliomaintenance.js" defer></script>
+
+    <script src="../js/defra-dialogs.js"></script>
+</body>
+
+</html>

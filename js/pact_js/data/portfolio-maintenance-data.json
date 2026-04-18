@@ -1,0 +1,141 @@
+{
+  "portfolios": [
+    {
+      "code": "ABOG0508",
+      "title": "Welsh Government for assistance with bovine TB programme",
+      "finished": true,
+      "programme": "DoES",
+      "manager": "Prendergast, Jeff",
+      "budget": "£0.00",
+      "transferIncome": "£0.00",
+      "comments": "carried over for extention to end April 2015 - invoice rec'd. Project closed.",
+      "constituentTests": [
+        { "testCode": "PT0000", "itemDescription": "Camelid TB Combined Antibody Test", "workGrp": "A_BOG1" },
+        { "testCode": "PT0001", "itemDescription": "African horse sickness", "workGrp": "A_BOG1" },
+        { "testCode": "PT0002", "itemDescription": "B. anthracis microscopy", "workGrp": "B_BOG1" },
+        { "testCode": "PT0003", "itemDescription": "Aujeszky's disease", "workGrp": "B_BOG1" },
+        { "testCode": "PT0004", "itemDescription": "Aujeszky's blood disc", "workGrp": "C_BOG1" },
+        { "testCode": "PT0005", "itemDescription": "Avian influenza serology", "workGrp": "C_BOG1" },
+        { "testCode": "PT0006", "itemDescription": "Avian influ. and ND Ag detect.", "workGrp": "D_BOG1" },
+        { "testCode": "PT0007", "itemDescription": "Babesia caballi", "workGrp": "D_BOG1" },
+        { "testCode": "PT0008", "itemDescription": "Bacteria in cold water fish", "workGrp": "E_BOG1" },
+        { "testCode": "PT0009", "itemDescription": "Big liver and spleen disease", "workGrp": "E_BOG1" },
+        { "testCode": "PT0010", "itemDescription": "BVD AgELISA/PCR", "workGrp": "F_BOG1" },
+        { "testCode": "PT0011", "itemDescription": "BVD milk ELISA", "workGrp": "F_BOG1" }
+      ],
+      "workgroupsByTest": {
+        "PT0000": [
+          { "workGrp": "A_BOG1", "active": true, "timeCode": "PT0000", "project": "ABOG0508", "testCode": "PT0000", "portfolio": "ABOG0508" },
+          { "workGrp": "B_BOG1", "active": true, "timeCode": "PT0000", "project": "ABOG0508", "testCode": "PT0000", "portfolio": "ABOG0508" },
+          { "workGrp": "C_BOG1", "active": true, "timeCode": "PT0000", "project": "ABOG0508", "testCode": "PT0000", "portfolio": "ABOG0508" },
+          { "workGrp": "D_BOG1", "active": false, "timeCode": "PT0000", "project": "ABOG0508", "testCode": "PT0000", "portfolio": "ABOG0508" },
+          { "workGrp": "E_BOG1", "active": true, "timeCode": "PT0000", "project": "ABOG0508", "testCode": "PT0000", "portfolio": "ABOG0508" },
+          { "workGrp": "F_BOG1", "active": true, "timeCode": "PT0000", "project": "ABOG0508", "testCode": "PT0000", "portfolio": "ABOG0508" },
+          { "workGrp": "G_BOG1", "active": true, "timeCode": "PT0000", "project": "ABOG0508", "testCode": "PT0000", "portfolio": "ABOG0508" },
+          { "workGrp": "H_BOG1", "active": false, "timeCode": "PT0000", "project": "ABOG0508", "testCode": "PT0000", "portfolio": "ABOG0508" },
+          { "workGrp": "I_BOG1", "active": true, "timeCode": "PT0000", "project": "ABOG0508", "testCode": "PT0000", "portfolio": "ABOG0508" },
+          { "workGrp": "J_BOG1", "active": true, "timeCode": "PT0000", "project": "ABOG0508", "testCode": "PT0000", "portfolio": "ABOG0508" },
+          { "workGrp": "K_BOG1", "active": true, "timeCode": "PT0000", "project": "ABOG0508", "testCode": "PT0000", "portfolio": "ABOG0508" }
+        ]
+      }
+    },
+    {
+      "code": "APHAAH0040",
+      "title": "NCP Control Database Development and Implementation",
+      "finished": false,
+      "programme": "IDBAC",
+      "manager": "Thompson, Clare",
+      "budget": "£12,000.00",
+      "transferIncome": "£1,500.00",
+      "comments": "In progress, expected completion Q3.",
+      "constituentTests": [
+        { "testCode": "PT0101", "itemDescription": "BVD serum AB ELISA", "workGrp": "A_AH04" },
+        { "testCode": "PT0102", "itemDescription": "Brucella abortus CFT/SAT", "workGrp": "B_AH04" },
+        { "testCode": "PT0103", "itemDescription": "Botulism", "workGrp": "C_AH04" }
+      ],
+      "workgroupsByTest": {
+        "PT0101": [
+          { "workGrp": "A_AH04", "active": true, "timeCode": "PT0101", "project": "APHAAH0040", "testCode": "PT0101", "portfolio": "APHAAH0040" },
+          { "workGrp": "B_AH04", "active": true, "timeCode": "PT0101", "project": "APHAAH0040", "testCode": "PT0101", "portfolio": "APHAAH0040" }
+        ],
+        "PT0102": [
+          { "workGrp": "C_AH04", "active": true, "timeCode": "PT0102", "project": "APHAAH0040", "testCode": "PT0102", "portfolio": "APHAAH0040" }
+        ],
+        "PT0103": []
+      }
+    },
+    {
+      "code": "APHAEM00000",
+      "title": "Egg Marketing",
+      "finished": false,
+      "programme": "Bact",
+      "manager": "Martin, Helen",
+      "budget": "£8,450.00",
+      "transferIncome": "£500.00",
+      "comments": "Egg Marketing SLA - Inspections UK.",
+      "constituentTests": [
+        { "testCode": "PT0201", "itemDescription": "Egg quality baseline", "workGrp": "A_EM00" },
+        { "testCode": "PT0202", "itemDescription": "Shell integrity score", "workGrp": "B_EM00" }
+      ],
+      "workgroupsByTest": {
+        "PT0201": [
+          { "workGrp": "A_EM00", "active": true, "timeCode": "PT0201", "project": "APHAEM00000", "testCode": "PT0201", "portfolio": "APHAEM00000" }
+        ],
+        "PT0202": [
+          { "workGrp": "B_EM00", "active": false, "timeCode": "PT0202", "project": "APHAEM00000", "testCode": "PT0202", "portfolio": "APHAEM00000" }
+        ]
+      }
+    }
+  ],
+  "portfolioDropdownSeed": [
+    { "code": "ABOG0508", "title": "Welsh Government for assistance with bovine TB programme" },
+    { "code": "APHAEM00000", "title": "Egg Marketing" },
+    { "code": "APHAH0037", "title": "BRILLIANT INVESTMENT ASSISTANCE SCHEME" },
+    { "code": "APHAH0038", "title": "Brucellosis Survey Review 2016" },
+    { "code": "APHAH0040", "title": "NCP Control Database Development and Implementation" },
+    { "code": "APHAH0047", "title": "Programme Management and Strategic" },
+    { "code": "APHAH0048", "title": "Policy Demand" },
+    { "code": "APHAH0049", "title": "Risk Assessment and Alternative Approaches" },
+    { "code": "APHAH0050", "title": "Innovation and Operational Tasks" },
+    { "code": "APHAH0051", "title": "Field Inspection Service" },
+    { "code": "APHAH0052", "title": "Lab Service Management (LIMS) Capability" },
+    { "code": "APHAH0053", "title": "Integrated Services Pilot" },
+    { "code": "APHAH0058", "title": "SHEP (Sampson House Exit Project)" },
+    { "code": "APHAH0061", "title": "Science Competency Enhancement" },
+    { "code": "APHAH0074", "title": "Change implementation as a result of" },
+    { "code": "APHAH0100", "title": "Reimbursement of certification costs" },
+    { "code": "APHAID0000", "title": "DDR Animal ID" },
+    { "code": "APHAINA0000", "title": "Customer Contact" },
+    { "code": "APHAINA0001", "title": "Livestock Info Prog" },
+    { "code": "APHAINA0002", "title": "Scanning Surveillance" },
+    { "code": "APHAINA0003", "title": "HMI Transfer" },
+    { "code": "APHAINA0004", "title": "Swine and Bee Health Review" },
+    { "code": "APHAINA0005", "title": "Xylella Outbreak Preparedness" },
+    { "code": "APHAINA0006", "title": "Defra Capital Projects" },
+    { "code": "APHAINA0007", "title": "Service Delivery Investigation" },
+    { "code": "APHAINA0008", "title": "APHA Estate Development Project" },
+    { "code": "APHAINA0009", "title": "Approved Importer Scheme Technical" },
+    { "code": "APHAINA0010", "title": "NIRMAS PH Labelling Scheme" },
+    { "code": "APHAINA0011", "title": "NI Retail Movement Sch ReMoS" },
+    { "code": "APHAINA0012", "title": "Windsor Framework Project Management" },
+    { "code": "APHAINA0013", "title": "Scotland Field Office Relocation for" },
+    { "code": "APHAINA0014", "title": "Disease Preparedness 2025-26" },
+    { "code": "APHAINA0015", "title": "EU RESET" },
+    { "code": "APHAINA0016", "title": "Exercise Aspen" },
+    { "code": "APHAINA0017", "title": "Plant and Bee Health Transformation" },
+    { "code": "APHAIBSEN", "title": "BSE INCIDENT IN ENGLAND" },
+    { "code": "APHAINEUEX", "title": "APHA EU EXIT PROGRAMME - inc" },
+    { "code": "APHAINSA00", "title": "work - 51 A1 Core Data" },
+    { "code": "APHAINMF00", "title": "Magnet Funding - Up" },
+    { "code": "APHAINSHM0", "title": "HMI - Olive Oil Sampling" },
+    { "code": "APHAINSD00", "title": "National Ferret Registration Wales" },
+    { "code": "APHAINSG00", "title": "National Ferret Registration Scotland" },
+    { "code": "APHAINSDM0", "title": "Response and resilience - Operation" },
+    { "code": "APHAINSD01", "title": "Covid-19 - Response and Surveillance" },
+    { "code": "APHAINSDM1", "title": "National Ferret Registration England" },
+    { "code": "APHADBAMF", "title": "AIV HIGH PATH ENGLAND OUTBREAK" },
+    { "code": "APHADBAVE", "title": "AIV HIGH PATH ENGLAND OUTBREAK" },
+    { "code": "APHADBAVS", "title": "AIV HIGH PATHOGEN SCOTLAND" },
+    { "code": "APHADBAVW", "title": "AIV HIGH PATH WALES OUTBREAK" }
+  ]
+}

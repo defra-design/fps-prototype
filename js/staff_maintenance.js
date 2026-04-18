@@ -401,22 +401,18 @@ function renderstaffplanTable() {
 
 function handleProjectDelete(id) {
 
-    showGovukConfirm("Are you sure you want to delete this project?").then((result) => {
-        if (result) {
+    if (confirm("Are you sure you want to delete this project?")) {
         projectData = projectData.filter(item => item.id !== id);
         renderProjectTable();
     }
-    });
 }
 
 function handlestaffplandataDelete(id) {
 
-    showGovukConfirm("Are you sure you want to delete this project?").then((result) => {
-        if (result) {
+    if (confirm("Are you sure you want to delete this project?")) {
         staffplandata = staffplandata.filter(item => item.id !== id);
         renderstaffplanTable();
     }
-    });
 }
 
 

@@ -203,22 +203,18 @@ function updateProjectSummary() {
 
 function handleProjectDelete(id) {
 
-    showGovukConfirm("Are you sure you want to delete this project?").then((result) => {
-        if (result) {
+    if (confirm("Are you sure you want to delete this project?")) {
         Actualtest = Actualtest.filter(item => item.id !== id);
         renderProjectTable();
     }
-    });
 }
 
 function handleplannedtimeDelete(id) {
 
-    showGovukConfirm("Are you sure you want to delete this planned additional cost row?").then((result) => {
-        if (result) {
+    if (confirm("Are you sure you want to delete this planned additional cost row?")) {
         plannedtime = plannedtime.filter(item => item.id !== id);
         renderstaffplanTable();
     }
-    });
 }
 
 
@@ -286,7 +282,7 @@ function saveProject() {
     };
 
     if (!test || !wg || !month) {
-        showGovukAlert("Please complete Test, WG, and Month.");
+        alert("Please complete Test, WG, and Month.");
         return;
     }
 
@@ -342,7 +338,7 @@ function savestaffplan() {
     };
 
     if (!test) {
-        showGovukAlert("Please complete the Test field.");
+        alert("Please complete the Test field.");
         return;
     }
    

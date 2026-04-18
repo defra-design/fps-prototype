@@ -1,0 +1,182 @@
+{
+  "projectJobCodes": [
+    {
+      "id": 1,
+      "jobCode": "EMI001",
+      "name": "EMI Inspections",
+      "type": "Work",
+      "workGrp": ""
+    },
+    {
+      "id": 2,
+      "jobCode": "EMI002",
+      "name": "CSC and Admin - Egg Marketing",
+      "type": "Work",
+      "workGrp": ""
+    },
+    {
+      "id": 3,
+      "jobCode": "EMI003",
+      "name": "QA Egg Marketing",
+      "type": "Work",
+      "workGrp": ""
+    },
+    {
+      "id": 4,
+      "jobCode": "EMI004",
+      "name": "Pre Post Actions - EM",
+      "type": "Work",
+      "workGrp": ""
+    },
+    {
+      "id": 5,
+      "jobCode": "EMI005",
+      "name": "Business Support and Advice - EM",
+      "type": "Work",
+      "workGrp": ""
+    },
+    {
+      "id": 6,
+      "jobCode": "EMI006",
+      "name": "Training and Development - EM",
+      "type": "Work",
+      "workGrp": ""
+    },
+    {
+      "id": 7,
+      "jobCode": "EMI007",
+      "name": "Quality Assurance - EM",
+      "type": "Work",
+      "workGrp": ""
+    },
+    {
+      "id": 8,
+      "jobCode": "EMI008",
+      "name": "Compliance Monitoring - EM",
+      "type": "Work",
+      "workGrp": ""
+    }
+  ],
+  "timecodeValidities": [
+    {
+      "id": 1,
+      "workGrp": "BAC1",
+      "active": true,
+      "timeCode": "EMI005",
+      "project": "APHAEM000000",
+      "jobCode": "EMI005",
+      "testCode": "",
+      "portfolio": "APHAEM000000"
+    },
+    {
+      "id": 2,
+      "workGrp": "BAC2",
+      "active": true,
+      "timeCode": "EMI005",
+      "project": "APHAEM000000",
+      "jobCode": "EMI005",
+      "testCode": "",
+      "portfolio": "APHAEM000000"
+    },
+    {
+      "id": 3,
+      "workGrp": "BAC3",
+      "active": true,
+      "timeCode": "EMI005",
+      "project": "APHAEM000000",
+      "jobCode": "EMI005",
+      "testCode": "",
+      "portfolio": "APHAEM000000"
+    },
+    {
+      "id": 4,
+      "workGrp": "BAC4",
+      "active": true,
+      "timeCode": "EMI005",
+      "project": "APHAEM000000",
+      "jobCode": "EMI005",
+      "testCode": "",
+      "portfolio": "APHAEM000000"
+    },
+    {
+      "id": 5,
+      "workGrp": "BDU",
+      "active": true,
+      "timeCode": "EMI005",
+      "project": "APHAEM000000",
+      "jobCode": "EMI005",
+      "testCode": "",
+      "portfolio": "APHAEM000000"
+    },
+    {
+      "id": 6,
+      "workGrp": "Bees",
+      "active": true,
+      "timeCode": "EMI005",
+      "project": "APHAEM000000",
+      "jobCode": "EMI005",
+      "testCode": "",
+      "portfolio": "APHAEM000000"
+    },
+    {
+      "id": 7,
+      "workGrp": "Bees Advice",
+      "active": true,
+      "timeCode": "EMI005",
+      "project": "APHAEM000000",
+      "jobCode": "EMI005",
+      "testCode": "",
+      "portfolio": "APHAEM000000"
+    },
+    {
+      "id": 8,
+      "workGrp": "CSCS",
+      "active": true,
+      "timeCode": "EMI001",
+      "project": "APHAEM000000",
+      "jobCode": "EMI001",
+      "testCode": "",
+      "portfolio": "APHAEM000000"
+    },
+    {
+      "id": 9,
+      "workGrp": "CIT",
+      "active": true,
+      "timeCode": "EMI002",
+      "project": "APHAEM000000",
+      "jobCode": "EMI002",
+      "testCode": "",
+      "portfolio": "APHAEM000000"
+    },
+    {
+      "id": 10,
+      "workGrp": "MRSA",
+      "active": false,
+      "timeCode": "EMI003",
+      "project": "APHAEM000000",
+      "jobCode": "EMI003",
+      "testCode": "",
+      "portfolio": "APHAEM000000"
+    },
+    {
+      "id": 11,
+      "workGrp": "BSE",
+      "active": true,
+      "timeCode": "EMI004",
+      "project": "APHAEM000000",
+      "jobCode": "EMI004",
+      "testCode": "",
+      "portfolio": "APHAEM000000"
+    },
+    {
+      "id": 12,
+      "workGrp": "QASB",
+      "active": true,
+      "timeCode": "EMI003",
+      "project": "APHAEM000000",
+      "jobCode": "EMI003",
+      "testCode": "",
+      "portfolio": "APHAEM000000"
+    }
+  ]
+}

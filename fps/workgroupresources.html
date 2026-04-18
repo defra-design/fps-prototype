@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>2025-2026 : WorkGroup Selection</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
@@ -12,9 +11,8 @@
     <link rel="stylesheet" href="../css/fps_styles/govuk-frontend-6.0.0.min.css" />
     <link rel="stylesheet" href="../css/fps_styles/styles.css" />
     <link rel="stylesheet" href="../css/main_style.css" />
-    <link rel="stylesheet" href="../css/supplement_style_over_gov.uk_style.css" />
+    <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
     <link rel="stylesheet" href="../css/fps_styles/setup_resource.css" />
-    <link rel="stylesheet" href="../css/fps_styles/fps_table_utils.css" />
 </head>
 
 <body class="govuk-template__body">
@@ -66,7 +64,6 @@
 
     <!-- Global navigation stats -->
     <script src="../js/fps_nav_menu.js"></script>
-    <script src="../js/govuk-modal-dialog.js"></script>
     <script>
         document.getElementById('header').innerHTML = htmlmenu;
         initMenu();
@@ -312,41 +309,20 @@
     </div>
 
 
-    <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
-            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+            <div class="govuk-footer sup_p_0 sup_margin_left_right_0" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+            <div class="govuk-width-container sup_p_8 sup_text_center">
+                <span>
+                    &copy; copyright Defra 2025
                 </span>
             </div>
         </div>
-    </div>
-</div>
 </main>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/workgroupresources.js"></script>
-    <script src="../js/fps_js/fps-table-utils.js"></script>
-    <script>
-        /* Re-initialise sort + resize each time renderDataGrid rebuilds the thead */
-        (function () {
-            var wgDataHead = document.getElementById('wgDataHead');
-            if (!wgDataHead) return;
-            var observer = new MutationObserver(function () {
-                var table = wgDataHead.closest('table');
-                if (!table) return;
-                /* Remove idempotency guard so initFpsTable runs fresh after rebuild */
-                delete table.dataset.fpsTableInit;
-                if (typeof window.initFpsTable === 'function') {
-                    window.initFpsTable(table);
-                }
-            });
-            observer.observe(wgDataHead, { childList: true });
-        }());
-    </script>
 
 
+    <script src="../js/defra-dialogs.js"></script>
 </body>
 
 </html>
-
-

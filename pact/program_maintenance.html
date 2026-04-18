@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
+    <link rel="stylesheet" href="nav_menu/navstyle.css" />
+    <script src="nav_menu/menutemplate.js"></script>
+    <link rel="stylesheet" href="../css/pact_styles/style.css" />
+    <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
+    
+    <style>
+        /* Sorting styles for table headers */
+        th[data-column] {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+
+        th[data-column]:hover {
+            background-color: #d8e5f4 !important;
+        }
+
+        .sort-icon {
+            margin-left: 4px;
+            font-size: 10px;
+            color: #1d70b8;
+        }
+
+        th.sorted-asc,
+        th.sorted-desc {
+            background-color: #d8e5f4 !important;
+        }
+
+        #projectsTable tbody tr:hover {
+            background-color: #f3f2f1 !important;
+        }
+
+        #projectsTable tbody tr {
+            transition: background-color 0.2s ease;
+        }
+    </style>
+    
+    <title>2025-2026 : Program Maintenance - PACT</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
+                </div>
+
+                <div class="pims-log">
+                    <span>PACT</span>
+                </div>
+
+                <div class="pims-log" style="width: 160px;font-size: 16px;">
+                    <label for="dpSelectyear" class="sr-only">select year</label>
+                    <select id="dpSelectyear" aria-label="Select year dropdown" class="pims-log"
+                        style="border: 0;border-radius: 0;margin-left: 0px;width: 150px;outline: 0;">
+                        <option>2017-2018</option>
+                        <option>2018-2019</option>
+                        <option>2019-2020</option>
+                        <option>2020-2021</option>
+                        <option>2021-2022</option>
+                        <option>2022-2023</option>
+                        <option>2023-2024</option>
+                        <option>2024-2025</option>
+                        <option selected>2025-2026</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="header"></div>
+
+    <script src="../pact/nav_menu/script.js"></script>
+
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+
+    <div class="content-wrapper">
+        <div class="govuk-grid-row sup_margin_left_right_0">
+            <div class="govuk-grid-column-full sup_border-bottom sup_flex_center_start">
+                <div class="govuk-grid-column-one-quarter sup_p_0">
+                <h1 class="heading_with_txtbox govuk-heading-s  sup_margin_bottom_0"> 
+                        Program Maintenance    
+                </h1>
+                </div>
+                 <div class="govuk-grid-column-one-half  sup_margin_tb_5 sup_padding_right_8 sup_flex_end_center">
+                        <label class="govuk-label govuk-!-font-weight-bold sup_margin_0 sup_margin_left_10" for="programSelect">Select a Program:</label>
+                        <div class="display-flex sup_margin_left_10">
+                            <div class="m-0 p-0 sup_flex_center_start">
+                                <div class="tableselectdropdown input-group searchfiels" data-empdropdown data-source="programs">
+                                    <input type="text" id="programSelect" placeholder="Select Program" 
+                                        class="dropdown-input down-arrow-img govuk-input govuk-!-font-size-16 sup_input_width_500" />
+                                    <div class="tbl-dropdown-panel">
+                                        <input type="text" class="select-search-box" placeholder="Type to search program" />
+                                        <button type="button" class="govuk-button govuk-button--secondary clear-search-btn" 
+                                            aria-label="Clear search">
+                                            <span class="sup_error_text_color govuk-!-font-size-19">&times;</span>
+                                        </button>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Code</th>
+                                                    <th>Program Name</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+            </div>
+        </div>
+
+        <div class="govuk-grid-row sup_margin_left_right_0 sup_margin_top_10">
+            <div class="govuk-grid-column-one-half">
+                <div class="sup_padding_10 sup_border sup_overflow_hidden sup_margin_bottom_10">
+                <div class="govuk-grid-column-full sup_p_0 sup_padding_10 sup_border_bottom_0">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="programNo">
+                                    Program No:
+                                </label>
+                                <input class="govuk-input govuk-!-font-size-16" id="programNo" name="programNo"
+                                    type="text" readonly>
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="sectorName">
+                                    Sector Name:
+                                </label>
+                                <input class="govuk-input govuk-!-font-size-16" id="sectorName" name="sectorName"
+                                    type="text">
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="leader">
+                                    Leader:
+                                </label>
+                                <input class="govuk-input govuk-!-font-size-16" id="leader" name="leader"
+                                    type="text">
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="directorate">
+                                    Directorate:
+                                </label>
+                                <input class="govuk-input govuk-!-font-size-16" id="directorate" name="directorate"
+                                    type="text">
+                            </div>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="programName">
+                                    Program Name:
+                                </label>
+                                <textarea class="govuk-textarea govuk-!-font-size-16 sup_margin_bottom_12" id="programName"
+                                    name="programName" rows="2"></textarea>
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="customer">
+                                    Customer:
+                                </label>
+                                <input class="govuk-input govuk-!-font-size-16" id="customer" name="customer"
+                                    type="text">
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="minim">
+                                    Minim:
+                                </label>
+                                <input class="govuk-input govuk-!-font-size-16" id="minim" name="minim"
+                                    type="text">
+                            </div>
+                            <div class="govuk-form-group sup_margin_top_25 sup_text_align_right sup_margin_bottom_10">
+                                <button type="button" class="govuk-button sup_margin_top_10 sup_margin_bottom_0" id="btnProgramMaintenance">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="govuk-grid-column-one-quarter">
+                <div class="sup_padding_10 sup_border">
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold" for="selectedProject">
+                            Selected Project:
+                        </label>
+                        <input class="govuk-input govuk-!-font-size-16" id="selectedProject" name="selectedProject"
+                            type="text" readonly>
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <button type="button" class="govuk-button sup_width_100" id="projectMaintenanceBtn">
+                            Project Maintenance
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="govuk-grid-row sup_margin_left_right_0 sup_margin_bottom_10">
+            <div class="govuk-grid-column-full">
+                <div class="sup_border">
+                    <!-- <div class="sup_flex_end_center sup_p_5 sup_border-bottom">
+                     
+                        <button type="button" class="govuk-button sup_margin_0 sup_p_8" 
+                            id="addProjectBtn" aria-label="Add Project">
+                            + &nbsp; Add Project
+                        </button>
+                    </div> -->
+                    
+                    <div class="table_scroll_wrapper">
+                        <table class="govuk-table custom-table" id="projectsTable">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th data-column="code" scope="col" class="govuk-table__header">Code
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="title" class="govuk-table__header">Title
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="manager" class="govuk-table__header">Manager
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="budgCVL" class="govuk-table__header">BudgCVL
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="budgExt" class="govuk-table__header">BudgExt
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="projectStatus" class="govuk-table__header">ProjectStatus
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <!-- <th class="govuk-table__header">Actions</th> -->
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" id="projectsTableBody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sup_pagination_wrapper sup_p_5">
+                        <div>
+                            <label for="recordsPerPage" class="govuk-body-s sup_margin_0" style="margin-right: 5px;">Records per page:</label>
+                            <select id="recordsPerPage" class="govuk-select govuk-select--width-2 govuk-!-font-size-16" style="width: auto;">
+                                <option value="5">5</option>
+                                <option value="10" selected>10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                            </select>
+                        </div>
+
+                        <nav class="govuk-pagination sup_margin_0" role="navigation" aria-label="Projects Pagination">
+                            <ul class="govuk-pagination__list" id="projectsPagination">
+                                <!-- Pagination will be populated by JavaScript -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+        <div class="govuk-width-container sup_p_8 sup_text_center">
+            <span>&copy; copyright Defra 2025</span>
+        </div>
+    </div>
+
+    <!-- Add/Edit Project Modal -->
+    <div class="modal" id="addProjectModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title m-0" id="projectModalLabel">Add Project</h3>
+                    <button type="button" class="btn-close btn-red" id="closeProjectModalBtn">X</button>
+                </div>
+                <div class="modal-body" style="padding: 8px 16px 0 0px;">
+                    <form class="govuk-grid-column-full" id="formAddProject">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-code" class="govuk-label govuk-!-font-weight-bold">Code:</label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-code" 
+                                        name="code" placeholder="Enter project code" required>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-half">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-manager" class="govuk-label govuk-!-font-weight-bold">Manager:</label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-manager" 
+                                        name="manager" placeholder="Enter manager name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-title" class="govuk-label govuk-!-font-weight-bold">Title:</label>
+                                    <textarea class="govuk-textarea govuk-!-font-size-16 sup_margin_bottom_10" id="txtmodal-title" 
+                                        name="title" rows="2" placeholder="Enter project title" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-budgcvl" class="govuk-label govuk-!-font-weight-bold">BudgCVL:</label>
+                                    <div class="govuk-input__wrapper">
+                                        <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                                        <input type="number" step="0.01" class="govuk-input govuk-!-font-size-16" id="txtmodal-budgcvl" 
+                                            name="budgcvl" placeholder="0.00" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-budgext" class="govuk-label govuk-!-font-weight-bold">BudgExt:</label>
+                                    <div class="govuk-input__wrapper">
+                                        <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                                        <input type="number" step="0.01" class="govuk-input govuk-!-font-size-16" id="txtmodal-budgext" 
+                                            name="budgext" placeholder="0.00" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-status" class="govuk-label govuk-!-font-weight-bold">Project Status:</label>
+                                    <select id="txtmodal-status" class="govuk-select govuk-!-font-size-16" name="status" required>
+                                        <option value="">-- Select Status --</option>
+                                        <option value="Approved">Approved</option>
+                                        <option value="Pending">Pending</option>
+                                        <option value="Rejected">Rejected</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" 
+                    style="display: flex; justify-content: space-between; align-items: center; flex-direction: row;">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" 
+                        aria-label="Cancel" id="cancelProjectModalBtn">Cancel</button>
+                    <button class="govuk-button sup_margin_0" aria-label="Save" 
+                        id="saveProjectBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/pact_js/program_maintenance.js"></script>
+</body>
+
+</html>

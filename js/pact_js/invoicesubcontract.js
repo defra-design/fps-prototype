@@ -525,7 +525,7 @@ function handleSaveInvoice() {
     }
     
     if (hasError) {
-        showGovukAlert('Please fill in all required fields (Project, Month, Amount)');
+        alert('Please fill in all required fields (Project, Month, Amount)');
         return;
     }
     
@@ -533,7 +533,7 @@ function handleSaveInvoice() {
     if (isAddMode) {
         // let id = invoicesdata.findIndex((el)=>el.Project === project);
         // if(id !== -1){
-        //     showGovukAlert('Project code already exists. Please use a different project code.');
+        //     alert('Project code already exists. Please use a different project code.');
         //     return;
         // }
         // Generate new Counter ID
@@ -643,8 +643,7 @@ function handleSaveInvoice() {
 // Handle delete
 function handleDelete(event, counter) {
     event.preventDefault();
-    showGovukConfirm('Are you sure you want to delete this invoice?').then((result) => {
-        if (result) {
+    if (confirm('Are you sure you want to delete this invoice?')) {
         const index = invoicesdata.findIndex(inv => inv.Counter === counter);
         if (index > -1) {
             invoicesdata.splice(index, 1);
@@ -658,21 +657,16 @@ function handleDelete(event, counter) {
             updateTotalAmount();
         }
     }
-    });
 }
 
 // Handle delete selected invoices
 function handleDeleteSelected() {
     if (selectedInvoices.length === 0) {
-        showGovukAlert('Please select at least one invoice to delete.');
+        alert('Please select at least one invoice to delete.');
         return;
     }
     
-    showGovukConfirm(`Are you sure you want to delete ${selectedInvoices.length} selected invoice(s)?`).then((result) => {
-        if (!result) {
-            return;
-        }
-
+    if (confirm(`Are you sure you want to delete ${selectedInvoices.length} selected invoice(s)?`)) {
         // Remove selected invoices from invoicesdata
         invoicesdata = invoicesdata.filter(inv => !selectedInvoices.includes(inv.Counter));
         filteredData = [...invoicesdata];
@@ -687,7 +681,7 @@ function handleDeleteSelected() {
         renderTable();
         renderPagination();
         updateTotalAmount();
-    });
+    }
 }
 
 // Sorting and resize for invoice table
@@ -1425,7 +1419,7 @@ function handleSaveTestData() {
     }
     
     if (hasError) {
-        showGovukAlert('Please fill in all required fields (Project, Month, Amount)');
+        alert('Please fill in all required fields (Project, Month, Amount)');
         return;
     }
     
@@ -1513,8 +1507,7 @@ function handleSaveTestData() {
 function handleTestDataDelete(event, counter) {
     event.stopPropagation();
     
-    showGovukConfirm('Are you sure you want to delete this test data entry?').then((result) => {
-        if (result) {
+    if (confirm('Are you sure you want to delete this test data entry?')) {
         const index = testData.findIndex(t => t.Counter === counter);
         if (index !== -1) {
             testData.splice(index, 1);
@@ -1531,5 +1524,4 @@ function handleTestDataDelete(event, counter) {
             updateTestDataTotalAmount();
         }
     }
-    });
 }

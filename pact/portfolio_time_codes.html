@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
+    <link rel="stylesheet" href="nav_menu/navstyle.css" />
+    <script src="nav_menu/menutemplate.js"></script>
+    <link rel="stylesheet" href="../css/pact_styles/style.css" />
+    <link rel="stylesheet" href="../css/pact_styles/suppliement_style_over_gov.uk_style.css" />
+    <title>2025-2026 : Portfolio Time Codes - PACT</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal & Plant Health Agency" />
+                </div>
+                <div class="pims-log">
+                    <span>PACT</span>
+                </div>
+                <div class="pims-log" style="width: 160px;font-size: 16px;">
+                    <label for="dpSelectyear" class="sr-only">select year</label>
+                    <select id="dpSelectyear" aria-label="Select year dropdown" class="pims-log"
+                        style="border: 0;border-radius: 0;margin-left: 0px;width: 150px;outline: 0;">
+                        <option>2017-2018</option>
+                        <option>2018-2019</option>
+                        <option>2019-2020</option>
+                        <option>2020-2021</option>
+                        <option>2021-2022</option>
+                        <option>2022-2023</option>
+                        <option>2023-2024</option>
+                        <option>2024-2025</option>
+                        <option selected>2025-2026</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="header"></div>
+
+    <script src="../pact/nav_menu/script.js"></script>
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+<div class="content-wrapper">
+    <div class="govuk-grid-row sup_margin_left_right_0">
+        <div class="govuk-grid-column-full">
+            <h1 class="heading_with_txtbox govuk-heading-s sup_border-bottom">
+                <div class="sup_flex_left_center">
+                    Portfolio Time Codes for:<label class="sup_hidden_label" for="sp-projectcode">project code</label>
+                    <input type="text" id="sp-projectcode" class="govuk-input govuk-!-font-size-16 govuk-input--width-10">
+                </div>
+                <div> <a id="backlink" href="portfolio_management.html" class="govuk-back-link">Back</a></div>
+            </h1>
+        </div>
+    </div>
+
+    <div class="govuk-grid-row sup_flex_row sup_margin_left_right_0 sup_margin_bottom_10">
+        <nav class="sidenav flex-column flex-shrink-0 sup_margin_bottom_10" id="shortnav">
+            <button class="toggle-btn toggle-btn-position" onclick="toggleSidebar()">
+                <img src="../images/chevron-left-solid-full.svg" width="20" alt="side menu left arrow"
+                    class="toggle-btn-arrow" />
+            </button>
+            <ul>
+                <li class="sidebar-link-two side-nav-link-bg">
+                    <a href="project_mgmt_test_purchase_req.html" id="testpurchasereq">Test Purchase Requirements</a>
+                </li>
+                <!-- <li class="sidebar-link-two side-nav-link-bg">
+                    <a href="project_mgmt_milestone.html" id="milestones">Overhead(TP/TG Style) Codes</a>
+                </li> -->
+                <li class="sidebar-link-two side-nav-link-bg">
+                    <a href="project_invoices_subcontracts.html" id="invoiecsubcontract">Invoices & SubContracts</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="govuk-grid-column-full">
+            <!-- Project JobCodes Table -->
+            <div class="govuk-grid-row sup_margin_left_right_0">
+                <div class="sup_border">
+                    <h2 class="sup_border-bottom sup_text_color sup_heading_bg_color govuk-heading-s sup_align_heading"
+                        id="headingOne">
+                        Project JobCodes
+                    </h2>
+                    <div class="sup_flex_space_center">
+                        <div class="govuk-grid-column-one-third sup_padding_left_6">
+                            <label for="jobcodeSearch" class="sr-only">Search</label>
+                            <input type="text" id="jobcodeSearch" class="govuk-input govuk-!-font-size-16 sup_margin_tb_5"
+                                style="padding: 5px; margin: 5px 0px;" placeholder="Search by jobcode or name">
+                        </div>
+                        <div class="govuk-grid-column-one-third sup_padding_right_8 sup_text_align_right">
+                            <div class="govuk-button-group sup_margin_0 sup_float_right">
+                                <button type="button" class="govuk-button sup_margin_0 sup_p_8 sup_flex"
+                                    id="addJobcodeBtn" aria-label="Add jobcode" data-module="govuk-button">
+                                    <img alt="plus icon for add jobcode" src="../images/circle-plus-solid-full-white.svg"
+                                        width="16px" />
+                                    &nbsp;Add JobCode
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table_scroll_wrapper">
+                        <table class="govuk-table custom-table sup_margin_bottom_0" id="jobcodeTable">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th data-column="0" scope="col" class="govuk-table__header">JobCode
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="1" class="govuk-table__header">Name
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="2" class="govuk-table__header">Type
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="3" class="govuk-table__header">WorkGrp
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th class="govuk-table__header">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" id="jobcodeTableBody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sup_pagination_wrapper">
+                        <div class="sup_margin_top_bottom_5_10">
+                            <label for="recordsPerPageJobcode">Records per page</label>
+                            <select id="recordsPerPageJobcode"
+                                class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
+                                aria-label="Select number of records per page">
+                                <option value="5">5</option>
+                                <option value="10" selected>10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                                <option value="30">30</option>
+                            </select>
+                        </div>
+                        <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+                            <ul class="govuk-pagination__list" id="jobcodePagination">
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TimeCode Validity Table -->
+            <div class="govuk-grid-row sup_margin_left_right_0 sup_margin_top_10">
+                <div class="sup_border">
+                    <h2 class="sup_border-bottom sup_text_color sup_heading_bg_color govuk-heading-s sup_align_heading"
+                        id="headingTwo">
+                        TimeCode Validity for Project <span id="projectCodeLabel"></span>
+                    </h2>
+                    <div class="sup_flex_space_center">
+                        <div class="govuk-grid-column-one-third sup_padding_left_6">
+                            <label for="timecodeSearch" class="sr-only">Search</label>
+                            <input type="text" id="timecodeSearch" class="govuk-input govuk-!-font-size-16"
+                                style="padding: 5px; margin: 5px 0px;" placeholder="Search by workgrp or timecode">
+                        </div>
+                        <div class="govuk-grid-column-one-third" style="padding: 0 8px 0 0; text-align: right;">
+                            <div class="govuk-button-group sup_margin_0" style="float:right">
+                                <button type="button" class="govuk-button sup_margin_0 sup_p_8" id="addTimecodeBtn"
+                                    aria-label="Add TimeCode" data-module="govuk-button">
+                                    + &nbsp;Add TimeCode
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table_scroll_wrapper" style="position: relative; overflow-x: auto;">
+                        <table class="govuk-table custom-table" id="timecodeTable" style="margin-bottom: 0px;">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th data-column="0" scope="col" class="govuk-table__header">WorkGrp
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="1" class="govuk-table__header">Active
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="2" class="govuk-table__header">TimeCode
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="3" class="govuk-table__header">Project
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="4" class="govuk-table__header">JobCode
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="5" class="govuk-table__header">TestCode
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th data-column="6" class="govuk-table__header">Portfolio
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th class="govuk-table__header">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" id="timecodeTableBody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sup_pagination_wrapper">
+                        <div class="sup_margin_top_bottom_5_10">
+                            <label for="recordsPerPageTimecode">Records per page</label>
+                            <select id="recordsPerPageTimecode"
+                                class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
+                                aria-label="Select number of records per page for timecode">
+                                <option value="5">5</option>
+                                <option value="10" selected>10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                                <option value="30">30</option>
+                            </select>
+                        </div>
+                        <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+                            <ul class="govuk-pagination__list" id="timecodePagination">
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+        <div class="govuk-width-container sup_p_8 sup_text_center">
+            <span>&copy; copyright Defra 2025</span>
+        </div>
+    </div>
+
+    <!-- Add/Edit JobCode Modal -->
+    <div class="modal" id="jobcodeModal" tabindex="-1">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title m-0" id="jobcodeModalLabel">Add New JobCode</h3>
+                    <button type="button" class="btn-close btn-red" id="closeJobcodeModalBtn">X</button>
+                </div>
+                <div class="modal-body" style="padding: 8px 16px 0 0px;">
+                    <form class="govuk-grid-column-full" id="formAddJobcode">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-jobcode" class="govuk-label govuk-!-font-weight-bold">JobCode:
+                                        <span class="sup_color_red">*</span></label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-jobcode"
+                                        name="jobcode" placeholder="Enter JobCode" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-jobname" class="govuk-label govuk-!-font-weight-bold">Name:
+                                        <span class="sup_color_red">*</span></label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-jobname"
+                                        name="jobname" placeholder="Enter Name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-jobtype" class="govuk-label govuk-!-font-weight-bold">Type:
+                                        <span class="sup_color_red">*</span></label>
+                                    <select class="govuk-select govuk-!-font-size-16" id="txtmodal-jobtype"
+                                        name="jobtype" required style="width: 100%;">
+                                        <option value="">--Select Type--</option>
+                                        <option value="Work">Work</option>
+                                        <option value="Overhead">Overhead</option>
+                                        <option value="Admin">Admin</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-jobworkgrp" class="govuk-label govuk-!-font-weight-bold">WorkGrp:</label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-jobworkgrp"
+                                        name="jobworkgrp" placeholder="Enter WorkGrp">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer"
+                    style="display: flex; justify-content: space-between; align-items: center; flex-direction: row;">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" aria-label="Cancel"
+                        id="cancelJobcodeModalBtn">Cancel</button>
+                    <button class="govuk-button sup_margin_0" aria-label="Save" id="saveJobcodeBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit TimeCode Modal -->
+    <div class="modal" id="timecodeModal" tabindex="-1">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center">
+                    <h3 class="modal-title m-0" id="timecodeModalLabel">Add New TimeCode</h3>
+                    <button type="button" class="btn-close btn-red" id="closeTimecodeModalBtn">X</button>
+                </div>
+                <div class="modal-body" style="padding: 8px 16px 0 0px;">
+                    <form class="govuk-grid-column-full" id="formAddTimecode">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-tc-workgrp" class="govuk-label govuk-!-font-weight-bold">WorkGrp:
+                                        <span class="sup_color_red">*</span></label>
+                                    <select class="govuk-select govuk-!-font-size-16" id="txtmodal-tc-workgrp"
+                                        name="workgrp" required style="width: 100%;">
+                                        <option value="">--Select WorkGrp--</option>
+                                        <option value="BAC1">BAC1</option>
+                                        <option value="BAC2">BAC2</option>
+                                        <option value="BAC3">BAC3</option>
+                                        <option value="BAC4">BAC4</option>
+                                        <option value="BDU">BDU</option>
+                                        <option value="Bees">Bees</option>
+                                        <option value="Bees Advice">Bees Advice</option>
+                                        <option value="CSCS">CSCS</option>
+                                        <option value="CIT">CIT</option>
+                                        <option value="MRSA">MRSA</option>
+                                        <option value="BSE">BSE</option>
+                                        <option value="QASB">QASB</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-tc-active" class="govuk-label govuk-!-font-weight-bold">Active:</label>
+                                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="txtmodal-tc-active" name="active"
+                                                type="checkbox" value="true" checked>
+                                            <label class="govuk-label govuk-checkboxes__label" for="txtmodal-tc-active">
+                                                Yes
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-tc-timecode" class="govuk-label govuk-!-font-weight-bold">TimeCode:
+                                        <span class="sup_color_red">*</span></label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-tc-timecode"
+                                        name="timecode" placeholder="Enter TimeCode" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-tc-project" class="govuk-label govuk-!-font-weight-bold">Project:
+                                        <span class="sup_color_red">*</span></label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-tc-project"
+                                        name="project" placeholder="Enter Project" required readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-tc-jobcode" class="govuk-label govuk-!-font-weight-bold">JobCode:
+                                        <span class="sup_color_red">*</span></label>
+                                    <select class="govuk-select govuk-!-font-size-16" id="txtmodal-tc-jobcode"
+                                        name="jobcode" required style="width: 100%;">
+                                        <option value="">--Select JobCode--</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-tc-testcode" class="govuk-label govuk-!-font-weight-bold">TestCode:</label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-tc-testcode"
+                                        name="testcode" placeholder="Enter TestCode">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label for="txtmodal-tc-portfolio" class="govuk-label govuk-!-font-weight-bold">Portfolio:</label>
+                                    <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-tc-portfolio"
+                                        name="portfolio" placeholder="Enter Portfolio">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer"
+                    style="display: flex; justify-content: space-between; align-items: center; flex-direction: row;">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" aria-label="Cancel"
+                        id="cancelTimecodeModalBtn">Cancel</button>
+                    <button class="govuk-button sup_margin_0" aria-label="Save" id="saveTimecodeBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Time Codes Script -->
+    <script src="../js/pact_js/portfolio_time_codes.js"></script>
+</body>
+
+</html>

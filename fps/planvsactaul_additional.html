@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>2025-2026 : Plan vs Actual - Animals</title>
    <!-- Bootstrap CSS -->
            <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -12,8 +11,7 @@
 	 <link rel="stylesheet" href="../css/fps_styles/styles.css">
 	  <link rel="stylesheet" href="../css/main_style.css">
 	<link rel="stylesheet" href="../css/fps_styles/suppliement_style_fps.css" />
-    <link rel="stylesheet" href="../css/fps_styles/setup_resource.css" />
-    <link rel="stylesheet" href="../css/fps_styles/fps_table_utils.css" />
+	<link rel="stylesheet" href="../css/fps_styles/setup_resource.css" />
 <script>
 </script>
 
@@ -75,7 +73,6 @@
      <div id="header"></div>
 	
 	    <script src="../js/fps_nav_menu.js"></script>
-    <script src="../js/govuk-modal-dialog.js"></script>
     <script>
         document.getElementById('header').innerHTML = htmlmenu;
         initMenu();
@@ -432,15 +429,13 @@
   
   
   
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
-            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
-                </span>
-            </div>
+  <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
+        <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
+            <span class="fps-sr-page-footer-text">
+                © copyright Defra 2025
+            </span>
         </div>
-    </div>
-</div> 
+    </div> 
 </div>
 		
 		</main>
@@ -778,13 +773,9 @@
 		}
 	</script>
  <script src="../js/bootstrap.bundle.min.js"></script>
-   <!-- <script src="../js/modalpopup.js"></script>
-    <script src="../js/govuk-modal-dialog.js"></script> -->
-    <script src="../js/fpsplanvsactual_additional.js"></script>
-     <script src="../js/fps_js/fps-table-utils.js"></script>
+   <!-- <script src="../js/modalpopup.js"></script> -->
+   <script src="../js/fpsplanvsactual_additional.js"></script> 
 	 
 </body>
 
 </html>
-
-

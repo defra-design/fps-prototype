@@ -1,4 +1,4 @@
-
+﻿
  @font-face {
             font-family: "GDS Transport";
             font-style: normal;
@@ -382,7 +382,7 @@ td.action-cell:nth-child(5) {
 .custom-table thead th {
   position: sticky;
   top: 0;
-  /* background-color: #f1f1f1; */
+  background-color: #f1f1f1;
   z-index: 10;
   border-bottom: 1px solid #ccc;
 }
@@ -414,9 +414,9 @@ td.action-cell:nth-child(5) {
 }
 
 .custom-table thead th{
-  /* box-shadow: 0 2px 2px rgba(0,0,0,0.05); */
-   background: #f4f8fb !important; 
-  /* border: 1px solid #dee2e6 !important; */
+  box-shadow: 0 2px 2px rgba(0,0,0,0.05);
+  background: #edf4ff !important;
+  border: 1px solid #dee2e6 !important;
   text-align: center;
 }
 
@@ -441,7 +441,20 @@ td.action-cell:nth-child(5) {
   font-size: 14px;
 }
 
+/* .table th, */
+/* .table td { */
+  /* padding: 12px 14px;  */
+  /* border: 1px solid #dee2e6; */
+  /* text-align: left; */
+/* } */
 
+
+/* .table td { */
+  /* /*padding: 12px 14px;*/ */
+  /* padding: 6px 10px !important; */
+  /* border: 1px solid #dee2e6; */
+  /* text-align: left; */
+/* } */
 
 /* Header */
 .table thead th {
@@ -1286,14 +1299,18 @@ padding: 5px 3px;
     background: #155790;
 	border-radius: 0 8px 8px 0;
 }
-
- 
-
-
-
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+  border-bottom: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
 button {
     font-size: 16px !important;
 }
+
 
 table, th, td, button, label, input , select, textarea{
     font-size: 16px !important;

@@ -3,22 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Select project</title>
-  <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
- <link rel="stylesheet" href="../css/bootstrap.min.css">	
- <link rel="stylesheet" href="../css/costbook_styles/styles.css">   	
-  <link rel="stylesheet" href="../css/main_style.css">
-<link rel="stylesheet" href="../css/costbook_styles/suppliement_style_costbook.css" /> 
-	<link rel="stylesheet" href="../css/costbook_styles/layout_style.css" /> 
-	
+    <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/app_govuk_widget_layer.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/costbook_styles/styles.css">
+    <link rel="stylesheet" href="../css/main_style.css">
+    <link rel="stylesheet" href="../css/costbook_styles/suppliement_style_costbook.css" />
+    <link rel="stylesheet" href="../css/costbook_styles/layout_style.css" />
 
 
-	
+
+
 </head>
 
-<body class="govuk-template__body costbook-home-page">
+<body class="govuk-template__body costbook-home-page app-theme app-theme--costbook">
 
 
 
@@ -31,10 +31,11 @@
                 <div>
                     <img src="../images/defra_logo.png" alt="Defra logo" width="80px">
                 </div>
-
+              
                 <div class="pims-log">
                     <span>Costbook</span>
                 </div>
+           
             </div>
 
 
@@ -52,8 +53,7 @@
                 <ul class="dropdown-menu dropdown-menu-end">
 
                     <li><a href="../index.html" class="dropdown-item" type="button" aria-hidden="true">
-                            <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
-                            Home</a></li>
+                          <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">  Home</a></li>
                 </ul>
             </div>
         </div>
@@ -65,7 +65,6 @@
 
     <!-- Global navigation stats -->
     <script src="../js/costbook_nav_menu.js"></script>
-    <script src="../js/govuk-modal-dialog.js"></script>
     <script>
         document.getElementById('header').innerHTML = htmlmenu;
         initMenu();
@@ -396,15 +395,13 @@
 
 
 
-        <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
-            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+                <div class="govuk-footer sup_p_0 sup_margin_left_right_0" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+            <div class="govuk-width-container sup_p_8 sup_text_center">
+                <span>
+                    &copy; copyright Defra 2025
                 </span>
             </div>
         </div>
-    </div>
-</div>
     </main>
 
 
@@ -444,15 +441,13 @@
 
 
 
-                    <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
-            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+                            <div class="govuk-footer sup_p_0 sup_margin_left_right_0" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+            <div class="govuk-width-container sup_p_8 sup_text_center">
+                <span>
+                    &copy; copyright Defra 2025
                 </span>
             </div>
         </div>
-    </div>
-</div>
 
                 </main>
 
@@ -467,11 +462,8 @@
                 <script src="../js/bootstrap.bundle.min.js">    </script>
 
                 <script src="../js/costbook_common.js">    </script>
-                <script src="../js/costbook_js/costbook-column-resize.js"></script>
 
+    <script src="../js/defra-dialogs.js"></script>
 </body>
 
 </html>
-</html>
-
-

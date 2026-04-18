@@ -3,17 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>2025-2026 : Plan STAFF for Entire Programme</title>
    <!-- Bootstrap CSS -->
            <link rel="stylesheet" href="../css/bootstrap.min.css">
     	 <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css">
 	 <link rel="stylesheet" href="../css/fps_styles/styles.css">
 	  <link rel="stylesheet" href="../css/main_style.css">
-     <link rel="stylesheet" href="../css/supplement_style_over_gov.uk_style.css" />
-    <link rel="stylesheet" href="../css/fps_styles/fps_table_utils.css" />
-    <link rel="stylesheet" href="../css/fps_styles/setup_resource.css" />
+	 <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
 	
 <script>
 </script>
@@ -77,7 +74,6 @@
 
     <!-- Global navigation stats -->
     <script src="../js/fps_nav_menu.js"></script>
-    <script src="../js/govuk-modal-dialog.js"></script>
     <script>
         document.getElementById('header').innerHTML = htmlmenu;
         initMenu();
@@ -88,29 +84,14 @@
     <div class="container-fluid">
 	
 	<div class="govuk-grid-row">
-	    <div class="govuk-grid-column-full">
-            <div class="row fps-sr-breadcrumb-row">
-                <div class="fps-sr-breadcrumb-flex">
-                    <div class="col-md-8">
-                        <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
-                            <ol class="govuk-breadcrumbs__list">
-                                <li class="govuk-breadcrumbs__list-item">
-                                    <a class="govuk-breadcrumbs__link" href="fpshome.html">Home</a>
-                                </li>
-                                <li class="govuk-breadcrumbs__list-item">
-                                    <a class="govuk-breadcrumbs__link" href="program_management.html">Programme Management</a>
-                                </li>
-                                <li class="govuk-breadcrumbs__list-item">
-                                    <a class="govuk-breadcrumbs__link" href="projectplanning.html">Plan Projects</a>
-                                </li>
-                                <li class="govuk-breadcrumbs__list-item" aria-current="page">
-                                    Plan STAFF for Entire Programme
-                                </li>
-                            </ol>
-                        </nav>
-                    </div>
-                    <div class="col-md-4 pva-project-wrap">
-                        <div class="col-sm-4" style="border: 2px solid #1d70b8;
+	<div class="govuk-grid-column-full">
+	<div style="padding: 5px 5px;  border-bottom: 1px solid #b4b4b4" class="row">
+            <div style="display: flex;  font-size: 14px;   align-items: center; justify-content: space-between; ">
+                <div class="col-md-6"> <a class="" href="fpshome.html">Home</a>  &gt; Programme Management &gt; Plan Projects &gt;  Plan STAFF for Entire Programme 
+                 </div>
+				<div style="display: flex; 
+                    justify-content: flex-end;" class="col-md-6">
+                   <div class="col-sm-4" style="border: 2px solid #1d70b8;
                         border-radius: 5px; 
                         font-size: 13px;
                         font-weight: normal;
@@ -121,17 +102,20 @@
                         margin-right: 10px;
                         align-items: center;
                         justify-content: space-between;">
-                            <div class="col" style="border-right: 1px solid #684e00; text-align: left; padding: 1px 5px;">Programme:<strong id="resultprogram">Bact</strong>
-                            </div>
-                            <!-- <div class="col" style="text-align: left; padding: 1px 5px;">Project: <strong id="resultproject"> APHAB000000</strong></div> -->
+                        <div class="col" style="border-right: 1px solid #684e00; text-align: left; padding: 1px 5px;">Programme:<strong id="resultprogram">Bact</strong>
                         </div>
-                        <div>
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="govuk-button sup_margin_0" style="padding: 4px 14px;">Change</button>
-                        </div>
+                        <!-- <div class="col" style="text-align: left; padding: 1px 5px;">Project: <strong id="resultproject"> APHAB000000</strong></div> -->
+                    </div>
+                    <div>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="govuk-button sup_margin_0" style="padding: 4px 14px;">Change</button>
                     </div>
                 </div>
             </div>
-	    </div>
+        </div>
+	
+	</div>
+	
+	
 	</div>
 	
 	
@@ -428,15 +412,13 @@
 		
     </div>
 	
-    <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
-            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+            <div class="govuk-footer sup_p_0 sup_margin_left_right_0" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+            <div class="govuk-width-container sup_p_8 sup_text_center">
+                <span>
+                    &copy; copyright Defra 2025
                 </span>
             </div>
         </div>
-    </div>
-</div>
 		
 		
 		<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -865,14 +847,10 @@
 		}
 	</script>
  <script src="../js/bootstrap.bundle.min.js"></script>
-   <!-- <script src="../js/fps_js/modalpopup.js"></script>
-    <script src="../js/govuk-modal-dialog.js"></script> -->
-    <script src="../js/fps_js/fpsplanstaff.js"></script>
-     <script src="../js/fps_js/fps-table-utils.js"></script>
+   <!-- <script src="../js/modalpopup.js"></script> -->
+   <script src="../js/fpsplanstaff.js"></script>
 	 
+    <script src="../js/defra-dialogs.js"></script>
 </body>
 
 </html>
-</html>
-
-

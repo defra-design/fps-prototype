@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
     <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
-    <link rel="stylesheet" href="../navigation/css/navigation.css" />
+    <link rel="stylesheet" href="../pact/nav_menu/navstyle.css" />
+    <script src="../pact/nav_menu/menutemplate.js"></script>
     <link rel="stylesheet" href="../css/pact_styles/style.css" />
-    <link rel="stylesheet" href="../css/pact_styles/supplement_style_over_gov.uk_style.css" />
+    <link rel="stylesheet" href="../css/pact_styles/suppliement_style_over_gov.uk_style.css" />
     <title>Create Email Time Output Summary - PACT</title>
 </head>
 
@@ -36,21 +36,13 @@
     </header>
     <div id="header"></div>
 
-    <!-- Global navigation (centralized HTML structure) -->
-    <script src="../navigation/js/navigation.endpoints.js"></script>
-    <script src="../js/govuk-modal-dialog.js"></script>
-    <script src="../navigation/js/navigation.renderer.js"></script>
-    <script src="../navigation/js/navigation.init.js"></script>
-    <script>
-        window.NavConfig = {
-            appKey: "pact",
-            containerId: "header"
-        };
-        initAppNavigation();
-    </script>
+    <!-- Global navigation stats -->
+    <script src="../pact/nav_menu/script.js"></script>
+    <script> document.getElementById('header').innerHTML = htmlmenu; initMenu(); btn(); </script>
     <!-- END Global navigation stats -->
-
-    <main class="govuk-main-wrapper govuk-!-padding-top-0" id="main-content" role="main">
+  <div class="content-wrapper"> 
+    <div class="govuk-main-wrapper govuk-!-padding-top-0" id="main-content" role="main">
+      
         <div class="govuk-grid-row">
             <div class="govuk-grid-row sup_margin_left_right_0">
                 <div class="govuk-grid-column-full">
@@ -62,13 +54,10 @@
             </div>
         </div>
 
-        <div class="govuk-grid-row sup-pad-top-all-10px sup_border govuk-!-margin-bottom-2 govuk-!-margin-top-0 govuk-!-padding-top-2 govuk-!-padding-bottom-0 email-output-top-row"
-            aria-label="Email time output summary criteria">
-            <div
-                class="govuk-grid-column-one-third sup-pad-top-all-10px isProfitSummary period-dropdown govuk-!-padding-bottom-0 govuk-!-padding-top-0">
+        <div class="govuk-grid-row sup-pad-top-all-10px sup_border govuk-!-margin-bottom-2 govuk-!-margin-top-0 govuk-!-padding-top-2 govuk-!-padding-bottom-0" aria-label="Email time output summary criteria">
+            <div class="govuk-grid-column-one-third sup-pad-top-all-10px isProfitSummary period-dropdown govuk-!-padding-bottom-0 govuk-!-padding-top-0">
                 <div class="govuk-form-group govuk-!-margin-bottom-2">
-                    <label class="govuk-label govuk-label--l govuk-!-margin-bottom-1" for="profit-centre"> Profit
-                        Center:</label>
+                    <label class="govuk-label govuk-label--l govuk-!-margin-bottom-1" for="profit-centre"> Profit Center:</label>
                     <select class="govuk-select govuk-!-font-size-16 sup_select_option_width_100" id="profit-centre"
                         name="profitCentre" aria-label="Select profit centre">
                         <option value="">-- select profit centre --</option>
@@ -82,16 +71,12 @@
                 </div>
 
                 <div class="govuk-form-group govuk-!-margin-bottom-0" id="for-period-dropdown">
-                    <label class="govuk-label govuk-label--l govuk-!-margin-bottom-1" for="for-period-input"> For
-                        Period:</label>
+                    <label class="govuk-label govuk-label--l govuk-!-margin-bottom-1" for="for-period-input"> For Period:</label>
                     <input type="text" id="for-period-input" value="--select--"
-                        class="dropdown-input down-arrow-img govuk-input govuk-!-font-size-16" readonly
-                        aria-describedby="for-period-error">
-                    <span id="for-period-error" class="govuk-error-message" style="display:none;" role="alert"></span>
+                        class="dropdown-input down-arrow-img govuk-input govuk-!-font-size-16" readonly aria-describedby="for-period-error">
                     <input type="hidden" id="for-period-value" name="forPeriod" value="">
 
                     <div class="dropdown-panel" id="for-period-panel" style="display:none;">
-                        <label class="govuk-visually-hidden" for="for-period-search">Search and select period</label>
                         <input type="text" class="search-box" id="for-period-search"
                             placeholder="Type to search and select period">
 
@@ -109,13 +94,9 @@
                 </div>
             </div>
 
-            <div
-                class="govuk-grid-column-one-third sup-pad-top-all-10px govuk-!-padding-top-0 govuk-!-padding-bottom-0 isTimesheetsSelected">
+            <div class="govuk-grid-column-one-third sup-pad-top-all-10px govuk-!-padding-top-0 govuk-!-padding-bottom-0 isTimesheetsSelected">
                 <div class="govuk-form-group" id="timesheets-group">
                     <fieldset class="govuk-fieldset" aria-describedby="timesheets-hint">
-                        <legend class="govuk-visually-hidden">Include in output</legend>
-                        <span id="timesheets-hint" class="govuk-visually-hidden">Select whether to include time sheets
-                            and output sheets</span>
                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                             <div class="govuk-checkboxes__item govuk-!-margin-bottom-4 govuk-!-margin-top-5">
                                 <input class="govuk-checkboxes__input" id="chk-timesheets" name="includeTimeSheets"
@@ -134,13 +115,11 @@
                 </div>
             </div>
 
-            <div class="govuk-grid-column-one-third sup-pad-top-all-10px isTimesheetLayout govuk-!-padding-top-0">
-                <div
-                    class="govuk-form-group sup-highlighted-forms-blue-bg govuk-!-padding-bottom-2 govuk-!-padding-top-2 govuk-!-padding-left-4">
+            <div class="govuk-grid-column-one-third sup-pad-top-all-10px isTimesheetLayout govuk-!-padding-top-0" style="width: 31vw; margin-left: 9px;">
+                <div class="govuk-form-group sup-highlighted-forms-blue-bg govuk-!-padding-bottom-2 govuk-!-padding-top-2 govuk-!-padding-left-4">
                     <fieldset class="govuk-fieldset" aria-describedby="layout-hint">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Time sheet layout
-                        </legend>
-                        <span id="layout-hint" class="govuk-visually-hidden">Select the time sheet layout format</span>
+                        </legend>                        
                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                             <div class="govuk-checkboxes__item">
                                 <input class="govuk-checkboxes__input" id="layout-flat" name="timesheetLayout"
@@ -168,28 +147,27 @@
                         </h2>
                     </div>
                     <div id="tableScrollWrapper" class="pact-table-scroll">
-                        <table id="dataTable" class="govuk-table govuk-table custom-table">
-                            <thead class="govuk-table__head">
-                                <tr class="govuk-table__row">
-                                    <th scope="col" class="govuk-table__header">Workgroup</th>
-                                    <th scope="col" class="govuk-table__header"> SendEmail?<br>
-                                        Yes&nbsp;&nbsp;&nbsp;&nbsp;No </th>
-                                    <th scope="col" class="govuk-table__header">Email Recipient</th>
-                                    <th scope="col" class="govuk-table__header">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Body is rendered by JavaScript based on
+                    <table id="dataTable" class="govuk-table govuk-table custom-table">
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">Workgroup</th>
+                                <th scope="col" class="govuk-table__header"> SendEmail?<br>
+                                    Yes&nbsp;&nbsp;&nbsp;&nbsp;No </th>
+                                <th scope="col" class="govuk-table__header">Email Recipient</th>
+                                <th scope="col" class="govuk-table__header">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Body is rendered by JavaScript based on
                                  selected Profit Centre and Period. -->
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
                     </div>
 
                     <div class="sup_pagination_wrapper">
                         <div class="sup_margin_top_bottom_5_10">
                             <label for="pageSize">Records per page</label>
-                            <select id="pageSize" class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
-                                aria-label="Select number of records per page">
+                            <select id="pageSize" class="govuk-select govuk-select--width-2 govuk-!-font-size-16" aria-label="Select number of records per page">
                                 <option value="5" selected>5</option>
                                 <option value="10">10</option>
                                 <option value="25">25</option>
@@ -220,19 +198,16 @@
                 </h2>
 
                 <div class="govuk-body govuk-!-margin-top-4 pc-actions-panel">
-                    <button class="govuk-button" data-module="govuk-button" id="btn-select-pc">Select PC's Work
-                        Groups</button>
-                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button"
-                        id="btn-clear-pc">Clear PC's Work Groups</button>
+                    <button class="govuk-button" data-module="govuk-button" id="btn-select-pc">Select PC's Work Groups</button>
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" id="btn-clear-pc">Clear PC's Work Groups</button>
                 </div>
             </div>
         </div>
-
+        
 
         <!-- Edit row modal -->
-        <div class="modal" id="editEmailModal" tabindex="-1" role="dialog" aria-modal="true"
-            aria-labelledby="editEmailModalTitle">
-            <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal" id="editEmailModal" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="editEmailModalTitle">
+            <div class="modal-dialog modal-md">
                 <div class="modal-content">
                     <div class="modal-header flex-space-center">
                         <h2 class="modal-title m-0" id="editEmailModalTitle">Edit email settings</h2>
@@ -269,30 +244,26 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button class="govuk-button govuk-button--secondary sup_margin_0 govuk-!-margin-right-5"
-                            type="button" id="editModalCancel">Cancel</button>
+                        <button class="govuk-button govuk-button--secondary sup_margin_0 govuk-!-margin-right-5" type="button"
+                            id="editModalCancel">Cancel</button>
                         <button class="govuk-button sup_margin_0" type="button" id="editModalSave">Save</button>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
-            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+        </div>
+         
+    </div>
+       <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+            <div class="govuk-width-container sup_p_8 sup_text_center">
+                <span>
+                    &copy; copyright Defra 2025
                 </span>
             </div>
         </div>
-    </div>
-</div>
-    </main>
     <script src="../js/pact_js/create_email_time_output_summary.js"></script>
-    <script src="../js/pact_js/menuscript.js"></script>
+    <script src="../js/menuscript.js"></script>
+    <script src="../js/defra-dialogs.js"></script>
 </body>
 
 </html>
-</html>
-
-
-

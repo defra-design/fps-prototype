@@ -1,0 +1,1345 @@
+{
+  "portfolioTests": [
+    {
+      "id": 1,
+      "testCode": "PT0000",
+      "itemDescription": "Camelid TB Combined Antibody Test",
+      "workGroup": "BAC1",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 2,
+      "testCode": "PT0001",
+      "itemDescription": "African horse sickness",
+      "workGroup": "BAC1",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 3,
+      "testCode": "PT0002",
+      "itemDescription": "B. anthracis microscopy",
+      "workGroup": "BAC2",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 4,
+      "testCode": "PT0003",
+      "itemDescription": "Egg Marketing Inspection",
+      "workGroup": "BAC2",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 5,
+      "testCode": "PT0004",
+      "itemDescription": "Egg Grading Compliance",
+      "workGroup": "BAC3",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 6,
+      "testCode": "PT0005",
+      "itemDescription": "Avian influenza serology",
+      "workGroup": "CSCS",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 7,
+      "testCode": "PT0006",
+      "itemDescription": "Import Health Certification",
+      "workGroup": "LTBU",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 8,
+      "testCode": "PT0007",
+      "itemDescription": "Biosecurity Assessment",
+      "workGroup": "LTBU",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 9,
+      "testCode": "PT0008",
+      "itemDescription": "Bacteria in cold water fish",
+      "workGroup": "BAC4",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 10,
+      "testCode": "PT0009",
+      "itemDescription": "Investment Appraisal Review",
+      "workGroup": "CIT",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 11,
+      "testCode": "PT0010",
+      "itemDescription": "Energy Efficiency Assessment",
+      "workGroup": "LTCA",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 12,
+      "testCode": "PT0011",
+      "itemDescription": "Carbon Footprint Analysis",
+      "workGroup": "Bees",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 13,
+      "testCode": "PT0012",
+      "itemDescription": "BVD serum AB ELISA",
+      "workGroup": "BTB",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 14,
+      "testCode": "PT0013",
+      "itemDescription": "Brucella abortus CFT/SAT",
+      "workGroup": "BTB",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 15,
+      "testCode": "PT0014",
+      "itemDescription": "Cattle Movement Testing",
+      "workGroup": "LTSH",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 16,
+      "testCode": "PT0015",
+      "itemDescription": "Bovine tuberculosis test",
+      "workGroup": "LTSH",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 17,
+      "testCode": "PT0016",
+      "itemDescription": "Asian Hornet Visual Survey",
+      "workGroup": "CSCS",
+      "portfolio": "APHAASHORN25"
+    },
+    {
+      "id": 18,
+      "testCode": "PT0017",
+      "itemDescription": "Nest Detection Protocol",
+      "workGroup": "CIT",
+      "portfolio": "APHAASHORN25"
+    },
+    {
+      "id": 19,
+      "testCode": "PT0018",
+      "itemDescription": "Trap Monitoring Service",
+      "workGroup": "Bees",
+      "portfolio": "APHAASHORN25"
+    },
+    {
+      "id": 20,
+      "testCode": "PT0019",
+      "itemDescription": "Database Query Development",
+      "workGroup": "MRSA",
+      "portfolio": "APHAH0040"
+    },
+    {
+      "id": 21,
+      "testCode": "PT0020",
+      "itemDescription": "System Integration Testing",
+      "workGroup": "BSE",
+      "portfolio": "APHAH0040"
+    },
+    {
+      "id": 22,
+      "testCode": "PT0021",
+      "itemDescription": "User Training Program",
+      "workGroup": "CSCS",
+      "portfolio": "APHAH0040"
+    },
+    {
+      "id": 23,
+      "testCode": "PT0022",
+      "itemDescription": "Strategic Planning Review",
+      "workGroup": "CIT",
+      "portfolio": "APHAH0047"
+    },
+    {
+      "id": 24,
+      "testCode": "PT0023",
+      "itemDescription": "Resource Allocation Analysis",
+      "workGroup": "Bees",
+      "portfolio": "APHAH0047"
+    },
+    {
+      "id": 25,
+      "testCode": "PT0024",
+      "itemDescription": "Stakeholder Engagement",
+      "workGroup": "MRSA",
+      "portfolio": "APHAH0047"
+    },
+    {
+      "id": 26,
+      "testCode": "PT0025",
+      "itemDescription": "Policy Impact Assessment",
+      "workGroup": "BSE",
+      "portfolio": "APHAH0048"
+    },
+    {
+      "id": 27,
+      "testCode": "PT0026",
+      "itemDescription": "Technical Advisory Service",
+      "workGroup": "CSCS",
+      "portfolio": "APHAH0048"
+    },
+    {
+      "id": 28,
+      "testCode": "PT0027",
+      "itemDescription": "Regulatory Compliance Review",
+      "workGroup": "CIT",
+      "portfolio": "APHAH0048"
+    },
+    {
+      "id": 29,
+      "testCode": "PT0028",
+      "itemDescription": "Risk Assessment Protocol",
+      "workGroup": "Bees",
+      "portfolio": "APHAH0049"
+    },
+    {
+      "id": 30,
+      "testCode": "PT0029",
+      "itemDescription": "Alternative Testing Methods",
+      "workGroup": "MRSA",
+      "portfolio": "APHAH0049"
+    },
+    {
+      "id": 31,
+      "testCode": "PT0030",
+      "itemDescription": "Diagnostic Validation",
+      "workGroup": "BSE",
+      "portfolio": "APHAH0049"
+    },
+    {
+      "id": 32,
+      "testCode": "PT0031",
+      "itemDescription": "Process Improvement Initiative",
+      "workGroup": "CSCS",
+      "portfolio": "APHAH0050"
+    },
+    {
+      "id": 33,
+      "testCode": "PT0032",
+      "itemDescription": "Digital Transformation Project",
+      "workGroup": "CIT",
+      "portfolio": "APHAH0050"
+    },
+    {
+      "id": 34,
+      "testCode": "PT0033",
+      "itemDescription": "Innovation Workshop",
+      "workGroup": "Bees",
+      "portfolio": "APHAH0050"
+    },
+    {
+      "id": 35,
+      "testCode": "PT0034",
+      "itemDescription": "Field Compliance Inspection",
+      "workGroup": "MRSA",
+      "portfolio": "APHAH0051"
+    },
+    {
+      "id": 36,
+      "testCode": "PT0035",
+      "itemDescription": "Export Certification Service",
+      "workGroup": "BSE",
+      "portfolio": "APHAH0051"
+    },
+    {
+      "id": 37,
+      "testCode": "PT0036",
+      "itemDescription": "Inspector Training Module",
+      "workGroup": "CSCS",
+      "portfolio": "APHAH0051"
+    },
+    {
+      "id": 38,
+      "testCode": "PT0037",
+      "itemDescription": "LIMS System Upgrade",
+      "workGroup": "CIT",
+      "portfolio": "APHAH0052"
+    },
+    {
+      "id": 39,
+      "testCode": "PT0038",
+      "itemDescription": "Data Integration Platform",
+      "workGroup": "Bees",
+      "portfolio": "APHAH0052"
+    },
+    {
+      "id": 40,
+      "testCode": "PT0039",
+      "itemDescription": "Report Generation Enhancement",
+      "workGroup": "MRSA",
+      "portfolio": "APHAH0052"
+    },
+    {
+      "id": 41,
+      "testCode": "PT0040",
+      "itemDescription": "Egg Production Standards Review",
+      "workGroup": "LTBU",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 42,
+      "testCode": "PT0041",
+      "itemDescription": "Egg Quality Assurance Testing",
+      "workGroup": "BAC4",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 43,
+      "testCode": "PT0042",
+      "itemDescription": "Egg Storage Compliance Check",
+      "workGroup": "LTCA",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 44,
+      "testCode": "PT0043",
+      "itemDescription": "Egg Labeling Verification",
+      "workGroup": "BTB",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 45,
+      "testCode": "PT0044",
+      "itemDescription": "Egg Transport Safety Assessment",
+      "workGroup": "LTSH",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 46,
+      "testCode": "PT0045",
+      "itemDescription": "Veterinary Border Inspection",
+      "workGroup": "VIR1",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 47,
+      "testCode": "PT0046",
+      "itemDescription": "Animal Welfare Assessment",
+      "workGroup": "VIR2",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 48,
+      "testCode": "PT0047",
+      "itemDescription": "Import Documentation Review",
+      "workGroup": "PAR1",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 49,
+      "testCode": "PT0048",
+      "itemDescription": "Quarantine Compliance Check",
+      "workGroup": "MRSA",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 50,
+      "testCode": "PT0049",
+      "itemDescription": "Disease Surveillance Protocol",
+      "workGroup": "BSE",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 51,
+      "testCode": "PT0050",
+      "itemDescription": "Technology Investment Review",
+      "workGroup": "PAR2",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 52,
+      "testCode": "PT0051",
+      "itemDescription": "Low Carbon Technology Assessment",
+      "workGroup": "TOX1",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 53,
+      "testCode": "PT0052",
+      "itemDescription": "Business Case Evaluation",
+      "workGroup": "MRSA",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 54,
+      "testCode": "PT0053",
+      "itemDescription": "Energy Audit Services",
+      "workGroup": "BSE",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 55,
+      "testCode": "PT0054",
+      "itemDescription": "Grant Application Support",
+      "workGroup": "CSCS",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 56,
+      "testCode": "PT0055",
+      "itemDescription": "Sustainability Impact Analysis",
+      "workGroup": "CIT",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 57,
+      "testCode": "PT0056",
+      "itemDescription": "Livestock Disease Monitoring",
+      "workGroup": "VIR1",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 58,
+      "testCode": "PT0057",
+      "itemDescription": "Herd Health Surveillance",
+      "workGroup": "VIR2",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 59,
+      "testCode": "PT0058",
+      "itemDescription": "Vaccination Programme Review",
+      "workGroup": "PAR1",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 60,
+      "testCode": "PT0059",
+      "itemDescription": "TB Testing Protocol",
+      "workGroup": "PAR2",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 61,
+      "testCode": "PT0060",
+      "itemDescription": "Blood Sample Analysis",
+      "workGroup": "TOX1",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 62,
+      "testCode": "PT0061",
+      "itemDescription": "Bee Colony Health Check",
+      "workGroup": "MRSA",
+      "portfolio": "APHAASHORN25"
+    },
+    {
+      "id": 63,
+      "testCode": "PT0062",
+      "itemDescription": "Hornet Trap Analysis",
+      "workGroup": "BSE",
+      "portfolio": "APHAASHORN25"
+    },
+    {
+      "id": 64,
+      "testCode": "PT0063",
+      "itemDescription": "Spring Survey Coordination",
+      "workGroup": "QASB",
+      "portfolio": "APHAASHORN25"
+    },
+    {
+      "id": 65,
+      "testCode": "PT0064",
+      "itemDescription": "Public Awareness Campaign",
+      "workGroup": "BAC2",
+      "portfolio": "APHAASHORN25"
+    },
+    {
+      "id": 66,
+      "testCode": "PT0065",
+      "itemDescription": "Nest Removal Operations",
+      "workGroup": "BAC3",
+      "portfolio": "APHAASHORN25"
+    },
+    {
+      "id": 67,
+      "testCode": "PT0066",
+      "itemDescription": "Database Architecture Design",
+      "workGroup": "CIT",
+      "portfolio": "APHAH0040"
+    },
+    {
+      "id": 68,
+      "testCode": "PT0067",
+      "itemDescription": "Data Migration Planning",
+      "workGroup": "Bees",
+      "portfolio": "APHAH0040"
+    },
+    {
+      "id": 69,
+      "testCode": "PT0068",
+      "itemDescription": "Performance Testing",
+      "workGroup": "QASB",
+      "portfolio": "APHAH0040"
+    },
+    {
+      "id": 70,
+      "testCode": "PT0069",
+      "itemDescription": "Security Assessment",
+      "workGroup": "BAC2",
+      "portfolio": "APHAH0040"
+    },
+    {
+      "id": 71,
+      "testCode": "PT0070",
+      "itemDescription": "User Acceptance Testing",
+      "workGroup": "BAC3",
+      "portfolio": "APHAH0040"
+    },
+    {
+      "id": 72,
+      "testCode": "PT0071",
+      "itemDescription": "Budget Planning Workshop",
+      "workGroup": "MRSA",
+      "portfolio": "APHAH0047"
+    },
+    {
+      "id": 73,
+      "testCode": "PT0072",
+      "itemDescription": "Cross-functional Coordination",
+      "workGroup": "BSE",
+      "portfolio": "APHAH0047"
+    },
+    {
+      "id": 74,
+      "testCode": "PT0073",
+      "itemDescription": "Performance Metrics Review",
+      "workGroup": "QASB",
+      "portfolio": "APHAH0047"
+    },
+    {
+      "id": 75,
+      "testCode": "PT0074",
+      "itemDescription": "Service Delivery Optimization",
+      "workGroup": "BAC2",
+      "portfolio": "APHAH0047"
+    },
+    {
+      "id": 76,
+      "testCode": "PT0075",
+      "itemDescription": "Quarterly Business Review",
+      "workGroup": "BAC3",
+      "portfolio": "APHAH0047"
+    },
+    {
+      "id": 77,
+      "testCode": "PT0076",
+      "itemDescription": "Legislative Analysis",
+      "workGroup": "Bees",
+      "portfolio": "APHAH0048"
+    },
+    {
+      "id": 78,
+      "testCode": "PT0077",
+      "itemDescription": "Evidence-based Policy Support",
+      "workGroup": "MRSA",
+      "portfolio": "APHAH0048"
+    },
+    {
+      "id": 79,
+      "testCode": "PT0078",
+      "itemDescription": "Stakeholder Consultation",
+      "workGroup": "BSE",
+      "portfolio": "APHAH0048"
+    },
+    {
+      "id": 80,
+      "testCode": "PT0079",
+      "itemDescription": "Policy Implementation Review",
+      "workGroup": "QASB",
+      "portfolio": "APHAH0048"
+    },
+    {
+      "id": 81,
+      "testCode": "PT0080",
+      "itemDescription": "Economic Impact Study",
+      "workGroup": "BAC2",
+      "portfolio": "APHAH0048"
+    },
+    {
+      "id": 82,
+      "testCode": "PT0081",
+      "itemDescription": "Threat Assessment Analysis",
+      "workGroup": "CSCS",
+      "portfolio": "APHAH0049"
+    },
+    {
+      "id": 83,
+      "testCode": "PT0082",
+      "itemDescription": "Emerging Disease Monitoring",
+      "workGroup": "CIT",
+      "portfolio": "APHAH0049"
+    },
+    {
+      "id": 84,
+      "testCode": "PT0083",
+      "itemDescription": "Laboratory Method Validation",
+      "workGroup": "QASB",
+      "portfolio": "APHAH0049"
+    },
+    {
+      "id": 85,
+      "testCode": "PT0084",
+      "itemDescription": "Surveillance Strategy Review",
+      "workGroup": "BAC2",
+      "portfolio": "APHAH0049"
+    },
+    {
+      "id": 86,
+      "testCode": "PT0085",
+      "itemDescription": "Research and Development",
+      "workGroup": "BAC3",
+      "portfolio": "APHAH0049"
+    },
+    {
+      "id": 87,
+      "testCode": "PT0086",
+      "itemDescription": "Workflow Automation Project",
+      "workGroup": "MRSA",
+      "portfolio": "APHAH0050"
+    },
+    {
+      "id": 88,
+      "testCode": "PT0087",
+      "itemDescription": "AI Implementation Study",
+      "workGroup": "BSE",
+      "portfolio": "APHAH0050"
+    },
+    {
+      "id": 89,
+      "testCode": "PT0088",
+      "itemDescription": "Mobile Application Development",
+      "workGroup": "QASB",
+      "portfolio": "APHAH0050"
+    },
+    {
+      "id": 90,
+      "testCode": "PT0089",
+      "itemDescription": "Cloud Migration Planning",
+      "workGroup": "BAC2",
+      "portfolio": "APHAH0050"
+    },
+    {
+      "id": 91,
+      "testCode": "PT0090",
+      "itemDescription": "Change Management Support",
+      "workGroup": "BAC3",
+      "portfolio": "APHAH0050"
+    },
+    {
+      "id": 92,
+      "testCode": "PT0091",
+      "itemDescription": "Farm Inspection Protocol",
+      "workGroup": "CIT",
+      "portfolio": "APHAH0051"
+    },
+    {
+      "id": 93,
+      "testCode": "PT0092",
+      "itemDescription": "Animal Movement Controls",
+      "workGroup": "Bees",
+      "portfolio": "APHAH0051"
+    },
+    {
+      "id": 94,
+      "testCode": "PT0093",
+      "itemDescription": "Export Health Certificate",
+      "workGroup": "QASB",
+      "portfolio": "APHAH0051"
+    },
+    {
+      "id": 95,
+      "testCode": "PT0094",
+      "itemDescription": "Quality Assurance Audit",
+      "workGroup": "BAC2",
+      "portfolio": "APHAH0051"
+    },
+    {
+      "id": 96,
+      "testCode": "PT0095",
+      "itemDescription": "Field Staff Development",
+      "workGroup": "BAC3",
+      "portfolio": "APHAH0051"
+    },
+    {
+      "id": 97,
+      "testCode": "PT0096",
+      "itemDescription": "Sample Tracking System",
+      "workGroup": "Bees",
+      "portfolio": "APHAH0052"
+    },
+    {
+      "id": 98,
+      "testCode": "PT0097",
+      "itemDescription": "Results Reporting Module",
+      "workGroup": "QASB",
+      "portfolio": "APHAH0052"
+    },
+    {
+      "id": 99,
+      "testCode": "PT0098",
+      "itemDescription": "Laboratory Equipment Integration",
+      "workGroup": "BAC2",
+      "portfolio": "APHAH0052"
+    },
+    {
+      "id": 100,
+      "testCode": "PT0099",
+      "itemDescription": "Data Analytics Dashboard",
+      "workGroup": "BAC3",
+      "portfolio": "APHAH0052"
+    }
+  ],
+  "workgroupsData": [
+    {
+      "id": 1,
+      "workGrp": "BAC1",
+      "active": true,
+      "timeCode": "PT0000",
+      "project": "APHAEM00000",
+      "testCode": "PT0000",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 2,
+      "workGrp": "BAC2",
+      "active": true,
+      "timeCode": "PT0000",
+      "project": "APHAEM00000",
+      "testCode": "PT0000",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 3,
+      "workGrp": "BAC3",
+      "active": true,
+      "timeCode": "PT0000",
+      "project": "APHAEM00000",
+      "testCode": "PT0000",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 4,
+      "workGrp": "LTBU",
+      "active": false,
+      "timeCode": "PT0001",
+      "project": "APHAEM00000",
+      "testCode": "PT0001",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 5,
+      "workGrp": "BAC4",
+      "active": true,
+      "timeCode": "PT0001",
+      "project": "APHAEM00000",
+      "testCode": "PT0001",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 6,
+      "workGrp": "LTCA",
+      "active": true,
+      "timeCode": "PT0002",
+      "project": "APHAEM00000",
+      "testCode": "PT0002",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 7,
+      "workGrp": "BTB",
+      "active": true,
+      "timeCode": "PT0003",
+      "project": "APHAEM00000",
+      "testCode": "PT0003",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 8,
+      "workGrp": "LTSH",
+      "active": false,
+      "timeCode": "PT0004",
+      "project": "APHAEM00000",
+      "testCode": "PT0004",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 9,
+      "workGrp": "VIR1",
+      "active": true,
+      "timeCode": "PT0005",
+      "project": "APHAEM00000",
+      "testCode": "PT0005",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 10,
+      "workGrp": "VIR2",
+      "active": true,
+      "timeCode": "PT0006",
+      "project": "APHAEM00000",
+      "testCode": "PT0006",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 11,
+      "workGrp": "PAR1",
+      "active": true,
+      "timeCode": "PT0007",
+      "project": "APHAEM00000",
+      "testCode": "PT0007",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 12,
+      "workGrp": "PAR2",
+      "active": false,
+      "timeCode": "PT0008",
+      "project": "APHAEM00000",
+      "testCode": "PT0008",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 13,
+      "workGrp": "TOX1",
+      "active": true,
+      "timeCode": "PT0009",
+      "project": "APHAEM00000",
+      "testCode": "PT0009",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 14,
+      "workGrp": "GEN1",
+      "active": true,
+      "timeCode": "PT0010",
+      "project": "APHAEM00000",
+      "testCode": "PT0010",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 15,
+      "workGrp": "IMM1",
+      "active": true,
+      "timeCode": "PT0011",
+      "project": "APHAEM00000",
+      "testCode": "PT0011",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 16,
+      "workGrp": "CSCS",
+      "active": true,
+      "timeCode": "PT0000",
+      "project": "APHAEM00000",
+      "testCode": "PT0000",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 17,
+      "workGrp": "CIT",
+      "active": true,
+      "timeCode": "PT0000",
+      "project": "APHAEM00000",
+      "testCode": "PT0000",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 18,
+      "workGrp": "BDU",
+      "active": false,
+      "timeCode": "PT0000",
+      "project": "APHAEM00000",
+      "testCode": "PT0000",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 19,
+      "workGrp": "CSCS",
+      "active": true,
+      "timeCode": "PT0001",
+      "project": "APHAEM00000",
+      "testCode": "PT0001",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 20,
+      "workGrp": "CIT",
+      "active": true,
+      "timeCode": "PT0001",
+      "project": "APHAEM00000",
+      "testCode": "PT0001",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 21,
+      "workGrp": "QASB",
+      "active": true,
+      "timeCode": "PT0001",
+      "project": "APHAEM00000",
+      "testCode": "PT0001",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 22,
+      "workGrp": "BAC2",
+      "active": true,
+      "timeCode": "PT0002",
+      "project": "APHAEM00000",
+      "testCode": "PT0002",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 23,
+      "workGrp": "BAC3",
+      "active": true,
+      "timeCode": "PT0002",
+      "project": "APHAEM00000",
+      "testCode": "PT0002",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 24,
+      "workGrp": "MRSA",
+      "active": false,
+      "timeCode": "PT0002",
+      "project": "APHAEM00000",
+      "testCode": "PT0002",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 25,
+      "workGrp": "BAC1",
+      "active": true,
+      "timeCode": "PT0003",
+      "project": "APHAEM00000",
+      "testCode": "PT0003",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 26,
+      "workGrp": "LTBU",
+      "active": true,
+      "timeCode": "PT0003",
+      "project": "APHAEM00000",
+      "testCode": "PT0003",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 27,
+      "workGrp": "CPD",
+      "active": true,
+      "timeCode": "PT0003",
+      "project": "APHAEM00000",
+      "testCode": "PT0003",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 28,
+      "workGrp": "BAC1",
+      "active": true,
+      "timeCode": "PT0004",
+      "project": "APHAEM00000",
+      "testCode": "PT0004",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 29,
+      "workGrp": "BAC4",
+      "active": true,
+      "timeCode": "PT0004",
+      "project": "APHAEM00000",
+      "testCode": "PT0004",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 30,
+      "workGrp": "Bees",
+      "active": true,
+      "timeCode": "PT0004",
+      "project": "APHAEM00000",
+      "testCode": "PT0004",
+      "portfolio": "APHAEM00000"
+    },
+    {
+      "id": 31,
+      "workGrp": "CSCS",
+      "active": true,
+      "timeCode": "PT0005",
+      "project": "APHAINAH0099",
+      "testCode": "PT0005",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 32,
+      "workGrp": "LTBU",
+      "active": true,
+      "timeCode": "PT0005",
+      "project": "APHAINAH0099",
+      "testCode": "PT0005",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 33,
+      "workGrp": "BAC2",
+      "active": false,
+      "timeCode": "PT0005",
+      "project": "APHAINAH0099",
+      "testCode": "PT0005",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 34,
+      "workGrp": "LTBU",
+      "active": true,
+      "timeCode": "PT0006",
+      "project": "APHAINAH0099",
+      "testCode": "PT0006",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 35,
+      "workGrp": "CIT",
+      "active": true,
+      "timeCode": "PT0006",
+      "project": "APHAINAH0099",
+      "testCode": "PT0006",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 36,
+      "workGrp": "QASB",
+      "active": true,
+      "timeCode": "PT0006",
+      "project": "APHAINAH0099",
+      "testCode": "PT0006",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 37,
+      "workGrp": "BAC3",
+      "active": true,
+      "timeCode": "PT0007",
+      "project": "APHAINAH0099",
+      "testCode": "PT0007",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 38,
+      "workGrp": "BAC4",
+      "active": true,
+      "timeCode": "PT0007",
+      "project": "APHAINAH0099",
+      "testCode": "PT0007",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 39,
+      "workGrp": "BAC4",
+      "active": true,
+      "timeCode": "PT0008",
+      "project": "APHAINAH0099",
+      "testCode": "PT0008",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 40,
+      "workGrp": "MRSA",
+      "active": true,
+      "timeCode": "PT0008",
+      "project": "APHAINAH0099",
+      "testCode": "PT0008",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 41,
+      "workGrp": "BSE",
+      "active": false,
+      "timeCode": "PT0008",
+      "project": "APHAINAH0099",
+      "testCode": "PT0008",
+      "portfolio": "APHAINAH0099"
+    },
+    {
+      "id": 42,
+      "workGrp": "CIT",
+      "active": true,
+      "timeCode": "PT0009",
+      "project": "APHAH0037",
+      "testCode": "PT0009",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 43,
+      "workGrp": "Bees",
+      "active": true,
+      "timeCode": "PT0009",
+      "project": "APHAH0037",
+      "testCode": "PT0009",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 44,
+      "workGrp": "CSCS",
+      "active": true,
+      "timeCode": "PT0009",
+      "project": "APHAH0037",
+      "testCode": "PT0009",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 45,
+      "workGrp": "LTCA",
+      "active": true,
+      "timeCode": "PT0010",
+      "project": "APHAH0037",
+      "testCode": "PT0010",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 46,
+      "workGrp": "BTB",
+      "active": true,
+      "timeCode": "PT0010",
+      "project": "APHAH0037",
+      "testCode": "PT0010",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 47,
+      "workGrp": "Bees",
+      "active": true,
+      "timeCode": "PT0011",
+      "project": "APHAH0037",
+      "testCode": "PT0011",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 48,
+      "workGrp": "CIT",
+      "active": true,
+      "timeCode": "PT0011",
+      "project": "APHAH0037",
+      "testCode": "PT0011",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 49,
+      "workGrp": "BAC5",
+      "active": false,
+      "timeCode": "PT0011",
+      "project": "APHAH0037",
+      "testCode": "PT0011",
+      "portfolio": "APHAH0037"
+    },
+    {
+      "id": 50,
+      "workGrp": "BTB",
+      "active": true,
+      "timeCode": "PT0012",
+      "project": "APHAH0038",
+      "testCode": "PT0012",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 51,
+      "workGrp": "LTSH",
+      "active": true,
+      "timeCode": "PT0012",
+      "project": "APHAH0038",
+      "testCode": "PT0012",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 52,
+      "workGrp": "VIR1",
+      "active": true,
+      "timeCode": "PT0012",
+      "project": "APHAH0038",
+      "testCode": "PT0012",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 53,
+      "workGrp": "BTB",
+      "active": true,
+      "timeCode": "PT0013",
+      "project": "APHAH0038",
+      "testCode": "PT0013",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 54,
+      "workGrp": "BAC1",
+      "active": true,
+      "timeCode": "PT0013",
+      "project": "APHAH0038",
+      "testCode": "PT0013",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 55,
+      "workGrp": "BAC2",
+      "active": false,
+      "timeCode": "PT0013",
+      "project": "APHAH0038",
+      "testCode": "PT0013",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 56,
+      "workGrp": "LTSH",
+      "active": true,
+      "timeCode": "PT0014",
+      "project": "APHAH0038",
+      "testCode": "PT0014",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 57,
+      "workGrp": "BTB",
+      "active": true,
+      "timeCode": "PT0014",
+      "project": "APHAH0038",
+      "testCode": "PT0014",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 58,
+      "workGrp": "VIR2",
+      "active": true,
+      "timeCode": "PT0014",
+      "project": "APHAH0038",
+      "testCode": "PT0014",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 59,
+      "workGrp": "LTSH",
+      "active": true,
+      "timeCode": "PT0015",
+      "project": "APHAH0038",
+      "testCode": "PT0015",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 60,
+      "workGrp": "PAR1",
+      "active": true,
+      "timeCode": "PT0015",
+      "project": "APHAH0038",
+      "testCode": "PT0015",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 61,
+      "workGrp": "PAR2",
+      "active": true,
+      "timeCode": "PT0015",
+      "project": "APHAH0038",
+      "testCode": "PT0015",
+      "portfolio": "APHAH0038"
+    },
+    {
+      "id": 62,
+      "workGrp": "CSCS",
+      "active": true,
+      "timeCode": "PT0016",
+      "project": "APHAASHORN25",
+      "testCode": "PT0016",
+      "portfolio": "APHAASHORN25"
+    },
+    {
+      "id": 63,
+      "workGrp": "Bees",
+      "active": true,
+      "timeCode": "PT0016",
+      "project": "APHAASHORN25",
+      "testCode": "PT0016",
+      "portfolio": "APHAASHORN25"
+    },
+    {
+      "id": 64,
+      "workGrp": "CIT",
+      "active": true,
+      "timeCode": "PT0017",
+      "project": "APHAASHORN25",
+      "testCode": "PT0017",
+      "portfolio": "APHAASHORN25"
+    },
+    {
+      "id": 65,
+      "workGrp": "QASB",
+      "active": true,
+      "timeCode": "PT0017",
+      "project": "APHAASHORN25",
+      "testCode": "PT0017",
+      "portfolio": "APHAASHORN25"
+    },
+    {
+      "id": 66,
+      "workGrp": "Bees",
+      "active": true,
+      "timeCode": "PT0018",
+      "project": "APHAASHORN25",
+      "testCode": "PT0018",
+      "portfolio": "APHAASHORN25"
+    },
+    {
+      "id": 67,
+      "workGrp": "CPD",
+      "active": true,
+      "timeCode": "PT0018",
+      "project": "APHAASHORN25",
+      "testCode": "PT0018",
+      "portfolio": "APHAASHORN25"
+    },
+    {
+      "id": 68,
+      "workGrp": "MRSA",
+      "active": true,
+      "timeCode": "PT0019",
+      "project": "APHAH0040",
+      "testCode": "PT0019",
+      "portfolio": "APHAH0040"
+    },
+    {
+      "id": 69,
+      "workGrp": "CIT",
+      "active": true,
+      "timeCode": "PT0019",
+      "project": "APHAH0040",
+      "testCode": "PT0019",
+      "portfolio": "APHAH0040"
+    },
+    {
+      "id": 70,
+      "workGrp": "BSE",
+      "active": true,
+      "timeCode": "PT0020",
+      "project": "APHAH0040",
+      "testCode": "PT0020",
+      "portfolio": "APHAH0040"
+    },
+    {
+      "id": 71,
+      "workGrp": "CSCS",
+      "active": true,
+      "timeCode": "PT0020",
+      "project": "APHAH0040",
+      "testCode": "PT0020",
+      "portfolio": "APHAH0040"
+    }
+  ]
+}

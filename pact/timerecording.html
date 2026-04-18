@@ -3,16 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
 
     <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
     <link rel="stylesheet" href="../pact/nav_menu/navstyle.css" />
     <script src="../pact/nav_menu/menutemplate.js"></script>
-    <script src="../js/govuk-modal-dialog.js"></script>
     <link rel="stylesheet" href="../css/pact_styles/style.css" />
-    <link rel="stylesheet" href="../css/pact_styles/supplement_style_over_gov.uk_style.css" />
+    <link rel="stylesheet" href="../css/pact_styles/suppliement_style_over_gov.uk_style.css" />
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 
     <style>
@@ -40,7 +38,6 @@
             /* padding: 10px; */
             border-top: 0;
         }
-
         .tabulator-row .tabulator-cell {
             border-bottom: 1px solid #ccc;
         }
@@ -270,75 +267,6 @@
         initMenu();
         btn();
     </script>
-
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false" aria-current="page" href="#">Project & Programme Maintenance</a>
-                        <ul class="dropdown-menu">
-                             <li><a class="dropdown-item" href="program_maintenance.html">Program
-                                    Maintenance</a></li>
-                            <li><a class="dropdown-item" href="project_maintenance_five.three.html"
-                                    style="display: flex;    justify-content: space-between;">Project Management</a>
-                            </li>
-                            <li><a class="dropdown-item" style="display: flex;    justify-content: space-between;"
-                                    href="portfolio_maintenance.html">Portfolio Maintenance</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown"><a class="nav-link  dropdown-toggle" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">Monthly Project
-                            Data (Costs & Income)</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Project Invoices (Manual)</a>
-                            </li>
-                            <li><a class="dropdown-item" href="#">OM, OG, FT & UT Invoices (Batch Mode from RMS)</a>
-                            </li>
-                            <li><a class="dropdown-item" href="invoicebymonth.html">Invoices by Month</a></li>
-                            <li><a class="dropdown-item" href="#">FT & UT Project Work In Progress (WIP Over-ride)</a>
-                            </li>
-                            <li><a class="dropdown-item" href="#">SubContracts (Exceptional Costs) (Manual)</a></li>
-                            <li><a class="dropdown-item" href="#">SubContracts (Exceptional Costs) (Batch mode from
-                                    RMS)</a></li>
-                            <li><a class="dropdown-item" href="#">SubContracts By Month</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Work Group "Static" Data (Resources & Test Capabilities)</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Work Group People</a></li>
-                            <li><a class="dropdown-item" style="display: flex;    justify-content: space-between;">Test
-                                    Capabilities</a></li>
-                            <li><a class="dropdown-item" style="display: flex;    justify-content: space-between;"
-                                    href="#">Test Maintenance List</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false" aria-current="page" href="#">Further Menus</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">PACT Reports Menu</a></li>
-                            <li><a class="dropdown-item" href="timeoutputdatamgmt.html"
-                                    style="display: flex;    justify-content: space-between;">Time
-                                    & Output Data Management</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Bosworth Interface</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav> -->
 
 
 
@@ -753,15 +681,13 @@
 
 
     <footer>
-        <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
-            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
+                <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+            <div class="govuk-width-container sup_p_8 sup_text_center">
+                <span>
+                    &copy; copyright Defra 2025
                 </span>
             </div>
         </div>
-    </div>
-</div>
     </footer>
 
 
@@ -1047,9 +973,7 @@
         const observer = new ResizeObserver(() => requestAnimationFrame(alignHoursBox));
         observer.observe(th);
     </script>
+    <script src="../js/defra-dialogs.js"></script>
 </body>
 
 </html>
-</html>
-
-

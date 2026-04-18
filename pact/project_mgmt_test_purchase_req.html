@@ -3,39 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="../css/custom-widget/global_styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/pact_styles/govuk-frontend-6.0.0.min.css" />
     <link rel="stylesheet" href="../css/pact_styles/custom_style.css" />
     <link rel="stylesheet" href="nav_menu/navstyle.css" />
     <script src="nav_menu/menutemplate.js"></script>
-    <script src="../js/govuk-modal-dialog.js"></script>
     <link rel="stylesheet" href="../css/pact_styles/style.css" />
-    <link rel="stylesheet" href="../css/pact_styles/supplement_style_over_gov.uk_style.css" />
-
-    <style>
-        /* Sortable header styles */
-        th[data-column] {
-            cursor: pointer;
-            user-select: none;
-            position: relative;
-        }
-        
-        th[data-column]:hover {
-            background-color: #d8e5f4 !important;
-        }
-        
-        .sort-icon {
-            margin-left: 4px;
-            font-size: 10px;
-            color: #1d70b8;
-        }
-        
-        th.sorted-asc,
-        th.sorted-desc {
-            background-color: #d8e5f4 !important;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" /> 
 
     <title>2025-2026 : Project Milestones - PACT</title>
 
@@ -80,113 +54,118 @@
         initMenu();
         btn();
     </script>
-
-    <div class="govuk-grid-row sup_margin_left_right_0">
-        <div class="govuk-grid-column-full">
-            <h1 class="heading_with_txtbox govuk-heading-s sup_border-bottom">
-                <div class="sup_flex_left_center">
-                    Test Purchase Requirements for:<label class="sup_hidden_label" for="sp-projectcode">project code</label>
-                    <input type="text" id="sp-projectcode" class="govuk-input govuk-!-font-size-16 govuk-input--width-10">
-                </div>
-                <div> <a id="backlink" class="govuk-back-link">Back</a></div>
-            </h1>
+    <div class="content-wrapper">
+        <div class="govuk-grid-row sup_margin_left_right_0">
+            <div class="govuk-grid-column-full">
+                <h1 class="heading_with_txtbox govuk-heading-s sup_border-bottom">
+                    <div class="sup_flex_left_center">
+                        Test Purchase Requirements for:<label class="sup_hidden_label" for="sp-projectcode">project
+                            code</label>
+                        <input type="text" id="sp-projectcode"
+                            class="govuk-input govuk-!-font-size-16 govuk-input--width-10">
+                    </div>
+                    <div> <a id="backlink" class="govuk-back-link">Back</a></div>
+                </h1>
+            </div>
         </div>
-    </div>
-
-    <div class="govuk-grid-row sup_flex_row sup_margin_left_right_0 sup_margin_bottom_10">
-        <nav class="sidenav flex-column flex-shrink-0 sup_margin_bottom_10" id="shortnav">
-            <button class="toggle-btn toggle-btn-position" onclick="toggleSidebar()">
-                <img src="../images/chevron-left-solid-full.svg" width="20" alt="side menu left arrow" class="toggle-btn-arrow" />
-            </button>
-            <ul>
-                   <li class="sidebar-link-two side-nav-link-bg">
-                    <a id="invoiecsubcontract" class="sup_white_color">Invoices & Subcontracted Costs</a>
-                </li>
-                <li class="sidebar-link-two side-nav-link-bg">
-                    <a id="milestones" class="sup_white_color"> Milestones</a>
-                </li>
-                <li class="sidebar-link-two side-nav-link-bg">
-                    <a id="testpurchasereq" class="sup_white_color">Test Purchase Requirements</a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="govuk-grid-column-full">
-            <div class="govuk-grid-row sup_margin_left_right_0 sup_margin_bottom_10">
-                <div class="sup_border">
-                    <h2 class="sup_border-bottom sup_text_color sup_heading_bg_color govuk-heading-s sup_align_heading" id="headingOne">
-                       Test to Buy....
-                    </h2>
-                    
-                    <div class="sup_flex_space_center">
-                        <div class="govuk-grid-column-one-third sup_padding_left_6">
-                            <label for="testPurchaseSearch" class="sr-only">Search</label>
-                            <input type="text" id="testPurchaseSearch" class="govuk-input govuk-!-font-size-16 sup_margin_tb_5" placeholder="Search by test code">
-                        </div>
-
-                        <div class="govuk-grid-column-one-third sup_padding_right_8 sup_text_align_right">
-                            <div class="govuk-button-group sup_margin_0 sup_float_right">
-                                <button type="button" class="govuk-button sup_margin_0 sup_p_8" id="addMilestoneBtn"
-                                    aria-label="Add test purchase requirement" data-module="govuk-button">
-                                    + &nbsp; Add Test
-                                </button>
+    
+        <div class="govuk-grid-row sup_flex_row sup_margin_left_right_0 sup_margin_bottom_10">
+            <nav class="sidenav flex-column flex-shrink-0 sup_margin_bottom_10" id="shortnav">
+                <button class="toggle-btn toggle-btn-position" onclick="toggleSidebar()">
+                    <img src="../images/chevron-left-solid-full.svg" width="20" alt="side menu left arrow"
+                        class="toggle-btn-arrow" />
+                </button>
+                <ul>
+                    <li class="sidebar-link-two side-nav-link-bg">
+                        <a id="invoiecsubcontract" class="sup_white_color">Invoices & Subcontracted Costs</a>
+                    </li>
+                    <!-- <li class="sidebar-link-two side-nav-link-bg">
+                        <a id="milestones" class="sup_white_color"> Milestones</a>
+                    </li> -->
+                    <li class="sidebar-link-two side-nav-link-bg">
+                        <a id="testpurchasereq" class="sup_white_color">Test Purchase Requirements</a>
+                    </li>
+                </ul>
+            </nav>
+    
+            <div class="govuk-grid-column-full">
+                <div class="govuk-grid-row sup_margin_left_right_0 sup_margin_bottom_10">
+                    <div class="sup_border">
+                        <h2 class="sup_border-bottom sup_text_color sup_heading_bg_color govuk-heading-s sup_align_heading"
+                            id="headingOne">
+                            Test to Buy....
+                        </h2>
+    
+                        <div class="sup_flex_space_center">
+                            <div class="govuk-grid-column-one-third sup_padding_left_6">
+                                <label for="testPurchaseSearch" class="sr-only">Search</label>
+                                <input type="text" id="testPurchaseSearch"
+                                    class="govuk-input govuk-!-font-size-16 sup_margin_tb_5"
+                                    placeholder="Search by test code">
+                            </div>
+    
+                            <div class="govuk-grid-column-one-third sup_padding_right_8 sup_text_align_right">
+                                <div class="govuk-button-group sup_margin_0 sup_float_right">
+                                    <button type="button" class="govuk-button sup_margin_0 sup_p_8" id="addMilestoneBtn"
+                                        aria-label="Add test purchase requirement" data-module="govuk-button">
+                                        + &nbsp; Add Test
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="table_scroll_wrapper">
-                        <table class="govuk-table custom-table" id="testPurchaseReqTable">
-                            <thead class="govuk-table__head">
-                                <tr class="govuk-table__row">
-                                    <th data-column="0" scope="col" class="govuk-table__header">Test code
-                                        <div class="resizer">&nbsp;</div>
-                                    </th>
-                                      <th data-column="2" class="govuk-table__header">No Required
-                                        <div class="resizer">&nbsp;</div>
-                                    </th>
-                                    <th data-column="1" class="govuk-table__header">Unit Price
-                                        <div class="resizer">&nbsp;</div>
-                                    </th> 
-                                    <th class="govuk-table__header">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody class="govuk-table__body" id="testpurchasereqTableBody">
-                                <!-- Data will be populated by JavaScript -->
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="sup_pagination_wrapper">
-                        <div class="sup_margin_top_bottom_5_10">
-                            <label for="recordsPerPage">Records per page</label>
-                            <select id="recordsPerPage" class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
-                                aria-label="Select number of records per page">
-                                <option value="5">5</option>
-                                <option value="10" selected>10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                                <option value="25">25</option>
-                                <option value="30">30</option>
-                            </select>
+    
+                        <div class="table_scroll_wrapper">
+                            <table class="govuk-table custom-table" id="testPurchaseReqTable">
+                                <thead class="govuk-table__head">
+                                    <tr class="govuk-table__row">
+                                        <th data-column="0" scope="col" class="govuk-table__header">Test code
+                                            <div class="resizer">&nbsp;</div>
+                                        </th>
+                                        <th data-column="2" class="govuk-table__header">No Required
+                                            <div class="resizer">&nbsp;</div>
+                                        </th>
+                                        <th data-column="1" class="govuk-table__header">Unit Price
+                                            <div class="resizer">&nbsp;</div>
+                                        </th>
+                                        <th class="govuk-table__header">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="govuk-table__body" id="testpurchasereqTableBody">
+                                    <!-- Data will be populated by JavaScript -->
+                                </tbody>
+                            </table>
                         </div>
-                        <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
-                            <ul class="govuk-pagination__list" id="milestonePagination"></ul>
-                        </nav>
+    
+                        <div class="sup_pagination_wrapper">
+                            <div class="sup_margin_top_bottom_5_10">
+                                <label for="recordsPerPage">Records per page</label>
+                                <select id="recordsPerPage" class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
+                                    aria-label="Select number of records per page">
+                                    <option value="5">5</option>
+                                    <option value="10" selected>10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+                            <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+                                <ul class="govuk-pagination__list" id="milestonePagination"></ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    
     </div>
-
-        <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
-            <div class="govuk-width-container sup_p_8 sup_text_center"> <span> &copy; copyright Defra 2025
-                </span>
-            </div>
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+        <div class="govuk-width-container sup_p_8 sup_text_center">
+            <span>
+                &copy; copyright Defra 2025
+            </span>
         </div>
     </div>
-</div>
     <!-- Add/Edit Test Purchase Requirement Modal -->
     <div class="modal fade" id="addTestModal" tabindex="-1" aria-labelledby="testModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
@@ -266,9 +245,7 @@
     </div>
 
     <script src="../js/pact_js/testpurchase_requirement.js"></script>
+    <script src="../js/defra-dialogs.js"></script>
 </body>
 
 </html>
-
-
-

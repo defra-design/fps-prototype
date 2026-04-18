@@ -622,8 +622,7 @@ function hideFinancialError() {
 let financialDeleteIndex = null;
 
 function openFinancialDeleteModal(dataIndex) {
-  showGovukConfirm("Are you sure you want to delete this record?").then((result) => {
-      if (result) {
+  if (confirm("Are you sure you want to delete this record?")) {
     milestoneData.splice(dataIndex, 1);
     filteredMilestoneData = [...milestoneData];
     const totalPages = Math.ceil(
@@ -635,7 +634,6 @@ function openFinancialDeleteModal(dataIndex) {
     renderMilestoneTable();
     updateMilestonePagination();
   }
-  });
 }
 
 function closeFinancialDeleteModal() {

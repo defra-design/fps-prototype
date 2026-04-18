@@ -418,27 +418,27 @@ function saveWIP() {
     
     // Validation
     if (!parentProject) {
-        showGovukAlert('Parent Project is required');
+        alert('Parent Project is required');
         return;
     }
     
     if (!wipEOY) {
-        showGovukAlert('WIP EOY is required');
+        alert('WIP EOY is required');
         return;
     }
     
     if (isNaN(parseFloat(wipEOY))) {
-        showGovukAlert('WIP EOY must be a valid number');
+        alert('WIP EOY must be a valid number');
         return;
     }
     
     if (wipLimit && isNaN(parseFloat(wipLimit))) {
-        showGovukAlert('WIP Limit must be a valid number');
+        alert('WIP Limit must be a valid number');
         return;
     }
     
     if (wipCurrent && isNaN(parseFloat(wipCurrent))) {
-        showGovukAlert('WIP Current must be a valid number');
+        alert('WIP Current must be a valid number');
         return;
     }
     
@@ -456,12 +456,12 @@ function saveWIP() {
         if (originalIndex >= 0) {
             wipData[originalIndex] = wipItem;
         }
-        showGovukAlert('WIP data updated successfully');
+        alert('WIP data updated successfully');
     } else {
         // Add new
         wipItem.id = wipData.length > 0 ? Math.max(...wipData.map(i => i.id)) + 1 : 1;
         wipData.push(wipItem);
-        showGovukAlert('WIP data added successfully');
+        alert('WIP data added successfully');
     }
     
     closeWIPModal();
@@ -481,16 +481,14 @@ function editWIP(index) {
  */
 function deleteWIP(index) {
     const item = filteredData[index];
-    showGovukConfirm(`Are you sure you want to delete ${item.parentProject}?`).then((result) => {
-        if (result) {
+    if (confirm(`Are you sure you want to delete ${item.parentProject}?`)) {
         const originalIndex = wipData.findIndex(w => w.id === item.id);
         if (originalIndex >= 0) {
             wipData.splice(originalIndex, 1);
-            showGovukAlert('WIP data deleted successfully');
+            alert('WIP data deleted successfully');
             filterAndRenderWIP();
         }
     }
-    });
 }
 
 // Initialize on page load

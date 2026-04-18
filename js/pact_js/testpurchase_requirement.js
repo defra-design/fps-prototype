@@ -295,7 +295,7 @@
                 }
             } catch (error) {
                 console.error('Error loading test purchase data:', error);
-                showGovukAlert('Failed to load test purchase requirements. Please refresh the page.');
+                alert('Failed to load test purchase requirements. Please refresh the page.');
             }
         }
 
@@ -450,7 +450,7 @@
 
                 // let id = testPurchaseData.findIndex((el)=> el.TestCode === testCode);
                 // if(id !== -1){
-                //     showGovukAlert('Test Code must be unique. A test with this code already exists.');
+                //     alert('Test Code must be unique. A test with this code already exists.');
                 //     return;
                 // }
 
@@ -520,8 +520,7 @@
 
         // Handle delete test
         function handleDeleteTest(testCode, index) {
-            showGovukConfirm('Are you sure you want to delete this test purchase requirement?').then((result) => {
-                if (result) {
+            if (confirm('Are you sure you want to delete this test purchase requirement?')) {
                 // Find in original array
                 const originalIndex = testPurchaseData.findIndex(item => 
                     item.TestCode === testCode && 
@@ -557,7 +556,6 @@
                     renderTable();
                 }
             }
-            });
         }
 
         // Modal event listeners
@@ -621,8 +619,8 @@
             document.getElementById("invoiecsubcontract").href =
                 "project_invoices_subcontracts.html?data=" + encodeURIComponent(encoded);
 
-            document.getElementById("milestones").href =
-                "project_mgmt_milestone.html?data=" + encodeURIComponent(encoded);
+            // document.getElementById("milestones").href =
+            //     "project_mgmt_milestone.html?data=" + encodeURIComponent(encoded);
 
             document.getElementById("testpurchasereq").href =
                 "project_mgmt_test_purchase_req.html?data=" + encodeURIComponent(encoded);

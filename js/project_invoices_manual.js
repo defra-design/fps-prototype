@@ -545,7 +545,7 @@ function setupModalEventListeners() {
  * Export filtered data to Excel
  */
 function exportToExcel() {
-    showGovukAlert('Export to Excel functionality - Requires XLSX library integration');
+    alert('Export to Excel functionality - Requires XLSX library integration');
     // This would use the xlsx library similar to workgroup_management.html
 }
 
@@ -614,7 +614,7 @@ function saveInvoice() {
     
     // Validation
     if (!project) {
-        showGovukAlert('Project field should not be empty');
+        alert('Project field should not be empty');
         return;
     }
     
@@ -633,11 +633,11 @@ function saveInvoice() {
     if (editingIndex !== null) {
         // Update existing entry
         invoicesData[editingIndex] = newEntry;
-        showGovukAlert('Invoice updated successfully!');
+        alert('Invoice updated successfully!');
     } else {
         // Add new entry
         invoicesData.push(newEntry);
-        showGovukAlert('Invoice added successfully!');
+        alert('Invoice added successfully!');
     }
     
     closeInvoiceModal();
@@ -658,13 +658,11 @@ function editInvoiceWithData(event) {
  * Delete invoice
  */
 function deleteInvoice(index) {
-    showGovukConfirm('Are you sure you want to delete this invoice?').then((result) => {
-        if (result) {
+    if (confirm('Are you sure you want to delete this invoice?')) {
         invoicesData.splice(index, 1);
         filterAndRenderInvoices();
-        showGovukAlert('Invoice deleted successfully!');
+        alert('Invoice deleted successfully!');
     }
-    });
 }
 
 /**

@@ -1248,38 +1248,36 @@ function deleteRecord(id, tableKey) {
   }
   if (!record) return;
 
-  showGovukConfirm("Are you sure you want to delete this record?").then((result) => {
-    if (!result) return;
+  if (!confirm("Are you sure you want to delete this record?")) return;
 
-    if (tableKey === "groups") {
-      if (selectedMaintenanceId && reportGroupLinks[selectedMaintenanceId]) {
-        reportGroupLinks[selectedMaintenanceId] = reportGroupLinks[
-          selectedMaintenanceId
-        ].filter(function (gid) {
-          return gid !== id;
-        });
-      }
-      refreshGroupsGrid();
-      return;
+  if (tableKey === "groups") {
+    if (selectedMaintenanceId && reportGroupLinks[selectedMaintenanceId]) {
+      reportGroupLinks[selectedMaintenanceId] = reportGroupLinks[
+        selectedMaintenanceId
+      ].filter(function (gid) {
+        return gid !== id;
+      });
     }
+    refreshGroupsGrid();
+    return;
+  }
 
-    s.data = s.data.filter(function (r) {
-      return r.id !== id;
-    });
-    s.filtered = s.data.slice();
-    if (id === selectedMaintenanceId) {
-      selectedMaintenanceId = null;
-      var lbl = document.getElementById("reportGroupsLabel");
-      if (lbl)
-        lbl.textContent =
-          "Report Groups that this report will appear in. Select a row above to view linked groups.";
-      refreshGroupsGrid();
-    }
-    var totalPages = Math.ceil(s.filtered.length / s.rowsPerPage);
-    if (s.currentPage > totalPages) s.currentPage = Math.max(1, totalPages);
-    renderTable(tableKey);
-    renderPagination(tableKey);
+  s.data = s.data.filter(function (r) {
+    return r.id !== id;
   });
+  s.filtered = s.data.slice();
+  if (id === selectedMaintenanceId) {
+    selectedMaintenanceId = null;
+    var lbl = document.getElementById("reportGroupsLabel");
+    if (lbl)
+      lbl.textContent =
+        "Report Groups that this report will appear in. Select a row above to view linked groups.";
+    refreshGroupsGrid();
+  }
+  var totalPages = Math.ceil(s.filtered.length / s.rowsPerPage);
+  if (s.currentPage > totalPages) s.currentPage = Math.max(1, totalPages);
+  renderTable(tableKey);
+  renderPagination(tableKey);
 }
 
 // ─────────────────────────────────────────────────────

@@ -733,20 +733,18 @@ function closeOtherModal() {
 
 // ── Delete ────────────────────────────────────────────
 function otherDeleteRecord(rec) {
-  showGovukConfirm("Are you sure you want to delete this record?").then((result) => {
-    if (!result) return;
-    var list = otherGetList(otherState.selectedKey);
-    if (!list) return;
-    list.data = list.data.filter(function (r) {
-      return String(r.id) !== String(rec.id);
-    });
-    var totalPages = Math.max(
-      1,
-      Math.ceil(list.data.length / otherState.rowsPerPage),
-    );
-    if (otherState.currentPage > totalPages) otherState.currentPage = totalPages;
-    renderValuesPanel(otherState.selectedKey);
+  if (!confirm("Are you sure you want to delete this record?")) return;
+  var list = otherGetList(otherState.selectedKey);
+  if (!list) return;
+  list.data = list.data.filter(function (r) {
+    return String(r.id) !== String(rec.id);
   });
+  var totalPages = Math.max(
+    1,
+    Math.ceil(list.data.length / otherState.rowsPerPage),
+  );
+  if (otherState.currentPage > totalPages) otherState.currentPage = totalPages;
+  renderValuesPanel(otherState.selectedKey);
 }
 
 // ── Bootstrap on DOMContentLoaded ────────────────────
