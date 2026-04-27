@@ -1705,3 +1705,25 @@ main {
 /* .govuk-link:visited {
     color: white !important;
 } */
+
+/* ── Column resize handles (used by costbook_resize_grid.js) ── */
+th.col-resizable {
+    position: relative;
+    overflow: visible;
+}
+
+.col-resizer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6px;
+    height: 100%;
+    cursor: col-resize;
+    z-index: 1;
+    user-select: none;
+}
+
+.col-resizer:hover,
+.col-resizer.resizing {
+    background-color: rgba(29, 112, 184, 0.25);
+}

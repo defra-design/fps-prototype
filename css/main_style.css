@@ -27,13 +27,22 @@
   
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body{
+   display: flex;
+   flex-direction: column; 
+}
 
 html,
 body {
   height: 100%;
   margin: 0;
   font-family: "GDS Transport";
-    background-color: #fff; 
+  background-color: #fff; 
 }
 
 .parent {
@@ -41,6 +50,10 @@ body {
   max-height: 100%;
   position: relative;
   background: #f0f8ff;
+}
+ 
+.content-wrapper {
+  flex: 1;
 }
 
 
@@ -374,15 +387,24 @@ td.action-cell:nth-child(5) {
   table-layout: auto;
 }
 
+.fps-sr-year-select,
+.fps-sr-year-option {
+    border: 0;
+    margin-left: 0;
+    outline: none !important;
+}
 
-
-
+.fps-sr-year-select:focus,
+.fps-sr-year-select:active {
+    outline: none !important;
+    border: 0 !important;
+}
 
 /* Header */
 .custom-table thead th {
   position: sticky;
   top: 0;
-  background-color: #f1f1f1;
+  background-color: #f4f8fb;
   z-index: 10;
   border-bottom: 1px solid #ccc;
 }
@@ -404,9 +426,9 @@ td.action-cell:nth-child(5) {
 }
 
 /* Prevent data bleed-through */
-.custom-table tbody td {
+/* .custom-table tbody td {
   background-color: #ffffff;
-}
+} */
 
 /* Optional row hover */
 .custom-table tbody tr:hover td{
@@ -415,7 +437,7 @@ td.action-cell:nth-child(5) {
 
 .custom-table thead th{
   box-shadow: 0 2px 2px rgba(0,0,0,0.05);
-  background: #edf4ff !important;
+  background: #f4f8fb !important;
   border: 1px solid #dee2e6 !important;
   text-align: center;
 }
@@ -1312,6 +1334,12 @@ button {
 }
 
 
+.down-arrow-img {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23333' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+}
 table, th, td, button, label, input , select, textarea{
     font-size: 16px !important;
 }

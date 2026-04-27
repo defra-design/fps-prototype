@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "workgroup": "Admin1",
+        "acctCat": "ADMIN",
+        "genBid": 15000.00
+    },
+    {
+        "id": 2,
+        "workgroup": "Admin2",
+        "acctCat": "ADMIN",
+        "genBid": 22000.00
+    },
+    {
+        "id": 3,
+        "workgroup": "Admin3",
+        "acctCat": "ADMIN",
+        "genBid": 18500.00
+    },
+    {
+        "id": 4,
+        "workgroup": "APH_SCAH1",
+        "acctCat": "APH_SCAH",
+        "genBid": 28000.00
+    },
+    {
+        "id": 5,
+        "workgroup": "APH_SCAH2",
+        "acctCat": "APH_SCAH",
+        "genBid": 31500.00
+    },
+    {
+        "id": 6,
+        "workgroup": "ASU1",
+        "acctCat": "ASU",
+        "genBid": 12500.00
+    },
+    {
+        "id": 7,
+        "workgroup": "ASU2",
+        "acctCat": "ASU",
+        "genBid": 19000.00
+    },
+    {
+        "id": 8,
+        "workgroup": "BM1",
+        "acctCat": "BM",
+        "genBid": 25000.00
+    },
+    {
+        "id": 9,
+        "workgroup": "BACT1",
+        "acctCat": "BACT",
+        "genBid": 16500.00
+    },
+    {
+        "id": 10,
+        "workgroup": "BACT2",
+        "acctCat": "BACT",
+        "genBid": 21000.00
+    }
+]

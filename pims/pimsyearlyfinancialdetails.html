@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yearly Financial Details - PIMS</title>
+    <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link href="../css/pims_style/nav_menu/navstyle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
+    <link rel="stylesheet" href="../css/pims_style/style.css" />
+    <link rel="stylesheet" href="../css/pims_style/pimsyearlyfinancialdetails.css" />
+    <script src="../js/pims_js/nav_menu/menutemplate.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" width="80px" alt="Animal and Plant Health Agency" />
+                </div>
+                <div class="pims-log">
+                    <span>PIMS</span>
+                </div>
+                <div class="pims-log" style="width: 160px; font-size: 16px">
+                    <label for="dpSelectyear" class="govuk-visually-hidden">Select year</label>
+                    <select id="dpSelectyear" aria-label="Select year dropdown" class="pims-log"
+                        style="border: 0; border-radius: 0; margin-left: 0px; width: 150px; outline: 0;">
+                        <option>2017-2018</option>
+                        <option>2018-2019</option>
+                        <option>2019-2020</option>
+                        <option>2020-2021</option>
+                        <option>2021-2022</option>
+                        <option>2022-2023</option>
+                        <option>2023-2024</option>
+                        <option>2024-2025</option>
+                        <option selected>2025-2026</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="header"></div>
+    <script src="../js/pims_js/nav_menu/script.js"></script>
+    <script>
+        document.getElementById("header").innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+
+    <div class="govuk-grid-row sup_border-bottom" style="padding: 0">
+        <h1 class="govuk-heading-s sup_margin_0" style="padding: 10px 0 5px 24px; border-bottom: 2px solid #1d70b8">
+            Yearly Financial Details</h1>
+    </div>
+
+    <div class="d-flex govuk-!-padding-top-2">
+        <nav class="sidenav flex-column flex-shrink-0" id="shortnav">
+            <button class="toggle-btn" onclick="toggleSidebar()" style="right: -8px; top: 30px">
+                <img src="../images/chevron-left-solid-full.svg" width="20" alt="side menu left arrow"
+                    style="margin: -2px 5px 0 0px" />
+            </button>
+            <ul>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="selectedprojectdetails.html" style="color: #fff">Project Details</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="#" style="color: #fff">Yearly Financial Details</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="#" style="color: #fff">A&F Report Data</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="pimsMilestones.html" style="color: #fff">Milestones</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="yearlyfinance.html" style="color: #fff">Yearly Finances</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="#" style="color: #fff">Invoices</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="#" style="color: #fff">Comments</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="#" style="color: #fff">Project Review</a>
+                </li>
+                <li class="sidebar-link-two"
+                    style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
+                    <a href="pmduser.html" style="color: #fff">PMD Milestone</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main-content" style="padding-top: 0; overflow: hidden;">
+
+            <!-- Toolbar -->
+            <div class="yfd-toolbar">
+                <div class="yfd-toolbar__left">
+                    <div class="yfd-toolbar__item">
+                        <label class="govuk-label tab-font-size" for="yfdProject">Project</label>
+                        <select class="govuk-select tab-font-size sup_select_option_width_100" id="yfdProject"
+                            aria-label="Select project">
+                            <!-- populated from pims-projects.json -->
+                        </select>
+                    </div>
+                    <div class="yfd-toolbar__item">
+                        <label class="govuk-label tab-font-size" for="yfdStartDate">Start Date</label>
+                        <input class="govuk-input govuk-input--width-10 tab-font-size" id="yfdStartDate"
+                            name="yfdStartDate" type="text" value="" readonly aria-readonly="true"
+                            aria-describedby="yfdStartDate-hint" />
+                    </div>
+                    <div class="yfd-toolbar__item">
+                        <label class="govuk-label tab-font-size" for="yfdEndDate">(Revised) End Date</label>
+                        <input class="govuk-input govuk-input--width-10 tab-font-size" id="yfdEndDate" name="yfdEndDate"
+                            type="text" value="" readonly aria-readonly="true" aria-describedby="yfdEndDate-hint" />
+                    </div>
+                </div>
+
+                <div class="yfd-toolbar__right">
+                    <div class="govuk-button-group sup_margin_0">
+                        <button type="button"
+                            class="govuk-button sup_margin_0 sup_flex_row_center_center govuk-!-font-size-16"
+                            data-module="govuk-button" id="btnYFDAdd" onclick="openYFDAddModal()"
+                            aria-label="Add new yearly financial details record">
+                            <img src="../images/circle-plus-solid-full-white.svg" alt="" width="16px" />
+                            &nbsp; Add New
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Grid header with Add button -->
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+
+                    <!-- Shared horizontal scroll: data table + totals table stay same width -->
+                    <div id="yfdDataScrollWrapper" class="yfd-scroll-wrapper sup_border ">
+
+                        <!-- Data table (vertical scroll only) -->
+                        <div class="yfd-data-scroll">
+                            <table id="tblYFD" class="govuk-table custom-table yfd-grid-table">
+                                <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">
+                                    Yearly
+                                    Financial Details</caption>
+                                <colgroup>
+                                    <col class="yfd-col-year" /><!-- Year -->
+                                    <col class="yfd-col-ppacc" /><!-- PP/Acc -->
+                                    <col class="yfd-col-income" /><!-- Customer Income -->
+                                    <col class="yfd-col-budget" /><!-- VLA Budget -->
+                                    <col class="yfd-col-actexp" /><!-- Actual Expenditure -->
+                                    <col class="yfd-col-seedcorn" /><!-- Seedcorn -->
+                                    <col class="yfd-col-manhours" /><!-- Man Hours -->
+                                    <col class="yfd-col-pay" /><!-- Pay Costs -->
+                                    <col class="yfd-col-nonpay" /><!-- NonPay & OH Costs -->
+                                    <col class="yfd-col-test" /><!-- Test Costs -->
+                                    <col class="yfd-col-projspec" /><!-- Project Specific -->
+                                    <col class="yfd-col-animal" /><!-- Animal -->
+                                    <col class="yfd-col-excadj" /><!-- Exceptional Adjustment -->
+                                    <col class="yfd-col-adjcomment" /><!-- Adjustment Comment -->
+                                    <col class="yfd-col-actions" /><!-- Actions -->
+                                </colgroup>
+                                <thead class="govuk-table__head">
+                                    <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header sortable-header" data-column="0"
+                                            style="cursor:pointer;white-space:nowrap;">Year <span
+                                                class="sort-icon"></span></th>
+                                        <th scope="col" class="govuk-table__header sortable-header" data-column="1"
+                                            style="cursor:pointer;white-space:nowrap;">PP/Acc <span
+                                                class="sort-icon"></span></th>
+                                        <th scope="col" class="govuk-table__header sortable-header" data-column="2"
+                                            style="cursor:pointer;white-space:nowrap;">Customer Income <span
+                                                class="sort-icon"></span></th>
+                                        <th scope="col" class="govuk-table__header sortable-header" data-column="3"
+                                            style="cursor:pointer;white-space:nowrap;">VLA Budget <span
+                                                class="sort-icon"></span></th>
+                                        <th scope="col" class="govuk-table__header sortable-header" data-column="4"
+                                            style="cursor:pointer;white-space:nowrap;">Actual Expenditure <span
+                                                class="sort-icon"></span></th>
+                                        <th scope="col" class="govuk-table__header sortable-header" data-column="5"
+                                            style="cursor:pointer;white-space:nowrap;">Seedcorn <span
+                                                class="sort-icon"></span></th>
+                                        <th scope="col" class="govuk-table__header sortable-header" data-column="6"
+                                            style="cursor:pointer;white-space:nowrap;">Man Hours <span
+                                                class="sort-icon"></span></th>
+                                        <th scope="col" class="govuk-table__header sortable-header" data-column="7"
+                                            style="cursor:pointer;white-space:nowrap;">Pay Costs <span
+                                                class="sort-icon"></span></th>
+                                        <th scope="col" class="govuk-table__header sortable-header" data-column="8"
+                                            style="cursor:pointer;white-space:nowrap;">NonPay &amp; OH Costs <span
+                                                class="sort-icon"></span></th>
+                                        <th scope="col" class="govuk-table__header sortable-header" data-column="9"
+                                            style="cursor:pointer;white-space:nowrap;">Test Costs <span
+                                                class="sort-icon"></span></th>
+                                        <th scope="col" class="govuk-table__header sortable-header" data-column="10"
+                                            style="cursor:pointer;white-space:nowrap;">Project Specific <span
+                                                class="sort-icon"></span></th>
+                                        <th scope="col" class="govuk-table__header sortable-header" data-column="11"
+                                            style="cursor:pointer;white-space:nowrap;">Animal <span
+                                                class="sort-icon"></span></th>
+                                        <th scope="col" class="govuk-table__header sortable-header" data-column="12"
+                                            style="cursor:pointer;white-space:nowrap;">Exceptional Adjustment <span
+                                                class="sort-icon"></span></th>
+                                        <th scope="col" class="govuk-table__header sortable-header" data-column="13"
+                                            style="cursor:pointer;white-space:nowrap;">Adjustment Comment <span
+                                                class="sort-icon"></span></th>
+                                        <th scope="col" class="govuk-table__header">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="govuk-table__body" id="tblYFDBody">
+                                    <!-- Rows injected by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Totals table removed from here — rendered below pagination -->
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="sup_pagination_footer sup_border">
+                        <div class="sup_pagination_wrapper">
+                            <div class="sup_margin_top_bottom_5_10">
+                                <label class="pagination-label govuk-!-font-size-16" for="yfdRecordsPerPage">Records per
+                                    page</label>
+                                <select id="yfdRecordsPerPage" class="govuk-select sup_select_pagination_width"
+                                    aria-label="Select number of records per page">
+                                    <option value="5" selected>5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+                            <nav class="govuk-pagination govuk-!-margin-bottom-0" aria-label="Pagination">
+                                <ul class="govuk-pagination__list" id="yfdPagination">
+                                    <!-- Pagination items rendered by JS -->
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- Totals table — below pagination, scroll wrapper matches data table -->
+                    <div id="yfdTotalsScrollWrapper" class="yfd-scroll-wrapper" style="margin-top: 5px;">
+                        <table id="tblYFDTotals" class="govuk-table custom-table yfd-totals-table yfd-grid-table"
+                            aria-label="Totals row">
+                            <colgroup>
+                                <col class="yfd-col-year" />
+                                <col class="yfd-col-ppacc" />
+                                <col class="yfd-col-income" />
+                                <col class="yfd-col-budget" />
+                                <col class="yfd-col-actexp" />
+                                <col class="yfd-col-seedcorn" />
+                                <col class="yfd-col-manhours" />
+                                <col class="yfd-col-pay" />
+                                <col class="yfd-col-nonpay" />
+                                <col class="yfd-col-test" />
+                                <col class="yfd-col-projspec" />
+                                <col class="yfd-col-animal" />
+                                <col class="yfd-col-excadj" />
+                                <col class="yfd-col-adjcomment" />
+                                <col class="yfd-col-actions" />
+                            </colgroup>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell yfd-total-label" colspan="2">Totals</td>
+
+                                    <td class="govuk-table__cell" id="totalCustomerIncome"></td>
+                                    <td class="govuk-table__cell" id="totalVLABudget"></td>
+                                    <td class="govuk-table__cell" id="totalActualExp"></td>
+                                    <td class="govuk-table__cell" id="totalSeedcorn"></td>
+                                    <td class="govuk-table__cell" id="totalManHours"></td>
+                                    <td class="govuk-table__cell" id="totalPayCosts"></td>
+                                    <td class="govuk-table__cell" id="totalNonPay"></td>
+                                    <td class="govuk-table__cell" id="totalTestCosts"></td>
+                                    <td class="govuk-table__cell" id="totalProjectSpecific"></td>
+                                    <td class="govuk-table__cell" id="totalAnimal"></td>
+                                    <td class="govuk-table__cell" colspan="3"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+        <div class="govuk-width-container sup_p_8 text-center">
+            <span>&copy; Copyright Defra 2025</span>
+        </div>
+    </div>
+
+    <!-- Add / Edit Modal -->
+    <div id="yfdModal" class="govuk-edit-modal" role="dialog" aria-modal="true" aria-labelledby="yfdModalTitle">
+        <div class="govuk-edit-modal-dialog" style="max-width: 900px; width: 95%;">
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-edit-modal__title" id="yfdModalTitle">Add New Yearly Record</h2>
+                <button type="button" onclick="closeYFDModal()" class="govuk-edit-modal__close-btn"
+                    aria-label="Close">&#x2715;</button>
+            </div>
+            <div class="govuk-edit-modal__body yfd-modal-body">
+                <p class="yfd-mandatory-note yfd-modal-mandatory-note"><span aria-hidden="true">*</span> Mandatory
+                    fields</p>
+                <form id="formYFD" novalidate>
+                    <!-- DB / server-level error summary -->
+                    <div id="yfdFormError" class="govuk-error-summary yfd-form-error-summary" role="alert"
+                        aria-labelledby="yfdFormError-title" tabindex="-1">
+                        <h2 class="govuk-error-summary__title" id="yfdFormError-title">There is a problem</h2>
+                        <div class="govuk-error-summary__body">
+                            <p id="yfdFormErrorMsg" class="govuk-body govuk-!-margin-bottom-0"></p>
+                        </div>
+                    </div>
+                    <div class="yfd-modal-columns">
+
+                        <!-- Left column: primary cost fields -->
+                        <div class="yfd-modal-col-left">
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalProject">
+                                    Project:
+                                </label>
+                                <input class="govuk-input govuk-!-font-size-16" id="yfdModalProject"
+                                    name="yfdModalProject" type="text" readonly aria-readonly="true" value="MD3024" />
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalYear">Year:
+                                    <!--  <span class="yfd-required-mark" aria-hidden="true">*</span> -->
+                                </label>
+                                <input class="govuk-input govuk-!-font-size-16" id="yfdModalYear" name="yfdModalYear"
+                                    type="text" required aria-required="true" placeholder="e.g. 2026" maxlength="4"
+                                    aria-describedby="yfdModalYear-error" />
+                                <p class="govuk-error-message" id="yfdModalYear-error"
+                                    style="display:none; font-size:13px; margin-top:4px;"><span
+                                        class="govuk-visually-hidden">Error:</span> Year is required</p>
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalPPAcc">
+                                    PP/Acc:
+                                </label>
+                                <input class="govuk-input govuk-!-font-size-16" id="yfdModalPPAcc" name="yfdModalPPAcc"
+                                    type="number" step="any" inputmode="decimal"
+                                    aria-describedby="yfdModalPPAcc-error" />
+                                <p class="govuk-error-message" id="yfdModalPPAcc-error"
+                                    style="display:none; font-size:13px; margin-top:4px;"><span
+                                        class="govuk-visually-hidden">Error:</span> Enter a valid number</p>
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalCustomerIncome">
+                                    Customer Income:
+                                </label>
+                                <div class="govuk-input__wrapper">
+                                    <input class="govuk-input govuk-!-font-size-16" id="yfdModalCustomerIncome"
+                                        name="yfdModalCustomerIncome" type="text" inputmode="decimal"
+                                        aria-describedby="yfdModalCustomerIncome-error" />
+                                </div>
+                                <p class="govuk-error-message" id="yfdModalCustomerIncome-error"
+                                    style="display:none; font-size:13px; margin-top:4px;"><span
+                                        class="govuk-visually-hidden">Error:</span> Enter a valid number</p>
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalVLABudget">
+                                    VLA Budget:
+                                </label>
+                                <div class="govuk-input__wrapper">
+                                    <input class="govuk-input govuk-!-font-size-16" id="yfdModalVLABudget"
+                                        name="yfdModalVLABudget" type="text" inputmode="decimal"
+                                        aria-describedby="yfdModalVLABudget-error" />
+                                </div>
+                                <p class="govuk-error-message" id="yfdModalVLABudget-error"
+                                    style="display:none; font-size:13px; margin-top:4px;"><span
+                                        class="govuk-visually-hidden">Error:</span> Enter a valid number</p>
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalSeedcorn">
+                                    Seedcorn:
+                                </label>
+                                <div class="govuk-input__wrapper">
+                                    <input class="govuk-input govuk-!-font-size-16" id="yfdModalSeedcorn"
+                                        name="yfdModalSeedcorn" type="text" inputmode="decimal"
+                                        aria-describedby="yfdModalSeedcorn-error" />
+                                </div>
+                                <p class="govuk-error-message" id="yfdModalSeedcorn-error"
+                                    style="display:none; font-size:13px; margin-top:4px;"><span
+                                        class="govuk-visually-hidden">Error:</span> Enter a valid number</p>
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalPayCosts">
+                                    Pay Costs:
+                                </label>
+                                <div class="govuk-input__wrapper">
+                                    <input class="govuk-input govuk-!-font-size-16" id="yfdModalPayCosts"
+                                        name="yfdModalPayCosts" type="text" inputmode="decimal"
+                                        aria-describedby="yfdModalPayCosts-error" />
+                                </div>
+                                <p class="govuk-error-message" id="yfdModalPayCosts-error"
+                                    style="display:none; font-size:13px; margin-top:4px;"><span
+                                        class="govuk-visually-hidden">Error:</span> Enter a valid number</p>
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalNonPay">
+                                    Non-Pay &amp; OH Costs:
+                                </label>
+                                <div class="govuk-input__wrapper">
+                                    <input class="govuk-input govuk-!-font-size-16" id="yfdModalNonPay"
+                                        name="yfdModalNonPay" type="text" inputmode="decimal"
+                                        aria-describedby="yfdModalNonPay-error" />
+                                </div>
+                                <p class="govuk-error-message" id="yfdModalNonPay-error"
+                                    style="display:none; font-size:13px; margin-top:4px;"><span
+                                        class="govuk-visually-hidden">Error:</span> Enter a valid number</p>
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalTestCosts">
+                                    Test Costs:
+                                </label>
+                                <div class="govuk-input__wrapper">
+                                    <input class="govuk-input govuk-!-font-size-16" id="yfdModalTestCosts"
+                                        name="yfdModalTestCosts" type="text" inputmode="decimal"
+                                        aria-describedby="yfdModalTestCosts-error" />
+                                </div>
+                                <p class="govuk-error-message" id="yfdModalTestCosts-error"
+                                    style="display:none; font-size:13px; margin-top:4px;"><span
+                                        class="govuk-visually-hidden">Error:</span> Enter a valid number</p>
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalAnimalCosts">
+                                    Animal Costs:
+                                </label>
+                                <div class="govuk-input__wrapper">
+                                    <input class="govuk-input govuk-!-font-size-16" id="yfdModalAnimalCosts"
+                                        name="yfdModalAnimalCosts" type="text" inputmode="decimal"
+                                        aria-describedby="yfdModalAnimalCosts-error" />
+                                </div>
+                                <p class="govuk-error-message" id="yfdModalAnimalCosts-error"
+                                    style="display:none; font-size:13px; margin-top:4px;"><span
+                                        class="govuk-visually-hidden">Error:</span> Enter a valid number</p>
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalProjectSpecific">
+                                    Project-Specific Costs:
+                                </label>
+                                <div class="govuk-input__wrapper">
+                                    <input class="govuk-input govuk-!-font-size-16" id="yfdModalProjectSpecific"
+                                        name="yfdModalProjectSpecific" type="text" inputmode="decimal"
+                                        aria-describedby="yfdModalProjectSpecific-error" />
+                                </div>
+                                <p class="govuk-error-message" id="yfdModalProjectSpecific-error"
+                                    style="display:none; font-size:13px; margin-top:4px;"><span
+                                        class="govuk-visually-hidden">Error:</span> Enter a valid number</p>
+                            </div>
+
+                            <fieldset class="govuk-fieldset yfd-fieldset-mantime">
+                                <legend class="govuk-fieldset__legend govuk-!-font-size-14 govuk-!-font-weight-bold">
+                                    Approximate Man-Time (fill in one)
+                                </legend>
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label class="govuk-label govuk-!-font-size-16" for="yfdModalManHours">
+                                        Appr. Man Hours:
+                                    </label>
+                                    <input class="govuk-input govuk-!-font-size-16 govuk-input--width-10"
+                                        id="yfdModalManHours" name="yfdModalManHours" type="number" step="any"
+                                        inputmode="decimal" min="0" aria-describedby="yfdModalManHours-error" />
+                                    <p class="govuk-error-message" id="yfdModalManHours-error"
+                                        style="display:none; font-size:13px; margin-top:4px;"><span
+                                            class="govuk-visually-hidden">Error:</span> Enter a valid number (0 or
+                                        above)</p>
+                                </div>
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label class="govuk-label govuk-!-font-size-16" for="yfdModalManDays">
+                                        Appr. Man Days:
+                                    </label>
+                                    <input class="govuk-input govuk-!-font-size-16 govuk-input--width-10"
+                                        id="yfdModalManDays" name="yfdModalManDays" type="number" step="any"
+                                        inputmode="decimal" min="0" aria-describedby="yfdModalManDays-error" />
+                                    <p class="govuk-error-message" id="yfdModalManDays-error"
+                                        style="display:none; font-size:13px; margin-top:4px;"><span
+                                            class="govuk-visually-hidden">Error:</span> Enter a valid number (0 or
+                                        above)</p>
+                                </div>
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label class="govuk-label govuk-!-font-size-16" for="yfdModalManYears">
+                                        Appr. Man Years:
+                                    </label>
+                                    <input class="govuk-input govuk-!-font-size-16 govuk-input--width-10"
+                                        id="yfdModalManYears" name="yfdModalManYears" type="number" step="any"
+                                        inputmode="decimal" min="0" aria-describedby="yfdModalManYears-error" />
+                                    <p class="govuk-error-message" id="yfdModalManYears-error"
+                                        style="display:none; font-size:13px; margin-top:4px;"><span
+                                            class="govuk-visually-hidden">Error:</span> Enter a valid number (0 or
+                                        above)</p>
+                                </div>
+                            </fieldset>
+                            <div class="govuk-form-group sup_margin_bottom_10" style="margin-top: 8px;">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalTotalCosts">
+                                    Total Costs:
+                                </label>
+                                <div class="govuk-input__wrapper">
+
+                                    <input class="govuk-input govuk-!-font-size-16" id="yfdModalTotalCosts"
+                                        name="yfdModalTotalCosts" type="text" value="0.00" readonly
+                                        aria-readonly="true" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Centre column: Adjustment + Actual Pact Details -->
+
+                        <div class="yfd-modal-col-centre">
+
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalAdjustment">
+                                    Adjustment (+/-):
+                                </label>
+                                <div class="govuk-input__wrapper">
+                                    <input class="govuk-input govuk-!-font-size-16" id="yfdModalAdjustment"
+                                        name="yfdModalAdjustment" type="text" inputmode="decimal"
+                                        aria-describedby="yfdModalAdjustment-error" />
+                                </div>
+                                <p class="govuk-error-message" id="yfdModalAdjustment-error"
+                                    style="display:none; font-size:13px; margin-top:4px;"><span
+                                        class="govuk-visually-hidden">Error:</span> Enter a valid number</p>
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalAdjComment">
+                                    Adjustment Comment:
+                                </label>
+                                <textarea class="govuk-textarea govuk-!-font-size-16 sup_margin_0"
+                                    id="yfdModalAdjComment" name="yfdModalAdjComment" rows="6"></textarea>
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10" id="yfdActualPactGroup">
+                                <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                    for="yfdModalActualPact">
+                                    Actual (Pact) Details:
+                                </label>
+                                <textarea class="govuk-textarea govuk-!-font-size-16 sup_margin_0"
+                                    id="yfdModalActualPact" name="yfdModalActualPact" rows="6"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Right column: Costing panel -->
+
+                        <div class="yfd-modal-col-right">
+                            <div class="yfd-update-costing-wrapper">
+                                <button type="button"
+                                    class="govuk-button govuk-button--secondary govuk-!-font-size-16 sup_margin_0"
+                                    onclick="updateCosting()" aria-label="Update costing values">
+                                    Update Costing
+                                </button>
+                            </div>
+                            <div id="yfdCostingPanel" class="yfd-costing-panel yfd-costing-panel--disabled"
+                                aria-disabled="true">
+                                <div class="yfd-costing-panel__header">
+                                    <button type="button" class="govuk-button govuk-!-font-size-16 sup_margin_0"
+                                        onclick="fixCosting()" aria-label="Fix costing">
+                                        Fix Costing
+                                    </button>
+                                    <div class="govuk-checkboxes govuk-checkboxes--small yfd-costing-panel__checkbox"
+                                        data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item" style="margin: 0;">
+                                            <input class="govuk-checkboxes__input " id="yfdModalFixed"
+                                                name="yfdModalFixed" type="checkbox" value="fixed" />
+                                            <label
+                                                class="govuk-label govuk-checkboxes__label sup_label_auto_width govuk-!-font-size-16"
+                                                for="yfdModalFixed">Fixed</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label class="govuk-label govuk-!-font-size-16" for="yfdModalDateFixed">
+                                        Date Fixed:
+                                    </label>
+                                    <input class="govuk-input govuk-!-font-size-16" id="yfdModalDateFixed"
+                                        name="yfdModalDateFixed" type="text"
+                                        aria-describedby="yfdModalDateFixed-error" />
+                                    <p class="govuk-error-message" id="yfdModalDateFixed-error"
+                                        style="display:none; font-size:13px; margin-top:4px;"><span
+                                            class="govuk-visually-hidden">Error:</span> Enter a date </p>
+                                </div>
+                                <div class="govuk-form-group sup_margin_bottom_10">
+                                    <label class="govuk-label govuk-!-font-size-16" for="yfdModalFixedBy">
+                                        Fixed By:
+                                    </label>
+                                    <input class="govuk-input govuk-!-font-size-16" id="yfdModalFixedBy"
+                                        name="yfdModalFixedBy" type="text" />
+                                </div>
+                                <hr class="yfd-costing-panel__divider" />
+                                <div class="yfd-costing-reported">
+                                    <p class="govuk-!-font-weight-bold yfd-costing-reported__label">
+                                        Actual Expenditure Reported as:
+                                    </p>
+                                    <p class="govuk-body govuk-!-font-size-16 yfd-costing-reported__value--spaced"
+                                        id="yfdActualExpReported">
+                                        —
+                                    </p>
+                                    <p class="govuk-!-font-weight-bold yfd-costing-reported__label">
+                                        Actual ManYears Reported as:
+                                    </p>
+                                    <p class="govuk-body govuk-!-font-size-16" id="yfdActualManYearsReported">
+                                        —
+                                    </p>
+                                </div>
+                            </div><!-- /grey border div -->
+                        </div><!-- /right column -->
+
+                    </div>
+                </form>
+            </div>
+            <div class="govuk-edit-modal__footer yfd-modal-footer">
+                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0 govuk-!-font-size-16"
+                    data-module="govuk-button" onclick="closeYFDModal()">Cancel</button>
+                <div>
+                    <button type="button" class="govuk-button sup_margin_0 govuk-!-font-size-16"
+                        data-module="govuk-button" id="yfdSaveBtn" onclick="saveYFD()">Save</button>
+                    <button type="button" class="govuk-button sup_margin_0 govuk-!-font-size-16"
+                        data-module="govuk-button" id="yfdUpdateBtn" style="display: none;"
+                        onclick="saveYFD()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Details / View Modal -->
+    <div id="yfdDetailsModal" class="govuk-edit-modal" role="dialog" aria-modal="true"
+        aria-labelledby="yfdDetailsModalTitle">
+        <div class="govuk-edit-modal-dialog" style="max-width: 900px; width: 95%;">
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-edit-modal__title" id="yfdDetailsModalTitle">PIMS Details</h2>
+                <button type="button" onclick="closeYFDDetailsModal()" class="govuk-edit-modal__close-btn"
+                    aria-label="Close details">&#x2715;</button>
+            </div>
+            <div class="govuk-edit-modal__body yfd-modal-body">
+                <div class="yfd-modal-columns">
+
+                    <!-- Left column: all cost fields readonly -->
+                    <div class="yfd-modal-col-left">
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="detProject">Project:</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="detProject" type="text" readonly
+                                aria-readonly="true" />
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="detYear">Year:</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="detYear" type="text" readonly
+                                aria-readonly="true" />
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="detPPAcc">PP/Acc:</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="detPPAcc" type="text" readonly
+                                aria-readonly="true" />
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="detCustomerIncome">Customer Income:</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="detCustomerIncome" type="text" readonly
+                                aria-readonly="true" />
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="detVLABudget">VLA Budget:</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="detVLABudget" type="text" readonly
+                                aria-readonly="true" />
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="detSeedcorn">Seedcorn:</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="detSeedcorn" type="text" readonly
+                                aria-readonly="true" />
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="detPayCosts">Pay Costs:</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="detPayCosts" type="text" readonly
+                                aria-readonly="true" />
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="detNonPay">Non-Pay &amp; OH Costs:</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="detNonPay" type="text" readonly
+                                aria-readonly="true" />
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="detTestCosts">Test Costs:</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="detTestCosts" type="text" readonly
+                                aria-readonly="true" />
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="detAnimalCosts">Animal Costs:</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="detAnimalCosts" type="text" readonly
+                                aria-readonly="true" />
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="detProjectSpecific">Project-Specific Costs:</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="detProjectSpecific" type="text" readonly
+                                aria-readonly="true" />
+                        </div>
+                        <fieldset class="govuk-fieldset yfd-fieldset-mantime">
+                            <legend class="govuk-fieldset__legend govuk-!-font-size-14 govuk-!-font-weight-bold">
+                                Approximate Man-Time</legend>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-size-16" for="detManHours">Appr. Man
+                                    Hours:</label>
+                                <input class="govuk-input govuk-!-font-size-16 govuk-input--width-10" id="detManHours"
+                                    type="text" readonly aria-readonly="true" />
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-size-16" for="detManDays">Appr. Man Days:</label>
+                                <input class="govuk-input govuk-!-font-size-16 govuk-input--width-10" id="detManDays"
+                                    type="text" readonly aria-readonly="true" />
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-size-16" for="detManYears">Appr. Man
+                                    Years:</label>
+                                <input class="govuk-input govuk-!-font-size-16 govuk-input--width-10" id="detManYears"
+                                    type="text" readonly aria-readonly="true" />
+                            </div>
+                        </fieldset>
+                        <div class="govuk-form-group sup_margin_bottom_10" style="margin-top: 8px;">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="detTotalCosts">Total Costs:</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="detTotalCosts" type="text" readonly
+                                aria-readonly="true" />
+                        </div>
+                    </div>
+
+                    <!-- Centre column: Actual (Pact) Details display + Adjustment -->
+                    <div class="yfd-modal-col-centre">
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <p class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                style="margin-bottom: 6px;">Actual (Pact) Details</p>
+                            <table class="yfd-pact-table" id="detActualPactDisplay">
+                                <tr>
+                                    <td class="yfd-pact-table__label">Customer Income</td>
+                                    <td class="yfd-pact-table__value"><input type="text" class="yfd-pact-input"
+                                            id="pactCustomerIncome" readonly aria-readonly="true" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="yfd-pact-table__label">VLA Budget</td>
+                                    <td class="yfd-pact-table__value"><input type="text" class="yfd-pact-input"
+                                            id="pactVLABudget" readonly aria-readonly="true" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="yfd-pact-table__label">Pay</td>
+                                    <td class="yfd-pact-table__value"><input type="text" class="yfd-pact-input"
+                                            id="pactPay" readonly aria-readonly="true" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="yfd-pact-table__label">NonPayOH</td>
+                                    <td class="yfd-pact-table__value"><input type="text" class="yfd-pact-input"
+                                            id="pactNonPayOH" readonly aria-readonly="true" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="yfd-pact-table__label--indent">(Total Time Costs)</td>
+                                    <td class="yfd-pact-table__value"><input type="text" class="yfd-pact-input"
+                                            id="pactTotalTimeCosts" readonly aria-readonly="true" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="yfd-pact-table__label">Test</td>
+                                    <td class="yfd-pact-table__value"><input type="text" class="yfd-pact-input"
+                                            id="pactTest" readonly aria-readonly="true" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="yfd-pact-table__label">Animal</td>
+                                    <td class="yfd-pact-table__value"><input type="text" class="yfd-pact-input"
+                                            id="pactAnimal" readonly aria-readonly="true" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="yfd-pact-table__label">Project Specific</td>
+                                    <td class="yfd-pact-table__value"><input type="text" class="yfd-pact-input"
+                                            id="pactProjectSpecific" readonly aria-readonly="true" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="yfd-pact-table__label">Total Costs</td>
+                                    <td class="yfd-pact-table__value"><input type="text" class="yfd-pact-input"
+                                            id="pactTotalCosts" readonly aria-readonly="true" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="yfd-pact-table__label">Man Hours</td>
+                                    <td class="yfd-pact-table__value"><input type="text" class="yfd-pact-input"
+                                            id="pactManHours" readonly aria-readonly="true" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="yfd-pact-table__label--indent">(Man Days)</td>
+                                    <td class="yfd-pact-table__value"><input type="text" class="yfd-pact-input"
+                                            id="pactManDays" readonly aria-readonly="true" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="yfd-pact-table__label--indent">(Man Years)</td>
+                                    <td class="yfd-pact-table__value"><input type="text" class="yfd-pact-input"
+                                            id="pactManYears" readonly aria-readonly="true" /></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="detAdjustment">Adjustment (+/-):</label>
+                            <input class="govuk-input govuk-!-font-size-16" id="detAdjustment" type="text" readonly
+                                aria-readonly="true" />
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16"
+                                for="detAdjComment">Adjustment Comment:</label>
+                            <textarea class="govuk-textarea govuk-!-font-size-16 sup_margin_0" id="detAdjComment"
+                                rows="5" readonly aria-readonly="true"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Right column: costing details (readonly, panel always enabled) -->
+                    <div class="yfd-modal-col-right">
+                        <div class="yfd-update-costing-wrapper">
+                            <button type="button"
+                                class="govuk-button govuk-button--secondary govuk-!-font-size-16 sup_margin_0" disabled
+                                aria-disabled="true" aria-label="Update costing values">
+                                Update Costing
+                            </button>
+                        </div>
+                        <div class="yfd-costing-panel">
+                            <div class="yfd-costing-panel__header">
+                                <button type="button"
+                                    class="govuk-button govuk-button--secondary govuk-!-font-size-16 sup_margin_0"
+                                    disabled aria-disabled="true" aria-label="Fix costing">
+                                    Fix Costing
+                                </button>
+                                <div class="govuk-checkboxes govuk-checkboxes--small yfd-costing-panel__checkbox">
+                                    <div class="govuk-checkboxes__item" style="margin: 0;">
+                                        <input class="govuk-checkboxes__input" id="detFixed" type="checkbox" disabled />
+                                        <label
+                                            class="govuk-label govuk-checkboxes__label sup_label_auto_width govuk-!-font-size-16"
+                                            for="detFixed">Fixed</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-size-16" for="detDateFixed">Date Fixed:</label>
+                                <input class="govuk-input govuk-!-font-size-16 " id="detDateFixed" type="text" readonly
+                                    aria-readonly="true" />
+                            </div>
+                            <div class="govuk-form-group sup_margin_bottom_10">
+                                <label class="govuk-label govuk-!-font-size-16" for="detFixedBy">Fixed By:</label>
+                                <input class="govuk-input govuk-!-font-size-16" id="detFixedBy" type="text" readonly
+                                    aria-readonly="true" />
+                            </div>
+                            <hr class="yfd-costing-panel__divider" />
+                            <div class="yfd-costing-reported">
+                                <p class="govuk-!-font-weight-bold yfd-costing-reported__label">Actual
+                                    Expenditure Reported as:</p>
+                                <p class="govuk-body govuk-!-font-size-16 yfd-costing-reported__value--spaced"
+                                    id="detActualExpReported">&mdash;</p>
+                                <p class="govuk-!-font-weight-bold yfd-costing-reported__label">Actual
+                                    ManYears Reported as:</p>
+                                <p class="govuk-body govuk-!-font-size-16" id="detActualManYearsReported">&mdash;</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="govuk-edit-modal__footer yfd-modal-footer">
+                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0 govuk-!-font-size-16"
+                    onclick="closeYFDDetailsModal()">Cancel</button>
+                <button type="button" class="govuk-button sup_margin_0 govuk-!-font-size-16"
+                    onclick="closeYFDDetailsModal()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirm Modal -->
+    <div id="yfdDeleteModal" class="govuk-edit-modal" role="dialog" aria-modal="true"
+        aria-labelledby="yfdDeleteModalTitle">
+        <div class="govuk-edit-modal-dialog" style="max-width: 420px;">
+            <div class="govuk-edit-modal__header">
+                <h2 class="govuk-edit-modal__title" id="yfdDeleteModalTitle">Confirm Delete</h2>
+                <button type="button" onclick="closeYFDDeleteModal()" class="govuk-edit-modal__close-btn"
+                    aria-label="Close delete confirmation">&#x2715;</button>
+            </div>
+            <div class="govuk-edit-modal__body">
+                <p class="govuk-body">Are you sure you want to delete the record for year
+                    <strong id="yfdDeleteYearLabel"></strong>? This action cannot be undone.
+                </p>
+            </div>
+            <div class="govuk-edit-modal__footer yfd-modal-footer">
+                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0 govuk-!-font-size-16"
+                    onclick="closeYFDDeleteModal()">Cancel</button>
+                <button type="button" class="govuk-button govuk-button--warning sup_margin_0 govuk-!-font-size-16"
+                    id="yfdConfirmDeleteBtn" onclick="confirmDeleteYFD()">Delete</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../js/pims_js/table_utils.js"></script>
+    <script src="../js/pims_js/pimsyearlyfinancialdetails.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            tuInitResize("tblYFD");
+        });
+    </script>
+</body>
+
+</html>

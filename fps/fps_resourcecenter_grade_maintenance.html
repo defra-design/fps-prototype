@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2025-2026 : Resource Centre Grade Maintenance</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css">
+    <link rel="stylesheet" href="../css/fps_styles/styles.css">
+    <link rel="stylesheet" href="../css/main_style.css">
+    <link rel="stylesheet" href="../css/fps_styles/suppliement_style_fps.css">
+    <link rel="stylesheet" href="../css/fps_styles/fps_maintenance_pages.css">
+</head>
+<body>
+
+<header>
+    <div class="header-nav">
+        <div class="pims-log-wrapper">
+            <div>
+                <img src="../images/defra_logo.png" alt="Logo of Animal &amp; Plant Health Agency" width="80px">
+            </div>
+            <div class="pims-log">
+                <span class="pva-logo-text">FPS</span>
+            </div>
+            <div class="pims-log">
+                <select class="pims-log pva-year-select" aria-label="Select financial year">
+                    <option class="pims-log pva-year-option">2017-2018</option>
+                    <option class="pims-log pva-year-option">2018-2019</option>
+                    <option class="pims-log pva-year-option">2019-2020</option>
+                    <option class="pims-log pva-year-option">2020-2021</option>
+                    <option class="pims-log pva-year-option">2021-2022</option>
+                    <option class="pims-log pva-year-option">2022-2023</option>
+                    <option class="pims-log pva-year-option">2023-2024</option>
+                    <option class="pims-log pva-year-option">2024-2025</option>
+                    <option class="pims-log pva-year-option" selected>2025-2026</option>
+                </select>
+            </div>
+        </div>
+        <div class="btn-group pva-user-group">
+            Ken Rod
+            <button type="button" aria-label="User menu, go to home page" class="btn btn-secondary dropdown-toggle user-menu pva-user-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../images/circle-user-regular-full.svg" alt="User icon" width="24">
+                <img src="../images/down-arrow.png" alt="Dropdown arrow" width="30px" height="30px">
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a href="../index.html" class="dropdown-item" type="button">
+                    <img src="../images/house-user-solid-full.svg" alt="Home icon" width="22px"> Home</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div id="header"></div>
+<script src="../js/fps_nav_menu.js"></script>
+<script>
+    document.getElementById('header').innerHTML = htmlmenu;
+    initMenu();
+    btn();
+</script>
+
+<main class="govuk-main-wrapper govuk-!-padding-top-0" id="main-content" role="main">
+    <div class="container-fluid">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div class="row fps-sr-breadcrumb-row">
+                    <div class="fps-sr-breadcrumb-flex">
+                        <div class="col-md-8">
+                            <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+                                <ol class="govuk-breadcrumbs__list">
+                                    <li class="govuk-breadcrumbs__list-item">
+                                        <a class="govuk-breadcrumbs__link" href="fpshome.html">Home</a>
+                                    </li>
+                                     <li class="govuk-breadcrumbs__list-item">
+                                         <a class="govuk-breadcrumbs__link" href="#">MAB</a>
+                                        
+                                    </li>
+                                    <li class="govuk-breadcrumbs__list-item">
+                                        <a class="govuk-breadcrumbs__link" href="maintain_division.html">Maintenance Menu</a>
+                                    </li>
+                                    <li class="govuk-breadcrumbs__list-item">Resource Centre Grade Maintenance</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-grid-row govuk-heading-s sup_border-bottom govuk-!-margin-top-2 govuk-!-padding-bottom-2 govuk-!-padding-left-4">Resource Centre Grade Maintenance</h1>
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="rcg-container-fluid">
+                <div class="rcg-layout-row">
+
+                    <nav class="sidenav flex-column flex-shrink-0" id="shortnav" aria-label="Maintenance navigation">
+                        <button class="toggle-btn rcg-toggle-button" onclick="toggleSidebar()" aria-label="Toggle sidebar" aria-expanded="true">
+                            <img src="../images/chevron-left-solid-full.svg" alt="" aria-hidden="true" width="24">
+                        </button>
+                       <ul>
+                            <li><a class="dropdown-item " href="maintain_division.html">Maintain Divisions</a></li>
+                            <li><a class="dropdown-item" href="fps_resourcecenter_maintenance.html">Maintain Resource Centres</a></li>
+                            <li><a class="dropdown-item" href="fps_workgroup_maintenance.html">Maintain Workgroups</a></li>
+                            <li><a class="dropdown-item " href="fps_grade_maintenance.html">Maintain Grades</a></li>
+                            <li><a class="dropdown-item" href="#">Maintain Total Business Overheads</a></li>
+                            <li><a class="dropdown-item " href="fps_division_grade_maintenance.html">Maintain Division Grades</a></li>
+                            <li><a class="dropdown-item sidenav-title" href="fps_resourcecenter_grade_maintenance.html">Maintain RC Grades (Defra)</a></li>
+                            <li><a class="dropdown-item" href="#">Maintain RC Grades (Non Defra)</a></li>
+                            <li><a class="dropdown-item" href="fps_workgroup_grade_maintenance.html">Maintain WG Grades</a></li>
+                            <li><a class="dropdown-item" href="#">Maintain WG Staff</a></li>
+                            <li><a class="dropdown-item " href="maintain_staff.html">Maintain Staff</a></li>
+                            <li><a class="dropdown-item " href="maintain_programs.html">Maintain Programs</a></li>
+                            <li><a class="dropdown-item " href="fps_accountcategory_maintenance.html">Maintain Account Cats</a></li>
+                            <li><a class="dropdown-item " href="fps_costcenter_maintenance.html">Maintain Cost Centres</a></li>
+                             <li><a class="dropdown-item" href="fps_animal_maintenance.html">Maintain Animals</a></li>
+                            <li><a class="dropdown-item" href="#">Maintain User Permissions</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="rcg-content-column">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+
+                                <div class="rcg-header-row">
+                                    <span class="govuk-body govuk-!-font-weight-bold">Resource Centre Grades</span>
+                                    <div class="govuk-button-group sup_margin_0 rcg-button-group">
+                                        <button type="button" class="govuk-button sup_margin_0 sup_flex_row_center_center"
+                                                data-module="govuk-button"
+                                                id="btnTblRCGradeAdd"
+                                                onclick="openTblRCGradeAddModal()"
+                                                aria-label="Add new RC grade">
+                                            <img src="../images/circle-plus-solid-full-white.svg" alt="" aria-hidden="true" width="16px">
+                                            &nbsp; Add
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="rcg-table-wrap">
+                                    <table id="tblRCGrade" class="govuk-table custom-table rcg-table pp-table-no-margin">
+                                        <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">Resource centre grade maintenance records</caption>
+                                        <thead class="govuk-table__head">
+                                            <tr class="govuk-table__row">
+                                                <th data-column="rcGrade" scope="col" class="govuk-table__header">RCGrade</th>
+                                                <th data-column="divisionGrade" scope="col" class="govuk-table__header">DivisionGrade</th>
+                                                <th data-column="grade" scope="col" class="govuk-table__header">Grade</th>
+                                                <th data-column="rc" scope="col" class="govuk-table__header">RC</th>
+                                                <th data-column="chargeRate" scope="col" class="govuk-table__header">ChargeRate</th>
+                                                <th data-column="directRate" scope="col" class="govuk-table__header">DirectRate</th>
+                                                <th data-column="payRate" scope="col" class="govuk-table__header">PayRate</th>
+                                                <th data-column="npr" scope="col" class="govuk-table__header">NPR</th>
+                                                <th data-column="ohr" scope="col" class="govuk-table__header">OHR</th>
+                                                <th data-column="hrsAvail" scope="col" class="govuk-table__header">HrsAvail</th>
+                                                <th scope="col" class="govuk-table__header">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="govuk-table__body" id="tblRCGradeBody">
+                                            <!-- rows injected by JS -->
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="sup_pagination_footer sup_border">
+                                    <div class="sup_pagination_wrapper">
+                                        <div class="sup_margin_top_bottom_5_10">
+                                            <label for="recordsPerPage">Records per page</label>
+                                            <select id="recordsPerPage" class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
+                                                    aria-label="Select number of records per page">
+                                                <option value="5">5</option>
+                                                <option value="10" selected>10</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                                <option value="25">25</option>
+                                                <option value="30">30</option>
+                                            </select>
+                                        </div>
+                                        <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+                                            <ul class="govuk-pagination__list" id="pagination"></ul>
+                                        </nav>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
+                <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
+                    <span class="fps-sr-page-footer-text">© copyright Defra 2025</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- Add / Edit RC Grade Modal -->
+<div class="modal fade" id="tblRCGradeModal" tabindex="-1" role="dialog"
+     aria-labelledby="tblRCGradeModalLabel" aria-hidden="true" aria-modal="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header flex-space-center">
+                <h3 class="govuk-heading-s rcg-modal-title" id="tblRCGradeModalLabel">Add RC Grade</h3>
+                <button type="button" class="btn-close" onclick="closeTblRCGradeModal()" aria-label="Close">x</button>
+            </div>
+            <div class="modal-body rcg-modal-body">
+                <form class="rcg-modal-form" id="formTblRCGrade" novalidate>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-rcg-rcgrade">RCGrade:</label>
+                        <input class="govuk-input govuk-!-font-size-16" id="modal-rcg-rcgrade" name="rcGrade" type="text" aria-required="true">
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-rcg-divgrade">DivisionGrade:</label>
+                        <select class="govuk-select govuk-!-font-size-16 sup_select_option_width_100" id="modal-rcg-divgrade" name="divisionGrade" aria-label="Select division grade">
+                            <option value="">-- Select --</option>
+                            <option>A_APH SC</option><option>A_DIU</option><option>A_EUExit</option>
+                            <option>A_Field</option><option>A_INSP</option><option>A_PH-B-A</option>
+                            <option>A_PHINSI</option><option>A_SPI</option><option>A-BSD</option>
+                            <option>A-CSG</option><option>A-H&S</option><option>A-Ops</option>
+                            <option>A-R&D</option><option>A-Surv</option><option>A-Vet Dir</option>
+                            <option>B_APH SC</option><option>B_DIU</option><option>B_EUExit</option>
+                        </select>
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-rcg-grade">Grade:</label>
+                        <select class="govuk-select govuk-!-font-size-16 sup_select_option_width_100" id="modal-rcg-grade" name="grade" aria-label="Select grade">
+                            <option value="">-- Select --</option>
+                            <option>A</option><option>B</option><option>C</option>
+                            <option>D</option><option>E</option><option>F</option>
+                            <option>G</option><option>GD5</option>
+                        </select>
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-rcg-rc">RC:</label>
+                        <select class="govuk-select govuk-!-font-size-16 sup_select_option_width_100" id="modal-rcg-rc" name="rc" aria-label="Select resource centre">
+                            <option value="">-- Select --</option>
+                            <option>RC1</option><option>RC2</option><option>RC3</option>
+                            <option>RC4</option><option>RC5</option><option>RC6</option>
+                            <option>RC7</option><option>RC8</option><option>RC9</option>
+                            <option>RC10</option><option>RC11</option>
+                        </select>
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-rcg-chargerate">ChargeRate:</label>
+                        <div class="govuk-input__wrapper">
+                            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                            <input class="govuk-input govuk-!-font-size-16 rcg-rate-input" id="modal-rcg-chargerate" name="chargeRate" type="text">
+                        </div>
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-rcg-directrate">DirectRate:</label>
+                        <div class="govuk-input__wrapper">
+                            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                            <input class="govuk-input govuk-!-font-size-16 rcg-rate-input" id="modal-rcg-directrate" name="directRate" type="text">
+                        </div>
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-rcg-payrate">PayRate:</label>
+                        <div class="govuk-input__wrapper">
+                            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                            <input class="govuk-input govuk-!-font-size-16 rcg-rate-input" id="modal-rcg-payrate" name="payRate" type="text">
+                        </div>
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-rcg-npr">NPR:</label>
+                        <div class="govuk-input__wrapper">
+                            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                            <input class="govuk-input govuk-!-font-size-16 rcg-rate-input" id="modal-rcg-npr" name="npr" type="text">
+                        </div>
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-rcg-ohr">OHR:</label>
+                        <div class="govuk-input__wrapper">
+                            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                            <input class="govuk-input govuk-!-font-size-16 rcg-rate-input" id="modal-rcg-ohr" name="ohr" type="text">
+                        </div>
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-rcg-hrsavail">HrsAvail:</label>
+                        <input class="govuk-input govuk-!-font-size-16" id="modal-rcg-hrsavail" name="hrsAvail" type="text" inputmode="numeric" style="width: 80px;">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer rcg-modal-footer">
+                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0"
+                        data-module="govuk-button" onclick="closeTblRCGradeModal()">Cancel</button>
+                <button type="submit" class="govuk-button sup_margin_0"
+                        data-module="govuk-button" id="tblRCGradeSaveBtn"
+                        onclick="saveTblRCGrade()">Save</button>
+                <button type="submit" class="govuk-button sup_margin_0 rcg-hidden"
+                        data-module="govuk-button" id="tblRCGradeUpdateBtn"
+                        onclick="updateTblRCGrade()">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleSidebar() {
+        var sidebar = document.querySelector('.sidenav');
+        if (sidebar) { sidebar.classList.toggle('collapsed'); }
+    }
+</script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/fps_js/fps_resourcecenter_grade_maintenance.js"></script>
+</body>
+</html>

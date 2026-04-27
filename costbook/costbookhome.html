@@ -31,11 +31,11 @@
                 <div>
                     <img src="../images/defra_logo.png" alt="Defra logo" width="80px">
                 </div>
-              
+
                 <div class="pims-log">
                     <span>Costbook</span>
                 </div>
-           
+
             </div>
 
 
@@ -53,7 +53,8 @@
                 <ul class="dropdown-menu dropdown-menu-end">
 
                     <li><a href="../index.html" class="dropdown-item" type="button" aria-hidden="true">
-                          <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">  Home</a></li>
+                            <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
+                            Home</a></li>
                 </ul>
             </div>
         </div>
@@ -146,17 +147,20 @@
 
                         </div>
                         <div class="fps-sr-fixedheader-wrap">
-                            <table class="govuk-table fps-sr-themed-table fps-sr-data-table" aria-label="Staff table">
+                            <table class="govuk-table fps-sr-themed-table fps-sr-data-table" id="homeTable"
+                                aria-label="Staff table">
                                 <thead class="govuk-table__head">
                                     <tr class="govuk-table__row">
-                                    <tr class="govuk-table__row">
-                                        <th class="govuk-table__header home-table-header-code">Project </th>
-                                        <th class="govuk-table__header home-table-header-title">Project Title </th>
-                                        <th class="govuk-table__header home-table-header-contract">Contract </th>
-                                        <th class="govuk-table__header home-table-header-date">Start Date </th>
-
+                                        <th class="govuk-table__header home-table-header-code" data-column="0">Project
+                                            <span class="sort-icon"></span>
+                                        </th>
+                                        <th class="govuk-table__header home-table-header-title" data-column="1">Project
+                                            Title <span class="sort-icon"></span></th>
+                                        <th class="govuk-table__header home-table-header-contract" data-column="2">
+                                            Contract <span class="sort-icon"></span></th>
+                                        <th class="govuk-table__header home-table-header-date" data-column="3">Start
+                                            Date <span class="sort-icon"></span></th>
                                         <th class="govuk-table__header home-table-header-action">Action</th>
-
                                     </tr>
                                 </thead>
                                 <tbody class="govuk-table__body" id="tableBody">
@@ -395,7 +399,8 @@
 
 
 
-                <div class="govuk-footer sup_p_0 sup_margin_left_right_0" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+        <div class="govuk-footer sup_p_0 sup_margin_left_right_0"
+            style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
             <div class="govuk-width-container sup_p_8 sup_text_center">
                 <span>
                     &copy; copyright Defra 2025
@@ -441,13 +446,14 @@
 
 
 
-                            <div class="govuk-footer sup_p_0 sup_margin_left_right_0" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
-            <div class="govuk-width-container sup_p_8 sup_text_center">
-                <span>
-                    &copy; copyright Defra 2025
-                </span>
-            </div>
-        </div>
+                    <div class="govuk-footer sup_p_0 sup_margin_left_right_0"
+                        style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+                        <div class="govuk-width-container sup_p_8 sup_text_center">
+                            <span>
+                                &copy; copyright Defra 2025
+                            </span>
+                        </div>
+                    </div>
 
                 </main>
 
@@ -460,10 +466,15 @@
                 <!-- Bootstrap JS (required for dropdowns) -->
 
                 <script src="../js/bootstrap.bundle.min.js">    </script>
-
+                <script src="../js/costbook_js/costbook_resize_grid.js"></script>
                 <script src="../js/costbook_common.js">    </script>
-
-    <script src="../js/defra-dialogs.js"></script>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        tuInitResize("homeTable");
+                        tuInitSort("tableBody");
+                    });
+                </script>
+                <script src="../js/defra-dialogs.js"></script>
 </body>
 
 </html>

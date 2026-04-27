@@ -165,9 +165,14 @@
 
     <!-- Scripts -->
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/costbook_js/costbook_resize_grid.js"></script>
     <script src="../js/costbook_common.js"></script>
     <script src="../js/costbook_js/costbook_summary_staff_effort.js"></script>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            tuInitResize("sseTable");
+        });
+    </script>
     <script src="../js/defra-dialogs.js"></script>
 </body>
 

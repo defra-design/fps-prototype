@@ -1,0 +1,977 @@
+/* FPS Maintenance Shared + Page Styles */
+
+/* Shared rules */
+:focus {
+    scroll-margin-top: 60px;
+}
+
+.toggle-btn,
+.govuk-table__cell button {
+    min-width: 24px;
+    min-height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal.show .modal-dialog {
+    max-height: calc(100vh - 2rem);
+}
+
+.modal.show .modal-content {
+    max-height: calc(100vh - 2rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.govuk-table__header--sortable {
+    cursor: pointer;
+}
+
+/* Resource Centre page rules */
+.rc-container-fluid {
+    padding-left: 0;
+}
+
+.rc-flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.rc-toggle-button {
+    right: -8px;
+    top: 30px;
+}
+
+.rc-flex-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 0 5px 8px;
+}
+
+.rc-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+}
+
+.rc-button-group {
+    float: right;
+}
+
+.rc-table-wrapper {
+    overflow-x: auto;
+    max-height: 397px;
+    min-height: 397px;
+}
+
+.rc-table {
+    margin-bottom: 0;
+}
+
+.rc-modal-heading {
+    margin: 0;
+}
+
+.rc-modal-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    max-height: calc(100vh - 220px);
+}
+
+.rc-modal-form {
+    padding: 10px 15px;
+}
+
+.rc-input-field-width {
+    width: 120px;
+}
+
+.rc-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.rc-update-btn-hidden {
+    display: none;
+}
+
+/* Workgroup page rules */
+.wg-container-fluid {
+    padding-left: 0;
+}
+
+.wg-layout-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.wg-toggle-button {
+    right: -8px;
+    top: 30px;
+}
+
+.wg-content-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 0 5px 8px;
+}
+
+.wg-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+}
+
+.wg-button-group {
+    float: right;
+}
+
+.wg-table-wrap {
+    overflow-x: auto;
+    max-height: 397px;
+    min-height: 397px;
+}
+
+.wg-table {
+    margin-bottom: 0;
+}
+
+.wg-modal-title {
+    margin: 0;
+}
+
+.wg-modal-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    max-height: calc(100vh - 220px);
+}
+
+.wg-modal-form {
+    padding: 10px 15px;
+}
+
+.wg-overhead-input {
+    width: 120px;
+}
+
+.wg-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.wg-hidden {
+    display: none;
+}
+
+.wg-actions-cell {
+    text-align: center;
+}
+
+.wg-action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* Grade page rules */
+.gr-container-fluid {
+    padding-left: 0;
+}
+
+.gr-layout-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.gr-toggle-button {
+    right: -8px;
+    top: 30px;
+}
+
+.gr-content-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 0 5px 8px;
+}
+
+.gr-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+}
+
+.gr-button-group {
+    float: right;
+}
+
+.gr-table-wrap {
+    overflow-x: auto;
+    max-height: 397px;
+    min-height: 397px;
+}
+
+.gr-table {
+    margin-bottom: 0;
+}
+
+.gr-modal-title {
+    margin: 0;
+}
+
+.gr-modal-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    max-height: calc(100vh - 220px);
+}
+
+.gr-modal-form {
+    padding: 10px 15px;
+}
+
+.gr-avsalary-input {
+    width: 150px;
+}
+
+.gr-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.gr-hidden {
+    display: none;
+}
+
+.gr-actions-cell {
+    text-align: center;
+}
+
+.gr-action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* Division Grade page rules */
+.dg-container-fluid {
+    padding-left: 0;
+}
+
+.dg-layout-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.dg-toggle-button {
+    right: -8px;
+    top: 30px;
+}
+
+.dg-content-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 0 5px 8px;
+}
+
+.dg-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+}
+
+.dg-button-group {
+    float: right;
+}
+
+.dg-table-wrap {
+    overflow-x: auto;
+    max-height: 397px;
+    min-height: 397px;
+}
+
+.dg-table {
+    margin-bottom: 0;
+}
+
+.dg-modal-title {
+    margin: 0;
+}
+
+.dg-modal-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    max-height: calc(100vh - 220px);
+}
+
+.dg-modal-form {
+    padding: 10px 15px;
+}
+
+.dg-rate-input {
+    width: 120px;
+}
+
+.dg-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.dg-hidden {
+    display: none;
+}
+
+.dg-actions-cell {
+    text-align: center;
+}
+
+.dg-action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* Resource Centre Grade page rules */
+.rcg-container-fluid {
+    padding-left: 0;
+}
+
+.rcg-layout-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.rcg-toggle-button {
+    right: -8px;
+    top: 30px;
+}
+
+.rcg-content-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 0 5px 8px;
+}
+
+.rcg-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+}
+
+.rcg-button-group {
+    float: right;
+}
+
+.rcg-table-wrap {
+    overflow-x: auto;
+    max-height: 397px;
+    min-height: 397px;
+}
+
+.rcg-table {
+    margin-bottom: 0;
+}
+
+.rcg-modal-title {
+    margin: 0;
+}
+
+.rcg-modal-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    max-height: calc(100vh - 220px);
+}
+
+.rcg-modal-form {
+    padding: 10px 15px;
+}
+
+.rcg-rate-input {
+    width: 110px;
+}
+
+.rcg-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.rcg-hidden {
+    display: none;
+}
+
+.rcg-actions-cell {
+    text-align: center;
+}
+
+.rcg-action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* Workgroup Grade page rules */
+.wgg-container-fluid {
+    padding-left: 0;
+}
+
+.wgg-layout-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.wgg-toggle-button {
+    right: -8px;
+    top: 30px;
+}
+
+.wgg-content-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 0 5px 8px;
+}
+
+.wgg-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+}
+
+.wgg-button-group {
+    float: right;
+}
+
+.wgg-table-wrap {
+    overflow-x: auto;
+    max-height: 397px;
+    min-height: 397px;
+}
+
+.wgg-table {
+    margin-bottom: 0;
+}
+
+.wgg-modal-title {
+    margin: 0;
+}
+
+.wgg-modal-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    max-height: calc(100vh - 220px);
+}
+
+.wgg-modal-form {
+    padding: 10px 15px;
+}
+
+.wgg-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.wgg-hidden {
+    display: none;
+}
+
+.wgg-actions-cell {
+    text-align: center;
+}
+
+.wgg-action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* Cost Centre page rules */
+.cc-container-fluid {
+    padding-left: 0;
+}
+
+.cc-layout-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.cc-toggle-button {
+    right: -8px;
+    top: 30px;
+}
+
+.cc-content-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 0 5px 8px;
+}
+
+.cc-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+}
+
+.cc-button-group {
+    float: right;
+}
+
+.cc-table-wrap {
+    overflow-x: auto;
+    max-height: 397px;
+    min-height: 397px;
+}
+
+.cc-table {
+    margin-bottom: 0;
+}
+
+.cc-modal-title {
+    margin: 0;
+}
+
+.cc-modal-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    max-height: calc(100vh - 220px);
+}
+
+.cc-modal-form {
+    padding: 10px 15px;
+}
+
+.cc-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.cc-hidden {
+    display: none;
+}
+
+.cc-actions-cell {
+    text-align: center;
+}
+
+.cc-action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* Account Category page rules */
+.ac-container-fluid {
+    padding-left: 0;
+}
+
+.ac-layout-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.ac-toggle-button {
+    right: -8px;
+    top: 30px;
+}
+
+.ac-content-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 0 5px 8px;
+}
+
+.ac-filter-panel {
+    padding: 8px;
+    border: 1px solid var(--govuk-border-colour, #b1b4b6);
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.ac-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+}
+
+.ac-button-group {
+    float: right;
+}
+
+.ac-table-wrap {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 397px;
+    min-height: 397px;
+    border: 1px solid #ddd;
+}
+
+.ac-table {
+    margin-bottom: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.ac-table th,
+.ac-table td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: visible;
+    text-overflow: clip;
+}
+
+/* Keep account category headers fully visible even when shared table enhancer is active */
+.ac-table.mt-table-enhanced thead th,
+.ac-table.mt-table-enhanced th {
+    overflow: visible !important;
+    text-overflow: clip !important;
+}
+
+.ac-table td {
+    white-space: normal !important;
+}
+
+/* Keep first 4 column headers on one line */
+.ac-table th:nth-child(1),
+.ac-table th:nth-child(2),
+.ac-table th:nth-child(3),
+.ac-table th:nth-child(4) {
+    white-space: nowrap;
+}
+
+/* Allow wrapping for columns 5, 6, 7 headers */
+.ac-table th:nth-child(5),
+.ac-table th:nth-child(6),
+.ac-table th:nth-child(7) {
+    white-space: normal !important;
+}
+
+.ac-table th {
+    padding: 10px !important;
+}
+
+.ac-table td {
+    padding: 8px 10px !important;
+}
+
+/* Set initial column widths */
+.ac-table th:nth-child(1),
+.ac-table td:nth-child(1) {
+    width: 18%;
+    min-width: 160px;
+}
+
+.ac-table th:nth-child(2),
+.ac-table td:nth-child(2) {
+    width: 22%;
+    min-width: 180px;
+}
+
+.ac-table th:nth-child(3),
+.ac-table td:nth-child(3) {
+    width: 26%;
+    min-width: 200px;
+}
+
+.ac-table th:nth-child(4),
+.ac-table td:nth-child(4) {
+    width: 10%;
+    min-width: 100px;
+}
+
+.ac-table th:nth-child(5),
+.ac-table td:nth-child(5) {
+    width: 8%;
+    min-width: 80px;
+}
+
+.ac-table th:nth-child(6),
+.ac-table td:nth-child(6) {
+    width: 8%;
+    min-width: 80px;
+}
+
+.ac-table th:nth-child(7),
+.ac-table td:nth-child(7) {
+    width: 8%;
+    min-width: 80px;
+}
+
+.ac-modal-title {
+    margin: 0;
+}
+
+.ac-modal-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    max-height: calc(100vh - 220px);
+}
+
+.ac-modal-form {
+    padding: 10px 15px;
+}
+
+.ac-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.ac-hidden {
+    display: none;
+}
+
+.ac-actions-cell {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ac-action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.ac-table-checkboxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.ac-table-checkboxes .govuk-checkboxes__item {
+    margin: 0;
+}
+
+.ac-table-checkboxes .govuk-checkboxes__label {
+    margin: 0;
+    padding: 0 0 0 4px;
+}
+
+/* Animal Maintenance page rules */
+.an-container-fluid {
+    padding-left: 0;
+}
+
+.an-layout-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.an-toggle-button {
+    right: -8px;
+    top: 30px;
+}
+
+.an-content-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 0 5px 8px;
+}
+
+.an-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+}
+
+.an-button-group {
+    float: right;
+}
+
+.an-table-wrap {
+    overflow-x: auto;
+    max-height: 397px;
+    min-height: 397px;
+}
+
+.an-table {
+    margin-bottom: 0;
+}
+
+.an-modal-title {
+    margin: 0;
+}
+
+.an-modal-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    max-height: calc(100vh - 220px);
+}
+
+.an-modal-form {
+    padding: 10px 15px;
+}
+
+.an-rate-input {
+    width: 120px;
+}
+
+.an-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.an-hidden {
+    display: none;
+}
+
+.an-actions-cell {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.an-action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.an-table-checkboxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.an-table-checkboxes .govuk-checkboxes__item {
+    margin: 0;
+}
+
+.an-table-checkboxes .govuk-checkboxes__label {
+    padding: 0 0 0 4px;
+    margin: 0;
+}
+
+/* Modal checkbox alignment */
+.an-modal-form .govuk-checkboxes {
+    margin-bottom: 0;
+}
+
+.an-modal-form .govuk-checkboxes__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.an-modal-form .govuk-checkboxes__label {
+    margin-bottom: 0;
+    padding-left: 8px;
+}
+
+.ac-modal-form .govuk-checkboxes {
+    margin-bottom: 0;
+}
+
+.ac-modal-form .govuk-checkboxes__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.ac-modal-form .govuk-checkboxes__label {
+    margin-bottom: 0;
+    padding-left: 8px;
+}
+
+/* Column resizing support */
+.govuk-table__header {
+    position: relative;
+    user-select: none;
+    overflow: visible;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.resizer {
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 5px;
+    height: 100%;
+    cursor: col-resize;
+    user-select: none;
+    background: transparent;
+    z-index: 100;
+}
+
+.resizer:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.resizer.resizing {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+

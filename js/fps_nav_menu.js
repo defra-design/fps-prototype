@@ -100,7 +100,7 @@ const htmlmenu = `
                                 <li><a class="dropdown-item" href="#" aria-hidden="true">Stage 1 Plans</a></li>
                                 <li><a class="dropdown-item" href="fps_asuview.html" aria-hidden="true">ASU Data View</a></li>
                                 <li><a class="dropdown-item" href="#" aria-hidden="true">VLA Project Totals</a></li>
-                                <li><a class="dropdown-item" href="#" aria-hidden="true">Generic Bids</a></li>
+                                <li><a class="dropdown-item" href="budget_bids_resource_centre.html" aria-hidden="true">Generic Bids</a></li>
                                 <li><a class="dropdown-item" href="#" aria-hidden="true">Project Audit Trails</a></li>
                             </ul>
                             <ul>

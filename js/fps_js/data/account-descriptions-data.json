@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "acctShortNam": "AnimalServices",
+        "accountDescription": "Animal Services",
+        "constituentAccountCodes": "2841-2849"
+    },
+    {
+        "id": 2,
+        "acctShortNam": "BuildMaint",
+        "accountDescription": "Building Maintenance",
+        "constituentAccountCodes": "2221-2224"
+    },
+    {
+        "id": 3,
+        "acctShortNam": "BusCons",
+        "accountDescription": "Business Consultancy",
+        "constituentAccountCodes": "2703"
+    },
+    {
+        "id": 4,
+        "acctShortNam": "Cap",
+        "accountDescription": "Capital Charges",
+        "constituentAccountCodes": "2211"
+    },
+    {
+        "id": 5,
+        "acctShortNam": "Cloth",
+        "accountDescription": "Clothing",
+        "constituentAccountCodes": "2131-2132"
+    },
+    {
+        "id": 6,
+        "acctShortNam": "ContAcc",
+        "accountDescription": "Contract Services - Accommodation",
+        "constituentAccountCodes": "2241-2249"
+    },
+    {
+        "id": 7,
+        "acctShortNam": "Courier and P",
+        "accountDescription": "Courier and Postage",
+        "constituentAccountCodes": "5217/10002"
+    },
+    {
+        "id": 8,
+        "acctShortNam": "Equip",
+        "accountDescription": "Equipment Purchases [£00:£1000]",
+        "constituentAccountCodes": "2441-2445"
+    },
+    {
+        "id": 9,
+        "acctShortNam": "Fuel",
+        "accountDescription": "Fuel and Utilities",
+        "constituentAccountCodes": "2231-2235"
+    },
+    {
+        "id": 10,
+        "acctShortNam": "Furniture",
+        "accountDescription": "Furniture and Fittings",
+        "constituentAccountCodes": "2402"
+    },
+    {
+        "id": 11,
+        "acctShortNam": "Hosp",
+        "accountDescription": "Hospitality",
+        "constituentAccountCodes": "2121-2124"
+    },
+    {
+        "id": 12,
+        "acctShortNam": "ITCons",
+        "accountDescription": "IT Consultancy",
+        "constituentAccountCodes": "2705"
+    },
+    {
+        "id": 13,
+        "acctShortNam": "ITEquip",
+        "accountDescription": "IT Equipment",
+        "constituentAccountCodes": "2421-2423"
+    },
+    {
+        "id": 14,
+        "acctShortNam": "LabEquip",
+        "accountDescription": "Laboratory Equipment",
+        "constituentAccountCodes": "2411-2413"
+    },
+    {
+        "id": 15,
+        "acctShortNam": "Media",
+        "accountDescription": "Media Equipment [inc Labtec/etc]",
+        "constituentAccountCodes": "4311"
+    }
+]

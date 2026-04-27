@@ -68,7 +68,7 @@
             <!-- </div> -->
         </h5>
     </div>
-    <div class="d-flex govuk-!-padding-top-2" style="width: 100%; overflow: hidden;">
+    <div class="d-flex govuk-!-padding-top-2" style="width: 100%; overflow: auto;">
         <!-- <nav class="sidenav flex-column flex-shrink-0" id="shortnav">
             <button class="toggle-btn" onclick="toggleSidebar()" style="right: -8px; top: 30px">
                 <img src="../images/chevron-left-solid-full.svg" width="20" alt="side menu left arrow"
@@ -148,44 +148,45 @@
         </li>
         </ul>
         </nav> -->
-        <main class="main-content" style="padding-top: 0px; min-width: 0; overflow: hidden;">
+        <main class="main-content" style="padding: 0px; min-width: 0; overflow: hidden;">
             <!-- GOV.UK Tabs -->
             <div class="govuk-grid-row sup_margin_left_right_0" style="width: 100%;">
                 <div class="govuk-grid-column-full">
                     <div class="govuk-tabs ra-tabs" id="mainTabs">
                         <ul class="govuk-tabs__list" role="tablist">
-                            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation">
+                            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected tab-3-side-border"
+                                role="presentation">
                                 <a class="govuk-tabs__tab" href="#tab-reports" role="tab" id="tab-reports-link"
                                     aria-controls="tab-reports" aria-selected="false" tabindex="-1">
                                     Reports
                                 </a>
                             </li>
-                            <li class="govuk-tabs__list-item" role="presentation">
+                            <li class="govuk-tabs__list-item  tab-3-side-border" role="presentation">
                                 <a class="govuk-tabs__tab" href="#tab-programme" role="tab" id="tab-programme-link"
                                     aria-controls="tab-programme" aria-selected="false" tabindex="-1">
                                     Programme
                                 </a>
                             </li>
-                            <li class="govuk-tabs__list-item" role="presentation">
-                                <a class="govuk-tabs__tab" href="#tab-manager" role="tab" id="tab-manager-link"
+                            <li class="govuk-tabs__list-item  tab-3-side-border" role="presentation">
+                                <a class="govuk-tabs__tab " href="#tab-manager" role="tab" id="tab-manager-link"
                                     aria-controls="tab-manager" aria-selected="false" tabindex="-1">
                                     Manager
                                 </a>
                             </li>
-                            <li class="govuk-tabs__list-item" role="presentation">
+                            <li class="govuk-tabs__list-item  tab-3-side-border" role="presentation">
                                 <a class="govuk-tabs__tab" href="#tab-time" role="tab" id="tab-time-link"
                                     aria-controls="tab-time" aria-selected="false" tabindex="-1">
                                     Time
                                 </a>
                             </li>
-                            <li class="govuk-tabs__list-item " role="presentation">
+                            <li class="govuk-tabs__list-item  tab-3-side-border" role="presentation">
                                 <a class="govuk-tabs__tab" href="#tab-admin-maintenance" role="tab"
                                     id="tab-admin-maintenance-link" aria-controls="tab-admin-maintenance"
                                     aria-selected="true" tabindex="0">
                                     Admin Maintenance
                                 </a>
                             </li>
-                            <li class="govuk-tabs__list-item" role="presentation">
+                            <li class="govuk-tabs__list-item  tab-3-side-border" role="presentation">
                                 <a class="govuk-tabs__tab" href="#tab-other" role="tab" id="tab-other-link"
                                     aria-controls="tab-other" aria-selected="false" tabindex="-1">
                                     Other
@@ -253,7 +254,7 @@
                                             </tr>
                                         </thead>
                                         <tbody class="govuk-table__body" id="maintenanceTableBody">
-                                            <!-- Populated by JS from maintenance_data.json -->
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -799,11 +800,8 @@
                                     <div class="other-table-scroll">
                                         <table class="govuk-table custom-table other-values-table" id="otherValuesTable"
                                             aria-label="Values grid">
-                                            <!-- Column headers are defined per-tbody below; one header row per list -->
-                                            <!-- ── Frequency (default visible) ── -->
-                                            <tbody class="govuk-table__body other-values-tbody"
-                                                id="otherValuesBody-Frequency" data-list="Frequency">
-                                                <tr class="other-tbody-header govuk-table__row">
+                                            <thead class="govuk-table__head">
+                                                <tr class="govuk-table__row">
                                                     <th scope="col"
                                                         class="govuk-table__header other-th-sortable other-col-id"
                                                         data-sort="id" tabindex="0" aria-sort="none">FrequencyID<span
@@ -814,80 +812,10 @@
                                                     <th scope="col" class="govuk-table__header ra-col-actions">Actions
                                                     </th>
                                                 </tr>
-                                                <!-- Data rows populated from OTHER_LISTS by other.js -->
+                                            </thead>
+                                            <tbody class="govuk-table__body" id="otherValuesBody">
+                                                <!-- Data rows populated by other.js -->
                                             </tbody>
-
-                                            <!-- ── PublicationTypes (hidden) ── -->
-                                            <tbody class="govuk-table__body other-values-tbody"
-                                                id="otherValuesBody-PublicationTypes" data-list="PublicationTypes"
-                                                hidden>
-                                                <tr class="other-tbody-header govuk-table__row">
-                                                    <th scope="col"
-                                                        class="govuk-table__header other-th-sortable other-col-id"
-                                                        data-sort="id" tabindex="0" aria-sort="none">
-                                                        PublicationTypeID<span class="other-sort-icon"
-                                                            aria-hidden="true"></span></th>
-                                                    <th scope="col" class="govuk-table__header other-th-sortable"
-                                                        data-sort="value" tabindex="0" aria-sort="none">
-                                                        PublicationType<span class="other-sort-icon"
-                                                            aria-hidden="true"></span></th>
-                                                    <th scope="col" class="govuk-table__header ra-col-actions">Actions
-                                                    </th>
-                                                </tr>
-                                                <!-- Data rows populated from OTHER_LISTS by other.js -->
-                                            </tbody>
-
-                                            <!-- ── ReportGroups (hidden) ── -->
-                                            <tbody class="govuk-table__body other-values-tbody"
-                                                id="otherValuesBody-ReportGroups" data-list="ReportGroups" hidden>
-                                                <tr class="other-tbody-header govuk-table__row">
-                                                    <th scope="col"
-                                                        class="govuk-table__header other-th-sortable other-col-id"
-                                                        data-sort="id" tabindex="0" aria-sort="none">GroupID<span
-                                                            class="other-sort-icon" aria-hidden="true"></span></th>
-                                                    <th scope="col" class="govuk-table__header other-th-sortable"
-                                                        data-sort="value" tabindex="0" aria-sort="none">Description<span
-                                                            class="other-sort-icon" aria-hidden="true"></span></th>
-                                                    <th scope="col" class="govuk-table__header ra-col-actions">Actions
-                                                    </th>
-                                                </tr>
-                                                <!-- Data rows populated from OTHER_LISTS by other.js -->
-                                            </tbody>
-
-                                            <!-- ── ReviewItems (hidden) ── -->
-                                            <tbody class="govuk-table__body other-values-tbody"
-                                                id="otherValuesBody-ReviewItems" data-list="ReviewItems" hidden>
-                                                <tr class="other-tbody-header govuk-table__row">
-                                                    <th scope="col"
-                                                        class="govuk-table__header other-th-sortable other-col-id"
-                                                        data-sort="id" tabindex="0" aria-sort="none">ItemID<span
-                                                            class="other-sort-icon" aria-hidden="true"></span></th>
-                                                    <th scope="col" class="govuk-table__header other-th-sortable"
-                                                        data-sort="value" tabindex="0" aria-sort="none">Item<span
-                                                            class="other-sort-icon" aria-hidden="true"></span></th>
-                                                    <th scope="col" class="govuk-table__header ra-col-actions">Actions
-                                                    </th>
-                                                </tr>
-                                                <!-- Data rows populated from OTHER_LISTS by other.js -->
-                                            </tbody>
-
-                                            <!-- ── Risk (hidden) ── -->
-                                            <tbody class="govuk-table__body other-values-tbody"
-                                                id="otherValuesBody-Risk" data-list="Risk" hidden>
-                                                <tr class="other-tbody-header govuk-table__row">
-                                                    <th scope="col"
-                                                        class="govuk-table__header other-th-sortable other-col-id"
-                                                        data-sort="id" tabindex="0" aria-sort="none">RiskID<span
-                                                            class="other-sort-icon" aria-hidden="true"></span></th>
-                                                    <th scope="col" class="govuk-table__header other-th-sortable"
-                                                        data-sort="value" tabindex="0" aria-sort="none">Risk<span
-                                                            class="other-sort-icon" aria-hidden="true"></span></th>
-                                                    <th scope="col" class="govuk-table__header ra-col-actions">Actions
-                                                    </th>
-                                                </tr>
-                                                <!-- Data rows populated from OTHER_LISTS by other.js -->
-                                            </tbody>
-
                                         </table>
                                     </div>
 
@@ -1426,6 +1354,7 @@
         </div>
     </div>
 
+    <script src="../js/pims_js/table_utils.js"></script>
     <script src="../js/pims_js/other.js"></script>
     <script src="../js/pims_js/time.js"></script>
 
@@ -1676,6 +1605,19 @@
     </div>
 
     <script src="../js/pims_js/admin.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            tuInitResize("maintenanceTable");
+            tuInitResize("reportGroupsTable");
+            tuInitResize("pimsProgTable");
+            tuInitResize("mgrTable");
+            tuInitResize("mgrProgramTable");
+            tuInitResize("mgrResourceTable");
+            tuInitResize("adminUsersTable");
+            tuInitResize("adminAccessTable");
+            tuInitResize("otherValuesTable");
+        });
+    </script>
 </body>
 
 </html>

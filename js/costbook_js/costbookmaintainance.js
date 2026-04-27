@@ -15,6 +15,25 @@
    ════════════════════════════════════════════════════════════════ */
 
 /* ────────────────────────────────────────────────────────────────
+   CONFIRM DELETE HELPER
+   ─────────────────────────────────────────────────────────────── */
+function showDeleteConfirm(message, onConfirm) {
+  var msgEl = document.getElementById("confirmDeleteMessage");
+  var btn = document.getElementById("confirmDeleteBtn");
+  if (msgEl) {
+    msgEl.textContent =
+      message || "Are you sure you want to delete this record?";
+  }
+  if (btn) {
+    btn.onclick = function () {
+      closeModal("confirmDeleteModal");
+      onConfirm();
+    };
+  }
+  openModal("confirmDeleteModal");
+}
+
+/* ────────────────────────────────────────────────────────────────
    TAB 2 — Account Categories
    ─────────────────────────────────────────────────────────────── */
 
@@ -356,17 +375,22 @@ function closeTblAccCatModal() {
 }
 
 function handleTblAccCatDelete(id) {
-  allRecordsAccCat = allRecordsAccCat.filter(function (r) {
-    return r.id !== id;
-  });
-  filteredRecordsAccCat = allRecordsAccCat.slice();
-  renderTableAccCat();
-  renderPagination(
-    filteredRecordsAccCat,
-    currentPageAccCat,
-    getPerPage("recordsPerPageAccCat"),
-    "paginationAccCat",
-    onPageClickAccCat,
+  showDeleteConfirm(
+    "Are you sure you want to delete this account category?",
+    function () {
+      allRecordsAccCat = allRecordsAccCat.filter(function (r) {
+        return r.id !== id;
+      });
+      filteredRecordsAccCat = allRecordsAccCat.slice();
+      renderTableAccCat();
+      renderPagination(
+        filteredRecordsAccCat,
+        currentPageAccCat,
+        getPerPage("recordsPerPageAccCat"),
+        "paginationAccCat",
+        onPageClickAccCat,
+      );
+    },
   );
 }
 
@@ -623,17 +647,22 @@ function closeTblCsg7Modal() {
 }
 
 function handleTblCsg7Delete(id) {
-  allRecordsCsg7 = allRecordsCsg7.filter(function (r) {
-    return r.id !== id;
-  });
-  filteredRecordsCsg7 = allRecordsCsg7.slice();
-  renderTableCsg7();
-  renderPagination(
-    filteredRecordsCsg7,
-    currentPageCsg7,
-    getPerPage("recordsPerPageCsg7"),
-    "paginationCsg7",
-    onPageClickCsg7,
+  showDeleteConfirm(
+    "Are you sure you want to delete this CSG7 group?",
+    function () {
+      allRecordsCsg7 = allRecordsCsg7.filter(function (r) {
+        return r.id !== id;
+      });
+      filteredRecordsCsg7 = allRecordsCsg7.slice();
+      renderTableCsg7();
+      renderPagination(
+        filteredRecordsCsg7,
+        currentPageCsg7,
+        getPerPage("recordsPerPageCsg7"),
+        "paginationCsg7",
+        onPageClickCsg7,
+      );
+    },
   );
 }
 
@@ -863,17 +892,22 @@ function closeTblCapsStaffModal() {
 }
 
 function handleTblCapsStaffDelete(id) {
-  allRecordsCapsStaff = allRecordsCapsStaff.filter(function (r) {
-    return r.id !== id;
-  });
-  filteredRecordsCapsStaff = allRecordsCapsStaff.slice();
-  renderTableCapsStaff();
-  renderPagination(
-    filteredRecordsCapsStaff,
-    currentPageCapsStaff,
-    getPerPage("recordsPerPageCapsStaff"),
-    "paginationCapsStaff",
-    onPageClickCapsStaff,
+  showDeleteConfirm(
+    "Are you sure you want to delete this staff member?",
+    function () {
+      allRecordsCapsStaff = allRecordsCapsStaff.filter(function (r) {
+        return r.id !== id;
+      });
+      filteredRecordsCapsStaff = allRecordsCapsStaff.slice();
+      renderTableCapsStaff();
+      renderPagination(
+        filteredRecordsCapsStaff,
+        currentPageCapsStaff,
+        getPerPage("recordsPerPageCapsStaff"),
+        "paginationCapsStaff",
+        onPageClickCapsStaff,
+      );
+    },
   );
 }
 
@@ -1120,3 +1154,250 @@ document.addEventListener("DOMContentLoaded", function () {
   initTableCsg7(allRecordsCsg7);
   initTableCapsStaff(allRecordsCapsStaff);
 });
+function showTab(targetId) {
+  document.querySelectorAll(".govuk-tabs__panel").forEach(function (panel) {
+    panel.classList.add("govuk-tabs__panel--hidden");
+    panel.hidden = true;
+  });
+  document.querySelectorAll(".govuk-tabs__tab").forEach(function (link) {
+    link.setAttribute("aria-selected", "false");
+    link.setAttribute("tabindex", "-1");
+  });
+  var activePanel = document.getElementById(targetId);
+  if (activePanel) {
+    activePanel.classList.remove("govuk-tabs__panel--hidden");
+    activePanel.hidden = false;
+  }
+  var activeLink = document.querySelector('[aria-controls="' + targetId + '"]');
+  if (activeLink) {
+    activeLink.setAttribute("aria-selected", "true");
+    activeLink.setAttribute("tabindex", "0");
+    activeLink.focus();
+  }
+}
+
+function getPerPage(selectId) {
+  var el = document.getElementById(selectId || "recordsPerPage");
+  return (el && parseInt(el.value, 10)) || 5;
+}
+function renderPagination(
+  records,
+  currentPage,
+  perPage,
+  paginationListId,
+  onPageClick,
+) {
+  var paginationList = document.getElementById(paginationListId);
+  if (!paginationList) {
+    return;
+  }
+
+  var totalRecords = records.length;
+  var totalPages = Math.max(1, Math.ceil(totalRecords / perPage));
+  if (currentPage > totalPages) {
+    currentPage = totalPages;
+  }
+
+  var prevDisabled = currentPage <= 1;
+  var nextDisabled = currentPage >= totalPages;
+
+  var html = "";
+
+  html +=
+    '<li class="govuk-pagination__prev ' +
+    (prevDisabled ? "govuk-pagination__item--disabled" : "") +
+    '">';
+  html +=
+    '<a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); goToPage(' +
+    (currentPage - 1) +
+    ", " +
+    totalPages +
+    ", window." +
+    onPageClick.name +
+    ');" aria-label="Previous page">';
+  html +=
+    '<svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">';
+  html +=
+    '<path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>';
+  html += "</svg>";
+  html += '<span class="govuk-pagination__link-title">Previous</span>';
+  html += "</a></li>";
+
+  for (var i = 1; i <= totalPages; i++) {
+    html +=
+      '<li class="govuk-pagination__item ' +
+      (i === currentPage ? "govuk-pagination__item--current" : "") +
+      '">';
+    html +=
+      '<a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); goToPage(' +
+      i +
+      ", " +
+      totalPages +
+      ", window." +
+      onPageClick.name +
+      ');" aria-label="Page ' +
+      i +
+      '">' +
+      i +
+      "</a>";
+    html += "</li>";
+  }
+
+  html +=
+    '<li class="govuk-pagination__next ' +
+    (nextDisabled ? "govuk-pagination__item--disabled" : "") +
+    '">';
+  html +=
+    '<a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); goToPage(' +
+    (currentPage + 1) +
+    ", " +
+    totalPages +
+    ", window." +
+    onPageClick.name +
+    ');" aria-label="Next page">';
+  html += '<span class="govuk-pagination__link-title">Next</span>';
+  html +=
+    '<svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">';
+  html +=
+    '<path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>';
+  html += "</svg>";
+  html += "</a></li>";
+
+  paginationList.innerHTML = html;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof initializeTable === "function") {
+    initializeTable();
+  }
+});
+
+function renderEmptyRow(tbodyId, colSpan, message) {
+  var tbody = document.getElementById(tbodyId);
+  if (!tbody) {
+    return;
+  }
+
+  tbody.innerHTML = "";
+  var row = document.createElement("tr");
+  row.className = "govuk-table__row";
+  row.innerHTML =
+    '<td class="govuk-table__cell" colspan="' +
+    colSpan +
+    '">' +
+    message +
+    "</td>";
+  tbody.appendChild(row);
+}
+
+function goToPage(page, totalPages, onNavigate) {
+  if (page < 1 || page > totalPages) {
+    return;
+  }
+
+  if (typeof onNavigate === "function") {
+    onNavigate(page);
+  }
+}
+
+function renderPagination(
+  records,
+  currentPage,
+  perPage,
+  paginationListId,
+  onPageClick,
+) {
+  var paginationList = document.getElementById(paginationListId);
+  if (!paginationList) {
+    return;
+  }
+
+  var totalRecords = records.length;
+  var totalPages = Math.max(1, Math.ceil(totalRecords / perPage));
+  if (currentPage > totalPages) {
+    currentPage = totalPages;
+  }
+
+  var prevDisabled = currentPage <= 1;
+  var nextDisabled = currentPage >= totalPages;
+
+  var html = "";
+
+  html +=
+    '<li class="govuk-pagination__prev ' +
+    (prevDisabled ? "govuk-pagination__item--disabled" : "") +
+    '">';
+  html +=
+    '<a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); goToPage(' +
+    (currentPage - 1) +
+    ", " +
+    totalPages +
+    ", window." +
+    onPageClick.name +
+    ');" aria-label="Previous page">';
+  html +=
+    '<svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">';
+  html +=
+    '<path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>';
+  html += "</svg>";
+  html += '<span class="govuk-pagination__link-title">Previous</span>';
+  html += "</a></li>";
+
+  for (var i = 1; i <= totalPages; i++) {
+    html +=
+      '<li class="govuk-pagination__item ' +
+      (i === currentPage ? "govuk-pagination__item--current" : "") +
+      '">';
+    html +=
+      '<a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); goToPage(' +
+      i +
+      ", " +
+      totalPages +
+      ", window." +
+      onPageClick.name +
+      ');" aria-label="Page ' +
+      i +
+      '">' +
+      i +
+      "</a>";
+    html += "</li>";
+  }
+
+  html +=
+    '<li class="govuk-pagination__next ' +
+    (nextDisabled ? "govuk-pagination__item--disabled" : "") +
+    '">';
+  html +=
+    '<a class="govuk-link govuk-pagination__link" href="#" onclick="event.preventDefault(); goToPage(' +
+    (currentPage + 1) +
+    ", " +
+    totalPages +
+    ", window." +
+    onPageClick.name +
+    ');" aria-label="Next page">';
+  html += '<span class="govuk-pagination__link-title">Next</span>';
+  html +=
+    '<svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">';
+  html +=
+    '<path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>';
+  html += "</svg>";
+  html += "</a></li>";
+
+  paginationList.innerHTML = html;
+}
+
+function openModal(modalId) {
+  var modal = document.getElementById(modalId);
+  if (!modal) {
+    return;
+  }
+  modal.classList.add("show");
+}
+
+function closeModal(modalId) {
+  var modal = document.getElementById(modalId);
+  if (!modal) {
+    return;
+  }
+  modal.classList.remove("show");
+}

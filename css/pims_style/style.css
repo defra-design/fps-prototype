@@ -1260,3 +1260,56 @@ select {
 .govuk-pagination__item--current .govuk-link {
     color: white !important;
 }
+
+/* ── Column resize handles (used by table_utils.js) ── */
+
+/* Clip cell content to column width when resize is active */
+table[data-tu-resize-init] td,
+table[data-tu-resize-init] th {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* Keep the resize handle itself visible outside the cell boundary */
+table[data-tu-resize-init] th.col-resizable {
+    overflow: visible;
+}
+
+th.col-resizable {
+    position: relative;
+    overflow: visible;
+}
+
+.col-resizer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6px;
+    height: 100%;
+    cursor: col-resize;
+    z-index: 1;
+    user-select: none;
+}
+
+.col-resizer:hover,
+.col-resizer.resizing {
+    background-color: rgba(29, 112, 184, 0.25);
+}
+
+/* ── Sort icons (used by table_utils.js tuInitSort) ── */
+.sort-icon {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 11px;
+    opacity: 0.4;
+    font-weight: normal;
+    vertical-align: middle;
+    color: #0b0c0c;
+}
+
+th.sorted-asc .sort-icon,
+th.sorted-desc .sort-icon {
+    opacity: 1;
+    color: #0b0c0c;
+    font-weight: bold;
+}

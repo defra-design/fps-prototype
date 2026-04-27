@@ -1,0 +1,443 @@
+[
+    {
+        "id": 1,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "genBid": 10000.00
+    },
+    {
+        "id": 2,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "BuildMain",
+        "genBid": 15000.00
+    },
+    {
+        "id": 3,
+        "workgroup": "ADMIN",
+        "wg": "Admin2",
+        "account": "BusCons",
+        "genBid": 8000.00
+    },
+    {
+        "id": 4,
+        "workgroup": "APH_SCAH",
+        "wg": "APH_SCAH1",
+        "account": "CITB",
+        "genBid": 25000.00
+    },
+    {
+        "id": 5,
+        "workgroup": "APH_SCAH",
+        "wg": "APH_SCAH2",
+        "account": "Cloth",
+        "genBid": 30000.00
+    },
+    {
+        "id": 6,
+        "workgroup": "ASU",
+        "wg": "ASU1",
+        "account": "CorpAcc",
+        "genBid": 12000.00
+    },
+    {
+        "id": 7,
+        "workgroup": "ASU",
+        "wg": "ASU2",
+        "account": "Courier and P",
+        "genBid": 18000.00
+    },
+    {
+        "id": 8,
+        "workgroup": "BM",
+        "wg": "BM1",
+        "account": "DoES",
+        "genBid": 22000.00
+    },
+    {
+        "id": 9,
+        "workgroup": "BACT",
+        "wg": "BACT1",
+        "account": "Fuels",
+        "genBid": 35000.00
+    },
+    {
+        "id": 10,
+        "workgroup": "BACT",
+        "wg": "BACT2",
+        "account": "Furniture",
+        "genBid": 28000.00
+    },
+    {
+        "id": 11,
+        "workgroup": "BDU",
+        "wg": "BDU1",
+        "account": "Hosp",
+        "genBid": 20000.00
+    },
+    {
+        "id": 12,
+        "workgroup": "BEES",
+        "wg": "BEES1",
+        "account": "IT Con",
+        "genBid": 15000.00
+    },
+    {
+        "id": 13,
+        "workgroup": "BEES_ADVICE",
+        "wg": "BEES_ADV1",
+        "account": "IT Equip",
+        "genBid": 12000.00
+    },
+    {
+        "id": 14,
+        "workgroup": "BEES_ENGLAND",
+        "wg": "BEES_ENG1",
+        "account": "Media",
+        "genBid": 18000.00
+    },
+    {
+        "id": 15,
+        "workgroup": "BEES_WALES",
+        "wg": "BEES_WAL1",
+        "account": "Misc",
+        "genBid": 14000.00
+    },
+    {
+        "id": 16,
+        "workgroup": "BTB",
+        "wg": "BTB1",
+        "account": "AnimalSup",
+        "genBid": 40000.00
+    },
+    {
+        "id": 17,
+        "workgroup": "BTB",
+        "wg": "BTB2",
+        "account": "BuildMain",
+        "genBid": 35000.00
+    },
+    {
+        "id": 18,
+        "workgroup": "BUS_SUPP",
+        "wg": "BUS_SUPP1",
+        "account": "BusCons",
+        "genBid": 25000.00
+    },
+    {
+        "id": 19,
+        "workgroup": "CIT",
+        "wg": "CIT1",
+        "account": "Cloth",
+        "genBid": 30000.00
+    },
+    {
+        "id": 20,
+        "workgroup": "CITB",
+        "wg": "CITB1",
+        "account": "CorpAcc",
+        "genBid": 22000.00
+    },
+    {
+        "id": 21,
+        "workgroup": "COMM",
+        "wg": "COMM1",
+        "account": "Fuels",
+        "genBid": 18000.00
+    },
+    {
+        "id": 22,
+        "workgroup": "CORP_FINANCE",
+        "wg": "COPRF1",
+        "account": "Furniture",
+        "genBid": 50000.00
+    },
+    {
+        "id": 23,
+        "workgroup": "CORP_FINANCE",
+        "wg": "COPRF2",
+        "account": "IT Equip",
+        "genBid": 45000.00
+    },
+    {
+        "id": 24,
+        "workgroup": "ADMIN",
+        "wg": "Admin3",
+        "account": "Media",
+        "genBid": 11500.00
+    },
+    {
+        "id": 25,
+        "workgroup": "ADMIN",
+        "wg": "Admin3",
+        "account": "Misc",
+        "genBid": 9800.00
+    },
+    {
+        "id": 26,
+        "workgroup": "APH_SCAH",
+        "wg": "APH_SCAH3",
+        "account": "Courier and P",
+        "genBid": 16500.00
+    },
+    {
+        "id": 27,
+        "workgroup": "ASU",
+        "wg": "ASU3",
+        "account": "IT Con",
+        "genBid": 27000.00
+    },
+    {
+        "id": 28,
+        "workgroup": "BM",
+        "wg": "BM2",
+        "account": "AnimalSup",
+        "genBid": 19500.00
+    },
+    {
+        "id": 29,
+        "workgroup": "BM",
+        "wg": "BM3",
+        "account": "BuildMain",
+        "genBid": 24000.00
+    },
+    {
+        "id": 30,
+        "workgroup": "BACT",
+        "wg": "BACT3",
+        "account": "CITB",
+        "genBid": 33000.00
+    },
+    {
+        "id": 31,
+        "workgroup": "BDU",
+        "wg": "BDU2",
+        "account": "Hosp",
+        "genBid": 21500.00
+    },
+    {
+        "id": 32,
+        "workgroup": "BDU",
+        "wg": "BDU3",
+        "account": "Media",
+        "genBid": 17800.00
+    },
+    {
+        "id": 33,
+        "workgroup": "BEES",
+        "wg": "BEES2",
+        "account": "Fuels",
+        "genBid": 13200.00
+    },
+    {
+        "id": 34,
+        "workgroup": "BEES",
+        "wg": "BEES3",
+        "account": "CorpAcc",
+        "genBid": 14800.00
+    },
+    {
+        "id": 35,
+        "workgroup": "BEES_ADVICE",
+        "wg": "BEES_ADV2",
+        "account": "DoES",
+        "genBid": 16200.00
+    },
+    {
+        "id": 36,
+        "workgroup": "BEES_ADVICE",
+        "wg": "BEES_ADV3",
+        "account": "Furniture",
+        "genBid": 18900.00
+    },
+    {
+        "id": 37,
+        "workgroup": "BEES_ENGLAND",
+        "wg": "BEES_ENG2",
+        "account": "Cloth",
+        "genBid": 20500.00
+    },
+    {
+        "id": 38,
+        "workgroup": "BEES_ENGLAND",
+        "wg": "BEES_ENG3",
+        "account": "BusCons",
+        "genBid": 22300.00
+    },
+    {
+        "id": 39,
+        "workgroup": "BEES_WALES",
+        "wg": "BEES_WAL2",
+        "account": "IT Equip",
+        "genBid": 15700.00
+    },
+    {
+        "id": 40,
+        "workgroup": "BEES_WALES",
+        "wg": "BEES_WAL3",
+        "account": "Misc",
+        "genBid": 12900.00
+    },
+    {
+        "id": 41,
+        "workgroup": "BTB",
+        "wg": "BTB3",
+        "account": "Hosp",
+        "genBid": 38000.00
+    },
+    {
+        "id": 42,
+        "workgroup": "BUS_SUPP",
+        "wg": "BUS_SUPP2",
+        "account": "Media",
+        "genBid": 26500.00
+    },
+    {
+        "id": 43,
+        "workgroup": "BUS_SUPP",
+        "wg": "BUS_SUPP3",
+        "account": "Courier and P",
+        "genBid": 23800.00
+    },
+    {
+        "id": 44,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "CITB",
+        "genBid": 8500.00
+    },
+    {
+        "id": 45,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "Cloth",
+        "genBid": 9200.00
+    },
+    {
+        "id": 46,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "CorpAcc",
+        "genBid": 12500.00
+    },
+    {
+        "id": 47,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "Courier and P",
+        "genBid": 7800.00
+    },
+    {
+        "id": 48,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "DoES",
+        "genBid": 11200.00
+    },
+    {
+        "id": 49,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "Fuels",
+        "genBid": 14300.00
+    },
+    {
+        "id": 50,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "Furniture",
+        "genBid": 16700.00
+    },
+    {
+        "id": 51,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "Hosp",
+        "genBid": 13400.00
+    },
+    {
+        "id": 52,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "IT Con",
+        "genBid": 19800.00
+    },
+    {
+        "id": 53,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "IT Equip",
+        "genBid": 21500.00
+    },
+    {
+        "id": 54,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "Media",
+        "genBid": 10600.00
+    },
+    {
+        "id": 55,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "Misc",
+        "genBid": 8900.00
+    },
+    {
+        "id": 56,
+        "workgroup": "APH_SCAH",
+        "wg": "APH_SCAH1",
+        "account": "AnimalSup",
+        "genBid": 28000.00
+    },
+    {
+        "id": 57,
+        "workgroup": "APH_SCAH",
+        "wg": "APH_SCAH1",
+        "account": "BuildMain",
+        "genBid": 32000.00
+    },
+    {
+        "id": 58,
+        "workgroup": "APH_SCAH",
+        "wg": "APH_SCAH1",
+        "account": "BusCons",
+        "genBid": 19500.00
+    },
+    {
+        "id": 59,
+        "workgroup": "APH_SCAH",
+        "wg": "APH_SCAH1",
+        "account": "Fuels",
+        "genBid": 24600.00
+    },
+    {
+        "id": 60,
+        "workgroup": "APH_SCAH",
+        "wg": "APH_SCAH1",
+        "account": "IT Con",
+        "genBid": 27300.00
+    },
+    {
+        "id": 61,
+        "workgroup": "ASU",
+        "wg": "ASU1",
+        "account": "AnimalSup",
+        "genBid": 15800.00
+    },
+    {
+        "id": 62,
+        "workgroup": "ASU",
+        "wg": "ASU1",
+        "account": "Furniture",
+        "genBid": 18200.00
+    },
+    {
+        "id": 63,
+        "workgroup": "ASU",
+        "wg": "ASU1",
+        "account": "Media",
+        "genBid": 13600.00
+    }
+]

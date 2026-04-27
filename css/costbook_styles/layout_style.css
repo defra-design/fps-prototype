@@ -21,6 +21,13 @@
 .fps-sr-year-option {
     border: 0;
     margin-left: 0;
+    outline: none;
+}
+
+.fps-sr-year-select:focus,
+.fps-sr-year-select:active {
+    outline: none;
+    border: 0;
 }
 
 .fps-sr-user-group {

@@ -1,0 +1,83 @@
+/* Invoices — page-specific styles */
+
+.inv-toolbar {
+    padding: 8px 12px 4px 12px;
+    border-bottom: 1px solid #b1b4b6;
+    background-color: #f3f2f1;
+}
+
+.inv-toolbar__row {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.inv-toolbar__item {
+    display: flex;
+    flex-direction: column;
+}
+
+#tblInv .govuk-table__header,
+#tblInv .govuk-table__cell {
+    font-size: 13px;
+    white-space: nowrap;
+    padding: 5px 8px;
+}
+
+#tblInv .govuk-table__cell:nth-child(3),
+#tblInv .govuk-table__cell:nth-child(4),
+#tblInv .govuk-table__cell:nth-child(6) {
+    text-align: right;
+}
+
+#tblInv .govuk-table__cell:nth-child(9) {
+    text-align: center;
+}
+
+#tblInv .govuk-table__cell:last-child {
+    text-align: center;
+}
+
+#tblInv .govuk-table__cell button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 6px;
+    min-width: 24px;
+    min-height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#tblInv .govuk-table__cell button:focus {
+    outline: 3px solid #ffdd00;
+    outline-offset: 0;
+}
+
+/* Totals row alignment */
+.sup_total_footer {
+    overflow-x: auto;
+}
+
+/* Currency input prefix */
+.govuk-input__wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+.govuk-input__prefix {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    background: #f3f2f1;
+    border: 2px solid #0b0c0c;
+    border-right: 0;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+:focus {
+    scroll-margin-top: 60px;
+}

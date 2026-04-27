@@ -1,0 +1,192 @@
+[
+    {
+        "id": 1,
+        "acctCat": "AnimalSup",
+        "accountCodes": "2841-2849"
+    },
+    {
+        "id": 2,
+        "acctCat": "BuildMaint",
+        "accountCodes": "2221-2224"
+    },
+    {
+        "id": 3,
+        "acctCat": "BusCons",
+        "accountCodes": "2703"
+    },
+    {
+        "id": 4,
+        "acctCat": "Cap",
+        "accountCodes": "2211"
+    },
+    {
+        "id": 5,
+        "acctCat": "Cloth",
+        "accountCodes": "2131-2132"
+    },
+    {
+        "id": 6,
+        "acctCat": "ContAcc",
+        "accountCodes": "2241-2249"
+    },
+    {
+        "id": 7,
+        "acctCat": "Courier and Postage",
+        "accountCodes": "5217100002"
+    },
+    {
+        "id": 8,
+        "acctCat": "Equip",
+        "accountCodes": "2441-2446"
+    },
+    {
+        "id": 9,
+        "acctCat": "Fuels",
+        "accountCodes": "2231-2235"
+    },
+    {
+        "id": 10,
+        "acctCat": "Furniture",
+        "accountCodes": "2402"
+    },
+    {
+        "id": 11,
+        "acctCat": "Hosp",
+        "accountCodes": "2121-2124"
+    },
+    {
+        "id": 12,
+        "acctCat": "ITCons",
+        "accountCodes": "2705"
+    },
+    {
+        "id": 13,
+        "acctCat": "ITEquip",
+        "accountCodes": "2421-2423"
+    },
+    {
+        "id": 14,
+        "acctCat": "LabEquip",
+        "accountCodes": "2411-2413"
+    },
+    {
+        "id": 15,
+        "acctCat": "Media",
+        "accountCodes": "4311"
+    },
+    {
+        "id": 16,
+        "acctCat": "Membership Fees",
+        "accountCodes": "5212100003"
+    },
+    {
+        "id": 17,
+        "acctCat": "Office",
+        "accountCodes": "2431-2434"
+    },
+    {
+        "id": 18,
+        "acctCat": "Office Related",
+        "accountCodes": "5217100000"
+    },
+    {
+        "id": 19,
+        "acctCat": "OtherStaff",
+        "accountCodes": "2141-2148"
+    },
+    {
+        "id": 20,
+        "acctCat": "Pay",
+        "accountCodes": "1002-1010"
+    },
+    {
+        "id": 21,
+        "acctCat": "PayOT",
+        "accountCodes": "1021-1023"
+    },
+    {
+        "id": 22,
+        "acctCat": "Post",
+        "accountCodes": "2311-2312"
+    },
+    {
+        "id": 23,
+        "acctCat": "Products",
+        "accountCodes": "5224101309"
+    },
+    {
+        "id": 24,
+        "acctCat": "ProfServ",
+        "accountCodes": "2711-2719"
+    },
+    {
+        "id": 25,
+        "acctCat": "Pub",
+        "accountCodes": "2511-2516"
+    },
+    {
+        "id": 26,
+        "acctCat": "Purch",
+        "accountCodes": "2802-2841"
+    },
+    {
+        "id": 27,
+        "acctCat": "Rent",
+        "accountCodes": "2202-2203"
+    },
+    {
+        "id": 28,
+        "acctCat": "Safety Equipment",
+        "accountCodes": "5224100004"
+    },
+    {
+        "id": 29,
+        "acctCat": "SLAs",
+        "accountCodes": "5224101310"
+    },
+    {
+        "id": 30,
+        "acctCat": "StafTrain",
+        "accountCodes": "2102-2107"
+    },
+    {
+        "id": 31,
+        "acctCat": "Stat",
+        "accountCodes": "2502-2503"
+    },
+    {
+        "id": 32,
+        "acctCat": "SVCons",
+        "accountCodes": "2707"
+    },
+    {
+        "id": 33,
+        "acctCat": "Telecom",
+        "accountCodes": "2302-2308"
+    },
+    {
+        "id": 34,
+        "acctCat": "Trans",
+        "accountCodes": "2601-2604"
+    },
+    {
+        "id": 35,
+        "acctCat": "Travel and Subs EU",
+        "accountCodes": "5219700001"
+    },
+    {
+        "id": 36,
+        "acctCat": "Travel and Subs Other",
+        "accountCodes": "5219700000"
+    },
+    {
+        "id": 37,
+        "acctCat": "Travel and Subs UK",
+        "accountCodes": "5219100000"
+    },
+    {
+        "id": 38,
+        "acctCat": "Welf",
+        "accountCodes": "2111-2116"
+    }
+]

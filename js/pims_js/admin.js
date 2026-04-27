@@ -160,7 +160,7 @@ function renderAdminUsersTable() {
         "<td>" +
         adminEscape(rec.username) +
         "</td>" +
-        '<td class="admin-col-actions">' +
+        '<td class="admin-col-actions ra-action-cell">' +
         '<button type="button" class="action-btn ra-btn-action ra-btn-edit admin-user-edit-btn" ' +
         'data-id="' +
         rec.id +
@@ -296,7 +296,7 @@ function renderAdminAccessTable() {
         '<td class="admin-col-access">' +
         adminEscape(rec.accessLevel) +
         "</td>" +
-        '<td class="admin-col-actions">' +
+        '<td class="admin-col-actions ra-action-cell">' +
         '<button type="button" class="action-btn ra-btn-action ra-btn-edit admin-access-edit-btn" ' +
         'data-id="' +
         rec.id +

@@ -1,0 +1,428 @@
+/* Yearly Financial Details — page-specific styles */
+
+/* Toolbar layout */
+.yfd-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 8px;
+
+}
+
+.yfd-toolbar__left {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.yfd-toolbar__right {
+    display: flex;
+    align-items: flex-end;
+}
+
+.yfd-toolbar__item {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Table header font size */
+#tblYFD .govuk-table__header {
+    font-size: 14px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 6px 8px;
+}
+
+#tblYFD .govuk-table__cell {
+    font-size: 14px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 5px 8px;
+    text-align: right;
+}
+
+#tblYFD .govuk-table__cell:first-child,
+#tblYFD .govuk-table__header:first-child {
+    text-align: left;
+}
+
+/* Adjustment Comment column — left-aligned */
+#tblYFD .govuk-table__cell:nth-child(14),
+#tblYFD .govuk-table__header:nth-child(14) {
+    text-align: left;
+}
+
+/* Actions cell centering */
+#tblYFD .govuk-table__cell:last-child {
+    text-align: center;
+}
+
+/* Inline action buttons */
+/* #tblYFD .govuk-table__cell button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 6px;
+    min-width: 24px;
+    min-height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+#tblYFD .govuk-table__cell button:focus {
+    outline: 3px solid #ffdd00;
+    outline-offset: 0;
+}
+
+/* Shared horizontal scroll wrapper for data + totals tables */
+.yfd-scroll-wrapper {
+    overflow-x: auto;
+}
+
+/* Inner vertical-scroll container for data table */
+.yfd-data-scroll {
+    max-height: 300px;
+    height: 300px;
+    overflow: auto;
+}
+
+/* Sticky header inside vertical scroll */
+#tblYFD thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #f3f2f1;
+}
+
+/* Both tables share the same layout/width */
+.yfd-grid-table {
+    min-width: 2000px;
+    width: 100%;
+    table-layout: fixed;
+    margin-bottom: 0;
+}
+
+/* Column widths — applied via colgroup in both tables (% of 1800px total) */
+.yfd-col-year {
+    width: 8%;
+}
+
+.yfd-col-ppacc {
+    width: 15%;
+}
+
+.yfd-col-income {
+    width: 18%;
+}
+
+.yfd-col-budget {
+    width: 15%;
+}
+
+.yfd-col-actexp {
+    width: 20%;
+}
+
+.yfd-col-seedcorn {
+    width: 15%;
+}
+
+.yfd-col-manhours {
+    width: 15%;
+}
+
+.yfd-col-pay {
+    width: 15%;
+}
+
+.yfd-col-nonpay {
+    width: 19%;
+}
+
+.yfd-col-test {
+    width: 15%;
+}
+
+.yfd-col-projspec {
+    width: 15%;
+}
+
+.yfd-col-animal {
+    width: 15%;
+}
+
+.yfd-col-excadj {
+    width: 21%;
+}
+
+.yfd-col-adjcomment {
+    width: 19%;
+}
+
+.yfd-col-actions {
+    width: 25%;
+}
+
+/* Totals table */
+.yfd-totals-table .govuk-table__cell {
+    background: #f4f8fb !important;
+    font-weight: bold;
+    font-size: 13px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 12px 8px;
+    text-align: right;
+    height: 48px;
+}
+
+.yfd-totals-table .yfd-total-label {
+    text-align: left;
+    color: #505a5f;
+}
+
+/* Modal input prefix (£) */
+.govuk-input__wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+.govuk-input__prefix {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    /* background: #f3f2f1; */
+    border: 2px solid #0b0c0c;
+    border-right: 0;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+/* Focus rule — ensure focused elements are not hidden by sticky header */
+:focus {
+    scroll-margin-top: 60px;
+}
+
+/* ── Sortable column headers — milestone pattern ─────────────────────────── */
+#tblYFD .sortable-header {
+    cursor: pointer;
+    user-select: none;
+}
+
+#tblYFD .sortable-header:hover {
+    background-color: #e8f0f7;
+}
+
+#tblYFD .sortable-header .sort-icon {
+    display: inline;
+    font-size: 11px;
+    margin-left: 2px;
+    opacity: 0.4;
+}
+
+#tblYFD .sortable-header.sorted-asc .sort-icon,
+#tblYFD .sortable-header.sorted-desc .sort-icon {
+    opacity: 1;
+    color: black;
+}
+
+/* ── Mandatory field asterisk ────────────────────────────────────────────── */
+.yfd-required-mark {
+    color: #d4351c;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+/* ── Mandatory note in modal header ─────────────────────────────────────── */
+.yfd-mandatory-note {
+    font-size: 14px;
+    color: #505a5f;
+    margin: 0 auto 0 12px;
+    align-self: center;
+}
+
+.yfd-mandatory-note .yfd-required-mark {
+    margin-left: 0;
+    margin-right: 2px;
+}
+
+/* ── Actual (Pact) Details table inside detActualPactDisplay ────────────── */
+.yfd-pact-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.yfd-pact-table__label {
+    padding: 2px 4px 2px 0;
+    font-size: 14px;
+    color: #0b0c0c;
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.yfd-pact-table__label--indent {
+    padding: 2px 4px 2px 12px;
+    font-size: 14px;
+    color: #505a5f;
+    white-space: nowrap;
+}
+
+.yfd-pact-table__value {
+    padding: 2px 0 2px 6px;
+    width: 55%;
+}
+
+.yfd-pact-input {
+    width: 100%;
+    font-size: 13px;
+    padding: 2px 4px;
+    border: 1px solid #b1b4b6;
+    color: #0b0c0c;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+/* ── Column-wise inline error messages in modal ──────────────────────────── */
+#formYFD .govuk-error-message {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+/* ── Modal body layout ───────────────────────────────────────────────────── */
+.yfd-modal-body {
+    padding: 15px;
+}
+
+.yfd-modal-columns {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/* Modal left column — primary cost fields */
+.yfd-modal-col-left {
+    flex: 1;
+    min-width: 220px;
+}
+
+/* Modal centre column — adjustment + pact details */
+.yfd-modal-col-centre {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Modal right column — costing panel */
+.yfd-modal-col-right {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* ── Mandatory note (modal header text) ──────────────────────────────────── */
+.yfd-modal-mandatory-note {
+    padding-bottom: 5px;
+    text-align: right;
+    color: #d4351c;
+    margin: 0 0 8px 0;
+}
+
+/* ── Error summary ───────────────────────────────────────────────────────── */
+.yfd-form-error-summary {
+    display: none;
+    margin-bottom: 15px;
+}
+
+/* ── Modal fieldset — man-time group ─────────────────────────────────────── */
+.yfd-fieldset-mantime {
+    border: 1px solid #b1b4b6;
+    padding: 8px;
+    margin-top: 8px;
+}
+
+/* ── Update Costing button wrapper ───────────────────────────────────────── */
+.yfd-update-costing-wrapper {
+    margin-bottom: 10px;
+}
+
+/* ── Costing panel (grey box) ────────────────────────────────────────────── */
+.yfd-costing-panel {
+    border: 1px solid #b1b4b6;
+    padding: 10px;
+    background-color: var(--govuk-surface-background-colour, #f4f8fb);
+    border-radius: 4px;
+}
+
+.yfd-costing-panel--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Costing panel header row (Fix Costing btn + Fixed checkbox) */
+.yfd-costing-panel__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    justify-content: space-between;
+}
+
+/* Fixed checkbox wrapper in costing panel */
+.yfd-costing-panel__checkbox {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.yfd-costing-panel__checkbox .govuk-checkboxes__item {
+    margin: 0;
+}
+
+/* Costing panel divider */
+.yfd-costing-panel__divider {
+    border-color: #b1b4b6;
+}
+
+/* Costing panel reported values block */
+.yfd-costing-reported {
+    margin-top: 8px;
+}
+
+.yfd-costing-reported__label {
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.yfd-costing-reported__value--spaced {
+    margin-bottom: 12px;
+}
+
+/* ── Details modal — pact display box ───────────────────────────────────── */
+.yfd-pact-display {
+    border: 1px solid #b1b4b6;
+    padding: 8px;
+    font-size: 14px;
+    background: #fff;
+    min-height: 40px;
+}
+
+/* ── Modal footer ────────────────────────────────────────────────────────── */
+.yfd-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+}
+
+.yfd-modal-footer--end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 12px 15px;
+    gap: 10px;
+}

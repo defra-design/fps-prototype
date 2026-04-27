@@ -93,8 +93,9 @@
                                     <a class="govuk-breadcrumbs__link" href="fpshome.html">Home</a>
                                 </li>
                                 <li class="govuk-breadcrumbs__list-item">
-                                   MAB 
-                                </li>
+                                         <a class="govuk-breadcrumbs__link" href="#">MAB</a>
+                                        
+                                    </li>
                                 <li class="govuk-breadcrumbs__list-item">
                                     <a class="govuk-breadcrumbs__link" href="maintain_division.html"> Maintenance Menu </a>
                                 </li>
@@ -141,64 +142,24 @@
 				   
 				   
                 </button>
-                  <ul>
-				    <li>
-					<a class="dropdown-item sidenav-title" href="maintain_division.html">Maintain Divisions</a>
-					</li>
-                    <li><a class="dropdown-item" href="#">
-                            Maintain Resource Centres</a>
-                    </li>
-                    <li><a class="dropdown-item" href="#">
-                         Maintain Workgroups</a>
-                    </li>
-                    <li><a class="dropdown-item" href="planvsactaul_animals.html">
-                           Maintain Grades</a>
-                    </li>
-                    <li><a class="dropdown-item" href="#">
-                              Maintain Total Buisness Overheads</a>
-                    </li>
-					 <li><a class="dropdown-item" href="#">
-                              Maintain Divison Grades</a>
-                    </li>
-
- <li><a class="dropdown-item" href="#">
-                              Maintain RC Grades (Defra)</a>
-                    </li>
-                   
-				   
-				    <li><a class="dropdown-item" href="#">
-                              Maintain RC Grades (Non Defra)</a>
-                    </li>
-				   
-				     <li><a class="dropdown-item" href="#">
-                              Maintain WG Grades</a>
-                    </li>
-					
-					  <li><a class="dropdown-item" href="#">
-                              Maintain WG Staff</a>
-                    </li>					
-										
-					<li><a class="dropdown-item " href="maintain_staff.html">
-                              Maintain Staff</a>
-                    </li>
-					
-					<li><a class="dropdown-item " href="maintain_programs.html">
-                              Maintain Programs</a>
-                    </li>					
-					
-					<li><a class="dropdown-item" href="#">
-                              Maintain Account Cats</a>
-                    </li>
-					
-					<li><a class="dropdown-item" href="#">
-                              Maintain Animals</a>
-                    </li>
-					
-					<li><a class="dropdown-item" href="#">
-                              Maintain User Permissions</a>
-                    </li>
-				   
-                </ul>
+                 <ul>
+                            <li><a class="dropdown-item sidenav-title" href="maintain_division.html">Maintain Divisions</a></li>
+                            <li><a class="dropdown-item" href="fps_resourcecenter_maintenance.html">Maintain Resource Centres</a></li>
+                            <li><a class="dropdown-item" href="fps_workgroup_maintenance.html">Maintain Workgroups</a></li>
+                            <li><a class="dropdown-item" href="fps_grade_maintenance.html">Maintain Grades</a></li>
+                            <li><a class="dropdown-item" href="#">Maintain Total Business Overheads</a></li>
+                            <li><a class="dropdown-item" href="fps_division_grade_maintenance.html">Maintain Division Grades</a></li>
+                            <li><a class="dropdown-item" href="fps_resourcecenter_grade_maintenance.html">Maintain RC Grades (Defra)</a></li>
+                            <li><a class="dropdown-item" href="#">Maintain RC Grades (Non Defra)</a></li>
+                            <li><a class="dropdown-item" href="fps_workgroup_grade_maintenance.html">Maintain WG Grades</a></li>
+                            <li><a class="dropdown-item" href="#">Maintain WG Staff</a></li>
+                            <li><a class="dropdown-item" href="maintain_staff.html">Maintain Staff</a></li>
+                            <li><a class="dropdown-item" href="maintain_programs.html">Maintain Programs</a></li>
+                            <li><a class="dropdown-item " href="fps_accountcategory_maintenance.html">Maintain Account Cats</a></li>
+                              <li><a class="dropdown-item " href="fps_costcenter_maintenance.html">Maintain Cost Centres</a></li>
+                            <li><a class="dropdown-item" href="fps_animal_maintenance.html">Maintain Animals</a></li>
+                            <li><a class="dropdown-item" href="#">Maintain User Permissions</a></li>
+                        </ul>
               
                         </nav>
                      <div style="display: flex;
@@ -242,17 +203,17 @@
 	<div class="container-fluid">
 	<div class="row">
 	<div class="col-lg-12 p-0">
-    <div class="jobcodediv height-300 max-height300" style="overflow-x: auto;max-height: 397px!important;height: 397px; border-top: 1px solid #1d70b8 !important;  ">
-                                                  <table id="empTable" class="govuk-table custom-table" style="margin-bottom: 0px;">
-                                              <caption class="govuk-visually-hidden">Division maintenance records</caption>
+    <div class="jobcodediv height-300 max-height300" style="overflow-x: auto;max-height: 397px!important;height: 397px;   ">
+                                                  <table id="empTable" class="govuk-table custom-table pp-table-no-margin division-table" style="margin-bottom: 0px;">
+                                             
                                             <thead class="table-light govuk-table__head">
                                                <tr class="govuk-table__row">                                                                     
                                                                      
 																	 
-							<th class="govuk-table__header">DivisionID</th>
-							<th class="govuk-table__header">AgencyID</th>
-                            <th class="govuk-table__header">DivName</th>
-                            <th class="govuk-table__header">CentOverhead</th>
+							<th data-column="divisionId" class="govuk-table__header">DivisionID</th>
+							<th data-column="agencyId" class="govuk-table__header">AgencyID</th>
+                            <th data-column="divName" class="govuk-table__header">DivName</th>
+                            <th data-column="centOverhead" class="govuk-table__header">CentOverhead</th>
 							
                             <th class="govuk-table__header">Actions</th>
                                                                     </tr>
@@ -434,13 +395,7 @@
                                 </div>
                                 <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
 
-                                    <ul class="govuk-pagination__list" id="pagination"><li class="govuk-pagination__item disabled aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(0)"> <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-      </svg> <span class="govuk-pagina  tion__link-title">
-        Previous<span class="govuk-visually-hidden"> page</span>
-      </span></a></li><li class="govuk-pagination__item govuk-pagination__item--current aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(1)">1</a></li><li class="govuk-pagination__item  aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(2)">2</a></li><li class="govuk-pagination__next  aria-disabled=&quot;true&quot;"><a class="govuk-link govuk-pagination__link" onclick="goToPage(2)" rel="next"><span class="govuk-pagination__link-title">Next</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-      </svg></a></li></ul>
+                                    <ul class="govuk-pagination__list" id="pagination"></ul>
                                 </nav>
 
 
@@ -642,7 +597,7 @@
 		
 		
 		<div class="modal fade" id="staffplanModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
         <div class="modal-content">
 
             <div class="modal-header">
@@ -710,6 +665,7 @@
 	
  <script src="../js/bootstrap.bundle.min.js"></script>
    <!-- <script src="../js/modalpopup.js"></script> -->
+  <script src="../js/common.js"></script>
   <script src="../js/division_maintenance.js"></script>
 	 
 </body>

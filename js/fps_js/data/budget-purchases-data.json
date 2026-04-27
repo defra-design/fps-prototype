@@ -1,0 +1,346 @@
+[
+    {
+        "id": 1,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "itemDescription": "Office Supplies",
+        "amount": 5000.00
+    },
+    {
+        "id": 2,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "itemDescription": "Equipment",
+        "amount": 8000.00
+    },
+    {
+        "id": 3,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "BuildMain",
+        "itemDescription": "Software Licenses",
+        "amount": 3500.00
+    },
+    {
+        "id": 4,
+        "workgroup": "APH_SCAH",
+        "wg": "APH_SCAH1",
+        "account": "CITB",
+        "itemDescription": "Laboratory Equipment",
+        "amount": 15000.00
+    },
+    {
+        "id": 5,
+        "workgroup": "APH_SCAH",
+        "wg": "APH_SCAH2",
+        "account": "Cloth",
+        "itemDescription": "Testing Materials",
+        "amount": 12000.00
+    },
+    {
+        "id": 6,
+        "workgroup": "ASU",
+        "wg": "ASU1",
+        "account": "CorpAcc",
+        "itemDescription": "Field Equipment",
+        "amount": 8000.00
+    },
+    {
+        "id": 7,
+        "workgroup": "ASU",
+        "wg": "ASU2",
+        "account": "Courier and P",
+        "itemDescription": "Safety Gear",
+        "amount": 4500.00
+    },
+    {
+        "id": 8,
+        "workgroup": "BM",
+        "wg": "BM1",
+        "account": "DoES",
+        "itemDescription": "Research Materials",
+        "amount": 10000.00
+    },
+    {
+        "id": 9,
+        "workgroup": "BACT",
+        "wg": "BACT1",
+        "account": "Fuels",
+        "itemDescription": "Lab Supplies",
+        "amount": 18000.00
+    },
+    {
+        "id": 10,
+        "workgroup": "BACT",
+        "wg": "BACT2",
+        "account": "Furniture",
+        "itemDescription": "Equipment Maintenance",
+        "amount": 14000.00
+    },
+    {
+        "id": 11,
+        "workgroup": "BDU",
+        "wg": "BDU1",
+        "account": "Hosp",
+        "itemDescription": "Medical Supplies",
+        "amount": 12000.00
+    },
+    {
+        "id": 12,
+        "workgroup": "BEES",
+        "wg": "BEES1",
+        "account": "IT Con",
+        "itemDescription": "Hive Equipment",
+        "amount": 9000.00
+    },
+    {
+        "id": 13,
+        "workgroup": "BEES_ADVICE",
+        "wg": "BEES_ADV1",
+        "account": "IT Equip",
+        "itemDescription": "Training Materials",
+        "amount": 6000.00
+    },
+    {
+        "id": 14,
+        "workgroup": "BEES_ENGLAND",
+        "wg": "BEES_ENG1",
+        "account": "Media",
+        "itemDescription": "Communication Tools",
+        "amount": 7500.00
+    },
+    {
+        "id": 15,
+        "workgroup": "BEES_WALES",
+        "wg": "BEES_WAL1",
+        "account": "Misc",
+        "itemDescription": "Survey Equipment",
+        "amount": 8000.00
+    },
+    {
+        "id": 16,
+        "workgroup": "BTB",
+        "wg": "BTB1",
+        "account": "AnimalSup",
+        "itemDescription": "Testing Kits",
+        "amount": 20000.00
+    },
+    {
+        "id": 17,
+        "workgroup": "BTB",
+        "wg": "BTB2",
+        "account": "BuildMain",
+        "itemDescription": "Diagnostic Equipment",
+        "amount": 18000.00
+    },
+    {
+        "id": 18,
+        "workgroup": "BUS_SUPP",
+        "wg": "BUS_SUPP1",
+        "account": "BusCons",
+        "itemDescription": "Office Equipment",
+        "amount": 12000.00
+    },
+    {
+        "id": 19,
+        "workgroup": "CIT",
+        "wg": "CIT1",
+        "account": "Cloth",
+        "itemDescription": "IT Hardware",
+        "amount": 15000.00
+    },
+    {
+        "id": 20,
+        "workgroup": "CITB",
+        "wg": "CITB1",
+        "account": "CorpAcc",
+        "itemDescription": "Network Equipment",
+        "amount": 11000.00
+    },
+    {
+        "id": 21,
+        "workgroup": "COMM",
+        "wg": "COMM1",
+        "account": "Fuels",
+        "itemDescription": "Communication Systems",
+        "amount": 9000.00
+    },
+    {
+        "id": 22,
+        "workgroup": "CORP_FINANCE",
+        "wg": "COPRF1",
+        "account": "Furniture",
+        "itemDescription": "Financial Software",
+        "amount": 25000.00
+    },
+    {
+        "id": 23,
+        "workgroup": "CORP_FINANCE",
+        "wg": "COPRF2",
+        "account": "IT Equip",
+        "itemDescription": "Accounting Tools",
+        "amount": 22000.00
+    },
+    {
+        "id": 24,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "itemDescription": "Veterinary Supplies",
+        "amount": 4200.00
+    },
+    {
+        "id": 25,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "itemDescription": "Animal Care Products",
+        "amount": 6500.00
+    },
+    {
+        "id": 26,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "itemDescription": "Feed Supplements",
+        "amount": 3800.00
+    },
+    {
+        "id": 27,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "itemDescription": "Medical Equipment",
+        "amount": 9200.00
+    },
+    {
+        "id": 28,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "itemDescription": "Diagnostic Tools",
+        "amount": 7100.00
+    },
+    {
+        "id": 29,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "itemDescription": "Lab Testing Materials",
+        "amount": 5600.00
+    },
+    {
+        "id": 30,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "itemDescription": "Safety Equipment",
+        "amount": 4800.00
+    },
+    {
+        "id": 31,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "itemDescription": "Cleaning Supplies",
+        "amount": 3200.00
+    },
+    {
+        "id": 32,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "itemDescription": "Storage Solutions",
+        "amount": 5900.00
+    },
+    {
+        "id": 33,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "itemDescription": "Transport Equipment",
+        "amount": 8400.00
+    },
+    {
+        "id": 34,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "itemDescription": "Monitoring Devices",
+        "amount": 6700.00
+    },
+    {
+        "id": 35,
+        "workgroup": "ADMIN",
+        "wg": "Admin1",
+        "account": "AnimalSup",
+        "itemDescription": "Protective Gear",
+        "amount": 4500.00
+    },
+    {
+        "id": 36,
+        "workgroup": "APH_SCAH",
+        "wg": "APH_SCAH1",
+        "account": "CITB",
+        "itemDescription": "Training Equipment",
+        "amount": 12500.00
+    },
+    {
+        "id": 37,
+        "workgroup": "APH_SCAH",
+        "wg": "APH_SCAH1",
+        "account": "CITB",
+        "itemDescription": "Workshop Tools",
+        "amount": 8900.00
+    },
+    {
+        "id": 38,
+        "workgroup": "APH_SCAH",
+        "wg": "APH_SCAH1",
+        "account": "CITB",
+        "itemDescription": "Safety Gear",
+        "amount": 6300.00
+    },
+    {
+        "id": 39,
+        "workgroup": "APH_SCAH",
+        "wg": "APH_SCAH1",
+        "account": "CITB",
+        "itemDescription": "Calibration Equipment",
+        "amount": 11200.00
+    },
+    {
+        "id": 40,
+        "workgroup": "ASU",
+        "wg": "ASU1",
+        "account": "CorpAcc",
+        "itemDescription": "Accounting Software",
+        "amount": 9800.00
+    },
+    {
+        "id": 41,
+        "workgroup": "ASU",
+        "wg": "ASU1",
+        "account": "CorpAcc",
+        "itemDescription": "Financial Systems",
+        "amount": 13400.00
+    },
+    {
+        "id": 42,
+        "workgroup": "ASU",
+        "wg": "ASU1",
+        "account": "CorpAcc",
+        "itemDescription": "Audit Tools",
+        "amount": 7600.00
+    },
+    {
+        "id": 43,
+        "workgroup": "BM",
+        "wg": "BM1",
+        "account": "DoES",
+        "itemDescription": "Project Management Tools",
+        "amount": 11800.00
+    }
+]

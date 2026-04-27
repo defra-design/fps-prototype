@@ -238,7 +238,7 @@
 
 .ra-sort-icon {
     font-size: 11px;
-    color: #505a5f;
+    color: #0b0c0c;
     margin-left: 4px;
     display: inline-block;
     min-width: 10px;
@@ -246,7 +246,7 @@
 
 .ra-th-sortable.ra-sort-asc .ra-sort-icon,
 .ra-th-sortable.ra-sort-desc .ra-sort-icon {
-
+    color: #0b0c0c;
     font-weight: bold;
 }
 
@@ -293,6 +293,17 @@
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
+}
+
+/* + Add Group button — compact inline variant inside the action flex cell */
+.ra-btn-add-group {
+    display: inline-flex !important;
+    align-items: center;
+    margin: 0 !important;
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    line-height: 1 !important;
+    white-space: nowrap;
 }
 
 .ra-btn-edit,
@@ -490,6 +501,7 @@
     gap: 16px;
     align-items: flex-start;
     width: 100%;
+    overflow-y: auto;
 }
 
 /* ── Individual panels ──────────────────────────── */
@@ -544,7 +556,7 @@
 
 .admin-sort-icon {
     font-size: 11px;
-    color: #505a5f;
+    color: #0b0c0c;
     margin-left: 4px;
     display: inline-block;
     min-width: 10px;
@@ -552,13 +564,13 @@
 
 .admin-th-sortable.admin-sort-asc .admin-sort-icon::after {
     content: " \25B2";
-    color: #1d70b8;
+    color: #0b0c0c;
     font-weight: bold;
 }
 
 .admin-th-sortable.admin-sort-desc .admin-sort-icon::after {
     content: " \25BC";
-    color: #1d70b8;
+    color: #0b0c0c;
     font-weight: bold;
 }
 
@@ -606,7 +618,7 @@
 
 /* ── Actions column ──────────────────────────────── */
 .admin-col-actions {
-    width: 72px;
+    /* width: 90px; */
     text-align: center;
     white-space: nowrap;
 }
@@ -655,7 +667,7 @@
 /* --- Sort icon --- */
 .prog-sort-icon {
     font-size: 11px;
-    color: #505a5f;
+    color: #0b0c0c;
     margin-left: 4px;
     display: inline-block;
     min-width: 10px;
@@ -663,7 +675,7 @@
 
 .prog-th-sortable.prog-sort-asc .prog-sort-icon,
 .prog-th-sortable.prog-sort-desc .prog-sort-icon {
-    color: #1d70b8;
+    color: #0b0c0c;
     font-weight: bold;
 }
 
@@ -790,7 +802,7 @@
 
 .other-sort-icon {
     font-size: 11px;
-    color: #505a5f;
+    color: #0b0c0c;
     margin-left: 4px;
     display: inline-block;
     min-width: 10px;
@@ -798,13 +810,13 @@
 
 .other-th-sortable.other-sort-asc .other-sort-icon::after {
     content: " \25B2";
-    color: #1d70b8;
+    color: #0b0c0c;
     font-weight: bold;
 }
 
 .other-th-sortable.other-sort-desc .other-sort-icon::after {
     content: " \25BC";
-    color: #1d70b8;
+    color: #0b0c0c;
     font-weight: bold;
 }
 

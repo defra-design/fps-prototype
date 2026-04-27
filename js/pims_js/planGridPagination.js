@@ -288,3 +288,95 @@ function refreshAllAnimalPlans(data) {
 
 // Initialize on DOM ready
 document.addEventListener("DOMContentLoaded", initializePlanGridPagination);
+
+// ============================================
+// Generic DOM-based column sorting for all yearlyfinance grids
+// ============================================
+
+const yfSortStates = {};
+
+/**
+ * Attach click-to-sort to every th[data-column] inside the table that
+ * contains the given tbody.  Rows are reordered directly in the DOM so
+ * this works regardless of which JS module populated the data.
+ * @param {string} tbodyId - id of the <tbody> to sort
+ */
+function yfInitTableSort(tbodyId) {
+  const tbody = document.getElementById(tbodyId);
+  if (!tbody) return;
+  const table = tbody.closest("table");
+  if (!table) return;
+  const headers = table.querySelectorAll("th[data-column]");
+  if (!headers.length) return;
+
+  headers.forEach(function (th) {
+    th.addEventListener("click", function () {
+      const colIdx = parseInt(this.dataset.column, 10);
+      const prev = (yfSortStates[tbodyId] || {})[colIdx];
+      const order = prev === "asc" ? "desc" : "asc";
+
+      // Store new sort state (single-column sort per table)
+      yfSortStates[tbodyId] = { [colIdx]: order };
+
+      // Reset all header indicators for this table
+      headers.forEach(function (h) {
+        h.classList.remove("sorted-asc", "sorted-desc");
+        const icon = h.querySelector(".sort-icon");
+        if (icon) icon.innerHTML = "";
+      });
+
+      // Mark the clicked header
+      this.classList.add(order === "asc" ? "sorted-asc" : "sorted-desc");
+      const icon = this.querySelector(".sort-icon");
+      if (icon) icon.innerHTML = order === "asc" ? " ▲" : " ▼";
+
+      // Sort the visible tbody rows by the clicked column
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      rows.sort(function (a, b) {
+        const ac = a.cells[colIdx];
+        const bc = b.cells[colIdx];
+        if (!ac || !bc) return 0;
+        const at = ac.textContent.trim();
+        const bt = bc.textContent.trim();
+        const an = parseFloat(at.replace(/[^0-9.-]/g, ""));
+        const bn = parseFloat(bt.replace(/[^0-9.-]/g, ""));
+        if (!isNaN(an) && !isNaN(bn)) {
+          return order === "asc" ? an - bn : bn - an;
+        }
+        return order === "asc"
+          ? at.localeCompare(bt, undefined, {
+              numeric: true,
+              sensitivity: "base",
+            })
+          : bt.localeCompare(at, undefined, {
+              numeric: true,
+              sensitivity: "base",
+            });
+      });
+      rows.forEach(function (r) {
+        tbody.appendChild(r);
+      });
+    });
+  });
+}
+
+// Initialise sort for every data grid after all data is rendered
+document.addEventListener("DOMContentLoaded", function () {
+  const tbodyIds = [
+    "tableMPPBody", // Monthly Pact Data
+    "pact-pay-body", // Pact Pay
+    "staff-plans-body", // Plan – Staff Plans
+    "test-plans-body", // Plan – Test Plans
+    "AnimalPlansTab5Body", // Plan – Animal Plans
+    "cost-plans-body", // Plan – Additional Cost Plans
+    "staffPlanstab2Body", // Staff Plan vs Actuals – Plans
+    "staffActualstab2Body", // Staff Plan vs Actuals – Actuals
+    "testPlansBody", // Test Plan vs Actuals – Plans
+    "testActualBody", // Test Plan vs Actuals – Actuals
+    "AnimalPlansBody", // Animal Plan vs Actuals – Plans
+    "AnimalActualsBody", // Animal Plan vs Actuals – Actuals
+    "AdditionalCostsBody", // Additional Cost vs Actuals – Plans
+    "AdditionalActualsBody", // Additional Cost vs Actuals – Actuals
+  ];
+  tbodyIds.forEach(yfInitTableSort);
+});

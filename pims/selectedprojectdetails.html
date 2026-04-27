@@ -143,7 +143,7 @@
                               cursor: pointer;
                               background-color: #1d70b8;
                             ">
-          <a id="testpurchasereq" href="#" style="color: #fff">PMD Milestone</a>
+          <a id="testpurchasereq" href="pmduser.html" style="color: #fff">PMD Milestone</a>
         </li>
       </ul>
     </nav>
@@ -347,7 +347,7 @@ Pathogens and Animal By-products</textarea>
                 <div class="govuk-tabs__panel govuk-!-padding-2 govuk-tabs__panel--hidden"
                   style="min-height: 460px; overflow: auto" id="nav-contact" role="tabpanel"
                   aria-labelledby="tab_nav-contact">
-                  <table class="govuk-table custom-table" style="
+                  <table id="contactHistoryTable" class="govuk-table custom-table" style="
                         border-right: 1px solid;
                         border-bottom-color: var(
                           --govuk-border-colour,
@@ -358,13 +358,13 @@ Pathogens and Animal By-products</textarea>
                       ">
                     <thead class="govuk-table__head tab-font-bold-size">
                       <tr class="govuk-table__row">
-                        <th class="govuk-table__header">Year</th>
-                        <th class="govuk-table__header">Program</th>
-                        <th class="govuk-table__header">Customer</th>
-                        <th class="govuk-table__header">Manager</th>
+                        <th data-column="0" class="govuk-table__header">Year<span class="sort-icon"></span></th>
+                        <th data-column="1" class="govuk-table__header">Program<span class="sort-icon"></span></th>
+                        <th data-column="2" class="govuk-table__header">Customer<span class="sort-icon"></span></th>
+                        <th data-column="3" class="govuk-table__header">Manager<span class="sort-icon"></span></th>
                       </tr>
                     </thead>
-                    <tbody class="govuk-table__body tab-font-size">
+                    <tbody id="contactHistoryBody" class="govuk-table__body tab-font-size">
                       <tr class="govuk-table__row">
                         <td class="govuk-table__cell">2025</td>
                         <td class="govuk-table__cell">DoES</td>
@@ -719,15 +719,16 @@ Pathogens and Animal By-products</textarea>
             </div>
           </div>
           <div style="overflow: auto;">
-            <table class="custom-table govuk-table">
+            <table id="recordsTable" class="custom-table govuk-table">
               <caption class="govuk-visually-hidden">
                 Records list
               </caption>
               <thead class="govuk-table__head tab-font-bold-size">
                 <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header">Year</th>
-                  <th scope="col" class="govuk-table__header">Topic</th>
-                  <th scope="col" class="govuk-table__header">Comments</th>
+                  <th scope="col" data-column="0" class="govuk-table__header">Year<span class="sort-icon"></span></th>
+                  <th scope="col" data-column="1" class="govuk-table__header">Topic<span class="sort-icon"></span></th>
+                  <th scope="col" data-column="2" class="govuk-table__header">Comments<span class="sort-icon"></span>
+                  </th>
                   <th colspan="2" class="govuk-table__header">Actions</th>
                 </tr>
               </thead>
@@ -1098,13 +1099,14 @@ Pathogens and Animal By-products</textarea>
     </div>
   </div>
 
-          <div class="govuk-footer sup_p_0 sup_margin_left_right_0" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
-            <div class="govuk-width-container sup_p_8 sup_text_center">
-                <span>
-                    &copy; copyright Defra 2025
-                </span>
-            </div>
-        </div>
+  <div class="govuk-footer sup_p_0 sup_margin_left_right_0"
+    style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+    <div class="govuk-width-container sup_p_8 sup_text_center">
+      <span>
+        &copy; copyright Defra 2025
+      </span>
+    </div>
+  </div>
 
   <!-- <div class="col-sm-6">
          <label for="project" class="col-form-label">Select a Project</label>
@@ -1113,10 +1115,19 @@ Pathogens and Animal By-products</textarea>
         </select>
     </div> -->
 
+  <script src="../js/pims_js/table_utils.js"></script>
   <script src="../js/bootstrap.bundle.min.js"></script>
 
   <script src="../js/pims_js/proposedProjectDetails.js"></script>
   <script src="../js/script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      tuInitResize("contactHistoryTable");
+      tuInitSort("contactHistoryBody");
+      tuInitResize("recordsTable");
+      tuInitSort("recordsTableBody");
+    });
+  </script>
 
   <!-- Edit Record Modal (GOV.UK Compliant - No Bootstrap) -->
   <div id="editRecordModal" class="govuk-edit-modal">
@@ -1192,7 +1203,7 @@ Pathogens and Animal By-products</textarea>
     </div>
   </div>
 
-    <script src="../js/defra-dialogs.js"></script>
+  <script src="../js/defra-dialogs.js"></script>
 </body>
 
 </html>

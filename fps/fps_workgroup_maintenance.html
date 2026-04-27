@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2025-2026 : WorkGroup Maintenance</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css">
+    <link rel="stylesheet" href="../css/fps_styles/styles.css">
+    <link rel="stylesheet" href="../css/main_style.css">
+    <link rel="stylesheet" href="../css/fps_styles/suppliement_style_fps.css">
+    <link rel="stylesheet" href="../css/fps_styles/fps_maintenance_pages.css">
+</head>
+<body>
+
+<header>
+    <div class="header-nav">
+        <div class="pims-log-wrapper">
+            <div>
+                <img src="../images/defra_logo.png" alt="Logo of Animal &amp; Plant Health Agency" width="80px">
+            </div>
+            <div class="pims-log">
+                <span class="pva-logo-text">FPS</span>
+            </div>
+            <div class="pims-log">
+                <select class="pims-log pva-year-select" aria-label="Select financial year">
+                    <option class="pims-log pva-year-option">2017-2018</option>
+                    <option class="pims-log pva-year-option">2018-2019</option>
+                    <option class="pims-log pva-year-option">2019-2020</option>
+                    <option class="pims-log pva-year-option">2020-2021</option>
+                    <option class="pims-log pva-year-option">2021-2022</option>
+                    <option class="pims-log pva-year-option">2022-2023</option>
+                    <option class="pims-log pva-year-option">2023-2024</option>
+                    <option class="pims-log pva-year-option">2024-2025</option>
+                    <option class="pims-log pva-year-option" selected>2025-2026</option>
+                </select>
+            </div>
+        </div>
+        <div class="btn-group pva-user-group">
+            Ken Rod
+            <button type="button" aria-label="User menu, go to home page" class="btn btn-secondary dropdown-toggle user-menu pva-user-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../images/circle-user-regular-full.svg" alt="User icon" width="24">
+                <img src="../images/down-arrow.png" alt="Dropdown arrow" width="30px" height="30px">
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a href="../index.html" class="dropdown-item" type="button">
+                    <img src="../images/house-user-solid-full.svg" alt="Home icon" width="22px"> Home</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div id="header"></div>
+<script src="../js/fps_nav_menu.js"></script>
+<script>
+    document.getElementById('header').innerHTML = htmlmenu;
+    initMenu();
+    btn();
+</script>
+
+<main class="govuk-main-wrapper govuk-!-padding-top-0" id="main-content" role="main">
+    <div class="container-fluid">
+
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div class="row fps-sr-breadcrumb-row">
+                    <div class="fps-sr-breadcrumb-flex">
+                        <div class="col-md-8">
+                            <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+                                <ol class="govuk-breadcrumbs__list">
+                                    <li class="govuk-breadcrumbs__list-item">
+                                        <a class="govuk-breadcrumbs__link" href="fpshome.html">Home</a>
+                                    </li>
+                                     <li class="govuk-breadcrumbs__list-item">
+                                         <a class="govuk-breadcrumbs__link" href="#">MAB</a>
+                                        
+                                    </li>
+                                    <li class="govuk-breadcrumbs__list-item">
+                                        <a class="govuk-breadcrumbs__link" href="maintain_division.html">Maintenance Menu</a>
+                                    </li>
+                                    <li class="govuk-breadcrumbs__list-item">WorkGroup Maintenance</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-grid-row govuk-heading-s sup_border-bottom govuk-!-margin-top-2 govuk-!-padding-bottom-2 govuk-!-padding-left-4">WorkGroup Maintenance</h1>
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="container-fluid wg-container-fluid">
+                <div class="wg-layout-row">
+
+                    <nav class="sidenav flex-column flex-shrink-0" id="shortnav" aria-label="Maintenance navigation">
+                        <button class="toggle-btn wg-toggle-button" onclick="toggleSidebar()" aria-label="Toggle sidebar" aria-expanded="true">
+                            <img src="../images/chevron-left-solid-full.svg" alt="" aria-hidden="true" width="24">
+                        </button>
+                        <ul>
+                            <li><a class="dropdown-item " href="maintain_division.html">Maintain Divisions</a></li>
+                            <li><a class="dropdown-item " href="fps_resourcecenter_maintenance.html">Maintain Resource Centres</a></li>
+                            <li><a class="dropdown-item sidenav-title" href="fps_workgroup_maintenance.html">Maintain Workgroups</a></li>
+                            <li><a class="dropdown-item " href="fps_grade_maintenance.html">Maintain Grades</a></li>
+                            <li><a class="dropdown-item" href="#">Maintain Total Business Overheads</a></li>
+                            <li><a class="dropdown-item " href="fps_division_grade_maintenance.html">Maintain Division Grades</a></li>
+                            <li><a class="dropdown-item " href="fps_resourcecenter_grade_maintenance.html">Maintain RC Grades (Defra)</a></li>
+                            <li><a class="dropdown-item" href="#">Maintain RC Grades (Non Defra)</a></li>
+                            <li><a class="dropdown-item " href="fps_workgroup_grade_maintenance.html">Maintain WG Grades</a></li>
+                            <li><a class="dropdown-item" href="#">Maintain WG Staff</a></li>
+                            <li><a class="dropdown-item " href="maintain_staff.html">Maintain Staff</a></li>
+                            <li><a class="dropdown-item " href="maintain_programs.html">Maintain Programs</a></li>
+                            <li><a class="dropdown-item " href="fps_accountcategory_maintenance.html">Maintain Account Cats</a></li>
+                            <li><a class="dropdown-item " href="fps_costcenter_maintenance.html">Maintain Cost Centres</a></li>
+                             <li><a class="dropdown-item" href="fps_animal_maintenance.html">Maintain Animals</a></li>
+                            <li><a class="dropdown-item" href="#">Maintain User Permissions</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="wg-content-column">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full">
+
+                                <div class="wg-header-row">
+                                    <span class="govuk-body govuk-!-font-weight-bold">WorkGroups</span>
+                                    <div class="govuk-button-group sup_margin_0 wg-button-group">
+                                        <button type="button" class="govuk-button sup_margin_0 sup_flex_row_center_center"
+                                                data-module="govuk-button"
+                                                id="btnTblWGAdd"
+                                                onclick="openTblWGAddModal()"
+                                                aria-label="Add new workgroup">
+                                            <img src="../images/circle-plus-solid-full-white.svg" alt="" aria-hidden="true" width="16px">
+                                            &nbsp; Add
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="wg-table-wrap">
+                                    <table id="tblWG" class="govuk-table custom-table wg-table pp-table-no-margin">
+                                        <caption class="govuk-table__caption govuk-table__caption--s govuk-visually-hidden">WorkGroup maintenance records</caption>
+                                        <thead class="govuk-table__head">
+                                            <tr class="govuk-table__row">
+                                                <th data-column="workGroup" scope="col" class="govuk-table__header">WorkGroup</th>
+                                                <th data-column="resourceCentre" scope="col" class="govuk-table__header">ResourceCentre</th>
+                                                <th data-column="costCentre" scope="col" class="govuk-table__header">CostCentre</th>
+                                                <th data-column="owner" scope="col" class="govuk-table__header">Owner</th>
+                                                <th data-column="description" scope="col" class="govuk-table__header">Description</th>
+                                                <th data-column="centralOverhead" scope="col" class="govuk-table__header">CentralOverhead</th>
+                                                <th scope="col" class="govuk-table__header">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="govuk-table__body" id="tblWGBody">
+                                            <!-- rows injected by JS -->
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="sup_pagination_footer sup_border">
+                                    <div class="sup_pagination_wrapper">
+                                        <div class="sup_margin_top_bottom_5_10">
+                                            <label for="recordsPerPage">Records per page</label>
+                                            <select id="recordsPerPage" class="govuk-select govuk-select--width-2 govuk-!-font-size-16"
+                                                    aria-label="Select number of records per page">
+                                                <option value="5">5</option>
+                                                <option value="10" selected>10</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                                <option value="25">25</option>
+                                                <option value="30">30</option>
+                                            </select>
+                                        </div>
+                                        <nav class="govuk-pagination sup_margin_top_bottom_5_10" aria-label="Pagination">
+                                            <ul class="govuk-pagination__list" id="pagination"></ul>
+                                        </nav>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="govuk-grid-row">
+            <div class="govuk-footer sup_p_0 sup_margin_left_right_0 fps-sr-page-footer">
+                <div class="govuk-width-container sup_p_8 sup_text_center fps-sr-page-footer-inner">
+                    <span class="fps-sr-page-footer-text">© copyright Defra 2025</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- Add / Edit WorkGroup Modal -->
+<div class="modal fade" id="tblWGModal" tabindex="-1" role="dialog"
+     aria-labelledby="tblWGModalLabel" aria-hidden="true" aria-modal="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header flex-space-center">
+                <h3 class="govuk-heading-s wg-modal-title" id="tblWGModalLabel">Add WorkGroup</h3>
+                <button type="button" class="btn-close" onclick="closeTblWGModal()" aria-label="Close">x</button>
+            </div>
+            <div class="modal-body wg-modal-body">
+                <form class="wg-modal-form" id="formTblWG" novalidate>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-wg-name">WorkGroup:</label>
+                        <input class="govuk-input govuk-!-font-size-16" id="modal-wg-name" name="workGroup" type="text" aria-required="true">
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-wg-rc">ResourceCentre:</label>
+                        <select class="govuk-select govuk-!-font-size-16 sup_select_option_width_100" id="modal-wg-rc" name="resourceCentre" aria-label="Select resource centre">
+                            <option value="">-- Select --</option>
+                            <option>ADMIN</option>
+                            <option>APH SCAH</option>
+                            <option>ASU</option>
+                            <option>Bact</option>
+                            <option>Bees England</option>
+                            <option>Bees Wales</option>
+                            <option>BTB</option>
+                            <option>Bus Supp</option>
+                            <option>CIT</option>
+                            <option>CITB</option>
+                            <option>Comm</option>
+                        </select>
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-wg-cc">CostCentre:</label>
+                        <select class="govuk-select govuk-!-font-size-16 sup_select_option_width_100" id="modal-wg-cc" name="costCentre" aria-label="Select cost centre">
+                            <option value="">-- Select --</option>
+                            <option>10061500</option>
+                            <option>10063201</option>
+                            <option>10063400</option>
+                            <option>10064222</option>
+                            <option>10064223</option>
+                            <option>10065152</option>
+                            <option>10066217</option>
+                            <option>10066218</option>
+                            <option>10066227</option>
+                            <option>10066400</option>
+                            <option>10069214</option>
+                        </select>
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-wg-owner">Owner:</label>
+                        <select class="govuk-select govuk-!-font-size-16 sup_select_option_width_100" id="modal-wg-owner" name="owner" aria-label="Select owner">
+                            <option value="">-- Select --</option>
+                            <option>Balloch, Matthaeus</option>
+                            <option>Harry, Denise</option>
+                            <option>Killik, Jania</option>
+                            <option>Marquet, Kort</option>
+                            <option>Sampey, Jaime</option>
+                            <option>Seagrave, Mariska</option>
+                        </select>
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-wg-desc">Description:</label>
+                        <input class="govuk-input govuk-!-font-size-16" id="modal-wg-desc" name="description" type="text">
+                    </div>
+                    <div class="govuk-form-group sup_margin_bottom_10">
+                        <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-16" for="modal-wg-overhead">CentralOverhead:</label>
+                        <div class="govuk-input__wrapper">
+                            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                            <input class="govuk-input govuk-!-font-size-16 wg-overhead-input" id="modal-wg-overhead" name="centralOverhead" type="text">
+                        </div>
+                    </div>
+                </form>
+            </div>
+                <div class="modal-footer wg-modal-footer">
+                <button type="button" class="govuk-button govuk-button--secondary sup_margin_0"
+                        data-module="govuk-button" onclick="closeTblWGModal()">Cancel</button>
+                <button type="submit" class="govuk-button sup_margin_0"
+                        data-module="govuk-button" id="tblWGSaveBtn"
+                        onclick="saveTblWG()">Save</button>
+                <button type="submit" class="govuk-button sup_margin_0 wg-hidden"
+                        data-module="govuk-button" id="tblWGUpdateBtn"
+                        onclick="updateTblWG()">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleSidebar() {
+        var sidebar = document.querySelector('.sidenav');
+        if (sidebar) { sidebar.classList.toggle('collapsed'); }
+    }
+</script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/fps_js/fps_workgroup_maintenance.js"></script>
+</body>
+</html>

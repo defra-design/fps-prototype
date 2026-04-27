@@ -15,6 +15,7 @@
     <script src="../js/pims_js/nav_menu/menutemplate.js"></script>
     <script src="../js/pims_js/pims-milestones.js"></script>
     <script src="../js/pims_js/milestone_financial_grid.js"></script>
+    <script src="../js/pims_js/table_utils.js"></script>
 </head>
 
 <body>
@@ -101,7 +102,7 @@
                 </li>
                 <li class="sidebar-link-two"
                     style="border-radius: 0 8px 8px 0; cursor: pointer; background-color: #1d70b8;">
-                    <a href="#" style="color: #fff">PMD Milestone</a>
+                    <a href="pmduser.html" style="color: #fff">PMD Milestone</a>
                 </li>
             </ul>
         </nav>
@@ -167,7 +168,7 @@
                                     <th class="govuk-table__header sortable-header" data-column="8"
                                         style="cursor:pointer;white-space:nowrap;">On Target <span
                                             class="sort-icon"></span></th>
-                                    <th colspan="2" class="govuk-table__header">Actions</th>
+                                    <th class="govuk-table__header">Actions</th>
                                 </tr>
                             </thead>
                             <tbody class="govuk-table__body" id="tableBody"></tbody>
@@ -315,13 +316,14 @@
         </main>
     </div>
 
-            <div class="govuk-footer sup_p_0 sup_margin_left_right_0" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
-            <div class="govuk-width-container sup_p_8 sup_text_center">
-                <span>
-                    &copy; copyright Defra 2025
-                </span>
-            </div>
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0"
+        style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+        <div class="govuk-width-container sup_p_8 sup_text_center">
+            <span>
+                &copy; copyright Defra 2025
+            </span>
         </div>
+    </div>
 
 
     <!-- Financial Grid Add/Edit Modal -->
@@ -557,7 +559,12 @@
         </div>
     </div>
 
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            tuInitResize("milestonesTable");
+            tuInitResize("tblMilestoneGrid");
+        });
+    </script>
 
     <script src="../js/defra-dialogs.js"></script>
 </body>

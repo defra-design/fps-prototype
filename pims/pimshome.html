@@ -119,10 +119,10 @@
           <table class="govuk-table custom-table" id="tblmaintenance">
             <thead class="govuk-table__head thead-light bordertop">
               <tr class="govuk-table__row">
-                <th class="govuk-table__header">Project</th>
-                <th class="govuk-table__header">Program</th>
-                <th class="govuk-table__header">Customer</th>
-                <th class="govuk-table__header">On FPS</th>
+                <th class="govuk-table__header" data-column="0">Project <span class="sort-icon"></span></th>
+                <th class="govuk-table__header" data-column="1">Program <span class="sort-icon"></span></th>
+                <th class="govuk-table__header" data-column="2">Customer <span class="sort-icon"></span></th>
+                <th class="govuk-table__header" data-column="3">On FPS <span class="sort-icon"></span></th>
                 <th class="govuk-table__header">Action</th>
               </tr>
             </thead>
@@ -271,13 +271,14 @@
         </div>-->
   </div>
 
-          <div class="govuk-footer sup_p_0 sup_margin_left_right_0" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
-            <div class="govuk-width-container sup_p_8 sup_text_center">
-                <span>
-                    &copy; copyright Defra 2025
-                </span>
-            </div>
-        </div>
+  <div class="govuk-footer sup_p_0 sup_margin_left_right_0"
+    style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+    <div class="govuk-width-container sup_p_8 sup_text_center">
+      <span>
+        &copy; copyright Defra 2025
+      </span>
+    </div>
+  </div>
 
   <script src="../js/bootstrap.bundle.min.js"></script>
 
@@ -321,9 +322,16 @@
     //             }
     // });
   </script>
+  <script src="../js/pims_js/table_utils.js"></script>
   <script src="../js/script.js"></script>
   <script src="../js/projectlist.js"></script>
-    <script src="../js/defra-dialogs.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      tuInitResize("tblmaintenance");
+      tuInitSort("tableBody");
+    });
+  </script>
+  <script src="../js/defra-dialogs.js"></script>
 </body>
 
 </html>

@@ -164,9 +164,14 @@
 
     <!-- Scripts -->
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/costbook_js/costbook_resize_grid.js"></script>
     <script src="../js/costbook_common.js"></script>
     <script src="../js/costbook_js/costbook_csg7_staff_years_query.js"></script>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            tuInitResize("csg7Table");
+        });
+    </script>
     <script src="../js/defra-dialogs.js"></script>
 </body>
 

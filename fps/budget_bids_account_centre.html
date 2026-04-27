@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2025-2026 : Budget Bids for Account Centre</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/fps_styles/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/fps_styles/styles.css" />
+    <link rel="stylesheet" href="../css/main_style.css" />
+    <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header-nav">
+            <div class="pims-log-wrapper">
+                <div>
+                    <img src="../images/defra_logo.png" alt="Logo of Animal & Plant Health Agency" width="80px">
+                </div>
+
+                <div class="pims-log">
+                    <span class="fps-sr-brand-pill-text">FPS</span>
+                </div>
+
+                <div class="pims-log">
+                    <select class="fps-sr-year-select" aria-label="Year">
+                        <option>2017-2018</option>
+                        <option>2018-2019</option>
+                        <option>2019-2020</option>
+                        <option>2020-2021</option>
+                        <option>2021-2022</option>
+                        <option>2022-2023</option>
+                        <option>2023-2024</option>
+                        <option>2024-2025</option>
+                        <option selected>2025-2026</option>
+                    </select>
+                </div>
+            </div>
+
+           <div class="btn-group" style=" display: flex; align-items: center;     font-size: 16px;">
+                Ken Rod <button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                   <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24">
+				   <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px" height="30px"></span>
+                </button> 
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button> -->
+                    <!-- </li> -->
+                    <!-- <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button> -->
+                    <!-- </li> -->
+                    <li><a href="../index.html" class="dropdown-item" type="button" aria-hidden="true">
+				<img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
+                            Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div id="header"></div>
+
+    <script src="../js/fps_nav_menu.js"></script>
+    <script>
+        document.getElementById('header').innerHTML = htmlmenu;
+        initMenu();
+        btn();
+    </script>
+    <div class="content-wrapper">
+        <div class="govuk-grid-row sup_margin_left_right_0">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-grid-row sup_border-bottom govuk-!-font-size-19 sup_pad_top_bottom_5_10">
+                    <div class="sup_flex_between_center">
+                    <div class="sup_flex_left_center">
+                        Budget Bids for Account Centre....
+                        <div class="display-flex sup_margin_left_5">
+                            <div class="m-0 p-0 sup_flex_row_center_center sup_margin_left_5">
+                                <span class="govuk-!-font-size-19 govuk-!-font-weight-bold sup_gov_blue_color sup_blue_border_bottom_2" id="selectedWg"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                    <a href="budget_bids_resource_centre.html" class="govuk-back-link sup_align_right sup_margin_0">Back</a>
+                    </div>
+                    </div>
+                </h1>
+            </div>
+        </div>
+        <div class="govuk-grid-row sup_margin_left_right_0 sup_margin_10 sup_margin_top_0">
+            <!-- Left: Account Categories with Account Codes -->
+            <div class="govuk-grid-column-one-third sup_p_0">
+                <div class="sup_border sup_margin_bottom_10" style="margin-right: 10px;">
+                    <div class="sup_justify_content sup_padding_right_left_10 sup_margin_tb_13">
+                        <h2 class="govuk-!-font-size-16 sup_margin_5">(1) Account Categories</h2>
+                    </div>
+
+                    <div class="table_scroll_wrapper sup_min_height_460">
+                        <table class="govuk-table custom-table" id="accountCatListTable">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">AcctCat
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th scope="col" class="govuk-table__header">Account Codes
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" id="accountCatListBody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div> 
+                </div>
+                 <!-- <div class="sup_padding_16 sup_margin_right_10">
+                        <button type="button" class="govuk-button sup_margin_bottom_10 govuk-!-margin-bottom-2 sup_width_100"
+                             id="selectByAccountBtn">
+                            Back to WorkGroup View
+                        </button>
+
+                        <button type="button" class="govuk-button govuk-button--secondary sup_margin_bottom_10 sup_gov_blue_bg sup_width_100"
+                              id="viewReportBtn">
+                            View Report
+                        </button>
+
+                        <button type="button" class="govuk-button govuk-button--secondary sup_gov_blue_bg sup_margin_bottom_10 sup_width_100"
+                            id="sendToExcelBtn"> <img src="../images/file-export-solid-full.svg" width="16" alt="icon for export data into excel file">&nbsp;
+                            Send To Excel
+                        </button>
+                    </div> -->
+            </div>
+
+            <!-- Center: Account Bids -->
+            <div class="govuk-grid-column-one-third sup_p_0">
+                <div class="sup_border sup_margin_right_10">
+                    <!-- <div class="sup_flex_end_space sup_p_5 sup_border-bottom">
+                        <div class="sup_flex_between_center sup_width_auto sup_padding_right_left_5 govuk-grid-column-full">
+                            <label class="govuk-!-font-size-16 sup_margin_0 govuk-!-font-weight-bold" for="txtSelectedWg">(2) Account Bids</label>
+                        </div> 
+                        <button type="button" class="govuk-button sup_margin_0 govuk-!-margin-bottom-2" 
+                                id="addAccountBidBtn">
+                                + Add  
+                            </button>
+                    </div> -->
+
+                     <div class="sup_flex_end_space sup_p_5 sup_border-bottom">
+                        <div class="sup_flex_between_center sup_width_auto sup_padding_right_left_5 govuk-grid-column-full">
+                            <label class="govuk-!-font-size-16 sup_margin_0 govuk-!-font-weight-bold" for="txtSelectedAccountCategoryOfOne">(2) Now Update Budgets for Category</label>
+                            <input type="text" class="govuk-input govuk-!-font-size-16 sup_max_width_7em sup_margin_left_5" id="txtSelectedAccountCategoryOfOne" name="txtSelectedAccountCategoryOfOne" readonly="">
+                              
+                        </div> 
+                        <button type="button" class="govuk-button sup_margin_0 govuk-!-margin-bottom-2" 
+                                id="addAccountBidBtn">
+                                + Add  
+                            </button>
+                    </div>
+                    <div class="table_scroll_wrapper">
+                        <table class="govuk-table custom-table" id="accountBidsTable">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">WorkGroup
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th class="govuk-table__header">GenBid
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th class="govuk-table__header" style="width: 80px;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" id="accountBidsBody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sup_pagination_wrapper sup_p_5">
+                       
+                            <div>
+                                <label for="recordsPerPageBid" class="govuk-body-s sup_margin_0" style="margin-right: 5px;">Records per page:</label>
+                                <select id="recordsPerPageBid" class="govuk-select govuk-select--width-2 govuk-!-font-size-16" style="width: auto;">
+                                    <option value="5">5</option>
+                                    <option value="10" selected>10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+                       
+
+                        <nav class="govuk-pagination sup_margin_0" role="navigation" aria-label="Account Bids Pagination">
+                            <ul class="govuk-pagination__list" id="accountBidsPagination">
+                                <!-- Pagination will be populated by JavaScript -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="sup_padding_16 sup_flex_start_center sup_margin_top_10">
+                    <label class="govuk-body-s sup_margin_0" for="totalBid">Total for Category: </label>
+                
+                    <div class="govuk-input__wrapper">
+                        <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                        <input type="text" class="govuk-input govuk-!-font-size-16 sup_text_align_right" id="totalBid" name="totalBid" readonly />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Purchases in Account -->
+            <div class="govuk-grid-column-one-third sup_p_0">
+                <div class="sup_border"> 
+                     <!-- <div class="sup_flex_end_space sup_p_5 sup_border-bottom">
+                        <div class="sup_flex_between_center sup_padding_right_left_5 govuk-grid-column-full">
+                            <label class="govuk-!-font-size-16 sup_margin_0 govuk-!-font-weight-bold">(3) Purchases in Account</label>
+                        </div>
+                        <button type="button" class="govuk-button sup_margin_0 govuk-!-margin-bottom-2" 
+                            id="addPurchaseBtn"> + Add </button>
+                    </div> -->
+
+                     <div class="sup_flex_end_space sup_p_5 sup_border-bottom">
+                        <div class="sup_flex_between_center sup_p_0 govuk-grid-column-full">
+                            <div>
+                            <label class="govuk-!-font-size-16 sup_margin_0 govuk-!-font-weight-bold">(3) Purchases in Account</label>
+                            <input type="text" class="govuk-input govuk-!-font-size-16  govuk-input govuk-input--width-5" id="txtSelectedAccountCategory" name="txtSelectedAccountCategory" readonly=""/>
+
+                              <label class="govuk-!-font-size-16 sup_margin_0 govuk-!-font-weight-bold">for WG</label>
+                            <input type="text" class="govuk-input govuk-!-font-size-16 govuk-input govuk-input--width-5" id="txtSelectedWgOfTwo" name="txtSelectedWgOfTwo" readonly=""/>
+                            </div>
+                               <button type="button" class="govuk-button sup_margin_0 govuk-!-margin-bottom-2" 
+                            id="addPurchaseBtn"> + Add </button>
+                        </div>
+                     
+                    </div>
+
+                    <div class="table_scroll_wrapper">
+                        <table class="govuk-table custom-table" id="purchasesTable">
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">ItemDescription
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th class="govuk-table__header">Amount
+                                        <div class="resizer">&nbsp;</div>
+                                    </th>
+                                    <th class="govuk-table__header" style="width: 80px;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body" id="purchasesBody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="sup_pagination_wrapper sup_p_5">
+                       
+                            <div>
+                                <label for="recordsPerPagePurchases" class="govuk-body-s sup_margin_0" style="margin-right: 5px;">Records per page:</label>
+                                <select id="recordsPerPagePurchases" class="govuk-select govuk-select--width-2 govuk-!-font-size-16" style="width: auto;">
+                                    <option value="5">5</option>
+                                    <option value="10" selected>10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+
+                        <nav class="govuk-pagination sup_margin_0" role="navigation" aria-label="Purchases Pagination">
+                            <ul class="govuk-pagination__list" id="purchasesPagination">
+                                <!-- Pagination will be populated by JavaScript -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div> 
+                 <div class="sup_padding_16 sup_flex_start_center sup_margin_top_10">
+                    <label class="govuk-body-s sup_margin_0" for="totalPurchases">Total Purchases for WG for this category: </label>
+                
+                    <div class="govuk-input__wrapper">
+                        <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                        <input type="text" class="govuk-input govuk-!-font-size-16 sup_text_align_right" id="totalPurchases" name="totalPurchases" readonly />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0">
+        <div class="govuk-width-container sup_p_8 sup_text_center">
+            <span>&copy; copyright Defra 2025</span>
+        </div>
+    </div>
+
+    <!-- Add Account Bid Modal -->
+    <div class="modal" id="addAccountBidModal" tabindex="-1">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center sup_align_heading">
+                    <h3 class="modal-title m-0" id="accountBidModalLabel">Add Account Bid</h3>
+                    <button type="button" class="btn-close btn-red sup_p_5" id="closeAccountBidModalBtn">X</button>
+                </div>
+                <div class="modal-body" style="padding: 8px 16px 0 0px;">
+                    <form class="govuk-grid-column-full" id="formAddAccountBid">
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label for="txtmodal-workgroup" class="govuk-label govuk-!-font-weight-bold sup_margin_0">WorkGroup:</label>
+                            <select id="txtmodal-workgroup" class="govuk-select govuk-!-font-size-16 sup_width_100" name="workgroup" required>
+                                <option value="">-- Select WorkGroup --</option>
+                            </select>
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label for="txtmodal-genbid" class="govuk-label govuk-!-font-weight-bold sup_margin_0">Gen Bid:</label>
+                            <div class="govuk-input__wrapper">
+                            <div class="govuk-input__prefix" aria-hidden="true">£</div> 
+                            <input type="number" step="0.01" class="govuk-input govuk-!-font-size-16" id="txtmodal-genbid" 
+                                name="genbid" placeholder="Enter amount" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" 
+                    style="display: flex; justify-content: space-between; align-items: center; flex-direction: row;">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" 
+                        aria-label="Cancel" id="cancelAccountBidModalBtn">Cancel</button>
+                    <button class="govuk-button sup_margin_0" aria-label="Save" 
+                        id="saveAccountBidBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Purchase Modal -->
+    <div class="modal" id="addPurchaseModal" tabindex="-1">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header flex-space-center sup_align_heading">
+                    <h3 class="modal-title m-0" id="purchaseModalLabel">Add Purchase</h3>
+                    <button type="button" class="btn-close btn-red sup_p_5" id="closePurchaseModalBtn">X</button>
+                </div>
+                <div class="modal-body" style="padding: 8px 16px 0 0px;">
+                    <form class="govuk-grid-column-full" id="formAddPurchase">
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label for="txtmodal-itemdescription" class="govuk-label govuk-!-font-weight-bold">Item Description:</label>
+                            <input type="text" class="govuk-input govuk-!-font-size-16" id="txtmodal-itemdescription" 
+                                name="itemdescription" placeholder="Enter item description" required>
+                        </div>
+                        <div class="govuk-form-group sup_margin_bottom_10">
+                            <label for="txtmodal-amount" class="govuk-label govuk-!-font-weight-bold">Amount:</label>
+                            <div class="govuk-input__wrapper">
+                                <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                                <input type="number" step="0.01" class="govuk-input govuk-!-font-size-16" id="txtmodal-amount" name="amount"
+                                    placeholder="Enter amount" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" 
+                    style="display: flex; justify-content: space-between; align-items: center; flex-direction: row;">
+                    <button class="govuk-button govuk-button--secondary sup_margin_0" 
+                        aria-label="Cancel" id="cancelPurchaseModalBtn">Cancel</button>
+                    <button class="govuk-button sup_margin_0" aria-label="Save" 
+                        id="savePurchaseBtn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/fps_js/budget_bids_account_centre.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

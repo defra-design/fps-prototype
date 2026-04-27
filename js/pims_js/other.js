@@ -307,7 +307,37 @@ function renderValuesPanel(key) {
     "</div>" +
     paginationHtml;
 
+  // Preserve column widths before rebuild so resize state survives sort / page changes
+  var _otherSavedW = [];
+  var _otherSavedTableW = "";
+  var _otherPrevTable = document.getElementById("otherValuesTable");
+  if (_otherPrevTable) {
+    var _otherPrevThs = _otherPrevTable.querySelectorAll("thead th");
+    for (var _pi = 0; _pi < _otherPrevThs.length; _pi++) {
+      _otherSavedW.push(_otherPrevThs[_pi].style.width || "");
+    }
+    _otherSavedTableW = _otherPrevTable.style.width || "";
+  }
+
   panel.innerHTML = html;
+
+  // Re-initialise column resize on the freshly rendered table
+  if (typeof tuInitResize === "function") tuInitResize("otherValuesTable");
+
+  // Restore saved column widths so the user's resize persists across re-renders
+  if (_otherSavedW.some(function (w) { return !!w; })) {
+    var _otherNewTable = document.getElementById("otherValuesTable");
+    if (_otherNewTable) {
+      var _otherNewThs = _otherNewTable.querySelectorAll("thead th");
+      for (var _ri = 0; _ri < _otherNewThs.length && _ri < _otherSavedW.length; _ri++) {
+        if (_otherSavedW[_ri]) {
+          _otherNewThs[_ri].style.width = _otherSavedW[_ri];
+          _otherNewThs[_ri].style.minWidth = _otherSavedW[_ri];
+        }
+      }
+      if (_otherSavedTableW) _otherNewTable.style.width = _otherSavedTableW;
+    }
+  }
 
   // Attach sort events to headers
   var ths = panel.querySelectorAll(".other-th-sortable");

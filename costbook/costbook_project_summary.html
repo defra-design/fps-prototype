@@ -375,7 +375,8 @@
 
 
 
-                <div class="govuk-footer sup_p_0 sup_margin_left_right_0" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+        <div class="govuk-footer sup_p_0 sup_margin_left_right_0"
+            style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
             <div class="govuk-width-container sup_p_8 sup_text_center">
                 <span>
                     &copy; copyright Defra 2025
@@ -390,12 +391,14 @@
 
     <!-- Bootstrap JS (required for dropdowns) -->
     <script src="../js/bootstrap.bundle.min.js">    </script>
+    <script src="../js/costbook_js/costbook_resize_grid.js"></script>
     <script src="../js/costbook_common.js"></script>
     <script src="../js/costbook_js/costbook_project_summary.js"></script>
-
-
-
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            tuInitResize("summaryTable");
+        });
+    </script>
     <script src="../js/defra-dialogs.js"></script>
 </body>
 

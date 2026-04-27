@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PMD User</title>
-     <link rel="stylesheet" href="../css/bootstrap.min.css">	
+    <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet" />
-   
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="../css/pims_style/style.css" />
+    <link rel="stylesheet" href="../css/pims_style/style.css" />
     <!-- <link href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script> -->
     <style>
@@ -27,52 +28,54 @@
             width: 20%;
         }
 
-        
-.main-nav {
-    display: flex;
-    background-color: #1d70b8;
-    padding: 0;
-    margin: 0;
-    /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
-}  
-.nav-item {
-    position: relative;
-    display: flex;
-}
 
-.nav-button {
-    background-color: #1d70b8;
-    color: white;
-    border: none;
-    padding: 12px 20px 12px 20px;
-    cursor: pointer;
-    font-size: 14px;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: background-color 0.2s ease;
-    border-right: 1px solid rgba(255,255,255,0.2);
-}
+        .main-nav {
+            display: flex;
+            background-color: #1d70b8;
+            padding: 0;
+            margin: 0;
+            /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+        }
 
-.nav-button:hover {
-    background-color: #003078;
-}
+        .nav-item {
+            position: relative;
+            display: flex;
+        }
 
-.nav-button.active {
-    background-color: #357abd;
-}
+        .nav-button {
+            background-color: #1d70b8;
+            color: white;
+            border: none;
+            padding: 12px 20px 12px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s ease;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-.nav-button:focus {
-    background: #003078;
-}
+        .nav-button:hover {
+            background-color: #003078;
+        }
+
+        .nav-button.active {
+            background-color: #357abd;
+        }
+
+        .nav-button:focus {
+            background: #003078;
+        }
 
 
-.dropdown-toggle::after {
-    display: none;
-	}
+        .dropdown-toggle::after {
+            display: none;
+        }
     </style>
-     <link rel="stylesheet" href="../css/main_style.css">
+    <link rel="stylesheet" href="../css/main_style.css">
+    <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
 </head>
 
 <body>
@@ -93,11 +96,14 @@
                 </div>
                 <p>Project Information Management System</p>
             </div>
-             <div class="btn-group" style=" display: flex; align-items: center; font-size:16px;">
-                Meg Ved 
-				
-				<button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
-                   <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24"> <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px" height="30px">
+            <div class="btn-group" style=" display: flex; align-items: center; font-size:16px;">
+                Meg Ved
+
+                <button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;"
+                    class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24"> <img
+                        src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px"
+                        height="30px">
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button>
@@ -105,61 +111,62 @@
                     <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button>
                     </li> -->
                     <li><a href="../index.html" class="dropdown-item" type="button">
-                       <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
+                            <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
                             Home</a></li>
                 </ul>
             </div>
         </div>
     </header>
     <nav class="main-nav">
-       <div class="nav-item dropdown">
+        <div class="nav-item dropdown">
             <a class="nav-link" href="pimshome.html" style="text-decoration: none;">
-               Choose Project
+                Choose Project
             </a>
         </div>
-         <div class="nav-item dropdown">
+        <div class="nav-item dropdown">
             <a class="nav-button" href="#" style="text-decoration: none;">
-               Print Reports 
+                Print Reports
             </a>
         </div>
-		 <div class="nav-item dropdown">
+        <div class="nav-item dropdown">
             <a class="nav-button" href="#" style="text-decoration: none;">
-               Publications 
+                Publications
             </a>
         </div>
-		 <div class="nav-item dropdown">
+        <div class="nav-item dropdown">
             <a class="nav-button" href="#" style="text-decoration: none;">
-               Maintenance 
+                Maintenance
             </a>
         </div>
-		 <div class="nav-item dropdown">
+        <div class="nav-item dropdown">
             <a class="nav-button" href="#" style="text-decoration: none;">
-               Pop-up Data Check 
+                Pop-up Data Check
             </a>
         </div>
     </nav>
-     <div class="container-fluid" style="padding: 0;">
-                <h5 style="padding: 10px 0 5px 20px; border-bottom: 2px solid #1d70b8; font-size: 16px; font-weight: 700; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; ">Milestone List 
-				<!-- <div style="margin-right: 16px;"><a href="pimshome.html" class="btn btn-outline-primary btn-sm">Back</a></div> -->
-				</h5>
-     </div>
+    <div class="container-fluid" style="padding: 0;">
+        <h5
+            style="padding: 10px 0 5px 20px; border-bottom: 2px solid #1d70b8; font-size: 16px; font-weight: 700; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; ">
+            Milestone List
+            <!-- <div style="margin-right: 16px;"><a href="pimshome.html" class="btn btn-outline-primary btn-sm">Back</a></div> -->
+        </h5>
+    </div>
     <div class="d-flex">
-         <nav class="sidebar d-flex flex-column flex-shrink-0 position-fixedX">
+        <nav class="sidebar d-flex flex-column flex-shrink-0 position-fixedX">
             <button class="toggle-btn" onclick="toggleSidebar()">
                 <i class="fas fa-chevron-left"></i>
             </button>
 
             <div class="nav flex-column">
-                 <!-- <a href="index.html" class="sidebar-link text-decoration-none p-3">
+                <!-- <a href="index.html" class="sidebar-link text-decoration-none p-3">
                     <i class="fa-solid fa-house-user me-3" style="color: #ffffff;"></i>
                     <span class="hide-on-collapse">Home</span>
                 </a> -->
-				 <a href="selectedprojectdetails.html" class="sidebar-link text-decoration-none p-3">
-				  <i class="fa-solid fa-list-check me-3"></i>
-                   
+                <a href="selectedprojectdetails.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-list-check me-3"></i>
                     <span class="hide-on-collapse">Project Details</span>
                 </a>
-				
+
                 <a href="#" class="sidebar-link text-decoration-none p-3">
                     <i class="fas fa-chart-bar me-3"></i>
                     <span class="hide-on-collapse">Yearly Financial Details</span>
@@ -169,7 +176,7 @@
                     <span class="hide-on-collapse">A&F Report Data</span>
                 </a>
 
-                <a href="#" class="sidebar-link text-decoration-none p-3">
+                <a href="pimsMilestones.html" class="sidebar-link text-decoration-none p-3">
                     <i class="fas fa-box me-3"></i>
                     <span class="hide-on-collapse">Milestones</span>
                 </a>
@@ -186,35 +193,23 @@
                     <span class="hide-on-collapse">Comments</span>
                 </a>
 
-                <!-- <div class="menu-section">
-                    <div class="menu-item sidebar-link active text-decoration-none p-3"
-                        onclick="toggleSubmenu('project-maintenance')"
-                        style="display: flex;flex-wrap: nowrap;flex-direction: row; align-items: center;">
-                        <i class="fa-regular fa-user me-3"></i>
-                        <span class="hide-on-collapse">PMD User</span>
-                        <span class="arrow"><i class="fa-solid fa-angle-down"></i></span>
-                    </div>
-                    <div class="submenu" id="project-maintenance">
-                        <div class="submenu-item"><a href="pmduser.html" alt="project maintenance"> Milestone List</a></div>
-                        <div class="submenu-item"><a href="pmduser.html" alt="project maintenance"> Milestone update</a></div> 
-                    </div>
-                </div> -->
-
                 <a href="#" class="sidebar-link text-decoration-none p-3">
                     <i class="fa-solid fa-list-check me-3"></i>
                     <span class="hide-on-collapse"> Project Review </span>
                 </a>
 
-              
 
-              
+
+
 
                 <a href="pmduser.html" class="sidebar-link text-decoration-none p-3">
                     <i class="fa-solid fa-user-tie me-3" style="color: #ffffff;"></i>
                     <span class="hide-on-collapse">PMD Milestone</span>
                 </a>
-
-
+                <a href="maintenance.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-screwdriver-wrench me-3" style="color: #ffffff;"></i>
+                    <span class="hide-on-collapse">Maintenance</span>
+                </a>
             </div>
         </nav>
         <main class="main-content" style="height: 800px; padding-top: 0;">
@@ -224,7 +219,7 @@
     margin-bottom: 10px;
     margin-left: 3px">Milestone List</h5>
             </div> -->
-            <div class="container-fluid" style="padding-left: 0;">
+            <div class="container-fluid" style="padding-left: 20px;">
                 <div style="border: 1px solid #ccc;border-radius: 10px 10px 0 0;padding: 0 10px 10px 10px;">
                     <label for="dpprojectcode" class="col-form-label">Projects</label>
                     <div class="col-2">
@@ -259,10 +254,11 @@
                             <td>08/11/2025</td>
                             <td>User commented from PMD</td>
                             <td>
-							<button class="btn btn-primary btn-sm" id="btneditmilestone">
-							<img src="../images/edit_gridicon.svg" width="20px" height="20px" alt="Edit Milestone" title="Edit">
-							
-							</button>
+                                <button class="btn btn-primary btn-sm" id="btneditmilestone">
+                                    <img src="../images/edit_gridicon.svg" width="20px" height="20px"
+                                        alt="Edit Milestone" title="Edit">
+
+                                </button>
 
                             </td>
                         </tr>
@@ -271,25 +267,30 @@
                 </table>
                 <div>
                     <p>
-Milestone updates are required for the following periods: April to June,
-July to Sept, Oct to Dec, Jan, Feb, Mar in each financial year.<br/>
-Please indicate whether a milestone is on target (even if not yet due) with either "Yes" or "No". A milestone that has passed its due date cannot be classified as "On Target".<br/>
-Comments should be added to the "Milestone Comments" section if a milestone is logged as "Off Target". The comments should state the reason why the milestone is off target and any action taken to remedy the situation.<br/>
-Note: the monthly project report on IntraVet will not update automatically. changes will show on the report for the next month.
+                        Milestone updates are required for the following periods: April to June,
+                        July to Sept, Oct to Dec, Jan, Feb, Mar in each financial year.<br />
+                        Please indicate whether a milestone is on target (even if not yet due) with either "Yes" or
+                        "No". A milestone that has passed its due date cannot be classified as "On Target".<br />
+                        Comments should be added to the "Milestone Comments" section if a milestone is logged as "Off
+                        Target". The comments should state the reason why the milestone is off target and any action
+                        taken to remedy the situation.<br />
+                        Note: the monthly project report on IntraVet will not update automatically. changes will show on
+                        the report for the next month.
                     </p>
                 </div>
             </div>
         </main>
     </div>
-                    <div class="govuk-footer sup_p_0 sup_margin_left_right_0" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
-            <div class="govuk-width-container sup_p_8 sup_text_center">
-                <span>
-                    &copy; copyright Defra 2025
-                </span>
-            </div>
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0"
+        style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+        <div class="govuk-width-container sup_p_8 sup_text_center">
+            <span>
+                &copy; copyright Defra 2025
+            </span>
         </div>
+    </div>
     <!-- <script src="js/script.js"></script> -->
-	 <script src="../js/bootstrap.bundle.min.js">  </script>
+    <script src="../js/bootstrap.bundle.min.js">  </script>
     <script>
 
         let editmilestonebtn = document.getElementById('btneditmilestone');

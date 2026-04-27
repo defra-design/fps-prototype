@@ -144,7 +144,7 @@
                               cursor: pointer;
                               background-color: #1d70b8;
                             ">
-                    <a id="testpurchasereq" href="#" style="color: #fff">PMD Milestone</a>
+                    <a id="testpurchasereq" href="pmduser.html" style="color: #fff">PMD Milestone</a>
                 </li>
             </ul>
         </nav>
@@ -296,16 +296,33 @@
                                         </colgroup>
                                         <thead class="govuk-table__head">
                                             <tr class="govuk-table__row">
-                                                <th scope="col" class="govuk-table__header">Month</th>
-                                                <th scope="col" class="govuk-table__header">Month Name</th>
-                                                <th scope="col" class="govuk-table__header">Proj Specific</th>
-                                                <th scope="col" class="govuk-table__header">Animals</th>
-                                                <th scope="col" class="govuk-table__header">TimeCosts</th>
-                                                <th scope="col" class="govuk-table__header">Test Costs</th>
-                                                <th scope="col" class="govuk-table__header">Total Costs</th>
-                                                <th scope="col" class="govuk-table__header">Total Hours</th>
-                                                <th scope="col" class="govuk-table__header">Invoices</th>
-                                                <th scope="col" class="govuk-table__header">COIW</th>
+                                                <th scope="col" class="govuk-table__header" data-column="0">Month <span
+                                                        class="sort-icon"></span></th>
+                                                <th scope="col" class="govuk-table__header" data-column="1">Month Name
+                                                    <span class="sort-icon"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header" data-column="2">Proj
+                                                    Specific <span class="sort-icon"></span></th>
+                                                <th scope="col" class="govuk-table__header" data-column="3">Animals
+                                                    <span class="sort-icon"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header" data-column="4">TimeCosts
+                                                    <span class="sort-icon"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header" data-column="5">Test Costs
+                                                    <span class="sort-icon"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header" data-column="6">Total Costs
+                                                    <span class="sort-icon"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header" data-column="7">Total Hours
+                                                    <span class="sort-icon"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header" data-column="8">Invoices
+                                                    <span class="sort-icon"></span>
+                                                </th>
+                                                <th scope="col" class="govuk-table__header" data-column="9">COIW <span
+                                                        class="sort-icon"></span></th>
                                             </tr>
                                         </thead>
                                         <tbody class="govuk-table__body tab-font-size" id="tableMPPBody">
@@ -403,28 +420,34 @@
 
                             </div>
                             <!-- Pact-pAY  -->
-                            <div class="govuk-tabs__panel govuk-!-padding-2 min-height-380 govuk-tabs__panel--hidden"
+                            <div class="govuk-tabs__panel govuk-!-padding-2  govuk-tabs__panel--hidden"
                                 id="nav-pact-pay" role="tabpanel" aria-labelledby="tab_nav-pact-pay">
-                                <div style="overflow-y: auto; max-height: 300px;">
+                                <div style="overflow-y: auto;">
                                     <table class="govuk-table govuk-table--s custom-table govuk-table--bordered"
                                         style="width: 100%; table-layout: fixed; border-collapse: collapse; flex: 0 0 auto;">
                                         <colgroup>
-                                            <col style="width: 12%;" />
-                                            <col style="width: 18%;" />
-                                            <col style="width: 17.5%;" />
-                                            <col style="width: 17.5%;" />
-                                            <col style="width: 17.5%;" />
-                                            <col style="width: 17.5%;" />
+                                            <col style="width: 8%;" />
+                                            <col style="width: 10%;" />
+                                            <col style="width: 15%;" />
+                                            <col style="width: 15%;" />
+                                            <col style="width: 15%;" />
+                                            <col style="width: 15%;" />
                                         </colgroup>
                                         <thead class="govuk-table__head tab-font-bold-size"
                                             style="position: sticky; top: 0; background-color: white; z-index: 1;">
                                             <tr class="govuk-table__row">
-                                                <th class="govuk-table__header">Month</th>
-                                                <th class="govuk-table__header">Month Name</th>
-                                                <th class="govuk-table__header govuk-text-align-right">Pay</th>
-                                                <th class="govuk-table__header govuk-text-align-right">NonPay</th>
-                                                <th class="govuk-table__header govuk-text-align-right">Overheads</th>
-                                                <th class="govuk-table__header govuk-text-align-right">Total Staff Costs
+                                                <th class="govuk-table__header" data-column="0">Month <span
+                                                        class="sort-icon"></span></th>
+                                                <th class="govuk-table__header" data-column="1">Month Name <span
+                                                        class="sort-icon"></span></th>
+                                                <th class="govuk-table__header govuk-text-align-right" data-column="2">
+                                                    Pay <span class="sort-icon"></span></th>
+                                                <th class="govuk-table__header govuk-text-align-right" data-column="3">
+                                                    NonPay <span class="sort-icon"></span></th>
+                                                <th class="govuk-table__header govuk-text-align-right" data-column="4">
+                                                    Overheads <span class="sort-icon"></span></th>
+                                                <th class="govuk-table__header govuk-text-align-right" data-column="5">
+                                                    Total Staff Costs <span class="sort-icon"></span>
                                                 </th>
                                             </tr>
                                         </thead>
@@ -434,12 +457,12 @@
                                 <table class="govuk-table govuk-table--s custom-table govuk-table--bordered"
                                     style="width: 100%; table-layout: fixed; border-collapse: collapse;">
                                     <colgroup>
-                                        <col style="width: 12%;" />
-                                        <col style="width: 18%;" />
-                                        <col style="width: 17.5%;" />
-                                        <col style="width: 17.5%;" />
-                                        <col style="width: 17.5%;" />
-                                        <col style="width: 17.5%;" />
+                                        <col style="width: 8%;" />
+                                        <col style="width: 10%;" />
+                                        <col style="width: 15%;" />
+                                        <col style="width: 15%;" />
+                                        <col style="width: 15%;" />
+                                        <col style="width: 15%;" />
                                     </colgroup>
                                     <tfoot id="pact-pay-foot" class="govuk-table__foot tab-font-bold-size"
                                         style="width: 100%;"></tfoot>
@@ -609,17 +632,22 @@
                                             id="headingOne">
                                             Staff Plans
                                         </h2>
-                                        <div style=" max-height: 170px;  overflow: auto;">
+                                        <div style="max-height: 300px; height: 300px; overflow: auto;">
                                             <table class="govuk-table custom-table govuk-table--bordered tab-font-size"
                                                 style="width: 100%;" id="staffPlansTable">
                                                 <thead class="govuk-table__head"
                                                     style="position: sticky; top: 0; background-color: white; z-index: 1;">
                                                     <tr class="govuk-table__row">
-                                                        <th class="govuk-table__header">WG Grade</th>
-                                                        <th class="govuk-table__header">Name</th>
-                                                        <th class="govuk-table__header">Hour</th>
-                                                        <th class="govuk-table__header">Rate</th>
-                                                        <th class="govuk-table__header">Cost</th>
+                                                        <th class="govuk-table__header" data-column="0">WG Grade <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="1">Name <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="2">Hour <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="3">Rate <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="4">Cost <span
+                                                                class="sort-icon"></span></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="staff-plans-body" class="govuk-table__body"></tbody>
@@ -690,18 +718,22 @@
                                             id="headingOne">
                                             Test Plans
                                         </h2>
-                                        <div style="max-height: 170px; overflow: auto;">
+                                        <div style="max-height: 300px; height: 300px; overflow: auto;">
                                             <table class="govuk-table custom-table govuk-table--bordered tab-font-size"
                                                 style="width: 100%;" id="testPlansTable">
                                                 <thead class="govuk-table__head"
                                                     style="position: sticky; top: 0; background-color: white; z-index: 1;">
                                                     <tr class="govuk-table__row">
-                                                        <th class="govuk-table__header">Test</th>
-                                                        <th class="govuk-table__header">Unit Price</th>
-                                                        <th class="govuk-table__header">No Required
+                                                        <th class="govuk-table__header" data-column="0">Test <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="1">Unit Price <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="2">No Required
+                                                            <span class="sort-icon"></span>
                                                         </th>
 
-                                                        <th class="govuk-table__header">Cost</th>
+                                                        <th class="govuk-table__header" data-column="3">Cost <span
+                                                                class="sort-icon"></span></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="test-plans-body" class="govuk-table__body"></tbody>
@@ -773,16 +805,22 @@
                                             id="headingOne">
                                             Animal Plans
                                         </h2>
-                                        <div style=" max-height: 170px; overflow: auto;">
+                                        <div style="max-height: 300px; height: 300px; overflow: auto;">
                                             <table class="govuk-table custom-table govuk-table--bordered tab-font-size"
                                                 style="width: 100%;" id="animalPlansTab5Table">
                                                 <thead class="govuk-table__head">
                                                     <tr class="govuk-table__row">
-                                                        <th class="govuk-table__header">Animal Type</th>
-                                                        <th class="govuk-table__header">Date</th>
-                                                        <th class="govuk-table__header">Animals</th>
-                                                        <th class="govuk-table__header">Rate</th>
-                                                        <th class="govuk-table__header">Cost</th>
+                                                        <th class="govuk-table__header" data-column="0">Animal Type
+                                                            <span class="sort-icon"></span>
+                                                        </th>
+                                                        <th class="govuk-table__header" data-column="1">Date <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="2">Animals <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="3">Rate <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="4">Cost <span
+                                                                class="sort-icon"></span></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="AnimalPlansTab5Body" class="govuk-table__body"></tbody>
@@ -851,14 +889,18 @@
                                             id="headingOne">
                                             Additional Cost Plans
                                         </h2>
-                                        <div style=" max-height: 170px; overflow: auto; ">
+                                        <div style="max-height: 300px; height: 300px; overflow: auto; ">
                                             <table class="govuk-table custom-table govuk-table--bordered tab-font-size"
                                                 style="width: 100%;" id="costPlansTable">
                                                 <thead class="govuk-table__head">
                                                     <tr class="govuk-table__row">
-                                                        <th class="govuk-table__header">Account</th>
-                                                        <th class="govuk-table__header">Description</th>
-                                                        <th class="govuk-table__header">Cost</th>
+                                                        <th class="govuk-table__header" data-column="0">Account <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="1">Description
+                                                            <span class="sort-icon"></span>
+                                                        </th>
+                                                        <th class="govuk-table__header" data-column="2">Cost <span
+                                                                class="sort-icon"></span></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="cost-plans-body" class="govuk-table__body"></tbody>
@@ -931,17 +973,23 @@
                                             id="headingOne">
                                             Staff Plans
                                         </h2>
-                                        <div style="max-height: 300px; overflow: auto; ">
+                                        <div style="max-height: 300px; height: 300px; overflow: auto;">
                                             <table class="govuk-table custom-table govuk-table--bordered tab-font-size"
                                                 style="width: 100%;" id="staffPlansTable">
                                                 <thead class="govuk-table__head"
                                                     style="position: sticky; top: 0; background-color: white; z-index: 1;">
                                                     <tr>
-                                                        <th class="govuk-table__header">WG Grade</th>
-                                                        <th class="govuk-table__header">Name</th>
-                                                        <th class="govuk-table__header">Hour</th>
-                                                        <th class="govuk-table__header">Rate</th>
-                                                        <th class="govuk-table__header text-end">Cost</th>
+                                                        <th class="govuk-table__header" data-column="0">WG Grade <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="1">Name <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="2">Hour <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="3">Rate <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header text-end" data-column="4">Cost
+                                                            <span class="sort-icon"></span>
+                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="govuk-table__body" id="staffPlanstab2Body">
@@ -1009,20 +1057,29 @@
                                             id="headingOne">
                                             Staff Actuals
                                         </h2>
-                                        <div style="max-height: 300px; overflow: auto; ">
+                                        <div style="max-height: 300px; height: 300px; overflow: auto;">
                                             <table class="govuk-table custom-table govuk-table--bordered tab-font-size"
                                                 style="width: 100%;" id="staffActualsTable">
                                                 <thead class="govuk-table__head"
                                                     style="position: sticky; top: 0; background-color: white; z-index: 1;">
                                                     <tr>
-                                                        <th class="govuk-table__header">JobCode</th>
-                                                        <th class="govuk-table__header">Name</th>
-                                                        <th class="govuk-table__header">WG</th>
-                                                        <th class="govuk-table__header">Gr</th>
-                                                        <th class="govuk-table__header">Mont</th>
-                                                        <th class="govuk-table__header">Time</th>
-                                                        <th class="govuk-table__header">Rate</th>
-                                                        <th class="govuk-table__header text-end">Cost</th>
+                                                        <th class="govuk-table__header" data-column="0">JobCode <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="1">Name <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="2">WG <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="3">Gr <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="4">Mont <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="5">Time <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="6">Rate <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header text-end" data-column="7">Cost
+                                                            <span class="sort-icon"></span>
+                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="govuk-table__body" id="staffActualstab2Body">
@@ -1098,16 +1155,22 @@
                                             id="headingOne">
                                             Test Plans
                                         </h2>
-                                        <div style="max-height: 300px; overflow: auto; ">
+                                        <div style="max-height: 300px; height: 300px; overflow: auto;">
                                             <table class="govuk-table custom-table govuk-table--bordered tab-font-size"
                                                 style="width: 100%;" id="testPlansTable">
                                                 <thead class="govuk-table__head"
                                                     style="position: sticky; top: 0; background-color: white; z-index: 1;">
                                                     <tr>
-                                                        <th class="govuk-table__header">Test</th>
-                                                        <th class="govuk-table__header">Unit Price</th>
-                                                        <th class="govuk-table__header">No Required</th>
-                                                        <th class="govuk-table__header text-end">Cost</th>
+                                                        <th class="govuk-table__header" data-column="0">Test <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="1">Unit Price <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="2">No Required
+                                                            <span class="sort-icon"></span>
+                                                        </th>
+                                                        <th class="govuk-table__header text-end" data-column="3">Cost
+                                                            <span class="sort-icon"></span>
+                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="govuk-table__body" id="testPlansBody">
@@ -1176,18 +1239,25 @@
                                             id="headingOne">
                                             Test Actuals
                                         </h2>
-                                        <div style="max-height: 300px; overflow: auto; ">
+                                        <div style="max-height: 300px; height: 300px; overflow: auto;">
                                             <table class="govuk-table custom-table govuk-table--bordered tab-font-size"
                                                 style="width: 100%;" id="testActualsTable">
                                                 <thead class="govuk-table__head"
                                                     style="position: sticky; top: 0; background-color: white; z-index: 1;">
                                                     <tr>
-                                                        <th class="govuk-table__header">Month</th>
-                                                        <th class="govuk-table__header">Test Code</th>
-                                                        <th class="govuk-table__header">Work Group</th>
-                                                        <th class="govuk-table__header">Volume</th>
-                                                        <th class="govuk-table__header">Unit Price</th>
-                                                        <th class="govuk-table__header text-end">Charge</th>
+                                                        <th class="govuk-table__header" data-column="0">Month <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="1">Test Code <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="2">Work Group <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="3">Volume <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="4">Unit Price <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header text-end" data-column="5">Charge
+                                                            <span class="sort-icon"></span>
+                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="govuk-table__body" id="testActualBody">
@@ -1261,17 +1331,24 @@
                                             id="headingOne">
                                             Animals Plans
                                         </h2>
-                                        <div style="max-height: 300px; overflow: auto; ">
+                                        <div style="max-height: 300px; height: 300px; overflow: auto;">
                                             <table class="govuk-table custom-table govuk-table--bordered tab-font-size"
                                                 style="width: 100%;" id="animalPlansTable">
                                                 <thead class="govuk-table__head"
                                                     style="position: sticky; top: 0; background-color: white; z-index: 1;">
                                                     <tr>
-                                                        <th class="govuk-table__header">Animal Type</th>
-                                                        <th class="govuk-table__header">Days</th>
-                                                        <th class="govuk-table__header">Animals</th>
-                                                        <th class="govuk-table__header">Rate</th>
-                                                        <th class="govuk-table__header text-end">Cost</th>
+                                                        <th class="govuk-table__header" data-column="0">Animal Type
+                                                            <span class="sort-icon"></span>
+                                                        </th>
+                                                        <th class="govuk-table__header" data-column="1">Days <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="2">Animals <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="3">Rate <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header text-end" data-column="4">Cost
+                                                            <span class="sort-icon"></span>
+                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="govuk-table__body" id="AnimalPlansBody">
@@ -1340,17 +1417,25 @@
                                             id="headingOne">
                                             Animals Actuals
                                         </h2>
-                                        <div style="max-height: 300px; overflow: auto; ">
+                                        <div style="max-height: 300px; height: 300px; overflow: auto;">
                                             <table class="govuk-table custom-table govuk-table--bordered tab-font-size"
                                                 style="width: 100%;" id="AnimalActualsTable">
                                                 <thead class="govuk-table__head"
                                                     style="position: sticky; top: 0; background-color: white; z-index: 1;">
                                                     <tr>
-                                                        <th class="govuk-table__header">Month</th>
-                                                        <th class="govuk-table__header">Description</th>
-                                                        <th class="govuk-table__header">Rate</th>
-                                                        <th class="govuk-table__header">Animal Days</th>
-                                                        <th class="govuk-table__header text-end">Amount</th>
+                                                        <th class="govuk-table__header" data-column="0">Month <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="1">Description
+                                                            <span class="sort-icon"></span>
+                                                        </th>
+                                                        <th class="govuk-table__header" data-column="2">Rate <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="3">Animal Days
+                                                            <span class="sort-icon"></span>
+                                                        </th>
+                                                        <th class="govuk-table__header text-end" data-column="4">Amount
+                                                            <span class="sort-icon"></span>
+                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="govuk-table__body" id="AnimalActualsBody">
@@ -1426,15 +1511,20 @@
                                             id="headingOne">
                                             Additional Cost
                                         </h2>
-                                        <div style="max-height: 300px; overflow: auto; ">
+                                        <div style="max-height: 300px; height: 300px; overflow: auto;">
                                             <table class="govuk-table custom-table govuk-table--bordered tab-font-size"
                                                 style="width: 100%;" id="AdditionalCostsTable">
                                                 <thead class="govuk-table__head"
                                                     style="position: sticky; top: 0; background-color: white; z-index: 1;">
                                                     <tr>
-                                                        <th class="govuk-table__header">Account</th>
-                                                        <th class="govuk-table__header">Description</th>
-                                                        <th class="govuk-table__header text-end">Cost</th>
+                                                        <th class="govuk-table__header" data-column="0">Account <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="1">Description
+                                                            <span class="sort-icon"></span>
+                                                        </th>
+                                                        <th class="govuk-table__header text-end" data-column="2">Cost
+                                                            <span class="sort-icon"></span>
+                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="govuk-table__body" id="AdditionalCostsBody">
@@ -1505,18 +1595,27 @@
                                             id="headingOne">
                                             Additional Actuals
                                         </h2>
-                                        <div style="max-height: 300px; overflow: auto; ">
+                                        <div style="max-height: 300px; height: 300px; overflow: auto;">
                                             <table class="govuk-table custom-table govuk-table--bordered tab-font-size"
                                                 style="width: 100%;" id="AdditionalActualsTable">
                                                 <thead class="govuk-table__head"
                                                     style="position: sticky; top: 0; background-color: white; z-index: 1;">
                                                     <tr>
-                                                        <th class="govuk-table__header">Month</th>
-                                                        <th class="govuk-table__header">AcctCode</th>
-                                                        <th class="govuk-table__header">Description</th>
-                                                        <th class="govuk-table__header">Supplier</th>
-                                                        <th class="govuk-table__header">Supplier Name</th>
-                                                        <th class="govuk-table__header text-end">Amount</th>
+                                                        <th class="govuk-table__header" data-column="0">Month <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="1">AcctCode <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="2">Description
+                                                            <span class="sort-icon"></span>
+                                                        </th>
+                                                        <th class="govuk-table__header" data-column="3">Supplier <span
+                                                                class="sort-icon"></span></th>
+                                                        <th class="govuk-table__header" data-column="4">Supplier Name
+                                                            <span class="sort-icon"></span>
+                                                        </th>
+                                                        <th class="govuk-table__header text-end" data-column="5">Amount
+                                                            <span class="sort-icon"></span>
+                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="govuk-table__body" id="AdditionalActualsBody">
@@ -1715,13 +1814,14 @@
     </div>
     </div>
     <!-- Footer -->
-            <div class="govuk-footer sup_p_0 sup_margin_left_right_0" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
-            <div class="govuk-width-container sup_p_8 sup_text_center">
-                <span>
-                    &copy; copyright Defra 2025
-                </span>
-            </div>
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0"
+        style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+        <div class="govuk-width-container sup_p_8 sup_text_center">
+            <span>
+                &copy; copyright Defra 2025
+            </span>
         </div>
+    </div>
 
 
     <!-- <div class="col-sm-6">
@@ -1816,6 +1916,22 @@
         // });
     </script>
     <script src="../js/yearlyfinance.js"></script>
+    <script src="../js/pims_js/table_utils.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            tuInitResize("monthly-data");
+            tuInitResize("staffPlansTable");
+            tuInitResize("testPlansTable");
+            tuInitResize("animalPlansTab5Table");
+            tuInitResize("costPlansTable");
+            tuInitResize("staffActualsTable");
+            tuInitResize("testActualsTable");
+            tuInitResize("animalPlansTable");
+            tuInitResize("AnimalActualsTable");
+            tuInitResize("AdditionalCostsTable");
+            tuInitResize("AdditionalActualsTable");
+        });
+    </script>
 
     <!-- <script src="../js/projectlist.js"></script> -->
 

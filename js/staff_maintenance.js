@@ -266,11 +266,221 @@ let projectModal;
 
 let staffplanId = null;
 let staffplanModal;
+let staffSortState = {
+    key: null,
+    direction: "asc"
+};
+
+let staffPageState = {
+    current: 1,
+    perPage: 10
+};
+
+function parseStaffSortValue(value) {
+    return String(value || "").toLowerCase();
+}
+
+function getSortedStaffRows(rows) {
+    if (!staffSortState.key) {
+        return rows.slice();
+    }
+
+    const key = staffSortState.key;
+    const multiplier = staffSortState.direction === "asc" ? 1 : -1;
+    return rows.slice().sort((a, b) => {
+        const valueA = parseStaffSortValue(a[key]);
+        const valueB = parseStaffSortValue(b[key]);
+        return valueA.localeCompare(valueB, undefined, { numeric: true, sensitivity: "base" }) * multiplier;
+    });
+}
+
+function updateStaffSortIcons() {
+    const headers = document.querySelectorAll("#empTable th[data-column]");
+    headers.forEach((header) => {
+        const column = header.dataset.column;
+        header.classList.remove("sorted-asc", "sorted-desc");
+
+        const existingIcon = header.querySelector(".sort-icon");
+        if (existingIcon) {
+            existingIcon.remove();
+        }
+
+        if (staffSortState.key === column) {
+            header.classList.add(staffSortState.direction === "asc" ? "sorted-asc" : "sorted-desc");
+            const icon = document.createElement("span");
+            icon.className = "sort-icon";
+            icon.textContent = staffSortState.direction === "asc" ? "\u25B2" : "\u25BC";
+            header.appendChild(icon);
+        }
+    });
+}
+
+function handleStaffSort(header) {
+    const key = header.dataset.column;
+    if (!key) {
+        return;
+    }
+
+    staffSortState.direction = staffSortState.key === key && staffSortState.direction === "asc" ? "desc" : "asc";
+    staffSortState.key = key;
+    renderstaffplanTable();
+}
+
+function setupStaffTableSorting() {
+    const headers = document.querySelectorAll("#empTable th[data-column]");
+    headers.forEach((header) => {
+        if (header.dataset.sortBound === "true") {
+            return;
+        }
+
+        header.style.cursor = "pointer";
+        header.tabIndex = 0;
+
+        header.addEventListener("click", () => handleStaffSort(header));
+        header.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                handleStaffSort(header);
+            }
+        });
+
+        header.dataset.sortBound = "true";
+    });
+
+    updateStaffSortIcons();
+}
+
+function measureStaffTextWidth(text, className) {
+    let measurer = document.getElementById("staff-width-measurer");
+    if (!measurer) {
+        measurer = document.createElement("span");
+        measurer.id = "staff-width-measurer";
+        measurer.style.position = "absolute";
+        measurer.style.visibility = "hidden";
+        measurer.style.whiteSpace = "nowrap";
+        measurer.style.left = "-9999px";
+        measurer.style.top = "-9999px";
+        document.body.appendChild(measurer);
+    }
+
+    measurer.className = className || "";
+    measurer.textContent = text || "";
+    return measurer.offsetWidth;
+}
+
+function getStaffColumnValues(columnKey) {
+    return staffplandata.map((record) => record[columnKey] || "");
+}
+
+function getStaffColumnMinimumWidth(table, header, columnKey) {
+    const headerWidth = measureStaffTextWidth(header.textContent.replace(/\s+/g, " ").trim(), "govuk-table__header govuk-!-font-size-16");
+    let contentWidth = 0;
+
+    getStaffColumnValues(columnKey).forEach((value) => {
+        contentWidth = Math.max(contentWidth, measureStaffTextWidth(String(value), "govuk-table__cell govuk-!-font-size-16"));
+    });
+
+    return Math.max(60, headerWidth, contentWidth) + 24;
+}
+
+function syncStaffColumnMinimumWidths(table, preserveExpandedWidths) {
+    const wrapper = table ? table.parentElement : null;
+    const headers = table ? Array.from(table.querySelectorAll("th")) : [];
+    let totalWidth = 0;
+    const actionColumnWidth = 96;
+
+    if (!table || !wrapper || !headers.length) {
+        return;
+    }
+
+    headers.forEach((header, index) => {
+        const columnKey = header.dataset.column;
+        const isActionColumn = !columnKey && index === headers.length - 1;
+        const minWidth = isActionColumn
+            ? actionColumnWidth
+            : (columnKey ? getStaffColumnMinimumWidth(table, header, columnKey) : Math.max(80, header.offsetWidth));
+        const currentWidth = parseFloat(header.style.width) || (isActionColumn ? minWidth : (header.offsetWidth || minWidth));
+        const appliedWidth = isActionColumn
+            ? minWidth
+            : (preserveExpandedWidths ? Math.max(currentWidth, minWidth) : minWidth);
+
+        header.dataset.minWidth = String(minWidth);
+        header.style.minWidth = minWidth + "px";
+        header.style.width = appliedWidth + "px";
+        header.style.boxSizing = "border-box";
+        totalWidth += appliedWidth;
+    });
+
+    table.style.tableLayout = "fixed";
+    table.style.minWidth = "100%";
+    table.style.width = totalWidth + "px";
+}
+
+function setupStaffColumnResizing() {
+    const table = document.getElementById("empTable");
+    const wrapper = table ? table.parentElement : null;
+    const headers = table ? table.querySelectorAll("th[data-column]") : [];
+
+    if (!table || !wrapper) {
+        return;
+    }
+
+    if (table.dataset.resizeSized !== "true") {
+        syncStaffColumnMinimumWidths(table, false);
+        table.dataset.resizeSized = "true";
+    } else {
+        syncStaffColumnMinimumWidths(table, true);
+    }
+
+    headers.forEach((header) => {
+        if (!header.querySelector(".pp-resizer")) {
+            const resizer = document.createElement("div");
+            resizer.className = "pp-resizer";
+            resizer.innerHTML = "&nbsp;";
+            header.appendChild(resizer);
+        }
+    });
+
+    const resizers = table.querySelectorAll(".pp-resizer");
+    resizers.forEach((resizer) => {
+        if (resizer.dataset.bound === "true") {
+            return;
+        }
+
+        resizer.addEventListener("mousedown", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const th = resizer.parentElement;
+            const startX = event.pageX;
+            const startWidth = th.offsetWidth;
+            const startTableWidth = table.offsetWidth;
+            const minWidth = parseFloat(th.dataset.minWidth) || 60;
+
+            function onMouseMove(moveEvent) {
+                const newWidth = Math.max(minWidth, startWidth + (moveEvent.pageX - startX));
+                th.style.width = newWidth + "px";
+                table.style.width = Math.max(wrapper.clientWidth, startTableWidth + (newWidth - startWidth)) + "px";
+            }
+
+            function onMouseUp() {
+                document.removeEventListener("mousemove", onMouseMove);
+                document.removeEventListener("mouseup", onMouseUp);
+            }
+
+            document.addEventListener("mousemove", onMouseMove);
+            document.addEventListener("mouseup", onMouseUp);
+        });
+
+        resizer.dataset.bound = "true";
+    });
+}
 
 
 document.addEventListener("DOMContentLoaded", function () {
 
     projectModal = new bootstrap.Modal(document.getElementById('projectModal'));
+    document.getElementById("projectModal").addEventListener("hidden.bs.modal", clearProjectModalValidation);
     renderProjectTable();
 	
 });
@@ -280,12 +490,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
    
 	staffplanModal = new bootstrap.Modal(document.getElementById('staffplanModal'));    
+    document.getElementById("staffplanModal").addEventListener("hidden.bs.modal", clearStaffPlanModalValidation);
+
+    // Read initial perPage from dropdown (matches reference page pattern)
+    const recordsPerPageEl = document.getElementById("recordsPerPage");
+    if (recordsPerPageEl) {
+        staffPageState.perPage = parseInt(recordsPerPageEl.value, 10) || 10;
+    }
+
 	renderstaffplanTable();
+    setupStaffTableSorting();
+    setupStaffColumnResizing();
 
     const staffFilterRadios = document.querySelectorAll('input[name="staffFilter"]');
     staffFilterRadios.forEach(radio => {
-        radio.addEventListener("change", renderstaffplanTable);
+        radio.addEventListener("change", function () {
+            staffPageState.current = 1;
+            renderstaffplanTable();
+        });
     });
+    
+    setupStaffPaginationListener();
 
     const addStaffPlanBtn = document.getElementById("addStaffPlanBtn");
     if (addStaffPlanBtn) {
@@ -295,6 +520,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function openAddStaffPlanModal() {
     staffplanId = null;
+    clearStaffPlanModalValidation();
 
     const staffPlanModalEl = document.getElementById("staffplanModal");
     const titleElement = staffPlanModalEl ? staffPlanModalEl.querySelector(".modal-title") : null;
@@ -369,7 +595,20 @@ function renderstaffplanTable() {
         return true;
     });
 
-    filteredStaffPlanData.forEach(item => {
+    const rows = getSortedStaffRows(filteredStaffPlanData);
+    const totalRecords = rows.length;
+    const perPage = staffPageState.perPage;
+    const totalPages = Math.max(1, Math.ceil(totalRecords / perPage));
+    
+    if (staffPageState.current > totalPages) {
+        staffPageState.current = totalPages;
+    }
+
+    const startIdx = (staffPageState.current - 1) * perPage;
+    const endIdx = startIdx + perPage;
+    const pageRows = rows.slice(startIdx, endIdx);
+
+    pageRows.forEach(item => {
 
         const row = document.createElement("tr");
 
@@ -395,9 +634,30 @@ function renderstaffplanTable() {
         tbody.appendChild(row);
     });
 
-    //updateProjectTotals();
+    updateStaffSortIcons();
+    const table = document.getElementById("empTable");
+    if (table && table.dataset.resizeSized === "true") {
+        syncStaffColumnMinimumWidths(table, true);
+    }
+
+    renderPagination(rows, staffPageState.current, perPage, "pagination", onStaffPageClick);
 }
 
+function onStaffPageClick(page) {
+    staffPageState.current = page;
+    renderstaffplanTable();
+}
+
+function setupStaffPaginationListener() {
+    const recordsPerPageSelect = document.getElementById("recordsPerPage");
+    if (recordsPerPageSelect) {
+        recordsPerPageSelect.addEventListener("change", function () {
+            staffPageState.perPage = parseInt(this.value, 10);
+            staffPageState.current = 1;
+            renderstaffplanTable();
+        });
+    }
+}
 
 function handleProjectDelete(id) {
 
@@ -423,6 +683,7 @@ function handleProjectEdit(id) {
     if (!item) return;
 
     editingProjectId = id;
+    clearProjectModalValidation();
 
     document.getElementById("projectModalTitle").innerText = "Edit Project";
 
@@ -449,6 +710,7 @@ function handlestaffplandataEdit(id) {
     if (!item) return;
 
     staffplanId = id;
+    clearStaffPlanModalValidation();
 
     const staffPlanModalEl = document.getElementById("staffplanModal");
     const titleElement = staffPlanModalEl ? staffPlanModalEl.querySelector(".modal-title") : null;
@@ -468,8 +730,155 @@ function handlestaffplandataEdit(id) {
     staffplanModal.show();
 }
 
+function clearModalValidation(formSelector) {
+    document.querySelectorAll(formSelector + " .govuk-form-group--error").forEach((group) => {
+        group.classList.remove("govuk-form-group--error");
+    });
+
+    document.querySelectorAll(formSelector + " .govuk-error-message").forEach((message) => {
+        message.remove();
+    });
+
+    document.querySelectorAll(formSelector + " .govuk-input--error, " + formSelector + " .govuk-select--error").forEach((field) => {
+        field.classList.remove("govuk-input--error", "govuk-select--error");
+        field.removeAttribute("aria-invalid");
+        if (field.dataset.baseDescribedby) {
+            field.setAttribute("aria-describedby", field.dataset.baseDescribedby);
+        } else {
+            field.removeAttribute("aria-describedby");
+        }
+    });
+}
+
+function showModalFieldError(fieldId, message) {
+    const field = document.getElementById(fieldId);
+    let formGroup;
+    let fieldContainer;
+    let errorId;
+    let errorMessage;
+    let describedBy;
+
+    if (!field) {
+        return;
+    }
+
+    if (typeof field.dataset.baseDescribedby === "undefined") {
+        field.dataset.baseDescribedby = field.getAttribute("aria-describedby") || "";
+    }
+
+    formGroup = field.closest(".govuk-form-group");
+    fieldContainer = field.closest(".govuk-input__wrapper") || field;
+    errorId = fieldId + "-error";
+    errorMessage = document.createElement("p");
+
+    if (formGroup) {
+        formGroup.classList.add("govuk-form-group--error");
+    }
+
+    if (field.tagName === "SELECT") {
+        field.classList.add("govuk-select--error");
+    } else {
+        field.classList.add("govuk-input--error");
+    }
+    field.setAttribute("aria-invalid", "true");
+
+    errorMessage.className = "govuk-error-message";
+    errorMessage.id = errorId;
+    errorMessage.innerHTML = '<span class="govuk-visually-hidden">Error:</span> ' + message;
+
+    if (fieldContainer) {
+        fieldContainer.insertAdjacentElement("afterend", errorMessage);
+    } else if (formGroup) {
+        formGroup.appendChild(errorMessage);
+    }
+
+    describedBy = field.dataset.baseDescribedby ? field.dataset.baseDescribedby + " " + errorId : errorId;
+    field.setAttribute("aria-describedby", describedBy.trim());
+}
+
+function clearProjectModalValidation() {
+    clearModalValidation("#projectModal");
+}
+
+function clearStaffPlanModalValidation() {
+    clearModalValidation("#staffplanModal");
+}
+
+function validateProjectModal() {
+    const errors = [];
+    const workGroup = document.getElementById("modal-WrkGrp").value.trim();
+    const grade = document.getElementById("modal-Grade").value.trim();
+    const jobCode = document.getElementById("modal-Jobcode").value.trim();
+    const name = document.getElementById("modal-ATStaffName").value.trim();
+    const month = document.getElementById("modal-Mnth").value.trim();
+    const hours = document.getElementById("modal-Hrs").value.trim();
+    const cost = document.getElementById("modal-Cost").value.trim();
+    const isValidNumber = (value) => !isNaN(parseFloat(String(value).replace(/[^0-9.]/g, "")));
+
+    clearProjectModalValidation();
+
+    if (!workGroup) { errors.push({ fieldId: "modal-WrkGrp", message: "Workgroup is required" }); }
+    if (!grade) { errors.push({ fieldId: "modal-Grade", message: "Grade is required" }); }
+    if (!jobCode) { errors.push({ fieldId: "modal-Jobcode", message: "Job code is required" }); }
+    if (!name) { errors.push({ fieldId: "modal-ATStaffName", message: "Name is required" }); }
+    if (!month) {
+        errors.push({ fieldId: "modal-Mnth", message: "Month is required" });
+    } else if (!isValidNumber(month)) {
+        errors.push({ fieldId: "modal-Mnth", message: "Month must be a valid number" });
+    }
+    if (!hours) {
+        errors.push({ fieldId: "modal-Hrs", message: "Hours are required" });
+    } else if (!isValidNumber(hours)) {
+        errors.push({ fieldId: "modal-Hrs", message: "Hours must be a valid number" });
+    }
+    if (!cost) {
+        errors.push({ fieldId: "modal-Cost", message: "Cost is required" });
+    } else if (!isValidNumber(cost)) {
+        errors.push({ fieldId: "modal-Cost", message: "Cost must be a valid number" });
+    }
+
+    if (!errors.length) {
+        return true;
+    }
+
+    errors.forEach((error) => {
+        showModalFieldError(error.fieldId, error.message);
+    });
+    document.getElementById(errors[0].fieldId).focus();
+    return false;
+}
+
+function validateStaffPlanModal() {
+    const errors = [];
+    const spnumber = document.getElementById("modal-spnumber").value.trim();
+    const lastname = document.getElementById("modal-lastname").value.trim();
+    const firstname = document.getElementById("modal-firstname").value.trim();
+    const title = document.getElementById("modal-title").value.trim();
+
+    clearStaffPlanModalValidation();
+
+    if (!spnumber) { errors.push({ fieldId: "modal-spnumber", message: "SP number is required" }); }
+    if (!lastname) { errors.push({ fieldId: "modal-lastname", message: "Last name is required" }); }
+    if (!firstname) { errors.push({ fieldId: "modal-firstname", message: "First name is required" }); }
+    if (!title) { errors.push({ fieldId: "modal-title", message: "Title is required" }); }
+
+    if (!errors.length) {
+        return true;
+    }
+
+    errors.forEach((error) => {
+        showModalFieldError(error.fieldId, error.message);
+    });
+    document.getElementById(errors[0].fieldId).focus();
+    return false;
+}
+
 
 function saveProject() {
+
+    if (!validateProjectModal()) {
+        return;
+    }
 
     const WrkGrp = document.getElementById("modal-WrkGrp").value;
     const Grade = document.getElementById("modal-Grade").value;
@@ -525,18 +934,14 @@ function saveProject() {
 
 function savestaffplan() {
 
-    const name = document.getElementById("modal-spnumber").value;
-    const rate = document.getElementById("modal-firstname").value;
-    const hrs = document.getElementById("modal-lastname").value;
-    const days = document.getElementById("modal-title").value;
-   // const staffcost = document.getElementById("modal-staffcost").value;
+    if (!validateStaffPlanModal()) {
+        return;
+    }
 
-    const addPoundSymbol = (value) => {
-        const cleanedValue = (value || "").trim();
-        if (!cleanedValue) return "£0";
-        return cleanedValue.startsWith("£") ? cleanedValue : `£${cleanedValue}`;
-    };
-   
+    const spnumber = document.getElementById("modal-spnumber").value.trim();
+    const lastname = document.getElementById("modal-lastname").value.trim();
+    const firstname = document.getElementById("modal-firstname").value.trim();
+    const title = document.getElementById("modal-title").value.trim();
 
     if (staffplanId) {
 
@@ -545,11 +950,9 @@ function savestaffplan() {
         staffplandata[index] = {
             ...staffplandata[index],
             spnumber,
-            lastname,           
+            lastname,
             firstname,
             title
-			
-          
         };
 
         staffplanId = null;
@@ -563,11 +966,9 @@ function savestaffplan() {
         staffplandata.push({
             id: newId,
             spnumber,
-            //rate: addPoundSymbol(rate),   
-lastname,			
+            lastname,
             firstname,
-            title,
-			//staffcost: addPoundSymbol(staffcost)
+            title
         });
     }
 

@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PMD User Details</title>
-      <link rel="stylesheet" href="../css/bootstrap.min.css">	
+    <link rel="stylesheet" href="../css/govuk-frontend-6.0.0.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet" />
-   
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-   <link rel="stylesheet" href="../css/pims_style/style.css" />
-    <link rel="stylesheet" href="../css/main_style.css">	
+    <link rel="stylesheet" href="../css/pims_style/style.css" />
+    <link rel="stylesheet" href="../css/main_style.css">
+    <link rel="stylesheet" href="../css/suppliement_style_over_gov.uk_style.css" />
     <!-- <link href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script> -->
     <style>
@@ -27,47 +29,48 @@
         .thead-light>tr>th:nth-child(7) {
             width: 20%;
         }
-           
-.main-nav {
-    display: flex;
-    background-color: #1d70b8;
-    padding: 0;
-    margin: 0;
-    /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
-}  
-.nav-item {
-    position: relative;
-    display: flex;
-}
 
-.nav-button {
-    background-color: #1d70b8;
-    color: white;
-    border: none;
-    padding: 12px 20px 12px 20px;
-    cursor: pointer;
-    font-size: 14px;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: background-color 0.2s ease;
-    border-right: 1px solid rgba(255,255,255,0.2);
-}
+        .main-nav {
+            display: flex;
+            background-color: #1d70b8;
+            padding: 0;
+            margin: 0;
+            /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+        }
 
-.nav-button:hover {
-    background-color: #003078;
-}
+        .nav-item {
+            position: relative;
+            display: flex;
+        }
 
-.nav-button.active {
-    background-color: #357abd;
-}
+        .nav-button {
+            background-color: #1d70b8;
+            color: white;
+            border: none;
+            padding: 12px 20px 12px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s ease;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-.nav-button:focus {
-    background: #003078;
-}
+        .nav-button:hover {
+            background-color: #003078;
+        }
+
+        .nav-button.active {
+            background-color: #357abd;
+        }
+
+        .nav-button:focus {
+            background: #003078;
+        }
     </style>
-     <link rel="stylesheet" href="../css/main_style.css">
+    <link rel="stylesheet" href="../css/main_style.css">
 </head>
 
 <body>
@@ -89,10 +92,13 @@
                 <p>Project Information Management System</p>
             </div>
             <div class="btn-group" style=" display: flex; align-items: center; font-size:16px;">
-                Meg Ved 
-				
-				<button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;" class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
-                   <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24"> <img src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px" height="30px">
+                Meg Ved
+
+                <button type="button" aria-label="user dropdown arrow to go home page" style="border: 0;"
+                    class="btn btn-secondary dropdown-toggle user-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="../images/circle-user-regular-full.svg" alt="user icon" width="24"> <img
+                        src="../images/down-arrow.png" alt="dropdown arrow for logout of application" width="30px"
+                        height="30px">
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <!-- <li><button class="dropdown-item" type="button"><i class="fa-regular fa-user"></i> Profile</button>
@@ -100,7 +106,7 @@
                     <li><button class="dropdown-item" type="button"><i class="fa-solid fa-gear"></i> Settings</button>
                     </li> -->
                     <li><a href="../index.html" class="dropdown-item" type="button">
-                      <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
+                            <img src="../images/house-user-solid-full.svg" alt="dropdown home icon" width="22px">
                             Home</a></li>
                 </ul>
             </div>
@@ -108,39 +114,41 @@
     </header>
     <nav class="main-nav">
         <div class="nav-item dropdown">
-              <a class="nav-link" href="pimshome.html" style="text-decoration: none;">
-               Choose Project
+            <a class="nav-link" href="pimshome.html" style="text-decoration: none;">
+                Choose Project
             </a>
         </div>
-         <div class="nav-item dropdown">
+        <div class="nav-item dropdown">
             <a class="nav-button" href="#" style="text-decoration: none;">
-               Maintenance 
+                Maintenance
             </a>
         </div>
     </nav>
-     <div class="container-fluid" style="padding: 0;">
-                <h5 style="padding: 10px 0 5px 20px; border-bottom: 2px solid #1d70b8; font-size: 16px;  font-weight: 700; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center">Milestone List Details 
-				<!-- <div style="margin-right: 16px;"><a href="pimshome.html" class="btn btn-outline-primary btn-sm">Back</a></div> -->
-				</h5>
-     </div>
+    <div class="container-fluid" style="padding: 0;">
+        <h5
+            style="padding: 10px 0 5px 20px; border-bottom: 2px solid #1d70b8; font-size: 16px;  font-weight: 700; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center">
+            Milestone List Details
+            <!-- <div style="margin-right: 16px;"><a href="pimshome.html" class="btn btn-outline-primary btn-sm">Back</a></div> -->
+        </h5>
+    </div>
     <div class="d-flex">
-       <nav class="sidebar d-flex flex-column flex-shrink-0 position-fixedX">
+        <nav class="sidebar d-flex flex-column flex-shrink-0 position-fixedX">
             <button class="toggle-btn" onclick="toggleSidebar()">
                 <i class="fas fa-chevron-left"></i>
             </button>
 
             <div class="nav flex-column">
-                 <!-- <a href="index.html" class="sidebar-link text-decoration-none p-3">
+                <!-- <a href="index.html" class="sidebar-link text-decoration-none p-3">
                     <i class="fa-solid fa-house-user me-3" style="color: #ffffff;"></i>
                     <span class="hide-on-collapse">Home</span>
                 </a> -->
-				
-				 <a href="selectedprojectdetails.html" class="sidebar-link text-decoration-none p-3">
-				  <i class="fa-solid fa-list-check me-3"></i>
-                   
+
+                <a href="selectedprojectdetails.html" class="sidebar-link text-decoration-none p-3">
+                    <i class="fa-solid fa-list-check me-3"></i>
+
                     <span class="hide-on-collapse">Project Details</span>
                 </a>
-				
+
                 <a href="#" class="sidebar-link text-decoration-none p-3">
                     <i class="fas fa-chart-bar me-3"></i>
                     <span class="hide-on-collapse">Yearly Financial Details</span>
@@ -186,10 +194,10 @@
                     <span class="hide-on-collapse"> Project Review </span>
                 </a>
 
-               
-                
 
-                
+
+
+
 
                 <a href="pmduser.html" class="sidebar-link text-decoration-none p-3">
                     <i class="fa-solid fa-user-tie me-3" style="color: #ffffff;"></i>
@@ -208,7 +216,7 @@
     align-items: center;
     justify-content: space-between;">Milestone List Details <div style="margin-right: 16px;"><a class="btn btn-sm btn-primary" href="pmduser.html">back</a></div></h5>
             </div> -->
-            <div class="container-fluid" style="padding-left: 0;">
+            <div class="container-fluid" style="padding-left: 20px;">
                 <!-- <div style="border: 1px solid #ccc;border-radius: 10px 10px 0 0; padding: 10px">
                     <div class="col-2">
                         <select class="form-select">
@@ -261,28 +269,33 @@
                         <textarea class="form-control" id="comment" rows="4"></textarea>
                     </div>
                 </div>
-                <div><button class="btnBlue">Update</button> <button class="btnCancel">Cancel</button>
+                <div class="govuk-button-group">
+                    <button type="button"
+                        class="govuk-button govuk-button--primary govuk-!-font-size-16">Update</button>
+                    <button type="button"
+                        class="govuk-button govuk-button--secondary govuk-!-font-size-16">Cancel</button>
                 </div>
             </div>
         </main>
     </div>
-                    <div class="govuk-footer sup_p_0 sup_margin_left_right_0" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
-            <div class="govuk-width-container sup_p_8 sup_text_center">
-                <span>
-                    &copy; copyright Defra 2025
-                </span>
-            </div>
+    <div class="govuk-footer sup_p_0 sup_margin_left_right_0"
+        style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+        <div class="govuk-width-container sup_p_8 sup_text_center">
+            <span>
+                &copy; copyright Defra 2025
+            </span>
         </div>
+    </div>
     <!-- <script src="js/script.js"></script> -->
-	
-	
-	 <script src="../js/bootstrap.bundle.min.js">  </script>
+
+
+    <script src="../js/bootstrap.bundle.min.js">  </script>
     <script>
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
             const menu = document.querySelector('.menu-section .menu-item');
             const arrow = document.querySelector('.menu-section .menu-item > span.arrow')
-           // let nextspan = document.querySelector('.menu-section .menu-item > span').nextElementSibling;
+            // let nextspan = document.querySelector('.menu-section .menu-item > span').nextElementSibling;
 
             sidebar.classList.toggle('collapsed');
             // if (arrow !== null) {
@@ -333,13 +346,13 @@
             console.log("type:", typeof obj.datedue);
 
 
-//             const duedatepicker = document.getElementById("datedue");
+            //             const duedatepicker = document.getElementById("datedue");
 
-// console.log("Before set:", obj.datedue); // must be 2025-12-05
+            // console.log("Before set:", obj.datedue); // must be 2025-12-05
 
-// input.value = obj.datedue;               // ONLY this line
+            // input.value = obj.datedue;               // ONLY this line
 
-// console.log("After set:", input.value);
+            // console.log("After set:", input.value);
 
             // document.getElementById("result").innerText =
             //   `ID: ${obj.id}, Name: ${obj.name}, City: ${obj.jobcode}`;
@@ -353,7 +366,7 @@
 
         }
 
-         const openMenu = localStorage.getItem("openMenu");
+        const openMenu = localStorage.getItem("openMenu");
         if (openMenu) {
             const submenu = document.getElementById("project-maintenance");
             if (submenu) {
@@ -362,7 +375,7 @@
 
             }
         }
-        
+
     </script>
     <script src="../js/defra-dialogs.js"></script>
 </body>

@@ -140,3 +140,47 @@
 #financialForm .govuk-error-message {
     font-size: 14px;
 }
+
+/* ============================================
+   Sortable column header styles
+   (applies to both #milestonesTable and #tblMilestoneGrid)
+   ============================================ */
+
+/* Pointer cursor & no text selection on clickable headers */
+.sortable-header,
+#tblMilestoneGrid th[data-column] {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+}
+
+/* Hover highlight */
+.sortable-header:hover,
+#tblMilestoneGrid th[data-column]:hover {
+    background-color: #f3f2f1;
+}
+
+/* Active (sorted) column highlight */
+th.sorted-asc,
+th.sorted-desc {
+    background-color: #e8f0fe;
+    color: #0b0c0c;
+}
+
+/* Sort arrow icon – default (unsorted) */
+.sort-icon {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 11px;
+    opacity: 0.35;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+/* Sort arrow icon – active state */
+th.sorted-asc .sort-icon,
+th.sorted-desc .sort-icon {
+    opacity: 1;
+    color: #0b0c0c;
+    font-weight: bold;
+}

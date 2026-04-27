@@ -2487,16 +2487,6 @@ function renderAdditionalActualsTab4Pagination() {
     })
     .join("");
 
-  // Add total row if there's data
-  if (paginatedData.length > 0) {
-    tbody.innerHTML += `
-            <tr class="govuk-table__row" style="position: sticky; bottom: 0; z-index: 9; background-color: #f3f2f1; font-weight: 600;">
-                <td colspan="5" class="govuk-table__cell govuk-!-text-align-right govuk-!-font-weight-bold">Total</td>
-                <td class="govuk-table__cell text-end govuk-!-text-align-right govuk-!-font-weight-bold">£${totalAmount.toFixed(2)}</td>
-            </tr>
-        `;
-  }
-
   // Render pagination controls
   paginationUl.innerHTML = "";
 
@@ -2767,16 +2757,6 @@ function renderAnimalActualsTab5Pagination() {
         `;
     })
     .join("");
-
-  // Add total row if there's data
-  if (paginatedData.length > 0) {
-    tbody.innerHTML += `
-            <tr class="govuk-table__row" style="position: sticky; bottom: 0; z-index: 9; background-color: #f3f2f1; font-weight: 600;">
-                <td colspan="4" class="govuk-table__cell govuk-!-text-align-right govuk-!-font-weight-bold">Total</td>
-                <td class="govuk-table__cell text-end govuk-!-text-align-right govuk-!-font-weight-bold">£${totalAmount.toFixed(2)}</td>
-            </tr>
-        `;
-  }
 
   // Render pagination controls
   paginationUl.innerHTML = "";

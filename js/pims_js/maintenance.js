@@ -522,7 +522,7 @@ function renderTable(tableKey) {
       '<td class="govuk-table__cell ra-cell-order">' +
       orderVal +
       "</td>" +
-      '<td class="govuk-table__cell">' +
+      '<td class="govuk-table__cell ra-action-cell">' +
       actionBtns +
       addGroupBtn +
       "</td>" +

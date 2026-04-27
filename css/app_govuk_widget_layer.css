@@ -130,7 +130,7 @@
 
 /* Buttons */
 .app-theme .govuk-button {
-  background-color: var(--app-primary-color);
+  /* background-color: var(--app-primary-color); */
   color: var(--app-primary-contrast-color);
   border-radius: var(--app-button-radius);
   min-height: 2.75rem;

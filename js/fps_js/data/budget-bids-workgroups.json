@@ -1,0 +1,88 @@
+[
+    {
+        "code": "ADMIN",
+        "name": "ADMIN",
+        "wg":["Admin1","Admin2","Admin3"]
+    },
+    {
+        "code": "APH_SCAH",
+        "name": "APH SCAH",
+        "wg": ["APH_SCAH1", "APH_SCAH2", "APH_SCAH3"]
+    },
+    {
+        "code": "ASU",
+        "name": "ASU",
+        "wg":["ASU1", "ASU2", "ASU3"]
+    },
+    {
+        "code": "BM",
+        "name": "B&M",
+        "wg":["BM1","BM2","BM3"]
+    },
+    {
+        "code": "BACT",
+        "name": "Bact",
+        "wg": ["BACT1", "BACT2", "BACT3"]
+    },
+    {
+        "code": "BDU",
+        "name": "BDU",
+        "wg": ["BDU1", "BDU2", "BDU3"]
+    },
+    {
+        "code": "BEES",
+        "name": "Bees",
+        "wg": ["BEES1", "BEES2", "BEES3"]
+    },
+    {
+        "code": "BEES_ADVICE",
+        "name": "Bees Advice",
+        "wg": ["BEES_ADV1", "BEES_ADV2", "BEES_ADV3"]
+    },
+    {
+        "code": "BEES_ENGLAND",
+        "name": "Bees England",
+        "wg": ["BEES_ENG1", "BEES_ENG2", "BEES_ENG3"]
+    },
+    {
+        "code": "BEES_WALES",
+        "name": "Bees Wales",
+        "wg": ["BEES_WAL1", "BEES_WAL2", "BEES_WAL3"]
+    },
+    {
+        "code": "BTB",
+        "name": "BTB",
+        "wg": ["BTB1", "BTB2", "BTB3"]
+    },
+    {
+        "code": "BUS_SUPP",
+        "name": "Bus Supp",
+        "wg": ["BUS_SUPP1", "BUS_SUPP2", "BUS_SUPP3"]
+    },
+    {
+        "code": "CIT",
+        "name": "CIT",
+        "wg": ["CIT1", "CIT2", "CIT3"]
+    },
+    {
+        "code": "CITB",
+        "name": "CITB",
+        "wg": ["CITB1", "CITB2", "CITB3"]
+    },
+    {
+        "code": "COMM",
+        "name": "Comm",
+        "wg": ["COMM1", "COMM2", "COMM3"]
+    },
+    {
+        "code": "CORP_FINANCE",
+        "name": "Corp Finance",
+         "wg":["COPRF1", "COPRF2", "COPRF3"]
+    },
+     {
+        "code": "DoES",
+        "name": "DoES",
+        "wg":["DoES1", "DoES3", "DSG"]
+    }
+]
+
